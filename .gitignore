@@ -1,0 +1,80 @@
+# ---- Python 通用 ----
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# ---- 打包/构建产物 ----
+build/
+dist/
+downloads/
+develop-eggs/
+eggs/
+.eggs/
+sdist/
+var/
+wheels/
+share/python-wheels/
+pip-wheel-metadata/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+lib/
+lib64/
+parts/
+
+# ---- 测试与覆盖率 ----
+.tox/
+.nox/
+.pytest_cache/
+.hypothesis/
+.coverage
+.coverage.*
+coverage.xml
+*.cover
+*.py,cover
+htmlcov/
+.cache/
+
+# ---- 类型检查/静态分析 ----
+.mypy_cache/
+.pyre/
+.pytype/
+.pylint.d/
+.ruff_cache/
+
+# ---- 虚拟环境/本地环境 ----
+.env
+.env.*
+.venv
+venv/
+ENV/
+env/
+env.bak/
+venv.bak/
+.python-version
+
+# ---- 编辑器/IDE ----
+.vscode/
+.idea/
+
+# ---- 操作系统杂项 ----
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# ---- Jupyter ----
+.ipynb_checkpoints
+
+# ---- Sphinx 文档 ----
+_build/
+*/_build/
+docs/_build/
+doc/_build/
+.doctrees
+_autosummary/
+
+
