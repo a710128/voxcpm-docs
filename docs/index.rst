@@ -7,7 +7,14 @@ VoxCPM documentation
    :width: 70%
    :align: left
    :alt: VoxCPM
-   :figclass: only-light
+   :figclass: only-light voxcpm-logo-figure
+   :class: no-scaled-link
+
+.. figure:: _static/voxcpm_logo_dark.png
+   :width: 70%
+   :align: left
+   :alt: VoxCPM
+   :figclass: only-dark voxcpm-logo-figure
    :class: no-scaled-link
 
 .. image:: https://img.shields.io/badge/Project%20Page-GitHub-blue
@@ -65,7 +72,7 @@ VoxCPM is a realistic voice synthesis toolkit that brings authentic, expressive 
       
       +++
 
-      .. button-ref:: models/voxcpm1.5/quickstart
+      .. button-ref:: voxcpm1.5/quickstart
          :ref-type: doc
          :color: primary
          :outline:
@@ -82,7 +89,7 @@ VoxCPM is a realistic voice synthesis toolkit that brings authentic, expressive 
 
       +++
 
-      .. button-ref:: models/voxcpm/quickstart
+      .. button-ref:: voxcpm1/quickstart
          :ref-type: doc
          :color: primary
          :outline:
@@ -153,7 +160,7 @@ This project is developed by the following institutions:
 ⭐ Star History
 **********************
  
- .. image:: https://api.star-history.com/svg?repos=OpenBMB/VoxCPM&type=Date
+.. image:: https://api.star-history.com/svg?repos=OpenBMB/VoxCPM&type=Date
    :target: https://star-history.com/#OpenBMB/VoxCPM&Date
    :alt: Star History Chart
 
@@ -173,7 +180,16 @@ If you find our model helpful, please consider citing our projects 📝 and star
    }
 
 
+
+.. toctree::
+   :hidden:
+   
+   self
+
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
+   :caption: Models
+   :hidden:
+
+   voxcpm1/index
 
