@@ -58,7 +58,7 @@ The model weights will be downloaded automatically when you first run VoxCPM, or
 There are multiple ways to use VoxCPM, you can choose the one that suits you best.
 
 4.1 Code API
-********************
+^^^^^^^^^^^^^^^^^^^^
 
 VoxCPM provides a flexible code API for both streaming and non-streaming generation. Before using the code API, you need to initialize the model first:
 
@@ -117,7 +117,7 @@ The model weights would take about 2GB of disk space. After the model is loaded,
     print("saved: output_streaming.wav")
 
 4.2 CLI Usage
-********************
+^^^^^^^^^^^^^^^^^^^^
 
 VoxCPM also provides a CLI interface for generating speech from text. You can use the following command to generate speech from text:
 
@@ -168,7 +168,7 @@ VoxCPM also provides a CLI interface for generating speech from text. You can us
     python -m voxcpm.cli --help
 
 4.3 Web Demo
-********************
+^^^^^^^^^^^^^^^^^^^^
 
 You can start the UI interface by running `python app.py`, which allows you to perform Voice Cloning and Voice Creation.
 

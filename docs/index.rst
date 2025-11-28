@@ -142,6 +142,22 @@ We're excited to see the VoxCPM community growing! Here are some amazing project
 - **Usage Restrictions:** This model is released for research and development purposes. Commercial use is allowed, but we do not recommend its use in production or commercial applications without rigorous testing and safety evaluations. Please use VoxCPM responsibly.
 
 
+📄 License
+*******************
+
+VoxCPM is released under the `Apache License 2.0 <https://www.apache.org/licenses/LICENSE-2.0>`_.
+
+🙏 Acknowledgments
+*******************
+
+We extend our sincere gratitude to the following works and resources for their inspiration and contributions:
+
+- `DiTAR <https://arxiv.org/abs/2502.03930>`_ for the diffusion autoregressive backbone used in speech generation
+- `MiniCPM-4 <https://github.com/OpenBMB/MiniCPM>`_ for serving as the language model foundation
+- `CosyVoice <https://github.com/FunAudioLLM/CosyVoice>`_ for the implementation of Flow Matching-based LocDiT
+- `DAC <https://github.com/descriptinc/descript-audio-codec>`_ for providing the Audio VAE backbone
+
+
 🏠 Institutions
 *****************
 
