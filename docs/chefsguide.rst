@@ -44,3 +44,9 @@ You're ready to serve! But for master chefs who want to tweak the flavor, here a
 
 Happy creating! 🎉 Start with the default settings and tweak from there to suit your project. The kitchen is yours!
 
+What's Next?
+********************
+
+* Choose the model in :doc:`./models` that suits your needs.
+* Fine-tune the model in :doc:`./finetuning/finetune` to adapt it to your specific use case.
+* Deploy the model in :doc:`./deployment/nanovllm` for production use.

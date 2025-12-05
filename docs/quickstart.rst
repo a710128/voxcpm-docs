@@ -19,7 +19,7 @@ To use VoxCPM, you need to have the following dependencies:
     * - Python
       - 3.10 or higher
     * - Disk Space
-      - ~2GB for model weights
+      - several GBs for model weights (depends on the model you want to use)
 
 2. Installation
 ********************
@@ -46,7 +46,7 @@ The model weights will be downloaded automatically when you first run VoxCPM, or
 
 .. code-block:: sh
 
-    hf download openbmb/VoxCPM-0.5B
+    hf download openbmb/VoxCPM-0.5B # or other models you want to use
     modelscope download iic/speech_zipenhancer_ans_multiloss_16k_base # for speech prompt enhancement (optional)
     modelscope download iic/SenseVoiceSmall # for web demo (optional)
 
@@ -182,4 +182,7 @@ The web demo requires an additional model: SenseVoice-Small to perform speech pr
 What's Next?
 ********************
 
-Have a look at the :doc:`./chefsguide` for more advanced usage.
+* Have a look at the :doc:`./chefsguide` for more advanced usage.
+* Choose the model in :doc:`./models` that suits your needs.
+* Fine-tune the model in :doc:`./finetuning/finetune` to adapt it to your specific use case.
+* Deploy the model in :doc:`./deployment/nanovllm` for production use.

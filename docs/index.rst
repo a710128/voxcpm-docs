@@ -25,21 +25,10 @@ VoxCPM documentation
    :target: https://arxiv.org/abs/2509.24650
    :alt: Technical Report
 
-.. image:: https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-OpenBMB-yellow
-   :target: https://huggingface.co/openbmb/VoxCPM-0.5B
-   :alt: Hugging Face
-
-.. image:: https://img.shields.io/badge/ModelScope-OpenBMB-purple
-   :target: https://modelscope.cn/models/OpenBMB/VoxCPM-0.5B
-   :alt: ModelScope
-
 .. image:: https://img.shields.io/badge/Live%20PlayGround-Demo-orange
    :target: https://huggingface.co/spaces/OpenBMB/VoxCPM-Demo
    :alt: Live Playground
 
-.. image:: https://img.shields.io/badge/Audio%20Samples-Page-green
-   :target: https://openbmb.github.io/VoxCPM-demopage
-   :alt: Audio Samples
 
 
 VoxCPM is a realistic voice synthesis toolkit that brings authentic, expressive voices to your applications!
@@ -51,33 +40,47 @@ VoxCPM is a realistic voice synthesis toolkit that brings authentic, expressive 
 
 * **🎯 Context-Aware, Expressive Speech Generation** - VoxCPM comprehends text to infer and generate appropriate prosody, delivering speech with remarkable expressiveness and natural flow. It spontaneously adapts speaking style based on content, producing highly fitting vocal expression trained on a massive 1.8 million-hour bilingual corpus.
 * **🎭 True-to-Life Voice Cloning** - With only a short reference audio clip, VoxCPM performs accurate zero-shot voice cloning, capturing not only the speaker’s timbre but also fine-grained characteristics such as accent, emotional tone, rhythm, and pacing to create a faithful and natural replica.
-* **⚡ High-Efficiency Synthesis** - VoxCPM supports streaming synthesis with a Real-Time Factor (RTF) as low as 0.17 on a consumer-grade NVIDIA RTX 4090 GPU, making it possible for real-time applications.
+* **⚡ High-Efficiency Synthesis** - VoxCPM supports streaming synthesis with a Real-Time Factor (RTF) as low as 0.17 (based on VoxCPM-0.5B) on a consumer-grade NVIDIA RTX 4090 GPU, making it possible for real-time applications.
 
 ----
+
+.. _model-versions:
 
 📚 Model Versions
 *******************
 
 .. card-carousel:: 2
 
-   .. card:: VoxCPM 1.5
+   .. card:: VoxCPM 2
       :class-card: sd-text-muted sd-rounded-2
       :class-title: sd-fs-4
-
+      
       Under Development 🚧
       
-      * Better Stability
+      +++
+
+      .. button-ref:: model-versions
+         :ref-type: ref
+         :color: muted
+         :outline:
+         
+         Comming Soon
+
+   .. card:: VoxCPM 1.5
+      :class-card: sd-rounded-2
+      :class-title: sd-fs-4
+      
       * Faster Inference
       * Higher Quality (44.1kHz)
       
       +++
 
-      .. button-ref:: voxcpm1.5/quickstart
+      .. button-ref:: models/voxcpm1.5
          :ref-type: doc
          :color: primary
          :outline:
          
-         More Details →
+         Try Now →
 
    .. card:: VoxCPM 1.0
       :class-card: sd-rounded-2
@@ -89,7 +92,7 @@ VoxCPM is a realistic voice synthesis toolkit that brings authentic, expressive 
 
       +++
 
-      .. button-ref:: voxcpm1/quickstart
+      .. button-ref:: models/voxcpm1
          :ref-type: doc
          :color: primary
          :outline:
@@ -195,17 +198,38 @@ If you find our model helpful, please consider citing our projects 📝 and star
       year         = {2025},
    }
 
+What's Next?
+********************
+
+* Have a look at the :doc:`./quickstart` for a quick start.
 
 
 .. toctree::
    :hidden:
    
    self
+   quickstart
+   chefsguide
+   models
 
 .. toctree::
    :maxdepth: 2
    :caption: Models
    :hidden:
 
-   voxcpm1/index
+   models/voxcpm1
+   models/voxcpm1.5
 
+.. toctree::
+   :maxdepth: 2
+   :caption: Fine Tuning
+   :hidden:
+
+   finetuning/finetune
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Deployment
+   :hidden:
+
+   deployment/nanovllm
