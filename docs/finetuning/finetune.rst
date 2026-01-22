@@ -2,9 +2,6 @@
 VoxCPM Fine-tuning Guide
 ==============================
 
-.. warning::
-    This guide is under construction.
-
 This guide covers how to fine-tune VoxCPM models with two approaches: full fine-tuning and LoRA fine-tuning.
 
 ----
