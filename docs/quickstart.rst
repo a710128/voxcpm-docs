@@ -46,7 +46,7 @@ The model weights will be downloaded automatically when you first run VoxCPM, or
 
 .. code-block:: sh
 
-    hf download openbmb/VoxCPM-0.5B # or other models you want to use
+    hf download openbmb/VoxCPM1.5 # or other models you want to use
     modelscope download iic/speech_zipenhancer_ans_multiloss_16k_base # for speech prompt enhancement (optional)
     modelscope download iic/SenseVoiceSmall # for web demo (optional)
 
@@ -66,7 +66,7 @@ VoxCPM provides a flexible code API for both streaming and non-streaming generat
 
     from voxcpm import VoxCPM
     model = VoxCPM.from_pretrained(
-        "openbmb/VoxCPM-0.5B", # can be a local path or huggingface model id
+        "openbmb/VoxCPM1.5", # can be a local path or huggingface model id
         load_denoiser=True, # load the denoiser model, default is True, if you don't need it, set it to False. Denoiser is used to enhance the speech prompt.
         zipenhancer_model_id="iic/speech_zipenhancer_ans_multiloss_16k_base", # optional: model id for denoiser on modelscope, this is only used when load_denoiser is True.
         cache_dir=None, # Custom cache directory for the snapshot.
@@ -98,7 +98,7 @@ The model weights would take about 2GB of disk space. After the model is loaded,
         retry_badcase_max_times=3,  # maximum retrying times
         retry_badcase_ratio_threshold=6.0, # maximum length restriction for bad case detection (simple but effective), it could be adjusted for slow pace speech
     )
-    sf.write("output.wav", wav, 16000)
+    sf.write("output.wav", wav, model.tts_model.sample_rate)
     print("saved: output.wav")
 
 **Streaming**
@@ -113,7 +113,7 @@ The model weights would take about 2GB of disk space. After the model is loaded,
         chunks.append(chunk) # chunk is a numpy array of numpy.float32 of audio waveform, you can play it immediately in real-time.
     wav = np.concatenate(chunks)
 
-    sf.write("output_streaming.wav", wav, 16000)
+    sf.write("output_streaming.wav", wav, model.tts_model.sample_rate)
     print("saved: output_streaming.wav")
 
 4.2 CLI Usage
@@ -157,7 +157,7 @@ VoxCPM also provides a CLI interface for generating speech from text. You can us
     voxcpm --text "..." --output out.wav --model-path /path/to/VoxCPM_model_dir
     # Or from Hugging Face (auto download/cache)
     voxcpm --text "..." --output out.wav \
-    --hf-model-id openbmb/VoxCPM-0.5B --cache-dir ~/.cache/huggingface --local-files-only
+    --hf-model-id openbmb/VoxCPM1.5 --cache-dir ~/.cache/huggingface --local-files-only
 
     # 6) Denoiser control
     voxcpm --text "..." --output out.wav \
@@ -166,6 +166,22 @@ VoxCPM also provides a CLI interface for generating speech from text. You can us
     # 7) Help
     voxcpm --help
     python -m voxcpm.cli --help
+
+Local model directory layout
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+When you pass a local path (``VoxCPM.from_pretrained("/path/to/model_dir")`` or CLI ``--model-path``), the directory is expected to contain (at least) the following files:
+
+.. code-block:: text
+
+    /path/to/model_dir/
+    ├── config.json
+    ├── audiovae.pth
+    ├── model.safetensors        # preferred
+    ├── pytorch_model.bin        # optional fallback when safetensors is absent
+    ├── tokenizer.json
+    ├── tokenizer_config.json
+    └── special_tokens_map.json
 
 4.3 Web Demo
 ^^^^^^^^^^^^^^^^^^^^

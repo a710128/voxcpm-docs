@@ -229,9 +229,30 @@ LoRA training saves only LoRA parameters:
 
    checkpoints/finetune_lora/
    └── step_0002000/
-       ├── lora_weights.safetensors    # Only lora_A, lora_B parameters
-       ├── optimizer.pth
-       └── scheduler.pth
+        ├── lora_weights.safetensors    # Only lora_A, lora_B parameters
+        ├── lora_config.json            # Base model path + LoRAConfig (required by inference script)
+        ├── optimizer.pth
+        └── scheduler.pth
+
+During training, ``save_path/latest`` will also be updated to point to the most recent checkpoint directory. You can use it in place of a specific ``step_*/`` folder.
+
+.. code-block:: text
+
+   checkpoints/finetune_lora/
+   └── latest -> step_0002000/
+
+
+LoRA WebUI (Optional)
+---------------------
+
+VoxCPM also provides a web UI that wraps LoRA training + inference in one place:
+
+.. code-block:: bash
+
+   # Run from the VoxCPM code repository root
+   python lora_ft_webui.py
+
+The UI will generate a YAML config and call ``scripts/train_voxcpm_finetune.py`` under the hood.
 
 ----
 
@@ -264,13 +285,19 @@ With voice cloning:
 LoRA Inference
 --------------
 
-LoRA inference requires the training config (for LoRA structure) and LoRA checkpoint:
+LoRA inference requires a base model and a LoRA checkpoint directory. The script reads ``lora_config.json`` inside ``--lora_ckpt`` to get the base model path and LoRA structure (you can override the base model with ``--base_model``):
 
 .. code-block:: bash
 
    python scripts/test_voxcpm_lora_infer.py \
-       --config_path conf/voxcpm_v1.5/voxcpm_finetune_lora.yaml \
        --lora_ckpt /path/to/checkpoints/finetune_lora/step_0002000 \
+       --text "Hello, this is LoRA fine-tuned result." \
+       --output lora_output.wav
+
+   # (optional) override base model path
+   python scripts/test_voxcpm_lora_infer.py \
+       --lora_ckpt /path/to/checkpoints/finetune_lora/step_0002000 \
+       --base_model /path/to/VoxCPM1.5 \
        --text "Hello, this is LoRA fine-tuned result." \
        --output lora_output.wav
 
@@ -279,12 +306,13 @@ With voice cloning:
 .. code-block:: bash
 
    python scripts/test_voxcpm_lora_infer.py \
-       --config_path conf/voxcpm_v1.5/voxcpm_finetune_lora.yaml \
        --lora_ckpt /path/to/checkpoints/finetune_lora/step_0002000 \
        --text "This is voice cloning with LoRA." \
        --prompt_audio /path/to/reference.wav \
        --prompt_text "Reference audio transcript" \
        --output cloned_output.wav
+
+You can also point ``--lora_ckpt`` to ``/path/to/checkpoints/finetune_lora/latest``.
 
 ----
 

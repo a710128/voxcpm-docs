@@ -7,12 +7,15 @@ Welcome to the VoxCPM kitchen! Follow this recipe to cook up perfect generated s
 🥚 Step 1: Prepare Your Base Ingredients (Content)
 ********************************************************
 
-First, choose how you’d like to input your text:.
+First, choose how you’d like to input your text:
+
 
 1. Regular Text (Classic Mode)
     - ✅ Keep "Text Normalization" ON. Type naturally (e.g., "Hello, world! 123"). The system will automatically process numbers, abbreviations, and punctuation using WeTextProcessing library.
 2. Phoneme Input (Native Mode)
-    - ❌ Turn "Text Normalization" OFF. Enter phoneme text like ``{HH AH0 L OW1}`` (EN) or ``{ni3}{hao3}`` (ZH) for precise pronunciation control. In this mode, VoxCPM also supports native understanding of other complex non-normalized text—try it out!
+    - ❌ Turn "Text Normalization" OFF. VoxCPM skips WeTextProcessing and uses the model's native text understanding.
+    - Enter phoneme-like text such as ``{HH AH0 L OW1}`` (EN) or ``{ni3}{hao3}`` (ZH) for more pronunciation control.
+    - Phoneme Conversion: for Chinese, phonemes are represented via pinyin; for English, phonemes are represented via CMUDict-style symbols.
 
 🍳 Step 2: Choose Your Flavor Profile (Voice Style) 
 ********************************************************
@@ -21,8 +24,9 @@ This is the secret sauce that gives your audio its unique sound.
 
 1. Cooking with a Prompt Speech (Following a Famous Recipe)
     - A prompt speech provides the desired acoustic characteristics for VoxCPM. The speaker's timbre, speaking style, and even the background sounds and ambiance will be replicated.
-    - For a Clean, Studio-Quality Voice: 
-        - ✅ Enable "Prompt Speech Enhancement". This acts like a noise filter, removing background hiss and rumble to give you a pure, clean voice clone.
+    - For a Clean, Studio-Quality Voice:
+        - ✅ Enable "Prompt Speech Enhancement". This enhances the *prompt audio* (ZipEnhancer runs in a 16kHz pipeline) and VoxCPM will resample it back to the model sample rate for conditioning.
+        - The final generated audio sample rate follows the loaded VoxCPM model (e.g. VoxCPM1.5 is typically 44.1kHz), and is not forced to 16kHz.
 2. Cooking au Naturel (Letting the Model Improvise)
     - If no reference is provided, VoxCPM becomes a creative chef! It will infer a fitting speaking style based on the text itself, thanks to the text-smartness of its foundation model, MiniCPM-4.
     - Pro Tip: Challenge VoxCPM with any text—poetry, song lyrics, dramatic monologues—it may deliver some interesting results!

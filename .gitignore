@@ -1,5 +1,6 @@
 # ---- Python 通用 ----
 __pycache__/
+__pypackages__/
 *.py[cod]
 *$py.class
 *.so
@@ -48,6 +49,7 @@ htmlcov/
 # ---- 虚拟环境/本地环境 ----
 .env
 .env.*
+.envrc
 .venv
 venv/
 ENV/
@@ -55,6 +57,10 @@ env/
 env.bak/
 venv.bak/
 .python-version
+.direnv/
+
+# ---- uv ----
+uv.lock
 
 # ---- 编辑器/IDE ----
 .vscode/
@@ -76,5 +82,3 @@ docs/_build/
 doc/_build/
 .doctrees
 _autosummary/
-
-

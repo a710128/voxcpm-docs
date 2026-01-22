@@ -1,0 +1,14 @@
+[project]
+name = "voxcpm-docs"
+version = "0.0.0"
+description = "Sphinx documentation site for VoxCPM"
+requires-python = ">=3.10"
+dependencies = [
+  "furo",
+  "myst-parser",
+  "sphinx",
+  "sphinx-design",
+]
+
+[dependency-groups]
+dev = []
