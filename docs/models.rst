@@ -2,19 +2,26 @@
 ==============
 
 .. list-table::
-    :widths: 25 25 25
+    :widths: 20 20 20 20
     :header-rows: 1
     :align: center
 
     * - Model
       - Parameter Size
       - Sampling Rate
-    * - `VoxCPM 1.0 <./voxcpm1.rst>`_
-      - 600M
-      - 16kHz
+      - Languages
+    * - `VoxCPM 2 <./voxcpm2.rst>`_
+      - 2.3B
+      - 48kHz
+      - 30
     * - `VoxCPM 1.5 <./voxcpm1.5.rst>`_
       - 750M
       - 44.1kHz
+      - 2
+    * - `VoxCPM 1.0 <./voxcpm1.rst>`_
+      - 600M
+      - 16kHz
+      - 2
 
 What's Next?
 ********************
