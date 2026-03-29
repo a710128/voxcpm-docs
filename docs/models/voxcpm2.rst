@@ -22,7 +22,7 @@ VoxCPM 2
 
 .. important::
 
-   VoxCPM 2 is the current recommended version of the VoxCPM family for new deployments and new feature work.
+   VoxCPM 2 is the current recommended release for new deployments and new feature work.
 
 
 Overview

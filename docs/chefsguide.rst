@@ -1,5 +1,5 @@
-🎛️ Usage Guide & Best Practices
-================================
+Usage Guide & Best Practices
+============================
 
 This guide focuses on practical usage decisions: how to format text, how to use reference audio correctly, and how to tune generation quality without repeating the installation material from :doc:`./quickstart`.
 

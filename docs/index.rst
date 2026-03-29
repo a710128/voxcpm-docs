@@ -49,8 +49,8 @@ VoxCPM documentation
 
 ----
 
-🌟 Key Features
-******************
+Key Features
+************
 
 .. grid:: 1 1 3 3
    :gutter: 4
@@ -98,10 +98,10 @@ VoxCPM documentation
 
 .. _model-versions:
 
-📚 Current And Legacy Versions
-******************************
+Current And Legacy Versions
+***************************
 
-VoxCPM 2 is the recommended checkpoint for new projects. VoxCPM 1.5 and VoxCPM 1.0 remain available as legacy releases for compatibility, lighter deployment targets, and historical reference.
+VoxCPM 2 is the recommended release for new projects. VoxCPM 1.5 and VoxCPM 1.0 remain available as legacy releases for lighter deployments, compatibility, and historical reference.
 
 .. grid:: 1 1 3 3
    :gutter: 4
@@ -160,8 +160,8 @@ VoxCPM 2 is the recommended checkpoint for new projects. VoxCPM 1.5 and VoxCPM 1
 
 ----
 
-🤗 Community Projects
-***********************
+Community Projects
+******************
 
 We're excited to see the VoxCPM community growing. A few representative ecosystem projects:
 
@@ -183,8 +183,8 @@ See the sidebar ``Ecosystem`` section for full setup guides and more community i
 
 ----
 
-⚠️ Risks and Limitations
-***************************
+Risks and Limitations
+*********************
 
 - **General Model Behavior:** While VoxCPM has been trained on a large-scale dataset, it may still produce outputs that are unexpected, biased, or contain artifacts.
 - **Potential for Misuse of Voice Cloning:** VoxCPM's powerful zero-shot voice cloning capability can generate highly realistic synthetic speech. This technology could be misused for creating convincing deepfakes for purposes of impersonation, fraud, or spreading disinformation. Users of this model must not use it to create content that infringes upon the rights of individuals. It is strictly forbidden to use VoxCPM for any illegal or unethical purposes. We strongly recommend that any publicly shared content generated with this model be clearly marked as AI-generated.
@@ -196,15 +196,15 @@ See the sidebar ``Ecosystem`` section for full setup guides and more community i
 
 .. rst-class:: voxcpm-footer-section
 
-📄 License
-*******************
+License
+*******
 
 VoxCPM is released under the `Apache License 2.0 <https://www.apache.org/licenses/LICENSE-2.0>`_.
 
 .. rst-class:: voxcpm-footer-section
 
-🙏 Acknowledgments
-*******************
+Acknowledgments
+***************
 
 We extend our sincere gratitude to the following works and resources for their inspiration and contributions:
 
@@ -215,8 +215,8 @@ We extend our sincere gratitude to the following works and resources for their i
 
 .. rst-class:: voxcpm-footer-section
 
-🏠 Institutions
-*****************
+Institutions
+************
 
 This project is developed by the following institutions:
 
@@ -234,8 +234,8 @@ This project is developed by the following institutions:
 
 .. rst-class:: voxcpm-footer-section
 
-⭐ Star History
-**********************
+Star History
+************
 
 .. image:: https://api.star-history.com/svg?repos=OpenBMB/VoxCPM&type=Date
    :target: https://star-history.com/#OpenBMB/VoxCPM&Date
@@ -243,10 +243,10 @@ This project is developed by the following institutions:
 
 .. rst-class:: voxcpm-footer-section
 
-✒️ Citation
-*****************
+Citation
+********
 
-If you find our model helpful, please consider citing our projects 📝 and staring us ⭐️！
+If you find our model helpful, please consider citing our work and starring the repository.
 
 .. code-block:: bibtex
 

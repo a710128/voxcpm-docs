@@ -1,5 +1,5 @@
-❓ FAQ & Troubleshooting
-=========================
+FAQ & Troubleshooting
+=====================
 
 This page focuses on setup, runtime, deployment, and training problems reported by the VoxCPM community. For prompt strategy, cloning tips, and quality tuning, see :doc:`./chefsguide`.
 

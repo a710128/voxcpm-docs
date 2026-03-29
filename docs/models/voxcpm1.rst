@@ -21,7 +21,7 @@ VoxCPM 1.0
 
 .. note::
 
-   VoxCPM 1.0 is a legacy version kept for compatibility, baseline comparison, and historical reference.
+   VoxCPM 1.0 is a legacy baseline release kept for compatibility and historical reference.
 
 Overview
 ********

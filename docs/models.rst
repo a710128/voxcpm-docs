@@ -1,7 +1,7 @@
 .. orphan:
 
-🔎 Choose a Model
-=================
+Choose a Model
+==============
 
 This page is a quick decision guide for the current VoxCPM model family. If you already know which checkpoint you want, jump directly to the detailed model pages in the sidebar.
 

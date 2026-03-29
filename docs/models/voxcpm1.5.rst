@@ -7,7 +7,7 @@ VoxCPM 1.5
 
 .. note::
 
-   VoxCPM 1.5 is a legacy version. Use it when you need a lighter Chinese/English checkpoint or compatibility with an existing 1.x workflow.
+   VoxCPM 1.5 is a legacy release for lighter Chinese/English deployments and existing 1.x workflows.
 
 Overview
 ********
