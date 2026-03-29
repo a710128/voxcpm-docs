@@ -1,7 +1,7 @@
 ❓ FAQ & Troubleshooting
 =========================
 
-This page covers the most frequently asked questions from the VoxCPM community, based on real issues reported by users.
+This page focuses on setup, runtime, deployment, and training problems reported by the VoxCPM community. For prompt strategy, cloning tips, and quality tuning, see :doc:`./chefsguide`.
 
 ----
 
@@ -140,213 +140,11 @@ VoxCPM officially supports **Python 3.10–3.11**. Known issues:
 
 ----
 
-Voice Cloning
-****************
-
-prompt_text must match the reference audio
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. important::
-
-   When using voice cloning, the ``prompt_text`` parameter **must accurately match the spoken content** of the reference audio (`#77 <https://github.com/OpenBMB/VoxCPM/issues/77>`_, `#111 <https://github.com/OpenBMB/VoxCPM/issues/111>`_). Mismatched text is the most common cause of audio artifacts (extra sounds at the beginning, garbled output, or the reference audio being prepended to the generated speech).
-
-.. tip::
-
-   VoxCPM 2 introduces an **isolated reference channel** that separates the reference audio from the generation context. In this mode, you only need to provide the reference audio without a matching transcript. See :doc:`./models/voxcpm2` for details.
-
-**Best practice:** Use automatic speech recognition (ASR) to transcribe the reference audio rather than writing the text manually. The ``app.py`` web demo does this automatically via SenseVoice.
-
-.. code-block:: python
-
-   wav = model.generate(
-       text="Target text to synthesize.",
-       prompt_wav_path="reference.wav",
-       prompt_text="Exact transcription of reference.wav",  # Must match!
-   )
-
-
-Reference audio requirements
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-- **Duration:** 5–30 seconds is recommended (`#40 <https://github.com/OpenBMB/VoxCPM/issues/40>`_). Very short clips (<3s) may produce poor timbre; very long clips may slow inference without benefit.
-- **Format:** Any format supported by torchaudio (WAV, FLAC, MP3, etc., `#65 <https://github.com/OpenBMB/VoxCPM/issues/65>`_).
-- **Quality:** Clean audio with minimal background noise. Enable ``denoise=True`` to enhance the prompt audio automatically.
-- **Language:** VoxCPM 1.x supports Chinese and English prompts, with cross-lingual cloning (e.g., Chinese prompt → English output, `#65 <https://github.com/OpenBMB/VoxCPM/issues/65>`_). VoxCPM 2 supports 30 languages.
-
-
-No reference audio = random voice
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-If you don't provide a reference audio, VoxCPM generates speech with a **random voice** each time (`#79 <https://github.com/OpenBMB/VoxCPM/issues/79>`_, `#113 <https://github.com/OpenBMB/VoxCPM/issues/113>`_). The model infers a fitting speaking style from the text content, but the timbre will not be consistent across calls.
-
-To get a **consistent voice**, you have several options:
-
-1. **Use voice cloning** — always pass the same reference audio for every generation call.
-
-   - **VoxCPM 1.x:** Provide both ``prompt_wav_path`` and a matching ``prompt_text``.
-   - **VoxCPM 2 (isolated mode):** Only ``reference_wav_path`` is needed — no transcript required. See :doc:`./models/voxcpm2` for details.
-
-2. **LoRA fine-tuning** — for production use, fine-tune the model on a specific voice to guarantee consistency. See the :doc:`./finetuning/finetune` guide.
-
-
-----
-
-Audio Quality
-***************
-
-CFG value tuning
-^^^^^^^^^^^^^^^^^^
-
-The ``cfg_value`` parameter controls how closely the model follows the text conditioning:
-
-.. list-table::
-   :widths: 20 80
-   :header-rows: 1
-
-   * - Value
-     - Effect
-   * - **1.0–1.5**
-     - More relaxed, natural-sounding. May drift from text slightly.
-   * - **2.0** (default)
-     - Balanced quality. Good starting point.
-   * - **3.0+**
-     - Stricter adherence to text, but may introduce noise or artifacts, especially on long text.
-
-**Tip:** If you experience noise or buzzing in long-form generation, try lowering ``cfg_value`` to **1.5–1.6**, which users have reported as more stable (`#96 <https://github.com/OpenBMB/VoxCPM/issues/96>`_, `#61 <https://github.com/OpenBMB/VoxCPM/issues/61>`_).
-
-
-Long text handling
-^^^^^^^^^^^^^^^^^^^^
-
-VoxCPM generates speech autoregressively, and very long inputs can cause (`#96 <https://github.com/OpenBMB/VoxCPM/issues/96>`_, `#52 <https://github.com/OpenBMB/VoxCPM/issues/52>`_, `#34 <https://github.com/OpenBMB/VoxCPM/issues/34>`_):
-
-- Gradual speed-up and buzzing sounds
-- Out-of-memory errors (KV cache exhaustion)
-- Generation that never stops
-
-**Recommended approach:** Split long text into segments of **50–200 characters** (roughly one paragraph or a few sentences), generate each segment separately, and concatenate the audio.
-
-.. code-block:: python
-
-   import numpy as np
-
-   segments = ["First paragraph...", "Second paragraph...", "Third paragraph..."]
-   all_wavs = []
-   for seg in segments:
-       wav = model.generate(text=seg, prompt_wav_path="voice.wav", prompt_text="...")
-       all_wavs.append(wav)
-   full_wav = np.concatenate(all_wavs)
-
-
-Leading / trailing audio artifacts
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-**Extra sounds at the beginning:**
-(`#77 <https://github.com/OpenBMB/VoxCPM/issues/77>`_, `#111 <https://github.com/OpenBMB/VoxCPM/issues/111>`_)
-
-- Usually caused by mismatched ``prompt_text``. Ensure it exactly matches the reference audio content (see above).
-- Adding a brief silence padding (~0.1s) before the text can sometimes help.
-
-**Noise or silence at the end:**
-(`#94 <https://github.com/OpenBMB/VoxCPM/issues/94>`_, `#127 <https://github.com/OpenBMB/VoxCPM/issues/127>`_, `#132 <https://github.com/OpenBMB/VoxCPM/issues/132>`_)
-
-- Enable ``retry_badcase=True`` to automatically retry when the model generates abnormally long output.
-- Post-process with silence trimming (`#132 <https://github.com/OpenBMB/VoxCPM/issues/132>`_):
-
-  .. code-block:: python
-
-     import librosa
-     wav_trimmed, _ = librosa.effects.trim(wav)
-
-- Lowering ``cfg_value`` can reduce tail noise.
-
-
-denoise parameter
-^^^^^^^^^^^^^^^^^^^
-
-The ``denoise`` parameter controls whether **prompt audio** (not the output) is enhanced using ZipEnhancer:
-
-- ``denoise=True``: Enhances the reference audio quality before voice cloning. Recommended when the reference has background noise.
-- ``denoise=False``: Uses the reference audio as-is. Use this when your reference audio is already clean.
-
-.. warning::
-
-   The denoiser operates at 16kHz internally and may slightly alter the voice characteristics. If the generated voice sounds unnatural, try setting ``denoise=False`` (`#51 <https://github.com/OpenBMB/VoxCPM/issues/51>`_).
-
-
-Short text issues
-^^^^^^^^^^^^^^^^^^^
-
-Very short inputs (e.g., "Hello", "好的") may produce poor results because the model was trained with a minimum audio length of ~1 second (`#92 <https://github.com/OpenBMB/VoxCPM/issues/92>`_, `#40 <https://github.com/OpenBMB/VoxCPM/issues/40>`_). For best results, inputs should produce at least 3 seconds of audio.
-
-
-----
-
-Text & Pronunciation
-***********************
-
-Text normalization (numbers, dates, amounts)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-**Problem:** Numbers like "5640" are read digit-by-digit ("五六四零") instead of as a number ("五千六百四十") (`#30 <https://github.com/OpenBMB/VoxCPM/issues/30>`_, `#51 <https://github.com/OpenBMB/VoxCPM/issues/51>`_, `#164 <https://github.com/OpenBMB/VoxCPM/issues/164>`_).
-
-**Solution:** Enable text normalization:
-
-.. code-block:: python
-
-   wav = model.generate(
-       text="总建筑面积为5640平方米",
-       normalize=True,  # Enables WeTextProcessing for number/date conversion
-   )
-
-When ``normalize=True``, VoxCPM uses the WeTextProcessing library to convert numbers, dates, and special formats into spoken-form text.
-
-.. note::
-
-   Text normalization may not handle all edge cases perfectly (e.g., model names like "麒麟9400" should be read digit-by-digit). For critical applications, consider pre-processing the text manually.
-
-
-Phoneme input for pronunciation control
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-For fine-grained pronunciation control, use phoneme input with text normalization **disabled** (`#45 <https://github.com/OpenBMB/VoxCPM/issues/45>`_, `#57 <https://github.com/OpenBMB/VoxCPM/issues/57>`_):
-
-.. code-block:: python
-
-   wav = model.generate(
-       text="{ni3}{hao3}{shi4}{jie4}",   # Chinese pinyin
-       normalize=False,  # Must be disabled for phoneme input
-   )
-
-- **Chinese:** Use pinyin with tone numbers, e.g., ``{ni3}{hao3}``
-- **English:** Use CMUDict-style phonemes, e.g., ``{HH AH0 L OW1}``
-
-See the :doc:`./chefsguide` for more details on phoneme input.
-
-
-Punctuation and pauses
-^^^^^^^^^^^^^^^^^^^^^^^^
-
-VoxCPM uses punctuation as cues for prosody and pauses (`#29 <https://github.com/OpenBMB/VoxCPM/issues/29>`_):
-
-- **Periods (。/.)** and **question marks (？/?)**: Generate clear sentence-ending pauses.
-- **Commas (，/,)**: Generate shorter pauses, though the effect may be subtle.
-- **Ellipsis (……/...)**: Can produce hesitation or trailing effects.
-
-For more pronounced pauses, consider splitting the text into separate sentences at the desired break points.
-
-.. tip::
-
-   VoxCPM 2 has improved prosody and pause control, making punctuation-driven pauses more natural and responsive compared to VoxCPM 1.x.
-
-
-----
-
 Performance & Deployment
 **************************
 
-VRAM usage reference  (还需要进一步测试)
-^^^^^^^^^^^^^^^^^^^^^
+VRAM usage reference (still being validated)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. list-table::
    :widths: 40 30 30
@@ -407,38 +205,10 @@ For high-throughput deployment, use `NanoVLLM-VoxCPM <https://github.com/a710128
 Fine-Tuning
 *************
 
-Dataset requirements
-^^^^^^^^^^^^^^^^^^^^^^
+Can I fine-tune for a new language?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. list-table::
-   :widths: 25 75
-   :header-rows: 1
-
-   * - Requirement
-     - Details
-   * - **Audio format**
-     - WAV or FLAC. Any sample rate (automatically resampled to model's target rate during training, `#181 <https://github.com/OpenBMB/VoxCPM/issues/181>`_).
-   * - **Transcription**
-     - Accurate text transcription for each audio file.
-   * - **Duration per clip**
-     - 3–30 seconds recommended. Clips shorter than 1 second are typically filtered out.
-   * - **Total data**
-     - LoRA: as few as 50–100 clips for a single voice. Full SFT for a new language: 100+ hours recommended.
-   * - **Quality**
-     - Clean audio with minimal background noise produces best results.
-
-
-New language fine-tuning
-^^^^^^^^^^^^^^^^^^^^^^^^^
-
-VoxCPM 1.x is pre-trained on Chinese and English. To add a new language:
-
-1. **Start with LoRA** (lower risk, less data needed) before attempting full-parameter fine-tuning (`#47 <https://github.com/OpenBMB/VoxCPM/issues/47>`_, `#114 <https://github.com/OpenBMB/VoxCPM/issues/114>`_).
-2. **Mix in Chinese/English data** (~10–20%) to prevent catastrophic forgetting of the base language capabilities (`#178 <https://github.com/OpenBMB/VoxCPM/issues/178>`_).
-3. **Use a low learning rate**: ``1e-5`` for full fine-tuning, ``1e-4`` for LoRA (`#169 <https://github.com/OpenBMB/VoxCPM/issues/169>`_).
-4. **Monitor for "runaway generation"** — if the model stops conditioning on input text, your learning rate may be too high (`#169 <https://github.com/OpenBMB/VoxCPM/issues/169>`_, `#195 <https://github.com/OpenBMB/VoxCPM/issues/195>`_). See the training tips below.
-
-Refer to the :doc:`./finetuning/finetune` guide for step-by-step instructions.
+Yes. Community reports suggest starting with LoRA before full fine-tuning, mixing some Chinese/English data to reduce forgetting, and using conservative learning rates. For the full workflow, see :doc:`./finetuning/finetune`.
 
 
 Common training issues
@@ -465,74 +235,6 @@ This typically means the model has overfit to reproducing training audio without
 (`#187 <https://github.com/OpenBMB/VoxCPM/issues/187>`_)
 
 This is a known bug in multi-GPU training. Ensure you're using the latest version of the training scripts.
-
-
-----
-
-Multilingual Support
-**********************
-
-Supported languages
-^^^^^^^^^^^^^^^^^^^^^
-
-.. list-table::
-   :widths: 30 70
-   :header-rows: 1
-
-   * - Model
-     - Languages
-   * - VoxCPM 1.0 / 1.5
-     - Chinese, English
-   * - VoxCPM 2
-     - 30 languages including Chinese, English, Japanese, Korean, French, German, Spanish, Arabic, Hindi, and more
-
-For VoxCPM 1.x, cross-lingual voice cloning is supported (e.g., Chinese reference → English output, `#65 <https://github.com/OpenBMB/VoxCPM/issues/65>`_, `#66 <https://github.com/OpenBMB/VoxCPM/issues/66>`_).
-
-
-Adding a new language (VoxCPM 1.x)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-If your target language is not supported, you can fine-tune VoxCPM on your own data:
-
-1. Prepare a dataset of audio + transcription pairs in the target language.
-2. Follow the fine-tuning guide with either LoRA or full SFT.
-3. Mix ~10–20% Chinese/English data to preserve base capabilities.
-4. Community members have successfully fine-tuned for Japanese, Korean, Thai, Latvian, and Arabic — see `issue #114 <https://github.com/OpenBMB/VoxCPM/issues/114>`_ for tips.
-
-
-----
-
-Streaming
-***********
-
-How to use streaming output
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-VoxCPM supports streaming audio generation (`#8 <https://github.com/OpenBMB/VoxCPM/issues/8>`_, `#21 <https://github.com/OpenBMB/VoxCPM/issues/21>`_, `#64 <https://github.com/OpenBMB/VoxCPM/issues/64>`_), allowing you to play audio chunks in real-time as they are produced:
-
-.. code-block:: python
-
-   for chunk in model.generate_streaming(
-       text="Streaming text to speech is easy with VoxCPM!",
-       prompt_wav_path="voice.wav",
-       prompt_text="Reference transcript",
-   ):
-       # chunk is a numpy array — play it immediately or buffer it
-       play_audio(chunk)
-
-Each chunk is a segment of the audio waveform. The streaming API accepts all the same parameters as the non-streaming ``generate()`` method.
-
-
-Sentence-level streaming
-^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-VoxCPM does not support word-level streaming input (generating audio as text is being typed, `#39 <https://github.com/OpenBMB/VoxCPM/issues/39>`_, `#179 <https://github.com/OpenBMB/VoxCPM/issues/179>`_). However, you can implement sentence-level streaming by:
-
-1. Splitting incoming text into sentences as they arrive.
-2. Calling ``generate_streaming()`` for each sentence.
-3. Playing audio chunks from each sentence sequentially.
-
-Bidirectional streaming (streaming text input + streaming audio output) is not supported (`#179 <https://github.com/OpenBMB/VoxCPM/issues/179>`_).
 
 ----
 

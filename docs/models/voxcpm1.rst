@@ -1,5 +1,5 @@
 VoxCPM 1.0
-===========
+==========
 
 
 .. image:: https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-OpenBMB-yellow
@@ -19,13 +19,15 @@ VoxCPM 1.0
 * **Parameter Size:** 600M
 * **Sampling Rate:** 16kHz
 
+Overview
+********
 
 VoxCPM is a novel tokenizer-free Text-to-Speech (TTS) system that redefines realism in speech synthesis. By modeling speech in a continuous space, it overcomes the limitations of discrete tokenization and enables two flagship capabilities: context-aware speech generation and true-to-life zero-shot voice cloning.
 
-Unlike mainstream approaches that convert speech to discrete tokens, VoxCPM uses an end-to-end diffusion autoregressive architecture that directly generates continuous speech representations from text. Built on MiniCPM-4 backbone, it achieves implicit semantic-acoustic decoupling through hierachical language modeling and FSQ constraints, greatly enhancing both expressiveness and generation stability.
+Unlike mainstream approaches that convert speech to discrete tokens, VoxCPM uses an end-to-end diffusion autoregressive architecture that directly generates continuous speech representations from text. Built on MiniCPM-4 backbone, it achieves implicit semantic-acoustic decoupling through hierarchical language modeling and FSQ constraints, greatly enhancing both expressiveness and generation stability.
 
-🔧 Architecture
-*****************
+Architecture
+************
 
 .. figure:: /_static/voxcpm1/voxcpm_model.png
     :width: 100%
@@ -33,26 +35,15 @@ Unlike mainstream approaches that convert speech to discrete tokens, VoxCPM uses
     :alt: VoxCPM 1.0 Architecture
     :class: no-scaled-link
 
+Getting Started
+***************
 
-🚀 Basic Usage
-*****************
-.. code-block:: python
+For installation, loading, and the generic ``generate()`` workflow, start with :doc:`../quickstart`.
 
-   from voxcpm import VoxCPM
-   import soundfile as sf
-   # Load VoxCPM model
-   model = VoxCPM.from_pretrained("openbmb/VoxCPM-0.5B")
-   # Generate speech
-   wav = model.generate(
-      text="VoxCPM is an innovative end-to-end TTS model from ModelBest, designed to generate highly expressive speech.",
-      cfg_value=1.5,
-      inference_timesteps=10,
-   )
-   sf.write("output.wav", wav, 16000)
-   print("saved: output.wav")
+Use this checkpoint when you specifically want the original 0.5B VoxCPM release with 16kHz output.
 
-📊 Benchmark
-****************
+Benchmarks
+**********
 
 VoxCPM achieves competitive results on public zero-shot TTS benchmarks:
 

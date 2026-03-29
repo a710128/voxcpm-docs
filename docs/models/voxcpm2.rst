@@ -1,5 +1,5 @@
 VoxCPM 2
-===========
+========
 
 
 .. image:: https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-OpenBMB-yellow
@@ -21,14 +21,14 @@ VoxCPM 2
 * **Languages:** 30 languages
 
 
-🎉 Overview
-*****************
+Overview
+********
 
 VoxCPM 2 is a major evolution of the VoxCPM family, bringing substantial improvements across architecture, audio quality, language coverage, and controllability. While preserving the core tokenizer-free philosophy and diffusion autoregressive framework, VoxCPM 2 introduces a redesigned information fusion pipeline, a next-generation AudioVAE with native 48kHz output, support for 30 languages, and new controllable generation capabilities including **Voice Design** and **Style Control**.
 
 
-✨ What's New
-*****************
+What's New
+**********
 
 .. grid:: 1 1 2 2
    :gutter: 4
@@ -86,8 +86,8 @@ VoxCPM 2 is a major evolution of the VoxCPM family, bringing substantial improve
       Concat-Projection fusion and multi-token DiT conditioning replace additive shortcuts, preserving richer information flow throughout the pipeline.
 
 
-🌐 Language Support
-*********************
+Language Support
+****************
 
 VoxCPM 2 supports **30 languages** spanning diverse language families. Building on the original 1.8 million-hour Chinese and English corpus, we added 560,000 hours of multilingual data to enable high-quality synthesis across:
 
@@ -115,8 +115,8 @@ VoxCPM 2 supports **30 languages** spanning diverse language families. Building 
      - Swahili
 
 
-🔧 Architecture
-*****************
+Architecture
+************
 
 VoxCPM 2 retains the four-stage pipeline of VoxCPM — **Local Encoder → Text-Semantic LM → Residual Acoustic LM → Local DiT (CFM)** — while redesigning three core information pathways for better capacity and expressiveness.
 
@@ -214,13 +214,13 @@ The AudioVAE has been completely redesigned:
 * **Sample-rate conditioning**: A new ``SampleRateConditionLayer`` injects scale-bias modulation at each decoder block, allowing the same model to decode at different target sample rates
 
 
-🎨 Controllable Generation
-****************************
+Controllable Generation
+***********************
 
 VoxCPM 2 introduces two new controllable generation features. Both use a simple convention: place control instructions inside parentheses ``()`` before the target text.
 
-🖌️ Voice Design
-^^^^^^^^^^^^^^^^^^^
+Voice Design
+^^^^^^^^^^^^
 
 Create a voice from a natural language description **without any reference audio**. Simply describe the desired voice characteristics in parentheses:
 
@@ -244,8 +244,8 @@ Create a voice from a natural language description **without any reference audio
    Voice Design works best with descriptive attributes such as age, gender, pitch, speaking pace, emotional tone, and vocal texture. Be as specific as you like — the model interprets natural language descriptions.
 
 
-🎭 Style Control
-^^^^^^^^^^^^^^^^^^^
+Style Control
+^^^^^^^^^^^^^
 
 Control the speaking style while using a reference audio for voice cloning. Pass control tags in parentheses alongside the reference audio:
 
@@ -270,28 +270,13 @@ Control the speaking style while using a reference audio for voice cloning. Pass
    In Style Control mode, the reference audio determines **who** speaks (timbre), while the text tag in parentheses controls **how** they speak (style, emotion, pace, etc.).
 
 
-🚀 Basic Usage
-*****************
+Usage Examples
+**************
 
-.. code-block:: python
+For installation and the shared ``generate()`` API, start with :doc:`../quickstart`. The examples below focus on VoxCPM 2 specific capabilities.
 
-   from voxcpm import VoxCPM
-   import soundfile as sf
-
-   # Load VoxCPM 2 model
-   model = VoxCPM.from_pretrained("openbmb/VoxCPM2")
-
-   # Basic text-to-speech
-   wav = model.generate(
-      text="VoxCPM 2 brings multilingual support, voice design, and studio-quality audio to the next level.",
-      cfg_value=2.0,
-      inference_timesteps=10,
-   )
-   sf.write("output.wav", wav, 48000)
-   print("saved: output.wav")
-
-Zero-shot Voice Cloning
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+Reference-Only Voice Cloning
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: python
 
@@ -304,7 +289,7 @@ Zero-shot Voice Cloning
    sf.write("cloned.wav", wav, 48000)
 
 Multilingual Generation
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: python
 
@@ -325,8 +310,8 @@ Multilingual Generation
    sf.write("french.wav", wav, 48000)
 
 
-🔄 Migration Guide
-*********************
+Migration Guide
+***************
 
 From VoxCPM 1.5 to VoxCPM 2
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -336,8 +321,8 @@ From VoxCPM 1.5 to VoxCPM 2
 3. **Voice Cloning API**: Use the new ``reference_wav_path`` parameter for isolated voice cloning (``prompt_wav_path`` still works for continuation mode)
 4. **Controllable Features**: Explore Voice Design and Style Control by adding text tags in parentheses
 
-✅ Backward Compatibility
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Backward Compatibility
+^^^^^^^^^^^^^^^^^^^^^^
 
 * VoxCPM 1.0 and 1.5 models and configurations remain fully supported
 * Code automatically detects model architecture (``voxcpm`` vs ``voxcpm2``) from ``config.json``

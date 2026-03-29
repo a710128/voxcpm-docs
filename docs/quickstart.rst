@@ -1,8 +1,8 @@
-🚀 Quick Start
-=================
+Quick Start
+===========
 
-1. Requirements
-********************
+Requirements
+************
 
 To use VoxCPM, you need to have the following dependencies:
 
@@ -21,8 +21,8 @@ To use VoxCPM, you need to have the following dependencies:
     * - Disk Space
       - several GBs for model weights (depends on the model you want to use)
 
-2. Installation
-********************
+Installation
+************
 
 VoxCPM is available on PyPI, you can install it using the following command:
 
@@ -39,8 +39,8 @@ or install from source:
     pip install -e .
 
 
-3. Model Download (Optional)
-*******************************
+Download Models (Optional)
+**************************
 
 The model weights will be downloaded automatically when you first run VoxCPM, or you can download them manually using the following command:
 
@@ -52,31 +52,30 @@ The model weights will be downloaded automatically when you first run VoxCPM, or
 
 
 
-4. Basic Usage
-********************
+Run Your First Generation
+*************************
 
 There are multiple ways to use VoxCPM, you can choose the one that suits you best.
 
-4.1 Code API
-^^^^^^^^^^^^^^^^^^^^
+Python API
+^^^^^^^^^^
 
-VoxCPM provides a flexible code API for both streaming and non-streaming generation. Before using the code API, you need to initialize the model first:
+VoxCPM provides a flexible Python API for both streaming and non-streaming generation. Start by loading a checkpoint:
 
 .. code-block:: python
 
     from voxcpm import VoxCPM
     model = VoxCPM.from_pretrained(
-        "openbmb/VoxCPM1.5", # can be a local path or huggingface model id
-        load_denoiser=True, # load the denoiser model, default is True, if you don't need it, set it to False. Denoiser is used to enhance the speech prompt.
-        zipenhancer_model_id="iic/speech_zipenhancer_ans_multiloss_16k_base", # optional: model id for denoiser on modelscope, this is only used when load_denoiser is True.
-        cache_dir=None, # Custom cache directory for the snapshot.
-        local_files_only=False, # If True, only use local files and do not attempt to download.
+        "openbmb/VoxCPM1.5",
+        load_denoiser=True,
+        zipenhancer_model_id="iic/speech_zipenhancer_ans_multiloss_16k_base",
+        cache_dir=None,
+        local_files_only=False,
     )
 
-This will load the model weights from the checkpoint file and initialize the model. When the first time you run this code, it will download the model weights from the huggingface model hub.
-If you have problem with internet connection, you can use a huggingface mirror to download the model weights. (e.g. https://hf-mirror.com)
+The first run downloads model weights automatically. If you have trouble accessing Hugging Face directly, you can use a mirror such as ``https://hf-mirror.com``.
 
-The model weights would take about 2GB of disk space. After the model is loaded, you can use it to generate speech using the following code:
+After the model is loaded, you can generate speech:
 
 **Non-streaming**
 
@@ -85,18 +84,17 @@ The model weights would take about 2GB of disk space. After the model is loaded,
     import soundfile as sf
     import numpy as np
 
-    # Non-streaming
     wav = model.generate(
         text="VoxCPM is an innovative end-to-end TTS model from ModelBest, designed to generate highly expressive speech.",
-        prompt_wav_path=None,      # optional: path to a prompt speech for voice cloning
-        prompt_text=None,          # optional: reference text
-        cfg_value=2.0,             # LM guidance on LocDiT, higher for better adherence to the prompt, but maybe worse
-        inference_timesteps=10,   # LocDiT inference timesteps, higher for better result, lower for fast speed
-        normalize=True,           # enable external TN tool
-        denoise=True,             # enable external Denoise tool
-        retry_badcase=True,        # enable retrying mode for some bad cases (unstoppable)
-        retry_badcase_max_times=3,  # maximum retrying times
-        retry_badcase_ratio_threshold=6.0, # maximum length restriction for bad case detection (simple but effective), it could be adjusted for slow pace speech
+        prompt_wav_path=None,
+        prompt_text=None,
+        cfg_value=2.0,
+        inference_timesteps=10,
+        normalize=True,
+        denoise=True,
+        retry_badcase=True,
+        retry_badcase_max_times=3,
+        retry_badcase_ratio_threshold=6.0,
     )
     sf.write("output.wav", wav, model.tts_model.sample_rate)
     print("saved: output.wav")
@@ -107,17 +105,20 @@ The model weights would take about 2GB of disk space. After the model is loaded,
 
     chunks = []
     for chunk in model.generate_streaming(
-        text = "Streaming text to speech is easy with VoxCPM!",
-        # supports same args as above
+        text="Streaming text to speech is easy with VoxCPM!",
     ):
-        chunks.append(chunk) # chunk is a numpy array of numpy.float32 of audio waveform, you can play it immediately in real-time.
+        chunks.append(chunk)
     wav = np.concatenate(chunks)
 
     sf.write("output_streaming.wav", wav, model.tts_model.sample_rate)
     print("saved: output_streaming.wav")
 
-4.2 CLI Usage
-^^^^^^^^^^^^^^^^^^^^
+.. note::
+
+   If you want multilingual generation, Voice Design, or Style Control, choose :doc:`./models/voxcpm2` instead of a 1.x checkpoint.
+
+CLI
+^^^
 
 VoxCPM also provides a CLI interface for generating speech from text. You can use the following command to generate speech from text:
 
@@ -133,7 +134,7 @@ VoxCPM also provides a CLI interface for generating speech from text. You can us
     --output out.wav \
     --denoise
 
-    # (Optinal) Voice cloning (reference audio + transcript file)
+    # (Optional) Voice cloning (reference audio + transcript file)
     voxcpm --text "VoxCPM is an innovative end-to-end TTS model from ModelBest, designed to generate highly expressive speech." \
     --prompt-audio path/to/voice.wav \
     --prompt-file "/path/to/text-file" \
@@ -183,8 +184,8 @@ When you pass a local path (``VoxCPM.from_pretrained("/path/to/model_dir")`` or 
     ├── tokenizer_config.json
     └── special_tokens_map.json
 
-4.3 Web Demo
-^^^^^^^^^^^^^^^^^^^^
+Web Demo
+^^^^^^^^
 
 You can start the UI interface by running `python app.py`, which allows you to perform Voice Cloning and Voice Creation.
 
@@ -192,13 +193,13 @@ You can start the UI interface by running `python app.py`, which allows you to p
 
     python app.py
 
-The web demo requires an additional model: SenseVoice-Small to perform speech prompt ASR. When the first time you run this command, it will download the model weights from the modelscope model hub.
+The web demo requires an additional ASR model, SenseVoice-Small, for prompt audio transcription. It will be downloaded automatically on first use.
 
 
 What's Next?
-********************
+************
 
 * Have a look at the :doc:`./chefsguide` for more advanced usage.
-* Choose the model in :doc:`./models` that suits your needs.
+* Open the model pages in the sidebar if you need version-specific features, examples, or migration notes.
 * Fine-tune the model in :doc:`./finetuning/finetune` to adapt it to your specific use case.
 * Deploy the model in :doc:`./deployment/nanovllm` for production use.

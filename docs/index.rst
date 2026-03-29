@@ -158,35 +158,15 @@ VoxCPM documentation
 🤗 Community Projects
 ***********************
 
-We're excited to see the VoxCPM community growing! Here are some amazing projects and features built by our community:
+We're excited to see the VoxCPM community growing. A few representative ecosystem projects:
 
+- `NanoVLLM-VoxCPM <https://github.com/a710128/nanovllm-voxcpm>`_ for high-throughput GPU serving
+- `VoxCPM.cpp <https://github.com/bluryar/VoxCPM.cpp>`_ for ggml / GGUF based CPU, CUDA, and Vulkan inference
+- `VoxCPMANE <https://github.com/0seba/VoxCPMANE>`_ for Apple Neural Engine deployment
+- `ComfyUI-VoxCPM <https://github.com/wildminder/ComfyUI-VoxCPM>`_ for node-based workflows and LoRA training
+- `TTS WebUI Extension <https://github.com/rsxdalv/tts_webui_extension.vox_cpm>`_ for browser-based usage
 
-.. list-table::
-   :widths: 25 75
-   :header-rows: 1
-
-   * - Project
-     - Description
-   * - `ComfyUI-VoxCPM <https://github.com/wildminder/ComfyUI-VoxCPM>`_
-     - A VoxCPM extension for ComfyUI.
-   * - `ComfyUI-VoxCPMTTS <https://github.com/1038lab/ComfyUI-VoxCPMTTS>`_
-     - A VoxCPM extension for ComfyUI.
-   * - `WebUI-VoxCPM <https://github.com/rsxdalv/tts_webui_extension.vox_cpm>`_
-     - A template extension for TTS WebUI.
-   * - `Streaming API Support (by AbrahamSanders) <https://github.com/OpenBMB/VoxCPM/pull/26>`_
-     - The pull request that adds streaming API support to VoxCPM.
-   * - `VoxCPM-NanoVLLM <https://github.com/a710128/nanovllm-voxcpm>`_
-     - NanoVLLM integration for VoxCPM for faster, high-throughput inference on GPU.
-   * - `VoxCPM-ONNX <https://github.com/bluryar/VoxCPM-ONNX>`_
-     - ONNX export for VoxCPM supports faster CPU inference.
-   * - `VoxCPMANE <https://github.com/0seba/VoxCPMANE>`_
-     - VoxCPM TTS with Apple Neural Engine backend server.
-   * - `VoxCPM.cpp <https://github.com/bluryar/VoxCPM.cpp>`_
-     - C++ inference engine based on ggml with GGUF quantization, supporting CPU/CUDA/Vulkan.
-   * - `VoxCPM-RKNN2 <https://huggingface.co/happyme531/VoxCPM-0.5B-RKNN2>`_
-     - Rockchip RK3588 NPU deployment for edge devices.
-   * - `voxcpm_rs <https://github.com/madushan1000/voxcpm_rs>`_
-     - Rust reimplementation of VoxCPM-0.5B using the burn framework.
+See the sidebar ``Ecosystem`` section for full setup guides and more community integrations.
 
 .. tip::
 
@@ -274,18 +254,19 @@ If you find our model helpful, please consider citing our projects 📝 and star
 
 
 .. toctree::
-   :hidden:
-
-   self
-   models
-
-.. toctree::
    :maxdepth: 2
    :caption: Getting Started
    :hidden:
 
    quickstart
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Usage Guide
+   :hidden:
+
    chefsguide
+   faq
 
 .. toctree::
    :maxdepth: 2
@@ -298,15 +279,14 @@ If you find our model helpful, please consider citing our projects 📝 and star
 
 .. toctree::
    :maxdepth: 2
-   :caption: Guides
+   :caption: Training
    :hidden:
 
    finetuning/finetune
-   faq
 
 .. toctree::
    :maxdepth: 2
-   :caption: Community & Deployment
+   :caption: Ecosystem
    :hidden:
 
    deployment/nanovllm
