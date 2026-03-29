@@ -181,6 +181,12 @@ We're excited to see the VoxCPM community growing! Here are some amazing project
      - ONNX export for VoxCPM supports faster CPU inference.
    * - `VoxCPMANE <https://github.com/0seba/VoxCPMANE>`_
      - VoxCPM TTS with Apple Neural Engine backend server.
+   * - `VoxCPM.cpp <https://github.com/bluryar/VoxCPM.cpp>`_
+     - C++ inference engine based on ggml with GGUF quantization, supporting CPU/CUDA/Vulkan.
+   * - `VoxCPM-RKNN2 <https://huggingface.co/happyme531/VoxCPM-0.5B-RKNN2>`_
+     - Rockchip RK3588 NPU deployment for edge devices.
+   * - `voxcpm_rs <https://github.com/madushan1000/voxcpm_rs>`_
+     - Rust reimplementation of VoxCPM-0.5B using the burn framework.
 
 .. tip::
 
@@ -269,11 +275,17 @@ If you find our model helpful, please consider citing our projects 📝 and star
 
 .. toctree::
    :hidden:
-   
+
    self
+   models
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Getting Started
+   :hidden:
+
    quickstart
    chefsguide
-   models
 
 .. toctree::
    :maxdepth: 2
@@ -286,21 +298,23 @@ If you find our model helpful, please consider citing our projects 📝 and star
 
 .. toctree::
    :maxdepth: 2
-   :caption: Fine Tuning
+   :caption: Guides
    :hidden:
 
    finetuning/finetune
+   faq
 
 .. toctree::
    :maxdepth: 2
-   :caption: Deployment
+   :caption: Community & Deployment
    :hidden:
 
    deployment/nanovllm
-
-.. toctree::
-   :maxdepth: 2
-   :caption: Support
-   :hidden:
-
-   faq
+   deployment/voxcpm_cpp
+   deployment/onnx
+   deployment/ane
+   deployment/rknn
+   deployment/voxcpm_rs
+   integrations/comfyui_voxcpm
+   integrations/comfyui_voxcpmtts
+   integrations/tts_webui
