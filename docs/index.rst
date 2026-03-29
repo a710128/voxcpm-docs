@@ -98,8 +98,10 @@ VoxCPM documentation
 
 .. _model-versions:
 
-📚 Model Versions
-*******************
+📚 Current And Legacy Versions
+******************************
+
+VoxCPM 2 is the recommended checkpoint for new projects. VoxCPM 1.5 and VoxCPM 1.0 remain available as legacy releases for compatibility, lighter deployment targets, and historical reference.
 
 .. grid:: 1 1 3 3
    :gutter: 4
@@ -108,6 +110,7 @@ VoxCPM documentation
       :class-card: voxcpm-model-card voxcpm-model-featured
       :class-title: sd-fs-4
 
+      * Current version
       * 30-Language Multilingual
       * Voice Design & Style Control
       * Native 48kHz Audio
@@ -124,6 +127,7 @@ VoxCPM documentation
       :class-card: voxcpm-model-card
       :class-title: sd-fs-4
 
+      * Legacy version
       * Faster Inference
       * Higher Quality (44.1kHz)
 
@@ -140,6 +144,7 @@ VoxCPM documentation
       :class-card: voxcpm-model-card
       :class-title: sd-fs-4
 
+      * Legacy version
       * Realistic Voice Synthesis
       * Zero-shot Voice Cloning
       * Streaming Output Support
@@ -270,10 +275,16 @@ If you find our model helpful, please consider citing our projects 📝 and star
 
 .. toctree::
    :maxdepth: 2
-   :caption: Models
+   :caption: Current Version
    :hidden:
 
    models/voxcpm2
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Legacy Versions
+   :hidden:
+
    models/voxcpm1.5
    models/voxcpm1
 

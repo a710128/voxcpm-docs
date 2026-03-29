@@ -5,6 +5,10 @@ VoxCPM 1.5
 * **Parameter Size:** 750M
 * **Sampling Rate:** 44.1kHz
 
+.. note::
+
+   VoxCPM 1.5 is a legacy version. Use it when you need a lighter Chinese/English checkpoint or compatibility with an existing 1.x workflow.
+
 Overview
 ********
 

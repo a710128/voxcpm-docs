@@ -115,7 +115,7 @@ After the model is loaded, you can generate speech:
 
 .. note::
 
-   If you want multilingual generation, Voice Design, or Style Control, choose :doc:`./models/voxcpm2` instead of a 1.x checkpoint.
+   For new projects, start with :doc:`./models/voxcpm2`, which is the current version. VoxCPM 1.x remains available under ``Legacy Versions`` when you need an older checkpoint.
 
 CLI
 ^^^
@@ -200,6 +200,6 @@ What's Next?
 ************
 
 * Have a look at the :doc:`./chefsguide` for more advanced usage.
-* Open the model pages in the sidebar if you need version-specific features, examples, or migration notes.
+* Open the ``Current Version`` or ``Legacy Versions`` pages in the sidebar if you need version-specific features, examples, or migration notes.
 * Fine-tune the model in :doc:`./finetuning/finetune` to adapt it to your specific use case.
 * Deploy the model in :doc:`./deployment/nanovllm` for production use.

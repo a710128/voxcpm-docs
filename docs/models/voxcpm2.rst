@@ -20,6 +20,10 @@ VoxCPM 2
 * **Sampling Rate:** 48kHz
 * **Languages:** 30 languages
 
+.. important::
+
+   VoxCPM 2 is the current recommended version of the VoxCPM family for new deployments and new feature work.
+
 
 Overview
 ********

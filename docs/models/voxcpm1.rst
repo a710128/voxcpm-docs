@@ -19,6 +19,10 @@ VoxCPM 1.0
 * **Parameter Size:** 600M
 * **Sampling Rate:** 16kHz
 
+.. note::
+
+   VoxCPM 1.0 is a legacy version kept for compatibility, baseline comparison, and historical reference.
+
 Overview
 ********
 
