@@ -188,9 +188,53 @@ VoxCPM supports streaming audio output through ``generate_streaming()``. For int
 
 Bidirectional streaming, where text arrives token by token while audio is generated at the same time, is not currently supported.
 
+CLI Usage
+*********
+
+If you prefer a command-line workflow instead of writing Python code, VoxCPM also provides a CLI:
+
+.. code-block:: sh
+
+   # 1) Direct synthesis
+   voxcpm --text "VoxCPM is an innovative end-to-end TTS model from ModelBest, designed to generate highly expressive speech." --output out.wav
+
+   # 2) Voice cloning with reference audio + transcript
+   voxcpm --text "VoxCPM is an innovative end-to-end TTS model from ModelBest, designed to generate highly expressive speech." \
+   --prompt-audio path/to/voice.wav \
+   --prompt-text "reference transcript" \
+   --output out.wav \
+   --denoise
+
+   # 3) Batch processing
+   voxcpm --input examples/input.txt --output-dir outs
+
+   # 4) Inference parameters
+   voxcpm --text "..." --output out.wav \
+   --cfg-value 2.0 --inference-timesteps 10 --normalize
+
+   # 5) Help
+   voxcpm --help
+   python -m voxcpm.cli --help
+
+Local Model Directory Layout
+****************************
+
+When you pass a local path to ``VoxCPM.from_pretrained("/path/to/model_dir")`` or CLI ``--model-path``, the directory is expected to contain at least:
+
+.. code-block:: text
+
+   /path/to/model_dir/
+   ├── config.json
+   ├── audiovae.pth
+   ├── model.safetensors        # preferred
+   ├── pytorch_model.bin        # optional fallback
+   ├── tokenizer.json
+   ├── tokenizer_config.json
+   └── special_tokens_map.json
+
 What's Next?
 ************
 
-- Go back to :doc:`./quickstart` if you need installation, CLI, or web demo instructions.
+- Go back to :doc:`./quickstart` if you need the shortest installation-to-demo path.
 - Open :doc:`./faq` when you hit environment, runtime, or deployment problems.
 - Read the pages under ``Current Version`` and ``Legacy Versions`` for architecture notes and version-specific features.

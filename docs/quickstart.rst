@@ -1,10 +1,12 @@
 Quick Start
 ===========
 
+This page is the shortest path from installation to a working local demo. If you follow it from top to bottom, you should end with a generated audio file and, optionally, the web demo running locally.
+
 Requirements
 ************
 
-To use VoxCPM, you need to have the following dependencies:
+To use VoxCPM, you need the following environment:
 
 .. list-table::
     :widths: 25 75
@@ -19,18 +21,18 @@ To use VoxCPM, you need to have the following dependencies:
     * - Python
       - 3.10 or higher
     * - Disk Space
-      - several GBs for model weights (depends on the model you want to use)
+      - Several GBs for model weights, depending on the checkpoint you use
 
 Installation
 ************
 
-VoxCPM is available on PyPI, you can install it using the following command:
+VoxCPM is available on PyPI:
 
 .. code-block:: sh
 
     pip install voxcpm
 
-or install from source:
+Or install from source:
 
 .. code-block:: sh
 
@@ -39,69 +41,64 @@ or install from source:
     pip install -e .
 
 
-Download Models (Optional)
-**************************
+Step 1: Generate Your First Audio File
+**************************************
 
-The model weights will be downloaded automatically when you first run VoxCPM, or you can download them manually using the following command:
-
-.. code-block:: sh
-
-    hf download openbmb/VoxCPM1.5 # or other models you want to use
-    modelscope download iic/speech_zipenhancer_ans_multiloss_16k_base # for speech prompt enhancement (optional)
-    modelscope download iic/SenseVoiceSmall # for web demo (optional)
-
-
-
-Run Your First Generation
-*************************
-
-There are multiple ways to use VoxCPM, you can choose the one that suits you best.
-
-Python API
-^^^^^^^^^^
-
-VoxCPM provides a flexible Python API for both streaming and non-streaming generation. Start by loading a checkpoint:
+Start with the current recommended release, ``VoxCPM 2``:
 
 .. code-block:: python
 
     from voxcpm import VoxCPM
+    import soundfile as sf
+
     model = VoxCPM.from_pretrained(
-        "openbmb/VoxCPM1.5",
+        "openbmb/VoxCPM2",
         load_denoiser=True,
         zipenhancer_model_id="iic/speech_zipenhancer_ans_multiloss_16k_base",
         cache_dir=None,
         local_files_only=False,
     )
 
-The first run downloads model weights automatically. If you have trouble accessing Hugging Face directly, you can use a mirror such as ``https://hf-mirror.com``.
-
-After the model is loaded, you can generate speech:
-
-**Non-streaming**
-
-.. code-block:: python
-
-    import soundfile as sf
-    import numpy as np
-
     wav = model.generate(
-        text="VoxCPM is an innovative end-to-end TTS model from ModelBest, designed to generate highly expressive speech.",
-        prompt_wav_path=None,
-        prompt_text=None,
+        text="VoxCPM 2 is the current recommended release for realistic multilingual speech synthesis.",
         cfg_value=2.0,
         inference_timesteps=10,
         normalize=True,
-        denoise=True,
-        retry_badcase=True,
-        retry_badcase_max_times=3,
-        retry_badcase_ratio_threshold=6.0,
     )
-    sf.write("output.wav", wav, model.tts_model.sample_rate)
-    print("saved: output.wav")
+    sf.write("demo.wav", wav, model.tts_model.sample_rate)
+    print("saved: demo.wav")
 
-**Streaming**
+The first run downloads model weights automatically. If you have trouble accessing Hugging Face directly, you can use a mirror such as ``https://hf-mirror.com``.
+
+If this script runs successfully, you already have a working local installation.
+
+.. note::
+
+   For new projects, start with :doc:`./models/voxcpm2`, which is the current version. VoxCPM 1.x remains available under ``Legacy Versions`` when you need an older checkpoint.
+
+Step 2: Launch the Web Demo
+***************************
+
+If you want a quick interactive demo after the Python example, run:
+
+.. code-block:: sh
+
+    python app.py
+
+The web demo requires an additional ASR model, SenseVoice-Small, for prompt audio transcription. It will be downloaded automatically on first use.
+
+At this point, you have verified two working paths:
+
+- a local Python call that writes ``demo.wav``
+- a local web demo started by ``python app.py``
+
+Streaming Example
+*****************
 
 .. code-block:: python
+
+    import numpy as np
+    import soundfile as sf
 
     chunks = []
     for chunk in model.generate_streaming(
@@ -113,93 +110,21 @@ After the model is loaded, you can generate speech:
     sf.write("output_streaming.wav", wav, model.tts_model.sample_rate)
     print("saved: output_streaming.wav")
 
-.. note::
+What This Page Does Not Cover
+*****************************
 
-   For new projects, start with :doc:`./models/voxcpm2`, which is the current version. VoxCPM 1.x remains available under ``Legacy Versions`` when you need an older checkpoint.
+To keep this page as a single runnable path, the following topics are documented elsewhere:
 
-CLI
-^^^
-
-VoxCPM also provides a CLI interface for generating speech from text. You can use the following command to generate speech from text:
-
-.. code-block:: sh
-
-    # 1) Direct synthesis (single text)
-    voxcpm --text "VoxCPM is an innovative end-to-end TTS model from ModelBest, designed to generate highly expressive speech." --output out.wav
-
-    # 2) Voice cloning (reference audio + transcript)
-    voxcpm --text "VoxCPM is an innovative end-to-end TTS model from ModelBest, designed to generate highly expressive speech." \
-    --prompt-audio path/to/voice.wav \
-    --prompt-text "reference transcript" \
-    --output out.wav \
-    --denoise
-
-    # (Optional) Voice cloning (reference audio + transcript file)
-    voxcpm --text "VoxCPM is an innovative end-to-end TTS model from ModelBest, designed to generate highly expressive speech." \
-    --prompt-audio path/to/voice.wav \
-    --prompt-file "/path/to/text-file" \
-    --output out.wav \
-    --denoise
-
-    # 3) Batch processing (one text per line)
-    voxcpm --input examples/input.txt --output-dir outs
-    # (optional) Batch + cloning
-    voxcpm --input examples/input.txt --output-dir outs \
-    --prompt-audio path/to/voice.wav \
-    --prompt-text "reference transcript" \
-    --denoise
-
-    # 4) Inference parameters (quality/speed)
-    voxcpm --text "..." --output out.wav \
-    --cfg-value 2.0 --inference-timesteps 10 --normalize
-
-    # 5) Model loading
-    # Prefer local path
-    voxcpm --text "..." --output out.wav --model-path /path/to/VoxCPM_model_dir
-    # Or from Hugging Face (auto download/cache)
-    voxcpm --text "..." --output out.wav \
-    --hf-model-id openbmb/VoxCPM1.5 --cache-dir ~/.cache/huggingface --local-files-only
-
-    # 6) Denoiser control
-    voxcpm --text "..." --output out.wav \
-    --no-denoiser --zipenhancer-path iic/speech_zipenhancer_ans_multiloss_16k_base
-
-    # 7) Help
-    voxcpm --help
-    python -m voxcpm.cli --help
-
-Local model directory layout
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-When you pass a local path (``VoxCPM.from_pretrained("/path/to/model_dir")`` or CLI ``--model-path``), the directory is expected to contain (at least) the following files:
-
-.. code-block:: text
-
-    /path/to/model_dir/
-    ├── config.json
-    ├── audiovae.pth
-    ├── model.safetensors        # preferred
-    ├── pytorch_model.bin        # optional fallback when safetensors is absent
-    ├── tokenizer.json
-    ├── tokenizer_config.json
-    └── special_tokens_map.json
-
-Web Demo
-^^^^^^^^
-
-You can start the UI interface by running `python app.py`, which allows you to perform Voice Cloning and Voice Creation.
-
-.. code-block:: sh
-
-    python app.py
-
-The web demo requires an additional ASR model, SenseVoice-Small, for prompt audio transcription. It will be downloaded automatically on first use.
+- CLI usage: see :doc:`./chefsguide`
+- local model directory layout: see :doc:`./chefsguide`
+- version-specific features and migration notes: see the pages under ``Current Version`` and ``Legacy Versions``
+- deployment options: see :doc:`./deployment/nanovllm`
 
 
 What's Next?
 ************
 
-* Have a look at the :doc:`./chefsguide` for more advanced usage.
+* Continue with :doc:`./chefsguide` for CLI usage, prompt strategy, cloning tips, and quality tuning.
 * Open the ``Current Version`` or ``Legacy Versions`` pages in the sidebar if you need version-specific features, examples, or migration notes.
 * Fine-tune the model in :doc:`./finetuning/finetune` to adapt it to your specific use case.
 * Deploy the model in :doc:`./deployment/nanovllm` for production use.
