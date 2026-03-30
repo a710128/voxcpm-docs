@@ -237,4 +237,4 @@ What's Next?
 
 - Go back to :doc:`./quickstart` if you need the shortest installation-to-demo path.
 - Open :doc:`./faq` when you hit environment, runtime, or deployment problems.
-- Read the pages under ``Current Version`` and ``Legacy Versions`` for architecture notes and version-specific features.
+- Read the pages under ``Current Version`` and ``Earlier Releases`` for architecture notes and version-specific features.

@@ -49,61 +49,23 @@ VoxCPM documentation
 
 ----
 
-Key Features
-************
+🌟 Key Features
+****************
 
-.. grid:: 1 1 3 3
-   :gutter: 4
-
-   .. grid-item-card::
-      :class-card: voxcpm-feature-card
-      :padding: 4
-
-      .. rst-class:: voxcpm-feature-icon
-
-      🎯
-
-      **Context-Aware Generation**
-      ^^^
-
-      Comprehends text to infer and generate appropriate prosody, delivering speech with remarkable expressiveness. Trained on a massive **2.36 million-hour** multilingual corpus covering 30 languages.
-
-   .. grid-item-card::
-      :class-card: voxcpm-feature-card
-      :padding: 4
-
-      .. rst-class:: voxcpm-feature-icon
-
-      🎭
-
-      **True-to-Life Voice Cloning**
-      ^^^
-
-      With only a short reference audio clip, performs accurate **zero-shot voice cloning** — capturing timbre, accent, emotional tone, rhythm, and pacing.
-
-   .. grid-item-card::
-      :class-card: voxcpm-feature-card
-      :padding: 4
-
-      .. rst-class:: voxcpm-feature-icon
-
-      ⚡
-
-      **High-Efficiency Synthesis**
-      ^^^
-
-      Streaming synthesis with RTF as low as **0.17** on a consumer-grade NVIDIA RTX 4090 GPU, enabling real-time applications.
+* 🎯 **Context-Aware, Expressive Speech Generation** - VoxCPM comprehends text to infer and generate appropriate prosody, delivering speech with remarkable expressiveness and natural flow. It spontaneously adapts speaking style based on content, producing highly fitting vocal expression across a massive 30-language corpus.
+* 🎭 **True-to-Life Voice Cloning** - With only a short reference audio clip, VoxCPM performs accurate zero-shot voice cloning, capturing not only the speaker's timbre but also fine-grained characteristics such as accent, emotional tone, rhythm, and pacing to create a faithful and natural replica.
+* ⚡ **High-Efficiency Synthesis** - VoxCPM supports streaming synthesis with a Real-Time Factor (RTF) as low as **0.17** on a consumer-grade NVIDIA RTX 4090 GPU, making it possible for real-time applications.
 
 ----
 
 .. _model-versions:
 
-Current And Legacy Versions
-***************************
+Versions
+********
 
-VoxCPM 2 is the recommended release for new projects. VoxCPM 1.5 and VoxCPM 1.0 remain available as legacy releases for lighter deployments, compatibility, and historical reference.
+VoxCPM 2 is the recommended release for new projects. Earlier releases remain available for lighter deployments, compatibility, and historical reference.
 
-.. grid:: 1 1 3 3
+.. grid:: 1 1 2 2
    :gutter: 4
 
    .. grid-item-card:: VoxCPM 2
@@ -123,40 +85,22 @@ VoxCPM 2 is the recommended release for new projects. VoxCPM 1.5 and VoxCPM 1.0 
 
          Try Now →
 
-   .. grid-item-card:: VoxCPM 1.5
+   .. grid-item-card:: Earlier Releases
       :class-card: voxcpm-model-card
       :class-title: sd-fs-4
 
-      * Legacy version
-      * Faster Inference
-      * Higher Quality (44.1kHz)
+      * VoxCPM 1.5 for lighter Chinese/English deployment
+      * VoxCPM 1.0 for baseline and historical reference
+      * Compatibility and migration guidance for 1.x workflows
 
       +++
 
-      .. button-ref:: models/voxcpm1.5
+      .. button-ref:: models/earlier_releases
          :ref-type: doc
          :color: primary
          :outline:
 
-         Try Now →
-
-   .. grid-item-card:: VoxCPM 1.0
-      :class-card: voxcpm-model-card
-      :class-title: sd-fs-4
-
-      * Legacy version
-      * Realistic Voice Synthesis
-      * Zero-shot Voice Cloning
-      * Streaming Output Support
-
-      +++
-
-      .. button-ref:: models/voxcpm1
-         :ref-type: doc
-         :color: primary
-         :outline:
-
-         Try Now →
+         View Earlier Releases →
 
 ----
 
@@ -282,11 +226,10 @@ If you find our model helpful, please consider citing our work and starring the 
 
 .. toctree::
    :maxdepth: 2
-   :caption: Legacy Versions
+   :caption: Earlier Releases
    :hidden:
 
-   models/voxcpm1.5
-   models/voxcpm1
+   models/earlier_releases
 
 .. toctree::
    :maxdepth: 2

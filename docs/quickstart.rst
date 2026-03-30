@@ -74,7 +74,7 @@ If this script runs successfully, you already have a working local installation.
 
 .. note::
 
-   For new projects, start with :doc:`./models/voxcpm2`, which is the current version. VoxCPM 1.x remains available under ``Legacy Versions`` when you need an older checkpoint.
+   For new projects, start with :doc:`./models/voxcpm2`, which is the current version. Earlier releases remain available under ``Earlier Releases`` when you need an older checkpoint.
 
 Step 2: Launch the Web Demo
 ***************************
@@ -117,7 +117,7 @@ To keep this page as a single runnable path, the following topics are documented
 
 - CLI usage: see :doc:`./chefsguide`
 - local model directory layout: see :doc:`./chefsguide`
-- version-specific features and migration notes: see the pages under ``Current Version`` and ``Legacy Versions``
+- version-specific features and migration notes: see the pages under ``Current Version`` and ``Earlier Releases``
 - deployment options: see :doc:`./deployment/nanovllm`
 
 
@@ -125,6 +125,6 @@ What's Next?
 ************
 
 * Continue with :doc:`./chefsguide` for CLI usage, prompt strategy, cloning tips, and quality tuning.
-* Open the ``Current Version`` or ``Legacy Versions`` pages in the sidebar if you need version-specific features, examples, or migration notes.
+* Open the ``Current Version`` or ``Earlier Releases`` pages in the sidebar if you need version-specific features, examples, or migration notes.
 * Fine-tune the model in :doc:`./finetuning/finetune` to adapt it to your specific use case.
 * Deploy the model in :doc:`./deployment/nanovllm` for production use.

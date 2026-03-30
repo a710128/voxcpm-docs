@@ -164,6 +164,9 @@ body[data-theme="dark"] .voxcpm-cta-row .sd-btn-outline-secondary {
     border-radius: 12px;
     transition: box-shadow 0.25s ease, transform 0.25s ease;
     overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .sd-card.voxcpm-feature-card:hover {
@@ -182,6 +185,20 @@ body[data-theme="dark"] .sd-card.voxcpm-feature-card:hover {
 
 .sd-card.voxcpm-feature-card .sd-card-body {
     padding-top: 0.25rem;
+    flex: 1;
+}
+
+.sd-card.voxcpm-feature-card ul.simple {
+    margin: 0;
+    padding-left: 1.1rem;
+}
+
+.sd-card.voxcpm-feature-card ul.simple li {
+    margin-bottom: 0.45rem;
+}
+
+.sd-card.voxcpm-feature-card ul.simple li:last-child {
+    margin-bottom: 0;
 }
 
 .voxcpm-feature-icon {
@@ -195,6 +212,9 @@ body[data-theme="dark"] .sd-card.voxcpm-feature-card:hover {
     border: 1.5px solid var(--voxcpm-border);
     border-radius: 12px;
     transition: box-shadow 0.25s ease, transform 0.25s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .sd-card.voxcpm-model-card:hover {
@@ -213,6 +233,14 @@ body[data-theme="dark"] .sd-card.voxcpm-model-card:hover {
 
 body[data-theme="dark"] .sd-card.voxcpm-model-card.voxcpm-model-featured {
     background: linear-gradient(to bottom, rgba(59, 130, 246, 0.08), transparent);
+}
+
+.sd-card.voxcpm-model-card .sd-card-body {
+    flex: 1;
+}
+
+.sd-card.voxcpm-model-card .sd-card-footer {
+    margin-top: auto;
 }
 
 /* ===== Community Table ===== */
