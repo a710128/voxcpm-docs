@@ -45,5 +45,5 @@ What To Read Next
 *****************
 
 - Start with :doc:`./quickstart` to install the package and run your first generation example.
-- Continue with :doc:`./chefsguide` for prompt strategy, cloning tips, and quality tuning advice.
+- Continue with :doc:`./usage_guide` for prompt strategy, cloning tips, and quality tuning advice.
 - Open the detailed model pages in ``Models`` when you need architecture details, examples, or migration notes.

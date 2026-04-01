@@ -95,7 +95,7 @@ VoxCPM 2 is the recommended release for new projects. Earlier releases remain av
 
       +++
 
-      .. button-ref:: models/earlier_releases
+      .. button-ref:: models/version_history
          :ref-type: doc
          :color: primary
          :outline:
@@ -208,42 +208,47 @@ If you find our model helpful, please consider citing our work and starring the 
    :hidden:
 
    quickstart
+   installation
 
 .. toctree::
    :maxdepth: 2
-   :caption: Usage Guide
+   :caption: User Guide
    :hidden:
 
-   chefsguide
+   usage_guide
+   cookbook
    faq
 
 .. toctree::
    :maxdepth: 2
-   :caption: Current Version
+   :caption: Models
    :hidden:
 
-   models/voxcpm2
+   models/architecture
+   models/version_history
 
 .. toctree::
    :maxdepth: 2
-   :caption: Earlier Releases
-   :hidden:
-
-   models/earlier_releases
-
-.. toctree::
-   :maxdepth: 2
-   :caption: Training
+   :caption: Fine-tuning
    :hidden:
 
    finetuning/finetune
+   finetuning/faq
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Reference
+   :hidden:
+
+   reference/api
+   reference/changelog
 
 .. toctree::
    :maxdepth: 2
    :caption: Ecosystem
    :hidden:
 
-   deployment/nanovllm
+   deployment/nanovllm_voxcpm
    deployment/voxcpm_cpp
    deployment/onnx
    deployment/ane

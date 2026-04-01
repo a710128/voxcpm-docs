@@ -1,5 +1,5 @@
 ========================
-Nano-vLLM
+NanoVLLM-VoxCPM
 ========================
 
 Nano-vLLM-VoxCPM is an inference engine for VoxCPM based on Nano-vLLM.

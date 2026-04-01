@@ -1,7 +1,7 @@
 FAQ & Troubleshooting
 =====================
 
-This page focuses on setup, runtime, deployment, and training problems reported by the VoxCPM community. For prompt strategy, cloning tips, and quality tuning, see :doc:`./chefsguide`.
+This page focuses on setup, runtime and deployment problems reported by the VoxCPM community. For prompt strategy, cloning tips, and quality tuning, see :doc:`./usage_guide`.
 
 ----
 
@@ -179,11 +179,11 @@ CUDA Graphs and multi-threading
 
    .. code-block:: python
 
-      model = VoxCPM.from_pretrained("openbmb/VoxCPM1.5", optimize=False)
+      model = VoxCPM.from_pretrained("openbmb/VoxCPM2", optimize=False)
 
-2. **Use NanoVLLM** for concurrent serving — it handles batching and threading correctly:
+2. **Use NanoVLLM-VoxCPM** for concurrent serving — it handles batching and threading correctly:
 
-   See :doc:`./deployment/nanovllm` for setup instructions.
+   See :doc:`./deployment/nanovllm_voxcpm` for setup instructions.
 
 3. **For Gradio apps** (``app.py``), limit concurrency to avoid CUDA Graph conflicts (`#97 <https://github.com/OpenBMB/VoxCPM/issues/97>`_):
 
@@ -199,42 +199,6 @@ VoxCPM is **not compatible** with standard LLM inference frameworks (vLLM, lmdep
 
 For high-throughput deployment, use `NanoVLLM-VoxCPM <https://github.com/a710128/nanovllm-voxcpm>`_ instead.
 
-
-----
-
-Fine-Tuning
-*************
-
-Can I fine-tune for a new language?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Yes. Community reports suggest starting with LoRA before full fine-tuning, mixing some Chinese/English data to reduce forgetting, and using conservative learning rates. For the full workflow, see :doc:`./finetuning/finetune`.
-
-
-Common training issues
-^^^^^^^^^^^^^^^^^^^^^^^^
-
-**Model ignores input text after fine-tuning:**
-(`#169 <https://github.com/OpenBMB/VoxCPM/issues/169>`_)
-
-This typically means the model has overfit to reproducing training audio without text conditioning.
-
-- Reduce learning rate to ``1e-5`` (full FT) or ``1e-4`` (LoRA).
-- Keep ``training_cfg_rate=0.1`` (do NOT set it to 0).
-- Keep ``weight_decay=0.01``.
-- Test checkpoints every ~2000 steps to catch the issue early.
-
-**Generation doesn't stop (runaway):**
-(`#195 <https://github.com/OpenBMB/VoxCPM/issues/195>`_, `#124 <https://github.com/OpenBMB/VoxCPM/issues/124>`_)
-
-- Check your data for clips with long trailing silence (>0.5s) and trim them.
-- Enable ``retry_badcase=True`` at inference time.
-- If fine-tuning a new language, the stop loss and diffusion loss may converge at different rates — try increasing the stop loss weight.
-
-**Resume training shows wrong step count:**
-(`#187 <https://github.com/OpenBMB/VoxCPM/issues/187>`_)
-
-This is a known bug in multi-GPU training. Ensure you're using the latest version of the training scripts.
 
 ----
 
