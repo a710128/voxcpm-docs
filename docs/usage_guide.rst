@@ -32,7 +32,7 @@ The ``generate()`` method accepts the following key parameters:
      - Guidance scale. Higher values follow the conditioning more strictly; lower values allow more variation. Typical range: 1.0–3.0.
    * - ``inference_timesteps``
      - ``10``
-     - Number of diffusion steps. More steps improve detail and naturalness at the cost of speed.
+     - Number of diffusion steps. More steps improve detail and naturalness at the cost of speed. Recommended: 4–30.
    * - ``normalize``
      - ``False``
      - Run text normalization to expand numbers, dates, etc. Useful for raw text input.

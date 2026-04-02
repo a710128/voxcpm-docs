@@ -132,11 +132,15 @@ Your data size and goal determine which fine-tuning approach to use:
      - 50–500 clips
      - :ref:`lora-finetuning` — with higher rank (``r=32–64``)
    * - Add a new language
-     - 500+ clips
+     - 500+ hours
      - :ref:`full-finetuning` — mix with some Chinese/English data to reduce forgetting
    * - Large-scale customization
      - 1000+ clips
      - :ref:`full-finetuning`
+
+**LoRA vs Full Fine-Tuning at a glance:**
+
+In internal benchmarks on single-speaker cloning, LoRA (``r=32``) achieved approximately 98% of the speaker similarity of full fine-tuning, while using roughly half the VRAM and producing checkpoint files that are orders of magnitude smaller. LoRA is the recommended starting point for most tasks. Results may vary with different datasets and goals.
 
 ----
 
@@ -164,7 +168,7 @@ Create a YAML config file. Here is an example for VoxCPM 2:
    batch_size: 16
    grad_accum_steps: 1
    num_workers: 2
-   num_iters: 2000
+   num_iters: 1000
    log_interval: 10
    valid_interval: 500
    save_interval: 500
@@ -172,7 +176,7 @@ Create a YAML config file. Here is an example for VoxCPM 2:
    learning_rate: 0.0001
    weight_decay: 0.01
    warmup_steps: 100
-   max_steps: 2000
+   max_steps: 1000
    max_batch_tokens: 8192
 
    save_path: /path/to/checkpoints/lora
@@ -186,8 +190,8 @@ Create a YAML config file. Here is an example for VoxCPM 2:
      enable_lm: true
      enable_dit: true
      enable_proj: false
-     r: 8
-     alpha: 16
+     r: 32
+     alpha: 32
      dropout: 0.0
 
 .. tip::
@@ -214,10 +218,10 @@ Create a YAML config file. Here is an example for VoxCPM 2:
      - ``false`` for most cases
    * - ``r``
      - LoRA rank — higher means more capacity
-     - 8 for speaker cloning, 32–64 for style/language adaptation
+     - 32 for speaker cloning, 64 for style/language adaptation
    * - ``alpha``
      - Scaling factor (``scaling = alpha / r``)
-     - Usually ``r`` or ``r/2``
+     - Usually ``r`` or ``2*r``. Adjust to control LoRA influence strength.
    * - ``dropout``
      - Dropout on LoRA layers
      - ``0.0`` unless overfitting
@@ -271,9 +275,14 @@ If a validation manifest is provided, the script also logs ``val/loss`` and gene
 
 **When to stop**
 
+- **Use epochs as a rough guide.** For single-speaker cloning, 1–3 epochs are usually sufficient. Going beyond that often hurts rather than helps — overfitting in TTS fine-tuning can emerge very early.
 - ``loss/diff`` plateaus and no longer decreases meaningfully.
 - Generated audio in TensorBoard sounds good on your target voice/style.
 - If the model starts ignoring input text (generating the same audio regardless of text), you have overfit — roll back to an earlier checkpoint.
+
+.. tip::
+
+   Validation loss does not always correlate perfectly with perceptual quality. Save multiple checkpoints around the convergence zone and evaluate them with actual inference to pick the best one.
 
 **Checkpoint structure**
 
@@ -304,20 +313,6 @@ Inference
        --text "Hello from the fine-tuned model." \
        --output output.wav
 
-   # Override base model path if needed
-   python scripts/test_voxcpm_lora_infer.py \
-       --lora_ckpt /path/to/checkpoints/lora/latest \
-       --base_model /path/to/VoxCPM2 \
-       --text "Hello from the fine-tuned model." \
-       --output output.wav
-
-   # With voice cloning
-   python scripts/test_voxcpm_lora_infer.py \
-       --lora_ckpt /path/to/checkpoints/lora/latest \
-       --text "Cloned voice with LoRA." \
-       --prompt_audio reference.wav \
-       --prompt_text "Exact transcript of reference.wav" \
-       --output cloned.wav
 
 **Python API**
 
@@ -377,7 +372,7 @@ Training
    batch_size: 16
    grad_accum_steps: 1
    num_workers: 2
-   num_iters: 2000
+   num_iters: 1000
    log_interval: 10
    valid_interval: 500
    save_interval: 500
@@ -385,7 +380,7 @@ Training
    learning_rate: 0.00001    # 10x smaller than LoRA
    weight_decay: 0.01
    warmup_steps: 100
-   max_steps: 2000
+   max_steps: 1000
    max_batch_tokens: 8192
 
    save_path: /path/to/checkpoints/full
@@ -419,11 +414,13 @@ Monitoring
 
 Same TensorBoard metrics as LoRA (``loss/diff``, ``loss/stop``, ``grad_norm``, ``lr``, validation audio).
 
-Full fine-tuning is more prone to overfitting than LoRA. Pay extra attention to:
+Full fine-tuning is more prone to overfitting than LoRA. In practice, full fine-tuning often reaches its optimum within 1–2 epochs — continuing beyond that can degrade quality. Pay extra attention to:
 
 - **Validation loss diverging from training loss** — a sign of overfitting. Stop and use the last checkpoint before divergence.
-- **Text being ignored** — the most common overfitting symptom. Keep ``training_cfg_rate=0.1`` (do not set it to 0) and ``weight_decay=0.01``. Test checkpoints every ~500 steps.
+- **Text being ignored** — the most common overfitting symptom. Keep ``training_cfg_rate=0.1`` (do not set it to 0) and ``weight_decay=0.01``. Monitor checkpoints at each ``save_interval``.
+- **Smaller datasets overfit faster.** With fewer training samples, the optimal checkpoint may appear within a few hundred steps.
 - **New language fine-tuning:** Mix in some Chinese/English data (e.g. 10–20%) to reduce forgetting of the original capabilities.
+- **More data does not always mean better results.** Beyond a certain point, adding more data yields diminishing returns; focus on data quality and diversity instead.
 
 **Checkpoint structure**
 

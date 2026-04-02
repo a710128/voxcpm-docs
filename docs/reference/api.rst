@@ -54,8 +54,8 @@ Python API
    :param str|None prompt_wav_path: Prompt audio path for continuation-style cloning (Hi-Fi mode). Must be paired with ``prompt_text``.
    :param str|None prompt_text: Exact transcript of the prompt audio. Must be provided together with ``prompt_wav_path``.
    :param str|None reference_wav_path: Reference audio path for isolated voice cloning (**VoxCPM 2 only**). Can be used alone or combined with ``prompt_wav_path`` + ``prompt_text``.
-   :param float cfg_value: Guidance scale. Higher values follow the conditioning more strictly; lower values allow more variation. Range: 0.1–10.0.
-   :param int inference_timesteps: Number of diffusion steps. More steps improve detail at the cost of speed. Range: 1–100.
+   :param float cfg_value: Guidance scale. Higher values follow the conditioning more strictly; lower values allow more variation. Recommended: 1.0–3.0.
+   :param int inference_timesteps: Number of diffusion steps. More steps improve detail at the cost of speed. Recommended: 4–30.
    :param int min_len: Minimum audio length in model tokens.
    :param int max_len: Maximum token length during generation. Increase for very long outputs.
    :param bool normalize: Run text normalization (expand numbers, dates, etc.) before generation.
@@ -215,11 +215,11 @@ Arguments
 
 .. option:: --cfg-value <FLOAT>
 
-   CFG guidance scale. Default: ``2.0``. Range: 0.1–10.0.
+   CFG guidance scale. Default: ``2.0``. Recommended: 1.0–3.0.
 
 .. option:: --inference-timesteps <INT>
 
-   Number of diffusion steps. Default: ``10``. Range: 1–100.
+   Number of diffusion steps. Default: ``10``. Recommended: 4–30.
 
 .. option:: --normalize
 
