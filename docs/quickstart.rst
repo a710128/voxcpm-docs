@@ -43,25 +43,24 @@ If this script runs and produces ``demo.wav``, your installation is working.
 
 .. note::
 
-   For new projects, start with :doc:`./models/voxcpm2`, which is the current version. Earlier releases remain available under ``Models`` when you need an older checkpoint.
+   For new projects, start with :doc:`./models/voxcpm2`, which is the current version. Earlier releases remain available from :doc:`./models/version_history` when you need an older checkpoint.
 
 Step 2: CLI
 ***********
 
-VoxCPM also provides a command-line interface. The CLI defaults to VoxCPM 1.5, so the examples below explicitly specify ``openbmb/VoxCPM2`` to stay consistent with this page:
+VoxCPM also provides a command-line interface. The CLI defaults to ``openbmb/VoxCPM2``, so you can use the recommended subcommands directly unless you want to override the checkpoint with ``--hf-model-id``:
 
 .. code-block:: sh
 
     # Direct synthesis
-    voxcpm --hf-model-id openbmb/VoxCPM2 \
+    voxcpm design \
         --text "Hello from VoxCPM!" \
         --output out.wav
 
-    # Voice cloning with reference audio
-    voxcpm --hf-model-id openbmb/VoxCPM2 \
+    # Reference-only cloning (VoxCPM 2)
+    voxcpm clone \
         --text "This is a cloned voice sample." \
-        --prompt-audio path/to/voice.wav \
-        --prompt-text "reference transcript" \
+        --reference-audio path/to/voice.wav \
         --output out.wav \
         --denoise
 

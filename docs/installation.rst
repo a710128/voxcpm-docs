@@ -15,11 +15,15 @@ Requirements
     * - PyTorch
       - 2.5.0 or higher
     * - CUDA
-      - 12.0 or higher
+      - Optional. 12.0 or higher for NVIDIA GPU acceleration
     * - Python
-      - 3.10 or higher
+      - 3.10–3.12 recommended (3.10–3.11 most tested)
     * - Disk Space
       - Several GBs for model weights, depending on the checkpoint you use
+
+.. note::
+
+   CUDA is not required for CPU inference or Apple Silicon MPS usage. See :doc:`./faq` for Mac / MPS notes.
 
 Install with uv (recommended)
 *****************************

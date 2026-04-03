@@ -42,7 +42,7 @@ Software
    * - Dependency
      - Requirement
    * - Python
-     - 3.10 or 3.11
+     - 3.10 or 3.11 (recommended for training)
    * - PyTorch
      - 2.5.0+ (CUDA build matching your driver)
    * - CUDA driver
@@ -147,7 +147,7 @@ Save as ``conf/librispeech_full.yaml``:
 
 .. code-block:: yaml
 
-   pretrained_path: /path/to/VoxCPM2-1B/          # directory with config.json + model.safetensors
+   pretrained_path: /path/to/VoxCPM2/             # directory with config.json + model.safetensors
    train_manifest:  examples/librispeech_train.jsonl
    val_manifest:    examples/librispeech_val.jsonl  # strongly recommended — enables early stopping
 
@@ -202,7 +202,7 @@ Save as ``conf/librispeech_lora.yaml``:
 
 .. code-block:: yaml
 
-   pretrained_path: /path/to/VoxCPM2-1B/
+   pretrained_path: /path/to/VoxCPM2/
    train_manifest:  examples/librispeech_train.jsonl
    val_manifest:    examples/librispeech_val.jsonl
 

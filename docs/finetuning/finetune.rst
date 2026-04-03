@@ -19,7 +19,7 @@ Software
    * - Dependency
      - Version
    * - Python
-     - 3.10–3.11
+     - 3.10–3.11 recommended for training
    * - PyTorch
      - 2.5.0+
    * - CUDA

@@ -1,37 +1,90 @@
 Version History
 ===============
 
-This page summarizes the earlier VoxCPM releases that remain useful for compatibility, lighter deployment targets, and historical reference. For new projects, use VoxCPM 2.
-
-When To Use An Earlier Release
-******************************
-
-Choose an earlier release if you need one of the following:
-
-- compatibility with an existing 1.x workflow
-- a lighter Chinese/English-only checkpoint
-- baseline comparison against the original VoxCPM release
-- historical reference for earlier benchmarks or architecture decisions
+This page summarizes all VoxCPM releases, including feature comparison, version highlights, and migration guidance.
 
 Quick Comparison
 ****************
 
 .. list-table::
-   :widths: 15 15 15 55
+   :widths: 28 24 24 24
    :header-rows: 1
 
-   * - Release
-     - Parameter Size
-     - Sampling Rate
-     - Best For
-   * - VoxCPM 1.5
-     - 750M
-     - 44.1kHz
-     - Lighter Chinese/English deployment with higher output quality than VoxCPM 1.0
-   * - VoxCPM 1.0
-     - 600M
+   * - Feature
+     - VoxCPM 1.0
+     - VoxCPM 1.5
+     - VoxCPM 2
+   * - **Parameters**
+     - 640M
+     - 800M
+     - 2.3B
+   * - **Audio Output**
      - 16kHz
-     - Baseline compatibility, historical reference, and the original VoxCPM release
+     - 44.1kHz
+     - 48kHz (native)
+   * - **Languages**
+     - 2 (zh, en)
+     - 2 (zh, en)
+     - 30
+   * - **Patch Size**
+     - 2
+     - 4
+     - 4
+   * - **LM Token Rate**
+     - 12.5Hz
+     - 6.25Hz
+     - 6.25Hz
+   * - **Max Sequence Length**
+     - 4096
+     - 4096
+     - 8192
+   * - **Residual LM Fusion**
+     - Additive
+     - Additive
+     - Concat + Projection
+   * - **DiT Conditioning**
+     - Single token (add)
+     - Single token (add)
+     - Multi-token (concat)
+   * - **Reference Audio**
+     - Prompt continuation
+     - Prompt continuation
+     - Isolated ref channel
+   * - **Voice Design**
+     - —
+     - —
+     - ✅
+   * - **Style Control**
+     - —
+     - —
+     - ✅
+   * - **SFT / LoRA**
+     - ✅
+     - ✅
+     - ✅
+   * - **RTF (RTX 4090)**
+     - ~0.17
+     - ~0.15
+     - ~0.3
+
+For a detailed explanation of the architecture components (four-stage pipeline, AudioVAE, Local DiT), see :doc:`./architecture`.
+
+VoxCPM 2
+*********
+
+VoxCPM 2 is the latest major release — a 2.3B parameter model trained on 2.36 million hours of multilingual data. It represents a significant leap in capacity, quality, and controllability over the 1.x series.
+
+Key characteristics:
+
+- 48kHz native audio output via AudioVAE V2 (asymmetric 16kHz encode → 48kHz decode)
+- 30-language multilingual support
+- Voice Design: create a voice from natural-language description, no reference audio needed
+- Style Control: control emotion, pace, and speaking style of a cloned voice via text tags
+- Isolated reference channel for voice cloning (no matching transcript required)
+- Concat-Projection residual LM fusion and multi-token DiT conditioning for richer expressiveness
+- Built on a `MiniCPM-4 <https://github.com/OpenBMB/MiniCPM>`_ backbone
+
+Use VoxCPM 2 for all new projects. It is the recommended default for multilingual synthesis, voice cloning, voice design, and production deployment.
 
 VoxCPM 1.5
 ***********
@@ -68,10 +121,9 @@ Migration Guidance
 - **Existing VoxCPM 1.0 users** should generally move to VoxCPM 1.5 first if they need a lower-risk 1.x upgrade path.
 - If you need multilingual synthesis, Voice Design, Style Control, or native 48kHz output, move directly to VoxCPM 2.
 
-Archived Details
-****************
+Detailed Pages
+**************
 
-Archived detailed pages remain available here for readers who want the original version-specific documentation.
-
+- Full VoxCPM 2 page: :doc:`./voxcpm2`
 - Full VoxCPM 1.5 page: :doc:`./voxcpm1.5`
 - Full VoxCPM 1.0 page: :doc:`./voxcpm1`

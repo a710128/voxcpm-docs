@@ -51,7 +51,7 @@ Python API
    Synthesize speech from text.
 
    :param str text: Input text to synthesize. For Voice Design, prepend control instructions in parentheses: ``"(warm female voice)Hello"``.
-   :param str|None prompt_wav_path: Prompt audio path for continuation-style cloning (Hi-Fi mode). Must be paired with ``prompt_text``.
+   :param str|None prompt_wav_path: Prompt audio path for continuation-style cloning. Must be paired with ``prompt_text``. For Hi-Fi cloning, combine it with ``reference_wav_path``.
    :param str|None prompt_text: Exact transcript of the prompt audio. Must be provided together with ``prompt_wav_path``.
    :param str|None reference_wav_path: Reference audio path for isolated voice cloning (**VoxCPM 2 only**). Can be used alone or combined with ``prompt_wav_path`` + ``prompt_text``.
    :param float cfg_value: Guidance scale. Higher values follow the conditioning more strictly; lower values allow more variation. Recommended: 1.0–3.0.

@@ -17,7 +17,7 @@ The ``generate()`` method accepts the following key parameters:
      - Description
    * - ``text``
      - (required)
-     - The text to synthesize. Supports Chinese, English, and 30+ languages in VoxCPM 2.
+     - The text to synthesize. Supports the 30 languages available in VoxCPM 2.
    * - ``reference_wav_path``
      - ``None``
      - Reference audio for voice cloning (VoxCPM 2 only). The model extracts the timbre without needing a transcript.
@@ -178,7 +178,7 @@ Audio quality
 - **Duration:** 5 to 30 seconds is a practical range
 - **Format:** any format supported by torchaudio, including WAV, FLAC, and MP3
 - **Quality:** cleaner audio usually gives better timbre preservation
-- **Language:** VoxCPM 2 supports 30+ languages
+- **Language:** VoxCPM 2 supports 30 languages
 
 No reference audio
 ^^^^^^^^^^^^^^^^^^

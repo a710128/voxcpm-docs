@@ -243,7 +243,7 @@ Create a voice from a natural language description **without any reference audio
       cfg_value=2.0,
       inference_timesteps=10,
    )
-   sf.write("voice_design.wav", wav, 48000)
+   sf.write("voice_design.wav", wav, model.tts_model.sample_rate)
 
 .. tip::
 
@@ -269,7 +269,7 @@ Control the speaking style while using a reference audio for voice cloning. Pass
       cfg_value=2.0,
       inference_timesteps=10,
    )
-   sf.write("style_control.wav", wav, 48000)
+   sf.write("style_control.wav", wav, model.tts_model.sample_rate)
 
 .. note::
 
@@ -292,7 +292,7 @@ Reference-Only Voice Cloning
       cfg_value=2.0,
       inference_timesteps=10,
    )
-   sf.write("cloned.wav", wav, 48000)
+   sf.write("cloned.wav", wav, model.tts_model.sample_rate)
 
 Multilingual Generation
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -305,7 +305,7 @@ Multilingual Generation
       reference_wav_path="korean_speaker.wav",
       cfg_value=2.0,
    )
-   sf.write("korean.wav", wav, 48000)
+   sf.write("korean.wav", wav, model.tts_model.sample_rate)
 
    # French
    wav = model.generate(
@@ -313,7 +313,7 @@ Multilingual Generation
       reference_wav_path="french_speaker.wav",
       cfg_value=2.0,
    )
-   sf.write("french.wav", wav, 48000)
+   sf.write("french.wav", wav, model.tts_model.sample_rate)
 
 
 Migration Guide
@@ -323,7 +323,7 @@ From VoxCPM 1.5 to VoxCPM 2
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 1. **Update Model Path**: Point to VoxCPM2 checkpoint
-2. **Update Sample Rate**: Change ``sample_rate`` from ``44100`` to ``48000`` when saving audio
+2. **Update Sample Rate**: Prefer ``model.tts_model.sample_rate`` when saving audio (``48000`` for VoxCPM 2)
 3. **Voice Cloning API**: Use the new ``reference_wav_path`` parameter for isolated voice cloning (``prompt_wav_path`` still works for continuation mode)
 4. **Controllable Features**: Explore Voice Design and Style Control by adding text tags in parentheses
 

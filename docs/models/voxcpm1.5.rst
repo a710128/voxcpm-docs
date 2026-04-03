@@ -66,7 +66,7 @@ From VoxCPM-0.5B to VoxCPM1.5
 
 1. **Update Model Path**: Point to VoxCPM1.5 checkpoint
 2. **Update Sample Rate**: Change ``sample_rate`` from ``16000`` to ``44100`` in configs
-3. **Update Audio Data**: Ensure training data is 44.1kHz (or resample if needed)
+3. **Update Audio Data**: The current fine-tuning pipeline automatically resamples to 44.1kHz. If you preprocess offline, resample to 44.1kHz.
 4. **Review Training Parameters**: Adjust batch size if needed due to higher sampling rate
 
 Backward Compatibility
@@ -75,4 +75,3 @@ Backward Compatibility
 * VoxCPM-0.5B models and configurations remain fully supported
 * Code automatically detects and adapts to model version
 * No breaking changes to the API
-

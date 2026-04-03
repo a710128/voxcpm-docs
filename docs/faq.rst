@@ -129,7 +129,7 @@ Yes. VoxCPM supports CPU and MPS (Metal Performance Shaders) on Apple Silicon Ma
 Python version compatibility
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-VoxCPM officially supports **Python 3.10–3.11**. Known issues:
+VoxCPM is most tested on **Python 3.10–3.11**. For current releases, **Python 3.10–3.12** is the recommended runtime range. Known issues:
 
 - **Python 3.14+:** Installation may fail due to dependency incompatibilities (`#176 <https://github.com/OpenBMB/VoxCPM/issues/176>`_). Use Python 3.10–3.12 instead.
 - **``No module named 'pkg_resources'``:** This happens on newer Python/setuptools versions (`#189 <https://github.com/OpenBMB/VoxCPM/issues/189>`_). Fix with:
@@ -156,15 +156,15 @@ VRAM & RTF reference
      - RTF (NanoVLLM-VoxCPM)
    * - VoxCPM 1.0 (0.5B)
      - ~5 GB
-     - ~0.14
+     - ~0.17
      - ~0.10
    * - VoxCPM 1.5 (0.8B)
      - ~6 GB
-     - ~0.12
+     - ~0.15
      - ~0.08
    * - VoxCPM 2 (2.3B)
      - ~8 GB
-     - ~0.28
+     - ~0.3
      - ~0.13
 
 All RTF (Real-Time Factor) values are measured with ``inference_timesteps=10`` and ``torch.compile`` enabled on a single NVIDIA RTX 4090 GPU.
