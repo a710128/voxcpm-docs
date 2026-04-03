@@ -18,7 +18,7 @@ VoxCPM 2
 
 
 * **Release Date:** March 2026
-* **Parameter Size:** 2.3B
+* **Parameter Size:** 2B
 * **Sampling Rate:** 48kHz
 * **Languages:** 30 languages
 
@@ -30,7 +30,7 @@ VoxCPM 2
 Overview
 ********
 
-VoxCPM 2 is a major evolution of the VoxCPM family, bringing substantial improvements across architecture, audio quality, language coverage, and controllability. While preserving the core tokenizer-free philosophy and diffusion autoregressive framework, VoxCPM 2 introduces a redesigned information fusion pipeline, a next-generation AudioVAE with native 48kHz output, support for 30 languages, and new controllable generation capabilities including **Voice Design** and **Style Control**.
+VoxCPM 2 is a major evolution of the VoxCPM family, bringing substantial improvements across architecture, audio quality, language coverage, and controllability. While preserving the core tokenizer-free philosophy and diffusion autoregressive framework, VoxCPM 2 introduces a redesigned information fusion pipeline, a next-generation AudioVAE with 48kHz output, support for 30 languages, and new controllable generation capabilities including **Voice Design** and **Style Control**.
 
 
 What's New
@@ -73,10 +73,10 @@ What's New
 
       🔊
 
-      **48kHz Native Audio**
+      **48kHz Audio Output**
       ^^^
 
-      A redesigned AudioVAE V2 with 3x higher upsampling ratio and sample-rate-conditioned decoding produces studio-quality 48kHz audio natively.
+      A redesigned AudioVAE V2 with 3x higher upsampling ratio and sample-rate-conditioned decoding produces studio-quality 48kHz audio output.
 
    .. grid-item-card::
       :class-card: voxcpm-feature-card
@@ -141,7 +141,7 @@ Feature Comparison
 +------------------------------+----------------------+----------------------+
 | **Max Sequence Length**      | 4096                 | 8192                 |
 +------------------------------+----------------------+----------------------+
-| **AudioVAE Output**          | 16kHz / 44.1kHz      | 48kHz (native)       |
+| **AudioVAE Output**          | 16kHz / 44.1kHz      | 48kHz                |
 +------------------------------+----------------------+----------------------+
 | **Encode / Decode Rate**     | Symmetric (same SR)  | Asymmetric           |
 |                              |                      | (16kHz -> 48kHz)     |

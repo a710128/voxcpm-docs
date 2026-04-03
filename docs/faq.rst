@@ -162,7 +162,7 @@ VRAM & RTF reference
      - ~6 GB
      - ~0.15
      - ~0.08
-   * - VoxCPM 2 (2.3B)
+   * - VoxCPM 2 (2B)
      - ~8 GB
      - ~0.3
      - ~0.13

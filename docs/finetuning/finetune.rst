@@ -42,7 +42,7 @@ Hardware
    * - VoxCPM 1.5 (750M)
      - ~12 GB VRAM
      - ~24 GB VRAM
-   * - VoxCPM 2 (2.3B)
+   * - VoxCPM 2 (2B)
      - ~20 GB VRAM
      - ~40 GB VRAM
 

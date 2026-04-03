@@ -66,7 +66,7 @@ Migration Guidance
 
 - New projects should start with :doc:`./voxcpm2`.
 - Existing VoxCPM 1.0 users should generally move to VoxCPM 1.5 first if they need a lower-risk 1.x upgrade path.
-- If you need multilingual synthesis, Voice Design, Style Control, or native 48kHz output, move directly to :doc:`./voxcpm2`.
+- If you need multilingual synthesis, Voice Design, Style Control, or 48kHz output, move directly to :doc:`./voxcpm2`.
 
 Archived Details
 ****************

@@ -16,7 +16,7 @@ VoxCPM 2.0 — March 2026
    **Breaking changes at a glance** — read before upgrading from 1.x:
 
    1. ``VoxCPM.from_pretrained()`` now defaults to ``openbmb/VoxCPM2``.
-      If you rely on the default, your code will load the 2.3B model instead
+      If you rely on the default, your code will load the 2B model instead
       of VoxCPM 1.5. Pin explicitly if needed:
       ``VoxCPM.from_pretrained("openbmb/VoxCPM1.5")``.
 
@@ -58,7 +58,7 @@ Model & Architecture
   - ``"voxcpm2"`` → ``VoxCPM2Model``
   - ``"voxcpm"`` (or key absent) → ``VoxCPMModel``
 
-- **Parameter count**: 2.3B (up from 750M in 1.5).
+- **Parameter count**: 2B (up from 750M in 1.5).
 
 - **Residual LM fusion**: additive → concat-projection.
   New ``fusion_concat_proj`` linear layer (``Linear(2h → h)``).
@@ -136,7 +136,7 @@ AudioVAE V2
        - ``[8, 6, 5, 2, 2, 2]``
      * - Output sample rate
        - ``sample_rate`` (16 kHz / 44.1 kHz)
-       - ``out_sample_rate`` (48 kHz native)
+       - ``out_sample_rate`` (48 kHz output)
      * - Sample-rate conditioning
        - No
        - Yes (``SampleRateConditionLayer``)

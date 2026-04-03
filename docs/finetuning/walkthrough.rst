@@ -151,7 +151,7 @@ Save as ``conf/librispeech_full.yaml``:
    train_manifest:  examples/librispeech_train.jsonl
    val_manifest:    examples/librispeech_val.jsonl  # strongly recommended — enables early stopping
 
-   sample_rate:        48000   # VoxCPM 2 native rate; FLAC 16 kHz is resampled automatically
+   sample_rate:        48000   # VoxCPM 2 output rate; FLAC 16 kHz is resampled automatically
    batch_size:         2
    grad_accum_steps:   8       # effective bs = batch_size × grad_accum_steps = 16
    num_workers:        8

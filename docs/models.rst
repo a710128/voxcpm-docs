@@ -19,8 +19,8 @@ Quick Comparison
       - Sampling Rate
       - Languages
     * - :doc:`VoxCPM 2 <./models/voxcpm2>`
-      - Multilingual generation, voice design, style control, and the highest native output quality
-      - 2.3B
+      - Multilingual generation, voice design, style control, and the highest output quality
+      - 2B
       - 48kHz
       - 30
     * - :doc:`VoxCPM 1.5 <./models/voxcpm1.5>`

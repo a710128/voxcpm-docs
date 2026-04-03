@@ -17,11 +17,11 @@ Quick Comparison
    * - **Parameters**
      - 640M
      - 800M
-     - 2.3B
+     - 2B
    * - **Audio Output**
      - 16kHz
      - 44.1kHz
-     - 48kHz (native)
+     - 48kHz
    * - **Languages**
      - 2 (zh, en)
      - 2 (zh, en)
@@ -72,11 +72,11 @@ For a detailed explanation of the architecture components (four-stage pipeline, 
 VoxCPM 2
 *********
 
-VoxCPM 2 is the latest major release — a 2.3B parameter model trained on 2.36 million hours of multilingual data. It represents a significant leap in capacity, quality, and controllability over the 1.x series.
+VoxCPM 2 is the latest major release — a 2B parameter model trained on 2.36 million hours of multilingual data. It represents a significant leap in capacity, quality, and controllability over the 1.x series.
 
 Key characteristics:
 
-- 48kHz native audio output via AudioVAE V2 (asymmetric 16kHz encode → 48kHz decode)
+- 48kHz audio output via AudioVAE V2 (asymmetric 16kHz encode → 48kHz decode)
 - 30-language multilingual support
 - Voice Design: create a voice from natural-language description, no reference audio needed
 - Style Control: control emotion, pace, and speaking style of a cloned voice via text tags
@@ -119,7 +119,7 @@ Migration Guidance
 
 - **New projects** should start with VoxCPM 2.
 - **Existing VoxCPM 1.0 users** should generally move to VoxCPM 1.5 first if they need a lower-risk 1.x upgrade path.
-- If you need multilingual synthesis, Voice Design, Style Control, or native 48kHz output, move directly to VoxCPM 2.
+- If you need multilingual synthesis, Voice Design, Style Control, or 48kHz output, move directly to VoxCPM 2.
 
 Detailed Pages
 **************
