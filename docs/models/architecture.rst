@@ -45,6 +45,8 @@ The generative backbone consists of four stages:
 
 The generated latents are then decoded by **AudioVAE** into raw waveforms. AudioVAE is a supporting codec component used around the generative backbone: it provides latent representations during training and converts predicted latents back to waveform samples during inference.
 
+Across versions, the codec layer evolves from a symmetric audio VAE in VoxCPM 1.x to **AudioVAE V2** in VoxCPM 2, which uses asymmetric 16kHz encode -> 48kHz decode and sample-rate conditioning.
+
 Three design choices define the shared VoxCPM architecture:
 
 - **Tokenizer-free continuous modeling** preserves fine-grained acoustic detail instead of compressing speech into discrete tokens.
@@ -52,32 +54,6 @@ Three design choices define the shared VoxCPM architecture:
 - **Patch-level autoregressive generation** reduces sequence length and helps the system scale to longer and faster synthesis settings.
 
 For version-by-version model selection and migration guidance, see :doc:`./version_history`.
-
-----
-
-AudioVAE
-*********
-
-The Audio VAE is responsible for encoding raw waveforms into latent representations (used during training) and decoding latents back into waveforms (used during inference). It is based on the `DAC <https://github.com/descriptinc/descript-audio-codec>`_ architecture and serves as the codec layer around the shared VoxCPM generation pipeline.
-
-.. list-table::
-   :widths: 30 35 35
-   :header-rows: 1
-
-   * - Property
-     - VoxCPM 1.x
-     - VoxCPM 2
-   * - **Output Sample Rate**
-     - 16kHz (v1.0) / 44.1kHz (v1.5)
-     - 48kHz
-   * - **Encode / Decode**
-     - Symmetric (same rate)
-     - Asymmetric (16kHz encode → 48kHz decode)
-   * - **Latent Rate**
-     - 25Hz
-     - 25Hz
-
-VoxCPM 2 introduces **AudioVAE V2** with an asymmetric encode/decode design and sample-rate conditioning. This allows the encoder to operate at 16kHz (reducing compute) while the decoder directly outputs 48kHz studio-quality audio, avoiding post-processing upsampling.
 
 ----
 
