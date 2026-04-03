@@ -77,8 +77,8 @@ The web demo requires a source checkout. If you installed via ``uv pip install v
 
     git clone https://github.com/OpenBMB/VoxCPM.git
     cd VoxCPM
-    uv pip install -e .
-    python app.py
+    uv sync
+    uv run python app.py
 
 The web demo also downloads an additional ASR model (SenseVoice-Small) on first use for prompt audio transcription.
 

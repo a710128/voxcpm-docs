@@ -38,7 +38,13 @@ From source (needed for running the web demo or local development):
 
     git clone https://github.com/OpenBMB/VoxCPM.git
     cd VoxCPM
-    uv pip install -e .
+    uv sync
+
+.. tip::
+
+   If you installed via ``uv sync``, run scripts with ``uv run`` to use the
+   managed environment. For example: ``uv run python app.py``,
+   ``uv run python scripts/train_voxcpm_finetune.py ...``.
 
 Install with pip
 ****************
@@ -50,17 +56,6 @@ From PyPI:
     pip install voxcpm
 
 From source:
-
-.. code-block:: sh
-
-    git clone https://github.com/OpenBMB/VoxCPM.git
-    cd VoxCPM
-    pip install -e .
-
-Install from source (clone only)
-*********************************
-
-If you prefer to manage dependencies manually:
 
 .. code-block:: sh
 

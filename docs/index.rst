@@ -54,7 +54,7 @@ VoxCPM documentation
 
 * 🎯 **Context-Aware, Expressive Speech Generation** - VoxCPM comprehends text to infer and generate appropriate prosody, delivering speech with remarkable expressiveness and natural flow. It spontaneously adapts speaking style based on content, producing highly fitting vocal expression across a massive 30-language corpus.
 * 🎭 **True-to-Life Voice Cloning** - With only a short reference audio clip, VoxCPM performs accurate zero-shot voice cloning, capturing not only the speaker's timbre but also fine-grained characteristics such as accent, emotional tone, rhythm, and pacing to create a faithful and natural replica.
-* ⚡ **High-Efficiency Synthesis** - VoxCPM supports streaming synthesis with a Real-Time Factor (RTF) as low as **0.17** on a consumer-grade NVIDIA RTX 4090 GPU, making it possible for real-time applications.
+* ⚡ **High-Efficiency Synthesis** - VoxCPM supports streaming synthesis with a Real-Time Factor (RTF) as low as **0.13** on a consumer-grade NVIDIA RTX 4090 GPU, making it possible for real-time applications.
 
 ----
 

@@ -143,27 +143,36 @@ VoxCPM officially supports **Python 3.10–3.11**. Known issues:
 Performance & Deployment
 **************************
 
-VRAM usage reference (still being validated)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+VRAM & RTF reference
+^^^^^^^^^^^^^^^^^^^^
 
 .. list-table::
-   :widths: 40 30 30
+   :widths: 25 15 20 20
    :header-rows: 1
 
    * - Model
-     - VRAM (GPU)
-     - RTF (4090)
+     - VRAM
+     - RTF (official)
+     - RTF (NanoVLLM-VoxCPM)
    * - VoxCPM 1.0 (0.5B)
      - ~5 GB
-     - ~0.17
+     - ~0.14
+     - ~0.10
    * - VoxCPM 1.5 (0.8B)
      - ~6 GB
-     - ~0.15
-   * - VoxCPM 2
-     - ~8 GB
      - ~0.12
+     - ~0.08
+   * - VoxCPM 2 (2.3B)
+     - ~8 GB
+     - ~0.28
+     - ~0.13
 
-RTF (Real-Time Factor) is measured with ``inference_timesteps=10`` and ``torch.compile`` enabled on a single NVIDIA RTX 4090 GPU (`#9 <https://github.com/OpenBMB/VoxCPM/issues/9>`_, `#67 <https://github.com/OpenBMB/VoxCPM/issues/67>`_, `#105 <https://github.com/OpenBMB/VoxCPM/issues/105>`_).
+All RTF (Real-Time Factor) values are measured with ``inference_timesteps=10`` and ``torch.compile`` enabled on a single NVIDIA RTX 4090 GPU.
+
+- **RTF (official)** — the standard inference pipeline (``VoxCPM.generate``).
+- **RTF (NanoVLLM-VoxCPM)** — `NanoVLLM-VoxCPM <https://github.com/a710128/nanovllm-voxcpm>`_ high-throughput serving, measured at concurrency = 1.
+
+Related issues: `#9 <https://github.com/OpenBMB/VoxCPM/issues/9>`_, `#67 <https://github.com/OpenBMB/VoxCPM/issues/67>`_, `#105 <https://github.com/OpenBMB/VoxCPM/issues/105>`_.
 
 
 CUDA Graphs and multi-threading

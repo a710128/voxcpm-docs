@@ -56,35 +56,6 @@ Software
 
 ----
 
-SFT vs LoRA — Which Should I Choose?
-=====================================
-
-.. list-table::
-   :widths: 30 35 35
-   :header-rows: 1
-
-   * -
-     - SFT
-     - LoRA
-   * - Trainable parameters
-     - 100 %
-     - < 1 %
-   * - VRAM (single GPU)
-     - ~40 GB
-     - ~20 GB
-   * - Checkpoint size
-     - ~8 GB (full model)
-     - ~40 MB (delta only)
-   * - Best for
-     - New language / large-scale domain shift
-     - Speaker cloning / style adaptation
-
-.. tip::
-
-   **Start with LoRA.** It is faster to iterate, uses less VRAM, and produces lightweight checkpoints that are easy to share and hot-swap at runtime. Switch to SFT only when LoRA cannot achieve the quality you need after tuning rank and learning rate.
-
-----
-
 Step 1 — Download LibriSpeech
 ==============================
 
@@ -121,7 +92,7 @@ Save the script below as ``scripts/prepare_librispeech_manifest.py`` and run it 
 
    LIBRISPEECH_ROOT = Path("/path/to/LibriSpeech/train-clean-100")
    OUTPUT_PATH      = Path("examples/librispeech_train.jsonl")
-   MAX_SAMPLES      = None   # set to an integer (e.g. 1000) for a smoke test
+   MAX_SAMPLES      = 1000
 
    entries = []
    for trans_file in sorted(LIBRISPEECH_ROOT.rglob("*.trans.txt")):
@@ -158,56 +129,9 @@ The resulting manifest looks like:
    {"audio": "/path/to/LibriSpeech/train-clean-100/103/1240/103-1240-0000.flac", "text": "Chapter one missus rachel lynde is surprised ..."}
    {"audio": "/path/to/LibriSpeech/train-clean-100/103/1240/103-1240-0001.flac", "text": "That had its source away back in the woods of the old cuthbert place ..."}
 
-.. tip::
-
-   Set ``MAX_SAMPLES = 1000`` for a quick end-to-end sanity check before committing to the full dataset.
-
 .. note::
 
    **Why** ``text.capitalize()`` **instead of leaving ALL-CAPS?** VoxCPM's pre-training corpus uses sentence-cased text. Feeding ALL-CAPS transcripts can degrade text adherence at inference time. ``str.capitalize()`` is a simple heuristic; a proper truecasing model gives better results for production use.
-
-----
-
-Step 3 — Choose the Number of Training Steps
-=============================================
-
-Scale training steps so that total training covers roughly **1–2 epochs**. TTS fine-tuning converges quickly — too many steps almost always leads to overfitting (val loss rises, model starts ignoring input text).
-
-.. code-block:: text
-
-   steps_per_epoch    = num_samples / (batch_size × num_gpus)
-   recommended_steps  = steps_per_epoch × 1   # start with 1 epoch; extend only if val loss still falling
-
-Reference values for ``train-clean-100`` (≈ 28,500 clips) with ``batch_size=16``, single GPU:
-
-.. list-table::
-   :widths: 20 20 25 35
-   :header-rows: 1
-
-   * - Data fraction
-     - Clips
-     - Steps / epoch
-     - Suggested ``num_iters``
-   * - 10 %
-     - ~2,850
-     - ~178
-     - 300
-   * - 25 %
-     - ~7,100
-     - ~444
-     - 600
-   * - 50 %
-     - ~14,250
-     - ~891
-     - 1,200
-   * - 100 %
-     - ~28,500
-     - ~1,781
-     - 2,500
-
-.. note::
-
-   LoRA converges slightly slower than SFT at the same data volume. Consider adding 50–100 % more steps for LoRA runs compared to the table above, and rely on ``val/loss`` to decide when to stop.
 
 ----
 
@@ -228,19 +152,19 @@ Save as ``conf/librispeech_full.yaml``:
    val_manifest:    examples/librispeech_val.jsonl  # strongly recommended — enables early stopping
 
    sample_rate:        48000   # VoxCPM 2 native rate; FLAC 16 kHz is resampled automatically
-   batch_size:         16
-   grad_accum_steps:   1       # increase if OOM; effective bs = batch_size × grad_accum_steps
+   batch_size:         2
+   grad_accum_steps:   8       # effective bs = batch_size × grad_accum_steps = 16
    num_workers:        8
 
-   num_iters:          2500    # ~1.4 epochs for 100 % of train-clean-100 at bs=16; adjust per table above
-   max_steps:          2500
-   log_interval:       100
-   valid_interval:     100     # frequent validation catches overfitting early
-   save_interval:      250     # save often — best checkpoint is often not the last one
+   num_iters:          62      # ~1 epoch for 1,000 clips at effective bs=16; adjust per your dataset
+   max_steps:          62
+   log_interval:       10
+   valid_interval:     62
+   save_interval:      62
 
    learning_rate:  1.0e-5      # ~10× smaller than LoRA to avoid catastrophic forgetting
    weight_decay:   0.01
-   warmup_steps:   200
+   warmup_steps:   6           # ≈ 10 % of num_iters
    max_batch_tokens: 8192      # filters out clips whose token count > max_batch_tokens // batch_size
 
    save_path:   checkpoints/librispeech_full
@@ -283,19 +207,19 @@ Save as ``conf/librispeech_lora.yaml``:
    val_manifest:    examples/librispeech_val.jsonl
 
    sample_rate:        48000
-   batch_size:         16
-   grad_accum_steps:   1
+   batch_size:         2
+   grad_accum_steps:   8       # effective bs = 16
    num_workers:        8
 
-   num_iters:          3500    # ~2 epochs; LoRA converges slightly slower than SFT
-   max_steps:          3500
-   log_interval:       100
-   valid_interval:     100
-   save_interval:      250
+   num_iters:          62      # ~1 epoch for 1,000 clips at effective bs=16
+   max_steps:          62
+   log_interval:       10
+   valid_interval:     62
+   save_interval:      62
 
    learning_rate:  1.0e-4
    weight_decay:   0.01
-   warmup_steps:   200
+   warmup_steps:   6           # ≈ 10 % of num_iters
    max_batch_tokens: 8192
 
    save_path:   checkpoints/librispeech_lora
@@ -356,7 +280,7 @@ When to stop
 
 **1–2 epochs is almost always enough** for TTS fine-tuning. The best checkpoint is often not the final one.
 
-- Use ``valid_interval: 100`` and ``save_interval: 250`` for fine-grained rollback options.
+- Use ``valid_interval: 50`` and ``save_interval: 50`` for rollback options.
 - Pick the checkpoint where ``val/loss`` was lowest.
 - If you do not have a val manifest, evaluate a handful of checkpoints in the convergence zone with the inference script and pick the best-sounding one.
 
@@ -449,4 +373,4 @@ Classic overfitting symptom. Roll back to an earlier checkpoint:
        --text "Test sentence." \
        --output test.wav
 
-For future runs: always provide a ``val_manifest``, use ``valid_interval: 100``, and stop when ``val/loss`` turns upward. Keeping training within 1–2 epochs generally avoids this problem entirely.
+For future runs: always provide a ``val_manifest``, use ``valid_interval: 50``, and stop when ``val/loss`` turns upward. Keeping training within 1–3 epochs generally avoids this problem entirely.
