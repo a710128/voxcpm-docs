@@ -1,5 +1,5 @@
-Cookbook
-========
+A Voice Chef's Guide to VoxCPM2
+========================================
 
 Welcome back to the VoxCPM kitchen. With **VoxCPM 2**, the pantry now includes
 more languages, richer control, and more expressive voice generation tools.
@@ -12,11 +12,11 @@ getting the sound you want.
 
 ----
 
-Step 1: Prepare Your Base Ingredients
-*************************************
+🥚 Step 1: Prepare Your Base Ingredients (Content Support)
+**********************************************************
 
-Global Ingredients: Multilingual Support
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+1. Global Ingredients (Multilingual Support)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 VoxCPM 2 brings a major upgrade to what you can put into the mixing bowl.
 In most cases, you can simply write the target text directly in the language
@@ -35,8 +35,8 @@ Representative languages include:
    when needed.
 
 
-Local Specialties: Chinese Dialects
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2. Local Specialties (Chinese Dialects)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Cook up authentic local flavors including Sichuan, Cantonese, Wu, Northeast,
 Henan, Shaanxi, Shandong, Tianjin, and Minnan.
@@ -69,8 +69,8 @@ Recommendations:
 - **Keep Instructions Simple:** In the Control Instruction, simply type the dialect name (for example, ``Cantonese``). Adding too many complex voice instructions might spoil the broth.
 
 
-Extra Spice: Non-verbal Tags
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+3. Extra Spice (Non-verbal Tags)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To make generated speech feel less mechanical, you can insert non-verbal tags
 directly into the target text.
@@ -101,11 +101,11 @@ Use the **English** tag form with square brackets, for example:
 
 ----
 
-Step 2: Choose Your Flavor Profile
-**********************************
+🍳 Step 2: Choose Your Flavor Profile (Voice Design)
+****************************************************
 
-The "Build-Your-Own Combo" (Voice Design)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+1. The "Build-Your-Own Combo" (Voice Generation via Text)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No reference audio? No problem. You can now conjure a voice purely from a text
 description. Think of it as building your own combo meal by mixing different
@@ -140,8 +140,8 @@ Chef's Signature Combos (Examples):
    subtle, unique variations, a bit like hiring a new voice actor each time.
 
 
-Cloning a Masterpiece (Voice Cloning)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2. Cloning a Masterpiece (Voice Cloning)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Want to replicate a specific voice? Upload or record an audio clip, and VoxCPM 2
 will extract and clone the exact timbre.
