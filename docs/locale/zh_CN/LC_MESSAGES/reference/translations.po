@@ -1,0 +1,265 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2025, OpenBMB
+# This file is distributed under the same license as the VoxCPM package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: VoxCPM\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-06 15:38+0800\n"
+"PO-Revision-Date: 2026-04-06 18:00+0800\n"
+"Last-Translator: Cursor Agent <>\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../reference/translations.rst:2 3e883b5d419e4ba4bb0b46dbbf885702
+msgid "Translations"
+msgstr "翻译"
+
+#: ../../reference/translations.rst:4 f334cc8f92684385b171852d791f4eba
+msgid ""
+"This page documents how VoxCPM docs manage translations in the same "
+"repository. The English pages under ``docs/`` remain the source of truth. "
+"Chinese content is maintained through Sphinx gettext catalogs under "
+"``docs/locale/zh_CN/LC_MESSAGES/``."
+msgstr ""
+"本页说明 VoxCPM 文档如何在同一仓库中管理翻译。``docs/`` 下的英文页面仍是权威来源；中文内容通过 Sphinx gettext 目录 "
+"`` docs/locale/zh_CN/LC_MESSAGES/`` 维护。"
+
+#: ../../reference/translations.rst:9 7fc032d8421b4fe1927086babc79b348
+msgid "Overview"
+msgstr "概览"
+
+#: ../../reference/translations.rst:11 33144b551d8b4f02a5f1b116b602eb89
+msgid "The translation workflow uses:"
+msgstr "翻译工作流使用："
+
+#: ../../reference/translations.rst:13 6501e55888454b4b90f086e5cd8a1d2c
+msgid "Sphinx gettext catalogs generated from the English source pages"
+msgstr "由英文源页面生成的 Sphinx gettext 目录"
+
+#: ../../reference/translations.rst:14 80f7084c0ab04b3eacf6798c8d30d4e1
+msgid "``sphinx-intl`` to create and update ``.po`` files"
+msgstr "``sphinx-intl`` 用于创建与更新 ``.po`` 文件"
+
+#: ../../reference/translations.rst:15 356cfce9e6c84ffe8af39eedacb384ff
+msgid "a Chinese build driven by ``DOCS_LANGUAGE=zh_CN``"
+msgstr "由 ``DOCS_LANGUAGE=zh_CN`` 驱动的中文构建"
+
+#: ../../reference/translations.rst:17 87baacec168748ebae0a4a145e5f9867
+msgid ""
+"This avoids maintaining a separate ``docs/zh/`` tree and keeps page "
+"structure aligned with the English site."
+msgstr "这样无需单独维护 ``docs/zh/`` 目录树，页面结构可与英文站点保持一致。"
+
+#: ../../reference/translations.rst:21 369aa156d7294991a5193b87979e85c2
+msgid "Local Commands"
+msgstr "本地命令"
+
+#: ../../reference/translations.rst:23 4fd221580e8d4600af6cc31146164c7e
+msgid "Run these commands from the repository root:"
+msgstr "在仓库根目录执行以下命令："
+
+#: ../../reference/translations.rst:33 f0881e89934b4fec826ce9775b15b9d7
+msgid "Command reference:"
+msgstr "命令说明："
+
+#: ../../reference/translations.rst:39 a2da2590d287401abd13afff931aa72c
+msgid "Command"
+msgstr "命令"
+
+#: ../../reference/translations.rst:40 160430385bdb47388c49ca4083391e88
+msgid "Purpose"
+msgstr "用途"
+
+#: ../../reference/translations.rst:41 ded556161583486d8e32eb196696ff82
+msgid "``make docs-gettext``"
+msgstr "``make docs-gettext``"
+
+#: ../../reference/translations.rst:42 3f695d4ab6d74265832c9aa777c4558e
+msgid "Generate gettext ``.pot`` catalogs under ``docs/_build/gettext/``"
+msgstr "在 ``docs/_build/gettext/`` 下生成 gettext ``.pot`` 目录"
+
+#: ../../reference/translations.rst:43 260ea94a7bc64dc69784c6985467d296
+msgid "``make docs-i18n-init``"
+msgstr "``make docs-i18n-init``"
+
+#: ../../reference/translations.rst:44 13afece57b1d45a0ace183345f1298c8
+msgid "Initialize or update ``zh_CN`` translation files in ``docs/locale/``"
+msgstr "在 ``docs/locale/`` 中初始化或更新 `` zh_CN`` 翻译文件"
+
+#: ../../reference/translations.rst:45 4db71b66501c41f9918c1aa175983da6
+msgid "``make docs-i18n-update``"
+msgstr "``make docs-i18n-update``"
+
+#: ../../reference/translations.rst:46 8500d1a73933428a84cd6e6eb1ba878b
+msgid ""
+"Refresh existing ``zh_CN`` translation files after English source changes"
+msgstr "在英文源变更后刷新已有的 ``zh_CN`` 翻译文件"
+
+#: ../../reference/translations.rst:47 59c8da1083464164985b5609b9c9dd4d
+msgid "``make docs-zh``"
+msgstr "``make docs-zh``"
+
+#: ../../reference/translations.rst:48 a564ac3654c34b02af171d812526e242
+msgid "Build the Chinese HTML site into ``docs/_build/html/zh_CN/``"
+msgstr "将中文 HTML 站点构建到 ``docs/_build/html/zh_CN/``"
+
+#: ../../reference/translations.rst:49 32f7af8cf7c046a282383a2dc9aa0877
+msgid "``make docs-zh-strict``"
+msgstr "``make docs-zh-strict``"
+
+#: ../../reference/translations.rst:50 024a99eec5124fcdbbb4bdb9c9ed1355
+msgid "Build the Chinese HTML site with warnings treated as errors"
+msgstr "构建中文 HTML 站点，并将警告视为错误"
+
+#: ../../reference/translations.rst:53 ceaf2f7c235e4249ad5753d25a030627
+msgid "Translation Workflow"
+msgstr "翻译工作流"
+
+#: ../../reference/translations.rst:55 3261df8d94b0489c82d51bf6f74d450a
+msgid "When the English documentation changes:"
+msgstr "当英文文档发生变更时："
+
+#: ../../reference/translations.rst:57 4236b922a7194f218a5be03ee1a05b09
+msgid "Edit the English source files under ``docs/``."
+msgstr "编辑 ``docs/`` 下的英文源文件。"
+
+#: ../../reference/translations.rst:58 090e3ff79a624f6fa06c3a977548f90b
+msgid "Regenerate gettext catalogs:"
+msgstr "重新生成 gettext 目录："
+
+#: ../../reference/translations.rst:64 7e4694880f9a42bd9f34311a7b1faf8d
+msgid "Update the Chinese translation files:"
+msgstr "更新中文翻译文件："
+
+#: ../../reference/translations.rst:70 f679438a0d6f44298dd2dc4a39cca162
+msgid ""
+"Translate the new or modified strings in "
+"``docs/locale/zh_CN/LC_MESSAGES/*.po``."
+msgstr "翻译 ``docs/locale/zh_CN/LC_MESSAGES/*.po`` 中新增或修改的字符串。"
+
+#: ../../reference/translations.rst:71 ec4e76055d50496bbf20922d570b35e5
+msgid "Build the Chinese site locally:"
+msgstr "在本地构建中文站点："
+
+#: ../../reference/translations.rst:77 cb8ab0c761e4455a9417c4a21596891c
+msgid "If you need stricter validation, run:"
+msgstr "若需要更严格的校验，请执行："
+
+#: ../../reference/translations.rst:85 6df5b146cf7d4ac3b66a50e1b84279fd
+msgid ""
+"``gettext_uuid = True`` is enabled in ``docs/conf.py`` to reduce churn in "
+"``.po`` files when source paragraphs are moved around."
+msgstr ""
+"已在 ``docs/conf.py`` 中启用 `` gettext_uuid = True``，以便在源段落调整位置时减少 ``.po`` "
+"文件的无关变动。"
+
+#: ../../reference/translations.rst:89 6fedb245c3634f498b43347a3ba1ce1f
+msgid "Read the Docs Setup"
+msgstr "Read the Docs 配置"
+
+#: ../../reference/translations.rst:91 34316f7f3812403e820e7630b14a43fb
+msgid "Use two Read the Docs projects that point to the same repository:"
+msgstr "使用两个指向同一仓库的 Read the Docs 项目："
+
+#: ../../reference/translations.rst:93 fc7a342fb0db4184b51a1e8ed6087920
+msgid "**English parent project**"
+msgstr "**英文父项目**"
+
+#: ../../reference/translations.rst:95 f26f6eb001a842e8a86e6b01c04b066c
+msgid "Keep the existing English project as the parent project."
+msgstr "将现有英文项目保留为父项目。"
+
+#: ../../reference/translations.rst:96 ae6008cdb17744079e240eb50d38ebd6
+msgid "Set its language to ``English`` in the RTD project settings."
+msgstr "在 RTD 项目设置中将其语言设为 ``English``。"
+
+#: ../../reference/translations.rst:98 2c1ff7cddfb34df6a367fb576e3c9e1e
+msgid "**Chinese translation project**"
+msgstr "**中文翻译项目**"
+
+#: ../../reference/translations.rst:100 e4a62f6d922346a0b9b50b4c4e9fd8a8
+msgid "Create a second RTD project from the same repository."
+msgstr "基于同一仓库再创建一个 RTD 项目。"
+
+#: ../../reference/translations.rst:101 186c868f9722430585a4f984c69faa6e
+msgid "Set its language to ``Chinese (Simplified)``."
+msgstr "将其语言设为 ``Chinese (Simplified)``。"
+
+#: ../../reference/translations.rst:102 6dd4ab4be0da49998eae3f5d1cab64b0
+msgid "Attach it to the English project under ``Translations``."
+msgstr "在 ``Translations`` 下将其关联到英文项目。"
+
+#: ../../reference/translations.rst:104 0575b51ce5954670bca73ea7f666b7b2
+msgid ""
+"With this setup, Read the Docs will expose both languages under the same "
+"site and provide the language switcher automatically."
+msgstr "这样配置后，Read the Docs 会在同一站点下提供两种语言，并自动提供语言切换器。"
+
+#: ../../reference/translations.rst:108 69d489ad16bf443eb3e3a0ec9bf2f42a
+msgid "How language selection works"
+msgstr "语言选择如何生效"
+
+#: ../../reference/translations.rst:110 647443e68c5249348725f13399aac158
+msgid ""
+"``docs/conf.py`` resolves the build language from ``DOCS_LANGUAGE`` first "
+"and falls back to ``READTHEDOCS_LANGUAGE``. This keeps local builds and RTD "
+"builds on the same configuration path:"
+msgstr ""
+"``docs/conf.py`` 优先从 `` DOCS_LANGUAGE`` 解析构建语言，其次回退到 `` "
+"READTHEDOCS_LANGUAGE``，从而使本地构建与 RTD 构建走同一套配置："
+
+#: ../../reference/translations.rst:114 0874efb10fcb48d2a047cdc033de296d
+msgid "local Chinese build: ``DOCS_LANGUAGE=zh_CN``"
+msgstr "本地中文构建：``DOCS_LANGUAGE=zh_CN``"
+
+#: ../../reference/translations.rst:115 9c74e055f22d4b52af5d2ff023f8fdfc
+msgid "RTD Chinese project: ``READTHEDOCS_LANGUAGE=zh-cn`` (provided by RTD)"
+msgstr "RTD 中文项目：``READTHEDOCS_LANGUAGE=zh-cn`` （由 RTD 提供）"
+
+#: ../../reference/translations.rst:118 bb2567c3a37744d9a050d24bd9720cea
+msgid "Scope of the first Chinese rollout"
+msgstr "首批中文上线的范围"
+
+#: ../../reference/translations.rst:120 e01f10ca6764437f8b2305bca3058a56
+msgid ""
+"The current setup scaffolds ``.po`` files for all pages already linked from "
+"the site navigation, including:"
+msgstr "当前配置已为站点导航中已链接的所有页面生成 ``.po`` 文件骨架，包括："
+
+#: ../../reference/translations.rst:123 811d31c8f2794ecdb39e9a500d6cd9ae
+msgid ""
+"``index``, ``quickstart``, ``installation``, ``usage_guide``, ``cookbook``, "
+"``faq``"
+msgstr ""
+"``index``、`` quickstart``、`` installation``、`` usage_guide``、`` "
+"cookbook``、`` faq``"
+
+#: ../../reference/translations.rst:124 95992ac17dbd456fb703194da490729e
+msgid "all pages under ``models/``"
+msgstr "``models/`` 下的所有页面"
+
+#: ../../reference/translations.rst:125 5c93bc87687747deacc5f88364dfa0e8
+msgid "all pages under ``finetuning/``"
+msgstr "``finetuning/`` 下的所有页面"
+
+#: ../../reference/translations.rst:126 298bfbd4e3934542824b106ee63e453a
+msgid "all pages under ``reference/``"
+msgstr "``reference/`` 下的所有页面"
+
+#: ../../reference/translations.rst:127 0399fcec202b4ae2ad37d1eb024fb1ef
+msgid "all pages under ``deployment/`` and ``integrations/``"
+msgstr "``deployment/`` 与 `` integrations/`` 下的所有页面"
+
+#: ../../reference/translations.rst:129 04e4b7c78b154614b0445decbeb23e73
+msgid ""
+"This means the infrastructure is ready for a phased translation rollout "
+"without changing the site structure again later."
+msgstr "这意味着基础设施已就绪，可分阶段推进翻译，而无需日后再次调整站点结构。"

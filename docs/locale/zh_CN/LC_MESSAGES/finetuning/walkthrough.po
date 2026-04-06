@@ -1,0 +1,382 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2025, OpenBMB
+# This file is distributed under the same license as the VoxCPM package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: VoxCPM\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-06 15:37+0800\n"
+"PO-Revision-Date: 2026-04-06 20:00+0800\n"
+"Last-Translator: VoxCPM Docs zh-CN <>\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../finetuning/walkthrough.rst:3 66c0754094d24ef1877d9f9f0b4de5b5
+msgid "Fine-Tuning Walkthrough: VoxCPM 2 on LibriSpeech"
+msgstr "微调演练：在 LibriSpeech 上微调 VoxCPM 2"
+
+#: ../../finetuning/walkthrough.rst:5 0e51a445aff04b76be45447956a8c009
+msgid ""
+"A complete walkthrough: data preparation → training → inference, using the "
+"publicly available `LibriSpeech <https://www.openslr.org/12>`_ corpus. The "
+"same workflow applies to any comparable speech dataset — just swap the data-"
+"preparation step for your own source."
+msgstr ""
+"完整流程：数据准备 → 训练 → 推理，使用公开的 `LibriSpeech <https://www.openslr.org/12>`_ "
+"语料。同类语音数据集均可沿用同一流程 — 只需将数据准备步骤换成你的数据源。"
+
+#: ../../finetuning/walkthrough.rst:10 961c051ee0a34359b1cd14b552b52acd
+msgid "Prerequisites"
+msgstr "前置条件"
+
+#: ../../finetuning/walkthrough.rst:13 4e062de06917469c97199b258c2de92a
+msgid "Hardware"
+msgstr "硬件"
+
+#: ../../finetuning/walkthrough.rst:15 65a54ac2f91b4b79816448f171487401
+msgid ""
+"Rough estimates with ``batch_size=16`` and ``max_batch_tokens=8192`` on "
+"VoxCPM 2. Actual usage depends on audio length and accumulation steps."
+msgstr ""
+"在 VoxCPM 2 上，``batch_size=16``、``max_batch_tokens=8192`` "
+"时的粗略估算；实际占用取决于音频长度与梯度累积步数。"
+
+#: ../../finetuning/walkthrough.rst:21 a606359543f542d591163fd23aac3369
+msgid "Setup"
+msgstr "配置"
+
+#: ../../finetuning/walkthrough.rst:22 59b8a20221e14c7aacbf43d8cef137d8
+msgid "SFT (full fine-tuning)"
+msgstr "SFT（全量微调）"
+
+#: ../../finetuning/walkthrough.rst:23 c275d8b9ed2a4c06bbf124403394de31
+msgid "LoRA"
+msgstr "LoRA"
+
+#: ../../finetuning/walkthrough.rst:24 b44b223efca84d8b98bdd792dc2048b2
+msgid "Single GPU"
+msgstr "单卡"
+
+#: ../../finetuning/walkthrough.rst:25 3f758e62a56943a48d5220fcffc9b299
+msgid "~40 GB VRAM"
+msgstr "约 40 GB 显存"
+
+#: ../../finetuning/walkthrough.rst:26 fe66a94b12714c6a8b0d4a078f9c39a9
+msgid "~20 GB VRAM"
+msgstr "约 20 GB 显存"
+
+#: ../../finetuning/walkthrough.rst:27 1674e0bda7ea41a58a6fc677e6b70c60
+msgid "DDP — additional per-card overhead"
+msgstr "DDP — 每卡额外开销"
+
+#: ../../finetuning/walkthrough.rst:28 ../../finetuning/walkthrough.rst:29
+#: a9a907fe152442fa98377366ae4d6548 b8835c8920f947879601a9a851bb8e0f
+msgid "+~10 GB"
+msgstr "+约 10 GB"
+
+#: ../../finetuning/walkthrough.rst:33 6ea6fbe3b05a410e9c4b395d991b574e
+msgid ""
+"**DDP extra memory** comes from a per-GPU gradient bucket for ``allreduce`` "
+"communication (≈ all trainable params × 4 bytes) plus NCCL buffers. If you "
+"hit OOM in DDP, reduce ``batch_size`` or ``max_batch_tokens``."
+msgstr ""
+"**DDP 额外显存** 来自每张卡用于 ``allreduce`` 的梯度桶（约 可训练参数 × 4 字节）以及 NCCL 缓冲。若 DDP 下 "
+"OOM，可降低 ``batch_size`` 或 ``max_batch_tokens``。"
+
+#: ../../finetuning/walkthrough.rst:36 7b4458181d844ea08a9aa77cab572573
+msgid "Software"
+msgstr "软件"
+
+#: ../../finetuning/walkthrough.rst:42 5744f09672724a22bf32b15967a78b04
+msgid "Dependency"
+msgstr "依赖"
+
+#: ../../finetuning/walkthrough.rst:43 f11a9749694844338e9a24f0e7af0404
+msgid "Requirement"
+msgstr "要求"
+
+#: ../../finetuning/walkthrough.rst:44 6b92511c599140b3936d6e75de248ecc
+msgid "Python"
+msgstr "Python"
+
+#: ../../finetuning/walkthrough.rst:45 9da92470a4b6417dac095a38dda01693
+msgid "3.10 or 3.11 (recommended for training)"
+msgstr "3.10 或 3.11（训练推荐）"
+
+#: ../../finetuning/walkthrough.rst:46 3e657238f102493681006c2ceffc9f88
+msgid "PyTorch"
+msgstr "PyTorch"
+
+#: ../../finetuning/walkthrough.rst:47 b6b5bc32b58d4ac38b3b7804e78fc01a
+msgid "2.5.0+ (CUDA build matching your driver)"
+msgstr "2.5.0+（与驱动匹配的 CUDA 构建）"
+
+#: ../../finetuning/walkthrough.rst:48 cd882869764d468da542f299e04f884c
+msgid "CUDA driver"
+msgstr "CUDA 驱动"
+
+#: ../../finetuning/walkthrough.rst:49 607a4d25761548ef85bac99ff28aa79a
+msgid "12.0+"
+msgstr "12.0+"
+
+#: ../../finetuning/walkthrough.rst:50 407fdafc6cbb4c1d9939c68e7e20c6d1
+msgid "Disk space"
+msgstr "磁盘空间"
+
+#: ../../finetuning/walkthrough.rst:51 902cbb3f79e74f1e8c25e33a697e8289
+msgid "~30 GB for ``train-clean-100``; ~5 GB for checkpoints"
+msgstr "``train-clean-100`` 约需 30 GB；checkpoint 约 5 GB"
+
+#: ../../finetuning/walkthrough.rst:60 7ce49c3b2d3949aba57b491f76df8843
+msgid "Step 1 — Download LibriSpeech"
+msgstr "步骤 1 — 下载 LibriSpeech"
+
+#: ../../finetuning/walkthrough.rst:68 5eff41bc58734d16927bbc3ef69e0018
+msgid "The extracted directory layout:"
+msgstr "解压后的目录结构："
+
+#: ../../finetuning/walkthrough.rst:82 5f1311e356a94df3b5df617161f6ee08
+msgid "Step 2 — Build the JSONL Manifest"
+msgstr "步骤 2 — 构建 JSONL 清单"
+
+#: ../../finetuning/walkthrough.rst:84 32337c0ed65841589de33115d2330bfe
+msgid ""
+"The training script expects a **JSONL manifest** — one JSON object per line "
+"with at minimum an ``audio`` path and a ``text`` transcript."
+msgstr "训练脚本需要 **JSONL 清单** — 每行一个 JSON 对象，至少包含 ``audio`` 路径与 ``text`` 转写。"
+
+#: ../../finetuning/walkthrough.rst:86 f7139da154fc4be9a0d188b874744838
+msgid ""
+"Save the script below as ``scripts/prepare_librispeech_manifest.py`` and run"
+" it once:"
+msgstr "将下方脚本保存为 ``scripts/prepare_librispeech_manifest.py`` 并运行一次："
+
+#: ../../finetuning/walkthrough.rst:125 e3ede2e29f7d4b2fb9614434e685303f
+msgid "The resulting manifest looks like:"
+msgstr "生成的清单示例如下："
+
+#: ../../finetuning/walkthrough.rst:134 f6621daee19f4d0798a8bbfe8b56806d
+msgid ""
+"**Why** ``text.capitalize()`` **instead of leaving ALL-CAPS?** VoxCPM's pre-"
+"training corpus uses sentence-cased text. Feeding ALL-CAPS transcripts can "
+"degrade text adherence at inference time. ``str.capitalize()`` is a simple "
+"heuristic; a proper truecasing model gives better results for production "
+"use."
+msgstr ""
+"**为何**用 ``text.capitalize()`` **而不是保留全大写？** VoxCPM "
+"预训练语料为句首大写风格。推理时若喂入全大写转写可能损害文本贴合度。``str.capitalize()`` 是简单启发式；生产环境可用专门的 "
+"truecasing 模型效果更好。"
+
+#: ../../finetuning/walkthrough.rst:139 11340183b895428088c3c66faf8e268f
+msgid "Step 3a — Full Fine-Tuning (SFT)"
+msgstr "步骤 3a — 全量微调（SFT）"
+
+#: ../../finetuning/walkthrough.rst:141 91312f6948e54b0d97f3a8151cbf2e43
+msgid ""
+"Full fine-tuning updates **all model parameters**. Best for large datasets "
+"or significant domain shifts where LoRA capacity is insufficient."
+msgstr "全量微调会更新**全部参数**。适合大数据集或领域偏移明显、LoRA 容量不足的场景。"
+
+#: ../../finetuning/walkthrough.rst:144 ../../finetuning/walkthrough.rst:199
+#: 96774bae92f7464cae8b24f2b0b43f3c 9f2f598e0b644b9ea86102b6f171dca4
+msgid "Config file"
+msgstr "配置文件"
+
+#: ../../finetuning/walkthrough.rst:146 aa58a45f0b7d49f98c5cd109cbbba4f0
+msgid "Save as ``conf/librispeech_full.yaml``:"
+msgstr "保存为 ``conf/librispeech_full.yaml``："
+
+#: ../../finetuning/walkthrough.rst:178 ../../finetuning/walkthrough.rst:241
+#: 7db31409c7734eabbda0f1fcfc97c5ac a947c0e9124b40ee88568af8c8caa5c2
+msgid "Launch"
+msgstr "启动"
+
+#: ../../finetuning/walkthrough.rst:189 7554aad14b914987baa56c7970d16ee4
+msgid ""
+"You can also fill in ``CONFIG_PATH``, ``TRAIN_MANIFEST``, and ``BATCH_SIZE``"
+" at the top of ``run_train.sh`` and run ``bash run_train.sh``."
+msgstr ""
+"也可在 ``run_train.sh`` 顶部填写 ``CONFIG_PATH``、``TRAIN_MANIFEST``、``BATCH_SIZE`` "
+"后执行 ``bash run_train.sh``。"
+
+#: ../../finetuning/walkthrough.rst:194 01315bbfe27c45b68dd9feea6160d9e9
+msgid "Step 3b — LoRA Fine-Tuning"
+msgstr "步骤 3b — LoRA 微调"
+
+#: ../../finetuning/walkthrough.rst:196 ac9e968231cb4ca8ac0d314df35cee08
+msgid ""
+"LoRA freezes the base model and trains only a small set of low-rank delta "
+"matrices. **Recommended as the default starting point.**"
+msgstr "LoRA 冻结基座，仅训练少量低秩增量矩阵。**建议作为默认起点。**"
+
+#: ../../finetuning/walkthrough.rst:201 1ee74d08ace74cffad90d2fc3818d746
+msgid "Save as ``conf/librispeech_lora.yaml``:"
+msgstr "保存为 ``conf/librispeech_lora.yaml``："
+
+#: ../../finetuning/walkthrough.rst:250 9b7d000737bb478ba7d1672b082ed6d4
+msgid "Step 4 — Monitor Training"
+msgstr "步骤 4 — 监控训练"
+
+#: ../../finetuning/walkthrough.rst:259 9ff0d6cbe2c245b2bee6a42d4840a4a5
+msgid "Metrics to watch"
+msgstr "关注指标"
+
+#: ../../finetuning/walkthrough.rst:265 b2c616e175d142e0b68db71965f6a793
+msgid "Metric"
+msgstr "指标"
+
+#: ../../finetuning/walkthrough.rst:266 6c6bf0a0f6f445a89c0c0f5f0f624230
+msgid "Healthy pattern"
+msgstr "健康表现"
+
+#: ../../finetuning/walkthrough.rst:267 0508c3c00ef141c2a99aa9f9c985dd8b
+msgid "``loss/diff``"
+msgstr "``loss/diff``"
+
+#: ../../finetuning/walkthrough.rst:268 6baa8a9844a149db80a7b8bc5cebfc88
+msgid "Decreases steadily; flattens as convergence approaches"
+msgstr "平稳下降；接近收敛时趋于平缓"
+
+#: ../../finetuning/walkthrough.rst:269 d36f3132bf4646ab912feb4735f476c2
+msgid "``loss/stop``"
+msgstr "``loss/stop``"
+
+#: ../../finetuning/walkthrough.rst:270 fb7e673250b7441db0aa1a4d79dc79b3
+msgid "Drops quickly in the first 100–200 steps, then stays low"
+msgstr "前 100–200 步快速下降，之后保持较低"
+
+#: ../../finetuning/walkthrough.rst:271 0f1cb4a7ee084730b8d08413594eb0c7
+msgid "``grad_norm``"
+msgstr "``grad_norm``"
+
+#: ../../finetuning/walkthrough.rst:272 46a3107bff1f43b08f9213ccd0746ad9
+msgid "Stays roughly in the 0.3–2.0 range; occasional spikes are fine"
+msgstr "大致落在 0.3–2.0；偶发尖峰可接受"
+
+#: ../../finetuning/walkthrough.rst:273 ef0447362901493bb49d38ed46223617
+msgid "``lr``"
+msgstr "``lr``"
+
+#: ../../finetuning/walkthrough.rst:274 ae1109c096694509aea48423052177ea
+msgid "Cosine warm-up then decay"
+msgstr "余弦 warm-up 后衰减"
+
+#: ../../finetuning/walkthrough.rst:275 4929d03d6de8415f8a986a4e940dac33
+msgid "``val/loss``"
+msgstr "``val/loss``"
+
+#: ../../finetuning/walkthrough.rst:276 7ba4fa56f04c42da857277ead5117233
+msgid ""
+"Tracks training loss; **stop if it rises while train loss keeps falling**"
+msgstr "随训练损失变化；**若训练损失仍降而验证损失上升，应停止**"
+
+#: ../../finetuning/walkthrough.rst:279 3ca22b704e5b45ccb04f60a88b462471
+msgid "When to stop"
+msgstr "何时停止"
+
+#: ../../finetuning/walkthrough.rst:281 eee67d82f69e46b98e429be5032c756b
+msgid ""
+"**1–2 epochs is almost always enough** for TTS fine-tuning. The best "
+"checkpoint is often not the final one."
+msgstr "TTS 微调**通常 1–2 个 epoch 足够**。最佳 checkpoint 往往不在最后。"
+
+#: ../../finetuning/walkthrough.rst:283 ec17f9b4963141a696e6cb4ca44fd3ea
+msgid ""
+"Use ``valid_interval: 50`` and ``save_interval: 50`` for rollback options."
+msgstr "使用 ``valid_interval: 50`` 与 ``save_interval: 50`` 便于回滚。"
+
+#: ../../finetuning/walkthrough.rst:284 005641ab2ef2495cbc07a594fa9c2a93
+msgid "Pick the checkpoint where ``val/loss`` was lowest."
+msgstr "选取 ``val/loss`` 最低时对应的 checkpoint。"
+
+#: ../../finetuning/walkthrough.rst:285 38c660939cb54b6d9d681df633cea332
+msgid ""
+"If you do not have a val manifest, evaluate a handful of checkpoints in the "
+"convergence zone with the inference script and pick the best-sounding one."
+msgstr "若无验证清单，可在收敛区间取若干 checkpoint 用推理脚本试听，选听感最佳者。"
+
+#: ../../finetuning/walkthrough.rst:289 896a8008555d43838cc684744dae4fd0
+msgid ""
+"If ``val/loss`` starts rising while ``train/loss`` keeps falling, **stop "
+"immediately** and roll back. This is the classic overfitting signature for "
+"TTS models: the model will start ignoring input text and generate the same "
+"voice pattern regardless of what you type."
+msgstr ""
+"若 ``val/loss`` 开始上升而 ``train/loss`` 仍在下降，请**立即停止**并回退。这是 TTS "
+"模型典型的过拟合信号：模型会忽略输入文本，无论输入什么都生成相似的音色模式。"
+
+#: ../../finetuning/walkthrough.rst:294 db34867920fa4076b0dc965e86a55c54
+msgid "Step 5 — Inference"
+msgstr "步骤 5 — 推理"
+
+#: ../../finetuning/walkthrough.rst:297 d1cdc89667034aae8ca5e41912229adc
+msgid "SFT checkpoint"
+msgstr "SFT checkpoint"
+
+#: ../../finetuning/walkthrough.rst:316 c21b5e08c42a47258e74ba606798398c
+msgid "LoRA checkpoint"
+msgstr "LoRA checkpoint"
+
+#: ../../finetuning/walkthrough.rst:325 4eae49b783424ebc891c96321625c4b8
+msgid "To batch-evaluate and compare multiple checkpoints:"
+msgstr "批量评估并对比多个 checkpoint："
+
+#: ../../finetuning/walkthrough.rst:339 c4de92e0331a43f7bc534f6effc97f45
+msgid "Troubleshooting"
+msgstr "故障排查"
+
+#: ../../finetuning/walkthrough.rst:342 10df4b74f4a142e49b336d20a3cdb7f5
+msgid "Out-of-memory (OOM)"
+msgstr "显存不足（OOM）"
+
+#: ../../finetuning/walkthrough.rst:344 4f9ff0c98c3545b99773d263a76eefe1
+msgid ""
+"LibriSpeech clips vary in duration (2 s – 35 s). ``max_batch_tokens`` "
+"already filters the longest ones. If OOM persists, try:"
+msgstr "LibriSpeech 片段时长不一（2–35 s）。``max_batch_tokens`` 会过滤最长部分。若仍 OOM，可尝试："
+
+#: ../../finetuning/walkthrough.rst:356 a1bc66cf9f0544a684cd0b8cbb486892
+msgid "Loss does not decrease"
+msgstr "损失不下降"
+
+#: ../../finetuning/walkthrough.rst:358 7c35a27bf11b4478b483e84e94b06001
+msgid ""
+"Verify that audio paths in the manifest are correct and all files are "
+"readable."
+msgstr "确认清单中的音频路径正确且文件可读。"
+
+#: ../../finetuning/walkthrough.rst:359 75abcb1b25334a6983a374a65df42953
+msgid ""
+"LibriSpeech FLAC files are 16 kHz; keep ``sample_rate: 48000`` — the "
+"dataloader resamples automatically for VoxCPM 2."
+msgstr ""
+"LibriSpeech FLAC 为 16 kHz；保持 ``sample_rate: 48000`` 即可 — 数据加载器会为 VoxCPM 2 "
+"自动重采样。"
+
+#: ../../finetuning/walkthrough.rst:360 b767082e56474580b74c238374bd1ad0
+msgid "Check that transcripts are sentence-cased, not ALL-CAPS."
+msgstr "确认转写为句首大写，而非全大写。"
+
+#: ../../finetuning/walkthrough.rst:363 6278c384cc574463938f0709a87b341a
+msgid "Generated audio ignores input text"
+msgstr "生成音频忽略输入文本"
+
+#: ../../finetuning/walkthrough.rst:365 24684926f16641b39bfedab5c1f2440b
+msgid "Classic overfitting symptom. Roll back to an earlier checkpoint:"
+msgstr "典型过拟合表现。请回退到较早的 checkpoint："
+
+#: ../../finetuning/walkthrough.rst:376 52aa4738a2e248c9baf8e5bd931e2165
+msgid ""
+"For future runs: always provide a ``val_manifest``, use ``valid_interval: "
+"50``, and stop when ``val/loss`` turns upward. Keeping training within 1–3 "
+"epochs generally avoids this problem entirely."
+msgstr ""
+"后续训练：始终提供 ``val_manifest``，使用 ``valid_interval: 50``，并在 ``val/loss`` "
+"拐头向上时停止。将训练控制在 1–3 个 epoch 内通常可避免此问题。"

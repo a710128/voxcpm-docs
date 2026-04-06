@@ -1,0 +1,133 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2025, OpenBMB
+# This file is distributed under the same license as the VoxCPM package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: VoxCPM \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-06 15:37+0800\n"
+"PO-Revision-Date: 2026-04-06 21:20+0800\n"
+"Last-Translator: GPT-5.4 <>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../quickstart.rst:2 de43b6699dec4383a9d081298cf9847c
+msgid "Quick Start"
+msgstr "快速开始"
+
+#: ../../quickstart.rst:4 410ccb91b6ed441faf89300dd2b201ba
+msgid ""
+"This page gets you from zero to a working VoxCPM setup as fast as "
+"possible. Follow it top to bottom and you will have generated audio "
+"through three different paths: the Python API, the CLI, and the web demo."
+msgstr ""
+"本页会尽可能快速地带你从零完成可运行的 VoxCPM 安装。"
+"按顺序从上往下操作后，你将通过三种不同方式完成语音生成：Python API、CLI 和 Web Demo。"
+
+#: ../../quickstart.rst:7 a365ccc5311343e28686467d61c324d3
+msgid "Install"
+msgstr "安装"
+
+#: ../../quickstart.rst:13 b2b652a2939549019076cd5f57f832ce
+msgid ""
+"That's it. For other installation methods (pip, source checkout, etc.), "
+"see :doc:`./installation`."
+msgstr "就是这样。若你想了解其他安装方式（如 pip、源码检出等），请参阅 :doc:`./installation`。"
+
+#: ../../quickstart.rst:16 ef872a5eedf9436da2f68a5971987492
+msgid "Step 1: Python API"
+msgstr "步骤 1：Python API"
+
+#: ../../quickstart.rst:18 c6a7e9a042744220b53643d9dfbb2dbf
+msgid "Start with the current recommended release, ``VoxCPM 2``:"
+msgstr "从当前推荐版本 ``VoxCPM 2`` 开始："
+
+#: ../../quickstart.rst:38 f69b636166eb4c10b921f770d3d93447
+msgid ""
+"The first run downloads model weights automatically. If you have trouble "
+"accessing Hugging Face, see the mirror setup in :doc:`./installation`."
+msgstr "首次运行会自动下载模型权重。如果你访问 Hugging Face 有困难，请查看 :doc:`./installation` 中的镜像配置。"
+
+#: ../../quickstart.rst:40 d1335457f5fb4e4fb28cae7e2287ad2f
+msgid ""
+"This example does not enable the optional denoiser — it is only needed "
+"when you want to enhance prompt or reference audio for voice cloning. See"
+" :doc:`./usage_guide` for details."
+msgstr "这个示例没有启用可选降噪器。只有当你想在声音克隆时增强 prompt 或 reference 音频时才需要它。详情见 :doc:`./usage_guide`。"
+
+#: ../../quickstart.rst:42 6a15b6d511014834aafa76aaa038fa41
+msgid ""
+"If this script runs and produces ``demo.wav``, your installation is "
+"working."
+msgstr "如果这段脚本可以正常运行并生成 ``demo.wav``，说明你的安装已可正常工作。"
+
+#: ../../quickstart.rst:46 9f7f5aaea70147efb750fde7921de527
+msgid ""
+"For new projects, start with :doc:`./models/voxcpm2`, which is the "
+"current version. Earlier releases remain available from "
+":doc:`./models/version_history` when you need an older checkpoint."
+msgstr "对于新项目，建议从当前版本 :doc:`./models/voxcpm2` 开始。如果你需要较旧的 checkpoint，也可以在 :doc:`./models/version_history` 中找到早期版本。"
+
+#: ../../quickstart.rst:49 c785b3db3c3e4ce195421c7b9e6ee84d
+msgid "Step 2: CLI"
+msgstr "步骤 2：CLI"
+
+#: ../../quickstart.rst:51 7e793387ba754caca126ae7728684021
+msgid ""
+"VoxCPM also provides a command-line interface. The CLI defaults to "
+"``openbmb/VoxCPM2``, so you can use the recommended subcommands directly "
+"unless you want to override the checkpoint with ``--hf-model-id``:"
+msgstr "VoxCPM 也提供命令行接口。CLI 默认使用 ``openbmb/VoxCPM2``，因此除非你想通过 ``--hf-model-id`` 覆盖 checkpoint，否则可以直接使用推荐子命令："
+
+#: ../../quickstart.rst:71 7aa051ca868840deb77f03859cc17d44
+msgid "Step 3: Web Demo"
+msgstr "步骤 3：Web Demo"
+
+#: ../../quickstart.rst:73 95834788c0de45b89ea50428d676df68
+msgid ""
+"The web demo requires a source checkout. If you installed via ``pip "
+"install voxcpm`` in the step above, you still need to clone the "
+"repository:"
+msgstr "Web Demo 需要源码检出。如果你在上一步通过 ``pip install voxcpm`` 完成安装，仍然需要克隆仓库："
+
+#: ../../quickstart.rst:82 c595bedd75e34806b1ab3957eb9678c5
+msgid ""
+"The web demo also downloads an additional ASR model (SenseVoice-Small) on"
+" first use for prompt audio transcription."
+msgstr "Web Demo 在首次使用时还会额外下载一个 ASR 模型（SenseVoice-Small），用于 prompt 音频转写。"
+
+#: ../../quickstart.rst:85 73244143b01945b0b46045731b4af374
+msgid "What's Next?"
+msgstr "接下来做什么？"
+
+#: ../../quickstart.rst:87 1dd62bde074f4469987238e961f8be9f
+msgid ""
+"Continue with :doc:`./usage_guide` for prompt strategy, voice cloning "
+"tips, and quality tuning."
+msgstr "继续阅读 :doc:`./usage_guide`，了解 prompt 策略、声音克隆技巧和质量调优。"
+
+#: ../../quickstart.rst:88 52b81d3ce66d4689a99ce4abe500e2d0
+msgid ""
+"Check the pages under ``Models`` in the sidebar for version-specific "
+"features and migration notes."
+msgstr "查看侧边栏 ``Models`` 下的页面，了解各版本特性与迁移说明。"
+
+#: ../../quickstart.rst:89 383d3cef05f04ea9bafb31be8326e4c1
+msgid ""
+"Fine-tune the model with :doc:`./finetuning/finetune` to adapt it to your"
+" use case."
+msgstr "通过 :doc:`./finetuning/finetune` 微调模型，使其适配你的实际场景。"
+
+#: ../../quickstart.rst:90 d4855e47032e421fbe44bf0cb137a567
+msgid ""
+"Deploy the model with :doc:`./deployment/nanovllm_voxcpm` for high-"
+"throughput serving."
+msgstr "通过 :doc:`./deployment/nanovllm_voxcpm` 部署模型，以实现高吞吐服务。"
+

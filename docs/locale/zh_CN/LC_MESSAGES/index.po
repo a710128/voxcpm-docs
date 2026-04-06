@@ -1,0 +1,377 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2025, OpenBMB
+# This file is distributed under the same license as the VoxCPM package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: VoxCPM \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-06 15:37+0800\n"
+"PO-Revision-Date: 2026-04-06 16:30+0800\n"
+"Last-Translator: GPT-5.4 <>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../index.rst:206
+msgid "Getting Started"
+msgstr "快速开始"
+
+#: ../../index.rst:214
+msgid "User Guide"
+msgstr "用户指南"
+
+#: ../../index.rst:223
+msgid "Models"
+msgstr "模型"
+
+#: ../../index.rst:231
+msgid "Fine-tuning"
+msgstr "微调"
+
+#: ../../index.rst:240
+msgid "Reference"
+msgstr "参考"
+
+#: ../../index.rst:248
+msgid "Ecosystem"
+msgstr "生态"
+
+#: ../../index.rst:4 92f22d99bbd743218aeac78ac1bcab44
+msgid "VoxCPM documentation"
+msgstr "VoxCPM 文档"
+
+#: ../../index.rst:8 ../../index.rst:13 29b75a9cf9ee4c979625e8dacc31006e
+#: 9a5d0864b86a467baf7d233917d0b376
+msgid "VoxCPM"
+msgstr "VoxCPM"
+
+#: ../../index.rst:18 74a3a1a6f4b443e59c8422cfce1b1fd4
+msgid ""
+"A realistic voice synthesis toolkit that brings authentic, expressive "
+"voices to your applications — powered by continuous-space diffusion "
+"autoregressive modeling."
+msgstr ""
+"一个逼真的语音合成工具包，为你的应用带来真实且富有表现力的声音，"
+"由连续空间扩散自回归建模驱动。"
+
+#: ../../index.rst:22 2fda4685de304fa691542e51bccec89e
+msgid "Project Page"
+msgstr "项目主页"
+
+#: ../../index.rst:26 b9d4ae08e1d14fae861b126f8454fadf
+msgid "Technical Report"
+msgstr "技术报告"
+
+#: ../../index.rst:30 2648cb00b37f41b58bc18ba1db48ab4d
+msgid "Live Playground"
+msgstr "在线体验"
+
+#: ../../index.rst:36 59e147be8ed545ebabe7c69452339002
+msgid "Get Started"
+msgstr "开始使用"
+
+#: ../../index.rst:43 f40fc4761c354dd98a0a445df6b5946a
+msgid "View on GitHub"
+msgstr "在 GitHub 上查看"
+
+#: ../../index.rst:53 49cf98ed2571467e9b70f8a09b95ac6a
+msgid "🌟 Key Features"
+msgstr "🌟 核心特性"
+
+#: ../../index.rst:55 60cb565f6fa8415cabf7d746659e46de
+msgid ""
+"🎯 **Context-Aware, Expressive Speech Generation** - VoxCPM comprehends "
+"text to infer and generate appropriate prosody, delivering speech with "
+"remarkable expressiveness and natural flow. It spontaneously adapts "
+"speaking style based on content, producing highly fitting vocal "
+"expression across a massive 30-language corpus."
+msgstr ""
+"🎯 **上下文感知的高表现力语音生成** - VoxCPM 能够理解文本内容，"
+"推断并生成合适的韵律，让语音拥有出色的表现力与自然流畅度。"
+"它会根据内容自发调整说话风格，在覆盖 30 种语言的大规模语料上生成高度贴合语境的表达。"
+
+#: ../../index.rst:56 d4c3536071d14637a89ad71b191ff3ba
+msgid ""
+"🎭 **True-to-Life Voice Cloning** - With only a short reference audio "
+"clip, VoxCPM performs accurate zero-shot voice cloning, capturing not "
+"only the speaker's timbre but also fine-grained characteristics such as "
+"accent, emotional tone, rhythm, and pacing to create a faithful and "
+"natural replica."
+msgstr ""
+"🎭 **高度逼真的声音克隆** - 只需一段简短的参考音频，VoxCPM 就能进行准确的零样本声音克隆，"
+"不仅保留说话人的音色，还能捕捉口音、情绪、节奏和语速等细粒度特征，"
+"生成真实自然的还原效果。"
+
+#: ../../index.rst:57 2f5ac81b9a3d4d6c93f8cf4e567b69e3
+msgid ""
+"⚡ **High-Efficiency Synthesis** - VoxCPM supports streaming synthesis "
+"with a Real-Time Factor (RTF) as low as **0.13** on a consumer-grade "
+"NVIDIA RTX 4090 GPU, making it possible for real-time applications."
+msgstr ""
+"⚡ **高效率合成** - VoxCPM 支持流式合成，在消费级 NVIDIA RTX 4090 GPU 上"
+"可实现低至 **0.13** 的实时系数（RTF），使实时应用成为可能。"
+
+#: ../../index.rst:64 3017868a8bc743fb861f30bf9514da23
+msgid "Versions"
+msgstr "版本"
+
+#: ../../index.rst:66 cf88f1b272784d749b7f746db8d84a6e
+msgid ""
+"VoxCPM 2 is the recommended release for new projects. Earlier releases "
+"remain available for lighter deployments, compatibility, and historical "
+"reference."
+msgstr ""
+"VoxCPM 2 是新项目的推荐版本。更早的版本仍可用于更轻量的部署、兼容性场景以及历史参考。"
+
+#: ../../index.rst:71 85d94fd56cd74e6f92f46bde93c33a0d
+msgid "VoxCPM 2"
+msgstr "VoxCPM 2"
+
+#: ../../index.rst:75 75acb64684224bb4aedfd5fb0837372a
+msgid "Current version"
+msgstr "当前版本"
+
+#: ../../index.rst:76 9e11e7423bb8437989c949f1f7d86eb9
+msgid "30-Language Multilingual"
+msgstr "支持 30 种语言"
+
+#: ../../index.rst:77 e4a8ef77cdd3478ab8a89d4eb7eefe8e
+msgid "Voice Design & Style Control"
+msgstr "声音设计与风格控制"
+
+#: ../../index.rst:78 0863b2987e5a40ba9a8470464f3f6209
+msgid "Native 48kHz Audio"
+msgstr "48kHz 音频输出"
+
+#: ../../index.rst:82 5106041bd1a0445196b8804d8102a93b
+msgid "Try Now →"
+msgstr "立即体验 →"
+
+#: ../../index.rst:88 f03de43a716946b9b58861d9e4ccaa43
+msgid "Earlier Releases"
+msgstr "早期版本"
+
+#: ../../index.rst:92 8ab3998e5f664cafa2bc7d9ff4654bd0
+msgid "VoxCPM 1.5 for lighter Chinese/English deployment"
+msgstr "VoxCPM 1.5 适用于更轻量的中英文部署"
+
+#: ../../index.rst:93 8f0b06359fa945b5bc4c10dedd503576
+msgid "VoxCPM 1.0 for baseline and historical reference"
+msgstr "VoxCPM 1.0 适用于基线对比与历史参考"
+
+#: ../../index.rst:94 174c234c69054caf8cb87fda22f713aa
+msgid "Compatibility and migration guidance for 1.x workflows"
+msgstr "为 1.x 工作流提供兼容性与迁移指引"
+
+#: ../../index.rst:98 4f98d96a18de417e91ea9b7e74bdc06c
+msgid "View Earlier Releases →"
+msgstr "查看早期版本 →"
+
+#: ../../index.rst:108 86ff59ed5f904961a638562c5123e658
+msgid "Community Projects"
+msgstr "社区项目"
+
+#: ../../index.rst:110 f73d152eee2c4225b73cdb67ffdd0413
+msgid ""
+"We're excited to see the VoxCPM community growing. A few representative "
+"ecosystem projects:"
+msgstr "我们很高兴看到 VoxCPM 社区不断壮大。以下是一些具有代表性的生态项目："
+
+#: ../../index.rst:112 dec09b5ff2b0463fb7afaadae4d11587
+msgid ""
+"`NanoVLLM-VoxCPM <https://github.com/a710128/nanovllm-voxcpm>`_ for high-"
+"throughput GPU serving"
+msgstr "`NanoVLLM-VoxCPM <https://github.com/a710128/nanovllm-voxcpm>`_：用于高吞吐 GPU 服务部署"
+
+#: ../../index.rst:113 78f57d3ea4af4cff80d4e5ddc10f7455
+msgid ""
+"`VoxCPM.cpp <https://github.com/bluryar/VoxCPM.cpp>`_ for ggml / GGUF "
+"based CPU, CUDA, and Vulkan inference"
+msgstr "`VoxCPM.cpp <https://github.com/bluryar/VoxCPM.cpp>`_：基于 ggml / GGUF 的 CPU、CUDA 与 Vulkan 推理"
+
+#: ../../index.rst:114 4aa8cedd7e1d4260a90284148a51acf9
+msgid ""
+"`VoxCPMANE <https://github.com/0seba/VoxCPMANE>`_ for Apple Neural Engine"
+" deployment"
+msgstr "`VoxCPMANE <https://github.com/0seba/VoxCPMANE>`_：用于 Apple Neural Engine 部署"
+
+#: ../../index.rst:115 33181d17292e434e9f8adf083ab81428
+msgid ""
+"`ComfyUI-VoxCPM <https://github.com/wildminder/ComfyUI-VoxCPM>`_ for "
+"node-based workflows and LoRA training"
+msgstr "`ComfyUI-VoxCPM <https://github.com/wildminder/ComfyUI-VoxCPM>`_：用于节点式工作流与 LoRA 训练"
+
+#: ../../index.rst:116 3f24835fa6954fcb864e24f55f333528
+msgid ""
+"`MLX-Audio <https://github.com/Blaizzy/mlx-audio>`_ for Apple Silicon "
+"MLX-based audio inference, API serving, and web UI"
+msgstr "`MLX-Audio <https://github.com/Blaizzy/mlx-audio>`_：用于基于 Apple Silicon MLX 的音频推理、API 服务与 Web UI"
+
+#: ../../index.rst:117 05920058304a43bab76a1c9c6e75f6da
+msgid ""
+"`TTS WebUI Extension "
+"<https://github.com/rsxdalv/tts_webui_extension.vox_cpm>`_ for browser-"
+"based usage"
+msgstr "`TTS WebUI Extension <https://github.com/rsxdalv/tts_webui_extension.vox_cpm>`_：用于基于浏览器的使用方式"
+
+#: ../../index.rst:119 c7e53978e0844683ba0c42335660d56b
+msgid ""
+"See the sidebar ``Ecosystem`` section for full setup guides and more "
+"community integrations."
+msgstr "完整安装指南和更多社区集成请查看侧边栏中的 ``Ecosystem`` 部分。"
+
+#: ../../index.rst:123 426eafae495f4563bf139ff128d1fa60
+msgid ""
+"**Have you built something cool with VoxCPM?** We'd love to feature it "
+"here! Please open an issue or pull request to add your project."
+msgstr "**你用 VoxCPM 做了有趣的项目吗？** 我们很乐意把它展示在这里！欢迎提交 issue 或 pull request 来添加你的项目。"
+
+#: ../../index.rst:127 d268e0ac8f06465cb116af3158eec462
+msgid ""
+"The community projects listed above are not officially maintained by "
+"OpenBMB."
+msgstr "以上社区项目并非由 OpenBMB 官方维护。"
+
+#: ../../index.rst:132 f67dda7090f04d6caa4f96384cc7d351
+msgid "Risks and Limitations"
+msgstr "风险与限制"
+
+#: ../../index.rst:134 a37bdc9d3f374180bbcd62dfb52dbff5
+msgid ""
+"**General Model Behavior:** While VoxCPM has been trained on a large-"
+"scale dataset, it may still produce outputs that are unexpected, biased, "
+"or contain artifacts."
+msgstr ""
+"**模型的通用行为：** 尽管 VoxCPM 已在大规模数据集上训练，但仍可能生成出乎意料、带有偏差或包含伪影的结果。"
+
+#: ../../index.rst:135 3aa3d1bf940f4e059f0636eecc32e38b
+msgid ""
+"**Potential for Misuse of Voice Cloning:** VoxCPM's powerful zero-shot "
+"voice cloning capability can generate highly realistic synthetic speech. "
+"This technology could be misused for creating convincing deepfakes for "
+"purposes of impersonation, fraud, or spreading disinformation. Users of "
+"this model must not use it to create content that infringes upon the "
+"rights of individuals. It is strictly forbidden to use VoxCPM for any "
+"illegal or unethical purposes. We strongly recommend that any publicly "
+"shared content generated with this model be clearly marked as AI-"
+"generated."
+msgstr ""
+"**声音克隆被滥用的风险：** VoxCPM 强大的零样本声音克隆能力可以生成高度逼真的合成语音。"
+"这项技术可能被滥用于制作具有欺骗性的深度伪造内容，用于冒充、欺诈或传播虚假信息。"
+"使用者不得用本模型生成侵犯他人权益的内容，严禁将 VoxCPM 用于任何违法或不道德用途。"
+"我们强烈建议，凡是公开分享的模型生成内容都应明确标注为 AI 生成。"
+
+#: ../../index.rst:136 1108a5d3040c4d3cbd5cae6bfd66d19e
+msgid ""
+"**Current Technical Limitations:** Although generally stable, the model "
+"may occasionally exhibit instability, especially with very long or "
+"expressive inputs. VoxCPM 2 introduces Voice Design and Style Control for"
+" more direct attribute control, though results may vary."
+msgstr ""
+"**当前技术限制：** 虽然整体表现较稳定，但模型在极长文本或高表达性输入下仍可能偶发不稳定。"
+"VoxCPM 2 引入了 Voice Design 和 Style Control，以提供更直接的属性控制，但实际效果仍可能有所波动。"
+
+#: ../../index.rst:137 1b4165cd06d44acfaf34570bf7928987
+msgid ""
+"**Language Coverage:** VoxCPM 1.x is trained primarily on Chinese and "
+"English data. VoxCPM 2 extends support to 30 languages, though "
+"performance may vary across languages depending on training data "
+"availability."
+msgstr ""
+"**语言覆盖：** VoxCPM 1.x 主要基于中文和英文数据训练。VoxCPM 2 已扩展到支持 30 种语言，"
+"但不同语言上的效果仍可能受到训练数据覆盖情况的影响。"
+
+#: ../../index.rst:138 e0e21242a4ce433b805fbe151acd2a5b
+msgid ""
+"**Usage Restrictions:** This model is released for research and "
+"development purposes. Commercial use is allowed, but we do not recommend "
+"its use in production or commercial applications without rigorous testing"
+" and safety evaluations. Please use VoxCPM responsibly."
+msgstr ""
+"**使用限制：** 本模型以研究与开发用途发布。允许商业使用，但在未经严格测试与安全评估的情况下，"
+"我们不建议将其用于生产或商业场景。请负责任地使用 VoxCPM。"
+
+#: ../../index.rst:145 4740e50f831e4607b445cc97a9e8d0bb
+msgid "License"
+msgstr "许可证"
+
+#: ../../index.rst:147 f9790c2090634518a139a8d37df63f66
+msgid ""
+"VoxCPM is released under the `Apache License 2.0 "
+"<https://www.apache.org/licenses/LICENSE-2.0>`_."
+msgstr "VoxCPM 以 `Apache License 2.0 <https://www.apache.org/licenses/LICENSE-2.0>`_ 发布。"
+
+#: ../../index.rst:152 ab81cc4334c34b368fc4f7513f4e0994
+msgid "Acknowledgments"
+msgstr "致谢"
+
+#: ../../index.rst:154 038901f2dd184a5d9b9fe1c46ecc7327
+msgid ""
+"We extend our sincere gratitude to the following works and resources for "
+"their inspiration and contributions:"
+msgstr "我们向以下工作与资源致以诚挚感谢，感谢它们带来的启发与贡献："
+
+#: ../../index.rst:156 a0a94c0bf61946bb9588940b669f8bb0
+msgid ""
+"`DiTAR <https://arxiv.org/abs/2502.03930>`_ for the diffusion "
+"autoregressive backbone used in speech generation"
+msgstr "`DiTAR <https://arxiv.org/abs/2502.03930>`_：用于语音生成的扩散自回归骨干"
+
+#: ../../index.rst:157 d08bbbc2329e4a72b7b1e51f65be6804
+msgid ""
+"`MiniCPM-4 <https://github.com/OpenBMB/MiniCPM>`_ for serving as the "
+"language model foundation"
+msgstr "`MiniCPM-4 <https://github.com/OpenBMB/MiniCPM>`_：作为语言模型基础"
+
+#: ../../index.rst:158 b67ad83741804a4eba832b9e05a16c14
+msgid ""
+"`CosyVoice <https://github.com/FunAudioLLM/CosyVoice>`_ for the "
+"implementation of Flow Matching-based LocDiT"
+msgstr "`CosyVoice <https://github.com/FunAudioLLM/CosyVoice>`_：用于基于 Flow Matching 的 LocDiT 实现"
+
+#: ../../index.rst:159 654c8e2a5db84d338677b5666dae4e53
+msgid ""
+"`DAC <https://github.com/descriptinc/descript-audio-codec>`_ for "
+"providing the Audio VAE backbone"
+msgstr "`DAC <https://github.com/descriptinc/descript-audio-codec>`_：用于提供 Audio VAE 骨干"
+
+#: ../../index.rst:164 6ceb6c281c0e4f3f87c79565ad260562
+msgid "Institutions"
+msgstr "机构"
+
+#: ../../index.rst:166 fa4affb6473d4e0ca03bd2e6f0496de0
+msgid "This project is developed by the following institutions:"
+msgstr "本项目由以下机构开发："
+
+#: ../../index.rst:170 187cf31d60f94cd6862ed906562ecb99
+msgid "ModelBest Logo"
+msgstr "ModelBest 标志"
+
+#: ../../index.rst:175 b5d36c0b13c247d0b66116190cc39177
+msgid "THUHCSI Logo"
+msgstr "THUHCSI 标志"
+
+#: ../../index.rst:183 72d06e8478ed43f0a76bb84c7f0879cb
+msgid "Star History"
+msgstr "Star 历史"
+
+#: ../../index.rst:185 cc3577b0d6044ab3933ab2fd8ee2d6fe
+msgid "Star History Chart"
+msgstr "Star 历史图表"
+
+#: ../../index.rst:192 6ca5df77000a438d8e993b8fd084ede2
+msgid "Citation"
+msgstr "引用"
+
+#: ../../index.rst:194 10aed14bef58486ca819dfa4bb1045e5
+msgid ""
+"If you find our model helpful, please consider citing our work and "
+"starring the repository."
+msgstr "如果你觉得我们的模型对你有帮助，欢迎引用我们的工作并为仓库点亮 Star。"
+

@@ -1,0 +1,1216 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2025, OpenBMB
+# This file is distributed under the same license as the VoxCPM package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: VoxCPM\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-06 15:37+0800\n"
+"PO-Revision-Date: 2026-04-06 18:00+0800\n"
+"Last-Translator: Cursor Agent <>\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../reference/changelog.rst:2 a7acf6b869774118845670dbe17a59f1
+msgid "Changelog"
+msgstr "变更日志"
+
+#: ../../reference/changelog.rst:4 87795de3fd124734bfdfca0f2b181904
+msgid ""
+"This page documents **developer-visible** changes across VoxCPM releases — "
+"new APIs, architecture flags, CLI commands, config fields, training script "
+"updates, and dependency changes. If you are migrating between versions, read"
+" from your current version forward."
+msgstr ""
+"本页记录各版 VoxCPM **对开发者可见** 的变更——新 "
+"API、架构标记、CLI、配置字段、训练脚本与依赖。若在版本间迁移，请从你当前版本往后阅读。"
+
+#: ../../reference/changelog.rst:12 59f4e212645f4935a8a15844e39ba22c
+msgid "VoxCPM 2.0 — March 2026"
+msgstr "VoxCPM 2.0 — 2026 年 3 月"
+
+#: ../../reference/changelog.rst:16 ff55099cbf004d1dacf83d60373265e9
+msgid "**Breaking changes at a glance** — read before upgrading from 1.x:"
+msgstr "**破坏性变更一览** — 从 1.x 升级前请先读："
+
+#: ../../reference/changelog.rst:18 3b14c1ff25224933a9632a09fb0e9ec9
+msgid ""
+"``VoxCPM.from_pretrained()`` now defaults to ``openbmb/VoxCPM2``. If you "
+"rely on the default, your code will load the 2B model instead of VoxCPM 1.5."
+" Pin explicitly if needed: "
+"``VoxCPM.from_pretrained(\"openbmb/VoxCPM1.5\")``."
+msgstr ""
+"``VoxCPM.from_pretrained()`` 现默认 `` openbmb/VoxCPM2``。若依赖默认行为，代码会加载 2B 模型而非 "
+"VoxCPM 1.5。需要时请显式固定：`` VoxCPM.from_pretrained(\"openbmb/VoxCPM1.5\")``。"
+
+#: ../../reference/changelog.rst:23 6caf3814c52b4c97abb1299a6dc8d18c
+msgid ""
+"**Output sample rate changed**: 44.1 kHz (1.5) → **48 kHz** (2.0). Any code "
+"that hard-codes ``sf.write(..., 44100)`` must switch to "
+"``model.tts_model.sample_rate`` (which returns ``48000`` for V2)."
+msgstr ""
+"**输出采样率变更**：44.1 kHz（1.5）→ ** 48 kHz** （2.0）。凡硬编码 ``sf.write(..., 44100)`` "
+"的代码须改为 `` model.tts_model.sample_rate`` （V2 返回 `` 48000``）。"
+
+#: ../../reference/changelog.rst:27 4471f70dd4af4cf48a5f8b988496eef7
+msgid ""
+"**Gradio** dependency bumped to ``>=6,<7``. Gradio 5 apps will not install "
+"alongside VoxCPM 2. ``app_old.py`` (the 1.5 demo) has been adapted to Gradio"
+" 6 as well."
+msgstr ""
+"**Gradio** 依赖升至 ``>=6,<7``。Gradio 5 应用无法与 VoxCPM 2 并存安装。`` app_old.py`` （1.5"
+" Demo）也已适配 Gradio 6。"
+
+#: ../../reference/changelog.rst:31 ac66b3597e864019b360595971353e70
+msgid ""
+"**CLI subcommand design**: the old flat ``voxcpm --text ...`` still works "
+"but prints a deprecation warning. Prefer ``voxcpm design|clone|batch``."
+msgstr ""
+"**CLI 子命令设计**：旧式扁平 ``voxcpm --text ...`` 仍可用，但会打印弃用警告。请优先使用 `` voxcpm "
+"design|clone|batch``。"
+
+#: ../../reference/changelog.rst:37 a624972782a64cff9d68d099eb0b5cd1
+msgid "30-Language Multilingual"
+msgstr "30 种语言多语"
+
+#: ../../reference/changelog.rst:39 b68ee60dd33746939ced505726ee7b2e
+msgid ""
+"VoxCPM 2 extends language support from **2 (Chinese, English)** to **30 "
+"languages** across 8 language families, trained on 2.36 million hours of "
+"data (1.8M zh+en base + 560K multilingual). The full language list is "
+"documented in :doc:`../models/voxcpm2`."
+msgstr ""
+"VoxCPM 2 将语言支持从 **2 种（中、英）** 扩展到 ** 30 种语言**、8 个语系，训练数据约 236 万小时（180 万小时中英基础"
+" + 56 万小时多语）。完整列表见 :doc:`../models/voxcpm2`。"
+
+#: ../../reference/changelog.rst:44 8672f52a82de4a819626f15ae3f0869f
+msgid ""
+"At the code level, multilingual synthesis requires **no API changes** — "
+"simply pass text in any supported language. Language detection is handled "
+"internally by the model."
+msgstr "在代码层面，多语合成 **无需改 API** —— 直接传入任意支持语言的文本即可，语言检测由模型内部完成。"
+
+#: ../../reference/changelog.rst:50 ../../reference/changelog.rst:465
+#: 3164f60fb690440597afb393a01f4735 621289b6fa9d47b3b466ca549d988c58
+msgid "Model & Architecture"
+msgstr "模型与架构"
+
+#: ../../reference/changelog.rst:52 2e336a986faf4bc4abe5b96460489512
+msgid ""
+"**New model class** ``VoxCPM2Model`` (``model/voxcpm2.py``). Existing "
+"``VoxCPMModel`` (``model/voxcpm.py``) is unchanged and continues to serve "
+"1.0 / 1.5 checkpoints."
+msgstr ""
+"**新模型类** ``VoxCPM2Model`` （`` model/voxcpm2.py``）。既有 `` VoxCPMModel`` （`` "
+"model/voxcpm.py``）不变，继续服务 1.0 / 1.5 检查点。"
+
+#: ../../reference/changelog.rst:56 e3c9497cc75c4813baed682ab7a312bf
+msgid ""
+"**Architecture auto-detection** via ``config.json`` → ``\"architecture\"`` "
+"field:"
+msgstr "**架构自动检测**：通过 ``config.json`` 的 ``\"architecture\"`` 字段："
+
+#: ../../reference/changelog.rst:58 32a54980a9eb4b49b46b2f3b81658bd7
+msgid "``\"voxcpm2\"`` → ``VoxCPM2Model``"
+msgstr "``\"voxcpm2\"`` → `` VoxCPM2Model``"
+
+#: ../../reference/changelog.rst:59 57b7a1796c5e402b901faebf77cbe66d
+msgid "``\"voxcpm\"`` (or key absent) → ``VoxCPMModel``"
+msgstr "``\"voxcpm\"`` （或缺省）→ `` VoxCPMModel``"
+
+#: ../../reference/changelog.rst:61 fe518a1a3e0242c38e61ad69556686c3
+msgid "**Parameter count**: 2B (up from 750M in 1.5)."
+msgstr "**参数量**：2B（1.5 为 750M）。"
+
+#: ../../reference/changelog.rst:63 0aafc1a3999f4deb8c9084ebc3a8f44e
+msgid ""
+"**Residual LM fusion**: additive → concat-projection. New "
+"``fusion_concat_proj`` linear layer (``Linear(2h → h)``)."
+msgstr ""
+"**残差 LM 融合**：由加性改为拼接投影。新增 ``fusion_concat_proj`` 线性层（`` Linear(2h → h)``）。"
+
+#: ../../reference/changelog.rst:74 75a23bf6182445e7ac7e88a2b14e4ff0
+msgid ""
+"**DiT conditioning**: single-token add → multi-token concat. "
+"``VoxCPMLocDiTV2`` (``modules/locdit/local_dit_v2.py``) reshapes the "
+"concatenated LM + residual projections into multiple prefix tokens."
+msgstr ""
+"**DiT 条件**：单 token 相加 → 多 token 拼接。``VoxCPMLocDiTV2`` （`` "
+"modules/locdit/local_dit_v2.py``）将拼接后的 LM + 残差投影重塑为多个前缀 token。"
+
+#: ../../reference/changelog.rst:86 434a69ef55994338b791a2ce390dbf90
+msgid ""
+"**Isolated reference audio channel** with special tokens "
+"``ref_audio_start_token = 103``, ``ref_audio_end_token = 104``. Enables four"
+" generation modes: zero-shot, continuation, reference-only, combined (ref + "
+"continuation)."
+msgstr ""
+"**独立参考音频通道**，特殊 token ``ref_audio_start_token = 103``、`` ref_audio_end_token"
+" = 104``。支持四种生成模式：zero-shot、continuation、reference-only、combined（参考 + 延续）。"
+
+#: ../../reference/changelog.rst:91 6d595c85b71c4bb98cbf86cb80a96f7e
+msgid "**Config defaults changed**:"
+msgstr "**默认配置变更**："
+
+#: ../../reference/changelog.rst:97 0975e7e1f5044d9b93abdf6a501e240f
+msgid "Field"
+msgstr "字段"
+
+#: ../../reference/changelog.rst:98 ../../reference/changelog.rst:161
+#: 41230f84aa324d0189f09f9005aac489 45b096c64b7842408382b982d0d228a1
+msgid "1.x"
+msgstr "1.x"
+
+#: ../../reference/changelog.rst:99 ../../reference/changelog.rst:162
+#: 1fcbef468ba34ebf97a2bf74c2981ca5 db695cbc61614ad9847fb2d602825d7d
+msgid "2.0"
+msgstr "2.0"
+
+#: ../../reference/changelog.rst:100 2208bd5ad6f74d418dc25e50e80b3c6b
+msgid "``patch_size``"
+msgstr "``patch_size``"
+
+#: ../../reference/changelog.rst:101 e3470571803f4d60a24c367d524e0d9c
+msgid "2 / 4"
+msgstr "2 / 4"
+
+#: ../../reference/changelog.rst:102 21e3b0a77f7b4aac88459c8c492e117e
+msgid "4"
+msgstr "4"
+
+#: ../../reference/changelog.rst:103 b40b13e8791a49f486d3efadfcbfbe8b
+msgid "``residual_lm_num_layers``"
+msgstr "``residual_lm_num_layers``"
+
+#: ../../reference/changelog.rst:104 2b3e18925c314f729a674587d6520a43
+msgid "6"
+msgstr "6"
+
+#: ../../reference/changelog.rst:105 64913890c14645c4ad5d9352f327829e
+msgid "8"
+msgstr "8"
+
+#: ../../reference/changelog.rst:106 3fb707399a4541e59642f406ba3dc732
+msgid "``scalar_quantization_latent_dim``"
+msgstr "``scalar_quantization_latent_dim``"
+
+#: ../../reference/changelog.rst:107 353bc29f8cb8437aae00d8a8c7db726f
+msgid "256"
+msgstr "256"
+
+#: ../../reference/changelog.rst:108 f365b7c78d8142df94f782420c88686c
+msgid "512"
+msgstr "512"
+
+#: ../../reference/changelog.rst:109 ef776586b3864c8b9fb58344910c68fd
+msgid "``max_length``"
+msgstr "``max_length``"
+
+#: ../../reference/changelog.rst:110 7ad1dedff57840ba8d83edad2f08c7f6
+msgid "4096"
+msgstr "4096"
+
+#: ../../reference/changelog.rst:111 6281c9d395f9478bbf0dbcdac6f552d0
+msgid "8192"
+msgstr "8192"
+
+#: ../../reference/changelog.rst:113 1c756b69ebc64d198bf7024e68a643f5
+msgid ""
+"**New config field**: ``residual_lm_no_rope`` (bool, default ``False``)."
+msgstr "**新配置项**：``residual_lm_no_rope`` （bool，默认 `` False``）。"
+
+#: ../../reference/changelog.rst:115 512bdaa1effb4ec1b0fe58a03ed56333
+msgid ""
+"**``dit_mean_mode``** moved from root ``VoxCPMConfig`` (1.x) into nested "
+"``VoxCPMDitConfig`` (2.0)."
+msgstr ""
+"**``dit_mean_mode``** 从根级 `` VoxCPMConfig`` （1.x）移至嵌套的 `` VoxCPMDitConfig`` "
+"（2.0）。"
+
+#: ../../reference/changelog.rst:120 3b4b02e8e3154e7cbe3bc02a03d1af14
+msgid "AudioVAE V2"
+msgstr "AudioVAE V2"
+
+#: ../../reference/changelog.rst:122 242becf222ca4e6287d0bb387ead7b37
+msgid "**New module** ``AudioVAEV2`` (``modules/audiovae/audio_vae_v2.py``)."
+msgstr "**新模块** ``AudioVAEV2`` （`` modules/audiovae/audio_vae_v2.py``）。"
+
+#: ../../reference/changelog.rst:128 f78e57e31a1349b6950f03b1dd44d72d
+msgid "Attribute"
+msgstr "属性"
+
+#: ../../reference/changelog.rst:129 60058f7e471c4088acf17b92daa082a7
+msgid "AudioVAE (v1)"
+msgstr "AudioVAE (v1)"
+
+#: ../../reference/changelog.rst:130 e2d4f734e93142adbca996171397ac19
+msgid "AudioVAEV2"
+msgstr "AudioVAEV2"
+
+#: ../../reference/changelog.rst:131 f2891103cb1f412ca121c7178e2518f5
+msgid "``decoder_dim``"
+msgstr "``decoder_dim``"
+
+#: ../../reference/changelog.rst:132 ca3611c3eb674ff294223968c344ad20
+msgid "1536"
+msgstr "1536"
+
+#: ../../reference/changelog.rst:133 28ee7e8727e64d11a6d5d9bf76c9434f
+msgid "2048"
+msgstr "2048"
+
+#: ../../reference/changelog.rst:134 b4f0de94d4134a7eb3cc28fb02903959
+msgid "``decoder_rates``"
+msgstr "``decoder_rates``"
+
+#: ../../reference/changelog.rst:135 38899f6f8bac4da8b8aca6dee3e0bfd7
+msgid "``[8, 8, 5, 2]``"
+msgstr "``[8, 8, 5, 2]``"
+
+#: ../../reference/changelog.rst:136 fa787cd126004ec3a59d42e7ab37a151
+msgid "``[8, 6, 5, 2, 2, 2]``"
+msgstr "``[8, 6, 5, 2, 2, 2]``"
+
+#: ../../reference/changelog.rst:137 1758f8be62a14524993b825fdcd9dc08
+msgid "Output sample rate"
+msgstr "输出采样率"
+
+#: ../../reference/changelog.rst:138 a5957fd1385d4af596c8ca72539fe1cb
+msgid "``sample_rate`` (16 kHz / 44.1 kHz)"
+msgstr "``sample_rate`` （16 kHz / 44.1 kHz）"
+
+#: ../../reference/changelog.rst:139 796546bf3b60486c924152a5ccaf9986
+msgid "``out_sample_rate`` (48 kHz output)"
+msgstr "``out_sample_rate`` （48 kHz 输出）"
+
+#: ../../reference/changelog.rst:140 34e4d57800c44f329eca87c214017851
+msgid "Sample-rate conditioning"
+msgstr "采样率条件化"
+
+#: ../../reference/changelog.rst:141 0d2c2725c49843a586a4736bba911880
+msgid "No"
+msgstr "No"
+
+#: ../../reference/changelog.rst:142 cd0dbf99b7b74b0395242bfbb0756bd4
+msgid "Yes (``SampleRateConditionLayer``)"
+msgstr "Yes（``SampleRateConditionLayer``）"
+
+#: ../../reference/changelog.rst:144 f7f413af3c85497ca422c66fdf46b0b8
+msgid ""
+"**Asymmetric encode/decode**: encoder at 16 kHz (640× downsample, 6.25 Hz "
+"token rate) → decoder at 48 kHz (1920× upsample)."
+msgstr ""
+"**非对称编解码**：编码端 16 kHz（640× 下采样，6.25 Hz token 率）→ 解码端 48 kHz（1920× 上采样）。"
+
+#: ../../reference/changelog.rst:149 b43d4d94ed0242e0b5ff079698a5c948
+msgid "Python API (``core.py``)"
+msgstr "Python API（``core.py``）"
+
+#: ../../reference/changelog.rst:151 260498042bf4449ebacc5c345a330d63
+msgid ""
+"**Default Hub model** changed from ``openbmb/VoxCPM1.5`` to "
+"``openbmb/VoxCPM2`` in ``VoxCPM.from_pretrained()``."
+msgstr ""
+"``VoxCPM.from_pretrained()`` 的 **默认 Hub 模型** 由 `` openbmb/VoxCPM1.5`` 改为 `` "
+"openbmb/VoxCPM2``。"
+
+#: ../../reference/changelog.rst:154 95bb2b959e684a7ba344e2ab6fe7e695
+msgid "**``generate()`` parameter comparison** (1.x vs 2.0):"
+msgstr "**``generate()`` 参数对照** （1.x 与 2.0）："
+
+#: ../../reference/changelog.rst:160 1a86cd22b0b64359a37551c5d6285529
+msgid "Parameter"
+msgstr "参数"
+
+#: ../../reference/changelog.rst:163 ../../reference/changelog.rst:578
+#: 339492c19f874e0f85620e190628bbb7 42d2dcca4529417080960e16ac46dc21
+msgid "Notes"
+msgstr "说明"
+
+#: ../../reference/changelog.rst:164 b795fd378aee4878822d71c0ae4c278a
+msgid "``text``"
+msgstr "``text``"
+
+#: ../../reference/changelog.rst:165 ../../reference/changelog.rst:166
+#: ../../reference/changelog.rst:169 ../../reference/changelog.rst:170
+#: ../../reference/changelog.rst:173 ../../reference/changelog.rst:174
+#: ../../reference/changelog.rst:181 ../../reference/changelog.rst:182
+#: ../../reference/changelog.rst:185 ../../reference/changelog.rst:186
+#: ../../reference/changelog.rst:189 ../../reference/changelog.rst:190
+#: ../../reference/changelog.rst:193 ../../reference/changelog.rst:194
+#: ../../reference/changelog.rst:197 ../../reference/changelog.rst:198
+#: 0a6b471af86f46caa9017ff30fd8f110 0f5a3f7bab52442db8f75b5184d9d907
+#: 148a2d6d9a454f5e8101fc4d8ea2a5d3 2c0dcbb57b61455db7662c27ad9b74f7
+#: 37219f9df7584f8dba4fb02b4b7f4ae7 54cb13d114054c68927e037be43dccda
+#: 5ae0eed2f34c4024bab9393e83e43cad 701317acacc44db4b3906f8d06ebdfc8
+#: 80746f705ef044e9adf0be1fcc83a1b9 8ac17a9110d34f36b87efae5c9760296
+#: 8c4d88c7ad2c43a79cd40f6caa60c818 99c423abe0d94f7391ebbde3201aab15
+#: b6457951dc6947fcbc992aace7e2dc08 b8766fb833944d7a847e86926641fea3
+#: c3145b48eab942518795aac80468898f c9135ca154c94599ae756185bcfd7cfc
+msgid "yes"
+msgstr "yes"
+
+#: ../../reference/changelog.rst:167 c3fec7c1849e4689a15d6986a69bc6b2
+msgid "In 2.0, prepend ``(instruction)`` for Voice Design / Style Control"
+msgstr "2.0 中在文本前加 ``(instruction)`` 用于 Voice Design / 风格控制"
+
+#: ../../reference/changelog.rst:168 ../../reference/changelog.rst:209
+#: 593b0b2a2484439a90271e4d751f4cf8 fc0a536186a64724965df62a0d851b28
+msgid "``prompt_wav_path``"
+msgstr "``prompt_wav_path``"
+
+#: ../../reference/changelog.rst:171 f9eadd1c165d43c7bb8d988cfeddcf6e
+msgid "Continuation mode cloning (same as 1.x)"
+msgstr "延续式克隆（与 1.x 相同）"
+
+#: ../../reference/changelog.rst:172 b6514d1ef6f34eb7b145b4f01c0e3e76
+msgid "``prompt_text``"
+msgstr "``prompt_text``"
+
+#: ../../reference/changelog.rst:175 4d989328aacb495195d6ed4e43b8fb2d
+msgid "Must pair with ``prompt_wav_path``"
+msgstr "须与 ``prompt_wav_path`` 配对"
+
+#: ../../reference/changelog.rst:176 ../../reference/changelog.rst:210
+#: 2dd8479ea86548ddab98a9d188719ccf 819052fb61d346579fa672fe93b3094b
+msgid "``reference_wav_path``"
+msgstr "``reference_wav_path``"
+
+#: ../../reference/changelog.rst:177 e0a0304ee26046f0b4a5eb7c2f5c9eea
+msgid "**no**"
+msgstr "**no**"
+
+#: ../../reference/changelog.rst:178 fea8ea17e8674466b3e3da83292ba252
+msgid "**new**"
+msgstr "**new**"
+
+#: ../../reference/changelog.rst:179 049c73d133804f8598bd59d7c172bcef
+msgid "Isolated voice cloning. Raises ``ValueError`` on 1.x models"
+msgstr "独立音色克隆；在 1.x 模型上会抛出 ``ValueError``"
+
+#: ../../reference/changelog.rst:180 1b85d21f80b64820aa10a5da9c5d1400
+msgid "``cfg_value``"
+msgstr "``cfg_value``"
+
+#: ../../reference/changelog.rst:184 310c6e04854d4cc1be8d5470576599b3
+msgid "``inference_timesteps``"
+msgstr "``inference_timesteps``"
+
+#: ../../reference/changelog.rst:188 e9734a91f4d0450b8f30d8c461a1b04c
+msgid "``normalize``"
+msgstr "``normalize``"
+
+#: ../../reference/changelog.rst:192 c680c8e29898452ab2a197223050b49c
+msgid "``denoise``"
+msgstr "``denoise``"
+
+#: ../../reference/changelog.rst:195 487219a45e3e472497ed36769ce94057
+msgid "2.0: also denoises ``reference_wav_path``"
+msgstr "2.0：同时可对 ``reference_wav_path`` 降噪"
+
+#: ../../reference/changelog.rst:196 91160c686d994278a2d616264b78d480
+msgid "``streaming``"
+msgstr "``streaming``"
+
+#: ../../reference/changelog.rst:201 329916711b2c49d4953d5b1f64172dd1
+msgid ""
+"**Four generation modes** (V2 only) — determined by which audio arguments "
+"you pass:"
+msgstr "**四种生成模式** （仅 V2）—— 由传入的音频参数决定："
+
+#: ../../reference/changelog.rst:208 9adf0238d2634ec9b1cb3c3bdccf3483
+msgid "Mode"
+msgstr "模式"
+
+#: ../../reference/changelog.rst:211 6aa9b81833be4276b6d550a364ca87eb
+msgid "Use case"
+msgstr "适用场景"
+
+#: ../../reference/changelog.rst:212 c2bb7f26b58e4284a3bda077716dbc8c
+msgid "Zero-shot"
+msgstr "Zero-shot"
+
+#: ../../reference/changelog.rst:213 ../../reference/changelog.rst:214
+#: ../../reference/changelog.rst:218 ../../reference/changelog.rst:221
+#: 5100e479ceef4b4f8567dbf8953bb15c 626f1ed93e4a45c3b1326c3888b11e4a
+#: c408c22e0c4e4e15bcf81e2e25745f7b dde1b8ed33d8443dafd3c9d9fd2a7472
+msgid "``None``"
+msgstr "``None``"
+
+#: ../../reference/changelog.rst:215 293b57867237475c879111a6ae17c2f3
+msgid "Text-only synthesis (or Voice Design with ``(instruction)`` prefix)"
+msgstr "纯文本合成（或带 ``(instruction)`` 前缀的 Voice Design）"
+
+#: ../../reference/changelog.rst:216 5d67eeffa16a4ddfa385b482d5b1ae0c
+msgid "Continuation"
+msgstr "Continuation"
+
+#: ../../reference/changelog.rst:217 ../../reference/changelog.rst:222
+#: ../../reference/changelog.rst:225 ../../reference/changelog.rst:226
+#: 0421900a9eb149b98f64a4c4fb946223 5919ec8a877848608ca3750c0dd78fb2
+#: c0b5e225e0454d5780b22531937532b2 f27b82228183430f9ae596d3a0e1b1ac
+msgid "set"
+msgstr "set"
+
+#: ../../reference/changelog.rst:219 3aa625d657444da9b8e619d4901c209d
+msgid "Seamless continuation from prompt audio (same as 1.x)"
+msgstr "自 prompt 音频无缝延续（与 1.x 相同）"
+
+#: ../../reference/changelog.rst:220 9ebde09b930e4865a91221af90b389f9
+msgid "Reference-only"
+msgstr "Reference-only"
+
+#: ../../reference/changelog.rst:223 f43ec0d931e84d70be5f8af7e66c018e
+msgid "Isolated voice cloning from a reference clip"
+msgstr "仅凭参考片段做独立克隆"
+
+#: ../../reference/changelog.rst:224 52b4c5e3e3bb4ccca6f9e11ec9758c68
+msgid "Combined"
+msgstr "Combined"
+
+#: ../../reference/changelog.rst:227 603bdde89a524c3cabf4d46817256318
+msgid "Reference for timbre + prompt for context (best cloning similarity)"
+msgstr "参考定音色 + prompt 定上下文（克隆相似度最佳）"
+
+#: ../../reference/changelog.rst:248 ba8852c104be4f0791577548b51cdd7b
+msgid ""
+"**``sample_rate`` property** on the inner model now returns the **output** "
+"rate: V1 uses ``audio_vae.sample_rate`` (16 kHz / 44.1 kHz), V2 uses "
+"``audio_vae.out_sample_rate`` (**48 kHz**). Always use "
+"``model.tts_model.sample_rate`` when saving audio:"
+msgstr ""
+"内层模型的 **``sample_rate`` 属性** 现返回 ** 输出** 采样率：V1 用 `` audio_vae.sample_rate``"
+" （16 kHz / 44.1 kHz），V2 用 `` audio_vae.out_sample_rate`` （** 48 "
+"kHz**）。保存音频时请始终使用 `` model.tts_model.sample_rate``："
+
+#: ../../reference/changelog.rst:257 f33438019970447194b4b9444dcbd255
+msgid ""
+"**Reference audio VAD trim** (V2 only): ``_trim_audio_silence_vad`` in "
+"``VoxCPM2Model`` automatically trims trailing silence from reference audio "
+"using librosa-based energy detection."
+msgstr ""
+"**参考音频 VAD 裁剪** （仅 V2）：``VoxCPM2Model`` 中的 `` _trim_audio_silence_vad`` 基于 "
+"librosa 能量检测，自动裁掉参考音频尾部静音。"
+
+#: ../../reference/changelog.rst:261 b7ae49be12384c07b92ab6807cb7f481
+msgid "**``build_prompt_cache``** dispatch:"
+msgstr "**``build_prompt_cache``** 分发："
+
+#: ../../reference/changelog.rst:263 22679b0c9d0543eda4ac342ac9c0990f
+msgid ""
+"V2: accepts ``prompt_text``, ``prompt_wav_path``, ``reference_wav_path``. "
+"Returns a dict with ``mode`` (``\"reference\"`` / ``\"continuation\"`` / "
+"``\"ref_continuation\"``)."
+msgstr ""
+"V2：接受 ``prompt_text``、`` prompt_wav_path``、`` reference_wav_path``。返回含 `` "
+"mode`` 的字典（``\"reference\"`` / ``\"continuation\"`` / "
+"``\"ref_continuation\"``）。"
+
+#: ../../reference/changelog.rst:266 dfda3095122948cd89e7f2bfcd2513b2
+msgid ""
+"V1: accepts ``prompt_text``, ``prompt_wav_path`` only. No ``mode`` key."
+msgstr "V1：仅接受 ``prompt_text``、`` prompt_wav_path``。无 `` mode`` 键。"
+
+#: ../../reference/changelog.rst:268 2be723eae4eb45dca9a5d1281cab5ff1
+msgid ""
+"**LoRA interface** on ``VoxCPM``: ``load_lora()``, ``unload_lora()``, "
+"``set_lora_enabled()``, ``get_lora_state_dict()``, ``lora_enabled`` "
+"property."
+msgstr ""
+"``VoxCPM`` 上的 **LoRA 接口**：`` load_lora()``、`` unload_lora()``、`` "
+"set_lora_enabled()``、`` get_lora_state_dict()``、`` lora_enabled`` 属性。"
+
+#: ../../reference/changelog.rst:271 33622ce637f14b4d9a0aaf68d075ff39
+msgid ""
+"**Denoiser**: supports denoising both ``prompt_wav_path`` and "
+"``reference_wav_path`` when ``denoise=True``."
+msgstr ""
+"**降噪器**：``denoise=True`` 时可对 `` prompt_wav_path`` 与 `` reference_wav_path`` "
+"同时降噪。"
+
+#: ../../reference/changelog.rst:276 4c277d2946784d698cfbceee09ae0a36
+msgid "CLI (``cli.py``)"
+msgstr "CLI（``cli.py``）"
+
+#: ../../reference/changelog.rst:278 140606ca5214414a846dd66f484c195e
+msgid "**Complete rewrite** — VoxCPM2-first subcommand design."
+msgstr "**全面重写** —— 以 VoxCPM2 为先的子命令设计。"
+
+#: ../../reference/changelog.rst:280 143b55863c3d4bac8b9d3bf734660688
+msgid "**New subcommands**:"
+msgstr "**新子命令**："
+
+#: ../../reference/changelog.rst:282 06629045d16c445ea8b837f492d764a6
+msgid ""
+"``voxcpm design`` — text-to-speech with optional ``--control`` instruction."
+msgstr "``voxcpm design`` —— 文本转语音，可选 ``--control`` 指令。"
+
+#: ../../reference/changelog.rst:283 d1187384fe47461e8e068f10b9986728
+msgid ""
+"``voxcpm clone`` — voice cloning via ``--reference-audio`` and/or "
+"``--prompt-audio`` + ``--prompt-text``."
+msgstr ""
+"``voxcpm clone`` —— 通过 ``--reference-audio`` 和/或 ``--prompt-audio`` + "
+"``--prompt-text`` 克隆声音。"
+
+#: ../../reference/changelog.rst:285 c984232cb15b43569ecfaaef599e69bf
+msgid "``voxcpm batch`` — batch processing from a text file."
+msgstr "``voxcpm batch`` —— 从文本文件批处理。"
+
+#: ../../reference/changelog.rst:287 d5c97c1a948148bd88355afd215b5d2e
+msgid "**New flags**:"
+msgstr "**新参数**："
+
+#: ../../reference/changelog.rst:293 dc9e935e316b4de5a2e337b6b1c48b1c
+msgid "Flag"
+msgstr "标志"
+
+#: ../../reference/changelog.rst:294 beeb58fd77464fd39fa050ec0ff89a71
+msgid "Description"
+msgstr "说明"
+
+#: ../../reference/changelog.rst:295 8455d8c1fbd048b0938dcb45539e9a76
+msgid "``--control``"
+msgstr "``--control``"
+
+#: ../../reference/changelog.rst:296 e3ce92333baa4ce0b686435c75eb62a8
+msgid ""
+"Voice design / style control instruction (prepended as ``(control)text``)"
+msgstr "音色设计 / 风格控制指令（前置为 ``(control)text``）"
+
+#: ../../reference/changelog.rst:297 a9b69c29669342a9938f57e7d6672e5c
+msgid "``--reference-audio`` / ``-ra``"
+msgstr "``--reference-audio`` / ``-ra``"
+
+#: ../../reference/changelog.rst:298 263dc25c20134fcea7b22535e4ef2623
+msgid "Reference audio for isolated voice cloning (VoxCPM2 only)"
+msgstr "独立克隆用参考音频（仅 VoxCPM2）"
+
+#: ../../reference/changelog.rst:299 1a404bb028dc46668dc03e4869dba90b
+msgid "``--prompt-file``"
+msgstr "``--prompt-file``"
+
+#: ../../reference/changelog.rst:300 fb52a23bc95641f387103fa983ff5da3
+msgid "Load prompt text from a file"
+msgstr "从文件加载 prompt 文本"
+
+#: ../../reference/changelog.rst:301 ea52d7aa3162433eb2e239c16582703a
+msgid "``--denoise``"
+msgstr "``--denoise``"
+
+#: ../../reference/changelog.rst:302 8453fc1046d94263abb42c1cd6f302dd
+msgid "Enhance prompt/reference audio"
+msgstr "增强 prompt / 参考音频"
+
+#: ../../reference/changelog.rst:303 1d7fa73fabc14c718a4708309dbbae55
+msgid "``--no-optimize``"
+msgstr "``--no-optimize``"
+
+#: ../../reference/changelog.rst:304 c84c1100ad5643608005290718e75a41
+msgid "Disable ``torch.compile``"
+msgstr "禁用 ``torch.compile``"
+
+#: ../../reference/changelog.rst:305 56ee69de268e4ca490a843265819aed2
+msgid "``--no-denoiser``"
+msgstr "``--no-denoiser``"
+
+#: ../../reference/changelog.rst:306 1454aae97cbe4b2fb9b60002bedb100e
+msgid "Skip denoiser loading"
+msgstr "跳过加载降噪模型"
+
+#: ../../reference/changelog.rst:307 f101e5e1247e4a8d8cf97468b7bd8967
+msgid "``--zipenhancer-path``"
+msgstr "``--zipenhancer-path``"
+
+#: ../../reference/changelog.rst:308 e6ce6e336a2c4f9c8100364129b1e883
+msgid "Custom denoiser model path"
+msgstr "自定义降噪模型路径"
+
+#: ../../reference/changelog.rst:309 d8c5e255c9fe47309f48d737d9610894
+msgid "``--lora-path``"
+msgstr "``--lora-path``"
+
+#: ../../reference/changelog.rst:310 91e7b8a7be8541d19c818cb0b618ec0b
+msgid "Inference-time LoRA weights"
+msgstr "推理时 LoRA 权重"
+
+#: ../../reference/changelog.rst:311 bc50234c36a744c2bc0dfb63a75a4cef
+msgid "``--lora-r`` / ``--lora-alpha`` / ``--lora-dropout``"
+msgstr "``--lora-r`` / ``--lora-alpha`` / ``--lora-dropout``"
+
+#: ../../reference/changelog.rst:312 089a5a401b41411f93c211ec16fcc77a
+msgid "LoRA config overrides at inference"
+msgstr "推理阶段 LoRA 配置覆盖"
+
+#: ../../reference/changelog.rst:313 6a59e791ff7a4794b5e1fe77815813ad
+msgid "``--lora-disable-lm``"
+msgstr "``--lora-disable-lm``"
+
+#: ../../reference/changelog.rst:314 fbaf24d71e2a4bee977c2d27d7627229
+msgid "Disable LoRA on LM layers"
+msgstr "在 LM 层禁用 LoRA"
+
+#: ../../reference/changelog.rst:315 d2971e74428e40b4abbfc23a677cffb7
+msgid "``--lora-disable-dit``"
+msgstr "``--lora-disable-dit``"
+
+#: ../../reference/changelog.rst:316 f1d2ba6ab50a418aa90f6e7b36e97376
+msgid "Disable LoRA on DiT layers"
+msgstr "在 DiT 层禁用 LoRA"
+
+#: ../../reference/changelog.rst:317 4a4c3c99a7f14e42aa3c181f6cf05d0a
+msgid "``--lora-enable-proj``"
+msgstr "``--lora-enable-proj``"
+
+#: ../../reference/changelog.rst:318 49f0ef796ffa4b8e86ff83cb02647499
+msgid "Enable LoRA on projection layers"
+msgstr "在投影层启用 LoRA"
+
+#: ../../reference/changelog.rst:320 31c1bfb37881497f9aa642b9ec44e563
+msgid ""
+"**Default HF model**: ``openbmb/VoxCPM2`` (constant "
+"``DEFAULT_HF_MODEL_ID``)."
+msgstr "**默认 HF 模型**：``openbmb/VoxCPM2`` （常量 `` DEFAULT_HF_MODEL_ID``）。"
+
+#: ../../reference/changelog.rst:322 0f26f575f96e48a3bf22bc27b6cf6854
+msgid ""
+"**Architecture detection** (``detect_model_architecture``): reads local "
+"``config.json`` or infers from HF id string. ``--reference-audio`` is "
+"rejected on 1.x models."
+msgstr ""
+"**架构检测** （``detect_model_architecture``）：读取本地 `` config.json`` 或从 HF id "
+"推断。1.x 模型上拒绝 ``--reference-audio``。"
+
+#: ../../reference/changelog.rst:326 61cf06c257d448f28c911b25eff0b9c7
+msgid ""
+"**Legacy root arguments** (``voxcpm --text ...``) still work but print a "
+"deprecation warning via ``warn_legacy_mode()``."
+msgstr ""
+"**旧版根参数** （``voxcpm --text ...``）仍可用，但通过 `` warn_legacy_mode()`` 打印弃用警告。"
+
+#: ../../reference/changelog.rst:329 5fc1ef2018c749f6afc34712690c7d92
+msgid ""
+"**Control instruction wiring**: ``build_final_text(text, control)`` produces"
+" ``\"(control)text\"`` — the convention used by VoxCPM 2 for Voice Design "
+"and Style Control."
+msgstr ""
+"**控制指令拼接**：``build_final_text(text, control)`` 生成 ``\"(control)text\"`` —— "
+"VoxCPM 2 中 Voice Design 与风格控制的约定。"
+
+#: ../../reference/changelog.rst:335 4ce6ccb89d934a13a535e0dfd39c1521
+msgid "Controllable Generation"
+msgstr "可控生成"
+
+#: ../../reference/changelog.rst:337 bcf8cede205c464c8b6b5eb0e8420e85
+msgid ""
+"Both features use the same convention: place a natural-language instruction "
+"inside parentheses ``()`` before the target text."
+msgstr "两项能力共用同一约定：在目标文本前的括号 ``()`` 内写自然语言指令。"
+
+#: ../../reference/changelog.rst:340 e0c890c764494486b65e83abb27fa203
+msgid ""
+"**Voice Design**: generate speech from a natural-language description "
+"without reference audio. Use ``(description)`` prefix in text, or "
+"``--control`` in CLI."
+msgstr ""
+"**Voice Design**：无参考音频，由自然语言描述生成语音。文本用 ``(description)`` 前缀，或 CLI 使用 "
+"``--control``。"
+
+#: ../../reference/changelog.rst:359 96fb02e1e6754663bd4992369351c3c9
+msgid ""
+"**Style Control**: control speaking style while using reference audio for "
+"timbre. The reference determines **who** speaks; the instruction controls "
+"**how** they speak."
+msgstr "**风格控制**：参考音频决定 ** 谁** 在说，指令控制 ** 怎么说**。"
+
+#: ../../reference/changelog.rst:373 421b0dc364bc473fa645de8cb8e3f475
+msgid "Training Script"
+msgstr "训练脚本"
+
+#: ../../reference/changelog.rst:375 729ecd18ca2f4d4789ff94b1061b19b1
+msgid ""
+"``scripts/train_voxcpm_finetune.py`` now **auto-detects** ``VoxCPMModel`` vs"
+" ``VoxCPM2Model`` from the pretrained checkpoint's ``config.json``. No "
+"separate VoxCPM2 training script needed."
+msgstr ""
+"``scripts/train_voxcpm_finetune.py`` 现可根据预训练检查点的 `` config.json`` **自动识别** "
+"`` VoxCPMModel`` 与 `` VoxCPM2Model``。无需单独的 VoxCPM2 训练脚本。"
+
+#: ../../reference/changelog.rst:379 3f3b5321d1b54b92a3199712bdd11914
+msgid ""
+"**New training parameter** ``grad_accum_steps`` — gradient accumulation for "
+"effective larger batch size without extra VRAM."
+msgstr "**新训练参数** ``grad_accum_steps`` —— 梯度累积，在不增加显存的情况下等效更大 batch。"
+
+#: ../../reference/changelog.rst:382 275e32a4114f4d88ba2e429e035163a5
+msgid ""
+"**Validation improvements**: generates sample audio and mel spectrograms to "
+"TensorBoard at each ``valid_interval``."
+msgstr "**验证改进**：每个 ``valid_interval`` 向 TensorBoard 写入样本音频与 mel 频谱图。"
+
+#: ../../reference/changelog.rst:385 7b5e30b5d7b8420bb09e062e2f1d7ca3
+msgid ""
+"**Signal handler**: catches ``SIGTERM`` / ``SIGINT`` and saves a checkpoint "
+"before exiting."
+msgstr "**信号处理**：捕获 ``SIGTERM`` / `` SIGINT``，退出前保存检查点。"
+
+#: ../../reference/changelog.rst:388 e2900c52d2d64a00ad3cea5f6c7ea4be
+msgid ""
+"**DDP**: manual epoch management with ``DistributedSampler.set_epoch()`` for"
+" correct shuffle across epochs."
+msgstr ""
+"**DDP**：配合 ``DistributedSampler.set_epoch()`` 手动管理 epoch，保证跨 epoch 洗牌正确。"
+
+#: ../../reference/changelog.rst:391 040bb0c9f5834036ae1578843742f4ad
+msgid "**Checkpoint format**:"
+msgstr "**检查点格式**："
+
+#: ../../reference/changelog.rst:393 600bbba904014b8194c1e52e35b1fb63
+msgid ""
+"LoRA: ``lora_weights.safetensors`` (or ``.ckpt``), ``lora_config.json`` with"
+" ``base_model`` and ``lora_config`` fields."
+msgstr ""
+"LoRA：``lora_weights.safetensors`` （或 ``.ckpt``）、含 `` base_model`` 与 `` "
+"lora_config`` 字段的 `` lora_config.json``。"
+
+#: ../../reference/changelog.rst:395 2818eadf088e43599f2624559dc7de67
+msgid ""
+"Full SFT: ``model.safetensors`` (or ``pytorch_model.bin``), plus copied "
+"``config.json``, ``audiovae.pth``/``audiovae.safetensors``, and tokenizer "
+"files."
+msgstr ""
+"全量 SFT：``model.safetensors`` （或 `` pytorch_model.bin``），外加复制的 `` "
+"config.json``、`` audiovae.pth``/`` audiovae.safetensors`` 与分词器文件。"
+
+#: ../../reference/changelog.rst:398 631c4b4e3a0446129931b8243e2d62b7
+msgid "Both: ``optimizer.pth``, ``scheduler.pth``, ``training_state.json``."
+msgstr "二者均含：``optimizer.pth``、`` scheduler.pth``、`` training_state.json``。"
+
+#: ../../reference/changelog.rst:399 00009d5b33874fb79beb7eb4ef556fca
+msgid "``latest/`` folder updated on every save for easy resume."
+msgstr "每次保存都会更新 ``latest/`` 目录，便于续训。"
+
+#: ../../reference/changelog.rst:401 13025110715e4723897b5e7f28e04136
+msgid ""
+"**LoRA distribution flag**: ``distribute: true`` + ``hf_model_id`` in YAML "
+"saves the HF id (instead of a local path) as ``base_model`` in "
+"``lora_config.json`` for easier sharing."
+msgstr ""
+"**LoRA 分发标记**：YAML 中 ``distribute: true`` + `` hf_model_id`` 会把 HF "
+"id（而非本地路径）写入 `` lora_config.json`` 的 `` base_model``，便于分享。"
+
+#: ../../reference/changelog.rst:407 3c20c6210cba42e7897b911e63063d8f
+msgid "LoRA"
+msgstr "LoRA"
+
+#: ../../reference/changelog.rst:409 37e7daa73b7a4673af5b85d3c75662f1
+msgid ""
+"**V2 LoRA target modules**: ``target_proj_modules`` now includes "
+"``fusion_concat_proj`` (in addition to ``enc_to_lm_proj``, "
+"``lm_to_dit_proj``, ``res_to_dit_proj``)."
+msgstr ""
+"**V2 LoRA 目标模块**：``target_proj_modules`` 现包含 `` fusion_concat_proj`` （另含 `` "
+"enc_to_lm_proj``、`` lm_to_dit_proj``、`` res_to_dit_proj``）。"
+
+#: ../../reference/changelog.rst:413 2f2a4c287cc74964882314ee6957ba81
+msgid ""
+"**``LoRALinear``** stores ``scaling`` as a non-persistent buffer to avoid "
+"``torch.compile`` recompilation when toggling LoRA."
+msgstr ""
+"**``LoRALinear``** 将 `` scaling`` 存为非持久 buffer，避免切换 LoRA 时触发 `` "
+"torch.compile`` 重编译。"
+
+#: ../../reference/changelog.rst:418 50a150c0c10042bcbd37251383e0dc93
+msgid "``torch.compile`` Optimization"
+msgstr "``torch.compile`` 优化"
+
+#: ../../reference/changelog.rst:420 ef03002272e245209d4f3e746fabdab9
+msgid ""
+"**Both** ``VoxCPMModel`` and ``VoxCPM2Model`` support ``optimize()`` method:"
+msgstr "**``VoxCPMModel`` 与 `` VoxCPM2Model``** 均支持 `` optimize()``："
+
+#: ../../reference/changelog.rst:422 8c79d8486eb7443eaf45df05c933b1da
+msgid ""
+"Compiles ``base_lm.forward_step``, ``residual_lm.forward_step``, "
+"``feat_encoder``, ``feat_decoder.estimator`` with ``mode=\"reduce-"
+"overhead\"``, ``fullgraph=True``."
+msgstr ""
+"以 ``mode=\"reduce-overhead\"``、`` fullgraph=True`` 编译 `` "
+"base_lm.forward_step``、`` residual_lm.forward_step``、`` feat_encoder``、`` "
+"feat_decoder.estimator``。"
+
+#: ../../reference/changelog.rst:425 4feb81d4746e439abfaee08f9019829a
+msgid "Requires CUDA + Triton; gracefully skips on other backends."
+msgstr "需要 CUDA + Triton；其他后端会静默跳过。"
+
+#: ../../reference/changelog.rst:427 0e9e091e2c1940dcb7319b9ee18a12f8
+msgid ""
+"``optimize=True`` by default in ``VoxCPM.__init__`` / ``from_pretrained``. "
+"Use ``--no-optimize`` in CLI to disable."
+msgstr ""
+"``VoxCPM.__init__`` / `` from_pretrained`` 默认 `` optimize=True``。CLI 可用 "
+"``--no-optimize`` 关闭。"
+
+#: ../../reference/changelog.rst:430 13b3db2f4ade4f5490fbc80310bc0636
+msgid "Warm-up call after model load to trigger initial compilation."
+msgstr "模型加载后通过 warm-up 调用触发首次编译。"
+
+#: ../../reference/changelog.rst:434 1d5e8b177d4048cd9a31fa2d58453f41
+msgid "Dependencies (``pyproject.toml``)"
+msgstr "依赖（``pyproject.toml``）"
+
+#: ../../reference/changelog.rst:436 58397a86c0394efeae3fdd6a2e5fa83b
+msgid "``gradio>=6,<7`` (was ``gradio<6``)."
+msgstr "``gradio>=6,<7`` （原为 `` gradio<6``）。"
+
+#: ../../reference/changelog.rst:437 aa90c73715684dda9671c4b2e6157722
+msgid "``torch>=2.5.0``, ``torchaudio>=2.5.0`` (minimum bumped)."
+msgstr "``torch>=2.5.0``、`` torchaudio>=2.5.0`` （最低版本上调）。"
+
+#: ../../reference/changelog.rst:438 584953363e8844d787e1a11c5d2c4639
+msgid "Added ``torchcodec``, ``safetensors``, ``argbind``."
+msgstr "新增 ``torchcodec``、`` safetensors``、`` argbind``。"
+
+#: ../../reference/changelog.rst:439 1524d62a3d314561b4c1f4cd383c86b3
+msgid "Removed ``mypy`` from dev dependencies."
+msgstr "开发依赖中移除 ``mypy``。"
+
+#: ../../reference/changelog.rst:440 5a14e7b7806941f3a07ec155112eae86
+msgid ""
+"Package version now managed by ``setuptools_scm`` (git-tag-based, no hard-"
+"coded ``__version__``)."
+msgstr "包版本现由 ``setuptools_scm`` 按 git 标签管理，源码中无硬编码 `` __version__``。"
+
+#: ../../reference/changelog.rst:442 e52a8cb8354e40eaacda94053414874f
+msgid "Entry point: ``voxcpm = \"voxcpm.cli:main\"``."
+msgstr "入口点：``voxcpm = \"voxcpm.cli:main\"``。"
+
+#: ../../reference/changelog.rst:446 0c3fba205ef8444c8127db614c38089b
+msgid "Demo App (``app.py``)"
+msgstr "演示应用（``app.py``）"
+
+#: ../../reference/changelog.rst:448 ed1938c79e1746a49f3309e7ae47ea92
+msgid "Full rewrite targeting VoxCPM 2:"
+msgstr "面向 VoxCPM 2 的全面重写："
+
+#: ../../reference/changelog.rst:450 8252f2cc16f446c79d4d4dfa0fcd5d35
+msgid "Default model ``openbmb/VoxCPM2``."
+msgstr "默认模型 ``openbmb/VoxCPM2``。"
+
+#: ../../reference/changelog.rst:451 8305c7e297524623939533d3556bc22c
+msgid "Voice Design + Style Control via ``control_instruction`` field."
+msgstr "通过 ``control_instruction`` 字段支持 Voice Design + 风格控制。"
+
+#: ../../reference/changelog.rst:452 e9ae237643d4403d8b43c60202a07354
+msgid "Reference audio + optional continuation (Hi-Fi) path."
+msgstr "参考音频 + 可选延续（Hi-Fi）路径。"
+
+#: ../../reference/changelog.rst:453 9dd1fdd040a8459291531a4ab4a87e43
+msgid "i18n (English / 中文) support."
+msgstr "i18n（English / 中文）支持。"
+
+#: ../../reference/changelog.rst:454 cfeb8b79851c40278794ff2cc0c8e203
+msgid "Gradio 6 patterns (theme/css passed to ``launch()``)."
+msgstr "Gradio 6 用法（theme/css 传给 ``launch()``）。"
+
+#: ../../reference/changelog.rst:456 3fc3227d880e442381de0f566855915c
+msgid "Original 1.5 demo preserved as ``app_old.py``."
+msgstr "原版 1.5 Demo 保留为 ``app_old.py``。"
+
+#: ../../reference/changelog.rst:462 787bd30988f241edbcbbc672aa8659b2
+msgid "VoxCPM 1.5.0 — December 5, 2025"
+msgstr "VoxCPM 1.5.0 — 2025 年 12 月 5 日"
+
+#: ../../reference/changelog.rst:467 d8357731d2fd4f529eb8ca164dbebd7b
+msgid ""
+"**AudioVAE sampling rate**: 16 kHz → **44.1 kHz**. Preserves more high-"
+"frequency detail for voice cloning."
+msgstr "**AudioVAE 采样率**：16 kHz → ** 44.1 kHz**。保留更多高频细节，利于声音克隆。"
+
+#: ../../reference/changelog.rst:470 5dad55336cbc485c9c734fc0c97bf2de
+msgid ""
+"**LM token rate**: 12.5 Hz → **6.25 Hz** (halved). Reduces computational "
+"cost per second of audio."
+msgstr "**LM token 率**：12.5 Hz → ** 6.25 Hz** （减半）。降低每秒音频的计算量。"
+
+#: ../../reference/changelog.rst:473 2304d7aed42f4e3ba6c694add97f5f40
+msgid ""
+"**Patch size**: 2 → **4** (LocEnc & LocDiT). Encoder/decoder process longer "
+"patches, requiring deeper local modules → slightly larger total parameter "
+"count (**~750M**)."
+msgstr ""
+"**Patch size**：2 → ** 4** （LocEnc 与 LocDiT）。编解码处理更长 patch，需要更深的局部模块 → "
+"总参数量略增（** 约 750M**）。"
+
+#: ../../reference/changelog.rst:477 dfda5ed9c7ed4fa189f948010bfcacf9
+msgid "**RTF**: ~0.15 on RTX 4090 (comparable to 1.0 despite larger model)."
+msgstr "**RTF**：RTX 4090 上约 0.15（尽管模型更大，与 1.0 相当）。"
+
+#: ../../reference/changelog.rst:479 c14aeb2b1c184e10b6372ba0be9d5d2d
+msgid ""
+"**config.json** ``architecture`` value: ``\"voxcpm\"`` (same code path as "
+"1.0)."
+msgstr "**config.json** 中 ``architecture`` 取值：``\"voxcpm\"`` （与 1.0 同一代码路径）。"
+
+#: ../../reference/changelog.rst:482 c1bccd66a9f2442f979b17d840e3f1d9
+msgid ""
+"Same model class ``VoxCPMModel`` as 1.0. All 1.0 → 1.5 differences are in "
+"checkpoint weights and config values, **not** in a separate Python class."
+msgstr ""
+"与 1.0 使用同一模型类 ``VoxCPMModel``。1.0 → 1.5 的差异在检查点权重与配置值，**并非** 单独 Python 类。"
+
+#: ../../reference/changelog.rst:488 36acb8d42d5340e9abe6e9804c723076
+msgid "Fine-tuning"
+msgstr "微调"
+
+#: ../../reference/changelog.rst:490 4db6878d5d0b496e857823df5f6e2c8e
+msgid ""
+"**SFT** (full fine-tuning) and **LoRA** fine-tuning officially supported."
+msgstr "正式支持 **SFT** （全参微调）与 ** LoRA** 微调。"
+
+#: ../../reference/changelog.rst:492 7141100960ec4920a4767bb4f9869999
+msgid "**Training script** ``scripts/train_voxcpm_finetune.py`` added."
+msgstr "新增训练脚本 ``scripts/train_voxcpm_finetune.py``。"
+
+#: ../../reference/changelog.rst:494 3288a0a4091a4c8082df6ed7c3a6f802
+msgid "**Training configs** ``conf/voxcpm_v1.5/``:"
+msgstr "**训练配置** ``conf/voxcpm_v1.5/``："
+
+#: ../../reference/changelog.rst:496 d4632d809fd14b519ef2a76e8bb037dd
+msgid ""
+"``voxcpm_finetune_all.yaml`` — full SFT, ``sample_rate: 44100``, "
+"``learning_rate: 1e-5``."
+msgstr ""
+"``voxcpm_finetune_all.yaml`` —— 全量 SFT，`` sample_rate: 44100``，`` "
+"learning_rate: 1e-5``。"
+
+#: ../../reference/changelog.rst:498 0709a1b015b1481f978951ed333065f8
+msgid ""
+"``voxcpm_finetune_lora.yaml`` — LoRA, ``sample_rate: 44100``, "
+"``learning_rate: 1e-4``, ``r: 8``, ``alpha: 16``."
+msgstr ""
+"``voxcpm_finetune_lora.yaml`` —— LoRA，`` sample_rate: 44100``，`` "
+"learning_rate: 1e-4``，`` r: 8``，`` alpha: 16``。"
+
+#: ../../reference/changelog.rst:501 409006033fa54525ae3098290a026fa0
+msgid ""
+"**LoRA WebUI** ``lora_ft_webui.py`` added for browser-based LoRA training / "
+"inference."
+msgstr "新增 **LoRA WebUI** ``lora_ft_webui.py``，浏览器内 LoRA 训练 / 推理。"
+
+#: ../../reference/changelog.rst:504 e2cc22dfdb7a410290dac2ab8a06f037
+msgid "**Inference test scripts**:"
+msgstr "**推理测试脚本**："
+
+#: ../../reference/changelog.rst:506 37937206c7df44619a4de9d40b785fdf
+msgid ""
+"``scripts/test_voxcpm_ft_infer.py`` — full fine-tune checkpoint inference."
+msgstr "``scripts/test_voxcpm_ft_infer.py`` —— 全参微调检查点推理。"
+
+#: ../../reference/changelog.rst:507 d30b5604d9d64d02ba36349550286eeb
+msgid ""
+"``scripts/test_voxcpm_lora_infer.py`` — LoRA checkpoint inference with hot-"
+"swap demo (``load_lora`` / ``unload_lora`` / ``set_lora_enabled``)."
+msgstr ""
+"``scripts/test_voxcpm_lora_infer.py`` —— LoRA 检查点推理与热切换示例（`` load_lora`` / "
+"`` unload_lora`` / `` set_lora_enabled``）。"
+
+#: ../../reference/changelog.rst:512 ../../reference/changelog.rst:545
+#: 087507b8463540f98e85f5744f8e2809 8e5ee40a5fe54eccb095867a87a093c3
+msgid "Python API"
+msgstr "Python API"
+
+#: ../../reference/changelog.rst:514 b130239343b448b2b9564fe983ecfefc
+msgid "``VoxCPM.from_pretrained()`` default: ``openbmb/VoxCPM1.5``."
+msgstr "``VoxCPM.from_pretrained()`` 默认：`` openbmb/VoxCPM1.5``。"
+
+#: ../../reference/changelog.rst:516 9ba7a8717d6f425aae109a998f005143
+msgid ""
+"**Streaming** ``generate_streaming()`` API added (returns a generator of "
+"audio chunks)."
+msgstr "新增 **流式** ``generate_streaming()`` API（返回音频块生成器）。"
+
+#: ../../reference/changelog.rst:521 b9e8c70f2c2e4e91968094f436120cf0
+msgid "Stability Improvements"
+msgstr "稳定性改进"
+
+#: ../../reference/changelog.rst:523 53f4cff4b505417b93e605b7ab6a4879
+msgid ""
+"Reduced beginning/ending audio artifacts through improved inference logic "
+"and training data cleaning."
+msgstr "通过改进推理逻辑与清洗训练数据，减轻首尾伪音。"
+
+#: ../../reference/changelog.rst:526 9fd67d331a4342c79daccbdd34f482d1
+msgid "Lower token rate (6.25 Hz) improves stability on longer speech."
+msgstr "更低 token 率（6.25 Hz）提升长语音稳定性。"
+
+#: ../../reference/changelog.rst:532 5e830bbce8704ffda9ca23fb712b30d7
+msgid "VoxCPM 1.0.0 — September 16, 2025"
+msgstr "VoxCPM 1.0.0 — 2025 年 9 月 16 日"
+
+#: ../../reference/changelog.rst:534 6a7ece051b7e4e5c8e5de11d5324090f
+msgid "Initial public release of VoxCPM."
+msgstr "VoxCPM 首次公开发布。"
+
+#: ../../reference/changelog.rst:537 77ef5d0a27e74122be9cf336c8dcb972
+msgid "Model"
+msgstr "模型"
+
+#: ../../reference/changelog.rst:539 5d781a9ba67740da82532c7aa3265864
+msgid "**Parameter size**: 600M (VoxCPM-0.5B)."
+msgstr "**参数规模**：600M（VoxCPM-0.5B）。"
+
+#: ../../reference/changelog.rst:540 da3f6c0867214e54b99077edab8387bd
+msgid "**Sampling rate**: 16 kHz (AudioVAE v1)."
+msgstr "**采样率**：16 kHz（AudioVAE v1）。"
+
+#: ../../reference/changelog.rst:541 cda4deff840b4aa4843db8491d5ae315
+msgid "**LM token rate**: 12.5 Hz, patch size 2."
+msgstr "**LM token 率**：12.5 Hz，patch size 2。"
+
+#: ../../reference/changelog.rst:542 c21ded75dfd444b894474d3e7432e703
+msgid "**Languages**: Chinese and English."
+msgstr "**语言**：中文与英文。"
+
+#: ../../reference/changelog.rst:547 8cefb56657e64f84b1f4f89c2f30fbae
+msgid ""
+"``VoxCPM`` class with ``from_pretrained()`` / ``generate()`` interface."
+msgstr "``VoxCPM`` 类，提供 `` from_pretrained()`` / `` generate()`` 接口。"
+
+#: ../../reference/changelog.rst:548 9bdcb8fb9a5d48118ab23edbc5ae2b0f
+msgid "HF model id: ``openbmb/VoxCPM-0.5B``."
+msgstr "HF 模型 id：``openbmb/VoxCPM-0.5B``。"
+
+#: ../../reference/changelog.rst:549 56e7b4257e534be38c51ed1aa5d3a2db
+msgid ""
+"Voice cloning via ``prompt_wav_path`` + ``prompt_text`` (continuation mode "
+"only)."
+msgstr "通过 ``prompt_wav_path`` + `` prompt_text`` 进行声音克隆（仅延续模式）。"
+
+#: ../../reference/changelog.rst:553 b275255e12f141a7b697cd2554e3299d
+msgid "Training Configs"
+msgstr "训练配置"
+
+#: ../../reference/changelog.rst:555 e22de344bd624839b34549a914ee171b
+msgid "``conf/voxcpm_v1/voxcpm_finetune_all.yaml`` — ``sample_rate: 16000``."
+msgstr ""
+"``conf/voxcpm_v1/voxcpm_finetune_all.yaml`` —— `` sample_rate: 16000``。"
+
+#: ../../reference/changelog.rst:556 75d60c190cd2400eaef30855b6fb14e3
+msgid "``conf/voxcpm_v1/voxcpm_finetune_lora.yaml`` — ``sample_rate: 16000``."
+msgstr ""
+"``conf/voxcpm_v1/voxcpm_finetune_lora.yaml`` —— `` sample_rate: 16000``。"
+
+#: ../../reference/changelog.rst:559 3ab0c5e586444f68ba801975dc56d1c0
+msgid "PyPI"
+msgstr "PyPI"
+
+#: ../../reference/changelog.rst:561 8c07fdf5e01447c1a231c60fbd0e705f
+msgid "Package ``voxcpm`` published with tags ``1.0.0rc1`` through ``1.0.5``."
+msgstr "包 ``voxcpm`` 已发布，标签自 `` 1.0.0rc1`` 至 `` 1.0.5``。"
+
+#: ../../reference/changelog.rst:567 2a9c024b711442fb9cc64d9f3e91c627
+msgid "Version Tags"
+msgstr "版本标签"
+
+#: ../../reference/changelog.rst:569 1fdce482081643db82d0a5cb6d9ca48f
+msgid ""
+"Versions are managed by ``setuptools_scm`` from git tags. There is no hard-"
+"coded ``__version__`` in the source."
+msgstr "版本由 git 标签经 ``setuptools_scm`` 管理，源码中无硬编码 `` __version__``。"
+
+#: ../../reference/changelog.rst:576 02f2fd28a3914c2fbb696689d4ad12fd
+msgid "Tag"
+msgstr "标签"
+
+#: ../../reference/changelog.rst:577 d49fbd21a6b14cdd9fad2109a1489ef8
+msgid "Date"
+msgstr "日期"
+
+#: ../../reference/changelog.rst:579 5c3b72750efd4578bd8bebfb923285d1
+msgid "``1.0.0rc1`` – ``1.0.0rc3``"
+msgstr "``1.0.0rc1`` – `` 1.0.0rc3``"
+
+#: ../../reference/changelog.rst:580 ../../reference/changelog.rst:583
+#: ../../reference/changelog.rst:586 7f12e33400184c57b0d2531e9790d4d4
+#: b531235e73ff411d81b1e765559a7554 b7a0819d00414ceb9a65444c73162544
+msgid "2025-09-16"
+msgstr "2025-09-16"
+
+#: ../../reference/changelog.rst:581 0e5ca22bda5f4903ad28200a85699467
+msgid "Release candidates"
+msgstr "发布候选"
+
+#: ../../reference/changelog.rst:582 d7a8f3eb826349cf8c0b02e533123b6c
+msgid "``1.0.0``"
+msgstr "``1.0.0``"
+
+#: ../../reference/changelog.rst:584 9f4e75fc3d5f47d58697d85ea2791b8e
+msgid "Initial release"
+msgstr "首次正式发布"
+
+#: ../../reference/changelog.rst:585 44af7462a067449e82be9e3cf26782e9
+msgid "``1.0.1``"
+msgstr "``1.0.1``"
+
+#: ../../reference/changelog.rst:587 ../../reference/changelog.rst:590
+#: ../../reference/changelog.rst:593 ../../reference/changelog.rst:596
+#: 52435ac34678412fbe0098e9086ba71f 875f016272f84184aa09c107d4fa6e88
+#: bf2a20cdc981452cb92cb6373bc6a34f ee431e7b5e4c47b3b3afc6a8b633550f
+msgid "Patch"
+msgstr "补丁"
+
+#: ../../reference/changelog.rst:588 d780c51410634e60b2751e88fb5273a0
+msgid "``1.0.2``"
+msgstr "``1.0.2``"
+
+#: ../../reference/changelog.rst:589 ade510d533fc4abd91862dcb1e246e3e
+msgid "2025-09-17"
+msgstr "2025-09-17"
+
+#: ../../reference/changelog.rst:591 e2ed587bde744066aee6751252578fd3
+msgid "``1.0.3``"
+msgstr "``1.0.3``"
+
+#: ../../reference/changelog.rst:592 af04542e0b9d435eb0cdd7799809abdd
+msgid "2025-09-18"
+msgstr "2025-09-18"
+
+#: ../../reference/changelog.rst:594 981cf8e292934bbb9919de45a3dfa2d1
+msgid "``1.0.4``"
+msgstr "``1.0.4``"
+
+#: ../../reference/changelog.rst:595 d970045f144d40f5931ae814ed28f581
+msgid "2025-09-22"
+msgstr "2025-09-22"
+
+#: ../../reference/changelog.rst:597 e902038623f8470cb40b16eae7ba20d1
+msgid "``1.0.5``"
+msgstr "``1.0.5``"
+
+#: ../../reference/changelog.rst:598 95aae022424f4ca598145880fb142d49
+msgid "2025-09-30"
+msgstr "2025-09-30"
+
+#: ../../reference/changelog.rst:599 7a5d8d2606c7459bbbb1e572918f4561
+msgid "Patch (technical report release)"
+msgstr "补丁（技术报告发布）"
+
+#: ../../reference/changelog.rst:600 210072e030e745878833558fefba5f5d
+msgid "``1.5.0``"
+msgstr "``1.5.0``"
+
+#: ../../reference/changelog.rst:601 1560e8061bf14eb3a0966f8e1ebbdddd
+msgid "2025-12-05"
+msgstr "2025-12-05"
+
+#: ../../reference/changelog.rst:602 dc436f677a5741189484a430816436bd
+msgid "VoxCPM 1.5"
+msgstr "VoxCPM 1.5"

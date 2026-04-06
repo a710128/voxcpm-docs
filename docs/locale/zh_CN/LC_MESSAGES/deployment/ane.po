@@ -1,0 +1,247 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2025, OpenBMB
+# This file is distributed under the same license as the VoxCPM package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: VoxCPM\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-06 15:37+0800\n"
+"PO-Revision-Date: 2026-04-06 18:30+0800\n"
+"Last-Translator: GPT-5.4 <>\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../deployment/ane.rst:3 d6195fd5ba7542c59aa526cd58149dba
+msgid "VoxCPMANE"
+msgstr "VoxCPMANE"
+
+#: ../../deployment/ane.rst:5 f78c5a7f1f3f4530a427c9aa00fb3154
+msgid ""
+"VoxCPMANE runs VoxCPM on the **Apple Neural Engine (ANE)** via CoreML, "
+"packaged as a Python server with a built-in web playground."
+msgstr ""
+"VoxCPMANE 通过 CoreML 在 **Apple Neural Engine (ANE)** 上运行 VoxCPM，并以带内置 Web "
+"试用界面的 Python 服务形式提供。"
+
+#: ../../deployment/ane.rst:7 7da5aac893e14e64aa6a2c7a8b8448bb
+msgid "Repo: `0seba/VoxCPMANE <https://github.com/0seba/VoxCPMANE>`_"
+msgstr "仓库：`0seba/VoxCPMANE <https://github.com/0seba/VoxCPMANE>`_"
+
+#: ../../deployment/ane.rst:8 7da5aac893e14e64aa6a2c7a8b8448bb
+msgid ""
+"CoreML Assets: `seba/VoxCPM-ANE <https://huggingface.co/seba/VoxCPM-ANE>`_ "
+"on Hugging Face"
+msgstr ""
+"CoreML 资源：`seba/VoxCPM-ANE <https://huggingface.co/seba/VoxCPM-ANE>`_ "
+"（Hugging Face）"
+
+#: ../../deployment/ane.rst:11 6ee4437ea83c430aad05a52e73192d87
+msgid ""
+"This project requires **macOS with Apple Silicon** (M1/M2/M3/M4). It does "
+"not support Intel Macs, Linux, or Windows."
+msgstr ""
+"本项目需要 **搭载 Apple Silicon 的 macOS** （M1/M2/M3/M4）。不支持 Intel Mac、Linux 或 "
+"Windows。"
+
+#: ../../deployment/ane.rst:13 a67848ecea664825ad1ba9565f573902
+msgid "Supported VoxCPM Versions"
+msgstr "支持的 VoxCPM 版本"
+
+#: ../../deployment/ane.rst:17 e4b9e61f6780451aa02db8571ff29228
+msgid "VoxCPM 1.0 (0.5B)"
+msgstr "VoxCPM 1.0（0.5B）"
+
+#: ../../deployment/ane.rst:18 8d4d085a6fd64842af0bb01c24aecc05
+msgid "✅ Supported (source code default, 16 kHz)"
+msgstr "✅ 支持（源码默认，16 kHz）"
+
+#: ../../deployment/ane.rst:19 4e52eca4972a4650b2116e06689208eb
+msgid "VoxCPM 1.5"
+msgstr "VoxCPM 1.5"
+
+#: ../../deployment/ane.rst:20 c29f3d5d6e7a472f8e285e4edbf872bf
+msgid ""
+"⚠️ Announced in README as beta (``pip install --pre``); source defaults to "
+"0.5B"
+msgstr "⚠️ README 中标注为 beta（``pip install --pre``）；源码默认仍为 0.5B"
+
+#: ../../deployment/ane.rst:21 3d2d7ed5bf9e49feaebf3c990e8e786b
+msgid "VoxCPM 2"
+msgstr "VoxCPM 2"
+
+#: ../../deployment/ane.rst:22 59fc1a94370a40bd9f91c49bf11c5229
+msgid "❌ Not supported"
+msgstr "❌ 不支持"
+
+#: ../../deployment/ane.rst:25 042f9bff6e6a469c834e22746118e55b
+msgid "Features"
+msgstr "特性"
+
+#: ../../deployment/ane.rst:27 93bdf6cb6f6b41208afa0acebd97654c
+msgid "Native Apple Neural Engine acceleration via CoreML"
+msgstr "通过 CoreML 使用 Apple Neural Engine 原生加速"
+
+#: ../../deployment/ane.rst:28 44fca1c103044f36a8ac34f5c14bf718
+msgid "Voice cloning with cached compiled voices"
+msgstr "声音克隆，支持缓存已编译音色"
+
+#: ../../deployment/ane.rst:29 59d3204ae66744a0abb83200e79bcdbc
+msgid "Streaming audio generation"
+msgstr "流式音频生成"
+
+#: ../../deployment/ane.rst:30 1a0b8fd217b641029f36be22542841f1
+msgid "Built-in web playground UI (Create Voice tab for uploads)"
+msgstr "内置 Web 试用界面（Create Voice 标签页用于上传）"
+
+#: ../../deployment/ane.rst:31 f5b3cc5c799444e69c6e8ae3ab81c0d4
+msgid "Server-side playback option"
+msgstr "可选的服务端回放"
+
+#: ../../deployment/ane.rst:32 25e174bab1ea4628a8f1aec2d7267406
+msgid "Preset sample voices included"
+msgstr "内置预设示例音色"
+
+#: ../../deployment/ane.rst:33 f44b1f2d59c84fbb97fc046dc57dd7f4
+msgid ""
+"VoxCPM 1.5 support announced in README (beta, via ``pip install --pre``; the"
+" checked-in source defaults to VoxCPM-0.5B at 16 kHz)"
+msgstr ""
+"README 中已宣布支持 VoxCPM 1.5（beta，通过 ``pip install --pre``；仓库内源码默认仍为 16 kHz 的 "
+"VoxCPM-0.5B）"
+
+#: ../../deployment/ane.rst:36 d2ba193c2fc748dbbee3a18f5301a004
+msgid "Prerequisites"
+msgstr "环境要求"
+
+#: ../../deployment/ane.rst:38 1034a64e3d3840e7b24733e4f6d1a26a
+msgid "macOS with Apple Silicon (M1 or later)"
+msgstr "搭载 Apple Silicon 的 macOS（M1 或更新）"
+
+#: ../../deployment/ane.rst:39 d515be92c5ea4548890712493dd0cacd
+msgid "Python 3.9 – 3.12"
+msgstr "Python 3.9 – 3.12"
+
+#: ../../deployment/ane.rst:40 b0ff6255c0384de389c780cb7016daee
+msgid "``uv`` package manager (recommended)"
+msgstr "``uv`` 包管理器（推荐）"
+
+#: ../../deployment/ane.rst:41 2cc3081bcb5f4ae2b4501356a39a8947
+msgid ""
+"(Optional) ``pydub`` for mp3/opus/ogg/aac output formats on "
+"``/v1/audio/speech`` (WAV and FLAC work without it)"
+msgstr ""
+"（可选）在 ``/v1/audio/speech`` 上输出 mp3/opus/ogg/aac 时使用 `` pydub`` （WAV 与 FLAC "
+"无需此项）"
+
+#: ../../deployment/ane.rst:44 8ef0566780284439845b109085475446
+msgid "Installation"
+msgstr "安装"
+
+#: ../../deployment/ane.rst:56 9ecc557251ac40cfa9dd4f08c628cbfb
+msgid ""
+"CoreML model assets are downloaded automatically on first run via Hugging "
+"Face Hub (cached under ``~/.cache/huggingface/``). Custom voices are stored "
+"in ``~/.cache/ane_tts/``."
+msgstr ""
+"首次运行时会通过 Hugging Face Hub 自动下载 CoreML 模型资源（缓存在 "
+"``~/.cache/huggingface/``）。自定义音色保存在 ``~/.cache/ane_tts/``。"
+
+#: ../../deployment/ane.rst:59 91ff05efbd9e423188d30b56612c0483
+msgid "Basic usage"
+msgstr "基本用法"
+
+#: ../../deployment/ane.rst:61 c9ae4667c5004403a127e4653898a746
+msgid "Start the server (default host ``0.0.0.0``, port ``8000``):"
+msgstr "启动服务（默认主机 ``0.0.0.0``，端口 `` 8000``）："
+
+#: ../../deployment/ane.rst:71 72d1f009dde646d798b096fddff9b210
+msgid ""
+"Open ``http://localhost:8000`` in your browser to access the web playground."
+msgstr "在浏览器中打开 ``http://localhost:8000`` 即可访问 Web 试用界面。"
+
+#: ../../deployment/ane.rst:74 7e00dc18c2494b9981ba6be64c209088
+msgid "Voice cloning"
+msgstr "声音克隆"
+
+#: ../../deployment/ane.rst:76 a0a9caf2b6ea4a7bbc33cee25a409709
+msgid ""
+"Register custom voices via the API or web UI. The API accepts a JSON body "
+"where ``prompt_wav_path`` refers to a file path **on the server "
+"filesystem**:"
+msgstr ""
+"可通过 API 或 Web 界面注册自定义音色。API 接受 JSON 请求体，其中 ``prompt_wav_path`` 指向**服务器文件系统**"
+" 上的文件路径："
+
+#: ../../deployment/ane.rst:85 0d878e4306574a91bf12f748b9bb12a6
+msgid ""
+"For uploading audio files, use the **\"Create Voice\"** tab in the web "
+"playground at ``http://localhost:8000``."
+msgstr ""
+"若要上传音频文件，请在 ``http://localhost:8000`` 的 Web 试用界面中使用 **「Create Voice」** 标签页。"
+
+#: ../../deployment/ane.rst:87 8e1c0641fc2341be97bf7cfd1db15ebd
+msgid ""
+"You can also drop audio files with matching ``.txt`` transcripts into the "
+"cache directory (``~/.cache/ane_tts/``); they will be compiled on startup."
+msgstr "也可将音频与同名的 ``.txt`` 文本稿放入缓存目录（``~/.cache/ane_tts/``）；它们会在启动时被编译。"
+
+#: ../../deployment/ane.rst:90 81924521caeb4080a764f57de7cfae08
+msgid "API reference"
+msgstr "API 参考"
+
+#: ../../deployment/ane.rst:92 ec9d35330e6b4c778b90ea9a204fb561
+msgid ""
+"Full API documentation is available in the repository at ``docs/API.md``. "
+"Key endpoints:"
+msgstr "完整 API 说明见仓库中的 ``docs/API.md``。主要端点："
+
+#: ../../deployment/ane.rst:94 c98ee32403594953a785fac52befc606
+msgid "``POST /v1/voices`` — Register a custom voice (JSON body)"
+msgstr "``POST /v1/voices`` — 注册自定义音色（JSON 请求体）"
+
+#: ../../deployment/ane.rst:95 432e989a113a4b9fada16dda57a23772
+msgid "``POST /v1/audio/speech`` — Generate speech"
+msgstr "``POST /v1/audio/speech`` — 生成语音"
+
+#: ../../deployment/ane.rst:96 3e2ce9aa1f7d4f2ba729fcb62bd5f9c9
+msgid "``POST /v1/audio/speech/stream`` — Streaming speech generation"
+msgstr "``POST /v1/audio/speech/stream`` — 流式语音生成"
+
+#: ../../deployment/ane.rst:97 a4ba02d6dcbc4df1b776d23e51c297f6
+msgid "``GET /voices`` — List available voices"
+msgstr "``GET /voices`` — 列出可用音色"
+
+#: ../../deployment/ane.rst:98 15f1149743344f27b8a2ba0cdb6d632f
+msgid "``GET /health`` — Health check"
+msgstr "``GET /health`` — 健康检查"
+
+#: ../../deployment/ane.rst:99 27d1731986544c72ad27f321967338d5
+msgid "``POST /v1/audio/speech/playback`` — Server-side audio playback"
+msgstr "``POST /v1/audio/speech/playback`` — 服务端音频回放"
+
+#: ../../deployment/ane.rst:100 ad033e3bbf704e2da30535375216be8f
+msgid "``POST /v1/audio/speech/cancel`` — Cancel ongoing generation"
+msgstr "``POST /v1/audio/speech/cancel`` — 取消进行中的生成"
+
+#: ../../deployment/ane.rst:103 5b1efde7129644e3bcf82afd0ca1f5f3
+msgid "Limitations"
+msgstr "限制"
+
+#: ../../deployment/ane.rst:105 0c42026f259443d196df3ec89cb5bad9
+msgid "**macOS Apple Silicon only** — no cross-platform support"
+msgstr "**仅支持 macOS Apple Silicon** — 无跨平台支持"
+
+#: ../../deployment/ane.rst:106 685ec34b5aaf412d96236827324a6639
+msgid "Long text inputs may need chunking (roadmap item)"
+msgstr "长文本输入可能需要分块（路线图项）"
+
+#: ../../deployment/ane.rst:107 5afc2e812f914975bc4bed1272c48494
+msgid "Voice compilation can take several seconds on first use"
+msgstr "首次使用音色编译可能需要数秒"

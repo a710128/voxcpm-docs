@@ -1,0 +1,486 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2025, OpenBMB
+# This file is distributed under the same license as the VoxCPM package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: VoxCPM \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-06 15:37+0800\n"
+"PO-Revision-Date: 2026-04-06 16:55+0800\n"
+"Last-Translator: GPT-5.4 <>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../faq.rst:2 84f4eaa5127042618bd172f1a1928e0d
+msgid "FAQ & Troubleshooting"
+msgstr "FAQ 与故障排查"
+
+#: ../../faq.rst:4 30cef9e15d004485ad815361da97653d
+msgid ""
+"This page focuses on setup, runtime and deployment problems reported by "
+"the VoxCPM community. For prompt strategy, cloning tips, and quality "
+"tuning, see :doc:`./usage_guide`."
+msgstr "本页聚焦于 VoxCPM 社区反馈的安装、运行与部署问题。有关 prompt 策略、克隆技巧和质量调优，请参阅 :doc:`./usage_guide`。"
+
+#: ../../faq.rst:9 b4a946ef9d524546a35e9360da975b74
+msgid "Installation & Environment"
+msgstr "安装与环境"
+
+#: ../../faq.rst:12 370a7124b7354355a7ee5c491ecacc6b
+msgid "Triton errors on Windows"
+msgstr "Windows 上的 Triton 错误"
+
+#: ../../faq.rst:14 8cec725dd9364945a24c451aec2b4fdb
+msgid ""
+"**Symptom:** ``Python int too large to convert to C long`` or Triton-"
+"related import failures when loading the model on Windows."
+msgstr "**现象：** 在 Windows 上加载模型时出现 ``Python int too large to convert to C long``，或与 Triton 相关的导入失败。"
+
+#: ../../faq.rst:16 99868fb6868f461a90a4aa6524900d5d
+msgid ""
+"**Cause:** Triton has limited Windows support, and certain PyTorch + "
+"Triton version combinations trigger known bugs."
+msgstr "**原因：** Triton 对 Windows 的支持较有限，某些 PyTorch 与 Triton 的版本组合会触发已知问题。"
+
+#: ../../faq.rst:18 ../../faq.rst:55 ../../faq.rst:86 ../../faq.rst:185
+#: 30b2b04b3f2d4b4889df0db85a9f502c 5dbb503d8f1f4807bf1240dedaffadeb
+#: 6c742b866c7b4f46a013d4f608676c75 7e3c54d9a4a847cfaef20e9ff636687a
+msgid "**Solutions:**"
+msgstr "**解决方案：**"
+
+#: ../../faq.rst:20 bf64dcf792bd41edb685ab0e33587837
+msgid ""
+"Install Triton for Windows from the `triton-windows "
+"<https://github.com/woct0rdho/triton-windows>`_ community project (`#36 "
+"<https://github.com/OpenBMB/VoxCPM/issues/36>`_). **Triton and PyTorch "
+"versions must match**:"
+msgstr "通过社区项目 `triton-windows <https://github.com/woct0rdho/triton-windows>`_ 安装适用于 Windows 的 Triton（参见 `#36 <https://github.com/OpenBMB/VoxCPM/issues/36>`_）。**Triton 与 PyTorch 的版本必须匹配**："
+
+#: ../../faq.rst:26 ../../faq.rst:102 4609d722c0ae43149fc8f0f3ae907e43
+#: e71efd087fd24f8c8b6c7d943a9b3e8c
+msgid "PyTorch"
+msgstr "PyTorch"
+
+#: ../../faq.rst:27 ../../faq.rst:104 2b43be75f406434eb56b1e84d3c526cc
+#: 3437aa1255f149fb8e436ebad07b2901
+msgid "Triton"
+msgstr "Triton"
+
+#: ../../faq.rst:28 1698cec14c1248f8b6680a236ab0abd9
+msgid "2.4 / 2.5"
+msgstr "2.4 / 2.5"
+
+#: ../../faq.rst:29 608d83d7fadb420fb1ce7a7b4dc19ee9
+msgid "3.1"
+msgstr "3.1"
+
+#: ../../faq.rst:30 eb5431f6a8464772a4841115edd2e459
+msgid "2.6"
+msgstr "2.6"
+
+#: ../../faq.rst:31 10e98007bc344539b8a457c1295297b2
+msgid "3.2"
+msgstr "3.2"
+
+#: ../../faq.rst:32 5e55f18529db4ce1afc4d0f02d8f83e0
+msgid "2.7"
+msgstr "2.7"
+
+#: ../../faq.rst:33 b541c4a8d0a042ed99ad8ea2107160eb
+msgid "3.3"
+msgstr "3.3"
+
+#: ../../faq.rst:34 7f87f211f7a64d10bf89c1979126854e
+msgid "2.8"
+msgstr "2.8"
+
+#: ../../faq.rst:35 a791a1c5b0af494d9704f7c74c6cc04e
+msgid "3.4"
+msgstr "3.4"
+
+#: ../../faq.rst:37 0d08e5ba800f4d1c9ed66df42fe9c0f4
+msgid ""
+"If Triton still doesn't work, you can skip ``torch.compile`` entirely by "
+"loading the model with:"
+msgstr "如果 Triton 仍然无法正常工作，你可以在加载模型时完全跳过 ``torch.compile``："
+
+#: ../../faq.rst:43 ff6ecaddd71944939a75e54409c4ec87
+msgid ""
+"This disables ``torch.compile`` acceleration. Inference will be slower "
+"but functionally correct."
+msgstr "这会禁用 ``torch.compile`` 加速。推理速度会变慢，但功能上是正确可用的。"
+
+#: ../../faq.rst:45 36fbf4a8ceba48b4a41ad3b947b34d68
+msgid ""
+"For the ``Python int too large to convert to C long`` error specifically,"
+" see the `PyTorch fix "
+"<https://github.com/pytorch/pytorch/issues/162430#issuecomment-3289054096>`_"
+" which involves patching ``torch_python.dll`` (`#27 "
+"<https://github.com/OpenBMB/VoxCPM/issues/27>`_)."
+msgstr "如果你遇到的是 ``Python int too large to convert to C long`` 这个特定错误，可以参考 `PyTorch 修复方案 <https://github.com/pytorch/pytorch/issues/162430#issuecomment-3289054096>`_，其中涉及对 ``torch_python.dll`` 打补丁（参见 `#27 <https://github.com/OpenBMB/VoxCPM/issues/27>`_）。"
+
+#: ../../faq.rst:49 8952a9edf5074a74b7ee180a99822b10
+msgid "torchcodec / libtorchcodec errors"
+msgstr "torchcodec / libtorchcodec 错误"
+
+#: ../../faq.rst:51 c9cf1ca89b104d03aea68d7817138f1f
+msgid ""
+"**Symptom:** ``RuntimeError: Could not load libtorchcodec`` or "
+"``ImportError: TorchCodec is required for load_with_torchcodec`` when "
+"using voice cloning with a reference audio."
+msgstr "**现象：** 在使用参考音频进行声音克隆时，出现 ``RuntimeError: Could not load libtorchcodec`` 或 ``ImportError: TorchCodec is required for load_with_torchcodec``。"
+
+#: ../../faq.rst:53 11da450dc0424b7bb5a17f5e7fb7db71
+msgid ""
+"**Cause:** ``torchaudio`` (>= 2.9) uses ``torchcodec`` as its default "
+"audio backend, which requires FFmpeg to be properly installed."
+msgstr "**原因：** ``torchaudio``（>= 2.9）默认使用 ``torchcodec`` 作为音频后端，而它要求系统正确安装 FFmpeg。"
+
+#: ../../faq.rst:57 c5c130b46d8b4b0ba1a543fcce453960
+msgid "Install FFmpeg system-wide (version 4–7 supported):"
+msgstr "在系统范围安装 FFmpeg（支持 4–7 版本）："
+
+#: ../../faq.rst:59 eddfce36757a4302b6e20a88534b93a6
+msgid "**Linux:** ``sudo apt install ffmpeg``"
+msgstr "**Linux：** ``sudo apt install ffmpeg``"
+
+#: ../../faq.rst:60 0fa66aecbf594516aa8858bf734e6405
+msgid "**macOS:** ``brew install ffmpeg``"
+msgstr "**macOS：** ``brew install ffmpeg``"
+
+#: ../../faq.rst:61 ea332b06a1124d9680dc8e066ca02967
+msgid ""
+"**Windows:** Download from `ffmpeg.org "
+"<https://ffmpeg.org/download.html>`_ and add to ``PATH``"
+msgstr "**Windows：** 从 `ffmpeg.org <https://ffmpeg.org/download.html>`_ 下载，并加入 ``PATH``"
+
+#: ../../faq.rst:63 d5a3ad4416b04c80a3edd9a1ec20ac86
+msgid "Install a compatible torchcodec version:"
+msgstr "安装兼容的 torchcodec 版本："
+
+#: ../../faq.rst:69 cb7f547391f040f5848f1c3fd1de8841
+msgid ""
+"If issues persist, force torchaudio to use the ``soundfile`` backend "
+"instead:"
+msgstr "如果问题仍然存在，可以强制让 torchaudio 改用 ``soundfile`` 后端："
+
+#: ../../faq.rst:76 a6e12e701995475680d0243e812c56ed
+msgid ""
+"See also: `HuggingFace discussion on torchcodec "
+"<https://discuss.huggingface.co/t/cannot-load-torchcodec/169260/4>`_ "
+"(referenced in `#86 <https://github.com/OpenBMB/VoxCPM/issues/86>`_, "
+"`#119 <https://github.com/OpenBMB/VoxCPM/issues/119>`_, `#123 "
+"<https://github.com/OpenBMB/VoxCPM/issues/123>`_)"
+msgstr "另见：`关于 torchcodec 的 HuggingFace 讨论 <https://discuss.huggingface.co/t/cannot-load-torchcodec/169260/4>`_（在 `#86 <https://github.com/OpenBMB/VoxCPM/issues/86>`_、`#119 <https://github.com/OpenBMB/VoxCPM/issues/119>`_、`#123 <https://github.com/OpenBMB/VoxCPM/issues/123>`_ 中有引用）"
+
+#: ../../faq.rst:80 f169d49d268f47aaa6ea36c6d51d352d
+msgid "torch.compile errors on first run"
+msgstr "首次运行时的 torch.compile 错误"
+
+#: ../../faq.rst:82 ec2c2f560f25493b94f1dbdfb7d3b374
+msgid ""
+"**Symptom:** ``torch._dynamo.exc.Unsupported`` errors (often mentioning "
+"``einops`` or ``symmetric_difference``) during the warm-up phase."
+msgstr "**现象：** 在预热阶段出现 ``torch._dynamo.exc.Unsupported`` 错误（通常会提到 ``einops`` 或 ``symmetric_difference``）。"
+
+#: ../../faq.rst:84 93a818cf67124daba6837361223a9525
+msgid ""
+"**Cause:** Certain combinations of PyTorch, Triton, and einops versions "
+"have incompatibilities with ``torch.compile`` (`#19 "
+"<https://github.com/OpenBMB/VoxCPM/issues/19>`_)."
+msgstr "**原因：** 某些 PyTorch、Triton 与 einops 的版本组合与 ``torch.compile`` 不兼容（参见 `#19 <https://github.com/OpenBMB/VoxCPM/issues/19>`_）。"
+
+#: ../../faq.rst:88 1930710cdf604f6eb51365ecd228eb12
+msgid "**Quick fix** — disable torch.compile:"
+msgstr "**快速修复：** 禁用 torch.compile："
+
+#: ../../faq.rst:94 425a6c769b624ba090fef3250de96629
+msgid ""
+"**Recommended environment** (verified on 4090 per `#19 "
+"<https://github.com/OpenBMB/VoxCPM/issues/19>`_):"
+msgstr "推荐环境（基于 `#19 <https://github.com/OpenBMB/VoxCPM/issues/19>`_，已在 4090 上验证）："
+
+#: ../../faq.rst:100 795e172678a241079bd9827a1417ebcc
+msgid "Package"
+msgstr "软件包"
+
+#: ../../faq.rst:101 ab94424c6fc44afe85fd794f36826b00
+msgid "Version"
+msgstr "版本"
+
+#: ../../faq.rst:103 35d4a5db63474b44988ebaceb6cabf17
+msgid "2.5.1+"
+msgstr "2.5.1+"
+
+#: ../../faq.rst:105 58024af210e642b9a820f1e578d6d00a
+msgid "3.1.0+"
+msgstr "3.1.0+"
+
+#: ../../faq.rst:106 e05711ae01c148129d19a0278f484b23
+msgid "einops"
+msgstr "einops"
+
+#: ../../faq.rst:107 260896d80cb74288815f1f2a0a9b3906
+msgid "0.8.1"
+msgstr "0.8.1"
+
+#: ../../faq.rst:108 489bc909974742339ad401a2a13d51c8
+msgid "Python"
+msgstr "Python"
+
+#: ../../faq.rst:109 a6c387a6f87e4119b89873c0829bbacb
+msgid "3.10–3.11"
+msgstr "3.10–3.11"
+
+#: ../../faq.rst:111 b47072b81191435a96017677c015d01c
+msgid ""
+"If you're on an older GPU with limited SMs, you may also see ``Not enough"
+" SMs to use max_autotune_gemm mode`` — this is a warning and can be "
+"ignored if inference completes successfully."
+msgstr "如果你使用的是较旧、SM 数量较少的 GPU，可能还会看到 ``Not enough SMs to use max_autotune_gemm mode``。这只是警告；如果推理能正常完成，可以忽略。"
+
+#: ../../faq.rst:115 4417faf5129b428a84d35b82c04a0db0
+msgid "Mac / MPS support"
+msgstr "Mac / MPS 支持"
+
+#: ../../faq.rst:117 203c52fc38f84be6b63624bc321b1f7c
+msgid "**Q: Can VoxCPM run on Mac (Apple Silicon)?**"
+msgstr "**问：VoxCPM 可以在 Mac（Apple Silicon）上运行吗？**"
+
+#: ../../faq.rst:119 7edb065dc9394b2681fbc4a701680413
+msgid ""
+"Yes. VoxCPM supports CPU and MPS (Metal Performance Shaders) on Apple "
+"Silicon Macs (`#14 <https://github.com/OpenBMB/VoxCPM/issues/14>`_, `#20 "
+"<https://github.com/OpenBMB/VoxCPM/issues/20>`_, `#41 "
+"<https://github.com/OpenBMB/VoxCPM/issues/41>`_)."
+msgstr "可以。VoxCPM 支持在 Apple Silicon Mac 上使用 CPU 和 MPS（Metal Performance Shaders）（参见 `#14 <https://github.com/OpenBMB/VoxCPM/issues/14>`_、`#20 <https://github.com/OpenBMB/VoxCPM/issues/20>`_、`#41 <https://github.com/OpenBMB/VoxCPM/issues/41>`_）。"
+
+#: ../../faq.rst:121 0624e172f1854f86aa4719c1f04c37be
+msgid ""
+"**CPU:** Works out of the box, but inference is slow (`#67 "
+"<https://github.com/OpenBMB/VoxCPM/issues/67>`_)."
+msgstr "**CPU：** 开箱即用，但推理速度较慢（参见 `#67 <https://github.com/OpenBMB/VoxCPM/issues/67>`_）。"
+
+#: ../../faq.rst:122 fee4d61d814f436e9848aff9d3af1801
+msgid ""
+"**MPS:** Supported for accelerated inference. Load the model normally and"
+" it will automatically detect MPS if available."
+msgstr "**MPS：** 支持加速推理。正常加载模型即可，若系统可用，它会自动检测并使用 MPS。"
+
+#: ../../faq.rst:126 03fbc5a4ee5c4b0fa3f650878dc52a4c
+msgid ""
+"The denoiser (ZipEnhancer) runs on CPU even when MPS is active. If you "
+"don't need prompt speech enhancement, set ``load_denoiser=False`` to save"
+" memory."
+msgstr "即使启用了 MPS，降噪器（ZipEnhancer）仍然运行在 CPU 上。如果你不需要增强 prompt 语音，可设置 ``load_denoiser=False`` 以节省内存。"
+
+#: ../../faq.rst:130 270159827b7e48099443d7163f37b390
+msgid "Python version compatibility"
+msgstr "Python 版本兼容性"
+
+#: ../../faq.rst:132 8e5bb59ca6ab4390a9831ac229ae6c72
+msgid ""
+"VoxCPM is most tested on **Python 3.10–3.11**. For current releases, "
+"**Python 3.10–3.12** is the recommended runtime range. Known issues:"
+msgstr "VoxCPM 在 **Python 3.10–3.11** 上测试最充分。对于当前版本，推荐的运行范围是 **Python 3.10–3.12**。已知问题如下："
+
+#: ../../faq.rst:134 3fb0603b838146a78675f479ca3fe0da
+msgid ""
+"**Python 3.14+:** Installation may fail due to dependency "
+"incompatibilities (`#176 "
+"<https://github.com/OpenBMB/VoxCPM/issues/176>`_). Use Python 3.10–3.12 "
+"instead."
+msgstr "**Python 3.14+：** 由于依赖不兼容，安装可能失败（参见 `#176 <https://github.com/OpenBMB/VoxCPM/issues/176>`_）。请改用 Python 3.10–3.12。"
+
+#: ../../faq.rst:135 1a9d502095594c0b8863bd04417f525c
+msgid ""
+"**``No module named 'pkg_resources'``:** This happens on newer "
+"Python/setuptools versions (`#189 "
+"<https://github.com/OpenBMB/VoxCPM/issues/189>`_). Fix with:"
+msgstr "**``No module named 'pkg_resources'``：** 这个问题会出现在较新的 Python / setuptools 版本中（参见 `#189 <https://github.com/OpenBMB/VoxCPM/issues/189>`_）。可通过以下方式修复："
+
+#: ../../faq.rst:144 5236fc8f171b4e3ab965dcbde6f09b7d
+msgid "Performance & Deployment"
+msgstr "性能与部署"
+
+#: ../../faq.rst:147 f80d655a3dfe460281072b45bd55425a
+msgid "VRAM & RTF reference"
+msgstr "VRAM 与 RTF 参考"
+
+#: ../../faq.rst:153 d878d0de9c22402ebfc332ea90719a1a
+msgid "Model"
+msgstr "模型"
+
+#: ../../faq.rst:154 7c02cb8096c74fba9e59266ef130eb94
+msgid "VRAM"
+msgstr "VRAM"
+
+#: ../../faq.rst:155 a4478a77bd1d4e2fb1dde7bebd54ffd9
+msgid "RTF (official)"
+msgstr "RTF（官方）"
+
+#: ../../faq.rst:156 8fa60198b27d48d590b45ce3ebaf635c
+msgid "RTF (NanoVLLM-VoxCPM)"
+msgstr "RTF（NanoVLLM-VoxCPM）"
+
+#: ../../faq.rst:157 031281bfe4d64151a68671fdf352269d
+msgid "VoxCPM 1.0 (0.5B)"
+msgstr "VoxCPM 1.0（0.5B）"
+
+#: ../../faq.rst:158 db649c0e65ac4ff591f5e74d8b85112b
+msgid "~5 GB"
+msgstr "~5 GB"
+
+#: ../../faq.rst:159 564036caa60c43ffb3a018203149ef76
+msgid "~0.17"
+msgstr "~0.17"
+
+#: ../../faq.rst:160 fe9deee6d85f42858599fab80f01e5a4
+msgid "~0.10"
+msgstr "~0.10"
+
+#: ../../faq.rst:161 f9e57ab79b0942e2b8d3dbf4666483a4
+msgid "VoxCPM 1.5 (0.8B)"
+msgstr "VoxCPM 1.5（0.8B）"
+
+#: ../../faq.rst:162 b3b9a946779a442fbbafa0db687018e5
+msgid "~6 GB"
+msgstr "~6 GB"
+
+#: ../../faq.rst:163 b5e52599ac4f4c299de9bdd212e4fc7f
+msgid "~0.15"
+msgstr "~0.15"
+
+#: ../../faq.rst:164 1ba1792001414a1188d8778f933e2946
+msgid "~0.08"
+msgstr "~0.08"
+
+#: ../../faq.rst:165 ededd8712aa34534a5c86bf3e3748dbf
+msgid "VoxCPM 2 (2B)"
+msgstr "VoxCPM 2（2B）"
+
+#: ../../faq.rst:166 8f017215570b4820a8d53ff9af1e1629
+msgid "~8 GB"
+msgstr "~8 GB"
+
+#: ../../faq.rst:167 e6f60ea968664e0ab302c3a7b6107bec
+msgid "~0.3"
+msgstr "~0.3"
+
+#: ../../faq.rst:168 111ee5f251224951bc338c7efdec5287
+msgid "~0.13"
+msgstr "~0.13"
+
+#: ../../faq.rst:170 4c62085cc0894a53accc3252ed7e2ea9
+msgid ""
+"All RTF (Real-Time Factor) values are measured with "
+"``inference_timesteps=10`` and ``torch.compile`` enabled on a single "
+"NVIDIA RTX 4090 GPU."
+msgstr "所有 RTF（Real-Time Factor）数值均在单张 NVIDIA RTX 4090 GPU 上、开启 ``torch.compile`` 且使用 ``inference_timesteps=10`` 的条件下测得。"
+
+#: ../../faq.rst:172 cfa6224e41ff43f6b617b75c6fb24460
+msgid ""
+"**RTF (official)** — the standard inference pipeline "
+"(``VoxCPM.generate``)."
+msgstr "**RTF（官方）**：标准推理流程（``VoxCPM.generate``）。"
+
+#: ../../faq.rst:173 70ff82b81d43443ba43a187a9dce5d3f
+msgid ""
+"**RTF (NanoVLLM-VoxCPM)** — `NanoVLLM-VoxCPM <https://github.com/a710128"
+"/nanovllm-voxcpm>`_ high-throughput serving, measured at concurrency = 1."
+msgstr "**RTF（NanoVLLM-VoxCPM）**：`NanoVLLM-VoxCPM <https://github.com/a710128/nanovllm-voxcpm>`_ 的高吞吐服务方式，在并发数为 1 时测得。"
+
+#: ../../faq.rst:175 75b1473feb6848fc90dd01a853d3db87
+msgid ""
+"Related issues: `#9 <https://github.com/OpenBMB/VoxCPM/issues/9>`_, `#67 "
+"<https://github.com/OpenBMB/VoxCPM/issues/67>`_, `#105 "
+"<https://github.com/OpenBMB/VoxCPM/issues/105>`_."
+msgstr "相关 issue：`#9 <https://github.com/OpenBMB/VoxCPM/issues/9>`_、`#67 <https://github.com/OpenBMB/VoxCPM/issues/67>`_、`#105 <https://github.com/OpenBMB/VoxCPM/issues/105>`_。"
+
+#: ../../faq.rst:179 9a58a921427a4b42b752b464c11c98e7
+msgid "CUDA Graphs and multi-threading"
+msgstr "CUDA Graphs 与多线程"
+
+#: ../../faq.rst:183 85de2cd676f0455e87776d620d9be39f
+msgid ""
+"VoxCPM with ``torch.compile`` (default) uses CUDA Graphs, which are **not"
+" compatible with multi-threading** (`#97 "
+"<https://github.com/OpenBMB/VoxCPM/issues/97>`_, `#107 "
+"<https://github.com/OpenBMB/VoxCPM/issues/107>`_, `#125 "
+"<https://github.com/OpenBMB/VoxCPM/issues/125>`_). Running inference from"
+" a background thread will cause ``AssertionError`` in "
+"``cudagraph_trees``."
+msgstr "默认启用 ``torch.compile`` 的 VoxCPM 会使用 CUDA Graphs，而它**与多线程不兼容**（参见 `#97 <https://github.com/OpenBMB/VoxCPM/issues/97>`_、`#107 <https://github.com/OpenBMB/VoxCPM/issues/107>`_、`#125 <https://github.com/OpenBMB/VoxCPM/issues/125>`_）。如果在后台线程中运行推理，可能会在 ``cudagraph_trees`` 中触发 ``AssertionError``。"
+
+#: ../../faq.rst:187 dda6565d75c94b7896e4ea710840c10f
+msgid "**Disable torch.compile** if you need multi-threading:"
+msgstr "**如果你需要多线程，请禁用 torch.compile：**"
+
+#: ../../faq.rst:193 073045d5abee4d69972b025dd0e6b0bf
+msgid ""
+"**Use NanoVLLM-VoxCPM** for concurrent serving — it handles batching and "
+"threading correctly:"
+msgstr "**若要并发服务，请使用 NanoVLLM-VoxCPM**，它能正确处理 batching 和 threading："
+
+#: ../../faq.rst:195 d5addd9a09734413a6e7856dcaba44a9
+msgid "See :doc:`./deployment/nanovllm_voxcpm` for setup instructions."
+msgstr "部署说明请参阅 :doc:`./deployment/nanovllm_voxcpm`。"
+
+#: ../../faq.rst:197 a44e535387124dffacbbb3cbb6f73c21
+msgid ""
+"**For Gradio apps** (``app.py``), limit concurrency to avoid CUDA Graph "
+"conflicts (`#97 <https://github.com/OpenBMB/VoxCPM/issues/97>`_):"
+msgstr "对于 Gradio 应用（``app.py``），请限制并发数以避免 CUDA Graph 冲突（参见 `#97 <https://github.com/OpenBMB/VoxCPM/issues/97>`_）："
+
+#: ../../faq.rst:205 7a32173ce5934cfd88056a79a7b2a8ee
+msgid "vLLM / lmdeploy compatibility"
+msgstr "vLLM / lmdeploy 兼容性"
+
+#: ../../faq.rst:207 083a2db8c56e4a189eb453578801a558
+msgid ""
+"VoxCPM is **not compatible** with standard LLM inference frameworks "
+"(vLLM, lmdeploy, etc.) because it uses a diffusion-based architecture "
+"that generates continuous audio latents rather than discrete tokens (`#6 "
+"<https://github.com/OpenBMB/VoxCPM/issues/6>`_, `#91 "
+"<https://github.com/OpenBMB/VoxCPM/issues/91>`_)."
+msgstr "VoxCPM 不兼容标准 LLM 推理框架（如 vLLM、lmdeploy 等），因为它使用的是扩散式架构，生成的是连续音频 latent，而不是离散 token（参见 `#6 <https://github.com/OpenBMB/VoxCPM/issues/6>`_、`#91 <https://github.com/OpenBMB/VoxCPM/issues/91>`_）。"
+
+#: ../../faq.rst:209 1e900586a2854ff59fb99386786972af
+msgid ""
+"For high-throughput deployment, use `NanoVLLM-VoxCPM "
+"<https://github.com/a710128/nanovllm-voxcpm>`_ instead."
+msgstr "若要进行高吞吐部署，请改用 `NanoVLLM-VoxCPM <https://github.com/a710128/nanovllm-voxcpm>`_。"
+
+#: ../../faq.rst:215 d63c0f4c9eec475d962764583e2aca13
+msgid "Still have questions?"
+msgstr "还有问题？"
+
+#: ../../faq.rst:217 4d54e2eadee94e1cb5532aad7c777c63
+msgid "If your question isn't covered here:"
+msgstr "如果你的问题未在这里覆盖："
+
+#: ../../faq.rst:219 1b58c9b90450409d9e8cf1220e645ba3
+msgid ""
+"Search the `GitHub Issues <https://github.com/OpenBMB/VoxCPM/issues>`_ — "
+"someone may have already asked."
+msgstr "先搜索 `GitHub Issues <https://github.com/OpenBMB/VoxCPM/issues>`_，可能已经有人提过相同问题。"
+
+#: ../../faq.rst:220 57521c151bc043cc9ab32e4317c4a8a3
+msgid ""
+"Open a `new issue <https://github.com/OpenBMB/VoxCPM/issues/new>`_ with "
+"details about your environment, error logs, and steps to reproduce."
+msgstr "提交一个 `新 issue <https://github.com/OpenBMB/VoxCPM/issues/new>`_，并附上你的环境信息、错误日志以及复现步骤。"
+
+#: ../../faq.rst:221 89e4da7c6a2f4c999362635f575b333d
+msgid ""
+"Join the community WeChat group (see the `README "
+"<https://github.com/OpenBMB/VoxCPM#readme>`_ for the QR code)."
+msgstr "加入社区微信群（二维码见 `README <https://github.com/OpenBMB/VoxCPM#readme>`_）。"
+

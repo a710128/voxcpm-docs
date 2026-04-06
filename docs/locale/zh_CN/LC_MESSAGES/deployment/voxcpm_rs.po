@@ -1,0 +1,154 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2025, OpenBMB
+# This file is distributed under the same license as the VoxCPM package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: VoxCPM \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-06 15:37+0800\n"
+"PO-Revision-Date: 2026-04-06 18:30+0800\n"
+"Last-Translator: GPT-5.4 <>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../deployment/voxcpm_rs.rst:3 7bf5ad1775584b31a65c6be8cb009745
+msgid "voxcpm_rs"
+msgstr "voxcpm_rs"
+
+#: ../../deployment/voxcpm_rs.rst:5 088582336a1c4adc81ad574c44915615
+msgid ""
+"voxcpm_rs is a **Rust** reimplementation of VoxCPM-0.5B using the `burn "
+"<https://github.com/tracel-ai/burn>`_ deep learning framework."
+msgstr ""
+"voxcpm_rs 是使用 `burn <https://github.com/tracel-ai/burn>`_ 深度学习框架"
+"对 VoxCPM-0.5B 的 **Rust** 重写实现。"
+
+#: ../../deployment/voxcpm_rs.rst:7 2fb46034ef544ee7af9235a6816367d2
+msgid ""
+"Repo: `madushan1000/voxcpm_rs "
+"<https://github.com/madushan1000/voxcpm_rs>`_"
+msgstr ""
+"仓库：`madushan1000/voxcpm_rs "
+"<https://github.com/madushan1000/voxcpm_rs>`_"
+
+#: ../../deployment/voxcpm_rs.rst:8 0ce7b6a394e04cf2951c8f5f53152bf5
+msgid "Upstream: `OpenBMB/VoxCPM <https://github.com/OpenBMB/VoxCPM>`_"
+msgstr "上游：`OpenBMB/VoxCPM <https://github.com/OpenBMB/VoxCPM>`_"
+
+#: ../../deployment/voxcpm_rs.rst:11 bf85273dee2c49ccbf3984a05e0f1f67
+msgid ""
+"This is an experimental project targeting **VoxCPM-0.5B**. Voice cloning "
+"with reference audio is supported (see usage below)."
+msgstr ""
+"这是面向 **VoxCPM-0.5B** 的实验性项目，支持基于参考音频的声音克隆（见下文用法）。"
+
+#: ../../deployment/voxcpm_rs.rst:13 ce9b031517a54bb386ccb475b10cc54a
+msgid "Supported VoxCPM Versions"
+msgstr "支持的 VoxCPM 版本"
+
+#: ../../deployment/voxcpm_rs.rst:17 200a986fca26450ba3ce3f97822bccd1
+msgid "VoxCPM 1.0 (0.5B)"
+msgstr "VoxCPM 1.0（0.5B）"
+
+#: ../../deployment/voxcpm_rs.rst:18 5c648cead61d4ae1806af40f3f1c45a5
+msgid "✅ Supported (hardcoded 16 kHz in source)"
+msgstr "✅ 支持（源码中硬编码 16 kHz）"
+
+#: ../../deployment/voxcpm_rs.rst:19 00b720c2bab14936ae1a88dc0dfeb147
+msgid "VoxCPM 1.5"
+msgstr "VoxCPM 1.5"
+
+#: ../../deployment/voxcpm_rs.rst:20 40edc7faff1e4c49a1616b313d1db443
+msgid "❌ Not tested"
+msgstr "❌ 未测试"
+
+#: ../../deployment/voxcpm_rs.rst:21 d80c4a255865408ab4dcab9a6140d5aa
+msgid "VoxCPM 2"
+msgstr "VoxCPM 2"
+
+#: ../../deployment/voxcpm_rs.rst:22 9c13a2be21c54683a72bc0ecf3c2ff6e
+msgid "❌ Not supported"
+msgstr "❌ 不支持"
+
+#: ../../deployment/voxcpm_rs.rst:25 7189822c7f284097b1f5fd3c8b164ae9
+msgid "Features"
+msgstr "特性"
+
+#: ../../deployment/voxcpm_rs.rst:27 55d8df8290d04b378b996e60e5421128
+msgid "Pure Rust implementation — no Python runtime dependency"
+msgstr "纯 Rust 实现 — 不依赖 Python 运行时"
+
+#: ../../deployment/voxcpm_rs.rst:28 b9e3d52e90d143fda587bd88444b55d3
+msgid "Weight conversion from Hugging Face format to burn format"
+msgstr "将 Hugging Face 格式权重转换为 burn 格式"
+
+#: ../../deployment/voxcpm_rs.rst:29 e6894eef6c4344ddbf62da1372fc43ec
+msgid "CLI for text-to-speech synthesis and voice cloning"
+msgstr "用于文本转语音合成与声音克隆的 CLI"
+
+#: ../../deployment/voxcpm_rs.rst:32 6a6439ac499a4db9aa6a1e351f546227
+msgid "Prerequisites"
+msgstr "环境要求"
+
+#: ../../deployment/voxcpm_rs.rst:34 a5716551f2e147cf86532f5b99c20587
+msgid "Rust toolchain (stable)"
+msgstr "Rust 工具链（stable）"
+
+#: ../../deployment/voxcpm_rs.rst:35 128aa9a2c27f4009b4a2475eefc7d6b1
+msgid "A specific commit of the ``burn`` framework (see below)"
+msgstr "``burn`` 框架的特定 commit（见下文）"
+
+#: ../../deployment/voxcpm_rs.rst:36 b57efe3bb0ac4c8b8d8f4e2b9fcc8665
+msgid "``openbmb/VoxCPM-0.5B`` weights"
+msgstr "``openbmb/VoxCPM-0.5B`` 权重"
+
+#: ../../deployment/voxcpm_rs.rst:39 5aca15048994405b99c711876167cb33
+msgid "Installation"
+msgstr "安装"
+
+#: ../../deployment/voxcpm_rs.rst:41 ef36e6dbd01a43f4b51cb56b4fc93722
+msgid "This project depends on a pinned commit of ``burn``:"
+msgstr "本项目依赖固定 pin 的 ``burn`` commit："
+
+#: ../../deployment/voxcpm_rs.rst:60 1585785418994bff877e31debb774e6b
+msgid "Basic usage"
+msgstr "基本用法"
+
+#: ../../deployment/voxcpm_rs.rst:63 07e431c3fbbd48ad90281d3f119bd9f8
+msgid "Convert weights"
+msgstr "转换权重"
+
+#: ../../deployment/voxcpm_rs.rst:72 714aee3f63104ed8954f5ca014e38040
+msgid "Generate speech (zero-shot)"
+msgstr "生成语音（zero-shot）"
+
+#: ../../deployment/voxcpm_rs.rst:84 a7e8af889e4e482aaec0ea6c47f9848f
+msgid "Voice cloning"
+msgstr "声音克隆"
+
+#: ../../deployment/voxcpm_rs.rst:95 bfd0f31514c94ce69b0dd0718c036c30
+msgid "Output is saved to ``output.wav`` in the current directory."
+msgstr "输出保存为当前目录下的 ``output.wav``。"
+
+#: ../../deployment/voxcpm_rs.rst:98 dd0fc6b906224f18921668077f3a5c42
+msgid "Limitations"
+msgstr "限制"
+
+#: ../../deployment/voxcpm_rs.rst:100 56d159e4a8db4a73a90851ae4dff1908
+msgid "**VoxCPM-0.5B only** — VoxCPM 1.5 not yet tested"
+msgstr "**仅 VoxCPM-0.5B** — VoxCPM 1.5 尚未测试"
+
+#: ../../deployment/voxcpm_rs.rst:101 0086077c8c7e4f67a15aaccfbe0f8402
+msgid "Requires a specific pinned version of the ``burn`` framework"
+msgstr "需要固定版本的 ``burn`` 框架"
+
+#: ../../deployment/voxcpm_rs.rst:102 c55857032edc44cf87791c69e676a32f
+msgid "Limited documentation — refer to source code for advanced usage"
+msgstr "文档有限 — 高级用法请参阅源码"

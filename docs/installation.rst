@@ -25,10 +25,29 @@ Requirements
 
    CUDA is not required for CPU inference or Apple Silicon MPS usage. See :doc:`./faq` for Mac / MPS notes.
 
-Install with uv (recommended)
-*****************************
+Install with pip (recommended)
+******************************
 
-`uv <https://docs.astral.sh/uv/>`_ is the recommended way to install VoxCPM. It is fast and handles dependency resolution well.
+``pip`` is the default recommended way to install VoxCPM. It keeps setup simple and matches the most common Python workflow.
+
+From PyPI:
+
+.. code-block:: sh
+
+    pip install voxcpm
+
+From source:
+
+.. code-block:: sh
+
+    git clone https://github.com/OpenBMB/VoxCPM.git
+    cd VoxCPM
+    pip install -e .
+
+Install with uv (secondary option)
+**********************************
+
+`uv <https://docs.astral.sh/uv/>`_ is a good secondary option if you prefer a managed environment and faster dependency resolution.
 
 From PyPI:
 
@@ -49,23 +68,6 @@ From source (needed for running the web demo or local development):
    If you installed via ``uv sync``, run scripts with ``uv run`` to use the
    managed environment. For example: ``uv run python app.py``,
    ``uv run python scripts/train_voxcpm_finetune.py ...``.
-
-Install with pip
-****************
-
-From PyPI:
-
-.. code-block:: sh
-
-    pip install voxcpm
-
-From source:
-
-.. code-block:: sh
-
-    git clone https://github.com/OpenBMB/VoxCPM.git
-    cd VoxCPM
-    pip install -e .
 
 The source installation is required if you want to:
 

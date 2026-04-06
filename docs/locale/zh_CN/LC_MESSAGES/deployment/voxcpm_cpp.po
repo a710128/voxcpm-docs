@@ -1,0 +1,361 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2025, OpenBMB
+# This file is distributed under the same license as the VoxCPM package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: VoxCPM\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-06 15:37+0800\n"
+"PO-Revision-Date: 2026-04-06 18:30+0800\n"
+"Last-Translator: GPT-5.4 <>\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../deployment/voxcpm_cpp.rst:3 f6a098fdd1ee496dbc8ba0acfc0cc926
+msgid "VoxCPM.cpp"
+msgstr "VoxCPM.cpp"
+
+#: ../../deployment/voxcpm_cpp.rst:5 94d7538b43bc44008b7b11a920e6e765
+msgid ""
+"VoxCPM.cpp is a standalone C++ inference engine for VoxCPM based on ggml, "
+"with GGUF model support."
+msgstr "VoxCPM.cpp 是基于 ggml 的 VoxCPM 独立 C++ 推理引擎，支持 GGUF 模型。"
+
+#: ../../deployment/voxcpm_cpp.rst:7 ea9ab895f499460c8fce70cf7ec73021
+msgid "Repo: `bluryar/VoxCPM.cpp <https://github.com/bluryar/VoxCPM.cpp>`_"
+msgstr "仓库：`bluryar/VoxCPM.cpp <https://github.com/bluryar/VoxCPM.cpp>`_"
+
+#: ../../deployment/voxcpm_cpp.rst:8 5ebde85f1ef440f698ea4f0a0f683208
+msgid ""
+"GGUF Weights: `bluryar/VoxCPM-GGUF <https://huggingface.co/bluryar/VoxCPM-"
+"GGUF>`_"
+msgstr ""
+"GGUF 权重：`bluryar/VoxCPM-GGUF <https://huggingface.co/bluryar/VoxCPM-GGUF>`_"
+
+#: ../../deployment/voxcpm_cpp.rst:9 940f9b4470ab44fc9c2d3efce7c5a37c
+msgid "Upstream: `OpenBMB/VoxCPM <https://github.com/OpenBMB/VoxCPM>`_"
+msgstr "上游：`OpenBMB/VoxCPM <https://github.com/OpenBMB/VoxCPM>`_"
+
+#: ../../deployment/voxcpm_cpp.rst:11 ccd41bad187843e99b5da1dd4419b41b
+msgid ""
+"It provides a CLI tool (``voxcpm_tts``) for offline synthesis and an OpenAI-"
+"compatible HTTP server (``voxcpm-server``) with streaming support."
+msgstr ""
+"提供用于离线合成的 CLI（``voxcpm_tts``），以及支持流式输出的、兼容 OpenAI 的 HTTP 服务（`` voxcpm-"
+"server``）。"
+
+#: ../../deployment/voxcpm_cpp.rst:13 d4e11a1314ac42a7b4f00245fd1541b9
+msgid "Supported VoxCPM Versions"
+msgstr "支持的 VoxCPM 版本"
+
+#: ../../deployment/voxcpm_cpp.rst:17 6248b0fee37d491382199330329aeb5e
+msgid "VoxCPM 1.0 (0.5B)"
+msgstr "VoxCPM 1.0（0.5B）"
+
+#: ../../deployment/voxcpm_cpp.rst:18 ../../deployment/voxcpm_cpp.rst:20
+#: 7302318f08d5419c8862bf4fc7a8c3cf d1f7399196ea4570a45afe05798eceda
+msgid "✅ Supported"
+msgstr "✅ 支持"
+
+#: ../../deployment/voxcpm_cpp.rst:19 ../../deployment/voxcpm_cpp.rst:51
+#: ../../deployment/voxcpm_cpp.rst:56 ../../deployment/voxcpm_cpp.rst:76
+#: 0876c2ab8ba1465f824edddd466674ae 17eae4cdafb54666bf1416e33212283e
+#: 3e6003b3a9754ebf897aa642efb3812a ca2518b5ab054720bce0a1b3f530a12d
+msgid "VoxCPM 1.5"
+msgstr "VoxCPM 1.5"
+
+#: ../../deployment/voxcpm_cpp.rst:21 b95a1b7337874be5aa80a935b392d0eb
+msgid "VoxCPM 2"
+msgstr "VoxCPM 2"
+
+#: ../../deployment/voxcpm_cpp.rst:22 f6f3b6fa703349acb0ec5e4c0d265262
+msgid "❌ Not supported"
+msgstr "❌ 不支持"
+
+#: ../../deployment/voxcpm_cpp.rst:24 057e5f9cabfd4f3eb0965279f7bbd12a
+msgid "Multiple quantization formats available: Q4_K, Q8_0, F16, F32."
+msgstr "可选多种量化格式：Q4_K、Q8_0、F16、F32。"
+
+#: ../../deployment/voxcpm_cpp.rst:27 d89e997f3a6f469292889990e3a610ad
+msgid "Features"
+msgstr "特性"
+
+#: ../../deployment/voxcpm_cpp.rst:29 d7bad84df93f4a5a89f0adf1b2e7d766
+#, python-brace-format
+msgid ""
+"CLI backends: **CPU**, **CUDA**, **Vulkan** (via ``--backend "
+"{cpu|cuda|vulkan|auto}``)"
+msgstr ""
+"CLI 后端：**CPU**、** CUDA**、** Vulkan** （通过 ``--backend "
+"{cpu|cuda|vulkan|auto}``）"
+
+#: ../../deployment/voxcpm_cpp.rst:30 ea25c0c372ff4db090d87fbf8d79b3b3
+msgid ""
+"GGUF quantized models (Q4_K, Q8_0, F16, F32) for flexible speed/quality "
+"trade-offs"
+msgstr "GGUF 量化模型（Q4_K、Q8_0、F16、F32），可在速度与质量间灵活取舍"
+
+#: ../../deployment/voxcpm_cpp.rst:31 eaaaa7200c8e4b99bd7169f8f997be19
+msgid "OpenAI-compatible HTTP server with streaming (audio / SSE modes)"
+msgstr "兼容 OpenAI 的 HTTP 服务，支持流式（音频 / SSE 模式）"
+
+#: ../../deployment/voxcpm_cpp.rst:32 fde9402bfc724641b351932a7032ba6a
+msgid "Voice registration and management via API"
+msgstr "通过 API 注册与管理音色"
+
+#: ../../deployment/voxcpm_cpp.rst:33 12b558a27e08472b82dbc833cca68184
+msgid "Optional Bearer token authentication (``--api-key``)"
+msgstr "可选 Bearer token 认证（``--api-key``）"
+
+#: ../../deployment/voxcpm_cpp.rst:34 13128e02221445019dbd29e32bc4ee87
+msgid "Benchmark scripts for performance profiling"
+msgstr "用于性能分析的基准脚本"
+
+#: ../../deployment/voxcpm_cpp.rst:35 325af39bf5f044bbb7e9321554f0104b
+msgid ""
+"Experimental WASM/Emscripten web playground (see ``docs/wasm_playground.md``"
+" in repo)"
+msgstr "实验性 WASM/Emscripten Web 试用环境（见仓库 ``docs/wasm_playground.md``）"
+
+#: ../../deployment/voxcpm_cpp.rst:38 e76768babeae4700bd58522844289d07
+msgid "Performance"
+msgstr "性能"
+
+#: ../../deployment/voxcpm_cpp.rst:40 934395766fdf443c961c329b4c0fb7fa
+msgid ""
+"Benchmarked on NVIDIA RTX 4060 Ti (CUDA) and Intel i5-12600K (CPU, 8 "
+"threads), inference timesteps = 10:"
+msgstr "在 NVIDIA RTX 4060 Ti（CUDA）与 Intel i5-12600K（CPU，8 线程）上测得，推理步数 = 10："
+
+#: ../../deployment/voxcpm_cpp.rst:42 175028c5809a4cefa27dcba4daf4d3d8
+msgid "CUDA Inference (RTF, lower is better)"
+msgstr "CUDA 推理（RTF，越小越好）"
+
+#: ../../deployment/voxcpm_cpp.rst:46 ../../deployment/voxcpm_cpp.rst:71
+#: 1fb5fff2a0cd4281869a5853519641ef 3a4188fa71764978bd8db9dcae74085f
+msgid "Model"
+msgstr "模型"
+
+#: ../../deployment/voxcpm_cpp.rst:47 ../../deployment/voxcpm_cpp.rst:72
+#: 90d3894acf5244fa94560b08e719f7a5 edcd3be212684222bc8b6dea4f9172a2
+msgid "Quant"
+msgstr "量化"
+
+#: ../../deployment/voxcpm_cpp.rst:48 ../../deployment/voxcpm_cpp.rst:73
+#: 922fcbf8d0104b4d9edb19e68b136d11 93bf91e2259e4603a374bb0eda6b3735
+msgid "Model Only"
+msgstr "仅模型"
+
+#: ../../deployment/voxcpm_cpp.rst:49 ../../deployment/voxcpm_cpp.rst:74
+#: 41df3cd6b2a44aacb2b274185ab68432 6b1b27ca686146c1b45af11dac2a951a
+msgid "Without Encode"
+msgstr "不含 Encode"
+
+#: ../../deployment/voxcpm_cpp.rst:50 ../../deployment/voxcpm_cpp.rst:75
+#: b053f9aec988454ab4c46e4ffc42e765 ddbbdfc06e2e473fba7dcfc6e4d21ae0
+msgid "Full Pipeline"
+msgstr "完整流水线"
+
+#: ../../deployment/voxcpm_cpp.rst:52 ../../deployment/voxcpm_cpp.rst:77
+#: 02e5e441e19746888903f85a90dc3c8e 37d5ca347c7047568eee9479637493bc
+msgid "Q8_0"
+msgstr "Q8_0"
+
+#: ../../deployment/voxcpm_cpp.rst:53 6c96d4823e8e4aef8621fcaafd6aa812
+msgid "0.320"
+msgstr "0.320"
+
+#: ../../deployment/voxcpm_cpp.rst:54 5d08617fd85a4f5b8fd718dea8d15e4b
+msgid "0.411"
+msgstr "0.411"
+
+#: ../../deployment/voxcpm_cpp.rst:55 02e43401802941659842f71751aa8ee6
+msgid "0.596"
+msgstr "0.596"
+
+#: ../../deployment/voxcpm_cpp.rst:57 ../../deployment/voxcpm_cpp.rst:62
+#: 08034024dd684b679714903f7c3cc3b6 e99af4e89fa84229a960293d8321ccbf
+msgid "F16"
+msgstr "F16"
+
+#: ../../deployment/voxcpm_cpp.rst:58 916729ef60cd402aa10cfc7e54a09da9
+msgid "0.352"
+msgstr "0.352"
+
+#: ../../deployment/voxcpm_cpp.rst:59 6b269013309b46a3b4e145726870f3e1
+msgid "0.442"
+msgstr "0.442"
+
+#: ../../deployment/voxcpm_cpp.rst:60 1a92ad70f8244bb680565b4c2de3a94d
+msgid "0.648"
+msgstr "0.648"
+
+#: ../../deployment/voxcpm_cpp.rst:61 ../../deployment/voxcpm_cpp.rst:81
+#: 490141b9a10341e597b00c681c725b3c c9915c65ce104e58af0af9d9e695f0e7
+msgid "VoxCPM-0.5B"
+msgstr "VoxCPM-0.5B"
+
+#: ../../deployment/voxcpm_cpp.rst:63 a415688b7ac14e0a8bb0bb3cfe0d03ca
+msgid "0.390"
+msgstr "0.390"
+
+#: ../../deployment/voxcpm_cpp.rst:64 c26c42e5bbe24539957c9bcd6f954922
+msgid "0.428"
+msgstr "0.428"
+
+#: ../../deployment/voxcpm_cpp.rst:65 955c48eda1e747a0af862cfa2130af6b
+msgid "0.567"
+msgstr "0.567"
+
+#: ../../deployment/voxcpm_cpp.rst:67 8331af96ead9425591dcd93013960d2d
+msgid "CPU Inference (RTF, lower is better)"
+msgstr "CPU 推理（RTF，越小越好）"
+
+#: ../../deployment/voxcpm_cpp.rst:78 d1f74fc46f8b456188e03727c7321a54
+msgid "2.086"
+msgstr "2.086"
+
+#: ../../deployment/voxcpm_cpp.rst:79 ea24a4736a6f4a8fb6827942ad371461
+msgid "2.982"
+msgstr "2.982"
+
+#: ../../deployment/voxcpm_cpp.rst:80 a74f0efb7ee349b78646c3d2faca0184
+msgid "4.291"
+msgstr "4.291"
+
+#: ../../deployment/voxcpm_cpp.rst:82 104f5465c6854021a22896c0ca8c7af0
+msgid "Q4_K"
+msgstr "Q4_K"
+
+#: ../../deployment/voxcpm_cpp.rst:83 eb385a21cf1c4c29a119fe6eea8dfd35
+msgid "1.826"
+msgstr "1.826"
+
+#: ../../deployment/voxcpm_cpp.rst:84 05eac28632dc4ed0b822d1aaf2e32858
+msgid "2.219"
+msgstr "2.219"
+
+#: ../../deployment/voxcpm_cpp.rst:85 fe4ab6d64d9c4d7c8c5657513d454f42
+msgid "3.609"
+msgstr "3.609"
+
+#: ../../deployment/voxcpm_cpp.rst:88 4c308fb72a474abda500413a85a0891b
+msgid "Prerequisites"
+msgstr "环境要求"
+
+#: ../../deployment/voxcpm_cpp.rst:90 e886ed5f08764dfa93164b8cc0d252a8
+msgid "CMake >= 3.14"
+msgstr "CMake >= 3.14"
+
+#: ../../deployment/voxcpm_cpp.rst:91 87530716e2aa4f9a85c9beb3522e41f3
+msgid "C++ compiler with C++17 support"
+msgstr "支持 C++17 的 C++ 编译器"
+
+#: ../../deployment/voxcpm_cpp.rst:92 fb1114db19d3491b91068bfb2f8ff055
+msgid "(Optional) CUDA toolkit for GPU acceleration"
+msgstr "（可选）CUDA toolkit 用于 GPU 加速"
+
+#: ../../deployment/voxcpm_cpp.rst:93 0b31000ef49643b5b4a66f8cad50d1f9
+msgid "(Optional) Vulkan SDK for Vulkan backend"
+msgstr "（可选）Vulkan SDK 用于 Vulkan 后端"
+
+#: ../../deployment/voxcpm_cpp.rst:96 efe11e016e2348d0b8c07df5db27c3d1
+msgid "Installation"
+msgstr "安装"
+
+#: ../../deployment/voxcpm_cpp.rst:98 d30f88d11a9544bab396d77b39845584
+msgid "Build from source:"
+msgstr "从源码构建："
+
+#: ../../deployment/voxcpm_cpp.rst:116 a16c8c1af0a94602add4c595d34c5a46
+msgid "Download GGUF weights from Hugging Face:"
+msgstr "从 Hugging Face 下载 GGUF 权重："
+
+#: ../../deployment/voxcpm_cpp.rst:126 2b4ead3c68b04939af53761897989cf4
+msgid "Basic usage (CLI)"
+msgstr "基本用法（CLI）"
+
+#: ../../deployment/voxcpm_cpp.rst:128 b6f86c310c9b46888b412c26a97f3c0e
+msgid "The ``voxcpm_tts`` binary supports text-to-speech and voice cloning:"
+msgstr "``voxcpm_tts`` 可执行文件支持文本转语音与声音克隆："
+
+#: ../../deployment/voxcpm_cpp.rst:152 550a1b4a9d294c17af0e5ead04635bbc
+msgid "HTTP Server"
+msgstr "HTTP 服务"
+
+#: ../../deployment/voxcpm_cpp.rst:154 e4fb60863d114a218e8bdfda9c1d2842
+msgid ""
+"The ``voxcpm-server`` provides an OpenAI-compatible ``/v1/audio/speech`` "
+"endpoint:"
+msgstr "``voxcpm-server`` 提供兼容 OpenAI 的 ``/v1/audio/speech`` 端点："
+
+#: ../../deployment/voxcpm_cpp.rst:165 de7eec825f0b4e479ade4a4a28e3039d
+msgid "Register a voice and synthesize:"
+msgstr "注册音色并合成："
+
+#: ../../deployment/voxcpm_cpp.rst:182 f007c47932e2479f898295bc773ef0d9
+msgid ""
+"The examples above use ``--disable-auth``. When authentication is enabled, "
+"add ``-H \"Authorization: Bearer <your-key>\"`` to all requests."
+msgstr ""
+"上文示例使用 ``--disable-auth``。若启用认证，请为所有请求添加 ``-H \"Authorization: Bearer <your-"
+"key>\"``。"
+
+#: ../../deployment/voxcpm_cpp.rst:184 6a1ebac00fb645e788ac5ace5245e330
+msgid "Key server options:"
+msgstr "主要服务选项："
+
+#: ../../deployment/voxcpm_cpp.rst:186 d1cbb1b9719943deb04c40be57921b4e
+msgid "``--api-key`` — set Bearer token for authentication"
+msgstr "``--api-key`` — 设置用于认证的 Bearer token"
+
+#: ../../deployment/voxcpm_cpp.rst:187 e2ad20b646594d6bad4fe400767a2b9d
+msgid "``--disable-auth`` — disable Bearer token authentication"
+msgstr "``--disable-auth`` — 关闭 Bearer token 认证"
+
+#: ../../deployment/voxcpm_cpp.rst:188 69de9d6f499a4fdeb585414dd399600c
+msgid "``--max-queue`` — maximum queued requests (returns 503 when full)"
+msgstr "``--max-queue`` — 最大排队请求数（满时返回 503）"
+
+#: ../../deployment/voxcpm_cpp.rst:189 47b1997718014109b5dcc3c92d61ce6a
+msgid "``--model-name`` — model identifier used in API requests"
+msgstr "``--model-name`` — API 请求中使用的模型标识"
+
+#: ../../deployment/voxcpm_cpp.rst:192 7fd1778648574e48bbb8ace96bbd4a5e
+msgid ""
+"The HTTP server is intended for development and testing. Use ``--api-key`` "
+"before exposing to untrusted networks."
+msgstr "该 HTTP 服务面向开发与测试。暴露到不可信网络前请使用 ``--api-key``。"
+
+#: ../../deployment/voxcpm_cpp.rst:195 8fb24ccc094c4fddb24def7241468461
+msgid "Troubleshooting"
+msgstr "故障排除"
+
+#: ../../deployment/voxcpm_cpp.rst:198 52622640308a45b884a92caf09fc84a9
+msgid "Binary not found after build"
+msgstr "构建后找不到二进制"
+
+#: ../../deployment/voxcpm_cpp.rst:200 f7b37fd1bd31424a88f1af76aa5bf774
+msgid ""
+"Built binaries are located under ``build/examples/``, not ``build/bin/``. "
+"For CUDA builds, look in ``build-cuda/examples/``."
+msgstr ""
+"构建产物位于 ``build/examples/``，而非 `` build/bin/``。CUDA 构建请查看 `` build-"
+"cuda/examples/``。"
+
+#: ../../deployment/voxcpm_cpp.rst:203 84d832b8ed734f158d1a437684fae21c
+msgid "Model loading errors"
+msgstr "模型加载错误"
+
+#: ../../deployment/voxcpm_cpp.rst:205 695bbdf26c4e40e6a986824db6c2230e
+msgid ""
+"Ensure you are passing a single ``.gguf`` file path (not a directory) to "
+"``--model-path``."
+msgstr "请确保向 ``--model-path`` 传入单个 ``.gguf`` 文件路径（而非目录）。"

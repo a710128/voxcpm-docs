@@ -1,0 +1,450 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2025, OpenBMB
+# This file is distributed under the same license as the VoxCPM package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: VoxCPM \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-06 15:37+0800\n"
+"PO-Revision-Date: 2026-04-06 18:00+0800\n"
+"Last-Translator: Cursor Agent <>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../cookbook.rst:2 d38344abf3354a63a3f34898f18ff3ae
+msgid "A Voice Chef's Guide to VoxCPM2"
+msgstr "声音主厨的 VoxCPM2 指南"
+
+#: ../../cookbook.rst:4 252b50dc892249f38eecad07243d783b
+msgid ""
+"Welcome back to the VoxCPM kitchen. With **VoxCPM 2**, the pantry now "
+"includes more languages, richer control, and more expressive voice "
+"generation tools. This page keeps the \"voice chef\" framing from the "
+"original cookbook while presenting it in a format that fits the "
+"documentation site."
+msgstr ""
+"欢迎回到 VoxCPM 厨房。有了 **VoxCPM 2**，储藏室里多了更多语言、更丰富的控制方式，"
+"以及更具表现力的声音生成工具。本页延续原版 cookbook 的「声音主厨」设定，"
+"并改成适合文档站的呈现方式。"
+
+#: ../../cookbook.rst:9 77ed898a97f741df8e6ab11c7f591109
+msgid ""
+"Think of it as a companion to :doc:`./usage_guide`: the Usage Guide "
+"explains the API and parameters, while this page focuses on practical "
+"recipes for getting the sound you want."
+msgstr ""
+"可把它当作 :doc:`./usage_guide` 的搭档：Usage Guide 讲 API 与参数，"
+"本页则聚焦实用配方，帮你调出想要的声音。"
+
+#: ../../cookbook.rst:16 b5fed1344a744b61b4964d9d22a1e49d
+msgid "🥚 Step 1: Prepare Your Base Ingredients (Content Support)"
+msgstr "🥚 第一步：备好基底食材（内容支持）"
+
+#: ../../cookbook.rst:19 d80522aa0f7f49419181a092efe5dc23
+msgid "1. Global Ingredients (Multilingual Support)"
+msgstr "1. 全球食材（多语言支持）"
+
+#: ../../cookbook.rst:21 a0fcb41bc2764387b4bdeeaa52be0c5d
+msgid ""
+"VoxCPM 2 brings a major upgrade to what you can put into the mixing bowl."
+" In most cases, you can simply write the target text directly in the "
+"language you want to synthesize."
+msgstr ""
+"VoxCPM 2 大幅升级了你能倒进搅拌碗里的东西。多数情况下，直接用目标语言写出要合成的文本即可。"
+
+#: ../../cookbook.rst:25 5bbe2401a3244cce86bbe354b87d6c86
+msgid "Representative languages include:"
+msgstr "代表性语言包括："
+
+#: ../../cookbook.rst:27 2b5677b1d1ca40288a01c56efc480374
+msgid ""
+"**Asia:** Chinese, Japanese, Korean, Hindi, Thai, Vietnamese, Indonesian,"
+" Malay, Tagalog, Khmer, Lao, Burmese"
+msgstr ""
+"**亚洲：** 中文、日语、韩语、印地语、泰语、越南语、印尼语、马来语、他加禄语、高棉语、老挝语、缅甸语"
+
+#: ../../cookbook.rst:28 2ec24fb4305b4923b17c3e79a93de2dc
+msgid ""
+"**Europe and the Americas:** English, French, German, Spanish, Italian, "
+"Russian, Portuguese, Dutch, Polish, Swedish, Danish, Finnish, Norwegian, "
+"Greek"
+msgstr ""
+"**欧洲与美洲：** 英语、法语、德语、西班牙语、意大利语、俄语、葡萄牙语、荷兰语、波兰语、瑞典语、丹麦语、芬兰语、挪威语、希腊语"
+
+#: ../../cookbook.rst:29 6ecddfac60174c65a836e66f640b7e56
+msgid "**Middle East and Africa:** Arabic, Turkish, Hebrew, Swahili"
+msgstr "**中东与非洲：** 阿拉伯语、土耳其语、希伯来语、斯瓦希里语"
+
+#: ../../cookbook.rst:33 8465b0be3d844116b0c2663d1c2221aa
+msgid ""
+"You usually do not need to add an explicit language tag. Start with clean"
+" target text in the intended language first, then add extra control only "
+"when needed."
+msgstr ""
+"通常不必额外加语言标签。先用干净的目标语言正文起步，确有需要再加控制项。"
+
+#: ../../cookbook.rst:39 d4695978b81542e58f63a44b89e5d05b
+msgid "2. Local Specialties (Chinese Dialects)"
+msgstr "2. 地方风味（汉语方言）"
+
+#: ../../cookbook.rst:41 582dd112345644a7af72a5093a5450c4
+msgid ""
+"Cook up authentic local flavors including Sichuan, Cantonese, Wu, "
+"Northeast, Henan, Shaanxi, Shandong, Tianjin, and Minnan."
+msgstr ""
+"可烹制地道地方味：川、粤、吴、东北、豫、陕、鲁、津、闽南等。"
+
+#: ../../cookbook.rst:48 24871c9db4c14d3eb7e0fb7bc087d8be
+msgid "Dialect"
+msgstr "方言"
+
+#: ../../cookbook.rst:49 9e94ca02878e49b9baf8f54d768cdd67
+msgid "Example in authentic dialect"
+msgstr "地道方言示例"
+
+#: ../../cookbook.rst:50 2f2ce9587bbe412486bdb75261c32051
+msgid "Standard Mandarin equivalent"
+msgstr "普通话对应说法"
+
+#: ../../cookbook.rst:51 cfb0c26efe5c4ec8839baf2a37591d2d
+msgid "Cantonese"
+msgstr "粤语"
+
+#: ../../cookbook.rst:52 f6f292f2c2994a29ac931a56bcf3238e
+msgid "``伙計，唔該一個A餐，凍奶茶少甜！``"
+msgstr "``伙計，唔該一個A餐，凍奶茶少甜！``"
+
+#: ../../cookbook.rst:53 f45b10446b384cfdb9cc1cac9dffad38
+msgid "``伙计，麻烦来一个A餐，冰奶茶少糖！``"
+msgstr "``伙计，麻烦来一个A餐，冰奶茶少糖！``"
+
+#: ../../cookbook.rst:54 5dc9ab2a66de4406b73beb815392154c
+msgid "Sichuanese"
+msgstr "四川话"
+
+#: ../../cookbook.rst:55 b513914e52b5468f9b397f8a3baf673b
+msgid "``幺儿，哈戳戳得你屋头来噶！``"
+msgstr "``幺儿，哈戳戳得你屋头来噶！``"
+
+#: ../../cookbook.rst:56 910c30c928e747d7893576a1458ea982
+msgid "``孩子，你怎么跑到家里来了！``"
+msgstr "``孩子，你怎么跑到家里来了！``"
+
+#: ../../cookbook.rst:57 1f272a45002148a789bf2be35d120e66
+msgid "Northeast"
+msgstr "东北话"
+
+#: ../../cookbook.rst:58 cbabff1c427d4b389cb6d5774e07d6c1
+msgid "``你搁这整啥玩意儿呢？``"
+msgstr "``你搁这整啥玩意儿呢？``"
+
+#: ../../cookbook.rst:59 462062dbddea40229bd42f77f0201f2b
+msgid "``你在这儿干什么？``"
+msgstr "``你在这儿干什么？``"
+
+#: ../../cookbook.rst:60 1e3fa8bd111849a9975aa0feec7e3812
+msgid "Henan"
+msgstr "河南话"
+
+#: ../../cookbook.rst:61 8360486cf3e84e439bbdc4884051d102
+msgid "``恁这是弄啥嘞？晌午吃啥饭？``"
+msgstr "``恁这是弄啥嘞？晌午吃啥饭？``"
+
+#: ../../cookbook.rst:62 4abfec69412a4635b220e04748614ebb
+msgid "``你这是在干什么呢？中午吃什么饭？``"
+msgstr "``你这是在干什么呢？中午吃什么饭？``"
+
+#: ../../cookbook.rst:64 2c8309c865a6419aa76f0393df1e1a47
+msgid "Recommendations:"
+msgstr "建议："
+
+#: ../../cookbook.rst:66 76a99998c04841c7b533958f4983a20b
+msgid ""
+"**Use Authentic Vocabulary:** For the best flavor, your target text "
+"should use pure dialect expressions. See the examples above."
+msgstr ""
+"**用地道词汇：** 想味道正，正文请用纯方言表达，参见上表示例。"
+
+#: ../../cookbook.rst:67 e01a70051039479d95a801926fddc654
+msgid "Always write in the true local dialect for the best results."
+msgstr "始终用真实当地方言书写，效果最佳。"
+
+#: ../../cookbook.rst:68 82f9058101434d4caf79a7919f478332
+msgid ""
+"**Chef's Secret:** If you do not know how to write in a dialect, use an "
+"AI text assistant to translate your standard text into the authentic "
+"dialect first."
+msgstr ""
+"**主厨秘诀：** 不会写方言时，可先用 AI 文本助手把标准书面语译成地道方言。"
+
+#: ../../cookbook.rst:69 d4e394cf3246433ab64e48f46c055e58
+msgid ""
+"**Keep Instructions Simple:** In the Control Instruction, simply type the"
+" dialect name (for example, ``Cantonese``). Adding too many complex voice"
+" instructions might spoil the broth."
+msgstr ""
+"**控制指令从简：** 在 Control Instruction 里写方言名即可（例如 ``Cantonese``）。"
+"堆太多复杂音色指令容易坏了一锅汤。"
+
+#: ../../cookbook.rst:73 3e4423e21ae24d8abc42e4562375f5a5
+msgid "3. Extra Spice (Non-verbal Tags)"
+msgstr "3. 额外香料（非语言标签）"
+
+#: ../../cookbook.rst:75 7018b02e8ff94ba3926c0a82e3e4f436
+msgid ""
+"To make generated speech feel less mechanical, you can insert non-verbal "
+"tags directly into the target text."
+msgstr ""
+"想让合成语音少点机械感，可直接在目标文本里插入非语言标签。"
+
+#: ../../cookbook.rst:78 318b5317f8214b52b152aac89b78c809
+msgid ""
+"Use the **English** tag form with square brackets, for example: "
+"``[laughing]`` or ``[sigh]``."
+msgstr ""
+"请使用**英文**方括号标签，例如：``[laughing]`` 或 ``[sigh]``。"
+
+#: ../../cookbook.rst:85 a7d80ae2d54f439fb4b56fada957a401
+msgid "Category"
+msgstr "类别"
+
+#: ../../cookbook.rst:86 3fa07924ff704d5a851338a5d67c4cc9
+msgid "Recommended tags"
+msgstr "推荐标签"
+
+#: ../../cookbook.rst:87 b5d8e4270d494d6b877f8bbece992472
+msgid "Laughs and sighs"
+msgstr "笑与叹息"
+
+#: ../../cookbook.rst:88 15e855c3203948b28349a40d2ecf9436
+msgid "``[laughing]``, ``[sigh]``"
+msgstr "``[laughing]``, ``[sigh]``"
+
+#: ../../cookbook.rst:89 51ee9578b2a94c2abbbf949ca87990e5
+msgid "Pauses and thinking"
+msgstr "停顿与思考"
+
+#: ../../cookbook.rst:90 e14eb288d76425a819e4b5360cd89e2
+msgid "``[Uhm]``, ``[Shh]``"
+msgstr "``[Uhm]``, ``[Shh]``"
+
+#: ../../cookbook.rst:91 569416dd1e6b4328b96e49e094c58465
+msgid "Questions"
+msgstr "疑问语气"
+
+#: ../../cookbook.rst:92 9d6860dd8c8442b4803b582a2a299c9a
+msgid "``[Question-ah]``, ``[Question-ei]``, ``[Question-en]``, ``[Question-oh]``"
+msgstr "``[Question-ah]``, ``[Question-ei]``, ``[Question-en]``, ``[Question-oh]``"
+
+#: ../../cookbook.rst:93 fbfdc0f783e74d0e828634cee41e9130
+msgid "Emotions"
+msgstr "情绪"
+
+#: ../../cookbook.rst:94 6e186eeece3e49f5910eafdae36279be
+msgid "``[Surprise-wa]``, ``[Surprise-yo]``, ``[Dissatisfaction-hnn]``"
+msgstr "``[Surprise-wa]``, ``[Surprise-yo]``, ``[Dissatisfaction-hnn]``"
+
+#: ../../cookbook.rst:98 1f35f16ac4e148ef971839dc5007c4b0
+msgid ""
+"**Kitchen Warnings:** Stick to the recommended tags and use them "
+"sparingly. Lowercase tags such as ``[laughing]`` usually work better than"
+" variants like ``[Laughter]``. Avoid stacking too many tags into a single"
+" sentence."
+msgstr ""
+"**厨房警示：** 请只用推荐标签，且少而精。小写如 ``[laughing]`` 往往比 ``[Laughter]`` 之类更稳。"
+"别在一句话里叠太多标签。"
+
+#: ../../cookbook.rst:105 4947b3c5b96342209d517b71c6ad5a4d
+msgid "🍳 Step 2: Choose Your Flavor Profile (Voice Design)"
+msgstr "🍳 第二步：选定风味档案（Voice Design）"
+
+#: ../../cookbook.rst:108 d9fbaa79b08041e4bf8f0dbeb7a092d6
+msgid "1. The \"Build-Your-Own Combo\" (Voice Generation via Text)"
+msgstr "1. 「自选套餐」（纯文本生成声音）"
+
+#: ../../cookbook.rst:110 f919e1d073bd4dbaa8ccf0e6344bde83
+msgid ""
+"No reference audio? No problem. You can now conjure a voice purely from a"
+" text description. Think of it as building your own combo meal by mixing "
+"different elements into one comprehensive **Control Instruction**. Both "
+"English and Chinese instructions are supported."
+msgstr ""
+"没有参考音频？没问题。现在可以仅凭文字描述「召唤」一种声音。"
+"把多种要素混进一条完整的 **Control Instruction**，就像自选套餐。"
+"中英文指令都支持。"
+
+#: ../../cookbook.rst:119 638f70e014f44553b50b6d2e8060e046
+msgid "Ingredient"
+msgstr "配料"
+
+#: ../../cookbook.rst:120 e29f4170503f4f7688fc48b3f7943db6
+msgid "Definition"
+msgstr "含义"
+
+#: ../../cookbook.rst:121 505c1ddced0640c0b4d4ae03a808a895
+msgid "Examples"
+msgstr "示例"
+
+#: ../../cookbook.rst:122 0cd5f317ef52426c92eda241abd10923
+msgid "**Basic (The Base)**"
+msgstr "**基底**"
+
+#: ../../cookbook.rst:123 1f3d5385661e4c2fa9edb1cfd69deede
+msgid "Core identity such as gender, age, and role"
+msgstr "性别、年龄、身份等核心设定"
+
+#: ../../cookbook.rst:124 a71f022cedcc495094d2e2fae9a2569e
+msgid "``middle-aged male broadcaster``, ``elderly woman``"
+msgstr "``middle-aged male broadcaster``, ``elderly woman``"
+
+#: ../../cookbook.rst:125 543a9414656446a9a72dab8cc73d5765
+msgid "**Textured (The Marinade)**"
+msgstr "**质感（腌料）**"
+
+#: ../../cookbook.rst:126 ac4e9e2de5be4dcdaf622802f403b079
+msgid "Voice quality and pitch"
+msgstr "音质与音高"
+
+#: ../../cookbook.rst:127 da34140549bc4473848b458c3308b1e8
+msgid "``low-pitched``, ``raspy``, ``magnetic``"
+msgstr "``low-pitched``, ``raspy``, ``magnetic``"
+
+#: ../../cookbook.rst:128 a06301072c204dd7afffd4eb9c927948
+msgid "**Vivid (The Presentation)**"
+msgstr "**鲜活（摆盘）**"
+
+#: ../../cookbook.rst:129 cae5e14b52ec4c34b803959309266862
+msgid "Emotion, pacing, and scenario"
+msgstr "情绪、节奏与场景"
+
+#: ../../cookbook.rst:130 18b42132fc144dbcbaab42f2d8fff3bc
+msgid "``passionate``, ``shouting campaign slogans``, ``historical narration``"
+msgstr "``passionate``, ``shouting campaign slogans``, ``historical narration``"
+
+#: ../../cookbook.rst:132 ef6cfa354f574965ab7eee9474d4b049
+msgid "Chef's Signature Combos (Examples):"
+msgstr "主厨招牌套餐（示例）："
+
+#: ../../cookbook.rst:134 b5cc2845baa1446eb566ef5123a38f8e
+msgid ""
+"*The Energetic Broadcaster Combo:* "
+"``热情洋溢的中年男性播音员，声音较为低沉，富有磁性与感染力，带着逐渐密集的节奏感呼喊宣讲口号``"
+msgstr ""
+"*激情播音员套餐：* "
+"``热情洋溢的中年男性播音员，声音较为低沉，富有磁性与感染力，带着逐渐密集的节奏感呼喊宣讲口号``"
+
+#: ../../cookbook.rst:135 bf063f51c58046afa0d66ca26199f025
+msgid ""
+"*The Historical Narrator Combo:* ``A quiet raspy, elderly woman of a low-"
+"pitched voice with a distinct, grainy texture and subtle breathy tremors."
+" Delivers a slow tone at a very low volume, perfect for historical "
+"narration.``"
+msgstr ""
+"*历史旁白套餐：* ``A quiet raspy, elderly woman of a low-"
+"pitched voice with a distinct, grainy texture and subtle breathy tremors."
+" Delivers a slow tone at a very low volume, perfect for historical "
+"narration.``"
+
+#: ../../cookbook.rst:139 ae231cd0fc3946d59444e359fd3f14ec
+msgid ""
+"Because of the model's creative nature, every generation can still have "
+"subtle, unique variations, a bit like hiring a new voice actor each time."
+msgstr ""
+"模型本身带有创造性，每次生成仍会有细微差异，有点像每次请的都是新配音演员。"
+
+#: ../../cookbook.rst:144 21c51ddf3808461a9a0f2595ec5c3cc9
+msgid "2. Cloning a Masterpiece (Voice Cloning)"
+msgstr "2. 复刻名作（Voice Cloning）"
+
+#: ../../cookbook.rst:146 da18d6c2e1564349aacaf913287e11f2
+msgid ""
+"Want to replicate a specific voice? Upload or record an audio clip, and "
+"VoxCPM 2 will extract and clone the exact timbre."
+msgstr ""
+"想复刻某个具体声音？上传或录制一段音频，VoxCPM 2 会提取并克隆其音色。"
+
+#: ../../cookbook.rst:149 bb7276dd396b4088a4cb514ecc5a39af
+msgid "Practical tips:"
+msgstr "实用贴士："
+
+#: ../../cookbook.rst:151 3eb3f78d463342ccba26ad9e9ab43620
+msgid ""
+"**The 5-Second Rule:** Provide at least 5 seconds of reference audio. The"
+" more high-quality audio you provide, the better the clone."
+msgstr ""
+"**五秒法则：** 参考音频至少 5 秒。素材越干净、越长，克隆通常越好。"
+
+#: ../../cookbook.rst:152 7d21cc88a8c34c428f25d63999a77154
+msgid ""
+"**Twist the Flavor (Style Control):** Cloning is not just copy-pasting. "
+"You can add a **Control Instruction** to change the emotion or speed of "
+"the cloned voice while preserving the timbre."
+msgstr ""
+"**拧一拧风味（风格控制）：** 克隆不是复制粘贴。可加 **Control Instruction**，"
+"在保留音色的同时调整情绪或语速。"
+
+#: ../../cookbook.rst:154 7a157573669e45bc9dcbf0bd849538ac
+msgid "Example style instruction:"
+msgstr "风格指令示例："
+
+#: ../../cookbook.rst:156 011c3ede93ce42b0a5240335117d1e48
+msgid "``speaking very fast, bright and full``"
+msgstr "``speaking very fast, bright and full``"
+
+#: ../../cookbook.rst:160 1ad6e85cc6db480483ff6e9f0c35e284
+msgid ""
+"**Physical Limits:** You cannot perform arbitrary identity "
+"transformations from cloning alone. The clone feature is best used for "
+"adjusting emotion, speed, and delivery style of the original voice."
+msgstr ""
+"**物理极限：** 单靠克隆无法任意变换身份。克隆更适合在原声基础上调节情绪、语速与演绎方式。"
+
+#: ../../cookbook.rst:167 fe19a26ba1174d8c926d89797036b8cd
+msgid "Quick Recipe Summary"
+msgstr "速查配方小结"
+
+#: ../../cookbook.rst:169 e32cb5105580445a832a65fec91f0d8f
+msgid ""
+"Use clean target text in the intended language first; add extra control "
+"only when needed."
+msgstr "先用干净的目标语言正文；确有需要再加额外控制。"
+
+#: ../../cookbook.rst:170 06d36dbbd1c04be691d5d220943c8f96
+msgid ""
+"For dialects, rewrite the text in authentic dialect wording instead of "
+"standard Mandarin."
+msgstr "方言场景请用地道方言重写正文，勿用标准普通话硬套。"
+
+#: ../../cookbook.rst:171 43fed77742cc4dd7ad663a532966c585
+msgid "Use non-verbal tags sparingly to add breaths, laughter, or hesitation."
+msgstr "非语言标签点到为止，用来加气口、笑声或迟疑。"
+
+#: ../../cookbook.rst:172 7c6f35c390764d7897b38b7d8152c8d0
+msgid "For Voice Design, combine identity, texture, and scenario into one prompt."
+msgstr "做 Voice Design 时，把身份、质感与场景揉进一条 prompt。"
+
+#: ../../cookbook.rst:173 88983d7ca0b84ab7b4aa86ae5febcd61
+msgid ""
+"For cloning, start with a clean 5-second-plus reference clip and then "
+"layer in style control."
+msgstr "做克隆时，先准备 5 秒以上的干净参考，再叠风格控制。"
+
+#: ../../cookbook.rst:175 a3e59f756c0945c49441903b1d052053
+msgid ""
+"For the exact ``generate()`` parameters and code-level examples, see "
+":doc:`./usage_guide`."
+msgstr "``generate()`` 的精确参数与代码示例见 :doc:`./usage_guide`。"
+
+#: ../../cookbook.rst:178 a1d2d562894849d1af5ed39cd323b9e9
+msgid ""
+"Happy creating. Mix, match, and experiment to find the sound that fits "
+"your use case best."
+msgstr ""
+"祝创作愉快。大胆混搭、反复试验，找到最贴合你场景的那一味。"

@@ -30,7 +30,19 @@ VoxCPM 2
 Overview
 ********
 
-VoxCPM 2 is a major evolution of the VoxCPM family, bringing substantial improvements across architecture, audio quality, language coverage, and controllability. While preserving the core tokenizer-free philosophy and diffusion autoregressive framework, VoxCPM 2 introduces a redesigned information fusion pipeline, a next-generation AudioVAE with 48kHz output, support for 30 languages, and new controllable generation capabilities including **Voice Design** and **Style Control**.
+VoxCPM 2 is the latest major release — a 2B parameter model trained on 2.36 million hours of multilingual data. It represents a significant leap in capacity, quality, and controllability over the 1.x series.
+
+Key characteristics:
+
+- 48kHz audio output via AudioVAE V2 (asymmetric 16kHz encode → 48kHz decode)
+- 30-language multilingual support
+- Voice Design: create a voice from natural-language description, no reference audio needed
+- Style Control: control emotion, pace, and speaking style of a cloned voice via text tags
+- Isolated reference channel for voice cloning (no matching transcript required)
+- Concat-Projection residual LM fusion and multi-token DiT conditioning for richer expressiveness
+- Built on a `MiniCPM-4 <https://github.com/OpenBMB/MiniCPM>`_ backbone
+
+Use VoxCPM 2 for all new projects. It is the recommended default for multilingual synthesis, voice cloning, voice design, and production deployment.
 
 
 What's New

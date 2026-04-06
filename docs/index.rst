@@ -244,6 +244,7 @@ If you find our model helpful, please consider citing our work and starring the 
 
    reference/api
    reference/changelog
+   reference/translations
 
 .. toctree::
    :maxdepth: 2

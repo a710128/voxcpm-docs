@@ -63,10 +63,23 @@ make docs-clean
 ```bash
 make docs-linkcheck
 make docs-doctest
+make docs-gettext
+make docs-i18n-init
+make docs-i18n-update
+make docs-zh
+make docs-zh-strict
 uv run -- make -C docs help
 ```
 
 `linkcheck` is the closest thing to a "test" for docs content (checks external links; can be slow/flaky).
+
+Translation-specific notes:
+
+- `make docs-gettext` generates gettext catalogs under `docs/_build/gettext/`
+- `make docs-i18n-init` / `make docs-i18n-update` create or refresh `docs/locale/zh_CN/LC_MESSAGES/*.po`
+- `make docs-zh` builds the Simplified Chinese site into `docs/_build/html/zh_CN/`
+- `docs/conf.py` resolves the build language from `DOCS_LANGUAGE` first, then `READTHEDOCS_LANGUAGE`
+- English pages under `docs/` remain the source of truth; do not create a parallel `docs/zh/` tree
 
 ### Stricter local build (treat warnings as errors)
 
@@ -146,6 +159,7 @@ If you add a new script/module, keep it lightweight (avoid new runtime deps) unl
   - a config file,
   - a short rationale,
   - and update this file with the exact commands.
+- Read the Docs multilingual setup uses one English parent project plus a Chinese translation project from the same repository. See `docs/reference/translations.rst` for the exact workflow and RTD setup steps.
 
 ## Notes on Lockfiles
 

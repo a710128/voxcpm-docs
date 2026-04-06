@@ -1,0 +1,163 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2025, OpenBMB
+# This file is distributed under the same license as the VoxCPM package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: VoxCPM \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-06 15:37+0800\n"
+"PO-Revision-Date: 2026-04-06 21:15+0800\n"
+"Last-Translator: GPT-5.4 <>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../installation.rst:2 b0793ea8527140cab88897925110aa68
+msgid "Installation"
+msgstr "安装"
+
+#: ../../installation.rst:4 45774995151741548129732108c0f582
+msgid ""
+"This page covers all supported installation methods for VoxCPM. If you "
+"just want the fastest path to get started, see :doc:`./quickstart`."
+msgstr "本页涵盖 VoxCPM 的所有受支持安装方式。如果你只想最快开始使用，请查看 :doc:`./quickstart`。"
+
+#: ../../installation.rst:7 83d613f3f9344c56b2392dd716916d42
+msgid "Requirements"
+msgstr "环境要求"
+
+#: ../../installation.rst:13 a3f128cf1114426bad5fcb21f1510961
+msgid "Dependency"
+msgstr "依赖项"
+
+#: ../../installation.rst:14 2afebc78086e408285d666ae28539133
+msgid "Description"
+msgstr "说明"
+
+#: ../../installation.rst:15 59462e9e84b147d88db2da7af8053c3b
+msgid "PyTorch"
+msgstr "PyTorch"
+
+#: ../../installation.rst:16 e9a786b573844f54a566919a38eaf9ca
+msgid "2.5.0 or higher"
+msgstr "2.5.0 或更高"
+
+#: ../../installation.rst:17 9afe31b9c6fa4a9cb5103ddad5e498f6
+msgid "CUDA"
+msgstr "CUDA"
+
+#: ../../installation.rst:18 dce90393a6b04c76bdbaf4894082dea3
+msgid "Optional. 12.0 or higher for NVIDIA GPU acceleration"
+msgstr "可选。若使用 NVIDIA GPU 加速，建议 12.0 或更高版本"
+
+#: ../../installation.rst:19 a8221731415b4f4781ece9be44d0af40
+msgid "Python"
+msgstr "Python"
+
+#: ../../installation.rst:20 b3668f831a4b4232a5771b9f0dfb9521
+msgid "3.10–3.12 recommended (3.10–3.11 most tested)"
+msgstr "推荐 3.10–3.12（其中 3.10–3.11 测试最充分）"
+
+#: ../../installation.rst:21 54a377e54c3143bcbf71a9d66bc2a33c
+msgid "Disk Space"
+msgstr "磁盘空间"
+
+#: ../../installation.rst:22 b32f08d7382f466c93cc3f3faa11072e
+msgid "Several GBs for model weights, depending on the checkpoint you use"
+msgstr "模型权重需要数 GB 空间，具体取决于你使用的 checkpoint"
+
+#: ../../installation.rst:26 4dcacfd0fd0d4f75adcf1b568fa72338
+msgid ""
+"CUDA is not required for CPU inference or Apple Silicon MPS usage. See "
+":doc:`./faq` for Mac / MPS notes."
+msgstr "如果你使用 CPU 推理或 Apple Silicon MPS，则不需要 CUDA。有关 Mac / MPS 的说明请参阅 :doc:`./faq`。"
+
+#: ../../installation.rst:29 3647b7a36482495da439e5b4a3dcb115
+msgid "Install with pip (recommended)"
+msgstr "使用 pip 安装（推荐）"
+
+#: ../../installation.rst:31 0acf0763f6924769adc7dc638de05014
+msgid ""
+"``pip`` is the default recommended way to install VoxCPM. It keeps setup "
+"simple and matches the most common Python workflow."
+msgstr "``pip`` 是安装 VoxCPM 的默认推荐方式。它配置简单，也更符合最常见的 Python 工作流。"
+
+#: ../../installation.rst:33 ../../installation.rst:56
+#: 85fe72fa03c94b7ebd9440693f19d221 86a64a49c94d42518910cb37d0a1be75
+msgid "From PyPI:"
+msgstr "从 PyPI 安装："
+
+#: ../../installation.rst:39 7c4fabb35bed4a97b7ef100788dcadc3
+msgid "From source:"
+msgstr "从源码安装："
+
+#: ../../installation.rst:49 3c3ad8825bb54f2e9aa17b8ee299f925
+msgid ""
+"Install with uv (secondary option)"
+msgstr "使用 uv 安装（次选）"
+
+#: ../../installation.rst:54 34626a4dcfb84029a568e62934119232
+msgid ""
+"`uv <https://docs.astral.sh/uv/>`_ is a good secondary option if you "
+"prefer a managed environment and faster dependency resolution."
+msgstr "`uv <https://docs.astral.sh/uv/>`_ 是一个不错的次选方案，适合偏好受管理环境和更快依赖解析的用户。"
+
+#: ../../installation.rst:62 a8461976730e40bcb7a8a3dcd53bbfd9
+msgid "From source (needed for running the web demo or local development):"
+msgstr "从源码安装（运行 Web Demo 或本地开发时需要）："
+
+#: ../../installation.rst:70 3c3ad8825bb54f2e9aa17b8ee299f925
+msgid ""
+"If you installed via ``uv sync``, run scripts with ``uv run`` to use the "
+"managed environment. For example: ``uv run python app.py``, ``uv run "
+"python scripts/train_voxcpm_finetune.py ...``."
+msgstr "如果你通过 ``uv sync`` 安装，请使用 ``uv run`` 运行脚本，以确保使用受管理的环境。例如：``uv run python app.py``、``uv run python scripts/train_voxcpm_finetune.py ...``。"
+
+#: ../../installation.rst:70 9bba325ddbae4ee6937e9f5d40f29ebc
+msgid "The source installation is required if you want to:"
+msgstr "如果你想进行以下操作，则需要从源码安装："
+
+#: ../../installation.rst:72 5a6b9d4a6f804bb896f1a0dc32b934e7
+msgid "run the local web demo (``python app.py``)"
+msgstr "运行本地 Web Demo（``python app.py``）"
+
+#: ../../installation.rst:73 0eb714b7d7064e0981360cfff3f5202b
+msgid "modify VoxCPM source code"
+msgstr "修改 VoxCPM 源代码"
+
+#: ../../installation.rst:74 3ef1a20cdc1d499788407b05e1e44479
+msgid "contribute to the project"
+msgstr "参与项目贡献"
+
+#: ../../installation.rst:77 0e7765dff61c490c9285b29a2accd673
+msgid "Hugging Face mirror"
+msgstr "Hugging Face 镜像"
+
+#: ../../installation.rst:79 a8bb7ff9e3c74a3f80ee5a0c5c37a999
+msgid ""
+"If you have trouble accessing Hugging Face directly (common in some "
+"regions), set the mirror before running any script:"
+msgstr "如果你无法直接访问 Hugging Face（某些地区较常见），请在运行任何脚本前先设置镜像："
+
+#: ../../installation.rst:85 1f28ce69c725461da6a0d8b48bdd3610
+msgid "Model weights will then be downloaded through the mirror automatically."
+msgstr "之后模型权重会自动通过镜像下载。"
+
+#: ../../installation.rst:88 518ed29fa3aa449794627a4c0f2b8f03
+msgid "Verify installation"
+msgstr "验证安装"
+
+#: ../../installation.rst:90 23a82b99a25048918dc112ea7b3228ea
+msgid "After installing, run a quick check:"
+msgstr "安装完成后，运行一个快速检查："
+
+#: ../../installation.rst:96 abc94d145a1045b0b3e38100e9b0a1df
+msgid "If this prints without errors, your installation is working."
+msgstr "如果这条命令能够无报错输出，说明你的安装已正常工作。"
+

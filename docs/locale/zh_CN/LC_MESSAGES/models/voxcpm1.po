@@ -1,0 +1,946 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2025, OpenBMB
+# This file is distributed under the same license as the VoxCPM package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: VoxCPM\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-06 15:37+0800\n"
+"PO-Revision-Date: 2026-04-06 18:00+0800\n"
+"Last-Translator: VoxCPM Docs zh_CN <>\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../models/voxcpm1.rst:4 064427a40d2c45b885b6ce5542265a0a
+msgid "VoxCPM 1.0"
+msgstr "VoxCPM 1.0"
+
+#: ../../models/voxcpm1.rst:7 e5182897c82b4a43bf8f6002704295cf
+msgid "Hugging Face"
+msgstr "Hugging Face"
+
+#: ../../models/voxcpm1.rst:11 1569740a57424d75b66663ccf88dbcf3
+msgid "ModelScope"
+msgstr "ModelScope"
+
+#: ../../models/voxcpm1.rst:15 6712b5ac438c43c39e91c183e78a1467
+msgid "Audio Samples"
+msgstr "音频样例"
+
+#: ../../models/voxcpm1.rst:20 b1dc5331572c4d31bb29a41cc60482ff
+msgid "**Release Date:** September 16, 2025"
+msgstr "**发布日期：** 2025 年 9 月 16 日"
+
+#: ../../models/voxcpm1.rst:21 902e68a9022f4d29bcc7aa9efb4d56d2
+msgid "**Parameter Size:** 600M"
+msgstr "**参数量：** 600M"
+
+#: ../../models/voxcpm1.rst:22 d6d44d073d434a1cbf2330e56396d049
+msgid "**Sampling Rate:** 16kHz"
+msgstr "**采样率：** 16kHz"
+
+#: ../../models/voxcpm1.rst:26 4e538007b33843c88e88efb8768db52d
+msgid ""
+"VoxCPM 1.0 is a legacy baseline release kept for compatibility and "
+"historical reference."
+msgstr "VoxCPM 1.0 为延续基线版本，用于兼容与历史参照。"
+
+#: ../../models/voxcpm1.rst:29 5ce1e3b348d542fba93e8e7f68d7f4b0
+msgid "Overview"
+msgstr "概述"
+
+#: ../../models/voxcpm1.rst:31 81ad445c4c3c4ed9a2ff4d85c68bad12
+msgid ""
+"VoxCPM is a novel tokenizer-free Text-to-Speech (TTS) system that redefines "
+"realism in speech synthesis. By modeling speech in a continuous space, it "
+"overcomes the limitations of discrete tokenization and enables two flagship "
+"capabilities: context-aware speech generation and true-to-life zero-shot "
+"voice cloning."
+msgstr ""
+"VoxCPM "
+"是一种新颖的无分词器文本转语音（TTS）系统，在语音合成的真实感上做了重新定义。通过在连续空间中建模语音，它突破离散分词的局限，并具备两大核心能力：上下文感知语音生成与逼真的零样本声音克隆。"
+
+#: ../../models/voxcpm1.rst:33 c0649cec3b614c848d0c4be23065c38e
+msgid ""
+"Unlike mainstream approaches that convert speech to discrete tokens, VoxCPM "
+"uses an end-to-end diffusion autoregressive architecture that directly "
+"generates continuous speech representations from text. Built on MiniCPM-4 "
+"backbone, it achieves implicit semantic-acoustic decoupling through "
+"hierarchical language modeling and FSQ constraints, greatly enhancing both "
+"expressiveness and generation stability."
+msgstr ""
+"与将语音转为离散 token 的主流方法不同，VoxCPM 采用端到端扩散自回归架构，从文本直接生成连续语音表示。以 MiniCPM-4 "
+"为骨干，结合分层语言建模与 FSQ 约束，实现隐式的语义–声学解耦，显著提升表现力与生成稳定性。"
+
+#: ../../models/voxcpm1.rst:36 2fffbfbb971b4d609b5db1f3fe1854c0
+msgid "Architecture"
+msgstr "架构"
+
+#: ../../models/voxcpm1.rst:38 640929c81c3246af862f873fb2112486
+msgid "VoxCPM 1.0 Architecture"
+msgstr "VoxCPM 1.0 架构"
+
+#: ../../models/voxcpm1.rst:45 204b28d3b3114e09a3d6d1ce72a8b829
+msgid "Getting Started"
+msgstr "入门"
+
+#: ../../models/voxcpm1.rst:47 5830f233e7904732accb31039cc69e50
+msgid ""
+"For installation, loading, and the generic ``generate()`` workflow, start "
+"with :doc:`../quickstart`."
+msgstr "安装、加载与通用 ``generate()`` 流程请从 :doc:`../quickstart` 开始。"
+
+#: ../../models/voxcpm1.rst:49 30718e2f073e43d28c9bad73d24fcabf
+msgid ""
+"Use this checkpoint when you specifically want the original 0.5B VoxCPM "
+"release with 16kHz output."
+msgstr "若你明确需要原始 0.5B VoxCPM 发布版且输出为 16kHz，请使用该 checkpoint。"
+
+#: ../../models/voxcpm1.rst:52 e0403a833a17431f9600b7e7031cab1e
+msgid "Benchmarks"
+msgstr "基准测试"
+
+#: ../../models/voxcpm1.rst:54 ba52bd638c2043d5b27d64ea9a57f199
+msgid ""
+"VoxCPM achieves competitive results on public zero-shot TTS benchmarks:"
+msgstr "VoxCPM 在公开零样本 TTS 基准上取得有竞争力的结果："
+
+#: ../../models/voxcpm1.rst:57 7afaf33d645c4dd890debcb0d85bf633
+msgid "Seed-TTS-eval Benchmark"
+msgstr "Seed-TTS-eval 基准"
+
+#: ../../models/voxcpm1.rst:64 ../../models/voxcpm1.rst:95
+#: 67407dccbfea4428a566a74edb9168a2 893d87c6df5f43869b1e7a16bac15390
+msgid "Model"
+msgstr "模型"
+
+#: ../../models/voxcpm1.rst:64 34beedb2a57741ce82e20f5c3c68edc4
+msgid "Parameters"
+msgstr "参数量"
+
+#: ../../models/voxcpm1.rst:64 995958662b8c4574ae4e3c3117ef79b2
+msgid "Open-Source"
+msgstr "开源"
+
+#: ../../models/voxcpm1.rst:64 d97fd646a9c6401d91b1d88101075036
+msgid "test-EN"
+msgstr "test-EN"
+
+#: ../../models/voxcpm1.rst:64 bcaf7892c5d64c8ea1dc7d94d01710c7
+msgid "test-ZH"
+msgstr "test-ZH"
+
+#: ../../models/voxcpm1.rst:64 d41c74b00f7a4aa1b02a67bef61edb2d
+msgid "test-Hard"
+msgstr "test-Hard"
+
+#: ../../models/voxcpm1.rst:66 ../../models/voxcpm1.rst:68
+#: ../../models/voxcpm1.rst:69 ../../models/voxcpm1.rst:72
+#: ../../models/voxcpm1.rst:73 ../../models/voxcpm1.rst:77
+#: ../../models/voxcpm1.rst:79 ../../models/voxcpm1.rst:81
+#: ../../models/voxcpm1.rst:82 ../../models/voxcpm1.rst:83
+#: ../../models/voxcpm1.rst:84 ../../models/voxcpm1.rst:97
+#: ../../models/voxcpm1.rst:99 ../../models/voxcpm1.rst:100
+#: ../../models/voxcpm1.rst:101 ../../models/voxcpm1.rst:104
+#: 06c5839ea7b9418580c2fb48ddb50b56 07603a8a90df45c9b937baaebfef5809
+#: 0760fd2029a14c7188f54afe21122392 09eade882d234b69a10ab907893134b0
+#: 0cd0ec2bbae04a0fb748c471b4c9636c 0ecc15ff367744f5825fe50070f258ef
+#: 119f6b45d7b44d10b701c6279f92cf3f 1758b41bfbb84168b9ca7a99b41ad212
+#: 1764cedeeb8a4c98b4a51c600e697a9b 1d40e2175c414cbe8dcbdc741ac12a68
+#: 1ff9a2d3f7f546d4bfa45c0224342b96 33e6be70d6364d2f8bc93c45f673ca97
+#: 375aebb14fef4f52a0a185d5c3aeccee 39048096a7b84027b3a01730646aee40
+#: 3e32d05caa3547e69c04b5141f8042fd 3f8301195ce94bffaae0f4abbef89f98
+#: 441fbde827d44b83acf87ebc96098901 517c3c236b044cbb861c325dd877a993
+#: 522c054dc3c74ca89131b8e75afa2587 538f312affba4ae4b0761f5920157310
+#: 5f5a44cc18ed40968ded27e458db2c46 610262ded3af43dd9f7d13f469f74843
+#: 61fd50ddf57c41eebc3d351bb2a4fb3e 660855ed468444eaab3852a4b30d6efe
+#: 676112236b1f4e639a4bfa7ea8329f28 80cd83e01fba4e0d9bc6e349b8491907
+#: 8833bb0e37b2473e935dd2c48cec485f 8cf74029053a42b1b7a4f0ee2ebb9b80
+#: 94883fbc6dbc49ce9832de25a7a1d5cd 98ff27b1e505478a896442339fb8912f
+#: a014702564274cb886e8e2865376974e a87dbd84660947089e4d18620f872633
+#: b18fff7056394384ad5c56a7f7b96af3 c0bf195be59a4e2e8bd3d2df48683240
+#: c93a6c0f4e4f47a48937fc72efdf5627 cc4d4646f07e4fbc83247cf56cce52c5
+#: cd47a567bbdc4dedbd40702cf9904e72 d8ff478e983e4bff9eea881d2280c277
+#: e2c33b1f1bf04cd5ab8e5ae5686f22b2 e4629346633244469efdc8d3ef516924
+#: ef0bc3b0e9f64fffa4fe27a6456bb7e1 f5af6e1fc36242aaa502282559fd077d
+#: f737dac4ab1740fdbaaa557c2f836999
+msgid "/"
+msgstr "/"
+
+#: ../../models/voxcpm1.rst:66 ../../models/voxcpm1.rst:97
+#: 034a792496024ef5b913a3fa6569aee2 d2bdb1ae56ca4333b3004de3457d9b16
+#: e9489fe0a6764372b92ddc080eb55857
+msgid "WER/%⬇"
+msgstr "WER/%⬇"
+
+#: ../../models/voxcpm1.rst:66 ../../models/voxcpm1.rst:97
+#: 298f9be12b27428186b8c28e1424e085 9a26a2dee75b470cb0c35bf9b219f436
+#: b10c3ce851544fdc91ca0c39b16dd72b b4e5c8fe23594bf0a25a69202a795f75
+#: f9fae8a2149242c7a62c5068cd1cc500
+msgid "SIM/%⬆"
+msgstr "SIM/%⬆"
+
+#: ../../models/voxcpm1.rst:66 ../../models/voxcpm1.rst:97
+#: 0befe26d3ca64ed18c209cc67453a41d 12bcb78519b545aba6e0e89595c4334b
+#: ae26b9f20a3043d8819be5d13df99adf d8c295b5f925493a8e71b0c5788fe59a
+msgid "CER/%⬇"
+msgstr "CER/%⬇"
+
+#: ../../models/voxcpm1.rst:68 9437ec2f429e4d0d9011bd1d2e240878
+msgid "MegaTTS3"
+msgstr "MegaTTS3"
+
+#: ../../models/voxcpm1.rst:68 ../../models/voxcpm1.rst:70
+#: ../../models/voxcpm1.rst:75 ../../models/voxcpm1.rst:77
+#: ../../models/voxcpm1.rst:78 ../../models/voxcpm1.rst:81
+#: ../../models/voxcpm1.rst:85 1adfd9023f1a4bbf84c257db61dedef9
+#: 271abf549c994a30b6e7ff9ec01e8adc 4951fabd4fb84f9ab1fa200861369742
+#: 96851d523ce642bea9c90bbb57545552 9dd985c9bfbc425a8e40764c07cd212f
+#: c5cdd80330484cf59d71535328df6593 d919e1ee549c44088f21225c408606ed
+msgid "0.5B"
+msgstr "0.5B"
+
+#: ../../models/voxcpm1.rst:68 ../../models/voxcpm1.rst:69
+#: ../../models/voxcpm1.rst:70 ../../models/voxcpm1.rst:71
+#: ../../models/voxcpm1.rst:72 ../../models/voxcpm1.rst:73
+#: 402a998fb6604f8d837a45d5aab911a3 4393027f033246f4858b365031fc5a31
+#: 726c6e9008d7450e82013f766dbd08a2 9b1beb477b6b413e89375780e67ca984
+#: bed8b96cf5fe4aa8854bd214cf2e9b98 ed0e4dab01294c5497ad438cc5800087
+msgid "❌"
+msgstr "❌"
+
+#: ../../models/voxcpm1.rst:68 c1bc366d38a3438ca41a4c5e2feaf13d
+msgid "2.79"
+msgstr "2.79"
+
+#: ../../models/voxcpm1.rst:68 f0d9324ec536434aa86a294b1d872e49
+msgid "77.1"
+msgstr "77.1"
+
+#: ../../models/voxcpm1.rst:68 0b2ce4565a064519a5075bc6118f641c
+msgid "1.52"
+msgstr "1.52"
+
+#: ../../models/voxcpm1.rst:68 d77906aec2ef4c6692fe381f302fc928
+msgid "79.0"
+msgstr "79.0"
+
+#: ../../models/voxcpm1.rst:69 49763c305a5446858d7807a5f39d9f1a
+msgid "DiTAR"
+msgstr "DiTAR"
+
+#: ../../models/voxcpm1.rst:69 43d018a81e8b459986aff6b6a6af8e9e
+msgid "0.6B"
+msgstr "0.6B"
+
+#: ../../models/voxcpm1.rst:69 5f4e8b81ff8f495e8366351db68f7492
+msgid "1.69"
+msgstr "1.69"
+
+#: ../../models/voxcpm1.rst:69 748aee7dbf024f5ebd188ea87f5de4e9
+msgid "73.5"
+msgstr "73.5"
+
+#: ../../models/voxcpm1.rst:69 1c86a6abdc7643e6987e7da869a88d2b
+msgid "1.02"
+msgstr "1.02"
+
+#: ../../models/voxcpm1.rst:69 86aad5847ca743948289448e593b65cb
+msgid "75.3"
+msgstr "75.3"
+
+#: ../../models/voxcpm1.rst:70 ../../models/voxcpm1.rst:71
+#: 15692f6bde3d4d94afa1596bb01c0a45 43ed2084d16f425ca863c96c1fefcfb4
+msgid "CosyVoice3"
+msgstr "CosyVoice3"
+
+#: ../../models/voxcpm1.rst:70 f2fc1d472b0c4ed7a6bc68f15828af6b
+msgid "2.02"
+msgstr "2.02"
+
+#: ../../models/voxcpm1.rst:70 8baed72bb8a648cb911d0acc57a81da2
+msgid "71.8"
+msgstr "71.8"
+
+#: ../../models/voxcpm1.rst:70 ../../models/voxcpm1.rst:83
+#: 07d6af4c7bbc4e3598dbe27ab78ae8d4 3470e8affce140ac947a098b48220d44
+msgid "1.16"
+msgstr "1.16"
+
+#: ../../models/voxcpm1.rst:70 1757179402e345e9a7991e604d976b99
+msgid "78.0"
+msgstr "78.0"
+
+#: ../../models/voxcpm1.rst:70 b850e4dd476e4310b9ec67dbdfcb6421
+msgid "6.08"
+msgstr "6.08"
+
+#: ../../models/voxcpm1.rst:70 ../../models/voxcpm1.rst:71
+#: ce7954fcb4c1474583002c1deccff53b ebceb84ed8784586bf5024b497e798a5
+msgid "75.8"
+msgstr "75.8"
+
+#: ../../models/voxcpm1.rst:71 ../../models/voxcpm1.rst:79
+#: ../../models/voxcpm1.rst:82 ../../models/voxcpm1.rst:83
+#: 4e44efc202e5469085a6714b92e9d41c 6fa3ece3e4b543dcbba15919260f39cb
+#: 79a18e3b772e4bb2b53c93816bde4053 e6395e264ecd48289b7fcd962bae2fad
+msgid "1.5B"
+msgstr "1.5B"
+
+#: ../../models/voxcpm1.rst:71 45112b9fae9c4ccb9f9b27806dbb212f
+msgid "2.22"
+msgstr "2.22"
+
+#: ../../models/voxcpm1.rst:71 b7085e00693c489a8ba9fb7cee57783f
+msgid "72.0"
+msgstr "72.0"
+
+#: ../../models/voxcpm1.rst:71 ../../models/voxcpm1.rst:72
+#: 4f4dba0a1dd54d9e92f6285d6d8f0334 64b023073aa1431e9180b8b1d7c7144c
+msgid "1.12"
+msgstr "1.12"
+
+#: ../../models/voxcpm1.rst:71 034819c73cec41d1bcc0c2ae3c1a34f9
+msgid "78.1"
+msgstr "78.1"
+
+#: ../../models/voxcpm1.rst:71 70d64becc9194089905165d1263ae466
+msgid "5.83"
+msgstr "5.83"
+
+#: ../../models/voxcpm1.rst:72 5610b56134a0488083f670bb8be95d9f
+msgid "Seed-TTS"
+msgstr "Seed-TTS"
+
+#: ../../models/voxcpm1.rst:72 4d247559da23409882eb3b697adc7d59
+msgid "2.25"
+msgstr "2.25"
+
+#: ../../models/voxcpm1.rst:72 c9684d96fcaf4d278388dbeec056f10a
+msgid "76.2"
+msgstr "76.2"
+
+#: ../../models/voxcpm1.rst:72 b490d2de21394cc2ab6e2fd17888d1c9
+msgid "79.6"
+msgstr "79.6"
+
+#: ../../models/voxcpm1.rst:72 47ccf1d0aa364932912af088b69f9d01
+msgid "7.59"
+msgstr "7.59"
+
+#: ../../models/voxcpm1.rst:72 4085c46b7e5c4559a20c6129030ee21d
+msgid "77.6"
+msgstr "77.6"
+
+#: ../../models/voxcpm1.rst:73 4c165b3bb69749fd8226f248df744bab
+msgid "MiniMax-Speech"
+msgstr "MiniMax-Speech"
+
+#: ../../models/voxcpm1.rst:73 bfe8c2a50e0d4a38a0b1c8be9eb3cced
+msgid "1.65"
+msgstr "1.65"
+
+#: ../../models/voxcpm1.rst:73 2eff1cece7c548fbadb82ff42ba9a53c
+msgid "69.2"
+msgstr "69.2"
+
+#: ../../models/voxcpm1.rst:73 9cfe16a70da141489a8143851d5f88fb
+msgid "0.83"
+msgstr "0.83"
+
+#: ../../models/voxcpm1.rst:73 b24abeb33bf04ed4972375e0e8d124f9
+msgid "78.3"
+msgstr "78.3"
+
+#: ../../models/voxcpm1.rst:74 9bdc1ae339f948a195d9814faef32432
+msgid "CosyVoice"
+msgstr "CosyVoice"
+
+#: ../../models/voxcpm1.rst:74 ../../models/voxcpm1.rst:76
+#: c16f2f8f02854395a891ac4c2aab6efe e0709aafdd744735bab868c4dff14a1d
+msgid "0.3B"
+msgstr "0.3B"
+
+#: ../../models/voxcpm1.rst:74 ../../models/voxcpm1.rst:75
+#: ../../models/voxcpm1.rst:76 ../../models/voxcpm1.rst:77
+#: ../../models/voxcpm1.rst:78 ../../models/voxcpm1.rst:79
+#: ../../models/voxcpm1.rst:80 ../../models/voxcpm1.rst:81
+#: ../../models/voxcpm1.rst:82 ../../models/voxcpm1.rst:83
+#: ../../models/voxcpm1.rst:84 ../../models/voxcpm1.rst:85
+#: 0bb21a4698004ddf9cb38dc2aa71a9cd 2a286e5d403b40db964f4eabeb62a3db
+#: 302550264983435abe41d992f285a268 3ef2817b6e99463e96b33d2cf897d4a6
+#: 50696b0cad024a6f8e981f2a35281c53 75ddb5b658374a37b76bbc82817eb98a
+#: 7b79c9eb0651442dad7bbefd1db79fc4 c31e3e84cbe94f68a9fbc27ddf20dfe2
+#: c5e3fab843f34bed8dc2eeb2b096bc89 db9bd517b916421b8999c051ff29f6dd
+#: ebb939bca4964c52b8b2c1eb6fddb200 f96c061e7f5d47b69df2dbf031c72aa2
+msgid "✅"
+msgstr "✅"
+
+#: ../../models/voxcpm1.rst:74 a8d4b7ffb72244bd858c06aa113e3c5a
+msgid "4.29"
+msgstr "4.29"
+
+#: ../../models/voxcpm1.rst:74 8929c41b8b7a4e518dff681d326315da
+msgid "60.9"
+msgstr "60.9"
+
+#: ../../models/voxcpm1.rst:74 8660e265ad034f6eb7b269de62fe23be
+msgid "3.63"
+msgstr "3.63"
+
+#: ../../models/voxcpm1.rst:74 e74edf7d8d6849649cdcaef0f800e748
+msgid "72.3"
+msgstr "72.3"
+
+#: ../../models/voxcpm1.rst:74 0099dd4a67c4448a87d12f6b6c0c5774
+msgid "11.75"
+msgstr "11.75"
+
+#: ../../models/voxcpm1.rst:74 64b763e172c240fabe2183c23d086f53
+msgid "70.9"
+msgstr "70.9"
+
+#: ../../models/voxcpm1.rst:75 ../../models/voxcpm1.rst:102
+#: 359e38d9f41646e394f1b7600316a6e2 9a424d67a0b5481aa9a78c3ae27b2b3e
+msgid "CosyVoice2"
+msgstr "CosyVoice2"
+
+#: ../../models/voxcpm1.rst:75 b592c11bae534041af778badf4d31585
+msgid "3.09"
+msgstr "3.09"
+
+#: ../../models/voxcpm1.rst:75 f3f14b17cb6044bd8187df9371d3998f
+msgid "65.9"
+msgstr "65.9"
+
+#: ../../models/voxcpm1.rst:75 3c6611c177614936afa78e5c0a5126f5
+msgid "1.38"
+msgstr "1.38"
+
+#: ../../models/voxcpm1.rst:75 215a811b8be84d679f5fb6e0d341626b
+msgid "75.7"
+msgstr "75.7"
+
+#: ../../models/voxcpm1.rst:75 a880b1cd0abc44859f1cdc98b19d82f6
+msgid "**6.83**"
+msgstr "**6.83**"
+
+#: ../../models/voxcpm1.rst:75 3e1f87c9b02347e9a0ca97368407ea87
+msgid "72.4"
+msgstr "72.4"
+
+#: ../../models/voxcpm1.rst:76 ../../models/voxcpm1.rst:99
+#: 550fb5f4f8764af0a9e5c6ff05a09525 f1d61033488b44e7b9db04064c4ccdce
+msgid "F5-TTS"
+msgstr "F5-TTS"
+
+#: ../../models/voxcpm1.rst:76 b0a4e264b083449f967f2d66709209c1
+msgid "2.00"
+msgstr "2.00"
+
+#: ../../models/voxcpm1.rst:76 2696153569fb4f40adcd209da78b9750
+msgid "67.0"
+msgstr "67.0"
+
+#: ../../models/voxcpm1.rst:76 c00720d0321e4c3195f28f66f1e5c75b
+msgid "1.53"
+msgstr "1.53"
+
+#: ../../models/voxcpm1.rst:76 f5d953245c1d470ebc96ceea9a926c84
+msgid "76.0"
+msgstr "76.0"
+
+#: ../../models/voxcpm1.rst:76 c65021c46ceb4735aabc173297985b1c
+msgid "8.67"
+msgstr "8.67"
+
+#: ../../models/voxcpm1.rst:76 725c64a1e5b84a158486751e2ef8a8e0
+msgid "71.3"
+msgstr "71.3"
+
+#: ../../models/voxcpm1.rst:77 ../../models/voxcpm1.rst:100
+#: a0f0ef9ed87a4cb8955699a3bffdbdc1 c8a3bc79bee04562bb20c2f975170301
+msgid "SparkTTS"
+msgstr "SparkTTS"
+
+#: ../../models/voxcpm1.rst:77 4274f9d636104201b35827e6e69aa831
+msgid "3.14"
+msgstr "3.14"
+
+#: ../../models/voxcpm1.rst:77 8aa19e60bfad44628541c9d357742dd1
+msgid "57.3"
+msgstr "57.3"
+
+#: ../../models/voxcpm1.rst:77 bde9e748e5294fa583b63b2dfdddc8ce
+msgid "1.54"
+msgstr "1.54"
+
+#: ../../models/voxcpm1.rst:77 5de4c562198e43d399299911d89dc7d6
+msgid "66.0"
+msgstr "66.0"
+
+#: ../../models/voxcpm1.rst:78 2852f1c5c2e8459f8108f90f6293069e
+msgid "FireRedTTS"
+msgstr "FireRedTTS"
+
+#: ../../models/voxcpm1.rst:78 3de493a0b17749978f2daf7f805bdf8c
+msgid "3.82"
+msgstr "3.82"
+
+#: ../../models/voxcpm1.rst:78 9df278fdd55346a38309cb0dfd51ce1e
+msgid "46.0"
+msgstr "46.0"
+
+#: ../../models/voxcpm1.rst:78 ef0bb71451f94743879d701c4c79e4d5
+msgid "1.51"
+msgstr "1.51"
+
+#: ../../models/voxcpm1.rst:78 883a101c7a754fee9b10481710c45d2c
+msgid "63.5"
+msgstr "63.5"
+
+#: ../../models/voxcpm1.rst:78 dd0584448f8646c387806052cfe198e4
+msgid "17.45"
+msgstr "17.45"
+
+#: ../../models/voxcpm1.rst:78 b40269142b2a409d92da49d7ac38d3ea
+msgid "62.1"
+msgstr "62.1"
+
+#: ../../models/voxcpm1.rst:79 cc5c8167159b45088d967242d66cc17a
+msgid "FireRedTTS-2"
+msgstr "FireRedTTS-2"
+
+#: ../../models/voxcpm1.rst:79 8c9e17121ae84be6b74bc6a36f913073
+msgid "1.95"
+msgstr "1.95"
+
+#: ../../models/voxcpm1.rst:79 7f47d2b90e9144eb906370f7163c03af
+msgid "66.5"
+msgstr "66.5"
+
+#: ../../models/voxcpm1.rst:79 62cddb9cdaeb40d4b7f9e1d8bc7d88e1
+msgid "1.14"
+msgstr "1.14"
+
+#: ../../models/voxcpm1.rst:79 70fc5234b0ef47c3aaf0ea779c395004
+msgid "73.6"
+msgstr "73.6"
+
+#: ../../models/voxcpm1.rst:80 8b1cb9ef87354a97a6163a3c0cbba73c
+msgid "Qwen2.5-Omni"
+msgstr "Qwen2.5-Omni"
+
+#: ../../models/voxcpm1.rst:80 9257d6b6ea8447218c2b56f8ca8e8281
+msgid "7B"
+msgstr "7B"
+
+#: ../../models/voxcpm1.rst:80 51f5c602684940759eb5abb6c3bd4e63
+msgid "2.72"
+msgstr "2.72"
+
+#: ../../models/voxcpm1.rst:80 914cfb4d47564e4282277947f4358f2b
+msgid "63.2"
+msgstr "63.2"
+
+#: ../../models/voxcpm1.rst:80 6c0b00373654421b949efea447989ba4
+msgid "1.70"
+msgstr "1.70"
+
+#: ../../models/voxcpm1.rst:80 21fa6ecee10f4a6d9fee3a471bc57327
+msgid "75.2"
+msgstr "75.2"
+
+#: ../../models/voxcpm1.rst:80 406c56ba765c45e8955bba01f1d13c98
+msgid "7.97"
+msgstr "7.97"
+
+#: ../../models/voxcpm1.rst:80 2795188e96694972b07d68a1cee0b389
+msgid "**74.7**"
+msgstr "**74.7**"
+
+#: ../../models/voxcpm1.rst:81 ../../models/voxcpm1.rst:103
+#: bde31aefc0ed43e7bd5ae376c5c0500c f764d9aaf7b04013adbf8afe6cbc5afc
+msgid "OpenAudio-s1-mini"
+msgstr "OpenAudio-s1-mini"
+
+#: ../../models/voxcpm1.rst:81 4973282224184cb29b3f7ac0ce2055b1
+msgid "1.94"
+msgstr "1.94"
+
+#: ../../models/voxcpm1.rst:81 0422e2be913641c1a51f6cb8ce7387e8
+msgid "55.0"
+msgstr "55.0"
+
+#: ../../models/voxcpm1.rst:81 7c75feb7ca024e31b69783bc6a645f52
+msgid "1.18"
+msgstr "1.18"
+
+#: ../../models/voxcpm1.rst:81 c453bcc738f549648114a344240bc195
+msgid "68.5"
+msgstr "68.5"
+
+#: ../../models/voxcpm1.rst:82 ../../models/voxcpm1.rst:104
+#: 1d133294f6584b80912fa11af958dbdf 7645f47e16ec451c81bb6c0d8d56c08c
+msgid "IndexTTS2"
+msgstr "IndexTTS2"
+
+#: ../../models/voxcpm1.rst:82 26deb71ac98e4ae5bb0c7e78538400e5
+msgid "2.23"
+msgstr "2.23"
+
+#: ../../models/voxcpm1.rst:82 3d7746028d544934ac2bed6422a91f11
+msgid "70.6"
+msgstr "70.6"
+
+#: ../../models/voxcpm1.rst:82 3bdd6ef6842342a491aa352c40cf6bae
+msgid "1.03"
+msgstr "1.03"
+
+#: ../../models/voxcpm1.rst:82 8905cc6290a54e56a7a3b2c760a26e4d
+msgid "76.5"
+msgstr "76.5"
+
+#: ../../models/voxcpm1.rst:83 ce82cd8e2d1b41618796685007658e44
+msgid "VibeVoice"
+msgstr "VibeVoice"
+
+#: ../../models/voxcpm1.rst:83 db1a9f4d9ae843248809d103b6c5f036
+msgid "3.04"
+msgstr "3.04"
+
+#: ../../models/voxcpm1.rst:83 d7eabe4e8b914d2c8c9a28222e0ebf4a
+msgid "68.9"
+msgstr "68.9"
+
+#: ../../models/voxcpm1.rst:83 0711dbeb2c8a4f23b752a7c347a6b56c
+msgid "74.4"
+msgstr "74.4"
+
+#: ../../models/voxcpm1.rst:84 ../../models/voxcpm1.rst:105
+#: 2875afe706704d7ba56fdca28124335a a5551558e1584e2f94baea7a7c614106
+msgid "HiggsAudio-v2"
+msgstr "HiggsAudio-v2"
+
+#: ../../models/voxcpm1.rst:84 9dab2843d0cc4386abc82c63399cba05
+msgid "3B"
+msgstr "3B"
+
+#: ../../models/voxcpm1.rst:84 89ac8914838f45249b7da5f5038b5d34
+msgid "2.44"
+msgstr "2.44"
+
+#: ../../models/voxcpm1.rst:84 e857e9e4625047cd8806bac05c632750
+msgid "67.7"
+msgstr "67.7"
+
+#: ../../models/voxcpm1.rst:84 fd38237ab029494799d2df3de27ad275
+msgid "1.50"
+msgstr "1.50"
+
+#: ../../models/voxcpm1.rst:84 cf2291f8cc6542b9946d1949662d228a
+msgid "74.0"
+msgstr "74.0"
+
+#: ../../models/voxcpm1.rst:85 ../../models/voxcpm1.rst:108
+#: 2c056a0812b943ab9aa0ce0a6dd69a02 7db0ddfecf9e459580b577bbbb6f8ea7
+msgid "**VoxCPM**"
+msgstr "**VoxCPM**"
+
+#: ../../models/voxcpm1.rst:85 29ab5406481c46ef9d19550d8cff7d17
+msgid "**1.85**"
+msgstr "**1.85**"
+
+#: ../../models/voxcpm1.rst:85 37109f9eaa16449aa1b0db6d93eaf831
+msgid "**72.9**"
+msgstr "**72.9**"
+
+#: ../../models/voxcpm1.rst:85 526888e64dfc42bb882f81a1c7376ac9
+msgid "**0.93**"
+msgstr "**0.93**"
+
+#: ../../models/voxcpm1.rst:85 bc92d11b57b443728c4a3afd840f4361
+msgid "**77.2**"
+msgstr "**77.2**"
+
+#: ../../models/voxcpm1.rst:85 34fd0513647645a886e7ca277bf78a63
+msgid "8.87"
+msgstr "8.87"
+
+#: ../../models/voxcpm1.rst:85 aa54eddafba14f31af9328960416d554
+msgid "73.0"
+msgstr "73.0"
+
+#: ../../models/voxcpm1.rst:89 bcf79705e8034b69a3ee0eecf42261a5
+msgid "CV3-eval Benchmark"
+msgstr "CV3-eval 基准"
+
+#: ../../models/voxcpm1.rst:95 c6eb7ac85c344042a23a28bae74623db
+msgid "zh"
+msgstr "zh"
+
+#: ../../models/voxcpm1.rst:95 6f0de30dfa7e490faad362efef2be538
+msgid "en"
+msgstr "en"
+
+#: ../../models/voxcpm1.rst:95 408e756b73854a759676840be0c44ace
+msgid "hard/zh"
+msgstr "hard/zh"
+
+#: ../../models/voxcpm1.rst:95 e55beb47075f4905b4f7cca5073ed33d
+msgid "hard/en"
+msgstr "hard/en"
+
+#: ../../models/voxcpm1.rst:97 371217b3f7fa4a78a07ab363f08e7bcd
+#: fcb8cf3c18884ec0ac72b956b533a837
+msgid "DNSMOS⬆"
+msgstr "DNSMOS⬆"
+
+#: ../../models/voxcpm1.rst:99 7f8d94b1f2544fcb8080b4afcfbc4716
+msgid "5.47"
+msgstr "5.47"
+
+#: ../../models/voxcpm1.rst:99 fdf15c20927644ae80f048222090102c
+msgid "8.90"
+msgstr "8.90"
+
+#: ../../models/voxcpm1.rst:100 d6c06a2861ac4995805d57528d540e46
+msgid "5.15"
+msgstr "5.15"
+
+#: ../../models/voxcpm1.rst:100 56dbd083a600447bb0f3e0c7aa7c9edd
+msgid "11.0"
+msgstr "11.0"
+
+#: ../../models/voxcpm1.rst:101 5654c8c06ba24e478858ede760876bfc
+msgid "GPT-SoVits"
+msgstr "GPT-SoVits"
+
+#: ../../models/voxcpm1.rst:101 b38c1feef2834f12b1e0a2a5e662686b
+msgid "7.34"
+msgstr "7.34"
+
+#: ../../models/voxcpm1.rst:101 bacdc49dc7be4d77b244d61d8d6b029a
+msgid "12.5"
+msgstr "12.5"
+
+#: ../../models/voxcpm1.rst:102 314122e356234104b6dcf09dcaa4e418
+msgid "4.08"
+msgstr "4.08"
+
+#: ../../models/voxcpm1.rst:102 222f5a85a62946ea887a22f7e573b0d6
+msgid "6.32"
+msgstr "6.32"
+
+#: ../../models/voxcpm1.rst:102 4e1c8db5563542db8082dc6ee89f1eb1
+msgid "12.58"
+msgstr "12.58"
+
+#: ../../models/voxcpm1.rst:102 c4c3cbc4eaf5413a816ef4b9d6c25c1b
+msgid "72.6"
+msgstr "72.6"
+
+#: ../../models/voxcpm1.rst:102 12392c071c2e4d839ba5199d892a1f97
+msgid "3.81"
+msgstr "3.81"
+
+#: ../../models/voxcpm1.rst:102 3c671c0553e143068d8deed24ed4287b
+msgid "11.96"
+msgstr "11.96"
+
+#: ../../models/voxcpm1.rst:102 c41f3b5d735845d0b1268cd33202c771
+msgid "66.7"
+msgstr "66.7"
+
+#: ../../models/voxcpm1.rst:102 ../../models/voxcpm1.rst:107
+#: 789b55289dd14700bca67dec724f50d1 d5569756f106407a83c4313b4735ad2e
+msgid "3.95"
+msgstr "3.95"
+
+#: ../../models/voxcpm1.rst:103 92b891da525d44d1ae15fff7699fe58c
+msgid "4.00"
+msgstr "4.00"
+
+#: ../../models/voxcpm1.rst:103 1a4cdd175dab43ac92e59ce29d0f595b
+msgid "5.54"
+msgstr "5.54"
+
+#: ../../models/voxcpm1.rst:103 19f42cbbaa164188b3c16fec69b97ecd
+msgid "18.1"
+msgstr "18.1"
+
+#: ../../models/voxcpm1.rst:103 c39c87875d1a4d17bb4cbc9952a2e4f4
+msgid "58.2"
+msgstr "58.2"
+
+#: ../../models/voxcpm1.rst:103 3505a5f42e9e4f2d9fad63a221616a6a
+msgid "3.77"
+msgstr "3.77"
+
+#: ../../models/voxcpm1.rst:103 5458fa7c64d54608b7e9532358238def
+msgid "12.4"
+msgstr "12.4"
+
+#: ../../models/voxcpm1.rst:103 c076c56019b1475083569af119eb2762
+msgid "55.7"
+msgstr "55.7"
+
+#: ../../models/voxcpm1.rst:103 ../../models/voxcpm1.rst:106
+#: 2b5d0d12ab66447ea19b71809f93f575 614c8c03ea3e4989bc1507ef044cb9ae
+msgid "3.89"
+msgstr "3.89"
+
+#: ../../models/voxcpm1.rst:104 c792edb87c7141f5bc1a83dc727b5745
+msgid "3.58"
+msgstr "3.58"
+
+#: ../../models/voxcpm1.rst:104 7b957c46e07f4b6b8368c174be2d10d4
+msgid "4.45"
+msgstr "4.45"
+
+#: ../../models/voxcpm1.rst:104 541f7f161fa34099b0a29af90657aee9
+msgid "12.8"
+msgstr "12.8"
+
+#: ../../models/voxcpm1.rst:104 6ed8cedf32ba4b978b3898eaaf3ea3ee
+msgid "74.6"
+msgstr "74.6"
+
+#: ../../models/voxcpm1.rst:104 426dca9bf12b421d89d79bed9570e64b
+msgid "3.65"
+msgstr "3.65"
+
+#: ../../models/voxcpm1.rst:105 1181144d9a144e3b886604e985e76f52
+msgid "9.54"
+msgstr "9.54"
+
+#: ../../models/voxcpm1.rst:105 0938a0fc21d343e7af255219f1012d18
+msgid "7.89"
+msgstr "7.89"
+
+#: ../../models/voxcpm1.rst:105 adbac85592d64d8fae53a45425f45be0
+msgid "41.0"
+msgstr "41.0"
+
+#: ../../models/voxcpm1.rst:105 9ff5ca3c6a0f4e669308857b954a57bc
+msgid "60.2"
+msgstr "60.2"
+
+#: ../../models/voxcpm1.rst:105 defa168ef4c04bf7b02210798dac3a01
+msgid "3.39"
+msgstr "3.39"
+
+#: ../../models/voxcpm1.rst:105 d46897eb3ef64ee0a3d75136ebcfd5f2
+msgid "10.3"
+msgstr "10.3"
+
+#: ../../models/voxcpm1.rst:105 b02407f8b1e045ae87864bb1da9e8cf7
+msgid "61.8"
+msgstr "61.8"
+
+#: ../../models/voxcpm1.rst:105 95d7c2fc967d4edab7eeaf7bbcdeba38
+msgid "3.68"
+msgstr "3.68"
+
+#: ../../models/voxcpm1.rst:106 6049dff6312a49069aa64c94972f29d8
+msgid "CosyVoice3-0.5B"
+msgstr "CosyVoice3-0.5B"
+
+#: ../../models/voxcpm1.rst:106 389259d56b9f41179a6ac3266defb61a
+msgid "5.24"
+msgstr "5.24"
+
+#: ../../models/voxcpm1.rst:106 06e3bfae1f2443df958a0a01304c513c
+msgid "14.15"
+msgstr "14.15"
+
+#: ../../models/voxcpm1.rst:106 c14e139d1ebd407b842bf781543195c6
+msgid "78.6"
+msgstr "78.6"
+
+#: ../../models/voxcpm1.rst:106 35e8defefaa146feb612b9285cc81e8e
+msgid "3.75"
+msgstr "3.75"
+
+#: ../../models/voxcpm1.rst:106 f4feb598bf25433cb8d31938085ce229
+msgid "9.04"
+msgstr "9.04"
+
+#: ../../models/voxcpm1.rst:106 36563f7863994aed96ef7271939976dd
+msgid "75.9"
+msgstr "75.9"
+
+#: ../../models/voxcpm1.rst:106 4e0deef9052c4f78a07c4fd86e44659c
+msgid "3.92"
+msgstr "3.92"
+
+#: ../../models/voxcpm1.rst:107 da4b48cab4c241ddbcad629f82317339
+msgid "CosyVoice3-1.5B"
+msgstr "CosyVoice3-1.5B"
+
+#: ../../models/voxcpm1.rst:107 d41ad5e14f1944f6beea725e9a0d3b95
+msgid "3.91"
+msgstr "3.91"
+
+#: ../../models/voxcpm1.rst:107 f9b585b4b7c848198e9594b067b99042
+msgid "4.99"
+msgstr "4.99"
+
+#: ../../models/voxcpm1.rst:107 c433dd28dd304f6992036270603be0fb
+msgid "9.77"
+msgstr "9.77"
+
+#: ../../models/voxcpm1.rst:107 b95b2665a4e64b5cb1368146cc391529
+msgid "78.5"
+msgstr "78.5"
+
+#: ../../models/voxcpm1.rst:107 129a0630588744af8baa7c6328bc0b09
+msgid "3.79"
+msgstr "3.79"
+
+#: ../../models/voxcpm1.rst:107 997eed44e1b04abab85af5f27e7e6793
+msgid "10.55"
+msgstr "10.55"
+
+#: ../../models/voxcpm1.rst:107 e6c2be139005488bae2df4ff773f0491
+msgid "76.1"
+msgstr "76.1"
+
+#: ../../models/voxcpm1.rst:108 1be261aa2545453ca57928e54abbd289
+msgid "**3.40**"
+msgstr "**3.40**"
+
+#: ../../models/voxcpm1.rst:108 184de46ff5bf42aaac209afe507b0fdb
+msgid "**4.04**"
+msgstr "**4.04**"
+
+#: ../../models/voxcpm1.rst:108 d6b8765d96c740d19d4493d5b388baa1
+msgid "12.9"
+msgstr "12.9"
+
+#: ../../models/voxcpm1.rst:108 6c778de194a74924a535d6f879dbf63d
+msgid "66.1"
+msgstr "66.1"
+
+#: ../../models/voxcpm1.rst:108 2b8a8429f6004d92876ee510781ece18
+msgid "3.59"
+msgstr "3.59"
+
+#: ../../models/voxcpm1.rst:108 7fb995d9bd1f4c9f9d129906c2ab1a52
+msgid "**7.89**"
+msgstr "**7.89**"
+
+#: ../../models/voxcpm1.rst:108 d0f2002f5797463a9899c51e4e6aa68b
+msgid "64.3"
+msgstr "64.3"
+
+#: ../../models/voxcpm1.rst:108 db322fb9ec5c4225880a578cab0dc670
+msgid "3.74"
+msgstr "3.74"

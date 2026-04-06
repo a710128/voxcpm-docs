@@ -8,7 +8,7 @@ Install
 
 .. code-block:: sh
 
-    uv pip install voxcpm
+    pip install voxcpm
 
 That's it. For other installation methods (pip, source checkout, etc.), see :doc:`./installation`.
 
@@ -70,14 +70,14 @@ VoxCPM also provides a command-line interface. The CLI defaults to ``openbmb/Vox
 Step 3: Web Demo
 ****************
 
-The web demo requires a source checkout. If you installed via ``uv pip install voxcpm`` in the step above, you still need to clone the repository:
+The web demo requires a source checkout. If you installed via ``pip install voxcpm`` in the step above, you still need to clone the repository:
 
 .. code-block:: sh
 
     git clone https://github.com/OpenBMB/VoxCPM.git
     cd VoxCPM
-    uv sync
-    uv run python app.py
+    pip install -e .
+    python app.py
 
 The web demo also downloads an additional ASR model (SenseVoice-Small) on first use for prompt audio transcription.
 

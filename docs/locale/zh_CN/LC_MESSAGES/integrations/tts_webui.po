@@ -1,0 +1,137 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2025, OpenBMB
+# This file is distributed under the same license as the VoxCPM package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: VoxCPM \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-06 15:37+0800\n"
+"PO-Revision-Date: 2026-04-06 18:00+0800\n"
+"Last-Translator: GPT-5.4 <>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../integrations/tts_webui.rst:3 8e8ce1e3fb8b453dbc9bec5a59b76c60
+msgid "TTS WebUI"
+msgstr "TTS WebUI"
+
+#: ../../integrations/tts_webui.rst:5 4807d10c03504a4282a8fa7c47372053
+msgid ""
+"VoxCPM is integrated into `TTS WebUI <https://github.com/rsxdalv/tts-"
+"webui>`_ as an installable extension, providing a browser-based interface"
+" for text-to-speech."
+msgstr ""
+"VoxCPM 已作为可安装扩展集成到 `TTS WebUI <https://github.com/rsxdalv/tts-"
+"webui>`_ 中，提供基于浏览器的文本转语音界面。"
+
+#: ../../integrations/tts_webui.rst:7 f23de3d4cc264840af8c450f308b4e9b
+msgid ""
+"Extension Repo: `rsxdalv/tts_webui_extension.vox_cpm "
+"<https://github.com/rsxdalv/tts_webui_extension.vox_cpm>`_"
+msgstr ""
+"扩展仓库：`rsxdalv/tts_webui_extension.vox_cpm "
+"<https://github.com/rsxdalv/tts_webui_extension.vox_cpm>`_"
+
+#: ../../integrations/tts_webui.rst:10 69faf7936b064666b35f5abca7078e73
+msgid ""
+"This extension wraps the official ``voxcpm`` Python package. The "
+"extension README is a template stub — refer to the main VoxCPM and TTS "
+"WebUI documentation for detailed usage."
+msgstr ""
+"该扩展封装了官方 ``voxcpm`` Python 包。扩展自带的 README 仅为模板占位，"
+"详细用法请参阅 VoxCPM 与 TTS WebUI 的主文档。"
+
+#: ../../integrations/tts_webui.rst:12 b53b9559c7b048dda2f5d8fd037c948b
+msgid "Supported VoxCPM Versions"
+msgstr "支持的 VoxCPM 版本"
+
+#: ../../integrations/tts_webui.rst:16 9c1016b4019942cc897ad208ef03478d
+msgid "VoxCPM 1.0 (0.5B)"
+msgstr "VoxCPM 1.0 (0.5B)"
+
+#: ../../integrations/tts_webui.rst:17 b7f275a3b4d044a1b9cd707388b49e16
+msgid "✅ Default (UI hardcoded to ``openbmb/VoxCPM-0.5B``)"
+msgstr "✅ 默认（界面写死为 ``openbmb/VoxCPM-0.5B``）"
+
+#: ../../integrations/tts_webui.rst:18 74ab814d132d4c37991ca93cde2f5261
+msgid "VoxCPM 1.5"
+msgstr "VoxCPM 1.5"
+
+#: ../../integrations/tts_webui.rst:19 7f83ed681d144b2a81cd0c5d9067b1bd
+msgid "❌ Not in extension UI (would require modifying source)"
+msgstr "❌ 扩展界面中不可用（需修改源码）"
+
+#: ../../integrations/tts_webui.rst:20 b44db83d10cb4330b061ffeb95d4377f
+msgid "VoxCPM 2"
+msgstr "VoxCPM 2"
+
+#: ../../integrations/tts_webui.rst:21 f4f7afd840cc4cc4ad5719f3955ddead
+msgid "❌ Not supported"
+msgstr "❌ 不支持"
+
+#: ../../integrations/tts_webui.rst:24 bea577e551b74a28a44258e8a55379eb
+msgid "Features"
+msgstr "功能"
+
+#: ../../integrations/tts_webui.rst:26 a197bc2948044bbfb8d3c093fdc541cd
+msgid "Adds a **\"Vox cpm\"** tab to TTS WebUI"
+msgstr "在 TTS WebUI 中新增 **「Vox cpm」** 标签页"
+
+#: ../../integrations/tts_webui.rst:27 06e57e0a6c9e4042af8664df6fd35efc
+msgid "Leverages the official ``voxcpm`` Python package for inference"
+msgstr "使用官方 ``voxcpm`` Python 包进行推理"
+
+#: ../../integrations/tts_webui.rst:28 f9492c71a646413488889b934ef95609
+msgid "Simple installation as a TTS WebUI extension"
+msgstr "作为 TTS WebUI 扩展，安装简单"
+
+#: ../../integrations/tts_webui.rst:31 bacd45a3e14543b1b8c014cc411fc2fd
+msgid "Prerequisites"
+msgstr "前置条件"
+
+#: ../../integrations/tts_webui.rst:33 a9e8214afe9449b7b399b21b21574861
+msgid "`TTS WebUI <https://github.com/rsxdalv/tts-webui>`_ installed and running"
+msgstr "已安装并运行 `TTS WebUI <https://github.com/rsxdalv/tts-webui>`_"
+
+#: ../../integrations/tts_webui.rst:34 745d67bae65244458b82aa9b5e253ebb
+msgid "Python >= 3.7"
+msgstr "Python >= 3.7"
+
+#: ../../integrations/tts_webui.rst:37 fc9fc575b2f9422d99807cad76657f3a
+msgid "Installation"
+msgstr "安装"
+
+#: ../../integrations/tts_webui.rst:43 514670563543451f85b698a418766c12
+msgid "Then restart TTS WebUI. The **Vox cpm** tab will appear in the interface."
+msgstr "然后重启 TTS WebUI，界面中会出现 **Vox cpm** 标签页。"
+
+#: ../../integrations/tts_webui.rst:46 5df0e7b60bfb4c34a65ebe8409a8af54
+msgid "Usage"
+msgstr "用法"
+
+#: ../../integrations/tts_webui.rst:48 e35c766378494ec7b7bf0041728a09b2
+msgid "Open TTS WebUI in your browser"
+msgstr "在浏览器中打开 TTS WebUI"
+
+#: ../../integrations/tts_webui.rst:49 d037f1ce1c834ca0afd153230e2c7101
+msgid "Navigate to the **Vox cpm** tab"
+msgstr "切换到 **Vox cpm** 标签页"
+
+#: ../../integrations/tts_webui.rst:50 7b200f007c0840edaa9fb710059f175b
+msgid "Enter text and configure generation parameters"
+msgstr "输入文本并配置生成参数"
+
+#: ../../integrations/tts_webui.rst:51 78aba64ac60f4444a789cad4d26ad08e
+msgid "Click generate to synthesize speech"
+msgstr "点击生成以合成语音"
+
+#: ../../integrations/tts_webui.rst:53 cdb729be58e74790b41158ad8bc9a00a
+msgid "For development:"
+msgstr "开发场景："

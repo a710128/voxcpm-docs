@@ -1,0 +1,226 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2025, OpenBMB
+# This file is distributed under the same license as the VoxCPM package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: VoxCPM \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-06 15:37+0800\n"
+"PO-Revision-Date: 2026-04-06 18:00+0800\n"
+"Last-Translator: VoxCPM Docs zh_CN <>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../models/voxcpm1.5.rst:4 9593ac56162243fc8fc714e5148d8bd9
+msgid "VoxCPM 1.5"
+msgstr "VoxCPM 1.5"
+
+#: ../../models/voxcpm1.5.rst:6 01ea60b403d54635851cbb36b1d11aac
+msgid "**Release Date:** December 5, 2025"
+msgstr "**发布日期：** 2025 年 12 月 5 日"
+
+#: ../../models/voxcpm1.5.rst:7 f9dd1edf8796400dbe407adfcc0d47c4
+msgid "**Parameter Size:** 750M"
+msgstr "**参数量：** 750M"
+
+#: ../../models/voxcpm1.5.rst:8 d257245cfd9d4d4a9da0412e29bc85dc
+msgid "**Sampling Rate:** 44.1kHz"
+msgstr "**采样率：** 44.1kHz"
+
+#: ../../models/voxcpm1.5.rst:12 357f0fa593bf41d2a29d82b330465784
+msgid ""
+"VoxCPM 1.5 is a legacy release for lighter Chinese/English deployments "
+"and existing 1.x workflows."
+msgstr ""
+"VoxCPM 1.5 面向更轻量的中英部署与既有 1.x 工作流，属延续版本。"
+
+#: ../../models/voxcpm1.5.rst:15 033444dcfd6545dfbbfcecb8fee461b3
+msgid "Overview"
+msgstr "概述"
+
+#: ../../models/voxcpm1.5.rst:17 1b1364898a4b4497884c2f217b33bf47
+msgid ""
+"We're thrilled to introduce a major upgrade that improves audio quality "
+"and efficiency of VoxCPM, while maintaining the core capabilities of "
+"context-aware speech generation and zero-shot voice cloning."
+msgstr ""
+"我们很高兴带来一次重大升级：在提升 VoxCPM 音质与效率的同时，"
+"保留上下文感知语音生成与零样本声音克隆等核心能力。"
+
+#: ../../models/voxcpm1.5.rst:20 b8234657dd894a0f8d1c6071ebc45fff
+msgid "Feature"
+msgstr "特性"
+
+#: ../../models/voxcpm1.5.rst:20 85501ad3d08747b4b5505d494303d324
+msgid "VoxCPM"
+msgstr "VoxCPM"
+
+#: ../../models/voxcpm1.5.rst:20 ac56dc89331a4d378005c40dc232754c
+msgid "VoxCPM1.5"
+msgstr "VoxCPM1.5"
+
+#: ../../models/voxcpm1.5.rst:22 f4f759688b8b451cae885a2ab39a5563
+msgid "**Audio VAE Sampling** **Rate**"
+msgstr "**Audio VAE 采样率**"
+
+#: ../../models/voxcpm1.5.rst:22 2ee5a0a5201543f5a54650a6e7a04ae6
+msgid "16kHz"
+msgstr "16kHz"
+
+#: ../../models/voxcpm1.5.rst:22 f8cdf3bbb1c741219ac7ae27407a9a7f
+msgid "44.1kHz"
+msgstr "44.1kHz"
+
+#: ../../models/voxcpm1.5.rst:25 1fed5594b44f44f69a86d6f2e0212cff
+msgid "**LM Token Rate**"
+msgstr "**LM token 速率**"
+
+#: ../../models/voxcpm1.5.rst:25 ../../models/voxcpm1.5.rst:29
+#: aaabf774911b4cff86f1a330b1444f7b cfc249cbf5274bb4b949d88c249a3d5d
+msgid "12.5Hz"
+msgstr "12.5Hz"
+
+#: ../../models/voxcpm1.5.rst:25 ../../models/voxcpm1.5.rst:29
+#: 17ad70510efe41aa8d601cae37ac8b1a 32603e3f80aa455ebf3dbe64813e4575
+msgid "6.25Hz"
+msgstr "6.25Hz"
+
+#: ../../models/voxcpm1.5.rst:27 06d54c4ede4349a99a18130e04cebae5
+msgid "**Patch Size**"
+msgstr "**Patch 大小**"
+
+#: ../../models/voxcpm1.5.rst:27 2a9e736b06cc485f9627b5cbad3fd53e
+msgid "2"
+msgstr "2"
+
+#: ../../models/voxcpm1.5.rst:27 4a208c99a1bd42bfaeb2207f51477ed4
+msgid "4"
+msgstr "4"
+
+#: ../../models/voxcpm1.5.rst:29 69dce742f67640cfa83a05dba3a07dff
+msgid "**Token Rate**"
+msgstr "**Token 速率**"
+
+#: ../../models/voxcpm1.5.rst:34 dd1fdc51ea9f4221af21694a1236cb14
+msgid "Getting Started"
+msgstr "入门"
+
+#: ../../models/voxcpm1.5.rst:36 81c99e27eb1043808ed44d671ffa4e11
+msgid ""
+"For installation, loading, and the shared generation API, start with "
+":doc:`../quickstart`."
+msgstr ""
+"安装、加载与共用生成 API 请从 :doc:`../quickstart` 开始。"
+
+#: ../../models/voxcpm1.5.rst:38 de226dbaa2424bdfa8b33c0d3e14659e
+msgid ""
+"Choose VoxCPM 1.5 when you want a lighter Chinese/English checkpoint than"
+" VoxCPM 2 while keeping higher output quality than VoxCPM 1.0."
+msgstr ""
+"若你需要比 VoxCPM 2 更轻的中英 checkpoint，同时又要比 VoxCPM 1.0 更高的输出质量，可选用 VoxCPM 1.5。"
+
+#: ../../models/voxcpm1.5.rst:41 ca8a8646a8974a40bb0f6210ffaccd01
+msgid "Model Updates"
+msgstr "模型更新"
+
+#: ../../models/voxcpm1.5.rst:44 5cf8cff36c614d018fcc87965e375d84
+msgid "AudioVAE Sampling Rate: 16kHz -> 44.1kHz"
+msgstr "AudioVAE 采样率：16kHz → 44.1kHz"
+
+#: ../../models/voxcpm1.5.rst:46 cdf93b9f1d1a47b99fffe01fc7cdf7c3
+msgid ""
+"The AudioVAE now supports 44.1kHz sampling rate, which allows the model "
+"to:"
+msgstr ""
+"AudioVAE 现已支持 44.1kHz 采样率，使模型能够："
+
+#: ../../models/voxcpm1.5.rst:48 a2bf2119fdcb4c84950e93745ac07e43
+msgid "Better cloning fidelity with more preserved high-frequency detail"
+msgstr "在保留更多高频细节的情况下提升克隆保真度"
+
+#: ../../models/voxcpm1.5.rst:51 db59c2188c6541569e08489a84beec48
+msgid ""
+"This upgrade enables higher quality generation when using high-quality "
+"reference audio, but does not guarantee that all generated audio will be "
+"high-fidelity. The output quality depends on the **prompt speech** "
+"quality."
+msgstr ""
+"在使用高质量参考音频时，这次升级有助于获得更高质量的生成结果，但并不保证所有生成音频都是高保真。"
+"输出质量取决于 **prompt 语音** 的质量。"
+
+#: ../../models/voxcpm1.5.rst:54 f114e6a0b8ed417382a4ad46dc65cff1
+msgid "Token Rate: 12.5Hz -> 6.25Hz"
+msgstr "Token 速率：12.5Hz → 6.25Hz"
+
+#: ../../models/voxcpm1.5.rst:56 020e223872124c76988c1da8e46360d7
+msgid ""
+"We reduced the token rate in LM from 12.5Hz to 6.25Hz (patch size "
+"increased from 2 to 4) while maintaining similar performance on "
+"evaluation benchmarks. This change:"
+msgstr ""
+"我们将 LM 中的 token 速率从 12.5Hz 降至 6.25Hz（patch 大小由 2 增至 4），"
+"同时在评测基准上保持相近表现。这一变化："
+
+#: ../../models/voxcpm1.5.rst:58 65d48e27f952419f8c8b6e198b522d0e
+msgid "Reduces computational requirements for generating the same length of audio"
+msgstr "降低生成相同时长音频的计算开销"
+
+#: ../../models/voxcpm1.5.rst:59 9b3d8fca9fe24dd98119d53ece26c9fe
+msgid "Provides a foundation for longer audio generation"
+msgstr "为更长音频生成打下基础"
+
+#: ../../models/voxcpm1.5.rst:62 08b31d4ab7e94a58bae13632368a54a5
+msgid "Migration Guide"
+msgstr "迁移指南"
+
+#: ../../models/voxcpm1.5.rst:65 daa28e0c704d458da12476b1bed940ea
+msgid "From VoxCPM-0.5B to VoxCPM1.5"
+msgstr "从 VoxCPM-0.5B 到 VoxCPM1.5"
+
+#: ../../models/voxcpm1.5.rst:67 7b1847bb8e4346aabb9789a8ebac4282
+msgid "**Update Model Path**: Point to VoxCPM1.5 checkpoint"
+msgstr "**更新模型路径**：指向 VoxCPM1.5 checkpoint"
+
+#: ../../models/voxcpm1.5.rst:68 6f67e865e45a4b0fba8aa7517d939914
+msgid ""
+"**Update Sample Rate**: Change ``sample_rate`` from ``16000`` to "
+"``44100`` in configs"
+msgstr ""
+"**更新采样率**：在配置中将 ``sample_rate`` 从 ``16000`` 改为 ``44100``"
+
+#: ../../models/voxcpm1.5.rst:69 72f6f103e6d6435886c2e67fb079c1d8
+msgid ""
+"**Update Audio Data**: The current fine-tuning pipeline automatically "
+"resamples to 44.1kHz. If you preprocess offline, resample to 44.1kHz."
+msgstr ""
+"**更新音频数据**：当前微调流水线会自动重采样到 44.1kHz。若你离线预处理，请重采样到 44.1kHz。"
+
+#: ../../models/voxcpm1.5.rst:70 9e3397e01678421187784de0dfe6cfaf
+msgid ""
+"**Review Training Parameters**: Adjust batch size if needed due to higher"
+" sampling rate"
+msgstr ""
+"**检查训练参数**：因采样率提高，如有需要请调整 batch size"
+
+#: ../../models/voxcpm1.5.rst:73 4f92c8101ea64184b803288d235ca68f
+msgid "Backward Compatibility"
+msgstr "向后兼容"
+
+#: ../../models/voxcpm1.5.rst:75 e436867d97994202878b5d5b7aed14bd
+msgid "VoxCPM-0.5B models and configurations remain fully supported"
+msgstr "VoxCPM-0.5B 模型与配置仍完全受支持"
+
+#: ../../models/voxcpm1.5.rst:76 76f2555fb61c488680d2ae29e8a7c634
+msgid "Code automatically detects and adapts to model version"
+msgstr "代码会自动检测并适配模型版本"
+
+#: ../../models/voxcpm1.5.rst:77 5aad888890494e2c8b3de607c1f90a33
+msgid "No breaking changes to the API"
+msgstr "API 无破坏性变更"
