@@ -5,17 +5,17 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: VoxCPM\n"
+"Project-Id-Version:  VoxCPM\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-04-06 15:37+0800\n"
 "PO-Revision-Date: 2026-04-06 18:30+0800\n"
 "Last-Translator: GPT-5.4 <>\n"
-"Language-Team: zh_CN <LL@li.org>\n"
 "Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
 "Generated-By: Babel 2.18.0\n"
 
 #: ../../deployment/voxcpm_cpp.rst:3 f6a098fdd1ee496dbc8ba0acfc0cc926
@@ -36,8 +36,7 @@ msgstr "仓库：`bluryar/VoxCPM.cpp <https://github.com/bluryar/VoxCPM.cpp>`_"
 msgid ""
 "GGUF Weights: `bluryar/VoxCPM-GGUF <https://huggingface.co/bluryar/VoxCPM-"
 "GGUF>`_"
-msgstr ""
-"GGUF 权重：`bluryar/VoxCPM-GGUF <https://huggingface.co/bluryar/VoxCPM-GGUF>`_"
+msgstr "GGUF 权重：`bluryar/VoxCPM-GGUF <https://huggingface.co/bluryar/VoxCPM-GGUF>`_"
 
 #: ../../deployment/voxcpm_cpp.rst:9 940f9b4470ab44fc9c2d3efce7c5a37c
 msgid "Upstream: `OpenBMB/VoxCPM <https://github.com/OpenBMB/VoxCPM>`_"
@@ -85,7 +84,7 @@ msgstr "可选多种量化格式：Q4_K、Q8_0、F16、F32。"
 
 #: ../../deployment/voxcpm_cpp.rst:27 d89e997f3a6f469292889990e3a610ad
 msgid "Features"
-msgstr "特性"
+msgstr "Features"
 
 #: ../../deployment/voxcpm_cpp.rst:29 d7bad84df93f4a5a89f0adf1b2e7d766
 #, python-brace-format
@@ -126,7 +125,7 @@ msgstr "实验性 WASM/Emscripten Web 试用环境（见仓库 ``docs/wasm_playg
 
 #: ../../deployment/voxcpm_cpp.rst:38 e76768babeae4700bd58522844289d07
 msgid "Performance"
-msgstr "性能"
+msgstr "Performance"
 
 #: ../../deployment/voxcpm_cpp.rst:40 934395766fdf443c961c329b4c0fb7fa
 msgid ""
@@ -248,7 +247,7 @@ msgstr "3.609"
 
 #: ../../deployment/voxcpm_cpp.rst:88 4c308fb72a474abda500413a85a0891b
 msgid "Prerequisites"
-msgstr "环境要求"
+msgstr "Prerequisites"
 
 #: ../../deployment/voxcpm_cpp.rst:90 e886ed5f08764dfa93164b8cc0d252a8
 msgid "CMake >= 3.14"
@@ -268,7 +267,7 @@ msgstr "（可选）Vulkan SDK 用于 Vulkan 后端"
 
 #: ../../deployment/voxcpm_cpp.rst:96 efe11e016e2348d0b8c07df5db27c3d1
 msgid "Installation"
-msgstr "安装"
+msgstr "Installation"
 
 #: ../../deployment/voxcpm_cpp.rst:98 d30f88d11a9544bab396d77b39845584
 msgid "Build from source:"
@@ -280,7 +279,7 @@ msgstr "从 Hugging Face 下载 GGUF 权重："
 
 #: ../../deployment/voxcpm_cpp.rst:126 2b4ead3c68b04939af53761897989cf4
 msgid "Basic usage (CLI)"
-msgstr "基本用法（CLI）"
+msgstr "Basic usage (CLI)"
 
 #: ../../deployment/voxcpm_cpp.rst:128 b6f86c310c9b46888b412c26a97f3c0e
 msgid "The ``voxcpm_tts`` binary supports text-to-speech and voice cloning:"
@@ -288,7 +287,7 @@ msgstr "``voxcpm_tts`` 可执行文件支持文本转语音与声音克隆："
 
 #: ../../deployment/voxcpm_cpp.rst:152 550a1b4a9d294c17af0e5ead04635bbc
 msgid "HTTP Server"
-msgstr "HTTP 服务"
+msgstr "HTTP Server"
 
 #: ../../deployment/voxcpm_cpp.rst:154 e4fb60863d114a218e8bdfda9c1d2842
 msgid ""
@@ -336,11 +335,11 @@ msgstr "该 HTTP 服务面向开发与测试。暴露到不可信网络前请使
 
 #: ../../deployment/voxcpm_cpp.rst:195 8fb24ccc094c4fddb24def7241468461
 msgid "Troubleshooting"
-msgstr "故障排除"
+msgstr "Troubleshooting"
 
 #: ../../deployment/voxcpm_cpp.rst:198 52622640308a45b884a92caf09fc84a9
 msgid "Binary not found after build"
-msgstr "构建后找不到二进制"
+msgstr "Binary not found after build"
 
 #: ../../deployment/voxcpm_cpp.rst:200 f7b37fd1bd31424a88f1af76aa5bf774
 msgid ""
@@ -352,10 +351,11 @@ msgstr ""
 
 #: ../../deployment/voxcpm_cpp.rst:203 84d832b8ed734f158d1a437684fae21c
 msgid "Model loading errors"
-msgstr "模型加载错误"
+msgstr "Model loading errors"
 
 #: ../../deployment/voxcpm_cpp.rst:205 695bbdf26c4e40e6a986824db6c2230e
 msgid ""
 "Ensure you are passing a single ``.gguf`` file path (not a directory) to "
 "``--model-path``."
 msgstr "请确保向 ``--model-path`` 传入单个 ``.gguf`` 文件路径（而非目录）。"
+

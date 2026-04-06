@@ -20,20 +20,18 @@ msgstr ""
 
 #: ../../models/earlier_releases.rst:2 a14c5b0260124682869eea973e99627f
 msgid "Earlier Releases"
-msgstr "早期版本"
+msgstr "Earlier Releases"
 
 #: ../../models/earlier_releases.rst:4 082e081a5e624bc5aec929dde9b2cbde
 msgid ""
 "This page summarizes the earlier VoxCPM releases that remain useful for "
-"compatibility, lighter deployment targets, and historical reference. For "
-"new projects, use :doc:`./voxcpm2`."
-msgstr ""
-"本页概述仍有价值的早期 VoxCPM 版本，适用于兼容、更轻部署目标与历史参照。"
-"新项目请使用 :doc:`./voxcpm2`。"
+"compatibility, lighter deployment targets, and historical reference. For new"
+" projects, use :doc:`./voxcpm2`."
+msgstr "本页概述仍有价值的早期 VoxCPM 版本，适用于兼容、更轻部署目标与历史参照。新项目请使用 :doc:`./voxcpm2`。"
 
 #: ../../models/earlier_releases.rst:7 9430285412cb48008fec6125549a7188
 msgid "When To Use An Earlier Release"
-msgstr "何时选用早期版本"
+msgstr "When To Use An Earlier Release"
 
 #: ../../models/earlier_releases.rst:9 c62c8043af594eccb47cdacaf10ac1b0
 msgid "Choose an earlier release if you need one of the following:"
@@ -57,7 +55,7 @@ msgstr "早期基准或架构决策的历史参照"
 
 #: ../../models/earlier_releases.rst:17 40d7bb9b04864c65ab60ca29a2200742
 msgid "Quick Comparison"
-msgstr "快速对比"
+msgstr "Quick Comparison"
 
 #: ../../models/earlier_releases.rst:23 bb28897bbdbc4e0c9664dca0c1502e9d
 msgid "Release"
@@ -88,11 +86,8 @@ msgid "44.1kHz"
 msgstr "44.1kHz"
 
 #: ../../models/earlier_releases.rst:30 2f4bd0ba98b6466d8393f3e2872364dc
-msgid ""
-"Lighter Chinese/English deployment with higher output quality than VoxCPM"
-" 1.0"
-msgstr ""
-"比 VoxCPM 1.0 更轻的中英部署，且输出质量更高"
+msgid "Lighter Chinese/English deployment with higher output quality than VoxCPM 1.0"
+msgstr "比 VoxCPM 1.0 更轻的中英部署，且输出质量更高"
 
 #: ../../models/earlier_releases.rst:31 c3a2972ec1b8434b93762fed183b918d
 msgid "**VoxCPM 1.0**"
@@ -107,11 +102,8 @@ msgid "16kHz"
 msgstr "16kHz"
 
 #: ../../models/earlier_releases.rst:34 127a40c4a9274812af50ca5036bf8b56
-msgid ""
-"Baseline compatibility, historical reference, and the original VoxCPM "
-"release"
-msgstr ""
-"基线兼容、历史参照与原始 VoxCPM 发布版"
+msgid "Baseline compatibility, historical reference, and the original VoxCPM release"
+msgstr "基线兼容、历史参照与原始 VoxCPM 发布版"
 
 #: ../../models/earlier_releases.rst:37 8ec7f530d96144e9b808f0edc627c4af
 msgid "VoxCPM 1.5"
@@ -120,11 +112,11 @@ msgstr "VoxCPM 1.5"
 #: ../../models/earlier_releases.rst:39 a863dee15a344d44b3f5fa9edd7e3b20
 msgid ""
 "VoxCPM 1.5 is the final 1.x upgrade before VoxCPM 2. It improves audio "
-"quality and efficiency while keeping the core context-aware generation "
-"and zero-shot voice cloning workflow familiar to existing 1.x users."
+"quality and efficiency while keeping the core context-aware generation and "
+"zero-shot voice cloning workflow familiar to existing 1.x users."
 msgstr ""
-"VoxCPM 1.5 是 VoxCPM 2 之前 1.x 的最后一次升级。它在提升音质与效率的同时，"
-"保留原有 1.x 用户熟悉的上下文感知生成与零样本声音克隆流程。"
+"VoxCPM 1.5 是 VoxCPM 2 之前 1.x 的最后一次升级。它在提升音质与效率的同时，保留原有 1.x "
+"用户熟悉的上下文感知生成与零样本声音克隆流程。"
 
 #: ../../models/earlier_releases.rst:41 ../../models/earlier_releases.rst:55
 #: 1cd84c88da6540feaed42e4080b412e1 7a7c5433e4f8475da0cdbf4144fab832
@@ -151,8 +143,7 @@ msgstr "对既有 VoxCPM 1.0 用户迁移路径更简单"
 msgid ""
 "Use VoxCPM 1.5 when you want a lighter Chinese/English checkpoint than "
 "VoxCPM 2, while keeping stronger output quality than VoxCPM 1.0."
-msgstr ""
-"若你需要比 VoxCPM 2 更轻的中英 checkpoint，同时又要比 VoxCPM 1.0 更高的输出质量，可选用 VoxCPM 1.5。"
+msgstr "若你需要比 VoxCPM 2 更轻的中英 checkpoint，同时又要比 VoxCPM 1.0 更高的输出质量，可选用 VoxCPM 1.5。"
 
 #: ../../models/earlier_releases.rst:51 10effc0cc5384f368745678da1564c40
 msgid "VoxCPM 1.0"
@@ -160,11 +151,10 @@ msgstr "VoxCPM 1.0"
 
 #: ../../models/earlier_releases.rst:53 7a4f637634bd4f2d81099b3cd532704f
 msgid ""
-"VoxCPM 1.0 is the original tokenizer-free VoxCPM release. It remains "
-"useful as the baseline reference point for the family and for older "
-"experiments built around the original 0.5B checkpoint."
-msgstr ""
-"VoxCPM 1.0 是初代无分词器 VoxCPM 发布版，仍是全系列的基线参照，也适用于围绕原始 0.5B checkpoint 的早期实验。"
+"VoxCPM 1.0 is the original tokenizer-free VoxCPM release. It remains useful "
+"as the baseline reference point for the family and for older experiments "
+"built around the original 0.5B checkpoint."
+msgstr "VoxCPM 1.0 是初代无分词器 VoxCPM 发布版，仍是全系列的基线参照，也适用于围绕原始 0.5B checkpoint 的早期实验。"
 
 #: ../../models/earlier_releases.rst:57 de018ec8e5234183a0557db8901c6f98
 msgid "600M parameter size"
@@ -184,14 +174,13 @@ msgstr "早期 VoxCPM 结果的基准参照"
 
 #: ../../models/earlier_releases.rst:62 9df4b82d6c51406cb7005aa63ff8a581
 msgid ""
-"Use VoxCPM 1.0 when you need the smallest historical checkpoint or want "
-"to compare against the original baseline behavior."
-msgstr ""
-"若你需要体积最小的历史 checkpoint，或要与原始基线行为对比，可使用 VoxCPM 1.0。"
+"Use VoxCPM 1.0 when you need the smallest historical checkpoint or want to "
+"compare against the original baseline behavior."
+msgstr "若你需要体积最小的历史 checkpoint，或要与原始基线行为对比，可使用 VoxCPM 1.0。"
 
 #: ../../models/earlier_releases.rst:65 f703af5daa224d06b8a4c020c174d60d
 msgid "Migration Guidance"
-msgstr "迁移建议"
+msgstr "Migration Guidance"
 
 #: ../../models/earlier_releases.rst:67 aaa2ac90ad394ef59e3014b2cc7f9e75
 msgid "New projects should start with :doc:`./voxcpm2`."
@@ -199,28 +188,25 @@ msgstr "新项目请从 :doc:`./voxcpm2` 开始。"
 
 #: ../../models/earlier_releases.rst:68 c3a76ec0462a420baa5b80a8f17a4895
 msgid ""
-"Existing VoxCPM 1.0 users should generally move to VoxCPM 1.5 first if "
-"they need a lower-risk 1.x upgrade path."
-msgstr ""
-"既有 VoxCPM 1.0 用户若希望走风险更低的 1.x 升级路径，一般应先迁到 VoxCPM 1.5。"
+"Existing VoxCPM 1.0 users should generally move to VoxCPM 1.5 first if they "
+"need a lower-risk 1.x upgrade path."
+msgstr "既有 VoxCPM 1.0 用户若希望走风险更低的 1.x 升级路径，一般应先迁到 VoxCPM 1.5。"
 
 #: ../../models/earlier_releases.rst:69 2c569d1d13ba4265b8cf130de350fc34
 msgid ""
-"If you need multilingual synthesis, Voice Design, Style Control, or 48kHz"
-" output, move directly to :doc:`./voxcpm2`."
-msgstr ""
-"若你需要多语种合成、Voice Design、Style Control 或 48kHz 输出，请直接升级到 :doc:`./voxcpm2`。"
+"If you need multilingual synthesis, Voice Design, Style Control, or 48kHz "
+"output, move directly to :doc:`./voxcpm2`."
+msgstr "若你需要多语种合成、Voice Design、Style Control 或 48kHz 输出，请直接升级到 :doc:`./voxcpm2`。"
 
 #: ../../models/earlier_releases.rst:72 c2f4d21ea6814eea8c9f53aaf83b8790
 msgid "Archived Details"
-msgstr "归档详情"
+msgstr "Archived Details"
 
 #: ../../models/earlier_releases.rst:74 f0cc7631b0144e1e9608bfa89807044c
 msgid ""
 "Archived detailed pages remain available here for readers who want the "
 "original version-specific documentation."
-msgstr ""
-"归档的详细页面仍保留在此，供需要原始分版本文档的读者查阅。"
+msgstr "归档的详细页面仍保留在此，供需要原始分版本文档的读者查阅。"
 
 #: ../../models/earlier_releases.rst:76 c998f563343942848a64081cef92f124
 msgid "Full VoxCPM 1.5 page: :doc:`./voxcpm1.5`"
@@ -229,3 +215,4 @@ msgstr "VoxCPM 1.5 全文：:doc:`./voxcpm1.5`"
 #: ../../models/earlier_releases.rst:77 c27c7349b56340cc8dd6a0b117f70fca
 msgid "Full VoxCPM 1.0 page: :doc:`./voxcpm1`"
 msgstr "VoxCPM 1.0 全文：:doc:`./voxcpm1`"
+

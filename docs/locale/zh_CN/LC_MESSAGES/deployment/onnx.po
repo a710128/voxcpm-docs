@@ -24,10 +24,9 @@ msgstr "VoxCPM-ONNX"
 
 #: ../../deployment/onnx.rst:5 3e735a0fb07b455289d3677ddbdf90bf
 msgid ""
-"VoxCPM-ONNX provides ONNX export and ONNX Runtime inference for VoxCPM, "
-"with an optional FastAPI REST server."
-msgstr ""
-"VoxCPM-ONNX 为 VoxCPM 提供 ONNX 导出与 ONNX Runtime 推理，并可选配 FastAPI REST 服务。"
+"VoxCPM-ONNX provides ONNX export and ONNX Runtime inference for VoxCPM, with"
+" an optional FastAPI REST server."
+msgstr "VoxCPM-ONNX 为 VoxCPM 提供 ONNX 导出与 ONNX Runtime 推理，并可选配 FastAPI REST 服务。"
 
 #: ../../deployment/onnx.rst:7 87817ad2c89d4113824baa2645529dad
 msgid "Repo: `bluryar/VoxCPM-ONNX <https://github.com/bluryar/VoxCPM-ONNX>`_"
@@ -35,20 +34,18 @@ msgstr "仓库：`bluryar/VoxCPM-ONNX <https://github.com/bluryar/VoxCPM-ONNX>`_
 
 #: ../../deployment/onnx.rst:10 5782a36bced84813bc376f5258a8031b
 msgid ""
-"This project is **archived** by the author. For active development, "
-"consider `VoxCPM.cpp <https://github.com/bluryar/VoxCPM.cpp>`_ instead. "
-"The code and documentation were largely AI-generated; use as a reference."
+"This project is **archived** by the author. For active development, consider"
+" `VoxCPM.cpp <https://github.com/bluryar/VoxCPM.cpp>`_ instead. The code and"
+" documentation were largely AI-generated; use as a reference."
 msgstr ""
-"作者已将本项目 **归档**。若需要活跃维护的实现，可考虑改用 "
-"`VoxCPM.cpp <https://github.com/bluryar/VoxCPM.cpp>`_。"
-"代码与文档多为 AI 生成，仅作参考。"
+"作者已将本项目 **归档**。若需要活跃维护的实现，可考虑改用 `VoxCPM.cpp "
+"<https://github.com/bluryar/VoxCPM.cpp>`_。代码与文档多为 AI 生成，仅作参考。"
 
 #: ../../deployment/onnx.rst:13 8a41b5c1a03f4a3f8df81e191dbaf1f4
 msgid ""
-"It provides ONNX export scripts, an ONNX Runtime inference pipeline, and "
-"a FastAPI server with an OpenAI-style TTS API."
-msgstr ""
-"提供 ONNX 导出脚本、ONNX Runtime 推理流水线，以及带 OpenAI 风格 TTS API 的 FastAPI 服务。"
+"It provides ONNX export scripts, an ONNX Runtime inference pipeline, and a "
+"FastAPI server with an OpenAI-style TTS API."
+msgstr "提供 ONNX 导出脚本、ONNX Runtime 推理流水线，以及带 OpenAI 风格 TTS API 的 FastAPI 服务。"
 
 #: ../../deployment/onnx.rst:15 6aa15db27dba4e6e90b03539d1311483
 msgid "Supported VoxCPM Versions"
@@ -68,12 +65,10 @@ msgstr "VoxCPM 1.5"
 
 #: ../../deployment/onnx.rst:22 4ec3fa37453e42a6a2c0037125e9bc9e
 msgid ""
-"❌ Not in this repo (see `DakeQQ's export script "
-"<https://github.com/DakeQQ/Text-to-Speech-TTS-"
-"ONNX/blob/main/VoxCPM/Export_VoxCPM_ONNX.py>`_)"
+"❌ Not in this repo (see `DakeQQ's export script <https://github.com/DakeQQ"
+"/Text-to-Speech-TTS-ONNX/blob/main/VoxCPM/Export_VoxCPM_ONNX.py>`_)"
 msgstr ""
-"❌ 不在本仓库（见 `DakeQQ 的导出脚本 "
-"<https://github.com/DakeQQ/Text-to-Speech-TTS-"
+"❌ 不在本仓库（见 `DakeQQ 的导出脚本 <https://github.com/DakeQQ/Text-to-Speech-TTS-"
 "ONNX/blob/main/VoxCPM/Export_VoxCPM_ONNX.py>`_）"
 
 #: ../../deployment/onnx.rst:23 e17ca77ad00945379a52ee795aba597b
@@ -86,7 +81,7 @@ msgstr "❌ 不支持"
 
 #: ../../deployment/onnx.rst:27 f4f28434c7bb4bcd8cfaf3d0c2c8ffec
 msgid "Features"
-msgstr "特性"
+msgstr "Features"
 
 #: ../../deployment/onnx.rst:29 46f200520bc24d209bce662c920a4dc7
 msgid "ONNX export from PyTorch VoxCPM-0.5B weights"
@@ -110,7 +105,7 @@ msgstr "支持 Docker Compose（CPU 与 GPU 服务）"
 
 #: ../../deployment/onnx.rst:36 408131f3bc72436294f81593fd558a70
 msgid "Prerequisites"
-msgstr "环境要求"
+msgstr "Prerequisites"
 
 #: ../../deployment/onnx.rst:38 b07916bbf5cd41fba1d7bdfbcb5df8fb
 msgid "Python >= 3.10"
@@ -130,11 +125,11 @@ msgstr "（可选）Docker + NVIDIA Container Toolkit"
 
 #: ../../deployment/onnx.rst:44 ac8ef279a2a847aaa5c9cf0a2e323ad8
 msgid "Installation"
-msgstr "安装"
+msgstr "Installation"
 
 #: ../../deployment/onnx.rst:63 35cd49f1ea65432a9d91b6c2ebf6f492
 msgid "Basic usage (Server)"
-msgstr "基本用法（服务）"
+msgstr "Basic usage (Server)"
 
 #: ../../deployment/onnx.rst:65 80145b050a034fceae0e9fd02bfc05bf
 msgid "Start the FastAPI server:"
@@ -182,14 +177,13 @@ msgstr "API 示例："
 
 #: ../../deployment/onnx.rst:109 6f606b24ac7a4276b5edd44ede6e4f48
 msgid "Limitations"
-msgstr "限制"
+msgstr "Limitations"
 
 #: ../../deployment/onnx.rst:111 7a6f894bf7cc4d35abd8e626af9ac061
 msgid ""
 "Targets **VoxCPM-0.5B** only; for VoxCPM 1.5 ONNX export, see DakeQQ's "
 "script linked above"
-msgstr ""
-"仅面向 **VoxCPM-0.5B**；VoxCPM 1.5 的 ONNX 导出见上文 DakeQQ 脚本链接"
+msgstr "仅面向 **VoxCPM-0.5B**；VoxCPM 1.5 的 ONNX 导出见上文 DakeQQ 脚本链接"
 
 #: ../../deployment/onnx.rst:112 66f48cbaa6ca4b3a852ca4305a270d35
 msgid "Fixed inference timesteps in exported ONNX models (set at export time)"
@@ -198,3 +192,4 @@ msgstr "导出 ONNX 中的推理步数固定（在导出时设定）"
 #: ../../deployment/onnx.rst:113 667102f6a8984d2fb4c5a00effd3c4d5
 msgid "Duplicate prefill/decode weights increase model size"
 msgstr "重复的 prefill/decode 权重会增大模型体积"
+

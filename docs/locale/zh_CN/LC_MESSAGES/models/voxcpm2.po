@@ -33,7 +33,7 @@ msgstr "ModelScope"
 
 #: ../../models/voxcpm2.rst:15 20e81d6556724645852591e57fcfe20a
 msgid "Audio Samples"
-msgstr "音频样例"
+msgstr "Audio Samples"
 
 #: ../../models/voxcpm2.rst:20 19b3cbf3fc3c4a8c93018550d793b6f9
 msgid "**Release Date:** March 2026"
@@ -55,21 +55,20 @@ msgstr "**语言：** 30 种"
 msgid ""
 "VoxCPM 2 is the current recommended release for new deployments and new "
 "feature work."
-msgstr ""
-"VoxCPM 2 是当前推荐版本，适用于新部署与新功能开发。"
+msgstr "VoxCPM 2 是当前推荐版本，适用于新部署与新功能开发。"
 
 #: ../../models/voxcpm2.rst:31 c99a0a07e3e543758f1d61ea3cbe75ce
 msgid "Overview"
-msgstr "概述"
+msgstr "Overview"
 
 #: ../../models/voxcpm2.rst:33 ac58ddea50c24fdb81ac4395d8d2425e
 msgid ""
-"VoxCPM 2 is the latest major release — a 2B parameter model trained on "
-"2.36 million hours of multilingual data. It represents a significant leap"
-" in capacity, quality, and controllability over the 1.x series."
+"VoxCPM 2 is the latest major release — a 2B parameter model trained on 2.36 "
+"million hours of multilingual data. It represents a significant leap in "
+"capacity, quality, and controllability over the 1.x series."
 msgstr ""
-"VoxCPM 2 是最新的大版本发布，一个在 236 万小时多语言数据上训练的 2B 参数模型。"
-"相较于 1.x 系列，它在容量、质量与可控性上都有显著跃升。"
+"VoxCPM 2 是最新的大版本发布，一个在 236 万小时多语言数据上训练的 2B 参数模型。相较于 1.x "
+"系列，它在容量、质量与可控性上都有显著跃升。"
 
 #: ../../models/voxcpm2.rst:35
 msgid "Key characteristics:"
@@ -84,20 +83,28 @@ msgid "30-language multilingual support"
 msgstr "支持 30 种语言的多语言生成"
 
 #: ../../models/voxcpm2.rst:39
-msgid "Voice Design: create a voice from natural-language description, no reference audio needed"
+msgid ""
+"Voice Design: create a voice from natural-language description, no reference"
+" audio needed"
 msgstr "Voice Design：通过自然语言描述创建声音，无需参考音频"
 
 #: ../../models/voxcpm2.rst:40
-msgid "Style Control: control emotion, pace, and speaking style of a cloned voice via text tags"
+msgid ""
+"Style Control: control emotion, pace, and speaking style of a cloned voice "
+"via text tags"
 msgstr "Style Control：通过文本标签控制克隆声音的情绪、节奏与说话风格"
 
 #: ../../models/voxcpm2.rst:41
-msgid "Isolated reference channel for voice cloning (no matching transcript required)"
-msgstr "为声音克隆提供隔离式参考通道（无需匹配文本转录）"
+msgid ""
+"Isolated reference channel for voice cloning (no matching transcript "
+"required)"
+msgstr "为声音克隆提供隔离式参考通道（无需配套转写文本）"
 
 #: ../../models/voxcpm2.rst:42
-msgid "Concat-Projection residual LM fusion and multi-token DiT conditioning for richer expressiveness"
-msgstr "Concat-Projection 残差 LM 融合与多 token DiT 条件化，带来更丰富的表现力"
+msgid ""
+"Concat-Projection residual LM fusion and multi-token DiT conditioning for "
+"richer expressiveness"
+msgstr "Concat-Projection 残差 LM 融合，结合多 token DiT 条件输入，带来更强的表现力"
 
 #: ../../models/voxcpm2.rst:43
 msgid "Built on a `MiniCPM-4 <https://github.com/OpenBMB/MiniCPM>`_ backbone"
@@ -108,8 +115,7 @@ msgid ""
 "Use VoxCPM 2 for all new projects. It is the recommended default for "
 "multilingual synthesis, voice cloning, voice design, and production "
 "deployment."
-msgstr ""
-"所有新项目都建议使用 VoxCPM 2。它是多语言合成、声音克隆、Voice Design 和生产部署的推荐默认版本。"
+msgstr "新项目都建议优先使用 VoxCPM 2。它是多语言合成、声音克隆、Voice Design 和生产部署的默认推荐版本。"
 
 #: ../../models/voxcpm2.rst:37 60523db1b8874ac5a7cb5de1680ab5fa
 msgid "What's New"
@@ -121,16 +127,13 @@ msgstr "🌍"
 
 #: ../../models/voxcpm2.rst:50 58fd52577e034ce09a943efe6e474b1a
 msgid "**30-Language Multilingual**"
-msgstr "**30 语种多语言**"
+msgstr "**支持 30 种语言**"
 
 #: ../../models/voxcpm2.rst:53 027484a470594f02b92bbfb7fb8073bd
 msgid ""
-"Trained on 2.36 million hours of data (1.8M zh+en base + 560K "
-"multilingual), now covering 30 languages across multiple language "
-"families."
-msgstr ""
-"在 236 万小时数据上训练（180 万小时中英基础语料 + 56 万小时多语言），"
-"现已覆盖多个语系共 30 种语言。"
+"Trained on 2.36 million hours of data (1.8M zh+en base + 560K multilingual),"
+" now covering 30 languages across multiple language families."
+msgstr "在 236 万小时数据上训练（180 万小时中英基础语料 + 56 万小时多语言），现已覆盖多个语系共 30 种语言。"
 
 #: ../../models/voxcpm2.rst:61 ec1ff17238ce45e2b10c00dd75c5b8ba
 msgid "🎨"
@@ -142,11 +145,9 @@ msgstr "**Voice Design 与 Style Control**"
 
 #: ../../models/voxcpm2.rst:66 9b48ec1203ad41a384fdf9c17f6a81ba
 msgid ""
-"Design a voice from scratch with natural language descriptions, or "
-"control the speaking style of a cloned voice — all through simple text "
-"tags."
-msgstr ""
-"可用自然语言从零设计声线，或用简单文本标签控制克隆声音的说话风格。"
+"Design a voice from scratch with natural language descriptions, or control "
+"the speaking style of a cloned voice — all through simple text tags."
+msgstr "可用自然语言从零设计声线，或用简单文本标签控制克隆声音的说话风格。"
 
 #: ../../models/voxcpm2.rst:74 e9c719b8d4924a93be8f562d82fc3179
 msgid "🔊"
@@ -160,8 +161,7 @@ msgstr "**48kHz 音频输出**"
 msgid ""
 "A redesigned AudioVAE V2 with 3x higher upsampling ratio and sample-rate-"
 "conditioned decoding produces studio-quality 48kHz audio output."
-msgstr ""
-"重新设计的 AudioVAE V2 具有 3 倍上采样比与采样率条件化解码，可输出接近录音室品质的 48kHz 音频。"
+msgstr "重新设计的 AudioVAE V2 具有 3 倍上采样比与采样率条件化解码，可输出接近录音室品质的 48kHz 音频。"
 
 #: ../../models/voxcpm2.rst:87 1851d27a6ef449e4b961338e98cc1c88
 msgid "🧠"
@@ -173,11 +173,9 @@ msgstr "**重新设计的融合架构**"
 
 #: ../../models/voxcpm2.rst:92 59a93320bf834182a3ef75dbb6986eaf
 msgid ""
-"Concat-Projection fusion and multi-token DiT conditioning replace "
-"additive shortcuts, preserving richer information flow throughout the "
-"pipeline."
-msgstr ""
-"以 Concat-Projection 融合与多 token DiT 条件化取代加法捷径，在整条流水线中保留更丰富的信息流。"
+"Concat-Projection fusion and multi-token DiT conditioning replace additive "
+"shortcuts, preserving richer information flow throughout the pipeline."
+msgstr "以 Concat-Projection 融合与多 token DiT 条件化取代加法捷径，在整条流水线中保留更丰富的信息流。"
 
 #: ../../models/voxcpm2.rst:96 9d8bbd1894df48788a038defd9a6b863
 msgid "Language Support"
@@ -187,11 +185,11 @@ msgstr "语言支持"
 msgid ""
 "VoxCPM 2 supports **30 languages** spanning diverse language families. "
 "Building on the original 1.8 million-hour Chinese and English corpus, we "
-"added 560,000 hours of multilingual data to enable high-quality synthesis"
-" across:"
+"added 560,000 hours of multilingual data to enable high-quality synthesis "
+"across:"
 msgstr ""
-"VoxCPM 2 支持跨多个语系的 **30 种语言**。在原有 180 万小时中英语料基础上，"
-"我们增加了 56 万小时多语言数据，以在以下方面实现高质量合成："
+"VoxCPM 2 支持跨多个语系的 **30 种语言**。在原有 180 万小时中英语料基础上，我们增加了 56 "
+"万小时多语言数据，从而在下列语言上实现高质量合成："
 
 #: ../../models/voxcpm2.rst:104 fea6055d0a1a40e9ac8848c0411c3dce
 msgid "Language Family"
@@ -271,13 +269,12 @@ msgstr "架构"
 
 #: ../../models/voxcpm2.rst:127 621fbc55971d4954ac7210060f8a01d7
 msgid ""
-"VoxCPM 2 retains the four-stage pipeline of VoxCPM — **Local Encoder → "
-"Text-Semantic LM → Residual Acoustic LM → Local DiT (CFM)** — while "
-"redesigning three core information pathways for better capacity and "
-"expressiveness."
+"VoxCPM 2 retains the four-stage pipeline of VoxCPM — **Local Encoder → Text-"
+"Semantic LM → Residual Acoustic LM → Local DiT (CFM)** — while redesigning "
+"three core information pathways for better capacity and expressiveness."
 msgstr ""
-"VoxCPM 2 保留 VoxCPM 的四阶段流水线——**Local Encoder → Text-Semantic LM → Residual Acoustic LM → Local DiT (CFM)**——"
-"同时重新设计三条核心信息流路径，以提升容量与表现力。"
+"VoxCPM 2 保留 VoxCPM 的四阶段流水线——**Local Encoder → Text-Semantic LM → Residual "
+"Acoustic LM → Local DiT (CFM)**——同时重新设计三条核心信息流路径，以提升容量与表现力。"
 
 #: ../../models/voxcpm2.rst:131 5cbb50f449a84245bec1c9dea994d3a9
 msgid "Feature Comparison"
@@ -429,21 +426,19 @@ msgstr "Residual LM 融合：加法 → Concat-Projection"
 
 #: ../../models/voxcpm2.rst:165 aab8707bcd364bcfb36313ddaff974eb
 msgid ""
-"In VoxCPM 1.x, the input to the Residual Acoustic LM is formed by "
-"**adding** the base LM output and the local encoder features. VoxCPM 2 "
-"replaces this with a **concatenation followed by a learnable linear "
-"projection**:"
+"In VoxCPM 1.x, the input to the Residual Acoustic LM is formed by **adding**"
+" the base LM output and the local encoder features. VoxCPM 2 replaces this "
+"with a **concatenation followed by a learnable linear projection**:"
 msgstr ""
-"在 VoxCPM 1.x 中，Residual Acoustic LM 的输入由**相加**基础 LM 输出与 local encoder 特征得到。"
-"VoxCPM 2 改为**拼接后再经可学习线性投影**："
+"在 VoxCPM 1.x 中，Residual Acoustic LM 的输入由**相加**基础 LM 输出与 local encoder "
+"特征得到。VoxCPM 2 改为**拼接后再经可学习线性投影**："
 
 #: ../../models/voxcpm2.rst:175 8ea43b72a58a4e339cf432f895cc92b7
 msgid ""
-"This gives the Residual LM more flexibility to learn how to combine "
-"semantic and acoustic information, rather than being constrained to "
-"element-wise addition."
-msgstr ""
-"这使 Residual LM 能更灵活地学习如何融合语义与声学信息，而不受逐元素加法约束。"
+"This gives the Residual LM more flexibility to learn how to combine semantic"
+" and acoustic information, rather than being constrained to element-wise "
+"addition."
+msgstr "这使 Residual LM 能更灵活地学习如何融合语义与声学信息，而不受逐元素加法约束。"
 
 #: ../../models/voxcpm2.rst:179 facee8e11c4c4d02a0c9b6fa1bcba6fe
 msgid "DiT Conditioning: Single Token → Multi-Token Prefix"
@@ -455,25 +450,22 @@ msgid ""
 "**summed** into a single conditioning vector, which is then added to the "
 "diffusion timestep embedding and fed to the DiT as one prefix token."
 msgstr ""
-"在 VoxCPM 1.x 中，LM 隐状态与 Residual LM 隐状态被**求和**为单一条件向量，"
-"再与扩散步时间嵌入相加，并作为单个前缀 token 输入 DiT。"
+"在 VoxCPM 1.x 中，LM 隐状态与 Residual LM 隐状态被**求和**为单一条件向量，再与扩散步时间嵌入相加，并作为单个前缀 "
+"token 输入 DiT。"
 
 #: ../../models/voxcpm2.rst:183 544839da77b34eecae9bff79457c31b6
 msgid ""
-"VoxCPM 2 instead **concatenates** the two projected hidden states "
-"(doubling the dimension), then reshapes them into **multiple prefix "
-"tokens** that are presented to the DiT alongside the timestep token:"
-msgstr ""
-"VoxCPM 2 则**拼接**两个投影后的隐状态（维度加倍），再重塑为**多个前缀 token**，"
-"与时间步 token 一并送入 DiT："
+"VoxCPM 2 instead **concatenates** the two projected hidden states (doubling "
+"the dimension), then reshapes them into **multiple prefix tokens** that are "
+"presented to the DiT alongside the timestep token:"
+msgstr "VoxCPM 2 则 **拼接** 两个投影后的隐状态（维度加倍），再重塑为 **多个前缀 token**，与时间步 token 一并送入 DiT："
 
 #: ../../models/voxcpm2.rst:193 e7d29fb9118942168c621bfd74a4671d
 msgid ""
 "This allows the DiT's attention mechanism to independently attend to "
-"semantic-level and acoustic-level information without information "
-"collapse from early fusion."
-msgstr ""
-"这样 DiT 的注意力机制可分别关注语义层与声学层信息，避免早期融合导致的信息坍缩。"
+"semantic-level and acoustic-level information without information collapse "
+"from early fusion."
+msgstr "这样 DiT 的注意力机制可分别关注语义层与声学层信息，避免早期融合导致的信息坍缩。"
 
 #: ../../models/voxcpm2.rst:197 c888adaba03d41f99a6ff660c3007fa0
 msgid "Isolated Reference Audio Channel"
@@ -483,18 +475,17 @@ msgstr "隔离的参考音频通道"
 msgid ""
 "VoxCPM 1.x only supports voice cloning through prompt continuation "
 "(concatenating prompt audio with generation). VoxCPM 2 introduces a "
-"**structurally isolated reference audio mechanism** using dedicated "
-"special tokens:"
+"**structurally isolated reference audio mechanism** using dedicated special "
+"tokens:"
 msgstr ""
-"VoxCPM 1.x 仅通过 prompt 续写（拼接 prompt 音频与生成）支持声音克隆。"
-"VoxCPM 2 引入使用专用特殊 token 的**结构隔离参考音频机制**："
+"VoxCPM 1.x 仅通过 prompt 续写（拼接 prompt 音频与生成）支持声音克隆。VoxCPM 2 引入使用专用特殊 token "
+"的 **结构隔离参考音频机制**："
 
 #: ../../models/voxcpm2.rst:205 5362624216f64318b6237b0db6c7cfca
 msgid ""
-"This decouples the timbre reference from the continuation context, "
-"enabling four generation modes:"
-msgstr ""
-"由此将音色参考与续写上下文解耦，支持四种生成模式："
+"This decouples the timbre reference from the continuation context, enabling "
+"four generation modes:"
+msgstr "由此将音色参考与续写上下文解耦，支持四种生成模式："
 
 #: ../../models/voxcpm2.rst:207 46cd25fb32de450d963050c4b1bba26e
 msgid "**Zero-shot**: No reference audio, synthesize from text only"
@@ -514,8 +505,8 @@ msgid ""
 "observe that this mode yields a slight improvement in voice cloning "
 "similarity compared to using reference or continuation alone."
 msgstr ""
-"**Combined**：参考音频定音色 + prompt 音频提供上下文。我们观察到，"
-"相比单独使用 reference 或 continuation，该模式在克隆相似度上略有提升。"
+"**Combined**：参考音频定音色 + prompt 音频提供上下文。我们观察到，相比单独使用 reference 或 "
+"continuation，该模式在克隆相似度上略有提升。"
 
 #: ../../models/voxcpm2.rst:214 eb44a9f0b6f54f399c8817a5ef454df7
 msgid "AudioVAE V2: Native 48kHz with Sample-Rate Conditioning"
@@ -529,20 +520,18 @@ msgstr "AudioVAE 已全面重新设计："
 msgid ""
 "**Asymmetric encode/decode design**: Unlike v1/v1.5 where encoder and "
 "decoder operate at the same sample rate, V2 encodes at 16kHz (640x "
-"downsampling, keeping the LM token rate low at 6.25Hz) but decodes "
-"directly to 48kHz via a 1920x upsampling decoder. This achieves high-"
-"quality output without increasing the LM sequence length."
+"downsampling, keeping the LM token rate low at 6.25Hz) but decodes directly "
+"to 48kHz via a 1920x upsampling decoder. This achieves high-quality output "
+"without increasing the LM sequence length."
 msgstr ""
-"**非对称编解码设计**：与 v1/v1.5 编解码同采样率不同，V2 在 16kHz 编码（640× 下采样，"
-"使 LM token 速率保持 6.25Hz），再通过 1920× 上采样解码器直接解码到 48kHz。"
-"这样在不增加 LM 序列长度的前提下获得高质量输出。"
+"**非对称编解码设计**：与 v1/v1.5 编解码同采样率不同，V2 在 16kHz 编码（640× 下采样，使 LM token 速率保持 "
+"6.25Hz），再通过 1920× 上采样解码器直接解码到 48kHz。这样在不增加 LM 序列长度的前提下获得高质量输出。"
 
 #: ../../models/voxcpm2.rst:219 1715c624c65a447e887d098c3d4fea25
 msgid ""
 "**Decoder capacity**: Channel width increased to 2048, with 6 upsampling "
 "stages ``[8, 6, 5, 2, 2, 2]``"
-msgstr ""
-"**解码器容量**：通道宽度增至 2048，含 6 个上采样阶段 ``[8, 6, 5, 2, 2, 2]``"
+msgstr "**解码器容量**：通道宽度增至 2048，含 6 个上采样阶段 ``[8, 6, 5, 2, 2, 2]``"
 
 #: ../../models/voxcpm2.rst:220 8d7546f5199446e68ffa834187c079f1
 msgid ""
@@ -550,8 +539,8 @@ msgid ""
 "scale-bias modulation at each decoder block, allowing the same model to "
 "decode at different target sample rates"
 msgstr ""
-"**采样率条件化**：新增 ``SampleRateConditionLayer``，在每个解码块注入 scale-bias 调制，"
-"使同一模型可按不同目标采样率解码"
+"**采样率条件化**：新增 ``SampleRateConditionLayer``，在每个解码块注入 scale-bias "
+"调制，使同一模型可按不同目标采样率解码"
 
 #: ../../models/voxcpm2.rst:224 5eee56ef0a6240b4ade8078747b395b9
 msgid "Controllable Generation"
@@ -562,8 +551,7 @@ msgid ""
 "VoxCPM 2 introduces two new controllable generation features. Both use a "
 "simple convention: place control instructions inside parentheses ``()`` "
 "before the target text."
-msgstr ""
-"VoxCPM 2 引入两项新的可控生成功能，约定相同：在目标文本前的括号 ``()`` 内写入控制说明。"
+msgstr "VoxCPM 2 引入两项新的可控生成功能，约定相同：在目标文本前的括号 ``()`` 内写入控制说明。"
 
 #: ../../models/voxcpm2.rst:229 08c3f8295b3346e3b768a5977be0a223
 msgid "Voice Design"
@@ -571,20 +559,16 @@ msgstr "Voice Design"
 
 #: ../../models/voxcpm2.rst:231 b20700cbc90b4448800322ff0006fa57
 msgid ""
-"Create a voice from a natural language description **without any "
-"reference audio**. Simply describe the desired voice characteristics in "
-"parentheses:"
-msgstr ""
-"用自然语言描述**无需任何参考音频**即可创建声线。在括号中描述期望的音色特征即可："
+"Create a voice from a natural language description **without any reference "
+"audio**. Simply describe the desired voice characteristics in parentheses:"
+msgstr "用自然语言描述，**无需任何参考音频** 即可创建声线。在括号中描述期望的音色特征即可："
 
 #: ../../models/voxcpm2.rst:250 a13de44400054667b71f675352bc4ee0
 msgid ""
 "Voice Design works best with descriptive attributes such as age, gender, "
-"pitch, speaking pace, emotional tone, and vocal texture. Be as specific "
-"as you like — the model interprets natural language descriptions."
-msgstr ""
-"Voice Design 适合配合年龄、性别、音高、语速、情绪与声线质感等描述性属性；"
-"描述越具体越好——模型会理解自然语言描述。"
+"pitch, speaking pace, emotional tone, and vocal texture. Be as specific as "
+"you like — the model interprets natural language descriptions."
+msgstr "Voice Design 适合配合年龄、性别、音高、语速、情绪与声线质感等描述性属性；描述越具体越好——模型会理解自然语言描述。"
 
 #: ../../models/voxcpm2.rst:254 604308da60894ee88bd413e729a5a5f1
 msgid "Style Control"
@@ -592,18 +576,16 @@ msgstr "Style Control"
 
 #: ../../models/voxcpm2.rst:256 8776620b37fe4ab2833c1f7ea4afd185
 msgid ""
-"Control the speaking style while using a reference audio for voice "
-"cloning. Pass control tags in parentheses alongside the reference audio:"
-msgstr ""
-"在使用参考音频做声音克隆时控制说话风格。与参考音频一起在括号中传入控制标签："
+"Control the speaking style while using a reference audio for voice cloning. "
+"Pass control tags in parentheses alongside the reference audio:"
+msgstr "在使用参考音频做声音克隆时控制说话风格。与参考音频一起在括号中传入控制标签："
 
 #: ../../models/voxcpm2.rst:276 bef74db85d8b43cb94f89d0e7c43b538
 msgid ""
 "In Style Control mode, the reference audio determines **who** speaks "
 "(timbre), while the text tag in parentheses controls **how** they speak "
 "(style, emotion, pace, etc.)."
-msgstr ""
-"在 Style Control 模式下，参考音频决定**谁**在说话（音色），括号中的文本标签控制**怎样**说（风格、情绪、语速等）。"
+msgstr "在 Style Control 模式下，参考音频决定 **谁** 在说话（音色），括号中的文本标签控制 **怎样** 说（风格、情绪、语速等）。"
 
 #: ../../models/voxcpm2.rst:280 dfe5527486a74ded9bbf2ecbcae68172
 msgid "Usage Examples"
@@ -614,9 +596,7 @@ msgid ""
 "For installation and the shared ``generate()`` API, start with "
 ":doc:`../quickstart`. The examples below focus on VoxCPM 2 specific "
 "capabilities."
-msgstr ""
-"安装与共用 ``generate()`` API 请从 :doc:`../quickstart` 开始。"
-"下文示例侧重 VoxCPM 2 专有能力。"
+msgstr "安装与共用 ``generate()`` API 请从 :doc:`../quickstart` 开始。下文示例侧重 VoxCPM 2 专有能力。"
 
 #: ../../models/voxcpm2.rst:285 e53267f6c8e4428ebe8c284dae412c71
 msgid "Reference-Only Voice Cloning"
@@ -640,25 +620,22 @@ msgstr "**更新模型路径**：指向 VoxCPM2 checkpoint"
 
 #: ../../models/voxcpm2.rst:326 68297ef08b5e452cb5ab9da684177702
 msgid ""
-"**Update Sample Rate**: Prefer ``model.tts_model.sample_rate`` when "
-"saving audio (``48000`` for VoxCPM 2)"
-msgstr ""
-"**更新采样率**：保存音频时优先使用 ``model.tts_model.sample_rate``（VoxCPM 2 为 ``48000``）"
+"**Update Sample Rate**: Prefer ``model.tts_model.sample_rate`` when saving "
+"audio (``48000`` for VoxCPM 2)"
+msgstr "**更新采样率**：保存音频时优先使用 ``model.tts_model.sample_rate`` （VoxCPM 2 为 ``48000``）"
 
 #: ../../models/voxcpm2.rst:327 9c9a1d0fcfba4533819519cad82a1504
 msgid ""
 "**Voice Cloning API**: Use the new ``reference_wav_path`` parameter for "
 "isolated voice cloning (``prompt_wav_path`` still works for continuation "
 "mode)"
-msgstr ""
-"**声音克隆 API**：隔离式克隆请使用新参数 ``reference_wav_path``（续写模式仍可用 ``prompt_wav_path``）"
+msgstr "**声音克隆 API**：隔离式克隆请使用新参数 ``reference_wav_path`` （续写模式仍可用 ``prompt_wav_path``）"
 
 #: ../../models/voxcpm2.rst:328 22ac42400560496da528dda5af9a4095
 msgid ""
-"**Controllable Features**: Explore Voice Design and Style Control by "
-"adding text tags in parentheses"
-msgstr ""
-"**可控功能**：在括号中加入文本标签，尝试 Voice Design 与 Style Control"
+"**Controllable Features**: Explore Voice Design and Style Control by adding "
+"text tags in parentheses"
+msgstr "**可控功能**：在括号中加入文本标签，尝试 Voice Design 与 Style Control"
 
 #: ../../models/voxcpm2.rst:331 2c83e3624a24490cb98882375348c8c1
 msgid "Backward Compatibility"
@@ -670,11 +647,11 @@ msgstr "VoxCPM 1.0 与 1.5 的模型及配置仍完全受支持"
 
 #: ../../models/voxcpm2.rst:334 a8b5e03ef156450e98c8c8739c2c9675
 msgid ""
-"Code automatically detects model architecture (``voxcpm`` vs ``voxcpm2``)"
-" from ``config.json``"
-msgstr ""
-"代码会根据 ``config.json`` 自动检测模型架构（``voxcpm`` 与 ``voxcpm2``）"
+"Code automatically detects model architecture (``voxcpm`` vs ``voxcpm2``) "
+"from ``config.json``"
+msgstr "代码会根据 ``config.json`` 自动检测模型架构（``voxcpm`` 与 ``voxcpm2``）"
 
 #: ../../models/voxcpm2.rst:335 d34b960e63364c22bcfbc27a1e08b062
 msgid "The ``generate()`` API is backward-compatible; new parameters are optional"
 msgstr "``generate()`` API 保持向后兼容；新参数均为可选"
+

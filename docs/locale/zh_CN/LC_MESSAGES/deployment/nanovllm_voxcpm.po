@@ -27,26 +27,20 @@ msgid "Nano-vLLM-VoxCPM is an inference engine for VoxCPM based on Nano-vLLM."
 msgstr "Nano-vLLM-VoxCPM 是基于 Nano-vLLM 的 VoxCPM 推理引擎。"
 
 #: ../../deployment/nanovllm_voxcpm.rst:7 328daaecac7742628bbf583bf1fac7d8
-msgid ""
-"Repo: `a710128/nanovllm-voxcpm <https://github.com/a710128/nanovllm-"
-"voxcpm>`_"
-msgstr ""
-"仓库：`a710128/nanovllm-voxcpm <https://github.com/a710128/nanovllm-"
-"voxcpm>`_"
+msgid "Repo: `a710128/nanovllm-voxcpm <https://github.com/a710128/nanovllm-voxcpm>`_"
+msgstr "仓库：`a710128/nanovllm-voxcpm <https://github.com/a710128/nanovllm-voxcpm>`_"
 
 #: ../../deployment/nanovllm_voxcpm.rst:10 3a34ba7ca8774bb3a62110937cfb9eab
 msgid ""
-"It provides a Python API (sync + async streaming) and an optional FastAPI"
-" demo server."
-msgstr ""
-"提供 Python API（同步与异步流式）以及可选的 FastAPI 演示服务。"
+"It provides a Python API (sync + async streaming) and an optional FastAPI "
+"demo server."
+msgstr "提供 Python API（同步与异步流式）以及可选的 FastAPI 演示服务。"
 
 #: ../../deployment/nanovllm_voxcpm.rst:13 d4e0ced39ce245a09299de978fa3d4ee
 msgid ""
-"This runtime is GPU-centric (CUDA + Triton + FlashAttention) and does not"
-" support CPU-only execution."
-msgstr ""
-"该运行时以 GPU 为中心（CUDA + Triton + FlashAttention），不支持纯 CPU 运行。"
+"This runtime is GPU-centric (CUDA + Triton + FlashAttention) and does not "
+"support CPU-only execution."
+msgstr "该运行时以 GPU 为中心（CUDA + Triton + FlashAttention），不支持纯 CPU 运行。"
 
 #: ../../deployment/nanovllm_voxcpm.rst:15 80065a3615194cc5bbc8150c2136cb9e
 msgid "Supported VoxCPM Versions"
@@ -78,7 +72,7 @@ msgstr "✅ 支持（从 ``config.json`` 自动检测 ``voxcpm2`` 架构）"
 
 #: ../../deployment/nanovllm_voxcpm.rst:27 c6eb9afe5d3248b2876b9bd30de8736d
 msgid "Features"
-msgstr "特性"
+msgstr "Features"
 
 #: ../../deployment/nanovllm_voxcpm.rst:29 19657a9bcb21499d9441a29dd993ce3f
 msgid "High throughput on CUDA devices (RTX 4090, H100, A100, etc.)"
@@ -97,15 +91,12 @@ msgid "Optional HTTP demo server (FastAPI)"
 msgstr "可选的 HTTP 演示服务（FastAPI）"
 
 #: ../../deployment/nanovllm_voxcpm.rst:33 8be6ad7655dc4dc4af8f453bd99de32d
-msgid ""
-"Multi-GPU request-level parallelism via a server pool (one process per "
-"GPU)"
-msgstr ""
-"通过服务池实现多 GPU 请求级并行（每块 GPU 一个进程）"
+msgid "Multi-GPU request-level parallelism via a server pool (one process per GPU)"
+msgstr "通过服务池实现多 GPU 请求级并行（每块 GPU 一个进程）"
 
 #: ../../deployment/nanovllm_voxcpm.rst:36 3e95ecfef7a94d9c81242ca4717700ef
 msgid "Prerequisites"
-msgstr "环境要求"
+msgstr "Prerequisites"
 
 #: ../../deployment/nanovllm_voxcpm.rst:38 d2f8dbcb3cfe43ec9ccbc0f0308af9fe
 msgid "Linux + NVIDIA GPU (CUDA)"
@@ -121,25 +112,23 @@ msgstr "本地 VoxCPM checkpoint 目录"
 
 #: ../../deployment/nanovllm_voxcpm.rst:43 c3403f10931548bdaa9820c8d476579d
 msgid "Model directory layout"
-msgstr "模型目录结构"
+msgstr "Model directory layout"
 
 #: ../../deployment/nanovllm_voxcpm.rst:45 a5953e90d00a4328b40c44f59f4bf942
 msgid ""
 "Nano-vLLM-VoxCPM loads weights from ``*.safetensors`` files. Your model "
 "directory should contain at least:"
-msgstr ""
-"Nano-vLLM-VoxCPM 从 ``*.safetensors`` 文件加载权重。模型目录至少应包含："
+msgstr "Nano-vLLM-VoxCPM 从 ``*.safetensors`` 文件加载权重。模型目录至少应包含："
 
 #: ../../deployment/nanovllm_voxcpm.rst:55 2dc9250065774d3e8945e5a05de6f945
 msgid ""
-"If your checkpoint only ships weights as ``.pt`` / ``pytorch_model.bin``,"
-" convert it to safetensors first."
-msgstr ""
-"若 checkpoint 仅以 ``.pt`` / ``pytorch_model.bin`` 形式提供权重，请先转换为 safetensors。"
+"If your checkpoint only ships weights as ``.pt`` / ``pytorch_model.bin``, "
+"convert it to safetensors first."
+msgstr "若 checkpoint 仅以 ``.pt`` / ``pytorch_model.bin`` 形式提供权重，请先转换为 safetensors。"
 
 #: ../../deployment/nanovllm_voxcpm.rst:58 ad1584ff1f594035a81e078624df629d
 msgid "Installation"
-msgstr "安装"
+msgstr "Installation"
 
 #: ../../deployment/nanovllm_voxcpm.rst:60 17c41c7349a946fb888f0707f0f497f5
 msgid "Install from PyPI:"
@@ -151,7 +140,7 @@ msgstr "或从源码安装："
 
 #: ../../deployment/nanovllm_voxcpm.rst:79 2fccd61274dd467588cfd9367edbf9bd
 msgid "Basic usage (Python)"
-msgstr "基本用法（Python）"
+msgstr "Basic usage (Python)"
 
 #: ../../deployment/nanovllm_voxcpm.rst:81 771aed936cbe4de2be36a4faaebe596e
 msgid "The main entrypoint is ``nanovllm_voxcpm.VoxCPM.from_pretrained(...)``."
@@ -159,29 +148,27 @@ msgstr "主入口为 ``nanovllm_voxcpm.VoxCPM.from_pretrained(...)``。"
 
 #: ../../deployment/nanovllm_voxcpm.rst:84 eb136f9f32ab42208045a4f3880dc69c
 msgid "Generate (async streaming)"
-msgstr "生成（异步流式）"
+msgstr "Generate (async streaming)"
 
 #: ../../deployment/nanovllm_voxcpm.rst:86 eb47c815aae5432681402b3d0eca0b5a
 msgid ""
-"If called inside an async event loop, ``from_pretrained`` returns an "
-"async server pool."
-msgstr ""
-"若在异步事件循环内调用，``from_pretrained`` 返回异步服务池。"
+"If called inside an async event loop, ``from_pretrained`` returns an async "
+"server pool."
+msgstr "若在异步事件循环内调用，``from_pretrained`` 返回异步服务池。"
 
 #: ../../deployment/nanovllm_voxcpm.rst:118 0cf1d1fa647e4816a770bd20eb327c98
 msgid "Generate (sync)"
-msgstr "生成（同步）"
+msgstr "Generate (sync)"
 
 #: ../../deployment/nanovllm_voxcpm.rst:120 3564b055844c460fa5df19855b4ac09a
 msgid ""
-"If called outside an event loop, ``from_pretrained`` returns a "
-"synchronous server pool."
-msgstr ""
-"若在事件循环外调用，``from_pretrained`` 返回同步服务池。"
+"If called outside an event loop, ``from_pretrained`` returns a synchronous "
+"server pool."
+msgstr "若在事件循环外调用，``from_pretrained`` 返回同步服务池。"
 
 #: ../../deployment/nanovllm_voxcpm.rst:135 6d88a515c65a4056a2c042977f22d9f1
 msgid "FastAPI demo (HTTP)"
-msgstr "FastAPI 演示（HTTP）"
+msgstr "FastAPI demo (HTTP)"
 
 #: ../../deployment/nanovllm_voxcpm.rst:137 cb00f5ef35e648408f6bab6122529228
 msgid "The repo includes a FastAPI deployment server in ``deployment/``."
@@ -189,36 +176,33 @@ msgstr "仓库在 ``deployment/`` 下提供 FastAPI 部署服务。"
 
 #: ../../deployment/nanovllm_voxcpm.rst:140 e2b5a4eb3bb0494f92b68bfefdaf8a86
 msgid ""
-"The FastAPI demo service is not published on PyPI. Install it from source"
-" as a uv workspace member."
-msgstr ""
-"FastAPI 演示服务未发布到 PyPI。请作为 uv workspace 成员从源码安装。"
+"The FastAPI demo service is not published on PyPI. Install it from source as"
+" a uv workspace member."
+msgstr "FastAPI 演示服务未发布到 PyPI。请作为 uv workspace 成员从源码安装。"
 
 #: ../../deployment/nanovllm_voxcpm.rst:143 c7c6074244bf40ef83ac00d1a263d8ae
 msgid ""
 "The FastAPI demo is not production-ready. Do not expose it to untrusted "
 "networks without additional security measures."
-msgstr ""
-"FastAPI 演示并非生产就绪。在未采取额外安全措施前，请勿暴露到不可信网络。"
+msgstr "FastAPI 演示并非生产就绪。在未采取额外安全措施前，请勿暴露到不可信网络。"
 
 #: ../../deployment/nanovllm_voxcpm.rst:146 ef0850bdfc8d4a2980dfe8329fd18735
 msgid "Install deployment extras"
-msgstr "安装部署附加依赖"
+msgstr "Install deployment extras"
 
 #: ../../deployment/nanovllm_voxcpm.rst:153 9933bd9e8bee429ebbfa4ee005b385cd
 msgid "Configure model path"
-msgstr "配置模型路径"
+msgstr "Configure model path"
 
 #: ../../deployment/nanovllm_voxcpm.rst:155 3294087d707f4454b401ee2cd9a9aa6b
 msgid ""
 "Set the ``NANOVLLM_MODEL_PATH`` environment variable (defaults to "
 "``~/VoxCPM1.5``):"
-msgstr ""
-"设置环境变量 ``NANOVLLM_MODEL_PATH``（默认为 ``~/VoxCPM1.5``）："
+msgstr "设置环境变量 ``NANOVLLM_MODEL_PATH``（默认为 ``~/VoxCPM1.5``）："
 
 #: ../../deployment/nanovllm_voxcpm.rst:162 f974029a6ee843aebf213dd86d7a7a7e
 msgid "Start server"
-msgstr "启动服务"
+msgstr "Start server"
 
 #: ../../deployment/nanovllm_voxcpm.rst:168 ad8ed7fb983d4b0fa26ffb8462a5d76d
 msgid "Then open:"
@@ -242,11 +226,11 @@ msgstr "载荷：MP3 字节流（流式）"
 
 #: ../../deployment/nanovllm_voxcpm.rst:178 8bacdbaf4ffb412497e9b46bfdf3bb3b
 msgid "Troubleshooting"
-msgstr "故障排除"
+msgstr "Troubleshooting"
 
 #: ../../deployment/nanovllm_voxcpm.rst:181 05784e9455194b6c8fff3c681cc84a5d
 msgid "Missing parameters / weights not found"
-msgstr "缺少参数 / 未找到权重"
+msgstr "Missing parameters / weights not found"
 
 #: ../../deployment/nanovllm_voxcpm.rst:183 68be94b632c74b3b9eb21364579a4e7a
 msgid "If you see errors like:"
@@ -254,22 +238,20 @@ msgstr "若出现类似错误："
 
 #: ../../deployment/nanovllm_voxcpm.rst:189 b6c3f86638e94b26b95a3898b2537f42
 msgid ""
-"Your model directory likely does not contain ``*.safetensors`` weights "
-"(some VoxCPM releases ship ``.pt`` files). Use a safetensors-converted "
-"checkpoint and ensure the ``*.safetensors`` files live next to "
-"``config.json``."
+"Your model directory likely does not contain ``*.safetensors`` weights (some"
+" VoxCPM releases ship ``.pt`` files). Use a safetensors-converted checkpoint"
+" and ensure the ``*.safetensors`` files live next to ``config.json``."
 msgstr ""
-"模型目录可能缺少 ``*.safetensors`` 权重（部分 VoxCPM 发行版仅含 ``.pt`` 文件）。"
-"请使用已转换为 safetensors 的 checkpoint，并确保 ``*.safetensors`` 与 "
-"``config.json`` 位于同一目录。"
+"模型目录可能缺少 ``*.safetensors`` 权重（部分 VoxCPM 发行版仅含 ``.pt`` 文件）。请使用已转换为 "
+"safetensors 的 checkpoint，并确保 ``*.safetensors`` 与 ``config.json`` 位于同一目录。"
 
 #: ../../deployment/nanovllm_voxcpm.rst:193 363a4475e83d4c839e69cd8b12ad6517
 msgid "Slow startup"
-msgstr "启动较慢"
+msgstr "Slow startup"
 
 #: ../../deployment/nanovllm_voxcpm.rst:195 361a1895313349e9bbeba702afde8868
 msgid ""
 "The first startup can be slow due to model loading and GPU memory "
 "allocation. This is expected."
-msgstr ""
-"首次启动可能因模型加载与 GPU 显存分配而较慢，属正常现象。"
+msgstr "首次启动可能因模型加载与 GPU 显存分配而较慢，属正常现象。"
+

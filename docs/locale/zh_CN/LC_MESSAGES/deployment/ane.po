@@ -5,17 +5,17 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: VoxCPM\n"
+"Project-Id-Version:  VoxCPM\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-04-06 15:37+0800\n"
 "PO-Revision-Date: 2026-04-06 18:30+0800\n"
 "Last-Translator: GPT-5.4 <>\n"
-"Language-Team: zh_CN <LL@li.org>\n"
 "Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
 "Generated-By: Babel 2.18.0\n"
 
 #: ../../deployment/ane.rst:3 d6195fd5ba7542c59aa526cd58149dba
@@ -82,7 +82,7 @@ msgstr "❌ 不支持"
 
 #: ../../deployment/ane.rst:25 042f9bff6e6a469c834e22746118e55b
 msgid "Features"
-msgstr "特性"
+msgstr "Features"
 
 #: ../../deployment/ane.rst:27 93bdf6cb6f6b41208afa0acebd97654c
 msgid "Native Apple Neural Engine acceleration via CoreML"
@@ -118,7 +118,7 @@ msgstr ""
 
 #: ../../deployment/ane.rst:36 d2ba193c2fc748dbbee3a18f5301a004
 msgid "Prerequisites"
-msgstr "环境要求"
+msgstr "Prerequisites"
 
 #: ../../deployment/ane.rst:38 1034a64e3d3840e7b24733e4f6d1a26a
 msgid "macOS with Apple Silicon (M1 or later)"
@@ -142,7 +142,7 @@ msgstr ""
 
 #: ../../deployment/ane.rst:44 8ef0566780284439845b109085475446
 msgid "Installation"
-msgstr "安装"
+msgstr "Installation"
 
 #: ../../deployment/ane.rst:56 9ecc557251ac40cfa9dd4f08c628cbfb
 msgid ""
@@ -155,20 +155,19 @@ msgstr ""
 
 #: ../../deployment/ane.rst:59 91ff05efbd9e423188d30b56612c0483
 msgid "Basic usage"
-msgstr "基本用法"
+msgstr "Basic usage"
 
 #: ../../deployment/ane.rst:61 c9ae4667c5004403a127e4653898a746
 msgid "Start the server (default host ``0.0.0.0``, port ``8000``):"
-msgstr "启动服务（默认主机 ``0.0.0.0``，端口 `` 8000``）："
+msgstr "启动服务（默认主机 ``0.0.0.0``，端口 ``8000``）："
 
 #: ../../deployment/ane.rst:71 72d1f009dde646d798b096fddff9b210
-msgid ""
-"Open ``http://localhost:8000`` in your browser to access the web playground."
+msgid "Open ``http://localhost:8000`` in your browser to access the web playground."
 msgstr "在浏览器中打开 ``http://localhost:8000`` 即可访问 Web 试用界面。"
 
 #: ../../deployment/ane.rst:74 7e00dc18c2494b9981ba6be64c209088
 msgid "Voice cloning"
-msgstr "声音克隆"
+msgstr "Voice cloning"
 
 #: ../../deployment/ane.rst:76 a0a9caf2b6ea4a7bbc33cee25a409709
 msgid ""
@@ -176,15 +175,14 @@ msgid ""
 "where ``prompt_wav_path`` refers to a file path **on the server "
 "filesystem**:"
 msgstr ""
-"可通过 API 或 Web 界面注册自定义音色。API 接受 JSON 请求体，其中 ``prompt_wav_path`` 指向**服务器文件系统**"
+"可通过 API 或 Web 界面注册自定义音色。API 接受 JSON 请求体，其中 ``prompt_wav_path`` 指向 **服务器文件系统** "
 " 上的文件路径："
 
 #: ../../deployment/ane.rst:85 0d878e4306574a91bf12f748b9bb12a6
 msgid ""
 "For uploading audio files, use the **\"Create Voice\"** tab in the web "
 "playground at ``http://localhost:8000``."
-msgstr ""
-"若要上传音频文件，请在 ``http://localhost:8000`` 的 Web 试用界面中使用 **「Create Voice」** 标签页。"
+msgstr "若要上传音频文件，请在 ``http://localhost:8000`` 的 Web 试用界面中使用 **「Create Voice」** 标签页。"
 
 #: ../../deployment/ane.rst:87 8e1c0641fc2341be97bf7cfd1db15ebd
 msgid ""
@@ -194,7 +192,7 @@ msgstr "也可将音频与同名的 ``.txt`` 文本稿放入缓存目录（``~/.
 
 #: ../../deployment/ane.rst:90 81924521caeb4080a764f57de7cfae08
 msgid "API reference"
-msgstr "API 参考"
+msgstr "API reference"
 
 #: ../../deployment/ane.rst:92 ec9d35330e6b4c778b90ea9a204fb561
 msgid ""
@@ -232,7 +230,7 @@ msgstr "``POST /v1/audio/speech/cancel`` — 取消进行中的生成"
 
 #: ../../deployment/ane.rst:103 5b1efde7129644e3bcf82afd0ca1f5f3
 msgid "Limitations"
-msgstr "限制"
+msgstr "Limitations"
 
 #: ../../deployment/ane.rst:105 0c42026f259443d196df3ec89cb5bad9
 msgid "**macOS Apple Silicon only** — no cross-platform support"
@@ -245,3 +243,4 @@ msgstr "长文本输入可能需要分块（路线图项）"
 #: ../../deployment/ane.rst:107 5afc2e812f914975bc4bed1272c48494
 msgid "Voice compilation can take several seconds on first use"
 msgstr "首次使用音色编译可能需要数秒"
+

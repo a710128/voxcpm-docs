@@ -5,22 +5,22 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: VoxCPM\n"
+"Project-Id-Version:  VoxCPM\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-04-06 15:37+0800\n"
 "PO-Revision-Date: 2026-04-06 18:00+0800\n"
 "Last-Translator: GPT-5.4 <>\n"
-"Language-Team: zh_CN <LL@li.org>\n"
 "Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
 "Generated-By: Babel 2.18.0\n"
 
 #: ../../finetuning/finetune.rst:3 e5f32115e321435982732bcf40ea6501
 msgid "Fine-Tuning Guide"
-msgstr "微调指南"
+msgstr "Fine-Tuning Guide"
 
 #: ../../finetuning/finetune.rst:5 9ba73c8b65bf41abbe0bedbdf9f657e0
 msgid ""
@@ -31,11 +31,11 @@ msgstr "本指南介绍如何使用两种方式微调 VoxCPM：LoRA（参数高�
 
 #: ../../finetuning/finetune.rst:10 d9eff6a7a06d477f995860b3d0e1a943
 msgid "Environment & Resources"
-msgstr "环境与资源"
+msgstr "Environment & Resources"
 
 #: ../../finetuning/finetune.rst:13 914268260dc14b74a320546028269a80
 msgid "Software"
-msgstr "软件"
+msgstr "Software"
 
 #: ../../finetuning/finetune.rst:19 a44fd64866f043aaabaa565ab611e00c
 msgid "Dependency"
@@ -83,12 +83,12 @@ msgid ""
 "``argbind``, ``transformers`` (for the cosine scheduler), ``librosa`` (for "
 "validation mel spectrograms)."
 msgstr ""
-"训练脚本还会用到以下 Python 包：``tensorboardX``、`` argbind``、`` transformers`` "
-"（余弦调度器）、`` librosa`` （验证用 mel 频谱）。"
+"训练脚本还会用到以下 Python 包：``tensorboardX``、``argbind``、``transformers`` "
+"（余弦调度器）、``librosa`` （验证用 mel 频谱）。"
 
 #: ../../finetuning/finetune.rst:33 8b9858662ae44dde88c1a53238a9d59c
 msgid "Hardware"
-msgstr "硬件"
+msgstr "Hardware"
 
 #: ../../finetuning/finetune.rst:39 869a13cc8ea04cbe8bd501f339924257
 msgid "Setup"
@@ -101,7 +101,7 @@ msgstr "LoRA"
 #: ../../finetuning/finetune.rst:41 ../../finetuning/finetune.rst:356
 #: 58bd613652704c088d215ce8ae0a6a51 f8015bd208b9476fbbc366af7c9fc5b4
 msgid "Full Fine-Tuning"
-msgstr "全量微调"
+msgstr "Full Fine-Tuning"
 
 #: ../../finetuning/finetune.rst:42 d17fd2df44cb4425b4ce5a4848cbc169
 msgid "VoxCPM 1.5 (750M)"
@@ -133,7 +133,7 @@ msgid ""
 "``max_batch_tokens=8192``. Actual usage depends on audio length and "
 "accumulation steps. If you hit OOM, see :doc:`./faq`."
 msgstr ""
-"以上为在 ``batch_size=16``、`` max_batch_tokens=8192`` "
+"以上为在 ``batch_size=16``、``max_batch_tokens=8192`` "
 "下的粗略估算；实际占用取决于音频长度与梯度累积步数。若出现 OOM，请参阅 :doc:`./faq`。"
 
 #: ../../finetuning/finetune.rst:51 71c2492c156e4980a3ddaada480072e5
@@ -142,11 +142,11 @@ msgstr "多卡训练可通过 ``torchrun`` 进行："
 
 #: ../../finetuning/finetune.rst:61 5b67dc24bd56461a9bcd305c7fc28cfb
 msgid "Data Preparation"
-msgstr "数据准备"
+msgstr "Data Preparation"
 
 #: ../../finetuning/finetune.rst:64 7db68455d24b4c92863a5bfe4865bf38
 msgid "Format"
-msgstr "格式"
+msgstr "Format"
 
 #: ../../finetuning/finetune.rst:66 62c9230b3a9a4a8faf1906e2a35ad695
 msgid "Training data is a JSONL manifest file with one sample per line:"
@@ -208,13 +208,12 @@ msgid "Integer ID for multi-dataset mixing (default: 0)"
 msgstr "多数据集混合用的整数 ID（默认：0）"
 
 #: ../../finetuning/finetune.rst:94 8ab84ccc156d44528fbd6b8a1f6ccafb
-msgid ""
-"See ``examples/train_data_example.jsonl`` in the repository for a reference."
+msgid "See ``examples/train_data_example.jsonl`` in the repository for a reference."
 msgstr "仓库中的 ``examples/train_data_example.jsonl`` 可供参考。"
 
 #: ../../finetuning/finetune.rst:97 4bccc1e75aef4dc991c427ca2556c263
 msgid "Audio requirements"
-msgstr "音频要求"
+msgstr "Audio requirements"
 
 #: ../../finetuning/finetune.rst:99 7a51a01faa99431ab813fb39549e6b77
 msgid ""
@@ -251,7 +250,7 @@ msgstr ""
 
 #: ../../finetuning/finetune.rst:109 abc60e9ac29e44319ef97c65c4ec05c3
 msgid "Preprocessing tips"
-msgstr "预处理建议"
+msgstr "Preprocessing tips"
 
 #: ../../finetuning/finetune.rst:111 6aabf98981d540909a6c1e2ab08feee0
 msgid ""
@@ -277,7 +276,7 @@ msgstr "**剔除噪声样本。** 模型对训练数据中的背景噪声较敏�
 
 #: ../../finetuning/finetune.rst:117 09b4290eb1144bfcb57ac7c73d2e330d
 msgid "Choosing your path"
-msgstr "如何选择路径"
+msgstr "Choosing your path"
 
 #: ../../finetuning/finetune.rst:119 78ddae6c61404acbbdff310e826a0a1b
 msgid "Your data size and goal determine which fine-tuning approach to use:"
@@ -350,6 +349,7 @@ msgid "**LoRA vs Full Fine-Tuning at a glance:**"
 msgstr "**LoRA 与全量微调一览：**"
 
 #: ../../finetuning/finetune.rst:143 779ebc81dc9c4905ab8e3a3ee87c07c2
+#, python-format
 msgid ""
 "In internal benchmarks on single-speaker cloning, LoRA (``r=32``) achieved "
 "approximately 98% of the speaker similarity of full fine-tuning, while using"
@@ -362,9 +362,10 @@ msgstr ""
 
 #: ../../finetuning/finetune.rst:150 efbb70fd0cbe47a985702a537e9529bc
 msgid "LoRA Fine-Tuning"
-msgstr "LoRA 微调"
+msgstr "LoRA Fine-Tuning"
 
 #: ../../finetuning/finetune.rst:152 9ef4485e3d75483c9f390dedc6a4d390
+#, python-format
 msgid ""
 "LoRA trains a small number of additional parameters (typically < 1% of the "
 "model) while keeping the base model frozen. It is the recommended starting "
@@ -374,7 +375,7 @@ msgstr "LoRA 在冻结基座的前提下，仅训练少量附加参数（通常 
 #: ../../finetuning/finetune.rst:155 ../../finetuning/finetune.rst:361
 #: 38ec7d72d8904aaa866545770589d116 4131027d76e641528199a134a17aee4b
 msgid "Training"
-msgstr "训练"
+msgstr "Training"
 
 #: ../../finetuning/finetune.rst:157 ../../finetuning/finetune.rst:363
 #: 50b347a0a4a34c09a98eb640deb4ef6f ddfed4c49c9640919f9b9868b287160f
@@ -464,7 +465,7 @@ msgstr "缩放因子（``scaling = alpha / r``）"
 
 #: ../../finetuning/finetune.rst:224 286546944bfc474291952e41d5073566
 msgid "Usually ``r`` or ``2*r``. Adjust to control LoRA influence strength."
-msgstr "通常取 ``r`` 或 `` 2*r``，按需调节 LoRA 影响强度。"
+msgstr "通常取 ``r`` 或 ``2*r``，按需调节 LoRA 影响强度。"
 
 #: ../../finetuning/finetune.rst:225 2533272aaa6f478da019df19397c8374
 msgid "``dropout``"
@@ -496,7 +497,7 @@ msgstr "VoxCPM 还提供基于 Gradio 的界面，将 LoRA 训练与推理集成
 #: ../../finetuning/finetune.rst:249 ../../finetuning/finetune.rst:413
 #: 51e0472a89bb405f953422ab31d0bedb 9ee9e7bdb3c549e8b543b61aa6a1cb48
 msgid "Monitoring"
-msgstr "监控"
+msgstr "Monitoring"
 
 #: ../../finetuning/finetune.rst:251 f032aab856c7471ca2890c51fdb3c761
 msgid "Training logs to TensorBoard. Start the viewer with:"
@@ -556,7 +557,7 @@ msgid ""
 "generates sample audio + mel spectrograms in TensorBoard at each "
 "``valid_interval``."
 msgstr ""
-"若提供验证清单，脚本还会记录 ``val/loss``，并在每个 `` valid_interval`` 在 TensorBoard 中生成样本音频与 "
+"若提供验证清单，脚本还会记录 ``val/loss``，并在每个 ``valid_interval`` 在 TensorBoard 中生成样本音频与 "
 "mel 频谱。"
 
 #: ../../finetuning/finetune.rst:276 250603bdf6784a13bf400b76c17dc118
@@ -568,8 +569,7 @@ msgid ""
 "**Use epochs as a rough guide.** For single-speaker cloning, 1–3 epochs are "
 "usually sufficient. Going beyond that often hurts rather than helps — "
 "overfitting in TTS fine-tuning can emerge very early."
-msgstr ""
-"**可把 epoch 数当作粗参考。** 单说话人克隆通常 1–3 个 epoch 足够；再往后往往弊大于利 — TTS 微调的过拟合可能很早出现。"
+msgstr "**可把 epoch 数当作粗参考。** 单说话人克隆通常 1–3 个 epoch 足够；再往后往往弊大于利 — TTS 微调的过拟合可能很早出现。"
 
 #: ../../finetuning/finetune.rst:279 955ebb6bbfc6436980c81f2a3f40ce8a
 msgid "``loss/diff`` plateaus and no longer decreases meaningfully."
@@ -603,13 +603,13 @@ msgid ""
 "handler also saves a checkpoint on ``SIGTERM`` / ``SIGINT`` so you don't "
 "lose progress on interruption."
 msgstr ""
-"若存在 ``latest/``，训练会自动从中恢复；信号处理也会在 `` SIGTERM`` / `` SIGINT`` 时保存 "
+"若存在 ``latest/``，训练会自动从中恢复；信号处理也会在 ``SIGTERM`` / ``SIGINT`` 时保存 "
 "checkpoint，避免中断丢进度。"
 
 #: ../../finetuning/finetune.rst:305 ../../finetuning/finetune.rst:445
 #: 2cc4b4da5d3042d19b1351c9b80bfa9f 96fe84b7510941268b5818de50e446b2
 msgid "Inference"
-msgstr "推理"
+msgstr "Inference"
 
 #: ../../finetuning/finetune.rst:307 ../../finetuning/finetune.rst:447
 #: 4ad32c92013847f8a8a04acaa9ad48aa 6b20233d4f5a4b71824484a26215d5ed
@@ -626,8 +626,7 @@ msgid "**Hot-swapping LoRA at runtime**"
 msgstr "**运行时热切换 LoRA**"
 
 #: ../../finetuning/finetune.rst:332 5e3b667d5bef44d986e726d35e8b5849
-msgid ""
-"You can load, unload, and switch LoRA weights without restarting the model:"
+msgid "You can load, unload, and switch LoRA weights without restarting the model:"
 msgstr "无需重启模型即可加载、卸载或切换 LoRA 权重："
 
 #: ../../finetuning/finetune.rst:349 7eabbe4b5f874b1eb1cc99acd31a3875
@@ -655,11 +654,10 @@ msgstr "**与 LoRA 的主要区别**"
 msgid ""
 "``learning_rate`` should be ~10x smaller (``1e-5`` vs ``1e-4``) to avoid "
 "catastrophic forgetting."
-msgstr "``learning_rate`` 建议约为 LoRA 的 1/10（`` 1e-5`` 对 `` 1e-4``），以避免灾难性遗忘。"
+msgstr "``learning_rate`` 建议约为 LoRA 的 1/10（``1e-5`` 对 ``1e-4``），以避免灾难性遗忘。"
 
 #: ../../finetuning/finetune.rst:398 c510885d18e846b69e525fe4caa1f0b3
-msgid ""
-"VRAM usage is significantly higher because all parameters require gradients."
+msgid "VRAM usage is significantly higher because all parameters require gradients."
 msgstr "因全部参数都参与求导，显存占用明显更高。"
 
 #: ../../finetuning/finetune.rst:399 b6230bc1887e4846a46e5d351cd4be4b
@@ -716,8 +714,7 @@ msgid ""
 msgstr "**更多数据未必更好。** 超过某一点后边际收益递减；更应重视数据质量与多样性。"
 
 #: ../../finetuning/finetune.rst:442 a65723dd0c4943e6b84d644dda53fbe4
-msgid ""
-"Each checkpoint is a complete model directory that can be loaded directly."
+msgid "Each checkpoint is a complete model directory that can be loaded directly."
 msgstr "每个 checkpoint 都是可直接加载的完整模型目录。"
 
 #: ../../finetuning/finetune.rst:466 403b9a28c54941a8bd98ecec4283a6ee
@@ -729,3 +726,4 @@ msgid ""
 "For common training issues (OOM, runaway generation, poor LoRA performance, "
 "checkpoint errors), see :doc:`./faq`."
 msgstr "常见训练问题（OOM、生成停不下来、LoRA 效果差、checkpoint 报错等）请参阅 :doc:`./faq`。"
+

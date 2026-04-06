@@ -5,17 +5,17 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: VoxCPM\n"
+"Project-Id-Version:  VoxCPM\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-04-06 15:37+0800\n"
 "PO-Revision-Date: 2026-04-06 18:30+0800\n"
 "Last-Translator: GPT-5.4 <>\n"
-"Language-Team: zh_CN <LL@li.org>\n"
 "Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
 "Generated-By: Babel 2.18.0\n"
 
 #: ../../deployment/rknn.rst:3 489324a8e2864fb1b50a5c3ae3297723
@@ -26,8 +26,7 @@ msgstr "VoxCPM-RKNN2"
 msgid ""
 "VoxCPM-RKNN2 deploys VoxCPM-0.5B on **Rockchip RK3588** edge devices using "
 "the RKNN2/RKLLM NPU acceleration stack."
-msgstr ""
-"VoxCPM-RKNN2 使用 RKNN2/RKLLM NPU 加速栈，在 **瑞芯微 RK3588** 边缘设备上部署 VoxCPM-0.5B。"
+msgstr "VoxCPM-RKNN2 使用 RKNN2/RKLLM NPU 加速栈，在 **瑞芯微 RK3588** 边缘设备上部署 VoxCPM-0.5B。"
 
 #: ../../deployment/rknn.rst:7 552073e7ce2348c39086955006853198
 msgid ""
@@ -70,15 +69,14 @@ msgstr "VoxCPM 2"
 
 #: ../../deployment/rknn.rst:24 647710d6cafe4020a05dc74d118dde7e
 msgid "Features"
-msgstr "特性"
+msgstr "Features"
 
 #: ../../deployment/rknn.rst:26 e11cd5ab7c3049d29cc69d16bcc5e9f3
 msgid "NPU-accelerated inference on Rockchip RK3588 SoC"
 msgstr "在瑞芯微 RK3588 SoC 上使用 NPU 加速推理"
 
 #: ../../deployment/rknn.rst:27 0786cd95e027444db33fef00fa8414bf
-msgid ""
-"Combines RKNN (for audio VAE / LocDiT ops) with RKLLM (for LLM backbone)"
+msgid "Combines RKNN (for audio VAE / LocDiT ops) with RKLLM (for LLM backbone)"
 msgstr "结合 RKNN（音频 VAE / LocDiT 算子）与 RKLLM（LLM 主干）"
 
 #: ../../deployment/rknn.rst:28 129ff32149304fee881e260a54f711dc
@@ -91,15 +89,14 @@ msgstr "从 PyTorch 到 RKNN/RKLLM 格式的模型转换流水线"
 
 #: ../../deployment/rknn.rst:32 69ba6e06e718449c9acf84acc272d923
 msgid "Performance"
-msgstr "性能"
+msgstr "Performance"
 
 #: ../../deployment/rknn.rst:34 9bc18528bd8e4672b9f1bde86dfb44d4
 msgid "Benchmarked on RK3588:"
 msgstr "在 RK3588 上的基准："
 
 #: ../../deployment/rknn.rst:36 032f748cc3464925bd809c6787f550d1
-msgid ""
-"**RTF**: ~4.5 (approximately 45 seconds to generate ~10 seconds of audio)"
+msgid "**RTF**: ~4.5 (approximately 45 seconds to generate ~10 seconds of audio)"
 msgstr "**RTF**：约 4.5（生成约 10 秒音频约需 45 秒）"
 
 #: ../../deployment/rknn.rst:37 95a6a2ce2d51488caa4b6da0593cbec9
@@ -108,7 +105,7 @@ msgstr "**内存占用**：约 3.3 GB"
 
 #: ../../deployment/rknn.rst:40 8a6005d3754f4a3f8a0ed915cf3beb01
 msgid "Prerequisites"
-msgstr "环境要求"
+msgstr "Prerequisites"
 
 #: ../../deployment/rknn.rst:42 389e6133982048f18318fa4822712879
 msgid "Rockchip RK3588 board (e.g., Orange Pi 5, Rock 5B)"
@@ -124,15 +121,15 @@ msgstr "``openbmb/VoxCPM-0.5B`` 权重（用于转换）"
 
 #: ../../deployment/rknn.rst:47 fa2cc89514be48ea81116ee9993b7344
 msgid "Installation (Inference)"
-msgstr "安装（推理）"
+msgstr "Installation (Inference)"
 
 #: ../../deployment/rknn.rst:55 afed706b904748a4aea7f89c21b1daf0
 msgid "Basic usage"
-msgstr "基本用法"
+msgstr "Basic usage"
 
 #: ../../deployment/rknn.rst:83 69c902dbf32a43809d56953c2fe966b5
 msgid "Model conversion"
-msgstr "模型转换"
+msgstr "Model conversion"
 
 #: ../../deployment/rknn.rst:85 2801a34976194b058fa800b41ba2d2da
 msgid "To convert VoxCPM-0.5B weights to RKNN/RKLLM format:"
@@ -152,22 +149,21 @@ msgstr "运行转换流水线："
 
 #: ../../deployment/rknn.rst:109 1ca4790ad5884851ac11fed88a8c8dc9
 msgid ""
-"See the `conversion guide "
-"<https://huggingface.co/happyme531/VoxCPM-0.5B-RKNN2/tree/main/convert>`_ "
-"for detailed instructions."
+"See the `conversion guide <https://huggingface.co/happyme531/VoxCPM-0.5B-"
+"RKNN2/tree/main/convert>`_ for detailed instructions."
 msgstr ""
-"详细步骤见 `转换指南 "
-"<https://huggingface.co/happyme531/VoxCPM-0.5B-RKNN2/tree/main/convert>`_。"
+"详细步骤见 `转换指南 <https://huggingface.co/happyme531/VoxCPM-0.5B-"
+"RKNN2/tree/main/convert>`_。"
 
 #: ../../deployment/rknn.rst:112 d4f60ebe28a545cf9cc79c2472639acb
 msgid "Known issues"
-msgstr "已知问题"
+msgstr "Known issues"
 
 #: ../../deployment/rknn.rst:114 f7f6d311c7f04ba59e6441ddf69b26ce
 msgid ""
 "Possible **infinite generation loop** — upstream bad-case guard not yet "
 "ported"
-msgstr "可能出现**无限生成循环** — 上游 bad-case 保护尚未移植"
+msgstr "可能出现 **无限生成循环** — 上游 bad-case 保护尚未移植"
 
 #: ../../deployment/rknn.rst:115 1c9a0cc0f03749da8baa1aeaa8d26f99
 msgid "Two separate LocEnc models due to RKNN toolchain shape limitations"
@@ -176,3 +172,4 @@ msgstr "受 RKNN 工具链 shape 限制，需拆成两个 LocEnc 模型"
 #: ../../deployment/rknn.rst:116 f994331a4a6c4ce48156c46102a7a371
 msgid "RKLLM outputs require manual ×4 scaling workaround"
 msgstr "RKLLM 输出需手动 ×4 缩放的变通处理"
+
