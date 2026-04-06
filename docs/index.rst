@@ -33,19 +33,13 @@ VoxCPM documentation
 
    .. container:: voxcpm-cta-row
 
-      .. button-ref:: quickstart
-         :ref-type: doc
-         :color: primary
-         :class: sd-rounded-pill
+      .. container:: voxcpm-link-button voxcpm-btn-primary
 
-         Get Started
+         :doc:`Get Started <quickstart>`
 
-      .. button-link:: https://github.com/OpenBMB/VoxCPM/
-         :color: secondary
-         :outline:
-         :class: sd-rounded-pill
+      .. container:: voxcpm-link-button voxcpm-btn-outline-secondary
 
-         View on GitHub
+         `View on GitHub <https://github.com/OpenBMB/VoxCPM/>`_
 
 ----
 
@@ -84,11 +78,9 @@ VoxCPM 2 is the recommended release for new projects. Earlier releases remain av
 
       +++
 
-      .. button-ref:: models/voxcpm2
-         :ref-type: doc
-         :color: primary
+      .. container:: voxcpm-card-action voxcpm-btn-primary
 
-         Try Now →
+         :doc:`Try Now → <models/voxcpm2>`
 
    .. grid-item-card:: Earlier Releases
       :class-card: voxcpm-model-card
@@ -100,12 +92,9 @@ VoxCPM 2 is the recommended release for new projects. Earlier releases remain av
 
       +++
 
-      .. button-ref:: models/version_history
-         :ref-type: doc
-         :color: primary
-         :outline:
+      .. container:: voxcpm-card-action voxcpm-btn-outline-primary
 
-         View Earlier Releases →
+         :doc:`View Earlier Releases → <models/version_history>`
 
 ----
 
