@@ -20,11 +20,11 @@ msgstr ""
 
 #: ../../reference/api.rst:2 e808fe5f868e4d959abcc1fe44fef0d2
 msgid "API Reference"
-msgstr "API Reference"
+msgstr "API 参考"
 
 #: ../../reference/api.rst:5 77fd7785c6594dd7b86a2799a81945c0
 msgid "Python API"
-msgstr "Python API"
+msgstr "Python 接口"
 
 #: ../../reference/api.rst:9 1670ddac1c314a50b6b9eda156c78733
 msgid "Initialize VoxCPM from a local model directory."
@@ -304,7 +304,7 @@ msgstr "若当前模型已加载 LoRA 配置则为 ``True``。"
 
 #: ../../reference/api.rst:154 78b2094d4cde44f7948fea4316fa3818
 msgid "CLI"
-msgstr "CLI"
+msgstr "命令行接口"
 
 #: ../../reference/api.rst:156 ec2e1d9d71034003881e95bc0ff53b93
 msgid ""
@@ -314,7 +314,7 @@ msgstr "``voxcpm`` 命令提供三个子命令。默认模型：``openbmb/VoxCPM
 
 #: ../../reference/api.rst:159 a15a7c133eee47c6a75613fcfa94b6f2
 msgid "Subcommands"
-msgstr "Subcommands"
+msgstr "子命令"
 
 #: ../../reference/api.rst:165 5b40635319e043b98157c8508ed08679
 msgid ""
@@ -334,7 +334,7 @@ msgstr "处理文本文件，每行生成一个独立的输出 WAV（``output_00
 
 #: ../../reference/api.rst:204 984961390bf4449a84ed30b3584c403d
 msgid "Arguments"
-msgstr "Arguments"
+msgstr "参数说明"
 
 #: ../../reference/api.rst:206 2045df62d5dc4020b051b4977c17b603
 msgid "**Generation**"

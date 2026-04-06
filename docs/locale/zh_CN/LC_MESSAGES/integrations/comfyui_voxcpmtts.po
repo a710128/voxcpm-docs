@@ -84,7 +84,7 @@ msgstr "**AILab_VoxCPMTTS_Advanced** — 可手动控制全部生成参数"
 
 #: ../../integrations/comfyui_voxcpmtts.rst:29 1440b9f1cd914620b78150a8c91ee42a
 msgid "Features"
-msgstr "Features"
+msgstr "主要特性"
 
 #: ../../integrations/comfyui_voxcpmtts.rst:31 a3bea13f771742a586e0708283af8d92
 msgid ""
@@ -128,7 +128,7 @@ msgstr "多设备： **auto** （自动检测）、**CUDA**、**MPS**、**CPU**"
 
 #: ../../integrations/comfyui_voxcpmtts.rst:40 590e8f7e5d5d49ada8d641c3a17945a0
 msgid "Prerequisites"
-msgstr "Prerequisites"
+msgstr "准备工作"
 
 #: ../../integrations/comfyui_voxcpmtts.rst:42 f17d9800db654bb0ae22a2c39229fc8f
 msgid "`ComfyUI <https://github.com/comfyanonymous/ComfyUI>`_ installed and running"
@@ -144,7 +144,7 @@ msgstr "模型下载约需 1.2 GB 磁盘空间"
 
 #: ../../integrations/comfyui_voxcpmtts.rst:47 b78e2d9f16204e88a8a3c6192156d8ca
 msgid "Installation"
-msgstr "Installation"
+msgstr "安装"
 
 #: ../../integrations/comfyui_voxcpmtts.rst:49 f106f8febd2149b69b493b4e41b149c9
 msgid "Via ComfyUI Manager: search for ``VoxCPMTTS`` and install."
@@ -165,11 +165,11 @@ msgstr ""
 
 #: ../../integrations/comfyui_voxcpmtts.rst:63 9f7255e1959a4a5eb8106e03e9362d13
 msgid "Basic usage"
-msgstr "Basic usage"
+msgstr "基本用法"
 
 #: ../../integrations/comfyui_voxcpmtts.rst:66 9cfa06e4053341fd888ca7f5baf5ce98
 msgid "Text-to-Speech"
-msgstr "Text-to-Speech"
+msgstr "文本转语音"
 
 #: ../../integrations/comfyui_voxcpmtts.rst:68 92f6c4f45d234017ad7e48a0c8e35cb0
 msgid "Add the **VoxCPM TTS** node (simplified) or **VoxCPM TTS (Advanced)** node"
@@ -193,7 +193,7 @@ msgstr "高级节点可手动设置 ``cfg_value``、``inference_steps`` 等参�
 
 #: ../../integrations/comfyui_voxcpmtts.rst:74 3ba50d1845ce4574b257f0e5a3154929
 msgid "Voice cloning"
-msgstr "Voice cloning"
+msgstr "声音克隆"
 
 #: ../../integrations/comfyui_voxcpmtts.rst:76 4a3f9feb1f6d49428ee9e113a933fd6b
 msgid "Connect ``reference_audio`` with a reference audio clip"
@@ -217,7 +217,7 @@ msgstr "``REFERENCE_TEXT`` 输出显示识别或提供的转写，便于核对"
 
 #: ../../integrations/comfyui_voxcpmtts.rst:82 81e6c641159545f2a56a368506e6251b
 msgid "Recommended parameter tuning"
-msgstr "Recommended parameter tuning"
+msgstr "推荐参数设置"
 
 #: ../../integrations/comfyui_voxcpmtts.rst:84 eddfcaa659294d7aa22f7c577ccc449c
 msgid ""
@@ -291,7 +291,7 @@ msgstr "最慢"
 
 #: ../../integrations/comfyui_voxcpmtts.rst:108 ca4f80614bdf4393bfc469aab9429271
 msgid "Advanced node parameters"
-msgstr "Advanced node parameters"
+msgstr "高级节点参数"
 
 #: ../../integrations/comfyui_voxcpmtts.rst:114 419c10bf2a8b4e08baae3b79bae30f18
 msgid "Parameter"
@@ -375,11 +375,11 @@ msgstr "推理后卸载模型以释放显存"
 
 #: ../../integrations/comfyui_voxcpmtts.rst:136 c422580d11dc4d12bf2efe08a1d905cb
 msgid "Troubleshooting"
-msgstr "Troubleshooting"
+msgstr "问题排查"
 
 #: ../../integrations/comfyui_voxcpmtts.rst:139 50c5e8cc2fb24989b02e44451a455b88
 msgid "Out of Memory (OOM)"
-msgstr "Out of Memory (OOM)"
+msgstr "显存不足（OOM）"
 
 #: ../../integrations/comfyui_voxcpmtts.rst:141 5a82a17cd0a547eb8bc99e058ac51615
 msgid "VoxCPM 1.5 requires significant VRAM. If you encounter OOM errors:"
@@ -403,7 +403,7 @@ msgstr "尝试 **较快** 质量预设以降低显存占用"
 
 #: ../../integrations/comfyui_voxcpmtts.rst:149 ff603d66ba2b4497a3e99a7b691fb605
 msgid "Model download issues"
-msgstr "Model download issues"
+msgstr "模型下载问题"
 
 #: ../../integrations/comfyui_voxcpmtts.rst:151 631aa1b5d49f48db8983c13f715ce2af
 msgid ""
@@ -420,7 +420,7 @@ msgstr "调试日志可设置 ``COMFYUI_LOG_LEVEL=DEBUG``。"
 
 #: ../../integrations/comfyui_voxcpmtts.rst:156 c1002115fe8348599c3dd8cff9f4504e
 msgid "Comparing with ComfyUI-VoxCPM"
-msgstr "Comparing with ComfyUI-VoxCPM"
+msgstr "与 ComfyUI-VoxCPM 对比"
 
 #: ../../integrations/comfyui_voxcpmtts.rst:162 0274d8ec226c4354b0f8665a6945cc4c
 msgid "Feature"

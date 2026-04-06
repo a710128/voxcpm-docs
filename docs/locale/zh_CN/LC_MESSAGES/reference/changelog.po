@@ -20,7 +20,7 @@ msgstr ""
 
 #: ../../reference/changelog.rst:2 a7acf6b869774118845670dbe17a59f1
 msgid "Changelog"
-msgstr "Changelog"
+msgstr "更新日志"
 
 #: ../../reference/changelog.rst:4 87795de3fd124734bfdfca0f2b181904
 msgid ""
@@ -34,7 +34,7 @@ msgstr ""
 
 #: ../../reference/changelog.rst:12 59f4e212645f4935a8a15844e39ba22c
 msgid "VoxCPM 2.0 — March 2026"
-msgstr "VoxCPM 2.0 — March 2026"
+msgstr "VoxCPM 2.0 — 2026 年 3 月"
 
 #: ../../reference/changelog.rst:16 ff55099cbf004d1dacf83d60373265e9
 msgid "**Breaking changes at a glance** — read before upgrading from 1.x:"
@@ -1001,7 +1001,7 @@ msgstr ""
 #: ../../reference/changelog.rst:512 ../../reference/changelog.rst:545
 #: 087507b8463540f98e85f5744f8e2809 8e5ee40a5fe54eccb095867a87a093c3
 msgid "Python API"
-msgstr "Python API"
+msgstr "Python 接口"
 
 #: ../../reference/changelog.rst:514 b130239343b448b2b9564fe983ecfefc
 msgid "``VoxCPM.from_pretrained()`` default: ``openbmb/VoxCPM1.5``."

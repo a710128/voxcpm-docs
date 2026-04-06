@@ -20,7 +20,7 @@ msgstr ""
 
 #: ../../cookbook.rst:2 d38344abf3354a63a3f34898f18ff3ae
 msgid "A Voice Chef's Guide to VoxCPM2"
-msgstr "A Voice Chef's Guide to VoxCPM2"
+msgstr "VoxCPM 2 最佳实践"
 
 #: ../../cookbook.rst:4 252b50dc892249f38eecad07243d783b
 msgid ""

@@ -81,7 +81,7 @@ msgstr "❌ 不支持"
 
 #: ../../deployment/onnx.rst:27 f4f28434c7bb4bcd8cfaf3d0c2c8ffec
 msgid "Features"
-msgstr "Features"
+msgstr "主要特性"
 
 #: ../../deployment/onnx.rst:29 46f200520bc24d209bce662c920a4dc7
 msgid "ONNX export from PyTorch VoxCPM-0.5B weights"
@@ -105,7 +105,7 @@ msgstr "支持 Docker Compose（CPU 与 GPU 服务）"
 
 #: ../../deployment/onnx.rst:36 408131f3bc72436294f81593fd558a70
 msgid "Prerequisites"
-msgstr "Prerequisites"
+msgstr "准备工作"
 
 #: ../../deployment/onnx.rst:38 b07916bbf5cd41fba1d7bdfbcb5df8fb
 msgid "Python >= 3.10"
@@ -125,11 +125,11 @@ msgstr "（可选）Docker + NVIDIA Container Toolkit"
 
 #: ../../deployment/onnx.rst:44 ac8ef279a2a847aaa5c9cf0a2e323ad8
 msgid "Installation"
-msgstr "Installation"
+msgstr "安装"
 
 #: ../../deployment/onnx.rst:63 35cd49f1ea65432a9d91b6c2ebf6f492
 msgid "Basic usage (Server)"
-msgstr "Basic usage (Server)"
+msgstr "基本用法（服务端）"
 
 #: ../../deployment/onnx.rst:65 80145b050a034fceae0e9fd02bfc05bf
 msgid "Start the FastAPI server:"
@@ -177,7 +177,7 @@ msgstr "API 示例："
 
 #: ../../deployment/onnx.rst:109 6f606b24ac7a4276b5edd44ede6e4f48
 msgid "Limitations"
-msgstr "Limitations"
+msgstr "限制说明"
 
 #: ../../deployment/onnx.rst:111 7a6f894bf7cc4d35abd8e626af9ac061
 msgid ""

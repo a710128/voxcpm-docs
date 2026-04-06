@@ -74,7 +74,7 @@ msgstr "❌ 不支持"
 
 #: ../../deployment/voxcpm_rs.rst:25 7189822c7f284097b1f5fd3c8b164ae9
 msgid "Features"
-msgstr "Features"
+msgstr "主要特性"
 
 #: ../../deployment/voxcpm_rs.rst:27 55d8df8290d04b378b996e60e5421128
 msgid "Pure Rust implementation — no Python runtime dependency"
@@ -90,7 +90,7 @@ msgstr "用于文本转语音合成与声音克隆的 CLI"
 
 #: ../../deployment/voxcpm_rs.rst:32 6a6439ac499a4db9aa6a1e351f546227
 msgid "Prerequisites"
-msgstr "Prerequisites"
+msgstr "准备工作"
 
 #: ../../deployment/voxcpm_rs.rst:34 a5716551f2e147cf86532f5b99c20587
 msgid "Rust toolchain (stable)"
@@ -106,7 +106,7 @@ msgstr "``openbmb/VoxCPM-0.5B`` 权重"
 
 #: ../../deployment/voxcpm_rs.rst:39 5aca15048994405b99c711876167cb33
 msgid "Installation"
-msgstr "Installation"
+msgstr "安装"
 
 #: ../../deployment/voxcpm_rs.rst:41 ef36e6dbd01a43f4b51cb56b4fc93722
 msgid "This project depends on a pinned commit of ``burn``:"
@@ -114,19 +114,19 @@ msgstr "本项目依赖固定 pin 的 ``burn`` commit："
 
 #: ../../deployment/voxcpm_rs.rst:60 1585785418994bff877e31debb774e6b
 msgid "Basic usage"
-msgstr "Basic usage"
+msgstr "基本用法"
 
 #: ../../deployment/voxcpm_rs.rst:63 07e431c3fbbd48ad90281d3f119bd9f8
 msgid "Convert weights"
-msgstr "Convert weights"
+msgstr "转换权重"
 
 #: ../../deployment/voxcpm_rs.rst:72 714aee3f63104ed8954f5ca014e38040
 msgid "Generate speech (zero-shot)"
-msgstr "Generate speech (zero-shot)"
+msgstr "生成语音（零样本）"
 
 #: ../../deployment/voxcpm_rs.rst:84 a7e8af889e4e482aaec0ea6c47f9848f
 msgid "Voice cloning"
-msgstr "Voice cloning"
+msgstr "声音克隆"
 
 #: ../../deployment/voxcpm_rs.rst:95 bfd0f31514c94ce69b0dd0718c036c30
 msgid "Output is saved to ``output.wav`` in the current directory."
@@ -134,7 +134,7 @@ msgstr "输出保存为当前目录下的 ``output.wav``。"
 
 #: ../../deployment/voxcpm_rs.rst:98 dd0fc6b906224f18921668077f3a5c42
 msgid "Limitations"
-msgstr "Limitations"
+msgstr "限制说明"
 
 #: ../../deployment/voxcpm_rs.rst:100 56d159e4a8db4a73a90851ae4dff1908
 msgid "**VoxCPM-0.5B only** — VoxCPM 1.5 not yet tested"

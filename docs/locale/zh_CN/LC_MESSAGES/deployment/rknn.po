@@ -69,7 +69,7 @@ msgstr "VoxCPM 2"
 
 #: ../../deployment/rknn.rst:24 647710d6cafe4020a05dc74d118dde7e
 msgid "Features"
-msgstr "Features"
+msgstr "主要特性"
 
 #: ../../deployment/rknn.rst:26 e11cd5ab7c3049d29cc69d16bcc5e9f3
 msgid "NPU-accelerated inference on Rockchip RK3588 SoC"
@@ -89,7 +89,7 @@ msgstr "从 PyTorch 到 RKNN/RKLLM 格式的模型转换流水线"
 
 #: ../../deployment/rknn.rst:32 69ba6e06e718449c9acf84acc272d923
 msgid "Performance"
-msgstr "Performance"
+msgstr "性能表现"
 
 #: ../../deployment/rknn.rst:34 9bc18528bd8e4672b9f1bde86dfb44d4
 msgid "Benchmarked on RK3588:"
@@ -105,7 +105,7 @@ msgstr "**内存占用**：约 3.3 GB"
 
 #: ../../deployment/rknn.rst:40 8a6005d3754f4a3f8a0ed915cf3beb01
 msgid "Prerequisites"
-msgstr "Prerequisites"
+msgstr "准备工作"
 
 #: ../../deployment/rknn.rst:42 389e6133982048f18318fa4822712879
 msgid "Rockchip RK3588 board (e.g., Orange Pi 5, Rock 5B)"
@@ -121,15 +121,15 @@ msgstr "``openbmb/VoxCPM-0.5B`` 权重（用于转换）"
 
 #: ../../deployment/rknn.rst:47 fa2cc89514be48ea81116ee9993b7344
 msgid "Installation (Inference)"
-msgstr "Installation (Inference)"
+msgstr "安装与推理"
 
 #: ../../deployment/rknn.rst:55 afed706b904748a4aea7f89c21b1daf0
 msgid "Basic usage"
-msgstr "Basic usage"
+msgstr "基本用法"
 
 #: ../../deployment/rknn.rst:83 69c902dbf32a43809d56953c2fe966b5
 msgid "Model conversion"
-msgstr "Model conversion"
+msgstr "模型转换"
 
 #: ../../deployment/rknn.rst:85 2801a34976194b058fa800b41ba2d2da
 msgid "To convert VoxCPM-0.5B weights to RKNN/RKLLM format:"
@@ -157,7 +157,7 @@ msgstr ""
 
 #: ../../deployment/rknn.rst:112 d4f60ebe28a545cf9cc79c2472639acb
 msgid "Known issues"
-msgstr "Known issues"
+msgstr "已知问题"
 
 #: ../../deployment/rknn.rst:114 f7f6d311c7f04ba59e6441ddf69b26ce
 msgid ""

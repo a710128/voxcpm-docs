@@ -78,7 +78,7 @@ msgstr "❌ 不支持"
 
 #: ../../integrations/tts_webui.rst:24 bea577e551b74a28a44258e8a55379eb
 msgid "Features"
-msgstr "Features"
+msgstr "主要特性"
 
 #: ../../integrations/tts_webui.rst:26 a197bc2948044bbfb8d3c093fdc541cd
 msgid "Adds a **\"Vox cpm\"** tab to TTS WebUI"
@@ -94,7 +94,7 @@ msgstr "作为 TTS WebUI 扩展，安装简单"
 
 #: ../../integrations/tts_webui.rst:31 bacd45a3e14543b1b8c014cc411fc2fd
 msgid "Prerequisites"
-msgstr "Prerequisites"
+msgstr "准备工作"
 
 #: ../../integrations/tts_webui.rst:33 a9e8214afe9449b7b399b21b21574861
 msgid "`TTS WebUI <https://github.com/rsxdalv/tts-webui>`_ installed and running"
@@ -106,7 +106,7 @@ msgstr "Python >= 3.7"
 
 #: ../../integrations/tts_webui.rst:37 fc9fc575b2f9422d99807cad76657f3a
 msgid "Installation"
-msgstr "Installation"
+msgstr "安装"
 
 #: ../../integrations/tts_webui.rst:43 514670563543451f85b698a418766c12
 msgid "Then restart TTS WebUI. The **Vox cpm** tab will appear in the interface."
@@ -114,7 +114,7 @@ msgstr "然后重启 TTS WebUI，界面中会出现 **Vox cpm** 标签页。"
 
 #: ../../integrations/tts_webui.rst:46 5df0e7b60bfb4c34a65ebe8409a8af54
 msgid "Usage"
-msgstr "Usage"
+msgstr "使用方式"
 
 #: ../../integrations/tts_webui.rst:48 e35c766378494ec7b7bf0041728a09b2
 msgid "Open TTS WebUI in your browser"

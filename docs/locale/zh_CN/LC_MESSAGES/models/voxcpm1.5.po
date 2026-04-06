@@ -42,7 +42,7 @@ msgstr "VoxCPM 1.5 面向更轻量的中英部署与既有 1.x 工作流，属�
 
 #: ../../models/voxcpm1.5.rst:15 033444dcfd6545dfbbfcecb8fee461b3
 msgid "Overview"
-msgstr "Overview"
+msgstr "概览"
 
 #: ../../models/voxcpm1.5.rst:17 1b1364898a4b4497884c2f217b33bf47
 msgid ""
@@ -107,7 +107,7 @@ msgstr "**Token 速率**"
 
 #: ../../models/voxcpm1.5.rst:34 dd1fdc51ea9f4221af21694a1236cb14
 msgid "Getting Started"
-msgstr "Getting Started"
+msgstr "开始使用"
 
 #: ../../models/voxcpm1.5.rst:36 81c99e27eb1043808ed44d671ffa4e11
 msgid ""
@@ -123,7 +123,7 @@ msgstr "若你需要比 VoxCPM 2 更轻的中英 checkpoint，同时又要比 Vo
 
 #: ../../models/voxcpm1.5.rst:41 ca8a8646a8974a40bb0f6210ffaccd01
 msgid "Model Updates"
-msgstr "Model Updates"
+msgstr "版本更新"
 
 #: ../../models/voxcpm1.5.rst:44 5cf8cff36c614d018fcc87965e375d84
 msgid "AudioVAE Sampling Rate: 16kHz -> 44.1kHz"
@@ -165,11 +165,11 @@ msgstr "为更长音频生成打下基础"
 
 #: ../../models/voxcpm1.5.rst:62 08b31d4ab7e94a58bae13632368a54a5
 msgid "Migration Guide"
-msgstr "Migration Guide"
+msgstr "迁移指南"
 
 #: ../../models/voxcpm1.5.rst:65 daa28e0c704d458da12476b1bed940ea
 msgid "From VoxCPM-0.5B to VoxCPM1.5"
-msgstr "From VoxCPM-0.5B to VoxCPM1.5"
+msgstr "从 VoxCPM-0.5B 到 VoxCPM 1.5"
 
 #: ../../models/voxcpm1.5.rst:67 7b1847bb8e4346aabb9789a8ebac4282
 msgid "**Update Model Path**: Point to VoxCPM1.5 checkpoint"
@@ -195,7 +195,7 @@ msgstr "**检查训练参数**：因采样率提高，如有需要请调整 batc
 
 #: ../../models/voxcpm1.5.rst:73 4f92c8101ea64184b803288d235ca68f
 msgid "Backward Compatibility"
-msgstr "Backward Compatibility"
+msgstr "向后兼容"
 
 #: ../../models/voxcpm1.5.rst:75 e436867d97994202878b5d5b7aed14bd
 msgid "VoxCPM-0.5B models and configurations remain fully supported"

@@ -82,7 +82,7 @@ msgstr "❌ 不支持"
 
 #: ../../deployment/ane.rst:25 042f9bff6e6a469c834e22746118e55b
 msgid "Features"
-msgstr "Features"
+msgstr "主要特性"
 
 #: ../../deployment/ane.rst:27 93bdf6cb6f6b41208afa0acebd97654c
 msgid "Native Apple Neural Engine acceleration via CoreML"
@@ -118,7 +118,7 @@ msgstr ""
 
 #: ../../deployment/ane.rst:36 d2ba193c2fc748dbbee3a18f5301a004
 msgid "Prerequisites"
-msgstr "Prerequisites"
+msgstr "准备工作"
 
 #: ../../deployment/ane.rst:38 1034a64e3d3840e7b24733e4f6d1a26a
 msgid "macOS with Apple Silicon (M1 or later)"
@@ -142,7 +142,7 @@ msgstr ""
 
 #: ../../deployment/ane.rst:44 8ef0566780284439845b109085475446
 msgid "Installation"
-msgstr "Installation"
+msgstr "安装"
 
 #: ../../deployment/ane.rst:56 9ecc557251ac40cfa9dd4f08c628cbfb
 msgid ""
@@ -155,7 +155,7 @@ msgstr ""
 
 #: ../../deployment/ane.rst:59 91ff05efbd9e423188d30b56612c0483
 msgid "Basic usage"
-msgstr "Basic usage"
+msgstr "基本用法"
 
 #: ../../deployment/ane.rst:61 c9ae4667c5004403a127e4653898a746
 msgid "Start the server (default host ``0.0.0.0``, port ``8000``):"
@@ -167,7 +167,7 @@ msgstr "在浏览器中打开 ``http://localhost:8000`` 即可访问 Web 试用�
 
 #: ../../deployment/ane.rst:74 7e00dc18c2494b9981ba6be64c209088
 msgid "Voice cloning"
-msgstr "Voice cloning"
+msgstr "声音克隆"
 
 #: ../../deployment/ane.rst:76 a0a9caf2b6ea4a7bbc33cee25a409709
 msgid ""
@@ -192,7 +192,7 @@ msgstr "也可将音频与同名的 ``.txt`` 文本稿放入缓存目录（``~/.
 
 #: ../../deployment/ane.rst:90 81924521caeb4080a764f57de7cfae08
 msgid "API reference"
-msgstr "API reference"
+msgstr "API 参考"
 
 #: ../../deployment/ane.rst:92 ec9d35330e6b4c778b90ea9a204fb561
 msgid ""
@@ -230,7 +230,7 @@ msgstr "``POST /v1/audio/speech/cancel`` — 取消进行中的生成"
 
 #: ../../deployment/ane.rst:103 5b1efde7129644e3bcf82afd0ca1f5f3
 msgid "Limitations"
-msgstr "Limitations"
+msgstr "限制说明"
 
 #: ../../deployment/ane.rst:105 0c42026f259443d196df3ec89cb5bad9
 msgid "**macOS Apple Silicon only** — no cross-platform support"

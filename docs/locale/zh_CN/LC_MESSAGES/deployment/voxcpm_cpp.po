@@ -84,7 +84,7 @@ msgstr "可选多种量化格式：Q4_K、Q8_0、F16、F32。"
 
 #: ../../deployment/voxcpm_cpp.rst:27 d89e997f3a6f469292889990e3a610ad
 msgid "Features"
-msgstr "Features"
+msgstr "主要特性"
 
 #: ../../deployment/voxcpm_cpp.rst:29 d7bad84df93f4a5a89f0adf1b2e7d766
 #, python-brace-format
@@ -125,7 +125,7 @@ msgstr "实验性 WASM/Emscripten Web 试用环境（见仓库 ``docs/wasm_playg
 
 #: ../../deployment/voxcpm_cpp.rst:38 e76768babeae4700bd58522844289d07
 msgid "Performance"
-msgstr "Performance"
+msgstr "性能表现"
 
 #: ../../deployment/voxcpm_cpp.rst:40 934395766fdf443c961c329b4c0fb7fa
 msgid ""
@@ -247,7 +247,7 @@ msgstr "3.609"
 
 #: ../../deployment/voxcpm_cpp.rst:88 4c308fb72a474abda500413a85a0891b
 msgid "Prerequisites"
-msgstr "Prerequisites"
+msgstr "准备工作"
 
 #: ../../deployment/voxcpm_cpp.rst:90 e886ed5f08764dfa93164b8cc0d252a8
 msgid "CMake >= 3.14"
@@ -267,7 +267,7 @@ msgstr "（可选）Vulkan SDK 用于 Vulkan 后端"
 
 #: ../../deployment/voxcpm_cpp.rst:96 efe11e016e2348d0b8c07df5db27c3d1
 msgid "Installation"
-msgstr "Installation"
+msgstr "安装"
 
 #: ../../deployment/voxcpm_cpp.rst:98 d30f88d11a9544bab396d77b39845584
 msgid "Build from source:"
@@ -279,7 +279,7 @@ msgstr "从 Hugging Face 下载 GGUF 权重："
 
 #: ../../deployment/voxcpm_cpp.rst:126 2b4ead3c68b04939af53761897989cf4
 msgid "Basic usage (CLI)"
-msgstr "Basic usage (CLI)"
+msgstr "基本用法（命令行）"
 
 #: ../../deployment/voxcpm_cpp.rst:128 b6f86c310c9b46888b412c26a97f3c0e
 msgid "The ``voxcpm_tts`` binary supports text-to-speech and voice cloning:"
@@ -287,7 +287,7 @@ msgstr "``voxcpm_tts`` 可执行文件支持文本转语音与声音克隆："
 
 #: ../../deployment/voxcpm_cpp.rst:152 550a1b4a9d294c17af0e5ead04635bbc
 msgid "HTTP Server"
-msgstr "HTTP Server"
+msgstr "HTTP 服务"
 
 #: ../../deployment/voxcpm_cpp.rst:154 e4fb60863d114a218e8bdfda9c1d2842
 msgid ""
@@ -335,11 +335,11 @@ msgstr "该 HTTP 服务面向开发与测试。暴露到不可信网络前请使
 
 #: ../../deployment/voxcpm_cpp.rst:195 8fb24ccc094c4fddb24def7241468461
 msgid "Troubleshooting"
-msgstr "Troubleshooting"
+msgstr "问题排查"
 
 #: ../../deployment/voxcpm_cpp.rst:198 52622640308a45b884a92caf09fc84a9
 msgid "Binary not found after build"
-msgstr "Binary not found after build"
+msgstr "构建后找不到可执行文件"
 
 #: ../../deployment/voxcpm_cpp.rst:200 f7b37fd1bd31424a88f1af76aa5bf774
 msgid ""
@@ -351,7 +351,7 @@ msgstr ""
 
 #: ../../deployment/voxcpm_cpp.rst:203 84d832b8ed734f158d1a437684fae21c
 msgid "Model loading errors"
-msgstr "Model loading errors"
+msgstr "模型加载报错"
 
 #: ../../deployment/voxcpm_cpp.rst:205 695bbdf26c4e40e6a986824db6c2230e
 msgid ""

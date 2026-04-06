@@ -71,7 +71,7 @@ msgstr "⚠️ 本页主要介绍 MLX-Audio 上当前的 VoxCPM 1.x 路径"
 
 #: ../../deployment/mlx_audio.rst:24 a705c901aae04bf996fd58d79a491b35
 msgid "Prerequisites"
-msgstr "Prerequisites"
+msgstr "准备工作"
 
 #: ../../deployment/mlx_audio.rst:26 77a7e0fa960a4080a27f807d9bd85a77
 msgid "Apple Silicon Mac (M1 or later)"
@@ -87,7 +87,7 @@ msgstr "已安装 ``mlx`` 与 ``mlx-audio``"
 
 #: ../../deployment/mlx_audio.rst:31 f2acb9ad8df54cb8a369fd06cf5a0b31
 msgid "Installation"
-msgstr "Installation"
+msgstr "安装"
 
 #: ../../deployment/mlx_audio.rst:37 89bcfe0a2eda467d87a877910048fe4d
 msgid "Or from source:"
@@ -95,7 +95,7 @@ msgstr "或从源码安装："
 
 #: ../../deployment/mlx_audio.rst:46 0677280d487e4999917acabfffa90e3c
 msgid "CLI Usage"
-msgstr "CLI Usage"
+msgstr "命令行用法"
 
 #: ../../deployment/mlx_audio.rst:48 0b4ec066973a4e17b32b0b2f14ce4430
 msgid "Generate speech directly from the command line:"
@@ -109,7 +109,7 @@ msgstr "``--model`` 可接受 ``voxcpm``（对应 VoxCPM 1.0）或 ``voxcpm1.5``
 
 #: ../../deployment/mlx_audio.rst:57 6f89ff8a13f441818526a8c16950feed
 msgid "API Server"
-msgstr "API Server"
+msgstr "API 服务"
 
 #: ../../deployment/mlx_audio.rst:59 78fa9df148b440dcb8c73e4a6ab2e0a9
 msgid "MLX-Audio includes an OpenAI-compatible FastAPI server:"
@@ -126,7 +126,7 @@ msgstr ""
 
 #: ../../deployment/mlx_audio.rst:68 22c4a88e0547498baad60bd79ee192c4
 msgid "Web UI"
-msgstr "Web UI"
+msgstr "网页界面"
 
 #: ../../deployment/mlx_audio.rst:70 6ed9d22c3f3a472b96337e85fe4b7944
 msgid ""
@@ -139,7 +139,7 @@ msgstr ""
 
 #: ../../deployment/mlx_audio.rst:73 6dd7491778ac40ed8bf687ee3c9add5a
 msgid "Limitations"
-msgstr "Limitations"
+msgstr "限制说明"
 
 #: ../../deployment/mlx_audio.rst:75 53ee11b96cc2478497a7a691309a09f6
 msgid ""

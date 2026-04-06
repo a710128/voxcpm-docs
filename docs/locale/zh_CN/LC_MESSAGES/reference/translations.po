@@ -20,7 +20,7 @@ msgstr ""
 
 #: ../../reference/translations.rst:2 3e883b5d419e4ba4bb0b46dbbf885702
 msgid "Translations"
-msgstr "Translations"
+msgstr "翻译说明"
 
 #: ../../reference/translations.rst:4 f334cc8f92684385b171852d791f4eba
 msgid ""
@@ -34,7 +34,7 @@ msgstr ""
 
 #: ../../reference/translations.rst:9 7fc032d8421b4fe1927086babc79b348
 msgid "Overview"
-msgstr "Overview"
+msgstr "概览"
 
 #: ../../reference/translations.rst:11 33144b551d8b4f02a5f1b116b602eb89
 msgid "The translation workflow uses:"
@@ -60,7 +60,7 @@ msgstr "这样无需单独维护 ``docs/zh/`` 目录树，页面结构可与英�
 
 #: ../../reference/translations.rst:21 369aa156d7294991a5193b87979e85c2
 msgid "Local Commands"
-msgstr "Local Commands"
+msgstr "本地命令"
 
 #: ../../reference/translations.rst:23 4fd221580e8d4600af6cc31146164c7e
 msgid "Run these commands from the repository root:"
@@ -120,7 +120,7 @@ msgstr "构建中文 HTML 站点，并将警告视为错误"
 
 #: ../../reference/translations.rst:53 ceaf2f7c235e4249ad5753d25a030627
 msgid "Translation Workflow"
-msgstr "Translation Workflow"
+msgstr "翻译流程"
 
 #: ../../reference/translations.rst:55 3261df8d94b0489c82d51bf6f74d450a
 msgid "When the English documentation changes:"
@@ -162,7 +162,7 @@ msgstr ""
 
 #: ../../reference/translations.rst:89 6fedb245c3634f498b43347a3ba1ce1f
 msgid "Read the Docs Setup"
-msgstr "Read the Docs Setup"
+msgstr "Read the Docs 配置"
 
 #: ../../reference/translations.rst:91 34316f7f3812403e820e7630b14a43fb
 msgid "Use two Read the Docs projects that point to the same repository:"
@@ -204,7 +204,7 @@ msgstr "这样配置后，Read the Docs 会在同一站点下提供两种语言�
 
 #: ../../reference/translations.rst:108 69d489ad16bf443eb3e3a0ec9bf2f42a
 msgid "How language selection works"
-msgstr "How language selection works"
+msgstr "语言切换是如何工作的"
 
 #: ../../reference/translations.rst:110 647443e68c5249348725f13399aac158
 msgid ""
@@ -225,7 +225,7 @@ msgstr "RTD 中文项目：``READTHEDOCS_LANGUAGE=zh-cn`` （由 RTD 提供）"
 
 #: ../../reference/translations.rst:118 bb2567c3a37744d9a050d24bd9720cea
 msgid "Scope of the first Chinese rollout"
-msgstr "Scope of the first Chinese rollout"
+msgstr "首批中文化范围"
 
 #: ../../reference/translations.rst:120 e01f10ca6764437f8b2305bca3058a56
 msgid ""

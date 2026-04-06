@@ -20,7 +20,7 @@ msgstr ""
 
 #: ../../installation.rst:2 b0793ea8527140cab88897925110aa68
 msgid "Installation"
-msgstr "Installation"
+msgstr "安装"
 
 #: ../../installation.rst:4 45774995151741548129732108c0f582
 msgid ""
@@ -30,7 +30,7 @@ msgstr "本页涵盖 VoxCPM 的所有受支持安装方式。如果你只想最�
 
 #: ../../installation.rst:7 83d613f3f9344c56b2392dd716916d42
 msgid "Requirements"
-msgstr "Requirements"
+msgstr "环境要求"
 
 #: ../../installation.rst:13 a3f128cf1114426bad5fcb21f1510961
 msgid "Dependency"
@@ -80,7 +80,7 @@ msgstr "如果你使用 CPU 推理或 Apple Silicon MPS，则不需要 CUDA。�
 
 #: ../../installation.rst:29 3647b7a36482495da439e5b4a3dcb115
 msgid "Install with pip (recommended)"
-msgstr "Install with pip (recommended)"
+msgstr "使用 pip 安装（推荐）"
 
 #: ../../installation.rst:31 0acf0763f6924769adc7dc638de05014
 msgid ""
@@ -99,7 +99,7 @@ msgstr "从源码安装："
 
 #: ../../installation.rst:49 3c3ad8825bb54f2e9aa17b8ee299f925
 msgid "Install with uv (secondary option)"
-msgstr "Install with uv (secondary option)"
+msgstr "使用 uv 安装（备选）"
 
 #: ../../installation.rst:54 34626a4dcfb84029a568e62934119232
 msgid ""
@@ -138,7 +138,7 @@ msgstr "参与项目贡献"
 
 #: ../../installation.rst:77 0e7765dff61c490c9285b29a2accd673
 msgid "Hugging Face mirror"
-msgstr "Hugging Face mirror"
+msgstr "Hugging Face 镜像"
 
 #: ../../installation.rst:79 a8bb7ff9e3c74a3f80ee5a0c5c37a999
 msgid ""
@@ -152,7 +152,7 @@ msgstr "之后模型权重会自动通过镜像下载。"
 
 #: ../../installation.rst:88 518ed29fa3aa449794627a4c0f2b8f03
 msgid "Verify installation"
-msgstr "Verify installation"
+msgstr "验证安装是否成功"
 
 #: ../../installation.rst:90 23a82b99a25048918dc112ea7b3228ea
 msgid "After installing, run a quick check:"

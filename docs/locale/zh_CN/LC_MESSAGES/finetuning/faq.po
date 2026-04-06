@@ -20,11 +20,11 @@ msgstr ""
 
 #: ../../finetuning/faq.rst:2 640f515162574b1a9c98187569141306
 msgid "Fine-Tuning FAQ"
-msgstr "Fine-Tuning FAQ"
+msgstr "微调常见问题"
 
 #: ../../finetuning/faq.rst:6 1480039684f04e7bab8e83a946dea6d5
 msgid "General"
-msgstr "General"
+msgstr "通用问题"
 
 #: ../../finetuning/faq.rst:8 68274fd5be6243299c20e3931d7cbcd3
 msgid "**Can I fine-tune for a new language?**"
@@ -42,7 +42,7 @@ msgstr ""
 
 #: ../../finetuning/faq.rst:14 8c642b7875f244cf94269a296884fe2c
 msgid "Training Issues"
-msgstr "Training Issues"
+msgstr "训练问题"
 
 #: ../../finetuning/faq.rst:16 b69d1c7a683e47e692ff83c93707482b
 msgid "**Out of memory (OOM):**"
@@ -102,7 +102,7 @@ msgstr "这是多卡训练的已知问题。请确保使用最新版训练脚本
 
 #: ../../finetuning/faq.rst:36 d695b207a9174d1e99f1544e33f59948
 msgid "Output Quality Issues"
-msgstr "Output Quality Issues"
+msgstr "输出质量问题"
 
 #: ../../finetuning/faq.rst:38 03940131830e4193a40882011d7e0b01
 msgid ""
@@ -166,7 +166,7 @@ msgstr "若在做新语言微调，停止损失与扩散损失收敛速度可能
 
 #: ../../finetuning/faq.rst:57 00277e2bd6964faeae68daadff8d18e3
 msgid "LoRA Issues"
-msgstr "LoRA Issues"
+msgstr "LoRA 相关问题"
 
 #: ../../finetuning/faq.rst:59 759be0361fc2427ca58cc8f37feadf8a
 msgid "**Poor LoRA quality:**"
@@ -210,7 +210,7 @@ msgstr "若曾关闭 LoRA，请确认已调用 ``set_lora_enabled(True)``。"
 
 #: ../../finetuning/faq.rst:74 a982abeebb3b424e9d2e246dee391400
 msgid "Checkpoint Issues"
-msgstr "Checkpoint Issues"
+msgstr "Checkpoint 相关问题"
 
 #: ../../finetuning/faq.rst:76 7ef279b9001646e0a3a81148e25da66a
 msgid "**Checkpoint loading errors:**"

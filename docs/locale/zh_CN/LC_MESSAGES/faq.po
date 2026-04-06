@@ -20,7 +20,7 @@ msgstr ""
 
 #: ../../faq.rst:2 84f4eaa5127042618bd172f1a1928e0d
 msgid "FAQ & Troubleshooting"
-msgstr "FAQ & Troubleshooting"
+msgstr "常见问题与故障排查"
 
 #: ../../faq.rst:4 30cef9e15d004485ad815361da97653d
 msgid ""
@@ -28,16 +28,16 @@ msgid ""
 "VoxCPM community. For prompt strategy, cloning tips, and quality tuning, see"
 " :doc:`./usage_guide`."
 msgstr ""
-"本页聚焦于 VoxCPM 社区反馈的安装、运行与部署问题。有关 prompt 策略、声音克隆技巧和质量调优，请参阅 "
+"本页汇总 VoxCPM 社区里常见的安装、运行与部署问题。有关提示词写法、声音克隆技巧和质量调优，请参阅 "
 ":doc:`./usage_guide`。"
 
 #: ../../faq.rst:9 b4a946ef9d524546a35e9360da975b74
 msgid "Installation & Environment"
-msgstr "Installation & Environment"
+msgstr "安装与环境问题"
 
 #: ../../faq.rst:12 370a7124b7354355a7ee5c491ecacc6b
 msgid "Triton errors on Windows"
-msgstr "Triton errors on Windows"
+msgstr "Windows 上的 Triton 报错"
 
 #: ../../faq.rst:14 8cec725dd9364945a24c451aec2b4fdb
 msgid ""
@@ -141,7 +141,7 @@ msgstr ""
 
 #: ../../faq.rst:49 8952a9edf5074a74b7ee180a99822b10
 msgid "torchcodec / libtorchcodec errors"
-msgstr "torchcodec / libtorchcodec errors"
+msgstr "torchcodec / libtorchcodec 报错"
 
 #: ../../faq.rst:51 c9cf1ca89b104d03aea68d7817138f1f
 msgid ""
@@ -202,7 +202,7 @@ msgstr ""
 
 #: ../../faq.rst:80 f169d49d268f47aaa6ea36c6d51d352d
 msgid "torch.compile errors on first run"
-msgstr "torch.compile errors on first run"
+msgstr "首次运行时的 torch.compile 报错"
 
 #: ../../faq.rst:82 ec2c2f560f25493b94f1dbdfb7d3b374
 msgid ""
@@ -274,7 +274,7 @@ msgstr ""
 
 #: ../../faq.rst:115 4417faf5129b428a84d35b82c04a0db0
 msgid "Mac / MPS support"
-msgstr "Mac / MPS support"
+msgstr "Mac / MPS 支持"
 
 #: ../../faq.rst:117 203c52fc38f84be6b63624bc321b1f7c
 msgid "**Q: Can VoxCPM run on Mac (Apple Silicon)?**"
@@ -316,7 +316,7 @@ msgstr ""
 
 #: ../../faq.rst:130 270159827b7e48099443d7163f37b390
 msgid "Python version compatibility"
-msgstr "Python version compatibility"
+msgstr "Python 版本兼容性"
 
 #: ../../faq.rst:132 8e5bb59ca6ab4390a9831ac229ae6c72
 msgid ""
@@ -346,11 +346,11 @@ msgstr ""
 
 #: ../../faq.rst:144 5236fc8f171b4e3ab965dcbde6f09b7d
 msgid "Performance & Deployment"
-msgstr "Performance & Deployment"
+msgstr "性能与部署"
 
 #: ../../faq.rst:147 f80d655a3dfe460281072b45bd55425a
 msgid "VRAM & RTF reference"
-msgstr "VRAM & RTF reference"
+msgstr "显存与 RTF 参考"
 
 #: ../../faq.rst:153 d878d0de9c22402ebfc332ea90719a1a
 msgid "Model"
@@ -358,7 +358,7 @@ msgstr "模型"
 
 #: ../../faq.rst:154 7c02cb8096c74fba9e59266ef130eb94
 msgid "VRAM"
-msgstr "VRAM"
+msgstr "显存"
 
 #: ../../faq.rst:155 a4478a77bd1d4e2fb1dde7bebd54ffd9
 msgid "RTF (official)"
@@ -449,7 +449,7 @@ msgstr ""
 
 #: ../../faq.rst:179 9a58a921427a4b42b752b464c11c98e7
 msgid "CUDA Graphs and multi-threading"
-msgstr "CUDA Graphs and multi-threading"
+msgstr "CUDA Graphs 与多线程"
 
 #: ../../faq.rst:183 85de2cd676f0455e87776d620d9be39f
 msgid ""
@@ -490,7 +490,7 @@ msgstr ""
 
 #: ../../faq.rst:205 7a32173ce5934cfd88056a79a7b2a8ee
 msgid "vLLM / lmdeploy compatibility"
-msgstr "vLLM / lmdeploy compatibility"
+msgstr "vLLM / lmdeploy 兼容性"
 
 #: ../../faq.rst:207 083a2db8c56e4a189eb453578801a558
 msgid ""
@@ -514,7 +514,7 @@ msgstr ""
 
 #: ../../faq.rst:215 d63c0f4c9eec475d962764583e2aca13
 msgid "Still have questions?"
-msgstr "Still have questions?"
+msgstr "还有问题？"
 
 #: ../../faq.rst:217 4d54e2eadee94e1cb5532aad7c777c63
 msgid "If your question isn't covered here:"
