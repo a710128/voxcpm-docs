@@ -52,9 +52,14 @@ VoxCPM documentation
 🌟 Key Features
 ****************
 
-* 🎯 **Context-Aware, Expressive Speech Generation** - VoxCPM comprehends text to infer and generate appropriate prosody, delivering speech with remarkable expressiveness and natural flow. It spontaneously adapts speaking style based on content, producing highly fitting vocal expression across a massive 30-language corpus.
-* 🎭 **True-to-Life Voice Cloning** - With only a short reference audio clip, VoxCPM performs accurate zero-shot voice cloning, capturing not only the speaker's timbre but also fine-grained characteristics such as accent, emotional tone, rhythm, and pacing to create a faithful and natural replica.
-* ⚡ **High-Efficiency Synthesis** - VoxCPM supports streaming synthesis with a Real-Time Factor (RTF) as low as **0.13** on a consumer-grade NVIDIA RTX 4090 GPU, making it possible for real-time applications.
+* 🌍 **30-Language Multilingual** - Input text directly in any of the 30 supported languages in most cases, with no explicit language tag required.
+* 🎨 **Voice Design** - Create a brand-new voice from a natural-language description alone, with no reference audio required.
+* 🎛️ **Controllable Cloning** - Clone a voice from a short reference clip, then steer emotion, pace, and style while preserving the original timbre.
+* 🎙️ **Ultimate Cloning** - For maximum fidelity, provide both the reference audio and its transcript so the model can continue seamlessly from the prompt and preserve more vocal detail.
+* 🔊 **48kHz High-Quality Audio** - Accepts 16kHz reference audio and outputs 48kHz audio through AudioVAE V2's asymmetric encode/decode design, with built-in super-resolution and no external upsampler required.
+* 🧠 **Context-Aware Synthesis** - Automatically infers appropriate prosody and expressiveness from the text itself for more natural, content-matched delivery.
+* ⚡ **Real-Time Streaming** - Reaches an RTF as low as **0.13** on NVIDIA RTX 4090 with `NanoVLLM-VoxCPM <https://github.com/a710128/nanovllm-voxcpm>`_ for high-throughput serving.
+* 📦 **Fully Open-Source & Commercial-Ready** - Weights and code are released under the `Apache License 2.0 <https://www.apache.org/licenses/LICENSE-2.0>`_, allowing commercial use.
 
 ----
 
