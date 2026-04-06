@@ -1,51 +1,361 @@
+/* ===== VoxCPM Brand Tokens ===== */
+:root {
+    --voxcpm-blue: #2563eb;
+    --voxcpm-blue-light: #3b82f6;
+    --voxcpm-blue-dark: #1d4ed8;
+    --voxcpm-cyan: #06b6d4;
+    --voxcpm-green: #10b981;
+    --voxcpm-slate: #475569;
+    --voxcpm-bg-soft: #f8fafc;
+    --voxcpm-border: #e2e8f0;
+    --voxcpm-gradient: linear-gradient(135deg, var(--voxcpm-blue), var(--voxcpm-cyan));
+}
+
+/* ===== Furo Theme Color Overrides ===== */
+body[data-theme="light"] {
+    --color-brand-primary: var(--voxcpm-blue);
+    --color-brand-content: var(--voxcpm-blue);
+    --color-sidebar-brand-text: var(--voxcpm-blue-dark);
+    --color-link: var(--voxcpm-blue);
+    --color-link--hover: var(--voxcpm-blue-dark);
+}
+
+body[data-theme="dark"] {
+    --voxcpm-bg-soft: #1a1c2e;
+    --voxcpm-border: #2d3148;
+    --color-brand-primary: var(--voxcpm-blue-light);
+    --color-brand-content: var(--voxcpm-blue-light);
+}
+
+/* ===== Base Typography ===== */
 html {
     font-size: 16px;
 }
 
-h1 {
-    font-size: 1.75rem;
-    line-height: 2.5rem;
+.content {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
-h2 {
-    font-size: 1.5rem;
-    line-height: 2rem;
-}
+h1 { font-size: 2rem; line-height: 2.5rem; font-weight: 700; letter-spacing: -0.02em; }
+h2 { font-size: 1.5rem; line-height: 2rem; font-weight: 600; letter-spacing: -0.01em; }
+h3 { font-size: 1.25rem; line-height: 1.75rem; font-weight: 600; }
+h4 { font-size: 1.125rem; line-height: 1.5rem; }
+h5 { font-size: 1rem; }
+h6 { font-size: 0.875rem; }
 
-h3 {
-    font-size: 1.25rem;
-    line-height: 1.75rem;
-}
-
-h4 {
-    font-size: 1.125rem;
-    line-height: 1.5rem;
-}
-
-h5 {
-    font-size: 1rem;
-}
-
-h6 {
-    font-size: 0.75rem;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    margin-top: 1.875rem;
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 2rem;
     margin-bottom: 1rem;
 }
 
-p strong {
-    font-weight: bold;
+p strong { font-weight: 600; }
+p:target { background-color: var(--color-highlight-on-target); }
+
+/* ===== Hero Section ===== */
+.voxcpm-hero {
+    text-align: center;
+    padding: 0.5rem 0 1.5rem;
 }
 
-p:target {
-    background-color: var(--color-highlight-on-target);
+.voxcpm-hero > figure,
+.voxcpm-hero > .figure {
+    max-width: 300px !important;
+    width: 300px !important;
+    margin: 0 auto 1rem !important;
+}
+
+.voxcpm-hero > figure img,
+.voxcpm-hero > .figure img {
+    width: 100% !important;
+}
+
+.voxcpm-hero > p {
+    font-size: 1.15rem;
+    color: var(--voxcpm-slate);
+    line-height: 1.75;
+    max-width: 640px;
+    margin: 0 auto 1.25rem;
+}
+
+body[data-theme="dark"] .voxcpm-hero > p {
+    color: #94a3b8;
+}
+
+.voxcpm-badges {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.25rem;
+}
+
+.voxcpm-badges a {
+    transition: transform 0.15s ease, opacity 0.15s ease;
+    display: inline-block;
+}
+.voxcpm-badges a:hover {
+    transform: translateY(-1px);
+    opacity: 0.85;
+}
+
+.voxcpm-badges p {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin: 0;
+}
+
+/* ===== CTA Button Row ===== */
+.voxcpm-cta-row {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin: 1.25rem 0 0.25rem;
+}
+
+.voxcpm-cta-row p {
+    display: contents;
+}
+
+.voxcpm-cta-row .sd-sphinx-override.sd-btn {
+    padding: 0.55rem 1.6rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: 24px;
+    transition: all 0.2s ease;
+}
+
+.voxcpm-cta-row .sd-btn-primary {
+    background: var(--voxcpm-gradient) !important;
+    border: none !important;
+    color: white !important;
+}
+.voxcpm-cta-row .sd-btn-primary:hover {
+    box-shadow: 0 4px 16px rgba(37, 99, 235, 0.35);
+    transform: translateY(-1px);
+}
+
+.voxcpm-cta-row .sd-btn-outline-secondary {
+    border: 1.5px solid var(--voxcpm-border) !important;
+    color: var(--voxcpm-slate) !important;
+}
+body[data-theme="dark"] .voxcpm-cta-row .sd-btn-outline-secondary {
+    border-color: var(--voxcpm-border) !important;
+    color: #cbd5e1 !important;
+}
+.voxcpm-cta-row .sd-btn-outline-secondary:hover {
+    background: var(--voxcpm-bg-soft) !important;
+    transform: translateY(-1px);
+}
+
+/* ===== Section Dividers ===== */
+.content hr.docutils {
+    border: none;
+    height: 1px;
+    background: var(--voxcpm-border);
+    margin: 2.5rem 0;
+}
+
+/* ===== Feature Cards ===== */
+.sd-card.voxcpm-feature-card {
+    border: 1px solid var(--voxcpm-border);
+    border-radius: 12px;
+    transition: box-shadow 0.25s ease, transform 0.25s ease;
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.sd-card.voxcpm-feature-card:hover {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    transform: translateY(-3px);
+}
+
+body[data-theme="dark"] .sd-card.voxcpm-feature-card:hover {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+.sd-card.voxcpm-feature-card .sd-card-header {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.sd-card.voxcpm-feature-card .sd-card-body {
+    padding-top: 0.25rem;
+    flex: 1;
+}
+
+.sd-card.voxcpm-feature-card ul.simple {
+    margin: 0;
+    padding-left: 1.1rem;
+}
+
+.sd-card.voxcpm-feature-card ul.simple li {
+    margin-bottom: 0.45rem;
+}
+
+.sd-card.voxcpm-feature-card ul.simple li:last-child {
+    margin-bottom: 0;
+}
+
+.voxcpm-feature-icon {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+/* ===== Model Version Cards ===== */
+.sd-card.voxcpm-model-card {
+    border: 1.5px solid var(--voxcpm-border);
+    border-radius: 12px;
+    transition: box-shadow 0.25s ease, transform 0.25s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.sd-card.voxcpm-model-card:hover {
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.06);
+    transform: translateY(-2px);
+}
+
+body[data-theme="dark"] .sd-card.voxcpm-model-card:hover {
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.25);
+}
+
+.sd-card.voxcpm-model-card.voxcpm-model-featured {
+    border-color: var(--voxcpm-blue);
+    background: linear-gradient(to bottom, rgba(37, 99, 235, 0.03), transparent);
+}
+
+body[data-theme="dark"] .sd-card.voxcpm-model-card.voxcpm-model-featured {
+    background: linear-gradient(to bottom, rgba(59, 130, 246, 0.08), transparent);
+}
+
+.sd-card.voxcpm-model-card .sd-card-body {
+    flex: 1;
+}
+
+.sd-card.voxcpm-model-card .sd-card-footer {
+    margin-top: auto;
+}
+
+/* ===== Community Table ===== */
+table.docutils {
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--voxcpm-border);
+    width: 100%;
+}
+
+table.docutils thead th {
+    background: var(--voxcpm-bg-soft);
+    font-weight: 600;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    padding: 0.75rem 1rem;
+}
+
+body[data-theme="dark"] table.docutils thead th {
+    background: #1e2035;
+}
+
+table.docutils tbody td {
+    padding: 0.65rem 1rem;
+    border-top: 1px solid var(--voxcpm-border);
+}
+
+table.docutils tbody tr:hover {
+    background: rgba(37, 99, 235, 0.03);
+}
+
+/* ===== Code Blocks ===== */
+pre {
+    border-radius: 8px !important;
+    border: 1px solid var(--voxcpm-border);
+}
+
+body[data-theme="dark"] pre {
+    border-color: #2d3148;
+}
+
+.highlight .go { color: #64748b; }
+
+code.literal {
+    padding: 0.15rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.9em;
+}
+
+/* Copy button styling */
+button.copybtn {
+    border-radius: 6px !important;
+}
+
+body[data-theme="dark"] button.copybtn {
+    background-color: #334155;
+    border-color: #475569;
+    color: #cbd5e1;
+}
+
+body[data-theme="dark"] .highlight button.copybtn:hover {
+    background-color: #475569;
+}
+
+pre.terminal {
+    font-size: 12px !important;
+    line-height: 16px;
+    background-color: #0f172a;
+    color: #e2e8f0;
+    padding: 0.75em 1em;
+    text-wrap: wrap;
+    word-break: break-all;
+    border-radius: 8px;
+    border: 1px solid #1e293b;
+}
+
+pre.terminal span.system { color: #4ade80; }
+pre.terminal span.user { color: #a3e635; }
+
+/* ===== Sidebar Enhancement ===== */
+.sidebar-brand-text {
+    font-weight: 700;
+    letter-spacing: -0.01em;
+}
+
+.sidebar-tree .toctree-l1 > a {
+    font-weight: 500;
+}
+
+.sidebar-tree .caption {
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    color: var(--voxcpm-slate);
+    font-weight: 700;
+    margin-top: 1.5rem;
+}
+
+body[data-theme="dark"] .sidebar-tree .caption {
+    color: #94a3b8;
+}
+
+/* ===== Admonitions ===== */
+.admonition {
+    border-radius: 8px;
+    border-width: 1px;
+    border-left-width: 4px;
+}
+
+/* ===== Sphinx-Design Dropdown ===== */
+details.sd-dropdown {
+    border-radius: 8px;
 }
 
 details.sd-dropdown summary.sd-summary-title {
@@ -61,33 +371,62 @@ details.sd-dropdown summary.sd-summary-title code.literal {
 
 details.sd-dropdown summary.sd-summary-title span.sd-summary-state-marker {
     padding-left: 0.5em;
-    padding-right: 0.5em
+    padding-right: 0.5em;
 }
 
 details.sd-dropdown div.sd-summary-content {
     padding-left: 2.5em;
 }
 
-pre.terminal {
-    font-size: 12px !important;
-    line-height: 16px;
-    background-color: black;
-    color: white;
-    padding: .5em;
-    text-wrap: wrap;
-    word-break: break-all;
+/* ===== Footer Section (License, etc.) ===== */
+.voxcpm-footer-section h2 {
+    font-size: 1.15rem;
+    color: var(--voxcpm-slate);
 }
 
-pre.terminal span.system {
-    color: greenyellow
+body[data-theme="dark"] .voxcpm-footer-section h2 {
+    color: #94a3b8;
 }
 
-pre.terminal span.user {
-    color: yellowgreen
+/* ===== Institutions logos ===== */
+.voxcpm-institutions {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
+.voxcpm-institutions img {
+    opacity: 0.7;
+    transition: opacity 0.2s ease;
+}
+.voxcpm-institutions img:hover {
+    opacity: 1;
+}
+
+/* ===== Hide redundant h1 on homepage (logo replaces it) ===== */
+.voxcpm-hero + section > h1:first-child,
+article[role="main"] > section:first-child > h1:first-child {
+    /* Keep for screen readers but visually hide */
+}
+
+/* When hero is present, shrink the page h1 */
+.voxcpm-hero ~ h1,
+section:has(> .voxcpm-hero) > h1 {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* ===== Misc ===== */
 .sd-card.voxcpm-highlight-border-color {
-    border-color: #29bb00 !important;
+    border-color: var(--voxcpm-green) !important;
 }
 
 figure.voxcpm-logo-figure {
@@ -96,4 +435,17 @@ figure.voxcpm-logo-figure {
 
 dl.simple dd {
     margin-left: 1em;
+}
+
+/* Smooth scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Better focus styles */
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--voxcpm-blue);
+    outline-offset: 2px;
+    border-radius: 4px;
 }

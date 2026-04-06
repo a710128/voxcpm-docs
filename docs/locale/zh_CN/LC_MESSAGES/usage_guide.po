@@ -1,0 +1,580 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2025, OpenBMB
+# This file is distributed under the same license as the VoxCPM package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: VoxCPM \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-06 15:37+0800\n"
+"PO-Revision-Date: 2026-04-06 18:00+0800\n"
+"Last-Translator: Cursor Agent <>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../usage_guide.rst:2 3f958896e372409ea810995918bf94a9
+msgid "Usage Guide"
+msgstr "使用指南"
+
+#: ../../usage_guide.rst:4 c8e954bdf1724a3aba76c0e04a67d125
+msgid ""
+"This page explains VoxCPM 2's generation parameters and three generation "
+"modes, then covers text input, reference audio, quality tuning, and "
+"streaming in more detail."
+msgstr "本页说明 VoxCPM 2 的生成参数与三种生成模式，并更细地介绍文本输入、参考音频、质量调优与流式输出。"
+
+#: ../../usage_guide.rst:7 c527e853deea45e9ba303cbd37c8b76b
+msgid "Generation Parameters"
+msgstr "生成参数"
+
+#: ../../usage_guide.rst:9 2ec5208f982943b380be837b2cae1787
+msgid "The ``generate()`` method accepts the following key parameters:"
+msgstr "``generate()`` 方法接受以下主要参数："
+
+#: ../../usage_guide.rst:15 8751d60c2ba6452097ea8b993973867a
+msgid "Parameter"
+msgstr "参数"
+
+#: ../../usage_guide.rst:16 0f15156ad5d8468cbefc7ff68031ed66
+msgid "Default"
+msgstr "默认值"
+
+#: ../../usage_guide.rst:17 640fad7f2a2e4209819d3603ae98705b
+msgid "Description"
+msgstr "说明"
+
+#: ../../usage_guide.rst:18 5532b34e1ee34f3893388d10d64ab6a9
+msgid "``text``"
+msgstr "``text``"
+
+#: ../../usage_guide.rst:19 be35c1f41a6e4f379a31fdfef054696a
+msgid "(required)"
+msgstr "（必填）"
+
+#: ../../usage_guide.rst:20 6e2b2d951c40462d99e1fb03d071f82f
+msgid "The text to synthesize. Supports the 30 languages available in VoxCPM 2."
+msgstr "待合成文本。支持 VoxCPM 2 提供的 30 种语言。"
+
+#: ../../usage_guide.rst:21 3fc029faa766491e9f20e4ac29fc8606
+msgid "``reference_wav_path``"
+msgstr "``reference_wav_path``"
+
+#: ../../usage_guide.rst:22 ../../usage_guide.rst:25 ../../usage_guide.rst:28
+#: 36f98f420f7a477b925a28734a845e90 5b52412dea78452c810bfd6947fdddba
+#: a12501c1ec304f368725464209b279b2
+msgid "``None``"
+msgstr "``None``"
+
+#: ../../usage_guide.rst:23 02c9b577c6e649e6835abb9b86f67726
+msgid ""
+"Reference audio for voice cloning (VoxCPM 2 only). The model extracts the "
+"timbre without needing a transcript."
+msgstr "声音克隆用的参考音频（仅 VoxCPM 2）。模型提取音色，无需转写文本。"
+
+#: ../../usage_guide.rst:24 af962fc1e01347e68b569b52357aef9e
+msgid "``prompt_wav_path``"
+msgstr "``prompt_wav_path``"
+
+#: ../../usage_guide.rst:26 053c66f2f09f4c2eafcc40eca000b4a2
+msgid ""
+"Prompt audio for continuation-style cloning. Must be paired with "
+"``prompt_text``."
+msgstr "延续式克隆的 prompt 音频，必须与 ``prompt_text`` 配对。"
+
+#: ../../usage_guide.rst:27 f33498300dfd4b15a41962b07fa4b112
+msgid "``prompt_text``"
+msgstr "``prompt_text``"
+
+#: ../../usage_guide.rst:29 08c0cf1d4d524d06b43db6c9acd828a3
+msgid "Exact transcript of ``prompt_wav_path``. Must be provided together with it."
+msgstr "``prompt_wav_path`` 的逐字转写，须与其同时提供。"
+
+#: ../../usage_guide.rst:30 49579ac32bbb40a18fc0d82ab88b69a8
+msgid "``cfg_value``"
+msgstr "``cfg_value``"
+
+#: ../../usage_guide.rst:31 77b4857f17b74632a7de1375506021d0
+msgid "``2.0``"
+msgstr "``2.0``"
+
+#: ../../usage_guide.rst:32 62e3ca3de4a34ffcb1cf2244d2aafdce
+msgid ""
+"Guidance scale. Higher values follow the conditioning more strictly; lower "
+"values allow more variation. Typical range: 1.0–3.0."
+msgstr "引导强度。越高越严格遵循条件；越低变化越大。常用范围：1.0–3.0。"
+
+#: ../../usage_guide.rst:33 725016fab0b4470ea51e3101dfbebded
+msgid "``inference_timesteps``"
+msgstr "``inference_timesteps``"
+
+#: ../../usage_guide.rst:34 3444d2ec73ac41789c67ece470c48d07
+msgid "``10``"
+msgstr "``10``"
+
+#: ../../usage_guide.rst:35 3bce0fe7e98d42648e6da924246b5e6a
+msgid ""
+"Number of diffusion steps. More steps improve detail and naturalness at the "
+"cost of speed. Recommended: 4–30."
+msgstr "扩散步数。步数越多细节与自然度越好，速度越慢。建议：4–30。"
+
+#: ../../usage_guide.rst:36 b89ec6e3c5f94f859a62c0c51d91fbaa
+msgid "``normalize``"
+msgstr "``normalize``"
+
+#: ../../usage_guide.rst:37 ../../usage_guide.rst:40
+#: 12f405d70b8d4c08a6da714540e25701 658f23dff9fa4262acf0aec65c60b22d
+msgid "``False``"
+msgstr "``False``"
+
+#: ../../usage_guide.rst:38 d33b4a1381b84354ba63c44092ced12e
+msgid ""
+"Run text normalization to expand numbers, dates, etc. Useful for raw text "
+"input."
+msgstr "进行文本规范化以展开数字、日期等，适合原始文本输入。"
+
+#: ../../usage_guide.rst:39 59d13ef50bcc4434ae1b76236d8babe5
+msgid "``denoise``"
+msgstr "``denoise``"
+
+#: ../../usage_guide.rst:41 40b46440b966452699e574533953188e
+msgid ""
+"Denoise prompt/reference audio before generation. Helps when the reference "
+"audio is noisy."
+msgstr "生成前对 prompt/参考音频降噪。参考音频较吵时更有用。"
+
+#: ../../usage_guide.rst:42 744a2c28128844be8c937411e42adf36
+msgid "``retry_badcase``"
+msgstr "``retry_badcase``"
+
+#: ../../usage_guide.rst:43 b0effdb4e2b44b739ff1f1a58008cea9
+msgid "``True``"
+msgstr "``True``"
+
+#: ../../usage_guide.rst:44 a2dda6fd6ccb4b61aa602b3d2ba329a0
+msgid ""
+"Automatically retry when the generated audio is abnormally short or long "
+"relative to the text."
+msgstr "当生成音频相对文本异常偏短或偏长时自动重试。"
+
+#: ../../usage_guide.rst:47 ac8a236684014a8a86a6b05e7292daab
+msgid "Three Generation Modes"
+msgstr "三种生成模式"
+
+#: ../../usage_guide.rst:49 8230f2af4d0f4c76bf6612df99e68952
+msgid ""
+"VoxCPM 2 supports three modes depending on how much control you want over "
+"the output voice."
+msgstr "VoxCPM 2 支持三种模式，取决于你想对输出声音控制到什么程度。"
+
+#: ../../usage_guide.rst:52 b2b562c36df14914a8444afc16c4593c
+msgid "Voice Design"
+msgstr "声音设定"
+
+#: ../../usage_guide.rst:54 2e253ab54ff14dbea71159a276938644
+msgid ""
+"No reference audio needed. Describe the voice you want in a control "
+"instruction prepended to the text, and VoxCPM generates a new voice from "
+"scratch."
+msgstr "无需参考音频。在正文前加控制指令描述想要的音色，VoxCPM 会从零生成新声音。"
+
+#: ../../usage_guide.rst:70 5b7aa7674a594a0b98b8dda9cbcc1fe5
+msgid ""
+"The control instruction is written in parentheses before the target text — "
+"for example ``(年轻女性，温柔甜美)`` or ``(an excited young man)``. Chinese and "
+"English are both supported in the instruction."
+msgstr "控制指令写在目标文本前的括号里，例如 ``(年轻女性，温柔甜美)`` 或 ``(an excited young man)``。指令中中英文均可。"
+
+#: ../../usage_guide.rst:73 68a07053e11f4eed8663c53880f9ccae
+msgid "Controllable Voice Cloning"
+msgstr "可控声音克隆"
+
+#: ../../usage_guide.rst:75 ed4fecc4d99a463692cde27b60ab59b2
+msgid ""
+"Upload a reference audio. The model clones the timbre, and you can still use"
+" control instructions to adjust speed, emotion, or style."
+msgstr "上传参考音频，模型克隆音色；你仍可用控制指令调节语速、情绪或风格。"
+
+#: ../../usage_guide.rst:87 ad2aa30ce115452fb8558774c96618b2
+msgid ""
+"In this mode, ``reference_wav_path`` provides the timbre, and the "
+"parenthesized instruction controls the style. No transcript of the reference"
+" audio is needed."
+msgstr "此模式下，``reference_wav_path`` 提供音色，括号内指令控制风格；无需参考音频转写。"
+
+#: ../../usage_guide.rst:90 f492bba998254478a772e63b214af60d
+msgid "Hi-Fi Cloning"
+msgstr "高保真克隆"
+
+#: ../../usage_guide.rst:92 6ab7f2af7cf64265bd7baa174face6b4
+msgid ""
+"For maximum voice similarity, provide both the reference audio and its exact"
+" transcript. The model uses the transcript to align the prompt audio "
+"precisely, producing the highest cloning fidelity."
+msgstr "追求最高相似度时，请同时提供参考音频及其逐字转写。模型用转写精确对齐 prompt 音频，克隆保真度最高。"
+
+#: ../../usage_guide.rst:108 9c278863ae654f419b86e1e4b7df4513
+msgid ""
+"Use ASR to get the transcript rather than typing it manually. The web demo "
+"does this automatically through SenseVoice. When Hi-Fi mode is enabled, the "
+"control instruction is ignored."
+msgstr "转写建议用 ASR 获取，不必手打。网页演示会通过 SenseVoice 自动完成。启用 Hi-Fi 模式时，控制指令会被忽略。"
+
+#: ../../usage_guide.rst:111 56f1be268cf940b0b66eee0820296bc6
+msgid "Text Input"
+msgstr "文本输入"
+
+#: ../../usage_guide.rst:114 8a325843adfa4364bd8a335536b1b3c8
+msgid "Regular text vs. phoneme input"
+msgstr "普通文本与音素输入"
+
+#: ../../usage_guide.rst:116 fdb257be2387480190e967333ba1949b
+msgid ""
+"Use **regular text** for most cases. Keep ``normalize=True`` when you want "
+"VoxCPM to expand numbers, dates, and similar formats automatically."
+msgstr "多数情况用**普通文本**。若希望 VoxCPM 自动展开数字、日期等格式，请保持 ``normalize=True``。"
+
+#: ../../usage_guide.rst:118 3ba97773e4334a5aaf711fd77f99f382
+msgid ""
+"Use **phoneme input** only when you need finer pronunciation control. In "
+"that case, disable text normalization:"
+msgstr "仅在需要更细粒度发音控制时使用**音素输入**，此时应关闭文本规范化："
+
+#: ../../usage_guide.rst:127 090b3cb38e404a5497ee472a00082606
+#, python-brace-format
+msgid "**Chinese:** use pinyin with tone numbers such as ``{ni3}{hao3}``"
+msgstr "**中文：** 使用带声调数字的拼音，例如 ``{ni3}{hao3}``"
+
+#: ../../usage_guide.rst:128 71d4b117973144c1a327c5402380ce79
+#, python-brace-format
+msgid "**English:** use CMUDict-style phonemes such as ``{HH AH0 L OW1}``"
+msgstr "**英文：** 使用 CMUDict 式音素，例如 ``{HH AH0 L OW1}``"
+
+#: ../../usage_guide.rst:131 0bb9aa9913cc47a4a9df8fb66b64f3ef
+msgid "Text normalization"
+msgstr "文本规范化"
+
+#: ../../usage_guide.rst:133 2b1f1f5f4b9c46e398b05ddf098b703c
+msgid "If numbers are being read digit by digit, enable text normalization:"
+msgstr "若数字被逐位朗读，请启用文本规范化："
+
+#: ../../usage_guide.rst:144 fb9bd2f2e1b84b7285b5e30b7c70004f
+msgid ""
+"Text normalization may not handle every edge case perfectly. For example, "
+"some model names or product names may need manual pre-processing."
+msgstr "文本规范化未必覆盖所有边角情况。例如部分模型名、商品名可能需要人工预处理。"
+
+#: ../../usage_guide.rst:147 a5dd220d207a4fac8f41f63802e56dcf
+msgid "Punctuation and pauses"
+msgstr "标点与停顿"
+
+#: ../../usage_guide.rst:149 c3c8da155bc943dbb80110850c3a4f25
+msgid "VoxCPM uses punctuation as a prosody cue:"
+msgstr "VoxCPM 将标点作为韵律提示："
+
+#: ../../usage_guide.rst:151 5ebfebecbe294a45b0454329b6345ef1
+msgid "Periods and question marks usually create clearer sentence-final pauses"
+msgstr "句号、问号通常带来更清晰的句末停顿"
+
+#: ../../usage_guide.rst:152 78ca6fd32cf44b8bb1be8b946c8a4f17
+msgid "Commas usually create shorter pauses"
+msgstr "逗号通常带来较短停顿"
+
+#: ../../usage_guide.rst:153 23ccfd3de0f84a029a1c44b0a77fbc2e
+msgid "Ellipsis can produce hesitation or trailing effects"
+msgstr "省略号可产生迟疑或拖尾感"
+
+#: ../../usage_guide.rst:155 cc68b1a74f874a19b8a7fc87dc1c63d5
+msgid ""
+"If you need a stronger pause, split the text into shorter sentences instead "
+"of relying only on punctuation."
+msgstr "若需要更强停顿，把文本拆成更短句，而不要只依赖标点。"
+
+#: ../../usage_guide.rst:158 23f60cc7e5c3435e8c7d3921030ad079
+msgid "Short text"
+msgstr "短文本"
+
+#: ../../usage_guide.rst:160 1a2b16adea02466fa90be560b1eae8d2
+msgid ""
+"Very short inputs such as ``\"Hello\"`` or ``\"好的\"`` may sound weak because"
+" the model was trained with a minimum audio length of around one second. In "
+"practice, inputs that naturally produce at least a few seconds of speech are"
+" more stable."
+msgstr "极短输入如 ``\"Hello\"`` 或 ``\"好的\"`` 可能听起来偏弱，因训练时最短音频约一秒。实践中，自然能产出数秒语音的输入更稳定。"
+
+#: ../../usage_guide.rst:163 ca36eea852a64b29851356912858ffd4
+msgid "Dialect tips"
+msgstr "方言建议"
+
+#: ../../usage_guide.rst:165 b8c6b3aa20b1442a871678458ea8ad30
+msgid ""
+"To generate speech in a specific dialect, write the target text in that "
+"dialect's own vocabulary and expressions, not in standard Mandarin:"
+msgstr "要生成某种方言，请用该方言自身的词汇与说法写目标文本，不要用标准普通话硬写："
+
+#: ../../usage_guide.rst:167 2c158b44f00d46288c85c1f22fbe6a0d
+msgid "Cantonese: ``(广东话，中年男性)伙計，唔該一個A餐，凍奶茶少甜！`` ✅"
+msgstr "粤语：``(广东话，中年男性)伙計，唔該一個A餐，凍奶茶少甜！`` ✅"
+
+#: ../../usage_guide.rst:168 0631e6280c744f64899e6a8e8a4903dc
+msgid "Cantonese: ``(广东话，中年男性)伙计，麻烦来一个A餐，冻奶茶少甜！`` ❌ (standard Mandarin)"
+msgstr "粤语：``(广东话，中年男性)伙计，麻烦来一个A餐，冻奶茶少甜！`` ❌（标准普通话）"
+
+#: ../../usage_guide.rst:170 e0869354449141808a8494972c94f671
+msgid ""
+"If you are not sure how to write idiomatic dialect text, you can use LLMs "
+"like DeepSeek or Doubao to translate from Mandarin first."
+msgstr "若不确定如何写地道方言，可先用 DeepSeek、豆包等 LLM 从普通话转写。"
+
+#: ../../usage_guide.rst:173 79d1bba8d6044e11af560074c9e0a7c3
+msgid "Reference Audio"
+msgstr "参考音频"
+
+#: ../../usage_guide.rst:176 48e65a391d7f4af39f5ed84bdf1e9e3c
+msgid "Audio quality"
+msgstr "音频质量"
+
+#: ../../usage_guide.rst:178 29b127c043504f5b9f0865949f2f30ee
+msgid "**Duration:** 5 to 30 seconds is a practical range"
+msgstr "**时长：** 5–30 秒较为实用"
+
+#: ../../usage_guide.rst:179 fe651d924bcf41d4800489186a62b939
+msgid "**Format:** any format supported by torchaudio, including WAV, FLAC, and MP3"
+msgstr "**格式：** torchaudio 支持的任意格式，含 WAV、FLAC、MP3"
+
+#: ../../usage_guide.rst:180 60fbd13fb01c4f7f8f48a13614b3bf61
+msgid "**Quality:** cleaner audio usually gives better timbre preservation"
+msgstr "**音质：** 越干净通常越利于保留音色"
+
+#: ../../usage_guide.rst:181 bbc5f1e22f554eedbec2cf9bfc0f788c
+msgid "**Language:** VoxCPM 2 supports 30 languages"
+msgstr "**语言：** VoxCPM 2 支持 30 种语言"
+
+#: ../../usage_guide.rst:184 eab56d3feb1c42c0a3f07fa86da023d1
+msgid "No reference audio"
+msgstr "没有参考音频时"
+
+#: ../../usage_guide.rst:186 c6e7a8056b5f4118ab8db75b7f1b10be
+msgid ""
+"If you do not provide a reference audio, VoxCPM generates a random voice "
+"each time. The model can still infer an appropriate speaking style from the "
+"text, but the timbre will not stay consistent across calls."
+msgstr "不提供参考音频时，VoxCPM 每次会随机一种声音。模型仍可从文本推断合适说话风格，但音色在多次调用间不会一致。"
+
+#: ../../usage_guide.rst:189 8225db15d18042b7a2a1a27fa159aabc
+msgid "Keeping a consistent voice"
+msgstr "如何保持声音一致"
+
+#: ../../usage_guide.rst:191 068569e74ede40369bf0c731a33b5a8a
+msgid "Reuse the same reference audio every time."
+msgstr "每次复用同一段参考音频。"
+
+#: ../../usage_guide.rst:192 722b9d0cf9a44f4a8cb425879fdcd5cd
+msgid "Use ``reference_wav_path`` in Voice Cloning mode for a stable timbre."
+msgstr "在 Voice Cloning 模式下使用 ``reference_wav_path`` 以稳定音色。"
+
+#: ../../usage_guide.rst:193 beb6c2e1753d4c369d692601b02489a7
+msgid ""
+"For production-grade consistency, consider LoRA fine-tuning. See "
+":doc:`./finetuning/finetune`."
+msgstr "若需生产级一致性，可考虑 LoRA 微调。见 :doc:`./finetuning/finetune`。"
+
+#: ../../usage_guide.rst:197 24a166b219ad4fd69c3594f0f8abc832
+msgid ""
+"VoxCPM 1.x requires ``prompt_wav_path`` + ``prompt_text`` for cloning and "
+"does not support ``reference_wav_path``. See :doc:`./models/voxcpm1.5` for "
+"1.x-specific usage."
+msgstr ""
+"VoxCPM 1.x 克隆需 ``prompt_wav_path`` + ``prompt_text``，不支持 "
+"``reference_wav_path``。1.x 专用用法见 :doc:`./models/voxcpm1.5`。"
+
+#: ../../usage_guide.rst:200 9a2b11a5936f4766ba21cdd0608a9d0c
+msgid "Quality Tuning"
+msgstr "质量调优"
+
+#: ../../usage_guide.rst:203 2258c90f52e04872994e5487f49c6248
+msgid "CFG value"
+msgstr "CFG 参数"
+
+#: ../../usage_guide.rst:209 f7e05e5074ce45fc82f0ffa59c46df1f
+msgid "Value"
+msgstr "取值"
+
+#: ../../usage_guide.rst:210 6e2e1189cf1c4aeb9c3b9926e4a1ea6e
+msgid "Effect"
+msgstr "效果"
+
+#: ../../usage_guide.rst:211 392c58a8ecc74a70b0130e321602b5eb
+msgid "**1.0–2.0**"
+msgstr "**1.0–2.0**"
+
+#: ../../usage_guide.rst:212 e5cbff7509e94d65bc6e8120ebd10b41
+msgid "More relaxed and natural, but may drift slightly from the target text"
+msgstr "更松弛自然，但可能略微偏离目标文本"
+
+#: ../../usage_guide.rst:213 6bc2af068e244e84bc30daf4c05f18ea
+msgid "**2.0**"
+msgstr "**2.0**"
+
+#: ../../usage_guide.rst:214 2eefea7d606d4712bdc4d7d25a5b7fc4
+msgid "Balanced default"
+msgstr "均衡默认"
+
+#: ../../usage_guide.rst:215 a34d5a1ae0c041f788255e715ff569d1
+msgid "**2.0-3.0**"
+msgstr "**2.0–3.0**"
+
+#: ../../usage_guide.rst:216 3d71594f01dc4688a524eee3f8cfd2f0
+msgid ""
+"Stronger adherence to the text, but more risk of noise or artifacts on "
+"difficult inputs"
+msgstr "更贴文本，但在难例上更易出现噪声或瑕疵"
+
+#: ../../usage_guide.rst:218 b1c97c34135547c6b2dd5b7f43bb42b8
+msgid ""
+"If long-form output becomes noisy or buzzy, lowering ``cfg_value`` toward "
+"``1.5–1.6`` is often more stable."
+msgstr "若长音频输出发糊、发嗡，把 ``cfg_value`` 降到 ``1.5–1.6`` 附近往往更稳。"
+
+#: ../../usage_guide.rst:221 37ff1e1445564adbaf1c3e9495f777c1
+msgid "Long text"
+msgstr "长文本"
+
+#: ../../usage_guide.rst:223 961f7451ec3e45a39fe852ef7463e673
+msgid "Long text is one of the easiest ways to trigger unstable behavior, including:"
+msgstr "长文本最容易触发不稳定行为，包括："
+
+#: ../../usage_guide.rst:225 05640b3410f44563b407953e8491efdb
+msgid "gradual speed-up or buzzing"
+msgstr "逐渐加速或嗡嗡声"
+
+#: ../../usage_guide.rst:226 236399c757224365b0878c8353ac1f73
+msgid "out-of-memory errors from KV cache growth"
+msgstr "KV cache 增长导致显存不足"
+
+#: ../../usage_guide.rst:227 3cf553df2a534faebe15e0ea16e7137a
+msgid "generations that never stop"
+msgstr "生成停不下来"
+
+#: ../../usage_guide.rst:229 eb2567439c9a41c7a54b1185e499d758
+msgid ""
+"The practical solution is to split long text into shorter segments and "
+"concatenate the resulting waveforms:"
+msgstr "实用做法是把长文切成较短段落，再拼接各段波形："
+
+#: ../../usage_guide.rst:243 d326be2ab83e4ca4a2a5f3792dee49ee
+msgid "Leading and trailing artifacts"
+msgstr "首尾伪影"
+
+#: ../../usage_guide.rst:245 7b96a000343b46279366eb83b74c2884
+msgid "If you hear extra sounds at the beginning or end of the generated audio:"
+msgstr "若生成音频首尾有多余杂音："
+
+#: ../../usage_guide.rst:247 358513d2e33e4d0c9d1a5b6bff265cbe
+msgid ""
+"**VoxCPM 1.x:** check whether ``prompt_text`` matches the reference audio "
+"exactly — mismatched transcripts are the most common cause"
+msgstr "**VoxCPM 1.x：** 检查 ``prompt_text`` 是否与参考音频完全一致——转写不匹配最常见"
+
+#: ../../usage_guide.rst:249 67b75d1c383b481b8d85390b949848b7
+msgid "Other things to try:"
+msgstr "还可尝试："
+
+#: ../../usage_guide.rst:251 2438483c9a374ad494bbdfd8a269f789
+msgid "enable ``retry_badcase=True``"
+msgstr "启用 ``retry_badcase=True``"
+
+#: ../../usage_guide.rst:252 3834621bf0ad44ceb7d4e790e4c13a86
+msgid "lower ``cfg_value``"
+msgstr "降低 ``cfg_value``"
+
+#: ../../usage_guide.rst:253 5d90024b25ed4040821baeea05a5c202
+msgid "trim the output afterwards if needed"
+msgstr "必要时后处理裁切输出"
+
+#: ../../usage_guide.rst:261 c5c8de9dcf154e51811d87250d093c73
+msgid "Denoise"
+msgstr "降噪"
+
+#: ../../usage_guide.rst:263 d65457939c3c4afcb24b8afffeb44f0b
+msgid ""
+"The ``denoise`` parameter improves **prompt audio**, not the generated "
+"output itself:"
+msgstr "``denoise`` 改善的是 **prompt 音频**，不是生成结果本身："
+
+#: ../../usage_guide.rst:265 380b48f18d44447d9cf3e497da1d953e
+msgid "``denoise=True`` is useful when the reference audio is noisy"
+msgstr "参考音频嘈杂时 ``denoise=True`` 有用"
+
+#: ../../usage_guide.rst:266 5ae7e8aeb83e4245b9430315214ee63b
+msgid ""
+"``denoise=False`` is better when the prompt is already clean and you want to"
+" preserve the original voice characteristics"
+msgstr "prompt 已很干净且想保留原声特征时，``denoise=False`` 更合适"
+
+#: ../../usage_guide.rst:270 6616983f21824890b04acca48a9ef68a
+msgid ""
+"The denoiser runs in a 16kHz pipeline and can slightly change the voice "
+"characteristics. If cloning quality gets worse, try turning it off."
+msgstr "降噪器在 16 kHz 流水线中运行，可能轻微改变声线。若克隆变差，可尝试关闭。"
+
+#: ../../usage_guide.rst:273 4ed2e03ad1004f2a82b5bc4cc45f1b5a
+msgid "Streaming"
+msgstr "流式生成"
+
+#: ../../usage_guide.rst:275 8036f088c84b4050887c890db27993ed
+msgid ""
+"VoxCPM supports streaming audio output through ``generate_streaming()``. For"
+" interactive applications, a sentence-level approach is usually more stable "
+"than trying to stream one growing text input:"
+msgstr "VoxCPM 通过 ``generate_streaming()`` 支持流式音频。交互场景下，按句处理通常比对不断增长的一段文本流式生成更稳："
+
+#: ../../usage_guide.rst:277 4d039f7dc4404be1bf6c08278b806afd
+msgid "Split incoming text into sentences."
+msgstr "将输入文本按句切分。"
+
+#: ../../usage_guide.rst:278 9186ff5db5634d1990c1efaa166d6d91
+msgid "Call ``generate_streaming()`` for each sentence."
+msgstr "对每句调用 ``generate_streaming()``。"
+
+#: ../../usage_guide.rst:279 b6f3cdeb48ab4d1693430850fb0913e9
+msgid "Play or buffer each audio chunk in order."
+msgstr "按顺序播放或缓冲各音频块。"
+
+#: ../../usage_guide.rst:294 16a1be60b7e3448e918bd985675c0f51
+msgid ""
+"Bidirectional streaming, where text arrives token by token while audio is "
+"generated at the same time, is not currently supported."
+msgstr "文本逐 token 到达且同步生成音频的双向流式目前不支持。"
+
+#: ../../usage_guide.rst:297 6a04ad2e6d594379b192907f6d237c79
+msgid "What's Next?"
+msgstr "What's Next?"
+
+#: ../../usage_guide.rst:299 fc551337f4524037b4b9e213f118961e
+msgid "Check :doc:`./faq` when you hit environment, runtime, or deployment problems."
+msgstr "遇到环境、运行或部署问题可查 :doc:`./faq`。"
+
+#: ../../usage_guide.rst:300 a3e2700fcc04474183eaf4a8be9c5744
+msgid ""
+"Read the pages under ``Models`` for version-specific features and migration "
+"notes."
+msgstr "阅读 ``Models`` 下各页了解版本特性与迁移说明。"
+
+#: ../../usage_guide.rst:301 6e2ed72345f54d8789b6a4b15e9c8178
+msgid ""
+"Fine-tune the model with :doc:`./finetuning/finetune` to adapt it to your "
+"use case."
+msgstr "用 :doc:`./finetuning/finetune` 微调模型以适配你的场景。"
+
+#: ../../usage_guide.rst:302 ae9d06ec91a44bebb4197376d2478492
+msgid ""
+"Deploy the model with :doc:`./deployment/nanovllm_voxcpm` for high-"
+"throughput serving."
+msgstr "用 :doc:`./deployment/nanovllm_voxcpm` 部署模型以实现高吞吐服务。"
+

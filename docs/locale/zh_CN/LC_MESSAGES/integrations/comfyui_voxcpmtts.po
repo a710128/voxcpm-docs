@@ -1,0 +1,504 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2025, OpenBMB
+# This file is distributed under the same license as the VoxCPM package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version:  VoxCPM\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-06 15:37+0800\n"
+"PO-Revision-Date: 2026-04-06 20:00+0800\n"
+"Last-Translator: VoxCPM Docs zh-CN <>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:3
+#: ../../integrations/comfyui_voxcpmtts.rst:164 a3af52ad8ed549b68abcae15a2cf178c
+#: c2d4a3baca6d4efebf5d26673bea6954
+msgid "ComfyUI-VoxCPMTTS"
+msgstr "ComfyUI-VoxCPMTTS"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:5 47d98ea8452e4858810c4540c0b6caf2
+msgid ""
+"ComfyUI-VoxCPMTTS is a lightweight ComfyUI node for VoxCPM 1.5, featuring "
+"built-in **automatic speech recognition** for reference audio transcription."
+msgstr "ComfyUI-VoxCPMTTS 是面向 VoxCPM 1.5 的轻量 ComfyUI 节点，内置参考音频的 **自动语音识别** 转写。"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:7 24757b57132e49afb12c951778df0a30
+msgid ""
+"Repo: `1038lab/ComfyUI-VoxCPMTTS <https://github.com/1038lab/ComfyUI-"
+"VoxCPMTTS>`_"
+msgstr ""
+"仓库：`1038lab/ComfyUI-VoxCPMTTS <https://github.com/1038lab/ComfyUI-"
+"VoxCPMTTS>`_"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:10 6f38e6a284064393985876a592a87dba
+msgid "For LoRA training and dual-model support, see :doc:`comfyui_voxcpm`."
+msgstr "LoRA 训练与双模型支持请参阅 :doc:`comfyui_voxcpm`。"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:12 a25a45a60c2b4e688fc30b33fe37d04f
+msgid "Supported VoxCPM Versions"
+msgstr "支持的 VoxCPM 版本"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:16 f6348b1ab0474cccae58b3c6bf73233b
+msgid "VoxCPM 1.0 (0.5B)"
+msgstr "VoxCPM 1.0 (0.5B)"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:17 77e9e9f312ac440aaf48bdfbc3a5a758
+msgid "✅ Available in UI (16 kHz)"
+msgstr "✅ 界面可选（16 kHz）"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:18 2e7347a5190548278204b5e1478e3d61
+msgid "VoxCPM 1.5"
+msgstr "VoxCPM 1.5"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:19 438feb8a98a64db9800be4b294c63693
+msgid "✅ Default and recommended (44.1 kHz)"
+msgstr "✅ 默认且推荐（44.1 kHz）"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:20 ec9ba70a8b0e46dfa5b5abf5106e8be3
+msgid "VoxCPM 2"
+msgstr "VoxCPM 2"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:21 41f7624242774aedab02d8735a87c0c7
+msgid "❌ Not supported"
+msgstr "❌ 不支持"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:23 e9eeb76d08294e5892b609b9c29cc557
+msgid "This extension provides two node variants:"
+msgstr "本扩展提供两种节点变体："
+
+#: ../../integrations/comfyui_voxcpmtts.rst:25 94ad233d0ade459daf13bcf46cae5b54
+msgid "**AILab_VoxCPMTTS** — simplified node with hidden advanced parameters"
+msgstr "**AILab_VoxCPMTTS** — 简化节点，高级参数默认隐藏"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:26 e7ae3422ada44087a27e8ce34f290102
+msgid "**AILab_VoxCPMTTS_Advanced** — full control over all generation parameters"
+msgstr "**AILab_VoxCPMTTS_Advanced** — 可手动控制全部生成参数"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:29 1440b9f1cd914620b78150a8c91ee42a
+msgid "Features"
+msgstr "主要特性"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:31 a3bea13f771742a586e0708283af8d92
+msgid ""
+"TTS and voice cloning with **VoxCPM 1.5** (44.1 kHz output); VoxCPM 0.5B "
+"also available in the UI"
+msgstr "基于 **VoxCPM 1.5** 的 TTS 与声音克隆（44.1 kHz 输出）；界面中也可选用 VoxCPM 0.5B"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:32 37ada0e89b864ef5a410bc0855c18010
+msgid ""
+"**Auto-transcription** of reference audio via faster-whisper (requires "
+"enabling ``auto_transcribe_reference``)"
+msgstr "通过 faster-whisper 对参考音频 **自动转写** （需启用 ``auto_transcribe_reference``）"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:33 9e178ec5b5d84e2ea1075394f2aa5ee8
+msgid ""
+"Fade-in post-processing for smoother audio output (configurable "
+"``fade_in_ms`` on Advanced node)"
+msgstr "淡入后处理使输出更顺滑（高级节点可配置 ``fade_in_ms``）"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:34 0ef71e730c604620b6fea723700c7597
+msgid ""
+"Simplified node uses fixed defaults (``cfg_value=2.0``, "
+"``inference_steps=10``); Advanced node exposes full manual control"
+msgstr "简化节点固定默认（``cfg_value=2.0``、``inference_steps=10``）；高级节点可完全手动调节"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:35 8397a326ccd842ab9f1ea45f0385175d
+msgid "``REFERENCE_TEXT`` output port for inspecting ASR results"
+msgstr "``REFERENCE_TEXT`` 输出端口用于查看 ASR 结果"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:36 f0c4f1d9bb514879838aa2417497ba1f
+msgid ""
+"Configurable ASR model via environment variable ``VOXCPM_ASR_MODEL`` "
+"(``tiny`` / ``small`` / ``medium`` / ``large``)"
+msgstr ""
+"通过环境变量 ``VOXCPM_ASR_MODEL`` 配置 ASR 模型（``tiny`` / ``small`` / ``medium`` / "
+"``large``）"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:37 36507cc48cb04c86b81ff1678589cb3f
+msgid "Multi-device: **auto** (auto-detect), **CUDA**, **MPS**, **CPU**"
+msgstr "多设备： **auto** （自动检测）、**CUDA**、**MPS**、**CPU**"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:40 590e8f7e5d5d49ada8d641c3a17945a0
+msgid "Prerequisites"
+msgstr "准备工作"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:42 f17d9800db654bb0ae22a2c39229fc8f
+msgid "`ComfyUI <https://github.com/comfyanonymous/ComfyUI>`_ installed and running"
+msgstr "已安装并运行 `ComfyUI <https://github.com/comfyanonymous/ComfyUI>`_"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:43 b17683f4f50345dc97e0809a90cad041
+msgid "PyTorch with appropriate backend"
+msgstr "已安装匹配后端的 PyTorch"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:44 e58d395a5ae24e5c84f7393f05bc6331
+msgid "~1.2 GB disk space for model downloads"
+msgstr "模型下载约需 1.2 GB 磁盘空间"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:47 b78e2d9f16204e88a8a3c6192156d8ca
+msgid "Installation"
+msgstr "安装"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:49 f106f8febd2149b69b493b4e41b149c9
+msgid "Via ComfyUI Manager: search for ``VoxCPMTTS`` and install."
+msgstr "通过 ComfyUI Manager：搜索 ``VoxCPMTTS`` 并安装。"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:51 371ae2fede1e4a47ab79e7d6d01c0eae
+msgid "Manual installation:"
+msgstr "手动安装："
+
+#: ../../integrations/comfyui_voxcpmtts.rst:60 88c3fa0fdf0f49b5a4c2e05c0c05470b
+msgid ""
+"Models are auto-downloaded on first use. Default path is "
+"``ComfyUI/models/TTS/VoxCPM1.5/`` for the 1.5 model, or "
+"``ComfyUI/models/TTS/VoxCPM-0.5B/`` if 0.5B is selected."
+msgstr ""
+"首次使用自动下载模型。1.5 模型默认路径为 ``ComfyUI/models/TTS/VoxCPM1.5/``；若选择 0.5B 则为 "
+"``ComfyUI/models/TTS/VoxCPM-0.5B/``。"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:63 9f7255e1959a4a5eb8106e03e9362d13
+msgid "Basic usage"
+msgstr "基本用法"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:66 9cfa06e4053341fd888ca7f5baf5ce98
+msgid "Text-to-Speech"
+msgstr "文本转语音"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:68 92f6c4f45d234017ad7e48a0c8e35cb0
+msgid "Add the **VoxCPM TTS** node (simplified) or **VoxCPM TTS (Advanced)** node"
+msgstr "添加 **VoxCPM TTS** （简化）或 **VoxCPM TTS (Advanced)** 节点"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:69 d89edba861d34b2f848004e55245d33c
+msgid "Enter the ``text`` to synthesize"
+msgstr "输入待合成的 ``text``"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:70 c1bab34a334247c0bc08bcb2b404fc15
+msgid ""
+"The simplified node uses sensible defaults (``cfg_value=2.0``, "
+"``inference_steps=10``)"
+msgstr "简化节点使用合理默认（``cfg_value=2.0``、``inference_steps=10``）"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:71 64a915f5bdd84f198d98142c0a83ac98
+msgid ""
+"The Advanced node lets you manually set ``cfg_value``, ``inference_steps``, "
+"and other parameters"
+msgstr "高级节点可手动设置 ``cfg_value``、``inference_steps`` 等参数"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:74 3ba50d1845ce4574b257f0e5a3154929
+msgid "Voice cloning"
+msgstr "声音克隆"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:76 4a3f9feb1f6d49428ee9e113a933fd6b
+msgid "Connect ``reference_audio`` with a reference audio clip"
+msgstr "将 ``reference_audio`` 接入参考音频"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:77 95d9b2822bdf46d8952f12116b39ba3d
+msgid ""
+"For auto-transcription: enable ``auto_transcribe_reference`` on the node "
+"(required — leaving ``reference_text`` empty alone is not sufficient)"
+msgstr "自动转写：须在节点上启用 ``auto_transcribe_reference`` （仅留空 ``reference_text`` 并不足够）"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:78 638d1660cacd40bc868e77d1714f2130
+msgid "Alternatively, provide the transcript manually in ``reference_text``"
+msgstr "也可在 ``reference_text`` 中手动填写转写"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:79 8bdff627868d45c7b09119e584817666
+msgid ""
+"The ``REFERENCE_TEXT`` output shows the detected/provided transcript for "
+"verification"
+msgstr "``REFERENCE_TEXT`` 输出显示识别或提供的转写，便于核对"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:82 81e6c641159545f2a56a368506e6251b
+msgid "Recommended parameter tuning"
+msgstr "推荐参数设置"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:84 eddfcaa659294d7aa22f7c577ccc449c
+msgid ""
+"The README suggests the following parameter combinations for different "
+"speed/quality trade-offs (set manually on the Advanced node):"
+msgstr "README 建议在高级节点上手动设置以下速度/质量折中组合："
+
+#: ../../integrations/comfyui_voxcpmtts.rst:90 4ecaa587d3104136836f4f455d93c4e8
+msgid "Profile"
+msgstr "档位"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:91 3f69fc4eebd54b0c992403b43b4819c7
+msgid "CFG Value"
+msgstr "CFG 数值"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:92 cd18bad701d547a1a12c498a281e7a2b
+msgid "Inference Steps"
+msgstr "推理步数"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:93 65bc7c80db8d495bb2d585756f852ce6
+msgid "Speed"
+msgstr "速度"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:94 6b7c4ec8fc1c4d07b07a311d757ad58e
+msgid "Fast"
+msgstr "较快"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:95 492b95064cb84209816ed3076b2d9b61
+msgid "1.5"
+msgstr "1.5"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:96 3ffc3ac98c3b45b7baea443fdc7b1c36
+msgid "5"
+msgstr "5"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:97 4f25d8b435944f1a87619ae0176a7cf6
+msgid "Fastest"
+msgstr "最快"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:98 53189f504d874546ba4660a82033431a
+msgid "Balanced"
+msgstr "均衡"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:99 635ce559bd464bdf8f9956437be16f22
+msgid "2.0"
+msgstr "2.0"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:100 fb29a9e359a44427a2d7dd55bd50dd55
+msgid "10"
+msgstr "10"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:101 af1ab3c912f543a2bc16824337b1fb66
+msgid "Moderate"
+msgstr "中等"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:102 46e582d1a30b48bfbdfc6407c08f2372
+msgid "High Quality"
+msgstr "高质量"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:103 230175ae11884b38ab696a1999f88861
+msgid "3.0"
+msgstr "3.0"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:104 a13b27d24e5d4571868e250c69ad9a20
+msgid "20"
+msgstr "20"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:105 503bcb5e9d6b428485bee6db26faf972
+msgid "Slowest"
+msgstr "最慢"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:108 ca4f80614bdf4393bfc469aab9429271
+msgid "Advanced node parameters"
+msgstr "高级节点参数"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:114 419c10bf2a8b4e08baae3b79bae30f18
+msgid "Parameter"
+msgstr "参数"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:115 44f23d4d05744a4eaaf6d3ead4455379
+msgid "Description"
+msgstr "说明"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:116 55a7277c8ff243aa8a8bdb4765d01d37
+msgid "``cfg_value``"
+msgstr "``cfg_value``"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:117 1d46beb1e7ae4fb4a8f21f4d7be9adbe
+msgid "Classifier-free guidance scale"
+msgstr "Classifier-free guidance 强度"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:118 7bbe40792d2241d7b710350fd6876f9c
+msgid "``inference_steps``"
+msgstr "``inference_steps``"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:119 692015a33b42498185c261a645133bc9
+msgid "LocDiT diffusion steps"
+msgstr "LocDiT 扩散步数"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:120 70989c3dc45f44db8af2f0321086e8b9
+msgid "``max_length``"
+msgstr "``max_length``"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:121 216a3f7018074bc0b635e54f1affe040
+msgid "Maximum generation token length"
+msgstr "生成 token 最大长度"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:122 316c808dd22e486682b33994c9d4fe08
+msgid "``fade_in_ms``"
+msgstr "``fade_in_ms``"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:123 59b2452735434593a3d05b61cb58cc76
+msgid "Fade-in duration for audio smoothing"
+msgstr "淡入时长，用于平滑音频"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:124 6cbe950e929a4c9bb157a8fb6ea8c885
+msgid "``retry_attempts``"
+msgstr "``retry_attempts``"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:125 a8659960aa8c4eeea23ab29155963489
+msgid "Maximum retries for bad outputs"
+msgstr "劣质输出的最大重试次数"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:126 b4b84f2f587948468f5846d2e4bfc0fd
+msgid "``retry_threshold``"
+msgstr "``retry_threshold``"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:127 aa6aedeac43c417997a2fce0e1f9d1f9
+msgid "Threshold for bad-case detection"
+msgstr "坏例检测阈值"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:128 c8865598fb58458194fb5a52a8760c73
+msgid "``auto_transcribe_reference``"
+msgstr "``auto_transcribe_reference``"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:129 9c31ddff138443059282680433596079
+msgid "Enable ASR for reference audio"
+msgstr "对参考音频启用 ASR"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:130 0e87e76d679a4f03bf908f2cce7d5391
+msgid "``normalize``"
+msgstr "``normalize``"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:131 62f69576d696404b94b3332a3bf15e4f
+msgid "Enable text normalization"
+msgstr "启用文本规范化"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:132 1d107e9afcd14f52bf65a14644448ef4
+msgid "``unload_model``"
+msgstr "``unload_model``"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:133 b9b00eea4ce24249bdb7dacc8a5f04ec
+msgid "Unload model after inference to free VRAM"
+msgstr "推理后卸载模型以释放显存"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:136 c422580d11dc4d12bf2efe08a1d905cb
+msgid "Troubleshooting"
+msgstr "问题排查"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:139 50c5e8cc2fb24989b02e44451a455b88
+msgid "Out of Memory (OOM)"
+msgstr "显存不足（OOM）"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:141 5a82a17cd0a547eb8bc99e058ac51615
+msgid "VoxCPM 1.5 requires significant VRAM. If you encounter OOM errors:"
+msgstr "VoxCPM 1.5 对显存要求较高。若出现 OOM："
+
+#: ../../integrations/comfyui_voxcpmtts.rst:143 e10052e9a2e84963b6f08e32a868755f
+msgid "Enable ``unload_model`` to release GPU memory after each generation"
+msgstr "启用 ``unload_model``，每次生成后释放 GPU 显存"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:144 a200e4a976bd437dba0a2d93cfee7fe3
+msgid "Switch ``device`` to ``cpu`` (slower but uses system RAM)"
+msgstr "将 ``device`` 设为 ``cpu`` （更慢但使用系统内存）"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:145 3d6c13c26e624d78a7f77c576fa19091
+msgid "Close other GPU-intensive applications"
+msgstr "关闭其它占用 GPU 的应用"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:146 0dff651874bd43e7bb98b06802b763fb
+msgid "Try the **Fast** quality preset to reduce memory usage"
+msgstr "尝试 **较快** 质量预设以降低显存占用"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:149 ff603d66ba2b4497a3e99a7b691fb605
+msgid "Model download issues"
+msgstr "模型下载问题"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:151 631aa1b5d49f48db8983c13f715ce2af
+msgid ""
+"If auto-download fails, manually download from `Hugging Face "
+"<https://huggingface.co/openbmb/VoxCPM1.5>`_ and place files in "
+"``ComfyUI/models/TTS/VoxCPM1.5/``."
+msgstr ""
+"若自动下载失败，请从 `Hugging Face <https://huggingface.co/openbmb/VoxCPM1.5>`_ "
+"手动下载并放入 ``ComfyUI/models/TTS/VoxCPM1.5/``。"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:153 19c385d99e7449979362beaaf5508344
+msgid "For debug logging, set ``COMFYUI_LOG_LEVEL=DEBUG``."
+msgstr "调试日志可设置 ``COMFYUI_LOG_LEVEL=DEBUG``。"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:156 c1002115fe8348599c3dd8cff9f4504e
+msgid "Comparing with ComfyUI-VoxCPM"
+msgstr "与 ComfyUI-VoxCPM 对比"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:162 0274d8ec226c4354b0f8665a6945cc4c
+msgid "Feature"
+msgstr "特性"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:163 d0dc29a6b3314643bdef123c7f295d00
+msgid "ComfyUI-VoxCPM"
+msgstr "ComfyUI-VoxCPM"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:165 0a72939958fe43708b1d5f68def07196
+msgid "Model support"
+msgstr "模型支持"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:166 8aad46d1fe8c4307b1422ec45358a113
+msgid "VoxCPM 1.5 + 0.5B"
+msgstr "VoxCPM 1.5 + 0.5B"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:167 f8e3fe5716c84995a2f028e4571b1812
+msgid "VoxCPM 1.5 (recommended) + 0.5B"
+msgstr "VoxCPM 1.5（推荐）+ 0.5B"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:168 22a2c6b36c514846a05a3918d51c0397
+msgid "LoRA training"
+msgstr "LoRA 训练"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:169 c6a988198c234f978aba3044bc5a61a6
+msgid "✅ Built-in"
+msgstr "✅ 内置"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:170 a436e0ee5de94caab9beb055c65aa68f
+msgid "❌"
+msgstr "❌"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:171 c5dc5d07f5e34f3191a15f9e5effb457
+msgid "Auto-transcription"
+msgstr "自动转写"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:172 8e6ac2d5449a4d888925e04184aff27d
+msgid "❌ Manual only"
+msgstr "❌ 仅手动"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:173 4373b456a47147629bdf6063d9970451
+msgid "✅ faster-whisper"
+msgstr "✅ faster-whisper"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:174 ce93ed1c232d49cea32addd13db184ac
+msgid "Node variants"
+msgstr "节点变体"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:175 e5d4093316074471bcd1e8b2e0a1bc2c
+msgid "Single node"
+msgstr "单一节点"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:176 9d758e2475e84b5092467bd935cc70a8
+msgid "Simple + Advanced"
+msgstr "简化 + 高级"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:177 84fb0ffe226d42f9affa1eeb5e7d20d1
+msgid "Quality presets"
+msgstr "质量预设"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:178 4d16483453dc4201bda1696b04e85d57
+msgid "Manual parameters"
+msgstr "手动参数"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:179 a209c32fbc5345109b0a7bb214ff5ff8
+msgid "Fast / Balanced / HQ"
+msgstr "较快 / 均衡 / 高质量"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:180 b73d56cd0fb04f7f87ca4821b77206d8
+msgid "Dependencies"
+msgstr "依赖"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:181 1216cb6c477440a599a03c9eb5df8573
+msgid "Heavier (LoRA training)"
+msgstr "更重（含 LoRA 训练）"
+
+#: ../../integrations/comfyui_voxcpmtts.rst:182 eb70b2bb1ff049e59668c0370eb08ad1
+msgid "Lighter"
+msgstr "更轻"
+

@@ -1,426 +1,477 @@
 ==============================
-VoxCPM Fine-tuning Guide
+Fine-Tuning Guide
 ==============================
 
-This guide covers how to fine-tune VoxCPM models with two approaches: full fine-tuning and LoRA fine-tuning.
+This guide covers how to fine-tune VoxCPM with two approaches: LoRA (parameter-efficient) and full fine-tuning. Both use the same training script and data format.
 
 ----
 
-📊 Data Preparation
-===================
+Environment & Resources
+=======================
 
-Training data should be prepared as a JSONL manifest file, with one sample per line:
+Software
+--------
+
+.. list-table::
+   :widths: 25 75
+   :header-rows: 1
+
+   * - Dependency
+     - Version
+   * - Python
+     - 3.10–3.11 recommended for training
+   * - PyTorch
+     - 2.5.0+
+   * - CUDA
+     - 12.0+
+   * - safetensors
+     - recommended (falls back to ``.bin`` / ``.ckpt`` if unavailable)
+
+Additional Python packages used by the training script: ``tensorboardX``, ``argbind``, ``transformers`` (for the cosine scheduler), ``librosa`` (for validation mel spectrograms).
+
+Hardware
+--------
+
+.. list-table::
+   :widths: 30 35 35
+   :header-rows: 1
+
+   * - Setup
+     - LoRA
+     - Full Fine-Tuning
+   * - VoxCPM 1.5 (750M)
+     - ~12 GB VRAM
+     - ~24 GB VRAM
+   * - VoxCPM 2 (2B)
+     - ~20 GB VRAM
+     - ~40 GB VRAM
+
+These are rough estimates with ``batch_size=16`` and ``max_batch_tokens=8192``. Actual usage depends on audio length and accumulation steps. If you hit OOM, see :doc:`./faq`.
+
+Multi-GPU training is supported via ``torchrun``:
+
+.. code-block:: sh
+
+   CUDA_VISIBLE_DEVICES=0,1,2,3 torchrun --nproc_per_node=4 \
+       scripts/train_voxcpm_finetune.py --config_path your_config.yaml
+
+----
+
+Data Preparation
+================
+
+Format
+------
+
+Training data is a JSONL manifest file with one sample per line:
 
 .. code-block:: json
 
    {"audio": "path/to/audio1.wav", "text": "Transcript of audio 1."}
    {"audio": "path/to/audio2.wav", "text": "Transcript of audio 2."}
-   {"audio": "path/to/audio3.wav", "text": "Optional duration field.", "duration": 3.5}
-   {"audio": "path/to/audio4.wav", "text": "Optional dataset_id for multi-dataset.", "dataset_id": 1}
-
-Required Fields
----------------
+   {"audio": "path/to/audio3.wav", "text": "Optional fields.", "duration": 3.5, "dataset_id": 1}
 
 .. list-table::
+   :widths: 20 15 65
    :header-rows: 1
-   :widths: 20 80
 
    * - Field
+     - Required
      - Description
    * - ``audio``
-     - Path to audio file (absolute or relative)
+     - Yes
+     - Path to audio file (WAV recommended)
    * - ``text``
-     - Corresponding transcript
+     - Yes
+     - Transcript matching the audio content
+   * - ``duration``
+     - No
+     - Duration in seconds; speeds up length filtering
+   * - ``dataset_id``
+     - No
+     - Integer ID for multi-dataset mixing (default: 0)
 
-Optional Fields
----------------
+See ``examples/train_data_example.jsonl`` in the repository for a reference.
+
+Audio requirements
+------------------
+
+- **Format:** WAV is recommended. Other formats supported by torchaudio also work.
+- **Sample rate:** The dataloader automatically resamples to the target model's rate, so you do not need to pre-resample. The native rates are:
+
+  - VoxCPM 1.0: 16kHz
+  - VoxCPM 1.5: 44.1kHz
+  - VoxCPM 2: 48kHz
+
+- **Duration:** 3–30 seconds per clip is the practical sweet spot. Very short clips (< 1s) produce unstable results. Very long clips increase VRAM usage and may be filtered out by ``max_batch_tokens``.
+
+Preprocessing tips
+------------------
+
+- **Trim trailing silence** to < 0.5 seconds. Long trailing silence is one of the most common causes of "generation doesn't stop" after fine-tuning.
+- **Normalize volume** if your recordings have inconsistent levels.
+- **Clean transcripts:** Ensure the text matches the audio exactly. Mismatched text degrades both cloning quality and text adherence.
+- **Remove noisy samples.** The model is sensitive to background noise in training data.
+
+Choosing your path
+------------------
+
+Your data size and goal determine which fine-tuning approach to use:
 
 .. list-table::
+   :widths: 30 20 50
    :header-rows: 1
-   :widths: 20 80
 
-   * - Field
-     - Description
-   * - ``duration``
-     - Audio duration in seconds (speeds up sample filtering)
-   * - ``dataset_id``
-     - Dataset ID for multi-dataset training (default: 0)
+   * - Goal
+     - Data Size
+     - Recommended Approach
+   * - Clone a single speaker
+     - 5–50 clips
+     - :ref:`lora-finetuning` — fast, low VRAM
+   * - Adapt to a domain or style
+     - 50–500 clips
+     - :ref:`lora-finetuning` — with higher rank (``r=32–64``)
+   * - Add a new language
+     - 500+ hours
+     - :ref:`full-finetuning` — mix with some Chinese/English data to reduce forgetting
+   * - Large-scale customization
+     - 1000+ clips
+     - :ref:`full-finetuning`
 
-Requirements
-------------
+**LoRA vs Full Fine-Tuning at a glance:**
 
-- Audio format: WAV
-- Sample rate: 16kHz for VoxCPM-0.5B, 44.1kHz for VoxCPM1.5
-- Text: Transcript matching the audio content
-
-See ``examples/train_data_example.jsonl`` for a complete example.
+In internal benchmarks on single-speaker cloning, LoRA (``r=32``) achieved approximately 98% of the speaker similarity of full fine-tuning, while using roughly half the VRAM and producing checkpoint files that are orders of magnitude smaller. LoRA is the recommended starting point for most tasks. Results may vary with different datasets and goals.
 
 ----
 
-🔥 Full Fine-tuning
-===================
+.. _lora-finetuning:
 
-Full fine-tuning updates all model parameters. Suitable for large datasets or when significant behavior changes are needed.
+LoRA Fine-Tuning
+================
 
-Configuration
--------------
-
-Create ``conf/voxcpm_v1.5/voxcpm_finetune_all.yaml``:
-
-.. code-block:: yaml
-
-   pretrained_path: /path/to/VoxCPM1.5/
-   train_manifest: /path/to/train.jsonl
-   val_manifest: ""
-
-   sample_rate: 44100
-   batch_size: 16
-   grad_accum_steps: 1
-   num_workers: 2
-   num_iters: 2000
-   log_interval: 10
-   valid_interval: 1000
-   save_interval: 1000
-
-   learning_rate: 0.00001   # Use smaller LR for full fine-tuning
-   weight_decay: 0.01
-   warmup_steps: 100
-   max_steps: 2000
-   max_batch_tokens: 8192
-
-   save_path: /path/to/checkpoints/finetune_all
-   tensorboard: /path/to/logs/finetune_all
-
-   lambdas:
-     loss/diff: 1.0
-     loss/stop: 1.0
+LoRA trains a small number of additional parameters (typically < 1% of the model) while keeping the base model frozen. It is the recommended starting point for most fine-tuning tasks.
 
 Training
 --------
 
-.. code-block:: bash
+**Configuration**
 
-   # Single GPU
-   python scripts/train_voxcpm_finetune.py --config_path conf/voxcpm_v1.5/voxcpm_finetune_all.yaml
-
-   # Multi-GPU
-   CUDA_VISIBLE_DEVICES=0,1,2,3 torchrun --nproc_per_node=4 \
-       scripts/train_voxcpm_finetune.py --config_path conf/voxcpm_v1.5/voxcpm_finetune_all.yaml
-
-Checkpoint Structure
---------------------
-
-Full fine-tuning saves a complete model directory that can be loaded directly:
-
-.. code-block:: text
-
-   checkpoints/finetune_all/
-   └── step_0002000/
-       ├── model.safetensors     # Model weights (excluding audio_vae)
-       ├── config.json            # Model config
-       ├── audiovae.pth           # Audio VAE weights
-       ├── tokenizer.json         # Tokenizer
-       ├── tokenizer_config.json
-       ├── special_tokens_map.json
-       ├── optimizer.pth
-       └── scheduler.pth
-
-----
-
-✨ LoRA Fine-tuning
-===================
-
-LoRA (Low-Rank Adaptation) is a parameter-efficient fine-tuning method that trains only a small number of additional parameters, significantly reducing memory requirements.
-
-Configuration
--------------
-
-Create ``conf/voxcpm_v1.5/voxcpm_finetune_lora.yaml``:
+Create a YAML config file. Here is an example for VoxCPM 2:
 
 .. code-block:: yaml
 
-   pretrained_path: /path/to/VoxCPM1.5/
+   pretrained_path: /path/to/VoxCPM2/
    train_manifest: /path/to/train.jsonl
-   val_manifest: ""
+   val_manifest: /path/to/val.jsonl   # optional, leave empty to skip validation
 
-   sample_rate: 44100
+   sample_rate: 48000
    batch_size: 16
    grad_accum_steps: 1
    num_workers: 2
-   num_iters: 2000
+   num_iters: 1000
    log_interval: 10
-   valid_interval: 1000
-   save_interval: 1000
+   valid_interval: 500
+   save_interval: 500
 
-   learning_rate: 0.0001    # LoRA can use larger LR
+   learning_rate: 0.0001
    weight_decay: 0.01
    warmup_steps: 100
-   max_steps: 2000
+   max_steps: 1000
    max_batch_tokens: 8192
 
-   save_path: /path/to/checkpoints/finetune_lora
-   tensorboard: /path/to/logs/finetune_lora
+   save_path: /path/to/checkpoints/lora
+   tensorboard: /path/to/logs/lora
 
    lambdas:
      loss/diff: 1.0
      loss/stop: 1.0
 
-   # LoRA configuration
    lora:
-     enable_lm: true        # Apply LoRA to Language Model
-     enable_dit: true       # Apply LoRA to Diffusion Transformer
-     enable_proj: false     # Apply LoRA to projection layers (optional)
-     
-     r: 32                  # LoRA rank (higher = more capacity)
-     alpha: 16              # LoRA alpha, scaling = alpha / r
+     enable_lm: true
+     enable_dit: true
+     enable_proj: false
+     r: 32
+     alpha: 32
      dropout: 0.0
-     
-     # Target modules
-     target_modules_lm: ["q_proj", "v_proj", "k_proj", "o_proj"]
-     target_modules_dit: ["q_proj", "v_proj", "k_proj", "o_proj"]
 
-LoRA Parameters
----------------
+.. tip::
+
+   For VoxCPM 1.5, change ``sample_rate`` to ``44100`` and ``pretrained_path`` to your VoxCPM 1.5 checkpoint. The training script auto-detects the model architecture from ``config.json``.
+
+**LoRA parameters explained**
 
 .. list-table::
-   :header-rows: 1
    :widths: 20 40 40
+   :header-rows: 1
 
    * - Parameter
      - Description
      - Recommended
    * - ``enable_lm``
-     - Apply LoRA to LM (language model)
+     - Apply LoRA to the language model (base LM + residual LM)
      - ``true``
    * - ``enable_dit``
-     - Apply LoRA to DiT (diffusion model)
-     - ``true`` (required for voice cloning)
+     - Apply LoRA to the diffusion transformer
+     - ``true`` (essential for voice quality)
+   * - ``enable_proj``
+     - Apply LoRA to projection layers between LM and DiT
+     - ``false`` for most cases
    * - ``r``
-     - LoRA rank (higher = more capacity)
-     - 16-64
+     - LoRA rank — higher means more capacity
+     - 32 for speaker cloning, 64 for style/language adaptation
    * - ``alpha``
-     - Scaling factor, ``scaling = alpha / r``
-     - Usually ``r/2`` or ``r``
-   * - ``target_modules_*``
-     - Layer names to add LoRA
-     - attention layers
+     - Scaling factor (``scaling = alpha / r``)
+     - Usually ``r`` or ``2*r``. Adjust to control LoRA influence strength.
+   * - ``dropout``
+     - Dropout on LoRA layers
+     - ``0.0`` unless overfitting
+
+**Launch**
+
+.. code-block:: sh
+
+   # Single GPU
+   python scripts/train_voxcpm_finetune.py --config_path conf/your_lora_config.yaml
+
+   # Multi-GPU
+   CUDA_VISIBLE_DEVICES=0,1,2,3 torchrun --nproc_per_node=4 \
+       scripts/train_voxcpm_finetune.py --config_path conf/your_lora_config.yaml
+
+**LoRA WebUI**
+
+VoxCPM also provides a Gradio UI that wraps LoRA training and inference in one place:
+
+.. code-block:: sh
+
+   python lora_ft_webui.py
+
+Monitoring
+----------
+
+Training logs to TensorBoard. Start the viewer with:
+
+.. code-block:: sh
+
+   tensorboard --logdir /path/to/logs/lora
+
+**What to watch**
+
+.. list-table::
+   :widths: 20 80
+   :header-rows: 1
+
+   * - Metric
+     - What it tells you
+   * - ``loss/diff``
+     - Diffusion loss — should steadily decrease, then flatten
+   * - ``loss/stop``
+     - Stop prediction loss — should stabilize early and stay low
+   * - ``grad_norm``
+     - Gradient magnitude — spikes may indicate bad samples or too high a learning rate
+   * - ``lr``
+     - Learning rate curve — cosine decay with warmup, useful to verify your schedule
+
+If a validation manifest is provided, the script also logs ``val/loss`` and generates sample audio + mel spectrograms in TensorBoard at each ``valid_interval``.
+
+**When to stop**
+
+- **Use epochs as a rough guide.** For single-speaker cloning, 1–3 epochs are usually sufficient. Going beyond that often hurts rather than helps — overfitting in TTS fine-tuning can emerge very early.
+- ``loss/diff`` plateaus and no longer decreases meaningfully.
+- Generated audio in TensorBoard sounds good on your target voice/style.
+- If the model starts ignoring input text (generating the same audio regardless of text), you have overfit — roll back to an earlier checkpoint.
+
+.. tip::
+
+   Validation loss does not always correlate perfectly with perceptual quality. Save multiple checkpoints around the convergence zone and evaluate them with actual inference to pick the best one.
+
+**Checkpoint structure**
+
+.. code-block:: text
+
+   checkpoints/lora/
+   ├── step_0000500/
+   │   ├── lora_weights.safetensors
+   │   ├── lora_config.json
+   │   ├── optimizer.pth
+   │   ├── scheduler.pth
+   │   └── training_state.json
+   ├── step_0001000/
+   │   └── ...
+   └── latest -> step_0001000/
+
+Training automatically resumes from ``latest/`` if it exists. The signal handler also saves a checkpoint on ``SIGTERM`` / ``SIGINT`` so you don't lose progress on interruption.
+
+Inference
+---------
+
+**CLI**
+
+.. code-block:: sh
+
+   python scripts/test_voxcpm_lora_infer.py \
+       --lora_ckpt /path/to/checkpoints/lora/step_0002000 \
+       --text "Hello from the fine-tuned model." \
+       --output output.wav
+
+
+**Python API**
+
+.. code-block:: python
+
+   from voxcpm import VoxCPM
+
+   model = VoxCPM.from_pretrained(
+       "openbmb/VoxCPM2",
+       lora_weights_path="/path/to/checkpoints/lora/latest",
+   )
+
+   wav = model.generate(text="Hello from the fine-tuned model.")
+
+**Hot-swapping LoRA at runtime**
+
+You can load, unload, and switch LoRA weights without restarting the model:
+
+.. code-block:: python
+
+   # Load a LoRA
+   model.load_lora("/path/to/lora_a")
+
+   # Disable LoRA temporarily (base model only)
+   model.set_lora_enabled(False)
+
+   # Re-enable
+   model.set_lora_enabled(True)
+
+   # Switch to a different LoRA
+   model.unload_lora()
+   model.load_lora("/path/to/lora_b")
+
+All hot-swap operations are compatible with ``torch.compile``.
+
+----
+
+.. _full-finetuning:
+
+Full Fine-Tuning
+================
+
+Full fine-tuning updates all model parameters. Use it when LoRA does not provide enough capacity — typically for new languages or large-scale customization with 500+ clips.
 
 Training
 --------
 
-.. code-block:: bash
+**Configuration**
+
+.. code-block:: yaml
+
+   pretrained_path: /path/to/VoxCPM2/
+   train_manifest: /path/to/train.jsonl
+   val_manifest: /path/to/val.jsonl
+
+   sample_rate: 48000
+   batch_size: 16
+   grad_accum_steps: 1
+   num_workers: 2
+   num_iters: 1000
+   log_interval: 10
+   valid_interval: 500
+   save_interval: 500
+
+   learning_rate: 0.00001    # 10x smaller than LoRA
+   weight_decay: 0.01
+   warmup_steps: 100
+   max_steps: 1000
+   max_batch_tokens: 8192
+
+   save_path: /path/to/checkpoints/full
+   tensorboard: /path/to/logs/full
+
+   lambdas:
+     loss/diff: 1.0
+     loss/stop: 1.0
+
+Note the ``lora`` key is absent — this tells the script to do full fine-tuning.
+
+**Key differences from LoRA**
+
+- ``learning_rate`` should be ~10x smaller (``1e-5`` vs ``1e-4``) to avoid catastrophic forgetting.
+- VRAM usage is significantly higher because all parameters require gradients.
+- Checkpoints are larger (full model weights vs. LoRA delta only).
+
+**Launch**
+
+.. code-block:: sh
 
    # Single GPU
-   python scripts/train_voxcpm_finetune.py --config_path conf/voxcpm_v1.5/voxcpm_finetune_lora.yaml
+   python scripts/train_voxcpm_finetune.py --config_path conf/your_full_config.yaml
 
    # Multi-GPU
    CUDA_VISIBLE_DEVICES=0,1,2,3 torchrun --nproc_per_node=4 \
-       scripts/train_voxcpm_finetune.py --config_path conf/voxcpm_v1.5/voxcpm_finetune_lora.yaml
+       scripts/train_voxcpm_finetune.py --config_path conf/your_full_config.yaml
 
-Checkpoint Structure
---------------------
+Monitoring
+----------
 
-LoRA training saves only LoRA parameters:
+Same TensorBoard metrics as LoRA (``loss/diff``, ``loss/stop``, ``grad_norm``, ``lr``, validation audio).
+
+Full fine-tuning is more prone to overfitting than LoRA. In practice, full fine-tuning often reaches its optimum within 1–2 epochs — continuing beyond that can degrade quality. Pay extra attention to:
+
+- **Validation loss diverging from training loss** — a sign of overfitting. Stop and use the last checkpoint before divergence.
+- **Text being ignored** — the most common overfitting symptom. Keep ``training_cfg_rate=0.1`` (do not set it to 0) and ``weight_decay=0.01``. Monitor checkpoints at each ``save_interval``.
+- **Smaller datasets overfit faster.** With fewer training samples, the optimal checkpoint may appear within a few hundred steps.
+- **New language fine-tuning:** Mix in some Chinese/English data (e.g. 10–20%) to reduce forgetting of the original capabilities.
+- **More data does not always mean better results.** Beyond a certain point, adding more data yields diminishing returns; focus on data quality and diversity instead.
+
+**Checkpoint structure**
 
 .. code-block:: text
 
-   checkpoints/finetune_lora/
-   └── step_0002000/
-        ├── lora_weights.safetensors    # Only lora_A, lora_B parameters
-        ├── lora_config.json            # Base model path + LoRAConfig (required by inference script)
-        ├── optimizer.pth
-        └── scheduler.pth
+   checkpoints/full/
+   ├── step_0000500/
+   │   ├── model.safetensors
+   │   ├── config.json
+   │   ├── audiovae.pth
+   │   ├── tokenizer.json
+   │   ├── tokenizer_config.json
+   │   ├── special_tokens_map.json
+   │   ├── optimizer.pth
+   │   ├── scheduler.pth
+   │   └── training_state.json
+   └── latest -> step_0000500/
 
-During training, ``save_path/latest`` will also be updated to point to the most recent checkpoint directory. You can use it in place of a specific ``step_*/`` folder.
+Each checkpoint is a complete model directory that can be loaded directly.
 
-.. code-block:: text
+Inference
+---------
 
-   checkpoints/finetune_lora/
-   └── latest -> step_0002000/
+**CLI**
 
-
-LoRA WebUI (Optional)
----------------------
-
-VoxCPM also provides a web UI that wraps LoRA training + inference in one place:
-
-.. code-block:: bash
-
-   # Run from the VoxCPM code repository root
-   python lora_ft_webui.py
-
-The UI will generate a YAML config and call ``scripts/train_voxcpm_finetune.py`` under the hood.
-
-----
-
-🚀 Inference
-============
-
-Full Fine-tuning Inference
----------------------------
-
-The checkpoint directory is a complete model, load it directly:
-
-.. code-block:: bash
+.. code-block:: sh
 
    python scripts/test_voxcpm_ft_infer.py \
-       --ckpt_dir /path/to/checkpoints/finetune_all/step_0002000 \
-       --text "Hello, this is the fine-tuned model." \
+       --ckpt_dir /path/to/checkpoints/full/step_0002000 \
+       --text "Hello from the fine-tuned model." \
        --output output.wav
 
-With voice cloning:
-
-.. code-block:: bash
-
+   # With voice cloning
    python scripts/test_voxcpm_ft_infer.py \
-       --ckpt_dir /path/to/checkpoints/finetune_all/step_0002000 \
-       --text "This is voice cloning result." \
-       --prompt_audio /path/to/reference.wav \
-       --prompt_text "Reference audio transcript" \
-       --output cloned_output.wav
+       --ckpt_dir /path/to/checkpoints/full/latest \
+       --text "Cloned voice with full fine-tuning." \
+       --prompt_audio reference.wav \
+       --prompt_text "Exact transcript of reference.wav" \
+       --output cloned.wav
 
-LoRA Inference
---------------
+**Python API**
 
-LoRA inference requires a base model and a LoRA checkpoint directory. The script reads ``lora_config.json`` inside ``--lora_ckpt`` to get the base model path and LoRA structure (you can override the base model with ``--base_model``):
-
-.. code-block:: bash
-
-   python scripts/test_voxcpm_lora_infer.py \
-       --lora_ckpt /path/to/checkpoints/finetune_lora/step_0002000 \
-       --text "Hello, this is LoRA fine-tuned result." \
-       --output lora_output.wav
-
-   # (optional) override base model path
-   python scripts/test_voxcpm_lora_infer.py \
-       --lora_ckpt /path/to/checkpoints/finetune_lora/step_0002000 \
-       --base_model /path/to/VoxCPM1.5 \
-       --text "Hello, this is LoRA fine-tuned result." \
-       --output lora_output.wav
-
-With voice cloning:
-
-.. code-block:: bash
-
-   python scripts/test_voxcpm_lora_infer.py \
-       --lora_ckpt /path/to/checkpoints/finetune_lora/step_0002000 \
-       --text "This is voice cloning with LoRA." \
-       --prompt_audio /path/to/reference.wav \
-       --prompt_text "Reference audio transcript" \
-       --output cloned_output.wav
-
-You can also point ``--lora_ckpt`` to ``/path/to/checkpoints/finetune_lora/latest``.
-
-----
-
-🔄 LoRA Hot-swapping
-====================
-
-LoRA supports dynamic loading, unloading, and switching at inference time without reloading the entire model.
-
-API Reference
--------------
+The checkpoint directory is a complete model — load it directly:
 
 .. code-block:: python
 
-   from voxcpm.model import VoxCPMModel
-   from voxcpm.model.voxcpm import LoRAConfig
+   from voxcpm import VoxCPM
 
-   # 1. Load model with LoRA structure
-   lora_cfg = LoRAConfig(
-       enable_lm=True, 
-       enable_dit=True, 
-       r=32, 
-       alpha=16,
-       target_modules_lm=["q_proj", "v_proj", "k_proj", "o_proj"],
-       target_modules_dit=["q_proj", "v_proj", "k_proj", "o_proj"],
-   )
-   model = VoxCPMModel.from_local(
-       pretrained_path,
-       optimize=True,       # Enable torch.compile acceleration
-       lora_config=lora_cfg
-   )
-
-   # 2. Load LoRA weights (works after torch.compile)
-   loaded, skipped = model.load_lora_weights("/path/to/lora_checkpoint")
-   print(f"Loaded {len(loaded)} params, skipped {len(skipped)}")
-
-   # 3. Disable LoRA (use base model only)
-   model.set_lora_enabled(False)
-
-   # 4. Re-enable LoRA
-   model.set_lora_enabled(True)
-
-   # 5. Unload LoRA (reset weights to zero)
-   model.reset_lora_weights()
-
-   # 6. Hot-swap to another LoRA
-   model.load_lora_weights("/path/to/another_lora_checkpoint")
-
-   # 7. Get current LoRA weights
-   lora_state = model.get_lora_state_dict()
-
-Method Reference
-----------------
-
-.. list-table::
-   :header-rows: 1
-   :widths: 30 50 20
-
-   * - Method
-     - Description
-     - torch.compile Compatible
-   * - ``load_lora_weights(path)``
-     - Load LoRA weights from file
-     - ✅
-   * - ``set_lora_enabled(bool)``
-     - Enable/disable LoRA
-     - ✅
-   * - ``reset_lora_weights()``
-     - Reset LoRA weights to initial values
-     - ✅
-   * - ``get_lora_state_dict()``
-     - Get current LoRA weights
-     - ✅
+   model = VoxCPM.from_pretrained("/path/to/checkpoints/full/latest")
+   wav = model.generate(text="Hello from the fine-tuned model.")
 
 ----
 
-❓ FAQ
-======
-
-1. 💥 Out of Memory (OOM)
---------------------------
-
-- Increase ``grad_accum_steps`` (gradient accumulation)
-- Decrease ``batch_size``
-- Use LoRA fine-tuning instead of full fine-tuning
-- Decrease ``max_batch_tokens`` to filter long samples
-
-2. 📉 Poor LoRA Performance
-----------------------------
-
-- Increase ``r`` (LoRA rank)
-- Adjust ``alpha`` (try ``alpha = r/2`` or ``alpha = r``)
-- Ensure ``enable_dit: true`` (required for voice cloning)
-- Increase training steps
-- Add more target modules
-
-3. 📈 Training Not Converging
-------------------------------
-
-- Decrease ``learning_rate``
-- Increase ``warmup_steps``
-- Check data quality
-
-4. 🔧 LoRA Not Taking Effect at Inference
-------------------------------------------
-
-- Ensure inference config matches training config LoRA parameters
-- Check ``load_lora_weights`` return value - ``skipped_keys`` should be empty
-- Verify ``set_lora_enabled(True)`` is called
-
-5. 🗂️ Checkpoint Loading Errors
----------------------------------
-
-- **Full fine-tuning:** checkpoint directory should contain ``model.safetensors`` (or ``pytorch_model.bin``), ``config.json``, ``audiovae.pth``
-- **LoRA:** checkpoint directory should contain ``lora_weights.safetensors`` (or ``lora_weights.ckpt``)
+For common training issues (OOM, runaway generation, poor LoRA performance, checkpoint errors), see :doc:`./faq`.

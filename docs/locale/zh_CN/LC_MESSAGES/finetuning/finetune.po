@@ -1,0 +1,729 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2025, OpenBMB
+# This file is distributed under the same license as the VoxCPM package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version:  VoxCPM\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-06 15:37+0800\n"
+"PO-Revision-Date: 2026-04-06 18:00+0800\n"
+"Last-Translator: GPT-5.4 <>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../finetuning/finetune.rst:3 e5f32115e321435982732bcf40ea6501
+msgid "Fine-Tuning Guide"
+msgstr "微调指南"
+
+#: ../../finetuning/finetune.rst:5 9ba73c8b65bf41abbe0bedbdf9f657e0
+msgid ""
+"This guide covers how to fine-tune VoxCPM with two approaches: LoRA "
+"(parameter-efficient) and full fine-tuning. Both use the same training "
+"script and data format."
+msgstr "本指南介绍如何使用两种方式微调 VoxCPM：LoRA（参数高效）与全量微调。二者使用相同的训练脚本与数据格式。"
+
+#: ../../finetuning/finetune.rst:10 d9eff6a7a06d477f995860b3d0e1a943
+msgid "Environment & Resources"
+msgstr "环境准备"
+
+#: ../../finetuning/finetune.rst:13 914268260dc14b74a320546028269a80
+msgid "Software"
+msgstr "软件要求"
+
+#: ../../finetuning/finetune.rst:19 a44fd64866f043aaabaa565ab611e00c
+msgid "Dependency"
+msgstr "依赖"
+
+#: ../../finetuning/finetune.rst:20 fc32d208ed1a42308a4bd2571de2935b
+msgid "Version"
+msgstr "版本"
+
+#: ../../finetuning/finetune.rst:21 21d465e23df04d98b1c9df7012ef484d
+msgid "Python"
+msgstr "Python"
+
+#: ../../finetuning/finetune.rst:22 6c280014b724463bb3fb6c697ac5519a
+msgid "3.10–3.11 recommended for training"
+msgstr "训练建议使用 3.10–3.11"
+
+#: ../../finetuning/finetune.rst:23 11e75837ca0e43d3b7160e93131356df
+msgid "PyTorch"
+msgstr "PyTorch"
+
+#: ../../finetuning/finetune.rst:24 0dc05f7c1d304fb7b5f74b1bb327a683
+msgid "2.5.0+"
+msgstr "2.5.0+"
+
+#: ../../finetuning/finetune.rst:25 22e7daeb761f4f9d8060b067cb793440
+msgid "CUDA"
+msgstr "CUDA"
+
+#: ../../finetuning/finetune.rst:26 50e8d3c7eece48a4ba79e8ad71d29353
+msgid "12.0+"
+msgstr "12.0+"
+
+#: ../../finetuning/finetune.rst:27 9d5c0ebfde1d4945889f438afa7e939d
+msgid "safetensors"
+msgstr "safetensors"
+
+#: ../../finetuning/finetune.rst:28 c56be60b19ae43d1a8b0c2baf5245671
+msgid "recommended (falls back to ``.bin`` / ``.ckpt`` if unavailable)"
+msgstr "推荐（若不可用则回退到 ``.bin`` / ``.ckpt``）"
+
+#: ../../finetuning/finetune.rst:30 5300b67518914664b2ba633611f48955
+msgid ""
+"Additional Python packages used by the training script: ``tensorboardX``, "
+"``argbind``, ``transformers`` (for the cosine scheduler), ``librosa`` (for "
+"validation mel spectrograms)."
+msgstr ""
+"训练脚本还会用到以下 Python 包：``tensorboardX``、``argbind``、``transformers`` "
+"（余弦调度器）、``librosa`` （验证用 mel 频谱）。"
+
+#: ../../finetuning/finetune.rst:33 8b9858662ae44dde88c1a53238a9d59c
+msgid "Hardware"
+msgstr "硬件要求"
+
+#: ../../finetuning/finetune.rst:39 869a13cc8ea04cbe8bd501f339924257
+msgid "Setup"
+msgstr "配置"
+
+#: ../../finetuning/finetune.rst:40 3ec50c4e46204cf29a359df90edda9ee
+msgid "LoRA"
+msgstr "LoRA"
+
+#: ../../finetuning/finetune.rst:41 ../../finetuning/finetune.rst:356
+#: 58bd613652704c088d215ce8ae0a6a51 f8015bd208b9476fbbc366af7c9fc5b4
+msgid "Full Fine-Tuning"
+msgstr "Full Fine-Tuning"
+
+#: ../../finetuning/finetune.rst:42 d17fd2df44cb4425b4ce5a4848cbc169
+msgid "VoxCPM 1.5 (750M)"
+msgstr "VoxCPM 1.5 (750M)"
+
+#: ../../finetuning/finetune.rst:43 3567b2e7a94e4684b67c102a45ef035d
+msgid "~12 GB VRAM"
+msgstr "约 12 GB 显存"
+
+#: ../../finetuning/finetune.rst:44 7c56853fd98c4883aea9d274172057e5
+msgid "~24 GB VRAM"
+msgstr "约 24 GB 显存"
+
+#: ../../finetuning/finetune.rst:45 1d468d05afd44ab79b39d3b2be658b6c
+msgid "VoxCPM 2 (2B)"
+msgstr "VoxCPM 2 (2B)"
+
+#: ../../finetuning/finetune.rst:46 1c9ddd427f624a17be5887c1ca4c5b25
+msgid "~20 GB VRAM"
+msgstr "约 20 GB 显存"
+
+#: ../../finetuning/finetune.rst:47 832715a963c44323a9eb5e245252b128
+msgid "~40 GB VRAM"
+msgstr "约 40 GB 显存"
+
+#: ../../finetuning/finetune.rst:49 26808eb2adca44d189b88648c219eac3
+msgid ""
+"These are rough estimates with ``batch_size=16`` and "
+"``max_batch_tokens=8192``. Actual usage depends on audio length and "
+"accumulation steps. If you hit OOM, see :doc:`./faq`."
+msgstr ""
+"以上为在 ``batch_size=16``、``max_batch_tokens=8192`` "
+"下的粗略估算；实际占用取决于音频长度与梯度累积步数。若出现 OOM，请参阅 :doc:`./faq`。"
+
+#: ../../finetuning/finetune.rst:51 71c2492c156e4980a3ddaada480072e5
+msgid "Multi-GPU training is supported via ``torchrun``:"
+msgstr "多卡训练可通过 ``torchrun`` 进行："
+
+#: ../../finetuning/finetune.rst:61 5b67dc24bd56461a9bcd305c7fc28cfb
+msgid "Data Preparation"
+msgstr "数据准备"
+
+#: ../../finetuning/finetune.rst:64 7db68455d24b4c92863a5bfe4865bf38
+msgid "Format"
+msgstr "数据格式"
+
+#: ../../finetuning/finetune.rst:66 62c9230b3a9a4a8faf1906e2a35ad695
+msgid "Training data is a JSONL manifest file with one sample per line:"
+msgstr "训练数据为 JSONL 清单文件，每行一个样本："
+
+#: ../../finetuning/finetune.rst:78 00d332a348494e7fb1c28bc87a45e9bf
+msgid "Field"
+msgstr "字段"
+
+#: ../../finetuning/finetune.rst:79 78b6ee49f78e4d389f2b57328c6d3955
+msgid "Required"
+msgstr "必填"
+
+#: ../../finetuning/finetune.rst:80 ../../finetuning/finetune.rst:208
+#: 66be943a56ca45d297f6795656fb2f9a c94738bb14b74c5484f0f80a864dc2b4
+msgid "Description"
+msgstr "说明"
+
+#: ../../finetuning/finetune.rst:81 f514249414474f38800e1669455eb94f
+msgid "``audio``"
+msgstr "``audio``"
+
+#: ../../finetuning/finetune.rst:82 ../../finetuning/finetune.rst:85
+#: cac5fbb8389e461c9fe26d9562a4a70c d8fc0628f049494c97efa4d73067f3aa
+msgid "Yes"
+msgstr "是"
+
+#: ../../finetuning/finetune.rst:83 8ec498fec2754b24999ebad13101a718
+msgid "Path to audio file (WAV recommended)"
+msgstr "音频文件路径（建议 WAV）"
+
+#: ../../finetuning/finetune.rst:84 282a4d81fa264ccaae4e36faf3e6df73
+msgid "``text``"
+msgstr "``text``"
+
+#: ../../finetuning/finetune.rst:86 6e16e6021c874d4f9b0bfb526f002aa8
+msgid "Transcript matching the audio content"
+msgstr "与音频内容一致的转写文本"
+
+#: ../../finetuning/finetune.rst:87 fef6d28e4d7943e7b4b0c239e4c45293
+msgid "``duration``"
+msgstr "``duration``"
+
+#: ../../finetuning/finetune.rst:88 ../../finetuning/finetune.rst:91
+#: 8227c91896d846ec9015ad441a1243cc d57bacc1fecc43a38625c2e5c0493452
+msgid "No"
+msgstr "否"
+
+#: ../../finetuning/finetune.rst:89 fbd04409c7c4492ebcc013c0987b9217
+msgid "Duration in seconds; speeds up length filtering"
+msgstr "时长（秒）；可加速按长度过滤"
+
+#: ../../finetuning/finetune.rst:90 d22ce62383cf4379b54a39349cf69ba1
+msgid "``dataset_id``"
+msgstr "``dataset_id``"
+
+#: ../../finetuning/finetune.rst:92 27e0e56ec9d240b4a4f91e8381b4779b
+msgid "Integer ID for multi-dataset mixing (default: 0)"
+msgstr "多数据集混合用的整数 ID（默认：0）"
+
+#: ../../finetuning/finetune.rst:94 8ab84ccc156d44528fbd6b8a1f6ccafb
+msgid "See ``examples/train_data_example.jsonl`` in the repository for a reference."
+msgstr "仓库中的 ``examples/train_data_example.jsonl`` 可供参考。"
+
+#: ../../finetuning/finetune.rst:97 4bccc1e75aef4dc991c427ca2556c263
+msgid "Audio requirements"
+msgstr "音频要求"
+
+#: ../../finetuning/finetune.rst:99 7a51a01faa99431ab813fb39549e6b77
+msgid ""
+"**Format:** WAV is recommended. Other formats supported by torchaudio also "
+"work."
+msgstr "**格式：** 建议使用 WAV；torchaudio 支持的其它格式也可用。"
+
+#: ../../finetuning/finetune.rst:100 80e0b5cc4e7e4d8b8f6385a4f215060a
+msgid ""
+"**Sample rate:** The dataloader automatically resamples to the target "
+"model's rate, so you do not need to pre-resample. The native rates are:"
+msgstr "**采样率：** 数据加载器会自动重采样到目标模型的采样率，一般无需预先重采样。各版本原生采样率为："
+
+#: ../../finetuning/finetune.rst:102 46fbea52e2f545a0ad20fdc42e7e3522
+msgid "VoxCPM 1.0: 16kHz"
+msgstr "VoxCPM 1.0：16 kHz"
+
+#: ../../finetuning/finetune.rst:103 1db2c79c70554965a731d3f010fad172
+msgid "VoxCPM 1.5: 44.1kHz"
+msgstr "VoxCPM 1.5：44.1 kHz"
+
+#: ../../finetuning/finetune.rst:104 005a001e7a2343d3a931ef1ce79d2c09
+msgid "VoxCPM 2: 48kHz"
+msgstr "VoxCPM 2：48 kHz"
+
+#: ../../finetuning/finetune.rst:106 c7988d6d4a204010ac2fecdbab6f14e9
+msgid ""
+"**Duration:** 3–30 seconds per clip is the practical sweet spot. Very short "
+"clips (< 1s) produce unstable results. Very long clips increase VRAM usage "
+"and may be filtered out by ``max_batch_tokens``."
+msgstr ""
+"**时长：** 每条片段 3–30 秒较为稳妥。过短（< 1 s）容易不稳定；过长会增加显存占用，并可能被 ``max_batch_tokens`` "
+"过滤。"
+
+#: ../../finetuning/finetune.rst:109 abc60e9ac29e44319ef97c65c4ec05c3
+msgid "Preprocessing tips"
+msgstr "预处理要点"
+
+#: ../../finetuning/finetune.rst:111 6aabf98981d540909a6c1e2ab08feee0
+msgid ""
+"**Trim trailing silence** to < 0.5 seconds. Long trailing silence is one of "
+"the most common causes of \"generation doesn't stop\" after fine-tuning."
+msgstr "**去掉尾部静音**，控制在 0.5 秒以内。尾静音过长是微调后「生成停不下来」最常见原因之一。"
+
+#: ../../finetuning/finetune.rst:112 9b1198035a9b4a97928ad4391556beb2
+msgid "**Normalize volume** if your recordings have inconsistent levels."
+msgstr "若录音电平不一致，**请做音量归一化**。"
+
+#: ../../finetuning/finetune.rst:113 f839bf4688aa4e3a9ad6dd38512c579e
+msgid ""
+"**Clean transcripts:** Ensure the text matches the audio exactly. Mismatched"
+" text degrades both cloning quality and text adherence."
+msgstr "**转写要干净：** 文本须与音频逐字一致；不匹配会同时损害克隆质量与文本贴合度。"
+
+#: ../../finetuning/finetune.rst:114 b59139c777aa48dd9d712fcf9787a2c3
+msgid ""
+"**Remove noisy samples.** The model is sensitive to background noise in "
+"training data."
+msgstr "**剔除噪声样本。** 模型对训练数据中的背景噪声较敏感。"
+
+#: ../../finetuning/finetune.rst:117 09b4290eb1144bfcb57ac7c73d2e330d
+msgid "Choosing your path"
+msgstr "选择哪种微调方式"
+
+#: ../../finetuning/finetune.rst:119 78ddae6c61404acbbdff310e826a0a1b
+msgid "Your data size and goal determine which fine-tuning approach to use:"
+msgstr "数据规模与目标决定采用哪种微调方式："
+
+#: ../../finetuning/finetune.rst:125 2dc1b00ae8dc4cf4b48c1926dcd073bb
+msgid "Goal"
+msgstr "目标"
+
+#: ../../finetuning/finetune.rst:126 1f54d94fb648427aa24656b7e6229dc1
+msgid "Data Size"
+msgstr "数据量"
+
+#: ../../finetuning/finetune.rst:127 a58419e3b0704adc86d38af0452e90b0
+msgid "Recommended Approach"
+msgstr "推荐做法"
+
+#: ../../finetuning/finetune.rst:128 a6efda59a5414122a2a781fd45707027
+msgid "Clone a single speaker"
+msgstr "克隆单个说话人"
+
+#: ../../finetuning/finetune.rst:129 f2617f67cd394a6f9660b3fc64da8d6f
+msgid "5–50 clips"
+msgstr "5–50 条片段"
+
+#: ../../finetuning/finetune.rst:130 624ce1698d4147aeb13c6fa5b47b7bab
+msgid ":ref:`lora-finetuning` — fast, low VRAM"
+msgstr ":ref:`lora-finetuning` — 快、显存占用低"
+
+#: ../../finetuning/finetune.rst:131 9421da8c06f24f1e9fb64c3a1048e88b
+msgid "Adapt to a domain or style"
+msgstr "适配领域或风格"
+
+#: ../../finetuning/finetune.rst:132 24a7cd4caafc4245908e576a9abb724b
+msgid "50–500 clips"
+msgstr "50–500 条片段"
+
+#: ../../finetuning/finetune.rst:133 75e90a1490074fca855c8b5a8c00e5b4
+msgid ":ref:`lora-finetuning` — with higher rank (``r=32–64``)"
+msgstr ":ref:`lora-finetuning` — 使用更高 rank（``r=32–64``）"
+
+#: ../../finetuning/finetune.rst:134 36c335436d2d4716ad65e1366caf00a6
+msgid "Add a new language"
+msgstr "新增语言"
+
+#: ../../finetuning/finetune.rst:135 ef33018e70004304880eae1fd665b03b
+msgid "500+ hours"
+msgstr "500+ 小时"
+
+#: ../../finetuning/finetune.rst:136 d28a489bb654453b83aa17759ac84c66
+msgid ""
+":ref:`full-finetuning` — mix with some Chinese/English data to reduce "
+"forgetting"
+msgstr ":ref:`full-finetuning` — 混入部分中英数据以减轻遗忘"
+
+#: ../../finetuning/finetune.rst:137 537c8bf480884a118bae2491aec63b48
+msgid "Large-scale customization"
+msgstr "大规模定制"
+
+#: ../../finetuning/finetune.rst:138 20655e3123824df187feea59b1846c36
+msgid "1000+ clips"
+msgstr "1000+ 条片段"
+
+#: ../../finetuning/finetune.rst:139 b3784ca46ea54916997b220333b76145
+msgid ":ref:`full-finetuning`"
+msgstr ":ref:`full-finetuning`"
+
+#: ../../finetuning/finetune.rst:141 152c30fcb1ef4f7ca07b688b45e27f42
+msgid "**LoRA vs Full Fine-Tuning at a glance:**"
+msgstr "**LoRA 与全量微调一览：**"
+
+#: ../../finetuning/finetune.rst:143 779ebc81dc9c4905ab8e3a3ee87c07c2
+#, python-format
+msgid ""
+"In internal benchmarks on single-speaker cloning, LoRA (``r=32``) achieved "
+"approximately 98% of the speaker similarity of full fine-tuning, while using"
+" roughly half the VRAM and producing checkpoint files that are orders of "
+"magnitude smaller. LoRA is the recommended starting point for most tasks. "
+"Results may vary with different datasets and goals."
+msgstr ""
+"在内部单说话人克隆基准上，LoRA（``r=32``）的说话人相似度约为全量微调的 98%，显存约减半，checkpoint "
+"体积也小几个数量级。多数任务建议从 LoRA 起步；不同数据与目标下结果会有差异。"
+
+#: ../../finetuning/finetune.rst:150 efbb70fd0cbe47a985702a537e9529bc
+msgid "LoRA Fine-Tuning"
+msgstr "LoRA Fine-Tuning"
+
+#: ../../finetuning/finetune.rst:152 9ef4485e3d75483c9f390dedc6a4d390
+#, python-format
+msgid ""
+"LoRA trains a small number of additional parameters (typically < 1% of the "
+"model) while keeping the base model frozen. It is the recommended starting "
+"point for most fine-tuning tasks."
+msgstr "LoRA 在冻结基座的前提下，仅训练少量附加参数（通常 < 模型参数的 1%）。多数微调任务建议从此入手。"
+
+#: ../../finetuning/finetune.rst:155 ../../finetuning/finetune.rst:361
+#: 38ec7d72d8904aaa866545770589d116 4131027d76e641528199a134a17aee4b
+msgid "Training"
+msgstr "Training"
+
+#: ../../finetuning/finetune.rst:157 ../../finetuning/finetune.rst:363
+#: 50b347a0a4a34c09a98eb640deb4ef6f ddfed4c49c9640919f9b9868b287160f
+msgid "**Configuration**"
+msgstr "**配置**"
+
+#: ../../finetuning/finetune.rst:159 5bea81482c984f18ac6e17814ae03c5b
+msgid "Create a YAML config file. Here is an example for VoxCPM 2:"
+msgstr "请创建 YAML 配置文件。以下为 VoxCPM 2 的示例："
+
+#: ../../finetuning/finetune.rst:199 902ad666003a4888a3cb6575f055d787
+msgid ""
+"For VoxCPM 1.5, change ``sample_rate`` to ``44100`` and ``pretrained_path`` "
+"to your VoxCPM 1.5 checkpoint. The training script auto-detects the model "
+"architecture from ``config.json``."
+msgstr ""
+"若使用 VoxCPM 1.5，请将 ``sample_rate`` 改为 `` 44100``，并将 `` pretrained_path`` 指向你的"
+" 1.5 checkpoint。训练脚本会依据 `` config.json`` 自动识别模型结构。"
+
+#: ../../finetuning/finetune.rst:201 d66635c546714df3ae4c316052d7b548
+msgid "**LoRA parameters explained**"
+msgstr "**LoRA 参数说明**"
+
+#: ../../finetuning/finetune.rst:207 207157b6c7e546b999adbac114ba9b84
+msgid "Parameter"
+msgstr "参数"
+
+#: ../../finetuning/finetune.rst:209 65b1cefd4ddc497881b80b2cc5fa02d7
+msgid "Recommended"
+msgstr "建议值"
+
+#: ../../finetuning/finetune.rst:210 2150c3c36bee4ed5a9db1d621f4fab16
+msgid "``enable_lm``"
+msgstr "``enable_lm``"
+
+#: ../../finetuning/finetune.rst:211 f80daadfee624bef8a52939aa972af3c
+msgid "Apply LoRA to the language model (base LM + residual LM)"
+msgstr "对语言模型（基座 LM + 残差 LM）应用 LoRA"
+
+#: ../../finetuning/finetune.rst:212 f0acbe45517b41f5aaeb7312ecc707d7
+msgid "``true``"
+msgstr "``true``"
+
+#: ../../finetuning/finetune.rst:213 caa4fd91de7a4a8aaf0517ac76ebe336
+msgid "``enable_dit``"
+msgstr "``enable_dit``"
+
+#: ../../finetuning/finetune.rst:214 7b6e404d7f83443192c48055157a97e2
+msgid "Apply LoRA to the diffusion transformer"
+msgstr "对扩散 Transformer（DiT）应用 LoRA"
+
+#: ../../finetuning/finetune.rst:215 0f45220eaa8d43cdaf44c957a8a0129d
+msgid "``true`` (essential for voice quality)"
+msgstr "``true`` （对音质至关重要）"
+
+#: ../../finetuning/finetune.rst:216 11016579ae3a4f28b70cc78ca040f98b
+msgid "``enable_proj``"
+msgstr "``enable_proj``"
+
+#: ../../finetuning/finetune.rst:217 0a585a6ba7594311a231c96fd5d8761c
+msgid "Apply LoRA to projection layers between LM and DiT"
+msgstr "对 LM 与 DiT 之间的投影层应用 LoRA"
+
+#: ../../finetuning/finetune.rst:218 5438e65398b842f09d5027ae108418b5
+msgid "``false`` for most cases"
+msgstr "多数场景用 ``false``"
+
+#: ../../finetuning/finetune.rst:219 17f03da9d0f9426680bf0941e69628e0
+msgid "``r``"
+msgstr "``r``"
+
+#: ../../finetuning/finetune.rst:220 a2157ab9ce8a4de4960f7885a27f747b
+msgid "LoRA rank — higher means more capacity"
+msgstr "LoRA 秩（rank）— 越大容量越高"
+
+#: ../../finetuning/finetune.rst:221 aafda92f6f7749b4acd5ff30fa80cbba
+msgid "32 for speaker cloning, 64 for style/language adaptation"
+msgstr "克隆说话人用 32；风格/语言适配用 64"
+
+#: ../../finetuning/finetune.rst:222 85cb8bea6ffe4573b4a7b2d837c72591
+msgid "``alpha``"
+msgstr "``alpha``"
+
+#: ../../finetuning/finetune.rst:223 9182c18ac8c5459988f4b2a2546fb612
+msgid "Scaling factor (``scaling = alpha / r``)"
+msgstr "缩放因子（``scaling = alpha / r``）"
+
+#: ../../finetuning/finetune.rst:224 286546944bfc474291952e41d5073566
+msgid "Usually ``r`` or ``2*r``. Adjust to control LoRA influence strength."
+msgstr "通常取 ``r`` 或 ``2*r``，按需调节 LoRA 影响强度。"
+
+#: ../../finetuning/finetune.rst:225 2533272aaa6f478da019df19397c8374
+msgid "``dropout``"
+msgstr "``dropout``"
+
+#: ../../finetuning/finetune.rst:226 00770fbef08e47f7b70275b8183a1cdd
+msgid "Dropout on LoRA layers"
+msgstr "LoRA 层上的 Dropout"
+
+#: ../../finetuning/finetune.rst:227 2adda8b3003d418b8bb57ad19eeb6c1f
+msgid "``0.0`` unless overfitting"
+msgstr "除非过拟合，否则 ``0.0``"
+
+#: ../../finetuning/finetune.rst:229 ../../finetuning/finetune.rst:401
+#: 8f71c9f0d11c4924a74daa2f487ea4cd b423d3bff52a41ce8f7447a8c6305c23
+msgid "**Launch**"
+msgstr "**启动**"
+
+#: ../../finetuning/finetune.rst:240 44156d42eb084aeabbd0eab2c1a4428f
+msgid "**LoRA WebUI**"
+msgstr "**LoRA WebUI**"
+
+#: ../../finetuning/finetune.rst:242 b950daaf9b2e45189defe48eb4f35fb7
+msgid ""
+"VoxCPM also provides a Gradio UI that wraps LoRA training and inference in "
+"one place:"
+msgstr "VoxCPM 还提供基于 Gradio 的界面，将 LoRA 训练与推理集成在同一处："
+
+#: ../../finetuning/finetune.rst:249 ../../finetuning/finetune.rst:413
+#: 51e0472a89bb405f953422ab31d0bedb 9ee9e7bdb3c549e8b543b61aa6a1cb48
+msgid "Monitoring"
+msgstr "训练观察"
+
+#: ../../finetuning/finetune.rst:251 f032aab856c7471ca2890c51fdb3c761
+msgid "Training logs to TensorBoard. Start the viewer with:"
+msgstr "训练日志写入 TensorBoard。可用如下命令启动查看："
+
+#: ../../finetuning/finetune.rst:257 c67af5bbceec43bfa60e2ef0e75cd212
+msgid "**What to watch**"
+msgstr "**关注哪些指标**"
+
+#: ../../finetuning/finetune.rst:263 67cdc2d9adb64e7696765925c5c5e5b2
+msgid "Metric"
+msgstr "指标"
+
+#: ../../finetuning/finetune.rst:264 b07a21892ac84e6ba7a974b0cfa70073
+msgid "What it tells you"
+msgstr "含义"
+
+#: ../../finetuning/finetune.rst:265 0099ef11363942be83660b89ba24d22c
+msgid "``loss/diff``"
+msgstr "``loss/diff``"
+
+#: ../../finetuning/finetune.rst:266 290f7f843dc34c03a02660c14176223f
+msgid "Diffusion loss — should steadily decrease, then flatten"
+msgstr "扩散损失 — 应持续下降后趋于平稳"
+
+#: ../../finetuning/finetune.rst:267 9fb4dbc50c6f4332aaaa6c2c63b0da5d
+msgid "``loss/stop``"
+msgstr "``loss/stop``"
+
+#: ../../finetuning/finetune.rst:268 1114f432d6d44495a49dc45998c10c19
+msgid "Stop prediction loss — should stabilize early and stay low"
+msgstr "停止预测损失 — 应较早稳定并保持较低"
+
+#: ../../finetuning/finetune.rst:269 8d1856487b6e4ec79d662bfaaa17ba34
+msgid "``grad_norm``"
+msgstr "``grad_norm``"
+
+#: ../../finetuning/finetune.rst:270 efad2a7f6771425494b1ac9c66830dad
+msgid ""
+"Gradient magnitude — spikes may indicate bad samples or too high a learning "
+"rate"
+msgstr "梯度范数 — 尖峰可能表示坏样本或学习率过高"
+
+#: ../../finetuning/finetune.rst:271 a44d1b0be32e42eaa85634c56940496b
+msgid "``lr``"
+msgstr "``lr``"
+
+#: ../../finetuning/finetune.rst:272 af92cc0dd4ee443187d48b6a53e0d20b
+msgid ""
+"Learning rate curve — cosine decay with warmup, useful to verify your "
+"schedule"
+msgstr "学习率曲线 — 带 warm-up 的余弦衰减，可用于核对调度是否符合预期"
+
+#: ../../finetuning/finetune.rst:274 cc6c58cb683648d6ade37e8898dfc663
+msgid ""
+"If a validation manifest is provided, the script also logs ``val/loss`` and "
+"generates sample audio + mel spectrograms in TensorBoard at each "
+"``valid_interval``."
+msgstr ""
+"若提供验证清单，脚本还会记录 ``val/loss``，并在每个 ``valid_interval`` 在 TensorBoard 中生成样本音频与 "
+"mel 频谱。"
+
+#: ../../finetuning/finetune.rst:276 250603bdf6784a13bf400b76c17dc118
+msgid "**When to stop**"
+msgstr "**何时停止**"
+
+#: ../../finetuning/finetune.rst:278 1670c57628b4496eab0ab26d07adae3e
+msgid ""
+"**Use epochs as a rough guide.** For single-speaker cloning, 1–3 epochs are "
+"usually sufficient. Going beyond that often hurts rather than helps — "
+"overfitting in TTS fine-tuning can emerge very early."
+msgstr "**可把 epoch 数当作粗参考。** 单说话人克隆通常 1–3 个 epoch 足够；再往后往往弊大于利 — TTS 微调的过拟合可能很早出现。"
+
+#: ../../finetuning/finetune.rst:279 955ebb6bbfc6436980c81f2a3f40ce8a
+msgid "``loss/diff`` plateaus and no longer decreases meaningfully."
+msgstr "``loss/diff`` 进入平台期，不再有实质下降。"
+
+#: ../../finetuning/finetune.rst:280 ffca585c61b64635be36206e084117d0
+msgid "Generated audio in TensorBoard sounds good on your target voice/style."
+msgstr "TensorBoard 中的生成音频在目标音色/风格上听起来已经满意。"
+
+#: ../../finetuning/finetune.rst:281 54bee2b706394f8f9c27ffe06b951275
+msgid ""
+"If the model starts ignoring input text (generating the same audio "
+"regardless of text), you have overfit — roll back to an earlier checkpoint."
+msgstr "若模型开始忽略输入文本（无论输入什么都生成相似音频），即已过拟合 — 请回退到较早的 checkpoint。"
+
+#: ../../finetuning/finetune.rst:285 ca52326b9f9940b6b83588740e359749
+msgid ""
+"Validation loss does not always correlate perfectly with perceptual quality."
+" Save multiple checkpoints around the convergence zone and evaluate them "
+"with actual inference to pick the best one."
+msgstr "验证损失与主观听感未必完全一致。建议在收敛区间附近多存几个 checkpoint，用实际推理试听后再选定最佳。"
+
+#: ../../finetuning/finetune.rst:287 ../../finetuning/finetune.rst:425
+#: 61a7314277bc4e34b375a353c738c282 b849ff856445467381854c40f73affc6
+msgid "**Checkpoint structure**"
+msgstr "**Checkpoint 目录结构**"
+
+#: ../../finetuning/finetune.rst:302 1b948a8a77c7493eaa061cc897814efe
+msgid ""
+"Training automatically resumes from ``latest/`` if it exists. The signal "
+"handler also saves a checkpoint on ``SIGTERM`` / ``SIGINT`` so you don't "
+"lose progress on interruption."
+msgstr ""
+"若存在 ``latest/``，训练会自动从中恢复；信号处理也会在 ``SIGTERM`` / ``SIGINT`` 时保存 "
+"checkpoint，避免中断丢进度。"
+
+#: ../../finetuning/finetune.rst:305 ../../finetuning/finetune.rst:445
+#: 2cc4b4da5d3042d19b1351c9b80bfa9f 96fe84b7510941268b5818de50e446b2
+msgid "Inference"
+msgstr "推理"
+
+#: ../../finetuning/finetune.rst:307 ../../finetuning/finetune.rst:447
+#: 4ad32c92013847f8a8a04acaa9ad48aa 6b20233d4f5a4b71824484a26215d5ed
+msgid "**CLI**"
+msgstr "**命令行**"
+
+#: ../../finetuning/finetune.rst:317 ../../finetuning/finetune.rst:464
+#: 37d17d04df8b438087300b78c4bd9a8d 7987ceb9cf15415bab60fe2dd6636a9a
+msgid "**Python API**"
+msgstr "**Python API**"
+
+#: ../../finetuning/finetune.rst:330 1393f1669326454caddc2b3017fb7a61
+msgid "**Hot-swapping LoRA at runtime**"
+msgstr "**运行时热切换 LoRA**"
+
+#: ../../finetuning/finetune.rst:332 5e3b667d5bef44d986e726d35e8b5849
+msgid "You can load, unload, and switch LoRA weights without restarting the model:"
+msgstr "无需重启模型即可加载、卸载或切换 LoRA 权重："
+
+#: ../../finetuning/finetune.rst:349 7eabbe4b5f874b1eb1cc99acd31a3875
+msgid "All hot-swap operations are compatible with ``torch.compile``."
+msgstr "所有热切换操作均与 ``torch.compile`` 兼容。"
+
+#: ../../finetuning/finetune.rst:358 d35953cb90cc4827aef54437d3890790
+msgid ""
+"Full fine-tuning updates all model parameters. Use it when LoRA does not "
+"provide enough capacity — typically for new languages or large-scale "
+"customization with 500+ clips."
+msgstr "全量微调会更新全部参数。当 LoRA 容量不足时使用 — 常见于新语言或 500+ 条片段的大规模定制。"
+
+#: ../../finetuning/finetune.rst:393 7529e315ff134f75b4906bcc73f92a9f
+msgid ""
+"Note the ``lora`` key is absent — this tells the script to do full fine-"
+"tuning."
+msgstr "注意配置中不含 ``lora`` 键 — 脚本据此执行全量微调。"
+
+#: ../../finetuning/finetune.rst:395 b7da6f59b2ea4d838bcd66892cb567e1
+msgid "**Key differences from LoRA**"
+msgstr "**与 LoRA 的主要区别**"
+
+#: ../../finetuning/finetune.rst:397 51035738a9754d9d8e50283b944c2838
+msgid ""
+"``learning_rate`` should be ~10x smaller (``1e-5`` vs ``1e-4``) to avoid "
+"catastrophic forgetting."
+msgstr "``learning_rate`` 建议约为 LoRA 的 1/10（``1e-5`` 对 ``1e-4``），以避免灾难性遗忘。"
+
+#: ../../finetuning/finetune.rst:398 c510885d18e846b69e525fe4caa1f0b3
+msgid "VRAM usage is significantly higher because all parameters require gradients."
+msgstr "因全部参数都参与求导，显存占用明显更高。"
+
+#: ../../finetuning/finetune.rst:399 b6230bc1887e4846a46e5d351cd4be4b
+msgid "Checkpoints are larger (full model weights vs. LoRA delta only)."
+msgstr "checkpoint 更大（完整权重对比仅 LoRA 增量）。"
+
+#: ../../finetuning/finetune.rst:415 3f6a126b8bd648feb6474d0616313ec5
+msgid ""
+"Same TensorBoard metrics as LoRA (``loss/diff``, ``loss/stop``, "
+"``grad_norm``, ``lr``, validation audio)."
+msgstr ""
+"TensorBoard 指标与 LoRA 相同（``loss/diff``、`` loss/stop``、`` grad_norm``、`` lr`` "
+"及验证音频）。"
+
+#: ../../finetuning/finetune.rst:417 69f7b3dc7d5f48c2aa021e01a062fa33
+msgid ""
+"Full fine-tuning is more prone to overfitting than LoRA. In practice, full "
+"fine-tuning often reaches its optimum within 1–2 epochs — continuing beyond "
+"that can degrade quality. Pay extra attention to:"
+msgstr "全量微调比 LoRA 更易过拟合。实践中常在 1–2 个 epoch 内达到较优；继续训练可能反而变差。需格外留意："
+
+#: ../../finetuning/finetune.rst:419 d900511939024af091cba4a6b972e520
+msgid ""
+"**Validation loss diverging from training loss** — a sign of overfitting. "
+"Stop and use the last checkpoint before divergence."
+msgstr "**验证损失与训练损失背离** — 过拟合信号。应停止训练，并采用背离前最后一个 checkpoint。"
+
+#: ../../finetuning/finetune.rst:420 c8db0267e4ab425eb3b87c4eca1d8c03
+msgid ""
+"**Text being ignored** — the most common overfitting symptom. Keep "
+"``training_cfg_rate=0.1`` (do not set it to 0) and ``weight_decay=0.01``. "
+"Monitor checkpoints at each ``save_interval``."
+msgstr ""
+"**文本被忽略** — 最常见的过拟合表现。请保持 ``training_cfg_rate=0.1`` （不要设为 0）与 `` "
+"weight_decay=0.01``，并在每个 `` save_interval`` 关注 checkpoint。"
+
+#: ../../finetuning/finetune.rst:421 6ef255c0d64547d0aaa58ce281289541
+msgid ""
+"**Smaller datasets overfit faster.** With fewer training samples, the "
+"optimal checkpoint may appear within a few hundred steps."
+msgstr "**小数据集更快过拟合。** 样本较少时，最优 checkpoint 可能出现在几百步内。"
+
+#: ../../finetuning/finetune.rst:422 6e99e558e73249cfbe5df8eefae80fbb
+msgid ""
+"**New language fine-tuning:** Mix in some Chinese/English data (e.g. 10–20%)"
+" to reduce forgetting of the original capabilities."
+msgstr "**新语言微调：** 混入部分中英数据（例如 10–20%），以减轻对原有能力的遗忘。"
+
+#: ../../finetuning/finetune.rst:423 467c44076243487aa02217355ad176f0
+msgid ""
+"**More data does not always mean better results.** Beyond a certain point, "
+"adding more data yields diminishing returns; focus on data quality and "
+"diversity instead."
+msgstr "**更多数据未必更好。** 超过某一点后边际收益递减；更应重视数据质量与多样性。"
+
+#: ../../finetuning/finetune.rst:442 a65723dd0c4943e6b84d644dda53fbe4
+msgid "Each checkpoint is a complete model directory that can be loaded directly."
+msgstr "每个 checkpoint 都是可直接加载的完整模型目录。"
+
+#: ../../finetuning/finetune.rst:466 403b9a28c54941a8bd98ecec4283a6ee
+msgid "The checkpoint directory is a complete model — load it directly:"
+msgstr "该目录即完整模型 — 可直接加载："
+
+#: ../../finetuning/finetune.rst:477 f704186bf19e471da84415b077c52d66
+msgid ""
+"For common training issues (OOM, runaway generation, poor LoRA performance, "
+"checkpoint errors), see :doc:`./faq`."
+msgstr "常见训练问题（OOM、生成停不下来、LoRA 效果差、checkpoint 报错等）请参阅 :doc:`./faq`。"
+

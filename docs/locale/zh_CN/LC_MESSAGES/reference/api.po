@@ -1,0 +1,462 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2025, OpenBMB
+# This file is distributed under the same license as the VoxCPM package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: VoxCPM \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-06 15:37+0800\n"
+"PO-Revision-Date: 2026-04-06 18:00+0800\n"
+"Last-Translator: Cursor Agent <>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../reference/api.rst:2 e808fe5f868e4d959abcc1fe44fef0d2
+msgid "API Reference"
+msgstr "API 参考"
+
+#: ../../reference/api.rst:5 77fd7785c6594dd7b86a2799a81945c0
+msgid "Python API"
+msgstr "Python 接口"
+
+#: ../../reference/api.rst:9 1670ddac1c314a50b6b9eda156c78733
+msgid "Initialize VoxCPM from a local model directory."
+msgstr "从本地模型目录初始化 VoxCPM。"
+
+#: ../../reference/api.rst:11 6929a3ce2ab1490c86434772bb8e5c71
+msgid ""
+"The model architecture (``voxcpm`` or ``voxcpm2``) is auto-detected from the"
+" ``architecture`` field in ``config.json``."
+msgstr "模型架构（``voxcpm`` 或 ``voxcpm2``）会根据 ``config.json`` 中的 ``architecture`` 字段自动检测。"
+
+#: ../../reference/api.rst 185ce21516ce44198514d5cc16293cbb
+#: 49fa5615c95b4aff943eb067d260adf2 9707da8470404a3f93b17431dc3e7817
+#: cc16e6fb0a3149e8aad01d7da4011f26 fb37926926df4748b6619ecf1010b69a
+msgid "Parameters"
+msgstr "参数"
+
+#: ../../reference/api.rst:13 8d28a1070deb4f5a8d2275838605c2af
+msgid ""
+"Local path to the model directory containing weights, configs, and tokenizer"
+" files."
+msgstr "包含权重、配置与分词器文件的本地模型目录路径。"
+
+#: ../../reference/api.rst:14 22bfb296e8a949338a25c35529045a89
+msgid ""
+"ModelScope denoiser model id or local path. Set to ``None`` to skip the "
+"denoiser entirely."
+msgstr "ModelScope 降噪模型 id 或本地路径。设为 ``None`` 可完全跳过降噪器。"
+
+#: ../../reference/api.rst:15 0ca48fe12ee746fe8fe8fc78a9c1d8da
+msgid "Whether to initialize the ZipEnhancer denoiser pipeline."
+msgstr "是否初始化 ZipEnhancer 降噪流水线。"
+
+#: ../../reference/api.rst:16 53610f62d4634ea69ff110189e855def
+msgid ""
+"Enable ``torch.compile`` acceleration. Disable for debugging or unsupported "
+"platforms."
+msgstr "启用 ``torch.compile`` 加速。调试或不支持的平台请关闭。"
+
+#: ../../reference/api.rst:17 18b9ec465cee42c0b461ee6f6d647ecd
+msgid ""
+"LoRA configuration. If ``lora_weights_path`` is provided without this, a "
+"default config (``enable_lm=True``, ``enable_dit=True``) is created "
+"automatically."
+msgstr ""
+"LoRA 配置。若只提供 ``lora_weights_path`` "
+"而未提供此项，将自动创建默认配置（``enable_lm=True``、``enable_dit=True``）。"
+
+#: ../../reference/api.rst:18 4546043284fd4deb910d07f2a1ad2259
+msgid ""
+"Path to pre-trained LoRA weights (``.pth`` file or directory containing "
+"``lora_weights.ckpt``)."
+msgstr "预训练 LoRA 权重路径（``.pth`` 文件，或包含 ``lora_weights.ckpt`` 的目录）。"
+
+#: ../../reference/api.rst:30 ac45e1054e1a480798a765f7766abe2e
+msgid ""
+"Instantiate ``VoxCPM`` from a Hugging Face Hub snapshot. Downloads model "
+"weights automatically on first use."
+msgstr "从 Hugging Face Hub 快照实例化 ``VoxCPM``。首次使用时会自动下载模型权重。"
+
+#: ../../reference/api.rst:32 cd6ac25fa60c48feb6b12b896ae5ca73
+msgid "Hugging Face repo id (e.g. ``\"openbmb/VoxCPM2\"``) or local directory path."
+msgstr "Hugging Face 仓库 id（例如 ``\"openbmb/VoxCPM2\"``）或本地目录路径。"
+
+#: ../../reference/api.rst:33 ba47e8b2a64947d5af35fdc9f6bdd620
+msgid "Whether to initialize the denoiser pipeline."
+msgstr "是否初始化降噪流水线。"
+
+#: ../../reference/api.rst:34 222143f716294156b454f5885c6bf64b
+msgid "Denoiser model id or local path. Ignored when ``load_denoiser=False``."
+msgstr "降噪模型 id 或本地路径。当 ``load_denoiser=False`` 时忽略。"
+
+#: ../../reference/api.rst:35 b1785d6637a546c797ee23ea73b33da5
+msgid "Custom cache directory for the snapshot download."
+msgstr "快照下载的自定义缓存目录。"
+
+#: ../../reference/api.rst:36 e9eea428901b4af1b8dacf8c06d484a2
+msgid "If ``True``, only use local files and do not attempt to download."
+msgstr "若为 ``True``，仅使用本地文件，不尝试下载。"
+
+#: ../../reference/api.rst:37 17d415ab06844745ac327251f830555c
+msgid "Enable ``torch.compile`` acceleration."
+msgstr "启用 ``torch.compile`` 加速。"
+
+#: ../../reference/api.rst:38 c12d47de12614d7d8de4c50566031868
+msgid "LoRA configuration for fine-tuned models."
+msgstr "微调模型的 LoRA 配置。"
+
+#: ../../reference/api.rst:39 c586616b5da04a1cbffbfe140b3cbca1
+msgid "Path to LoRA weights. If provided, LoRA is loaded after initialization."
+msgstr "LoRA 权重路径。若提供，将在初始化后加载 LoRA。"
+
+#: ../../reference/api.rst 031b727091c84eb38dec75cbc3986983
+#: 104f8102e47d4392a888a47cd4af81c6 2ff6618bf1bf48638bfef988f14400d7
+#: ec74976a6b264ed8ab85fc558564c415 f59560356963468a9520f99d6d57f6dd
+msgid "Returns"
+msgstr "返回"
+
+#: ../../reference/api.rst:40 1e65b4abfea14121bea2755762d45666
+msgid "Initialized VoxCPM instance."
+msgstr "已初始化的 VoxCPM 实例。"
+
+#: ../../reference/api.rst 20994ef17a424b1a81813f2645f649d5
+#: 24836e230fe84dcc88d64c36b259598c 64c1b8aca50f43839f696ac41cd3aa67
+#: 66fb287c877d44ce812fbadef12ea8d8 a34784c13c0842e8a7dde56306e96944
+msgid "Return type"
+msgstr "返回类型"
+
+#: ../../reference/api.rst 576a4cfa5fb64a029571dd5d6c9ca404
+#: 95610c6f5a404a4fbbb8875ef9c9069d d1ee263e4e9d4d66aeb781d2e0ff0775
+msgid "Raises"
+msgstr "抛出"
+
+#: ../../reference/api.rst:42 0e6b3ec7ea134b04899df5a56f48c427
+msgid "If ``hf_model_id`` is empty."
+msgstr "当 ``hf_model_id`` 为空时。"
+
+#: ../../reference/api.rst:51 f0feedb88ab94e4fa5cab23f99302dc7
+msgid "Synthesize speech from text."
+msgstr "从文本合成语音。"
+
+#: ../../reference/api.rst:53 a9a4d4db3cf541b3bdaff9533757edd1
+msgid ""
+"Input text to synthesize. For Voice Design, prepend control instructions in "
+"parentheses: ``\"(warm female voice)Hello\"``."
+msgstr "待合成的输入文本。用于 Voice Design 时，在括号中加入控制指令，例如：``\"(warm female voice)Hello\"``。"
+
+#: ../../reference/api.rst:54 511c45768e304eaaba158e2cc46f9b60
+msgid ""
+"Prompt audio path for continuation-style cloning. Must be paired with "
+"``prompt_text``. For Hi-Fi cloning, combine it with ``reference_wav_path``."
+msgstr ""
+"延续式克隆的 prompt 音频路径，须与 ``prompt_text`` 配对。Hi-Fi 克隆时可与 ``reference_wav_path`` "
+"组合使用。"
+
+#: ../../reference/api.rst:55 9ce01c2801304ea6a75e4c4bba81eb0b
+msgid ""
+"Exact transcript of the prompt audio. Must be provided together with "
+"``prompt_wav_path``."
+msgstr "prompt 音频的逐字转写，必须与 ``prompt_wav_path`` 同时提供。"
+
+#: ../../reference/api.rst:56 5add4b8126294e00a23ba467316056f0
+msgid ""
+"Reference audio path for isolated voice cloning (**VoxCPM 2 only**). Can be "
+"used alone or combined with ``prompt_wav_path`` + ``prompt_text``."
+msgstr ""
+"独立音色克隆的参考音频路径（**仅 VoxCPM 2**）。可单独使用，或与 ``prompt_wav_path`` + ``prompt_text``"
+" 组合。"
+
+#: ../../reference/api.rst:57 45b9c8d6f3a1405a97dd8dafce7008ce
+msgid ""
+"Guidance scale. Higher values follow the conditioning more strictly; lower "
+"values allow more variation. Recommended: 1.0–3.0."
+msgstr "引导强度。数值越高越严格遵循条件；越低变化越大。建议 1.0–3.0。"
+
+#: ../../reference/api.rst:58 568f7741c36e427d828b7d2b2a567a1d
+msgid ""
+"Number of diffusion steps. More steps improve detail at the cost of speed. "
+"Recommended: 4–30."
+msgstr "扩散步数。步数越多细节越好、速度越慢。建议 4–30。"
+
+#: ../../reference/api.rst:59 57ee2eabec604f1aba4459656f5786ff
+msgid "Minimum audio length in model tokens."
+msgstr "模型 token 意义上的最短音频长度。"
+
+#: ../../reference/api.rst:60 d165a21b478f4064802e101c345f4a5b
+msgid "Maximum token length during generation. Increase for very long outputs."
+msgstr "生成时的最大 token 长度。输出很长时可增大。"
+
+#: ../../reference/api.rst:61 f729c721306a4f1fb847d15fe90c33a0
+msgid "Run text normalization (expand numbers, dates, etc.) before generation."
+msgstr "生成前进行文本规范化（展开数字、日期等）。"
+
+#: ../../reference/api.rst:62 74a02bffbd4e4a47be73e9aeb8d77225
+msgid ""
+"Denoise prompt/reference audio before generation. Requires the denoiser to "
+"be loaded."
+msgstr "生成前对 prompt/参考音频降噪。需已加载降噪器。"
+
+#: ../../reference/api.rst:63 650a327f059f4b999c790ba9a1d6072d
+msgid ""
+"Automatically retry when the generated audio length is abnormally short or "
+"long."
+msgstr "当生成音频时长异常偏短或偏长时自动重试。"
+
+#: ../../reference/api.rst:64 dee4bd1ee2264b0c9829c5d6bc8a94fa
+msgid "Maximum number of bad-case retries."
+msgstr "坏例重试的最大次数。"
+
+#: ../../reference/api.rst:65 76e3625d2bfd41cc8ff2ba56e9dc26c0
+msgid "Audio-to-text duration ratio threshold for bad-case detection."
+msgstr "坏例检测用的音频与文本时长比阈值。"
+
+#: ../../reference/api.rst:66 00776d04fbf94c33b4f823d70c6d29ae
+msgid ""
+"1-D waveform array (float32). Sample rate is available at "
+"``model.tts_model.sample_rate``."
+msgstr "一维波形数组（float32）。采样率见 ``model.tts_model.sample_rate``。"
+
+#: ../../reference/api.rst:68 7b0d78f991334a06953e303d0e13ede2
+msgid "If ``text`` is empty."
+msgstr "当 ``text`` 为空时。"
+
+#: ../../reference/api.rst:69 6e8868c274e24b7381a611d074957cb8
+msgid ""
+"If ``prompt_wav_path`` and ``prompt_text`` are not both provided or both "
+"``None``."
+msgstr "当 ``prompt_wav_path`` 与 ``prompt_text`` 未同时提供或同时为 ``None`` 时。"
+
+#: ../../reference/api.rst:70 fae5217c1ccc4220a5491bfe9b1ee2d0
+msgid "If ``reference_wav_path`` is used with a VoxCPM 1.x model."
+msgstr "当在 VoxCPM 1.x 模型上使用 ``reference_wav_path`` 时。"
+
+#: ../../reference/api.rst:71 c435b3fedf444c20bdff59eeb019c9fa
+msgid "If audio file paths do not exist."
+msgstr "当音频文件路径不存在时。"
+
+#: ../../reference/api.rst:98 073a6da6e38445e98b0b990cf8902d79
+msgid ""
+"Same interface as :py:meth:`generate`, but returns a generator that yields "
+"audio chunks incrementally."
+msgstr "接口与 :py:meth:`generate` 相同，但返回以增量方式产出音频块的生成器。"
+
+#: ../../reference/api.rst:100 a3c91cbba83243bda16376b9e728183a
+msgid "All parameters are identical to :py:meth:`generate`."
+msgstr "所有参数与 :py:meth:`generate` 一致。"
+
+#: ../../reference/api.rst:102 5e5c81d0233947f0a9efb9fcc1e7c0fb
+msgid "Generator yielding 1-D waveform chunks (float32)."
+msgstr "产出 float32 一维波形块的生成器。"
+
+#: ../../reference/api.rst:117 ac546285716945f4b50a3e52aa490a70
+msgid "Load LoRA weights from a checkpoint file or directory."
+msgstr "从检查点文件或目录加载 LoRA 权重。"
+
+#: ../../reference/api.rst:119 6ee9c8e4f585405cbb05fab88eabf221
+msgid ""
+"Path to LoRA weights (``.pth`` file or directory containing "
+"``lora_weights.ckpt``)."
+msgstr "LoRA 权重路径（``.pth`` 文件，或包含 ``lora_weights.ckpt`` 的目录）。"
+
+#: ../../reference/api.rst:120 ff6644140630408580ed85a100274e8f
+msgid ""
+"``(loaded_keys, skipped_keys)`` — lists of loaded and skipped parameter "
+"names."
+msgstr "``(loaded_keys, skipped_keys)`` — 已加载与已跳过参数名的列表。"
+
+#: ../../reference/api.rst:122 83aed7ef4a27460e9b43fafa034ec2c9
+msgid "If model was not initialized with a LoRA config."
+msgstr "当模型未以 LoRA 配置初始化时。"
+
+#: ../../reference/api.rst:127 bc848f3d4a2b42e3bf20c226fc1120ed
+msgid ""
+"Reset all LoRA weights to their initial state (effectively zeroing them "
+"out). The LoRA layers remain in the model but have no effect."
+msgstr "将所有 LoRA 权重重置为初始状态（等效清零）。LoRA 层仍保留在模型中但不起作用。"
+
+#: ../../reference/api.rst:132 db35ebe36b81471dad4939488054c7fd
+msgid "Enable or disable LoRA layers without unloading weights."
+msgstr "在不卸载权重的情况下启用或禁用 LoRA 层。"
+
+#: ../../reference/api.rst:134 b7b7a4b4d0804e6e9968b4dd1b2d1535
+msgid "``True`` to activate LoRA; ``False`` to use the base model only."
+msgstr "``True`` 启用 LoRA；``False`` 仅使用基座模型。"
+
+#: ../../reference/api.rst:139 bff55a9997b945aeb7376e25fda2780a
+msgid "Get the current LoRA parameters."
+msgstr "获取当前 LoRA 参数。"
+
+#: ../../reference/api.rst:141 75bb150adaa84e35bc8a8e4dd968befe
+msgid "State dict containing all ``lora_A`` and ``lora_B`` parameters."
+msgstr "包含全部 ``lora_A`` 与 ``lora_B`` 参数的状态字典。"
+
+#: ../../reference/api.rst:148 5f45ee14ca334bd8b0c1cc7d5bf143d9
+msgid "``True`` if a LoRA config is currently loaded on this model."
+msgstr "若当前模型已加载 LoRA 配置则为 ``True``。"
+
+#: ../../reference/api.rst:154 78b2094d4cde44f7948fea4316fa3818
+msgid "CLI"
+msgstr "命令行接口"
+
+#: ../../reference/api.rst:156 ec2e1d9d71034003881e95bc0ff53b93
+msgid ""
+"The ``voxcpm`` command provides three subcommands. Default model: "
+"``openbmb/VoxCPM2``."
+msgstr "``voxcpm`` 命令提供三个子命令。默认模型：``openbmb/VoxCPM2``。"
+
+#: ../../reference/api.rst:159 a15a7c133eee47c6a75613fcfa94b6f2
+msgid "Subcommands"
+msgstr "子命令"
+
+#: ../../reference/api.rst:165 5b40635319e043b98157c8508ed08679
+msgid ""
+"Generate speech from text without any reference audio. Optionally describe "
+"the target voice with ``--control``."
+msgstr "无需参考音频，从文本生成语音。可选使用 ``--control`` 描述目标音色。"
+
+#: ../../reference/api.rst:176 472585d510c8464ca239ffda8017ced0
+msgid "Clone a voice using reference audio or prompt audio with transcript."
+msgstr "使用参考音频，或带转写的 prompt 音频进行声音克隆。"
+
+#: ../../reference/api.rst:196 7d66a67ac87c4b268796de01f79fe50b
+msgid ""
+"Process a text file where each line becomes a separate output WAV "
+"(``output_001.wav``, ``output_002.wav``, ...)."
+msgstr "处理文本文件，每行生成一个独立的输出 WAV（``output_001.wav``、``output_002.wav``、……）。"
+
+#: ../../reference/api.rst:204 984961390bf4449a84ed30b3584c403d
+msgid "Arguments"
+msgstr "参数说明"
+
+#: ../../reference/api.rst:206 2045df62d5dc4020b051b4977c17b603
+msgid "**Generation**"
+msgstr "**生成**"
+
+#: ../../reference/api.rst:210 a70ef2098a0b487986fe25b0e80aaa8c
+msgid "Text to synthesize."
+msgstr "待合成文本。"
+
+#: ../../reference/api.rst:214 a80582c02dfa4995a443ee68827111da
+msgid ""
+"Control instruction for voice design or style control (e.g. ``\"warm female "
+"voice\"``). Cannot be used together with ``--prompt-text``."
+msgstr "音色设计或风格控制的指令（例如 ``\"warm female voice\"``）。不可与 ``--prompt-text`` 同时使用。"
+
+#: ../../reference/api.rst:218 48b7047bb3e143b19dbff76d46b389c6
+msgid "CFG guidance scale. Default: ``2.0``. Recommended: 1.0–3.0."
+msgstr "CFG 引导强度。默认：``2.0``。建议：1.0–3.0。"
+
+#: ../../reference/api.rst:222 2de4537a2a0442c8b1910d37bbc50cc2
+msgid "Number of diffusion steps. Default: ``10``. Recommended: 4–30."
+msgstr "扩散步数。默认：``10``。建议：4–30。"
+
+#: ../../reference/api.rst:226 be56cb0e77dd4d4d94467f1f3db95bd3
+msgid "Enable text normalization (expand numbers, dates, etc.)."
+msgstr "启用文本规范化（展开数字、日期等）。"
+
+#: ../../reference/api.rst:228 a320a8770b954b17851960f5820d0500
+msgid "**Prompt & Reference Audio**"
+msgstr "**Prompt 与参考音频**"
+
+#: ../../reference/api.rst:232 4706881bb814468483ad7554a1e99444
+msgid ""
+"Prompt audio file for continuation mode. Requires ``--prompt-text`` or "
+"``--prompt-file``."
+msgstr "延续模式下的 prompt 音频文件。需要 ``--prompt-text`` 或 ``--prompt-file``。"
+
+#: ../../reference/api.rst:236 4b19db9468044106a4b4a4972ce14b3c
+msgid "Text transcript of the prompt audio."
+msgstr "prompt 音频的文本转写。"
+
+#: ../../reference/api.rst:240 c135051bd6a1469ab84218e974227a48
+msgid ""
+"Text file containing the prompt transcript (alternative to ``--prompt-"
+"text``)."
+msgstr "包含 prompt 转写的文本文件（``--prompt-text`` 的替代方式）。"
+
+#: ../../reference/api.rst:244 80d629e19ba641ac8d57767e8397659c
+msgid "Reference audio for isolated voice cloning (VoxCPM 2 only)."
+msgstr "独立音色克隆的参考音频（仅 VoxCPM 2）。"
+
+#: ../../reference/api.rst:248 f621d369ed4e4174ad11883f3825ad93
+msgid "Denoise prompt/reference audio with ZipEnhancer before generation."
+msgstr "生成前使用 ZipEnhancer 对 prompt/参考音频降噪。"
+
+#: ../../reference/api.rst:250 a5d3f39c835d4a32bca9364ac870e91d
+msgid "**Model Loading**"
+msgstr "**模型加载**"
+
+#: ../../reference/api.rst:254 f11ed2e213734c0995fdc4c9e2418e3b
+msgid "Local model directory. If set, ``--hf-model-id`` is ignored."
+msgstr "本地模型目录。若设置则忽略 ``--hf-model-id``。"
+
+#: ../../reference/api.rst:258 266fc46acfaa4c87a7c86682335d05b6
+msgid "Hugging Face repo id. Default: ``openbmb/VoxCPM2``."
+msgstr "Hugging Face 仓库 id。默认：``openbmb/VoxCPM2``。"
+
+#: ../../reference/api.rst:262 f992a7b038e241e6bc0e182dc01fdf9a
+msgid "Cache directory for Hub downloads."
+msgstr "Hub 下载的缓存目录。"
+
+#: ../../reference/api.rst:266 f983b5e80a334fe5bfe205e1f309b68c
+msgid "Only use local files, do not download from Hub."
+msgstr "仅使用本地文件，不从 Hub 下载。"
+
+#: ../../reference/api.rst:270 badac1672b1a4edaa4646a9a92e83d86
+msgid "Skip loading the denoiser model."
+msgstr "跳过加载降噪模型。"
+
+#: ../../reference/api.rst:274 9c5930f99793441eb0c22ce766f7e47d
+msgid "Disable ``torch.compile`` acceleration."
+msgstr "禁用 ``torch.compile`` 加速。"
+
+#: ../../reference/api.rst:278 b278535486894e5c9e3999678379be92
+msgid "Custom ZipEnhancer model id or local path."
+msgstr "自定义 ZipEnhancer 模型 id 或本地路径。"
+
+#: ../../reference/api.rst:280 aeb4ef0c14c940ceb795e665aa8766c8
+msgid "**LoRA**"
+msgstr "**LoRA**"
+
+#: ../../reference/api.rst:284 53f52507ee9c4fbaa3762899a8005642
+msgid "Path to LoRA weights directory."
+msgstr "LoRA 权重目录路径。"
+
+#: ../../reference/api.rst:288 4f2adcc7d88b421d93dda0469dee7f15
+msgid "LoRA rank. Default: ``32``."
+msgstr "LoRA 秩 r。默认：``32``。"
+
+#: ../../reference/api.rst:292 4c37393f62e9456cbc07b483e2c77f00
+msgid "LoRA alpha (scaling = alpha / r). Default: ``16``."
+msgstr "LoRA alpha（缩放为 alpha / r）。默认：``16``。"
+
+#: ../../reference/api.rst:296 207adb8faa8d44b7bebdc868e33d2538
+msgid "LoRA dropout rate (0.0–1.0). Default: ``0.0``."
+msgstr "LoRA dropout 比率（0.0–1.0）。默认：``0.0``。"
+
+#: ../../reference/api.rst:300 8df32aa8c1ee468484008be5cd1531ba
+msgid "Disable LoRA on LM layers."
+msgstr "在 LM 层禁用 LoRA。"
+
+#: ../../reference/api.rst:304 4e14bf2eb46144f8b353db2dec95fdf3
+msgid "Disable LoRA on DiT layers."
+msgstr "在 DiT 层禁用 LoRA。"
+
+#: ../../reference/api.rst:308 5ed9c571aa5e4944a0ba1a8a55169e0b
+msgid "Enable LoRA on projection layers."
+msgstr "在投影层启用 LoRA。"
+
+#: ../../reference/api.rst:312 2afde1f73f144b4b827e8dbe866d8311
+msgid ""
+"The legacy flat CLI (``voxcpm --text \"...\" --output out.wav``) still works"
+" but is deprecated. Prefer the subcommand style."
+msgstr "旧版扁平 CLI（``voxcpm --text \"...\" --output out.wav``）仍可用但已弃用，建议改用子命令形式。"
+

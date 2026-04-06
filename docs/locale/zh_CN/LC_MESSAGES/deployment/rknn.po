@@ -1,0 +1,175 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2025, OpenBMB
+# This file is distributed under the same license as the VoxCPM package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version:  VoxCPM\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-06 15:37+0800\n"
+"PO-Revision-Date: 2026-04-06 18:30+0800\n"
+"Last-Translator: GPT-5.4 <>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../deployment/rknn.rst:3 489324a8e2864fb1b50a5c3ae3297723
+msgid "VoxCPM-RKNN2"
+msgstr "VoxCPM-RKNN2"
+
+#: ../../deployment/rknn.rst:5 b7c886904241443a8c7dd59f561d5326
+msgid ""
+"VoxCPM-RKNN2 deploys VoxCPM-0.5B on **Rockchip RK3588** edge devices using "
+"the RKNN2/RKLLM NPU acceleration stack."
+msgstr "VoxCPM-RKNN2 使用 RKNN2/RKLLM NPU 加速栈，在 **瑞芯微 RK3588** 边缘设备上部署 VoxCPM-0.5B。"
+
+#: ../../deployment/rknn.rst:7 552073e7ce2348c39086955006853198
+msgid ""
+"Repo: `happyme531/VoxCPM-0.5B-RKNN2 "
+"<https://huggingface.co/happyme531/VoxCPM-0.5B-RKNN2>`_ on Hugging Face"
+msgstr ""
+"仓库：Hugging Face 上的 `happyme531/VoxCPM-0.5B-RKNN2 "
+"<https://huggingface.co/happyme531/VoxCPM-0.5B-RKNN2>`_"
+
+#: ../../deployment/rknn.rst:10 33eb38c75a784e74ab2fa733c054d0fe
+msgid ""
+"This project targets **Rockchip RK3588** (and compatible RKNPU2 devices). It"
+" is not a general-purpose desktop/server deployment."
+msgstr "本项目面向 **瑞芯微 RK3588** （及兼容 RKNPU2 的设备），并非通用桌面/服务器部署方案。"
+
+#: ../../deployment/rknn.rst:12 90cbdc872507429eb74362ea979daf84
+msgid "Supported VoxCPM Versions"
+msgstr "支持的 VoxCPM 版本"
+
+#: ../../deployment/rknn.rst:16 365937008fde4b0aa08717c3499d4a6f
+msgid "VoxCPM 1.0 (0.5B)"
+msgstr "VoxCPM 1.0（0.5B）"
+
+#: ../../deployment/rknn.rst:17 2edb9729817342879d177db60154745a
+msgid "✅ Supported (``openbmb/VoxCPM-0.5B``, 16 kHz)"
+msgstr "✅ 支持（``openbmb/VoxCPM-0.5B``，16 kHz）"
+
+#: ../../deployment/rknn.rst:18 3fefe32b7d5e474d8d29808c2bfc9831
+msgid "VoxCPM 1.5"
+msgstr "VoxCPM 1.5"
+
+#: ../../deployment/rknn.rst:19 ../../deployment/rknn.rst:21
+#: 3c4d9b65ee8d4fbdae035ed46927a9be 80a157d1849549449e2e98d23ffb04c0
+msgid "❌ Not supported"
+msgstr "❌ 不支持"
+
+#: ../../deployment/rknn.rst:20 ad4a733f76304fb59663c9a2a23a6b41
+msgid "VoxCPM 2"
+msgstr "VoxCPM 2"
+
+#: ../../deployment/rknn.rst:24 647710d6cafe4020a05dc74d118dde7e
+msgid "Features"
+msgstr "主要特性"
+
+#: ../../deployment/rknn.rst:26 e11cd5ab7c3049d29cc69d16bcc5e9f3
+msgid "NPU-accelerated inference on Rockchip RK3588 SoC"
+msgstr "在瑞芯微 RK3588 SoC 上使用 NPU 加速推理"
+
+#: ../../deployment/rknn.rst:27 0786cd95e027444db33fef00fa8414bf
+msgid "Combines RKNN (for audio VAE / LocDiT ops) with RKLLM (for LLM backbone)"
+msgstr "结合 RKNN（音频 VAE / LocDiT 算子）与 RKLLM（LLM 主干）"
+
+#: ../../deployment/rknn.rst:28 129ff32149304fee881e260a54f711dc
+msgid "Voice cloning with reference audio"
+msgstr "基于参考音频的声音克隆"
+
+#: ../../deployment/rknn.rst:29 b51ec608424f40a2947e02ef3c793a32
+msgid "Model conversion pipeline from PyTorch to RKNN/RKLLM formats"
+msgstr "从 PyTorch 到 RKNN/RKLLM 格式的模型转换流水线"
+
+#: ../../deployment/rknn.rst:32 69ba6e06e718449c9acf84acc272d923
+msgid "Performance"
+msgstr "性能表现"
+
+#: ../../deployment/rknn.rst:34 9bc18528bd8e4672b9f1bde86dfb44d4
+msgid "Benchmarked on RK3588:"
+msgstr "在 RK3588 上的基准："
+
+#: ../../deployment/rknn.rst:36 032f748cc3464925bd809c6787f550d1
+msgid "**RTF**: ~4.5 (approximately 45 seconds to generate ~10 seconds of audio)"
+msgstr "**RTF**：约 4.5（生成约 10 秒音频约需 45 秒）"
+
+#: ../../deployment/rknn.rst:37 95a6a2ce2d51488caa4b6da0593cbec9
+msgid "**RAM usage**: ~3.3 GB"
+msgstr "**内存占用**：约 3.3 GB"
+
+#: ../../deployment/rknn.rst:40 8a6005d3754f4a3f8a0ed915cf3beb01
+msgid "Prerequisites"
+msgstr "准备工作"
+
+#: ../../deployment/rknn.rst:42 389e6133982048f18318fa4822712879
+msgid "Rockchip RK3588 board (e.g., Orange Pi 5, Rock 5B)"
+msgstr "瑞芯微 RK3588 开发板（如 Orange Pi 5、Rock 5B）"
+
+#: ../../deployment/rknn.rst:43 9ade1afc61cc423fa1b39c68edb5695f
+msgid "Python with RKNN2 runtime libraries"
+msgstr "已安装 RKNN2 运行库的 Python 环境"
+
+#: ../../deployment/rknn.rst:44 1e23489cd10949b7b5bf4192b2245667
+msgid "``openbmb/VoxCPM-0.5B`` weights (for conversion)"
+msgstr "``openbmb/VoxCPM-0.5B`` 权重（用于转换）"
+
+#: ../../deployment/rknn.rst:47 fa2cc89514be48ea81116ee9993b7344
+msgid "Installation (Inference)"
+msgstr "安装与推理"
+
+#: ../../deployment/rknn.rst:55 afed706b904748a4aea7f89c21b1daf0
+msgid "Basic usage"
+msgstr "基本用法"
+
+#: ../../deployment/rknn.rst:83 69c902dbf32a43809d56953c2fe966b5
+msgid "Model conversion"
+msgstr "模型转换"
+
+#: ../../deployment/rknn.rst:85 2801a34976194b058fa800b41ba2d2da
+msgid "To convert VoxCPM-0.5B weights to RKNN/RKLLM format:"
+msgstr "将 VoxCPM-0.5B 权重转换为 RKNN/RKLLM 格式："
+
+#: ../../deployment/rknn.rst:87 7af9f1365b654bc18c4ee541991f1ad1
+msgid "Install the conversion toolkit:"
+msgstr "安装转换工具链："
+
+#: ../../deployment/rknn.rst:95 63ae960313f74251bb7e6667a40472de
+msgid "Download the base model:"
+msgstr "下载基础模型："
+
+#: ../../deployment/rknn.rst:101 d8bec701ec55439d94d1c5499b91e4d3
+msgid "Run the conversion pipeline:"
+msgstr "运行转换流水线："
+
+#: ../../deployment/rknn.rst:109 1ca4790ad5884851ac11fed88a8c8dc9
+msgid ""
+"See the `conversion guide <https://huggingface.co/happyme531/VoxCPM-0.5B-"
+"RKNN2/tree/main/convert>`_ for detailed instructions."
+msgstr ""
+"详细步骤见 `转换指南 <https://huggingface.co/happyme531/VoxCPM-0.5B-"
+"RKNN2/tree/main/convert>`_。"
+
+#: ../../deployment/rknn.rst:112 d4f60ebe28a545cf9cc79c2472639acb
+msgid "Known issues"
+msgstr "已知问题"
+
+#: ../../deployment/rknn.rst:114 f7f6d311c7f04ba59e6441ddf69b26ce
+msgid ""
+"Possible **infinite generation loop** — upstream bad-case guard not yet "
+"ported"
+msgstr "可能出现 **无限生成循环** — 上游 bad-case 保护尚未移植"
+
+#: ../../deployment/rknn.rst:115 1c9a0cc0f03749da8baa1aeaa8d26f99
+msgid "Two separate LocEnc models due to RKNN toolchain shape limitations"
+msgstr "受 RKNN 工具链 shape 限制，需拆成两个 LocEnc 模型"
+
+#: ../../deployment/rknn.rst:116 f994331a4a6c4ce48156c46102a7a371
+msgid "RKLLM outputs require manual ×4 scaling workaround"
+msgstr "RKLLM 输出需手动 ×4 缩放的变通处理"
+

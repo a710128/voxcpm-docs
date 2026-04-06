@@ -1,0 +1,161 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2025, OpenBMB
+# This file is distributed under the same license as the VoxCPM package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: VoxCPM \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-06 15:37+0800\n"
+"PO-Revision-Date: 2026-04-06 18:30+0800\n"
+"Last-Translator: GPT-5.4 <>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../deployment/mlx_audio.rst:3 857bcd3ddac644a79c65d0ac7ccbca2f
+msgid "MLX-Audio"
+msgstr "MLX-Audio"
+
+#: ../../deployment/mlx_audio.rst:5 c8eaafb3aadb4e45a14897f7fc2d21e6
+msgid ""
+"MLX-Audio is an audio framework built on `Apple MLX <https://github.com/ml-"
+"explore/mlx>`_ for **Apple Silicon** Macs. It supports VoxCPM as one of its "
+"TTS backends, and gives you a CLI, an OpenAI-compatible FastAPI server, and "
+"a separate Next.js web UI."
+msgstr ""
+"MLX-Audio 是基于 `Apple MLX <https://github.com/ml-explore/mlx>`_ 的音频框架，面向 "
+"**Apple Silicon** Mac。它将 VoxCPM 作为 TTS 后端之一，并提供 CLI、兼容 OpenAI 的 FastAPI "
+"服务，以及独立的 Next.js Web 界面。"
+
+#: ../../deployment/mlx_audio.rst:7 c9192c459ca14320b9827192d1a7aab6
+msgid "Repo: `Blaizzy/mlx-audio <https://github.com/Blaizzy/mlx-audio>`_"
+msgstr "仓库：`Blaizzy/mlx-audio <https://github.com/Blaizzy/mlx-audio>`_"
+
+#: ../../deployment/mlx_audio.rst:10 cbbacdfef607472aae85a9d9e724baef
+msgid ""
+"This is a good fit if you want to run VoxCPM on an Apple Silicon Mac through"
+" the MLX stack, especially when you also want a local API server or a "
+"browser UI."
+msgstr "若你想在 Apple Silicon Mac 上通过 MLX 栈运行 VoxCPM，且同时需要本地 API 服务或浏览器界面，这是较合适的选择。"
+
+#: ../../deployment/mlx_audio.rst:12 bcb62d4f57784232aaa5913760332677
+msgid "Supported VoxCPM Versions"
+msgstr "支持的 VoxCPM 版本"
+
+#: ../../deployment/mlx_audio.rst:16 172ca16c3b094f2a8bdb36592399ca32
+msgid "VoxCPM 1.0 (0.5B)"
+msgstr "VoxCPM 1.0（0.5B）"
+
+#: ../../deployment/mlx_audio.rst:17 ../../deployment/mlx_audio.rst:19
+#: 628da28737f843ea97c3afd83342f21b f87dda640cb34f739b5bc5a8de6dd7e9
+msgid "✅ Supported"
+msgstr "✅ 支持"
+
+#: ../../deployment/mlx_audio.rst:18 2d88bc3a79c34bdfa31068bcddd2d10d
+msgid "VoxCPM 1.5"
+msgstr "VoxCPM 1.5"
+
+#: ../../deployment/mlx_audio.rst:20 9d1ee48ac0174772a59ec3dbbb75fc25
+msgid "VoxCPM 2"
+msgstr "VoxCPM 2"
+
+#: ../../deployment/mlx_audio.rst:21 0b2d6832463f4072abfa4a60ad6f52b0
+msgid "⚠️ This page focuses on the current VoxCPM 1.x path on MLX-Audio"
+msgstr "⚠️ 本页主要介绍 MLX-Audio 上当前的 VoxCPM 1.x 路径"
+
+#: ../../deployment/mlx_audio.rst:24 a705c901aae04bf996fd58d79a491b35
+msgid "Prerequisites"
+msgstr "准备工作"
+
+#: ../../deployment/mlx_audio.rst:26 77a7e0fa960a4080a27f807d9bd85a77
+msgid "Apple Silicon Mac (M1 or later)"
+msgstr "Apple Silicon Mac（M1 或更新）"
+
+#: ../../deployment/mlx_audio.rst:27 ecdf119debde4b3aaaec5f81d690a3b9
+msgid "Python 3.10+"
+msgstr "Python 3.10+"
+
+#: ../../deployment/mlx_audio.rst:28 1555d7f0827943c499522841a003b877
+msgid "``mlx`` and ``mlx-audio`` installed"
+msgstr "已安装 ``mlx`` 与 ``mlx-audio``"
+
+#: ../../deployment/mlx_audio.rst:31 f2acb9ad8df54cb8a369fd06cf5a0b31
+msgid "Installation"
+msgstr "安装"
+
+#: ../../deployment/mlx_audio.rst:37 89bcfe0a2eda467d87a877910048fe4d
+msgid "Or from source:"
+msgstr "或从源码安装："
+
+#: ../../deployment/mlx_audio.rst:46 0677280d487e4999917acabfffa90e3c
+msgid "CLI Usage"
+msgstr "命令行用法"
+
+#: ../../deployment/mlx_audio.rst:48 0b4ec066973a4e17b32b0b2f14ce4430
+msgid "Generate speech directly from the command line:"
+msgstr "在命令行直接生成语音："
+
+#: ../../deployment/mlx_audio.rst:54 f05fb2496fa846b0ab086d187e13df90
+msgid ""
+"The ``--model`` flag accepts ``voxcpm`` (maps to VoxCPM 1.0) or "
+"``voxcpm1.5``."
+msgstr "``--model`` 可接受 ``voxcpm``（对应 VoxCPM 1.0）或 ``voxcpm1.5``。"
+
+#: ../../deployment/mlx_audio.rst:57 6f89ff8a13f441818526a8c16950feed
+msgid "API Server"
+msgstr "API 服务"
+
+#: ../../deployment/mlx_audio.rst:59 78fa9df148b440dcb8c73e4a6ab2e0a9
+msgid "MLX-Audio includes an OpenAI-compatible FastAPI server:"
+msgstr "MLX-Audio 包含兼容 OpenAI 的 FastAPI 服务："
+
+#: ../../deployment/mlx_audio.rst:65 e3515c286e0f4a439197883be00711f6
+msgid ""
+"This starts a local server that accepts ``/v1/audio/speech`` requests, "
+"compatible with the OpenAI TTS API format. You can point any OpenAI-"
+"compatible client at it."
+msgstr ""
+"这会启动一个本地服务，可接收 ``/v1/audio/speech`` 请求，格式与 OpenAI TTS API 兼容。可将任意兼容 OpenAI "
+"的客户端指向该服务。"
+
+#: ../../deployment/mlx_audio.rst:68 22c4a88e0547498baad60bd79ee192c4
+msgid "Web UI"
+msgstr "网页界面"
+
+#: ../../deployment/mlx_audio.rst:70 6ed9d22c3f3a472b96337e85fe4b7944
+msgid ""
+"A separate Next.js web UI is included under ``mlx_audio/ui/``. See the `MLX-"
+"Audio README <https://github.com/Blaizzy/mlx-audio#web-ui>`_ for setup "
+"instructions."
+msgstr ""
+"独立的 Next.js Web 界面位于 ``mlx_audio/ui/``。搭建步骤见 `MLX-Audio README "
+"<https://github.com/Blaizzy/mlx-audio#web-ui>`_。"
+
+#: ../../deployment/mlx_audio.rst:73 6dd7491778ac40ed8bf687ee3c9add5a
+msgid "Limitations"
+msgstr "限制说明"
+
+#: ../../deployment/mlx_audio.rst:75 53ee11b96cc2478497a7a691309a09f6
+msgid ""
+"VoxCPM 2 support is not yet available in MLX-Audio. The current backend "
+"covers VoxCPM 1.0 and 1.5."
+msgstr "MLX-Audio 尚未支持 VoxCPM 2。当前后端覆盖 VoxCPM 1.0 与 1.5。"
+
+#: ../../deployment/mlx_audio.rst:76 70e0ec729b3643779093405391f0eb85
+msgid ""
+"Performance depends on your Apple Silicon chip. M1 Pro / M1 Max and later "
+"provide the best experience."
+msgstr "性能取决于你的 Apple Silicon 芯片。M1 Pro / M1 Max 及更新机型体验更佳。"
+
+#: ../../deployment/mlx_audio.rst:77 bf98d13485e348eaa13af8bd49cbf820
+msgid ""
+"The MLX-Audio project is community-maintained and not officially affiliated "
+"with OpenBMB."
+msgstr "MLX-Audio 由社区维护，与 OpenBMB 无官方隶属关系。"
+

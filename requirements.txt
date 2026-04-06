@@ -1,4 +1,6 @@
 sphinx
 furo
 myst-parser
+sphinx-intl
+sphinx-copybutton
 sphinx-design

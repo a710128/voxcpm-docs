@@ -1,29 +1,81 @@
 # VoxCPM Docs Index
 
-本文件是 `docs/` 目录下文档站点的“总览大纲”，用于快速理解：
+本文件是 `docs/` 目录下文档站点的**当前总览大纲**，用于快速理解：
 
-- 文档信息架构（Sphinx toctree 组织结构）
+- 文档站的实际信息架构（以 `docs/index.rst` 的 hidden toctree 为准）
 - `docs/` 的目录/文件结构
-- 每个文档文件覆盖的大致内容
+- 每个主要文档页面覆盖的大致内容
+- 哪些页面参与构建，哪些页面只是补充/遗留页面
 
-> 备注：本文档仓库是 **Sphinx 文档站**（而不是 VoxCPM 代码仓库）。部分页面会引用/假设主仓库中的脚本与配置路径。
+> 备注：本文档仓库是 **Sphinx 文档站**（而不是 VoxCPM 代码仓库）。部分页面会引用/假设主仓库中的脚本、模型目录与训练配置路径。
 
 ## 信息架构（站点导航）
 
-站点入口与导航主要由 `docs/index.rst` 中的多个隐藏 toctree 决定：
+站点入口与侧边栏导航由 `docs/index.rst` 中的多个 hidden toctree 决定。
 
-1. 首页主导航
-   - `docs/index.rst`（self）
-   - `docs/quickstart.rst`
-   - `docs/chefsguide.rst`
-   - `docs/models.rst`
-2. Models
-   - `docs/models/voxcpm1.rst`
-   - `docs/models/voxcpm1.5.rst`
-3. Fine Tuning
-   - `docs/finetuning/finetune.rst`
-4. Deployment
-   - `docs/deployment/nanovllm.rst`
+### 1. 首页
+
+- `docs/index.rst`（首页）
+
+### 2. Getting Started
+
+- `docs/quickstart.rst`
+- `docs/installation.rst`
+
+### 3. User Guide
+
+- `docs/usage_guide.rst`
+- `docs/cookbook.rst`
+- `docs/faq.rst`
+
+### 4. Models
+
+- `docs/models/architecture.rst`
+- `docs/models/version_history.rst`
+
+### 5. Fine-tuning
+
+- `docs/finetuning/finetune.rst`
+- `docs/finetuning/walkthrough.rst`
+- `docs/finetuning/faq.rst`
+
+### 6. Reference
+
+- `docs/reference/api.rst`
+- `docs/reference/changelog.rst`
+
+### 7. Ecosystem
+
+Deployment:
+
+- `docs/deployment/nanovllm_voxcpm.rst`
+- `docs/deployment/voxcpm_cpp.rst`
+- `docs/deployment/onnx.rst`
+- `docs/deployment/ane.rst`
+- `docs/deployment/mlx_audio.rst`
+- `docs/deployment/rknn.rst`
+- `docs/deployment/voxcpm_rs.rst`
+
+Integrations:
+
+- `docs/integrations/comfyui_voxcpm.rst`
+- `docs/integrations/comfyui_voxcpmtts.rst`
+- `docs/integrations/tts_webui.rst`
+
+## 参与构建但不在侧边栏主导航中的页面
+
+以下页面会参与当前文档构建，但**不直接作为侧边栏主导航项**出现：
+
+- `docs/models/voxcpm2.rst`：VoxCPM 2 详细介绍页
+- `docs/models/voxcpm1.5.rst`：VoxCPM 1.5 详细介绍页
+- `docs/models/voxcpm1.rst`：VoxCPM 1.0 详细介绍页
+- `docs/models/earlier_releases.rst`：遗留版本说明页，和 `docs/models/version_history.rst` 有一定重叠，当前主导航未引用
+
+这些页面通常通过首页卡片、版本历史页或正文内链接进入。
+
+## 不参与当前构建的页面
+
+- `docs/models.rst`：文件仍在，但 `docs/conf.py` 中已通过 `exclude_patterns` 排除，不参与当前站点构建
 
 ## 目录与文件结构（docs/）
 
@@ -32,8 +84,11 @@ docs/
   conf.py
   index.rst
   quickstart.rst
-  chefsguide.rst
-  models.rst
+  installation.rst
+  usage_guide.rst
+  cookbook.rst
+  faq.rst
+  models.rst                    # 存在，但不参与构建
   Makefile
   make.bat
   _static/
@@ -45,98 +100,180 @@ docs/
     voxcpm1/
       voxcpm_model.png
   models/
-    voxcpm1.rst
+    architecture.rst
+    version_history.rst
+    earlier_releases.rst        # 遗留页
+    voxcpm2.rst
     voxcpm1.5.rst
+    voxcpm1.rst
   finetuning/
     finetune.rst
+    walkthrough.rst
+    faq.rst
+  reference/
+    api.rst
+    changelog.rst
   deployment/
-    nanovllm.rst
+    nanovllm_voxcpm.rst
+    voxcpm_cpp.rst
+    onnx.rst
+    ane.rst
+    mlx_audio.rst
+    rknn.rst
+    voxcpm_rs.rst
+  integrations/
+    comfyui_voxcpm.rst
+    comfyui_voxcpmtts.rst
+    tts_webui.rst
 ```
 
 ## 文件级内容概览
 
 ### `docs/index.rst`
 
-- 站点首页：项目简介、Key Features（表达性/克隆/高效率合成）。
-- Model Versions：使用 `sphinx-design` 的 card-carousel 展示 VoxCPM 2（开发中）、VoxCPM 1.5、VoxCPM 1.0。
-- Community Projects：收录社区集成（ComfyUI、WebUI、ONNX、NanoVLLM 等）与声明。
-- Risks and limitations：模型行为风险、克隆滥用风险、当前技术限制、双语限制、使用限制。
-- License / Acknowledgments / Institutions / Star History / Citation。
-- 隐藏 toctree：定义整站导航与分组（Models / Fine Tuning / Deployment）。
+- 站点首页：项目简介、Key Features、版本入口、社区项目、风险说明、License、Citation。
+- 使用 `sphinx-design` 的卡片与按钮展示 VoxCPM 2 和 Earlier Releases。
+- 末尾的 hidden toctree 定义整站导航，是当前信息架构的权威来源。
 
 ### `docs/quickstart.rst`
 
-- Requirements：PyTorch/CUDA/Python 版本与磁盘空间。
-- Installation：PyPI 安装与源码安装方式。
-- Model Download（可选）：通过 Hugging Face / ModelScope 下载模型与可选组件。
-- Basic Usage：
-  - Code API：`VoxCPM.from_pretrained(...)` 初始化；非流式与流式生成示例。
-  - CLI：直合成、克隆、批量、参数调节、模型加载、去噪器开关与帮助命令。
-  - Web Demo：运行 `python app.py`（并说明额外 ASR 模型需求）。
-- Next steps：引导到 chefsguide / models / finetuning / deployment。
+- 最快上手页：从安装到跑通 Python API、CLI、Web Demo。
+- 主线围绕 `openbmb/VoxCPM2`。
+- 提供“下一步阅读”入口，导向 Usage Guide / Models / Fine-tuning / Deployment。
 
-### `docs/chefsguide.rst`
+### `docs/installation.rst`
 
-- “Voice Chef” 风格的进阶使用建议：
-  - 文本输入：普通文本（开启 TN） vs 音素输入（关闭 TN）。
-  - Prompt Speech：使用参考音频进行风格/音色复刻；可选“Prompt Speech Enhancement”。
-  - 关键推理参数：CFG value 与 inference timesteps（质量/速度权衡）。
-- Next steps：引导到 models / finetuning / deployment。
+- 安装总览页：requirements、`uv` / `pip` / source checkout。
+- 说明何时需要源码安装（如运行本地 web demo、做开发或贡献）。
+- 包含 Hugging Face mirror 和基础安装校验命令。
 
-### `docs/models.rst`
+### `docs/usage_guide.rst`
 
-- 模型列表页：表格列出 VoxCPM 1.0 与 VoxCPM 1.5 的参数规模与采样率。
-- 链接到对应的模型详情页（`docs/models/voxcpm1.rst`、`docs/models/voxcpm1.5.rst`）。
+- 核心使用指南：解释 `generate()` 关键参数与典型推荐值。
+- 覆盖三种主要生成模式：Voice Design、Controllable Voice Cloning、Hi-Fi Cloning。
+- 包括文本输入、参考音频、质量调优、长文本与流式生成建议。
 
-### `docs/models/voxcpm1.rst`
+### `docs/cookbook.rst`
 
-- VoxCPM 1.0 信息：发布日期、参数规模、采样率。
-- 徽章/链接：Hugging Face、ModelScope、Demo Page。
-- 架构图：`docs/_static/voxcpm1/voxcpm_model.png`。
-- Basic Usage：最小 Python 推理示例。
-- Benchmark：Seed-TTS-eval、CV3-eval 相关表格（WER/CER/SIM/DNSMOS 等）。
+- 计划中的“配方/案例”页。
+- 当前仍偏占位，属于后续可补强区域。
+
+### `docs/faq.rst`
+
+- 面向安装、运行与部署问题的 FAQ。
+- 涵盖 Triton、torchcodec、`torch.compile`、Mac/MPS、Python 版本兼容性、显存与 RTF 等。
+
+### `docs/models/architecture.rst`
+
+- 模型架构总览页。
+- 当前仍偏占位，后续可补充 VoxCPM 2 / 1.x 架构关系与组件说明。
+
+### `docs/models/version_history.rst`
+
+- 旧版本总览页：说明为什么/何时使用 VoxCPM 1.5 或 1.0。
+- 提供 1.x 与 2.0 的迁移建议，并链接到详细版本页。
+
+### `docs/models/voxcpm2.rst`
+
+- 当前主推模型页。
+- 介绍 30 语言、多风格控制、48kHz 输出、V2 架构变化与使用示例。
 
 ### `docs/models/voxcpm1.5.rst`
 
-- VoxCPM 1.5 信息：发布日期、参数规模、采样率。
-- Overview：强调音质与效率升级，保留核心能力。
-- 对比表：16kHz -> 44.1kHz、LM token rate 变化、patch size/token rate 变化。
-- Basic Usage：最小 Python 推理示例（44.1kHz）。
-- Model Updates：采样率提升、token rate 调整带来的影响。
-- Migration Guide：从 0.5B/1.0 迁移到 1.5 的注意事项与兼容性说明。
+- 1.x 的成熟升级版本页。
+- 强调 44.1kHz 输出、更轻量部署与从 1.0 迁移的说明。
+
+### `docs/models/voxcpm1.rst`
+
+- 最初版本的详细说明页。
+- 包含架构图、基准结果和最小使用示例。
 
 ### `docs/finetuning/finetune.rst`
 
-- Fine-tuning 指南（标注 under construction）：
-  - Data Preparation：JSONL manifest 结构（必选/可选字段、采样率要求）。
-  - Full Fine-tuning：示例 YAML 配置、单卡/多卡训练命令、checkpoint 结构。
-  - LoRA Fine-tuning：LoRA 配置与参数说明、训练命令、checkpoint 结构。
-  - Inference：Full FT / LoRA 推理命令示例；含克隆场景。
-  - LoRA Hot-swapping：API 级动态加载/禁用/重置/切换 LoRA 权重示例。
-  - FAQ：OOM、效果差、不收敛、推理不生效、checkpoint 报错等排查建议。
+- 微调总指南：数据格式、环境要求、LoRA 与 Full Fine-tuning 两条路径。
+- 给出 YAML 配置、训练命令、checkpoint 与推理方式说明。
 
-### `docs/deployment/nanovllm.rst`
+### `docs/finetuning/walkthrough.rst`
 
-- Nano-vLLM 部署方案简介（标注 under construction）。
-- 特性列表：高吞吐、流式、批量、多卡、支持 1.0/1.5。
-- 安装：外链到 NanoVLLM-VoxCPM 项目文档。
+- 端到端实操示例页。
+- 用具体数据集和训练流程串起 manifest 准备、训练与验证过程。
 
-### `docs/conf.py`
+### `docs/finetuning/faq.rst`
 
-- Sphinx 配置：项目元信息（project/release/author）。
-- 扩展：`myst_parser`、`sphinx_design`。
-- 支持 `.rst` 与 `.md` 后缀；HTML theme 使用 `furo`；加载 `custom.css`。
+- 微调问题排查页。
+- 重点覆盖 OOM、不收敛、过拟合、LoRA 加载/推理异常等问题。
 
-### `docs/Makefile` / `docs/make.bat`
+### `docs/reference/api.rst`
 
-- Sphinx 官方模板 Makefile：通过 `sphinx-build -M <target>` 构建 `html/linkcheck/doctest` 等。
-- Windows 下使用 `make.bat`。
+- Python API 与 CLI 参考页。
+- 包含 `VoxCPM`、`from_pretrained()`、`generate()`、`generate_streaming()` 以及 LoRA 相关方法。
+- 同时记录新的 CLI 子命令形态：`design` / `clone` / `batch`。
 
-### `docs/_static/custom.css` 与静态资源
+### `docs/reference/changelog.rst`
 
-- `docs/_static/custom.css`：
-  - 全局字号与标题层级排版。
-  - `sphinx-design` dropdown 组件的布局与样式。
-  - 终端块（`pre.terminal`）的黑底白字与 `system/user` 颜色。
-  - logo figure 宽度与少量布局细节。
-- `docs/_static/` 图片：站点 logo、机构 logo、以及 VoxCPM 1.0 架构图。
+- 面向开发者的版本变更页。
+- 重点记录 2.0 相对 1.x 的 breaking changes、架构变更、API 默认值变化、CLI 迁移提示。
+
+### `docs/deployment/nanovllm_voxcpm.rst`
+
+- NanoVLLM-VoxCPM 高吞吐 GPU 部署页。
+- 覆盖服务模式、流式能力与 FastAPI demo 方向。
+
+### `docs/deployment/voxcpm_cpp.rst`
+
+- C++ / GGUF 推理与服务化方案。
+- 面向 CPU、CUDA、Vulkan 等多后端部署场景。
+
+### `docs/deployment/onnx.rst`
+
+- ONNX Runtime 方案说明。
+- 偏归档/历史兼容路线，主要用于旧版本或特定部署约束。
+
+### `docs/deployment/ane.rst`
+
+- Apple Neural Engine / CoreML 部署方案。
+- 面向 Apple Silicon 设备上的本地推理。
+
+### `docs/deployment/mlx_audio.rst`
+
+- MLX-Audio 集成说明。
+- 面向 Apple Silicon 的 CLI / API / UI 推理生态。
+
+### `docs/deployment/rknn.rst`
+
+- RK3588 / RKNN / RKLLM 边缘部署说明。
+- 面向嵌入式或端侧设备推理场景。
+
+### `docs/deployment/voxcpm_rs.rst`
+
+- Rust 生态下的实验性实现说明。
+- 偏探索性质，适合关注跨语言推理实现的读者。
+
+### `docs/integrations/comfyui_voxcpm.rst`
+
+- ComfyUI-VoxCPM 集成页。
+- 节点式工作流、推理与 LoRA 训练是重点。
+
+### `docs/integrations/comfyui_voxcpmtts.rst`
+
+- 另一套 ComfyUI 集成方案说明。
+- 更偏轻量接入、预设工作流和自动转写辅助。
+
+### `docs/integrations/tts_webui.rst`
+
+- TTS WebUI 扩展说明页。
+- 当前内容相对较薄，更像一个入口与外链说明。
+
+## 构建与组织说明
+
+- 站点使用 Sphinx，配置文件为 `docs/conf.py`
+- 当前启用的扩展包括：`myst_parser`、`sphinx_copybutton`、`sphinx_design`
+- 同时支持 `.rst` 与 `.md`，但主要内容以 `.rst` 为主
+- 主题为 `furo`，自定义样式在 `docs/_static/custom.css`
+- `docs/models.rst` 虽然保留在仓库中，但当前不参与构建；如果以后恢复使用，需要同时调整 `docs/conf.py` 与首页导航
+
+## 维护备注（简要，带主观判断）
+
+- **最完整**：Quick Start、Installation、Usage Guide、Fine-tuning、API Reference、Changelog
+- **可继续补强**：Cookbook、Models / Architecture
+- **生态页特点**：覆盖面广，但部分页面更偏“项目入口与集成说明”，深度不完全一致

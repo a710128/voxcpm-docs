@@ -1,0 +1,379 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2025, OpenBMB
+# This file is distributed under the same license as the VoxCPM package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version:  VoxCPM\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-06 15:37+0800\n"
+"PO-Revision-Date: 2026-04-06 18:00+0800\n"
+"Last-Translator: VoxCPM Docs zh_CN <>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../models/version_history.rst:2 744f15fc5f274fb8a62af2572541b612
+msgid "Version History"
+msgstr "版本历史"
+
+#: ../../models/version_history.rst:4 c61a1a4d33e74026a8ba0aeaf2178173
+msgid ""
+"This page summarizes all VoxCPM releases, including feature comparison, "
+"version highlights, and migration guidance."
+msgstr "本页汇总 VoxCPM 各版本发布，包括特性对比、版本亮点与迁移建议。"
+
+#: ../../models/version_history.rst:7 9e7855573d694f39a15889889400b100
+msgid "Quick Comparison"
+msgstr "快速对比"
+
+#: ../../models/version_history.rst:13 5583c3b84e09493f8569612a8aa47337
+msgid "Feature"
+msgstr "特性"
+
+#: ../../models/version_history.rst:14 ../../models/version_history.rst:104
+#: 89af7c0859794b5cb605c1e3f0be64a9 be8048d4b597403aa7798b4e9190e71c
+msgid "VoxCPM 1.0"
+msgstr "VoxCPM 1.0"
+
+#: ../../models/version_history.rst:15 ../../models/version_history.rst:90
+#: 271946aedbf446b6873c057984cd8d90 6b4723f7a68e4b7995fa053512ad854b
+msgid "VoxCPM 1.5"
+msgstr "VoxCPM 1.5"
+
+#: ../../models/version_history.rst:16 ../../models/version_history.rst:73
+#: 15eb6dfe9e9f4f37a440a83a474759c4 b751f0bfb1b34a4c95b4068ddbe1f1c5
+msgid "VoxCPM 2"
+msgstr "VoxCPM 2"
+
+#: ../../models/version_history.rst:17 252f025e7aaf4f6eae38aa6a43f76ea7
+msgid "**Parameters**"
+msgstr "**参数量**"
+
+#: ../../models/version_history.rst:18 354fe3b4032e4171ba875381a8737a0e
+msgid "640M"
+msgstr "640M"
+
+#: ../../models/version_history.rst:19 594f3dbca97d4fb0a78f7f63cf77a9ac
+msgid "800M"
+msgstr "800M"
+
+#: ../../models/version_history.rst:20 aa38608596a043398723f16d485342f9
+msgid "2B"
+msgstr "2B"
+
+#: ../../models/version_history.rst:21 6049c59f905b42438902f435f2855223
+msgid "**Audio Output**"
+msgstr "**音频输出**"
+
+#: ../../models/version_history.rst:22 f4cdde8680d44374b54d70fcb96bd606
+msgid "16kHz"
+msgstr "16kHz"
+
+#: ../../models/version_history.rst:23 2015510d78a0437391d9488300e1360f
+msgid "44.1kHz"
+msgstr "44.1kHz"
+
+#: ../../models/version_history.rst:24 1e6020a0450b4b029369829975354b48
+msgid "48kHz"
+msgstr "48kHz"
+
+#: ../../models/version_history.rst:25 be7e459714224c98a8c8d214a3f6cbd2
+msgid "**Languages**"
+msgstr "**语言**"
+
+#: ../../models/version_history.rst:26 ../../models/version_history.rst:27
+#: b4fb1000db504f03a5bb34a7c9cf5924 e1d4cae24888457496e684b9a04db965
+msgid "2 (zh, en)"
+msgstr "2（zh、en）"
+
+#: ../../models/version_history.rst:28 c1ea6305fff648068b99da00f9d56f1e
+msgid "30"
+msgstr "30"
+
+#: ../../models/version_history.rst:29 810d5fd568494c1a9c8b22cb2e50c496
+msgid "**Patch Size**"
+msgstr "**Patch 大小**"
+
+#: ../../models/version_history.rst:30 eb8d1ccb5d964c82b01e768384269508
+msgid "2"
+msgstr "2"
+
+#: ../../models/version_history.rst:31 ../../models/version_history.rst:32
+#: 2d8e9a93da704c09928c22b2c9f6d304 e2eafd4933bc4d6bae5e1650af7a534c
+msgid "4"
+msgstr "4"
+
+#: ../../models/version_history.rst:33 24ad8ee3583b404c998d402246adb6aa
+msgid "**LM Token Rate**"
+msgstr "**LM token 速率**"
+
+#: ../../models/version_history.rst:34 4f6d2bbd71174c16946f1dd0215c0677
+msgid "12.5Hz"
+msgstr "12.5Hz"
+
+#: ../../models/version_history.rst:35 ../../models/version_history.rst:36
+#: 8f64723196b340639064e68624f3af28 cd00b879e19e4c6fb4bd8bfba36d6282
+msgid "6.25Hz"
+msgstr "6.25Hz"
+
+#: ../../models/version_history.rst:37 802ffca4855544498d19fa6fa663c8fe
+msgid "**Max Sequence Length**"
+msgstr "**最大序列长度**"
+
+#: ../../models/version_history.rst:38 ../../models/version_history.rst:39
+#: 544e2f7f547a4c7c88ec6d7723421e72 a13559ab87e04d89b8e8ad0bfe2beabe
+msgid "4096"
+msgstr "4096"
+
+#: ../../models/version_history.rst:40 28c0e6994a8c47778fb5bce3fb0dfe65
+msgid "8192"
+msgstr "8192"
+
+#: ../../models/version_history.rst:41 6b0fbb407e9543d1b8b83d901471f07d
+msgid "**Residual LM Fusion**"
+msgstr "**Residual LM 融合**"
+
+#: ../../models/version_history.rst:42 ../../models/version_history.rst:43
+#: 371e1f8ff6b04a0583bc96cfb0a9eb6b 5a798a40c09c4fa096284f4b1e78ae7d
+msgid "Additive"
+msgstr "加法"
+
+#: ../../models/version_history.rst:44 639b94ec0d894b0babb7e5c3613cbdc3
+msgid "Concat + Projection"
+msgstr "拼接 + 投影"
+
+#: ../../models/version_history.rst:45 b0777b023ba04b74995fab9c33be12fc
+msgid "**DiT Conditioning**"
+msgstr "**DiT 条件输入**"
+
+#: ../../models/version_history.rst:46 ../../models/version_history.rst:47
+#: 48630ec2fd1e411f811eba65592c0411 5e527c1ddb04420798e58d1e620da968
+msgid "Single token (add)"
+msgstr "单 token（相加）"
+
+#: ../../models/version_history.rst:48 c750a119cb224596940184c061017478
+msgid "Multi-token (concat)"
+msgstr "多 token（拼接）"
+
+#: ../../models/version_history.rst:49 381cf2fd7605466b905a23aa6d818a43
+msgid "**Reference Audio**"
+msgstr "**参考音频**"
+
+#: ../../models/version_history.rst:50 ../../models/version_history.rst:51
+#: 23d60031bbfe419799aabbd95b721c16 369eed7b776a4263a1a7cfea46496135
+msgid "Prompt continuation"
+msgstr "提示音频续写"
+
+#: ../../models/version_history.rst:52 29e5532115bc4402af62b0ee5496f01a
+msgid "Isolated ref channel"
+msgstr "隔离参考通道"
+
+#: ../../models/version_history.rst:53 ccee174e2dc04578a8e651cef2763577
+msgid "**Voice Design**"
+msgstr "**Voice Design**"
+
+#: ../../models/version_history.rst:54 ../../models/version_history.rst:55
+#: ../../models/version_history.rst:58 ../../models/version_history.rst:59
+#: 013f2741397e4e88a6eaa4cbf5d4ddce 5ed291e7dfe84d88b84d34ec063a7178
+#: e3d90a7354554648b30c7f0eb6670102 f33d7c185e794681b062d5675511601e
+msgid "—"
+msgstr "—"
+
+#: ../../models/version_history.rst:56 ../../models/version_history.rst:60
+#: ../../models/version_history.rst:62 ../../models/version_history.rst:63
+#: ../../models/version_history.rst:64 397d14e9720745d89f80d6cc74fdc910
+#: 72fb68f507ce4271be33ff71e526b41d 8415235aa344406e838b94ce6a81fda6
+#: 9e24ef27e2e9430dbc4253e515208a41 e8e86f6a56c14fdfb8199850fe1b3d2b
+msgid "✅"
+msgstr "✅"
+
+#: ../../models/version_history.rst:57 e2ad20b9dfa14b6782dd3246860806d4
+msgid "**Style Control**"
+msgstr "**Style Control**"
+
+#: ../../models/version_history.rst:61 53359d666f8e4437815bfe2299a5350e
+msgid "**SFT / LoRA**"
+msgstr "**SFT / LoRA**"
+
+#: ../../models/version_history.rst:65 1813f647b0ba406292909f0e1dbe2ae9
+msgid "**RTF (RTX 4090)**"
+msgstr "**RTF（RTX 4090）**"
+
+#: ../../models/version_history.rst:66 c3b427d4114144cdb5ed203e99335e44
+msgid "~0.17"
+msgstr "~0.17"
+
+#: ../../models/version_history.rst:67 b6a602aa5d5441eb93aef66e768c6737
+msgid "~0.15"
+msgstr "~0.15"
+
+#: ../../models/version_history.rst:68 b029b38a608647f68bc2b41da79be997
+msgid "~0.3"
+msgstr "~0.3"
+
+#: ../../models/version_history.rst:70 c1ffdf342b1540e299b62f7b91c1e596
+msgid ""
+"For a detailed explanation of the architecture components (four-stage "
+"pipeline, AudioVAE, Local DiT), see :doc:`./architecture`."
+msgstr "架构组件（四阶段流水线、AudioVAE、Local DiT）的详细说明见 :doc:`./architecture`。"
+
+#: ../../models/version_history.rst:75 1465028b631e482ebb18197fb90f52a6
+msgid ""
+"VoxCPM 2 is the latest major release — a 2B parameter model trained on 2.36 "
+"million hours of multilingual data. It represents a significant leap in "
+"capacity, quality, and controllability over the 1.x series."
+msgstr ""
+"VoxCPM 2 是目前最新的大版本：一个在 236 万小时多语言数据上训练的 2B 参数模型。相较于 1.x "
+"系列，它在规模、质量与可控性上都有显著提升。"
+
+#: ../../models/version_history.rst:77 ../../models/version_history.rst:94
+#: ../../models/version_history.rst:108 4788d32e86c3445babf4f220d8c8c2d6
+#: ae72d061245a4eb7a9b755de45465927 b8867b4b7cd24e8a8e7d17dda84298bb
+msgid "Key characteristics:"
+msgstr "主要特点："
+
+#: ../../models/version_history.rst:79 9a04bf7b14a64826865ea890d003a4d0
+msgid "48kHz audio output via AudioVAE V2 (asymmetric 16kHz encode → 48kHz decode)"
+msgstr "通过 AudioVAE V2 输出 48kHz 音频（非对称 16kHz 编码 → 48kHz 解码）"
+
+#: ../../models/version_history.rst:80 ab7461a2019f4289905ea2f2fb51c0a4
+msgid "30-language multilingual support"
+msgstr "支持 30 种语言的合成"
+
+#: ../../models/version_history.rst:81 cb8323d07006449a84315d4014393abb
+msgid ""
+"Voice Design: create a voice from natural-language description, no reference"
+" audio needed"
+msgstr "Voice Design：用自然语言描述创建声线，无需参考音频"
+
+#: ../../models/version_history.rst:82 2e41431006f34755b205969f24648898
+msgid ""
+"Style Control: control emotion, pace, and speaking style of a cloned voice "
+"via text tags"
+msgstr "Style Control：通过文本标签控制克隆声音的情绪、语速与说话风格"
+
+#: ../../models/version_history.rst:83 3d93c77f215044818eae5841019fb090
+msgid ""
+"Isolated reference channel for voice cloning (no matching transcript "
+"required)"
+msgstr "为声音克隆提供隔离式参考通道（无需配套转写文本）"
+
+#: ../../models/version_history.rst:84 dd517a36fabe4df9a20352b3b6250832
+msgid ""
+"Concat-Projection residual LM fusion and multi-token DiT conditioning for "
+"richer expressiveness"
+msgstr "Concat-Projection 式 Residual LM 融合，结合多 token DiT 条件输入，带来更强的表现力"
+
+#: ../../models/version_history.rst:85 658f3a777dfe435d90c015521f05dcd0
+msgid "Built on a `MiniCPM-4 <https://github.com/OpenBMB/MiniCPM>`_ backbone"
+msgstr "基于 `MiniCPM-4 <https://github.com/OpenBMB/MiniCPM>`_ 骨干"
+
+#: ../../models/version_history.rst:87 d6401da1f0644f6ebd5d02c048390bdb
+msgid ""
+"Use VoxCPM 2 for all new projects. It is the recommended default for "
+"multilingual synthesis, voice cloning, voice design, and production "
+"deployment."
+msgstr "新项目建议优先使用 VoxCPM 2。它是多语言合成、声音克隆、Voice Design 与生产部署的默认推荐版本。"
+
+#: ../../models/version_history.rst:92 7e16bf00ab6341a982bed53e8eaf05a3
+msgid ""
+"VoxCPM 1.5 is the final 1.x upgrade before VoxCPM 2. It improves audio "
+"quality and efficiency while keeping the core context-aware generation and "
+"zero-shot voice cloning workflow familiar to existing 1.x users."
+msgstr ""
+"VoxCPM 1.5 是 VoxCPM 2 之前 1.x 的最后一次升级。它在提升音质与效率的同时，保留原有 1.x "
+"用户熟悉的上下文感知生成与零样本声音克隆流程。"
+
+#: ../../models/version_history.rst:96 42b5e23a1b8545f5bbfdb706d726c5b1
+msgid "44.1kHz output"
+msgstr "44.1kHz 输出"
+
+#: ../../models/version_history.rst:97 751dcfb1fc764efbac214af32efcf554
+msgid "6.25Hz LM token rate"
+msgstr "6.25Hz 的 LM token 速率"
+
+#: ../../models/version_history.rst:98 b31335f7ec4843d39e655aa0bb9e42d1
+msgid "patch size increased from 2 to 4"
+msgstr "patch 大小由 2 增至 4"
+
+#: ../../models/version_history.rst:99 794ee174b4094fea8c068fa12267d7b6
+msgid "simpler migration path for existing VoxCPM 1.0 users"
+msgstr "为既有 VoxCPM 1.0 用户提供更平滑的迁移路径"
+
+#: ../../models/version_history.rst:101 29c3e2cbea1f47a79ee006e66295c432
+msgid ""
+"Use VoxCPM 1.5 when you want a lighter Chinese/English checkpoint than "
+"VoxCPM 2, while keeping stronger output quality than VoxCPM 1.0."
+msgstr "若你需要比 VoxCPM 2 体量更小的中英 checkpoint，同时又希望输出质量优于 VoxCPM 1.0，可选用 VoxCPM 1.5。"
+
+#: ../../models/version_history.rst:106 06d15ae8fe7046ab8b16f8839f77280e
+msgid ""
+"VoxCPM 1.0 is the original tokenizer-free VoxCPM release. It remains useful "
+"as the baseline reference point for the family and for older experiments "
+"built around the original 0.5B checkpoint."
+msgstr "VoxCPM 1.0 是初代无分词器 VoxCPM 发布版，仍可作为整个系列的基线参照，也适用于围绕原始 0.5B checkpoint 的早期实验。"
+
+#: ../../models/version_history.rst:110 64bba8413a0e417a8bdf2faf12c65ef9
+msgid "600M parameter size"
+msgstr "600M 参数量"
+
+#: ../../models/version_history.rst:111 b2c29c805af740ba92573bee4c941812
+msgid "16kHz output"
+msgstr "16kHz 输出"
+
+#: ../../models/version_history.rst:112 611c187a413945509031a44723b3d195
+msgid "original VoxCPM architecture release"
+msgstr "原始 VoxCPM 架构发布"
+
+#: ../../models/version_history.rst:113 c610c5cda36842aaa988031086012291
+msgid "benchmark reference for early VoxCPM results"
+msgstr "早期 VoxCPM 结果的基准参照"
+
+#: ../../models/version_history.rst:115 117d5d9608a54104a1f4dbdfc9c48781
+msgid ""
+"Use VoxCPM 1.0 when you need the smallest historical checkpoint or want to "
+"compare against the original baseline behavior."
+msgstr "若你需要体积最小的历史 checkpoint，或要与原始基线行为对比，可使用 VoxCPM 1.0。"
+
+#: ../../models/version_history.rst:118 e36b69cbbaf64043945f342c1a8c3cf9
+msgid "Migration Guidance"
+msgstr "迁移建议"
+
+#: ../../models/version_history.rst:120 34470b40afe2450d8a95658d6e457126
+msgid "**New projects** should start with VoxCPM 2."
+msgstr "**新项目** 请从 VoxCPM 2 开始。"
+
+#: ../../models/version_history.rst:121 26f0796a550f4ef1b49979a91a111904
+msgid ""
+"**Existing VoxCPM 1.0 users** should generally move to VoxCPM 1.5 first if "
+"they need a lower-risk 1.x upgrade path."
+msgstr "**既有 VoxCPM 1.0 用户** 若希望走风险更低的 1.x 升级路径，一般应先迁到 VoxCPM 1.5。"
+
+#: ../../models/version_history.rst:122 581421a14ba44b1da6a9186de90fe620
+msgid ""
+"If you need multilingual synthesis, Voice Design, Style Control, or 48kHz "
+"output, move directly to VoxCPM 2."
+msgstr "若你需要多语种合成、Voice Design、Style Control 或 48kHz 输出，请直接升级到 VoxCPM 2。"
+
+#: ../../models/version_history.rst:125 0de78efc05cb435d9f3fe399cb07a8d6
+msgid "Detailed Pages"
+msgstr "详细页面"
+
+#: ../../models/version_history.rst:127 38217a56c8fe4125827f97e73e165822
+msgid "Full VoxCPM 2 page: :doc:`./voxcpm2`"
+msgstr "VoxCPM 2 全文：:doc:`./voxcpm2`"
+
+#: ../../models/version_history.rst:128 a29efcd0613b417c80266f7efa8e215f
+msgid "Full VoxCPM 1.5 page: :doc:`./voxcpm1.5`"
+msgstr "VoxCPM 1.5 全文：:doc:`./voxcpm1.5`"
+
+#: ../../models/version_history.rst:129 2716977863224e5fb33f7457e9c84baa
+msgid "Full VoxCPM 1.0 page: :doc:`./voxcpm1`"
+msgstr "VoxCPM 1.0 全文：:doc:`./voxcpm1`"
+

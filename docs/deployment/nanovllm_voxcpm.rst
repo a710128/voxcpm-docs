@@ -1,5 +1,5 @@
 ========================
-Nano-vLLM
+NanoVLLM-VoxCPM
 ========================
 
 Nano-vLLM-VoxCPM is an inference engine for VoxCPM based on Nano-vLLM.
@@ -11,6 +11,17 @@ It provides a Python API (sync + async streaming) and an optional FastAPI demo s
 
 .. note::
     This runtime is GPU-centric (CUDA + Triton + FlashAttention) and does not support CPU-only execution.
+
+.. list-table:: Supported VoxCPM Versions
+   :widths: 30 70
+   :header-rows: 0
+
+   * - VoxCPM 1.0 (0.5B)
+     - ✅ Supported
+   * - VoxCPM 1.5
+     - ✅ Supported (default)
+   * - VoxCPM 2
+     - ✅ Supported (``voxcpm2`` architecture auto-detected from ``config.json``)
 
 Features
 --------
@@ -46,7 +57,15 @@ If your checkpoint only ships weights as ``.pt`` / ``pytorch_model.bin``, conver
 Installation
 ------------
 
-Nano-vLLM-VoxCPM is not published on PyPI yet; install from source.
+Install from PyPI:
+
+.. code-block:: bash
+
+    pip install nano-vllm-voxcpm
+    # or
+    uv pip install nano-vllm-voxcpm
+
+Or install from source:
 
 .. code-block:: bash
 
@@ -115,39 +134,45 @@ If called outside an event loop, ``from_pretrained`` returns a synchronous serve
 FastAPI demo (HTTP)
 -------------------
 
-The repo includes a minimal FastAPI wrapper in ``fastapi/``.
+The repo includes a FastAPI deployment server in ``deployment/``.
+
+.. note::
+    The FastAPI demo service is not published on PyPI. Install it from source as a uv workspace member.
 
 .. warning::
-    The FastAPI demo is not production-ready (no auth, no persistence). Do not expose it to untrusted networks.
+    The FastAPI demo is not production-ready. Do not expose it to untrusted networks without additional security measures.
 
-Install demo extras
-^^^^^^^^^^^^^^^^^^^
+Install deployment extras
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: bash
 
-    uv pip install -r fastapi/requirements.txt
+    uv sync --package nano-vllm-voxcpm-deployment --frozen
 
 Configure model path
 ^^^^^^^^^^^^^^^^^^^^
 
-Edit ``fastapi/app.py`` and set ``MODEL_PATH`` to your local checkpoint directory.
+Set the ``NANOVLLM_MODEL_PATH`` environment variable (defaults to ``~/VoxCPM1.5``):
+
+.. code-block:: bash
+
+    export NANOVLLM_MODEL_PATH=/path/to/model_dir
 
 Start server
 ^^^^^^^^^^^^
 
 .. code-block:: bash
 
-    uv run fastapi run fastapi/app.py --host 0.0.0.0 --port 8000
+    uv run fastapi run deployment/app/main.py --host 0.0.0.0 --port 8000
 
 Then open:
 
 * ``http://localhost:8000/docs``
 
-The ``/generate`` endpoint streams raw audio bytes:
+The ``/generate`` endpoint streams audio as MP3:
 
-* Content-Type: ``audio/raw``
-* Payload: little-endian ``float32`` PCM (mono)
-* Audio format is described in response headers (sample rate, dtype, channels)
+* Content-Type: ``audio/mpeg``
+* Payload: streamed MP3 byte stream
 
 Troubleshooting
 ---------------

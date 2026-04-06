@@ -1,0 +1,369 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2025, OpenBMB
+# This file is distributed under the same license as the VoxCPM package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version:  VoxCPM\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-06 15:37+0800\n"
+"PO-Revision-Date: 2026-04-06 20:00+0800\n"
+"Last-Translator: VoxCPM Docs zh-CN <>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../integrations/comfyui_voxcpm.rst:3 2f1b0b2ec716415e9b35d39612795279
+msgid "ComfyUI-VoxCPM"
+msgstr "ComfyUI-VoxCPM"
+
+#: ../../integrations/comfyui_voxcpm.rst:5 c9ad7c14e20d47d9ac98f0f55b2e79aa
+msgid ""
+"ComfyUI-VoxCPM is a full-featured ComfyUI custom node for VoxCPM, with TTS, "
+"voice cloning, and **in-node LoRA training** support."
+msgstr "ComfyUI-VoxCPM 是面向 VoxCPM 的全功能 ComfyUI 自定义节点，支持 TTS、声音克隆以及 **节点内 LoRA 训练**。"
+
+#: ../../integrations/comfyui_voxcpm.rst:7 0047bc9da632491486c2648dafae9904
+msgid ""
+"Repo: `wildminder/ComfyUI-VoxCPM <https://github.com/wildminder/ComfyUI-"
+"VoxCPM>`_"
+msgstr ""
+"仓库：`wildminder/ComfyUI-VoxCPM <https://github.com/wildminder/ComfyUI-"
+"VoxCPM>`_"
+
+#: ../../integrations/comfyui_voxcpm.rst:9 e097d7d152124c1ca91df27454d323a4
+msgid ""
+"It wraps VoxCPM into ComfyUI's visual node-based workflow, allowing users to"
+" integrate speech synthesis into their generation pipelines."
+msgstr "它将 VoxCPM 接入 ComfyUI 的可视化节点工作流，便于在生成管线中集成语音合成。"
+
+#: ../../integrations/comfyui_voxcpm.rst:12 94a0558cdd1d455d81265cc6c057f6cb
+msgid ""
+"For a lighter alternative with auto-transcription, see "
+":doc:`comfyui_voxcpmtts`."
+msgstr "若需要更轻量且带自动转写的方案，请参阅 :doc:`comfyui_voxcpmtts`。"
+
+#: ../../integrations/comfyui_voxcpm.rst:14 2edec3520b1643a79eb767f669f92e46
+msgid "Supported VoxCPM Versions"
+msgstr "支持的 VoxCPM 版本"
+
+#: ../../integrations/comfyui_voxcpm.rst:18 f7e405d6f47744af8de0c2ac43710a83
+msgid "VoxCPM 1.0 (0.5B)"
+msgstr "VoxCPM 1.0 (0.5B)"
+
+#: ../../integrations/comfyui_voxcpm.rst:19 2763521cce7a44b8a73256fabcc17673
+msgid "✅ Supported (``openbmb/VoxCPM-0.5B``, 16 kHz)"
+msgstr "✅ 支持（``openbmb/VoxCPM-0.5B``，16 kHz）"
+
+#: ../../integrations/comfyui_voxcpm.rst:20 b4e74b8e42514dcab97e61affc73e179
+msgid "VoxCPM 1.5"
+msgstr "VoxCPM 1.5"
+
+#: ../../integrations/comfyui_voxcpm.rst:21 9e82728b3b804b89b0ab81f56238760d
+msgid "✅ Supported (``openbmb/VoxCPM1.5``, 44.1 kHz)"
+msgstr "✅ 支持（``openbmb/VoxCPM1.5``，44.1 kHz）"
+
+#: ../../integrations/comfyui_voxcpm.rst:22 12d2cb0c90c849ceaa5f8611e4c9c452
+msgid "VoxCPM 2"
+msgstr "VoxCPM 2"
+
+#: ../../integrations/comfyui_voxcpm.rst:23 07dd1304f4c74f95875086ca319006c9
+msgid "❌ Not supported"
+msgstr "❌ 不支持"
+
+#: ../../integrations/comfyui_voxcpm.rst:26 204a7b6c52184adc9f5b1b7baa4b1d6d
+msgid "Features"
+msgstr "主要特性"
+
+#: ../../integrations/comfyui_voxcpm.rst:28 cf31fab0d42446f98e965cff3243ccbe
+msgid ""
+"Supports both **VoxCPM 1.5** (44.1 kHz, ~800M params) and **VoxCPM-0.5B** "
+"(16 kHz, ~640M params)"
+msgstr "同时支持 VoxCPM 1.5（44.1 kHz，约 8 亿参数）与 VoxCPM-0.5B（16 kHz，约 6.4 亿参数）"
+
+#: ../../integrations/comfyui_voxcpm.rst:29 f9cc3493efa54e3489f3d19a324c3e2c
+msgid "Auto-download models to ``ComfyUI/models/tts/VoxCPM/``"
+msgstr "自动下载模型到 ``ComfyUI/models/tts/VoxCPM/``"
+
+#: ../../integrations/comfyui_voxcpm.rst:30 65822c4bb58848b3b140e951a6100884
+msgid "**LoRA inference and training** directly in ComfyUI:"
+msgstr "在 ComfyUI 内直接进行 **LoRA 推理与训练**："
+
+#: ../../integrations/comfyui_voxcpm.rst:32 09143b7b7bd544138481980b5f75ae39
+msgid "``VoxCPM Train Config`` — configure training hyperparameters"
+msgstr "``VoxCPM Train Config`` — 配置训练超参数"
+
+#: ../../integrations/comfyui_voxcpm.rst:33 c46a72e11ece401495d20ea266fc92a8
+msgid "``VoxCPM Dataset Maker`` — prepare fine-tuning data"
+msgstr "``VoxCPM Dataset Maker`` — 准备微调数据"
+
+#: ../../integrations/comfyui_voxcpm.rst:34 d52064aa4d5b4d08afb0d9955f78ab5c
+msgid "``VoxCPM LoRA Trainer`` — run LoRA fine-tuning within ComfyUI"
+msgstr "``VoxCPM LoRA Trainer`` — 在 ComfyUI 内运行 LoRA 微调"
+
+#: ../../integrations/comfyui_voxcpm.rst:36 372fa0b9f0444dc6915b4daaed242782
+msgid "All generation parameters exposed as node inputs"
+msgstr "生成相关参数均作为节点输入暴露"
+
+#: ../../integrations/comfyui_voxcpm.rst:37 ef27925c27e54594b7218c73d381edae
+msgid ""
+"Built-in denoiser (ZipEnhancer) disabled by default to keep dependencies "
+"light"
+msgstr "内置降噪（ZipEnhancer）默认关闭，以减轻依赖"
+
+#: ../../integrations/comfyui_voxcpm.rst:38 c1f40741dcec48ce93a421892775136c
+msgid ""
+"Multi-device support: **CUDA**, **CPU**, **MPS** (Apple Silicon), "
+"**DirectML**, **HIP** (AMD ROCm, if available)"
+msgstr ""
+"多设备： **CUDA**、**CPU**、**MPS** （Apple Silicon）、**DirectML**、**HIP** （AMD "
+"ROCm，若可用）"
+
+#: ../../integrations/comfyui_voxcpm.rst:41 225b0b549dc04c1389fa63b5447c6a81
+msgid "Prerequisites"
+msgstr "准备工作"
+
+#: ../../integrations/comfyui_voxcpm.rst:43 3bb26a07a99140f38ce37ec7c33f3b5e
+msgid "`ComfyUI <https://github.com/comfyanonymous/ComfyUI>`_ installed and running"
+msgstr "已安装并运行 `ComfyUI <https://github.com/comfyanonymous/ComfyUI>`_"
+
+#: ../../integrations/comfyui_voxcpm.rst:44 6be6e187e4ec49b8a6e51c421e332976
+msgid "PyTorch with appropriate backend (CUDA, MPS, etc.)"
+msgstr "已安装匹配后端的 PyTorch（CUDA、MPS 等）"
+
+#: ../../integrations/comfyui_voxcpm.rst:45 ca00368d61b04cab8bc08cf14b8645dd
+msgid ""
+"Model weights: `openbmb/VoxCPM1.5 "
+"<https://huggingface.co/openbmb/VoxCPM1.5>`_ or `openbmb/VoxCPM-0.5B "
+"<https://huggingface.co/openbmb/VoxCPM-0.5B>`_ (auto-downloaded)"
+msgstr ""
+"模型权重：`openbmb/VoxCPM1.5 <https://huggingface.co/openbmb/VoxCPM1.5>`_ 或 "
+"`openbmb/VoxCPM-0.5B <https://huggingface.co/openbmb/VoxCPM-0.5B>`_ （自动下载）"
+
+#: ../../integrations/comfyui_voxcpm.rst:48 2f4a43e4d4dc407881f20ab9455adc14
+msgid "Installation"
+msgstr "安装"
+
+#: ../../integrations/comfyui_voxcpm.rst:50 f58357f7f68146da934fbfed50adc2c8
+msgid "Via ComfyUI Manager: search for ``ComfyUI-VoxCPM`` and install."
+msgstr "通过 ComfyUI Manager：搜索 ``ComfyUI-VoxCPM`` 并安装。"
+
+#: ../../integrations/comfyui_voxcpm.rst:52 0413d1de64e84dda874849743e130df3
+msgid "Manual installation:"
+msgstr "手动安装："
+
+#: ../../integrations/comfyui_voxcpm.rst:61 7b94e7b24d644c6b9e90e986d000d805
+msgid "Models are auto-downloaded on first use."
+msgstr "首次使用时会自动下载模型。"
+
+#: ../../integrations/comfyui_voxcpm.rst:64 712406acb2044562b13dd8a36504dadf
+msgid "Basic usage"
+msgstr "基本用法"
+
+#: ../../integrations/comfyui_voxcpm.rst:67 f562f61766e7423dba817b4ceb27f9b4
+msgid "Text-to-Speech"
+msgstr "文本转语音"
+
+#: ../../integrations/comfyui_voxcpm.rst:69 02e02ccca251478c80d7a78c92c99688
+msgid "Add a **VoxCPM TTS** node from the ``audio/tts`` category"
+msgstr "从 ``audio/tts`` 分类添加 **VoxCPM TTS** 节点"
+
+#: ../../integrations/comfyui_voxcpm.rst:70 193e051bd595406aa79bfcab6deada8f
+msgid "Connect ``text`` input with the target text to synthesize"
+msgstr "将 ``text`` 输入连接到待合成文本"
+
+#: ../../integrations/comfyui_voxcpm.rst:71 43ca05dda8c4420b880cb42b8c5ebb71
+msgid "Adjust ``cfg_value``, ``inference_timesteps``, and ``device`` as needed"
+msgstr "按需调节 ``cfg_value``、``inference_timesteps`` 与 ``device``"
+
+#: ../../integrations/comfyui_voxcpm.rst:72 952cecebbf6746008176a3fc7b5e03d3
+msgid "Connect output to a ``Save Audio`` or ``Preview Audio`` node"
+msgstr "将输出接到 ``Save Audio`` 或 ``Preview Audio`` 节点"
+
+#: ../../integrations/comfyui_voxcpm.rst:75 73af069cd75945989c14792da7fa1e2f
+msgid "Voice cloning"
+msgstr "声音克隆"
+
+#: ../../integrations/comfyui_voxcpm.rst:77 c848cbc7a0ee4968a7ec577a9614eea8
+msgid "Add a **Load Audio** node and load your reference audio"
+msgstr "添加 **Load Audio** 节点并载入参考音频"
+
+#: ../../integrations/comfyui_voxcpm.rst:78 524f79decbd24a258fbb4edf54e28393
+msgid "Connect it to the ``prompt_audio`` input of the VoxCPM TTS node"
+msgstr "将其接到 VoxCPM TTS 节点的 ``prompt_audio`` 输入"
+
+#: ../../integrations/comfyui_voxcpm.rst:79 eb53fa256bcf40e98829e6ed68b08e23
+msgid ""
+"Provide the **verbatim transcript** in ``prompt_text`` (not a description — "
+"must match the reference audio exactly)"
+msgstr "在 ``prompt_text`` 中提供 **逐字转写** （不是描述，须与参考音频完全一致）"
+
+#: ../../integrations/comfyui_voxcpm.rst:80 311b8947c7754a208d8187cd25f30bb0
+msgid "Enter the target text to synthesize in ``text``"
+msgstr "在 ``text`` 中输入要合成的目标文本"
+
+#: ../../integrations/comfyui_voxcpm.rst:83 64b5602feac64192ab41ed25f6cad8af
+msgid ""
+"For high-quality voice clones, use clear reference audio (5–15 seconds) and "
+"ensure ``prompt_text`` is an accurate transcript."
+msgstr "要获得高质量克隆，请使用清晰参考音频（5–15 秒），并保证 ``prompt_text`` 转写准确。"
+
+#: ../../integrations/comfyui_voxcpm.rst:86 ef6bd7419c7242708492ba51fbba951e
+msgid "LoRA fine-tuning"
+msgstr "LoRA 微调"
+
+#: ../../integrations/comfyui_voxcpm.rst:88 712fdd6d525c4745ab04301890f8f5de
+msgid ""
+"Add ``VoxCPM Train Config`` → ``VoxCPM Dataset Maker`` → ``VoxCPM LoRA "
+"Trainer`` nodes"
+msgstr ""
+"依次添加 ``VoxCPM Train Config`` → ``VoxCPM Dataset Maker`` → ``VoxCPM LoRA "
+"Trainer`` 节点"
+
+#: ../../integrations/comfyui_voxcpm.rst:89 32c97d1c93df4e4da4c0b4fd3bc7b307
+msgid "Configure your training data and hyperparameters"
+msgstr "配置训练数据与超参数"
+
+#: ../../integrations/comfyui_voxcpm.rst:90 dd6d717a7c7c4a3fbb2d9704f3143883
+msgid "Run the workflow to train a LoRA adapter"
+msgstr "运行工作流以训练 LoRA 适配器"
+
+#: ../../integrations/comfyui_voxcpm.rst:91 086d4838e522475b898de3605b86d9a3
+msgid ""
+"Load the trained LoRA from ``models/loras`` (use the refresh button and "
+"``lora_name`` dropdown)"
+msgstr "从 ``models/loras`` 加载训练好的 LoRA（使用刷新按钮与 ``lora_name`` 下拉框）"
+
+#: ../../integrations/comfyui_voxcpm.rst:93 2b7dd578092e4efeae7021b6bd3c4a1e
+msgid ""
+"See ``readme-lora-training.md`` in the repository for detailed training "
+"instructions."
+msgstr "详细训练说明见仓库中的 ``readme-lora-training.md``。"
+
+#: ../../integrations/comfyui_voxcpm.rst:96 813510e2e2d4459cabf81b312df32592
+msgid "Parameters"
+msgstr "参数说明"
+
+#: ../../integrations/comfyui_voxcpm.rst:102 20622a4b74c743c09be32a6033540033
+msgid "Parameter"
+msgstr "参数"
+
+#: ../../integrations/comfyui_voxcpm.rst:103 94f82db79da24d8e8b01acef260f515c
+msgid "Description"
+msgstr "说明"
+
+#: ../../integrations/comfyui_voxcpm.rst:104 d9327315f2644db0b34551cb5a8ba22c
+msgid "``model_name``"
+msgstr "``model_name``"
+
+#: ../../integrations/comfyui_voxcpm.rst:105 c9c3e188c6464a02852b5e8b579a6d45
+msgid "Select VoxCPM 1.5 or 0.5B"
+msgstr "选择 VoxCPM 1.5 或 0.5B"
+
+#: ../../integrations/comfyui_voxcpm.rst:106 67978af451314c1d8812a37e6acfc1b8
+msgid "``cfg_value``"
+msgstr "``cfg_value``"
+
+#: ../../integrations/comfyui_voxcpm.rst:107 d735261a6aa342bcbab8f0637fc9676b
+msgid ""
+"Classifier-free guidance scale (default: 2.0; higher = closer to prompt, may"
+" reduce quality)"
+msgstr "Classifier-free guidance 强度（默认 2.0；越大越贴近提示，可能损害音质）"
+
+#: ../../integrations/comfyui_voxcpm.rst:108 ff716c7e077b4617ad6dd889662bb90c
+msgid "``inference_timesteps``"
+msgstr "``inference_timesteps``"
+
+#: ../../integrations/comfyui_voxcpm.rst:109 c83c043c2c23483f83ebd60fd1b63e03
+msgid "LocDiT diffusion steps (default: 10; higher = better quality, slower)"
+msgstr "LocDiT 扩散步数（默认 10；越大质量通常越好、越慢）"
+
+#: ../../integrations/comfyui_voxcpm.rst:110 db04902da8db44d1a37d4d7b47409e8e
+msgid "``device``"
+msgstr "``device``"
+
+#: ../../integrations/comfyui_voxcpm.rst:111 b1cd2fe3a17e4bb182d899b36432d24f
+msgid "``cuda`` / ``cpu`` / ``mps`` / ``directml`` / ``hip`` (varies by hardware)"
+msgstr "``cuda`` / ``cpu`` / ``mps`` / ``directml`` / ``hip`` （视硬件而定）"
+
+#: ../../integrations/comfyui_voxcpm.rst:112 b1a83f53884942e98526fb0b308a86b3
+msgid "``normalize_text``"
+msgstr "``normalize_text``"
+
+#: ../../integrations/comfyui_voxcpm.rst:113 ba6871f9fcf043f3b8eecca4410f1a71
+msgid "Enable external text normalization (disable for phoneme input)"
+msgstr "启用外部文本规范化（音素输入时请关闭）"
+
+#: ../../integrations/comfyui_voxcpm.rst:114 c514469c377b4f09a5abbe3fcd4cd18b
+msgid "``seed``"
+msgstr "``seed``"
+
+#: ../../integrations/comfyui_voxcpm.rst:115 c9a4d856062649048380cc4721b35173
+msgid "Random seed for reproducibility (default: -1 for random)"
+msgstr "随机种子以保证可复现（默认 -1 表示随机）"
+
+#: ../../integrations/comfyui_voxcpm.rst:116 1c1ce76a245f4396bcf69ef1771c471b
+msgid "``lora_name``"
+msgstr "``lora_name``"
+
+#: ../../integrations/comfyui_voxcpm.rst:117 2f6233db84464675a8e446c0ec867165
+msgid "Select a LoRA adapter from ``models/loras``"
+msgstr "从 ``models/loras`` 选择 LoRA 适配器"
+
+#: ../../integrations/comfyui_voxcpm.rst:118 0706d7b84d2240ccbb15661336711531
+msgid "``min_tokens`` / ``max_tokens``"
+msgstr "``min_tokens`` / ``max_tokens``"
+
+#: ../../integrations/comfyui_voxcpm.rst:119 866f84448d164362af6d9411c78f5747
+msgid "Token length range for generation"
+msgstr "生成时的 token 长度范围"
+
+#: ../../integrations/comfyui_voxcpm.rst:120 4f4ba6119e7a4562b25e1891724ecf93
+msgid "``force_offload``"
+msgstr "``force_offload``"
+
+#: ../../integrations/comfyui_voxcpm.rst:121 3b66cc001b534275abc80255e8768fab
+msgid "Offload model from GPU after inference to save VRAM"
+msgstr "推理后将模型从 GPU 卸载以节省显存"
+
+#: ../../integrations/comfyui_voxcpm.rst:122 728a7a2cf3974168884d048f232574f3
+msgid "``retry_max_attempts``"
+msgstr "``retry_max_attempts``"
+
+#: ../../integrations/comfyui_voxcpm.rst:123 36714002abe54dd185972fc9fc4b1930
+msgid "Maximum retries for bad generation outputs"
+msgstr "劣质输出的最大重试次数"
+
+#: ../../integrations/comfyui_voxcpm.rst:124 15d62f58c3f3407b948cde90b36bd74b
+msgid "``retry_threshold``"
+msgstr "``retry_threshold``"
+
+#: ../../integrations/comfyui_voxcpm.rst:125 a545319c98d44a828f2dc72a5f376dfb
+msgid "Threshold for bad-case detection"
+msgstr "坏例检测阈值"
+
+#: ../../integrations/comfyui_voxcpm.rst:128 565e490f91514093bb142aade2fd4c0a
+msgid "Troubleshooting"
+msgstr "问题排查"
+
+#: ../../integrations/comfyui_voxcpm.rst:131 9da6cf44f0554275890d73434b554d14
+msgid "Out of memory"
+msgstr "显存不足"
+
+#: ../../integrations/comfyui_voxcpm.rst:133 423c3a4b35624a1f9c3b5262bb89f180
+msgid "Set ``force_offload`` to ``True`` to release GPU memory after each generation"
+msgstr "将 ``force_offload`` 设为 ``True``，每次生成后释放 GPU 显存"
+
+#: ../../integrations/comfyui_voxcpm.rst:134 969b15b8ee1c4f3ebc3dfac944579455
+msgid "Switch to ``cpu`` device (slower but uses system RAM)"
+msgstr "改用 ``cpu`` 设备（更慢但使用系统内存）"
+
+#: ../../integrations/comfyui_voxcpm.rst:135 28dcff7654b64cbdbe54a46444c0a87c
+msgid "Use VoxCPM-0.5B instead of 1.5 for lower memory usage"
+msgstr "若显存紧张可改用 VoxCPM-0.5B 而非 1.5"
+

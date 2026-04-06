@@ -3,155 +3,158 @@
 VoxCPM documentation
 ====================================================
 
-.. figure:: _static/voxcpm_logo.png
-   :width: 70%
-   :align: left
-   :alt: VoxCPM
-   :figclass: only-light voxcpm-logo-figure
-   :class: no-scaled-link
+.. container:: voxcpm-hero
 
-.. figure:: _static/voxcpm_logo_dark.png
-   :width: 70%
-   :align: left
-   :alt: VoxCPM
-   :figclass: only-dark voxcpm-logo-figure
-   :class: no-scaled-link
+   .. figure:: _static/voxcpm_logo.png
+      :alt: VoxCPM
+      :figclass: only-light voxcpm-logo-figure
+      :class: no-scaled-link
 
-.. image:: https://img.shields.io/badge/Project%20Page-GitHub-blue
-   :target: https://github.com/OpenBMB/VoxCPM/
-   :alt: Project Page
+   .. figure:: _static/voxcpm_logo_dark.png
+      :alt: VoxCPM
+      :figclass: only-dark voxcpm-logo-figure
+      :class: no-scaled-link
 
-.. image:: https://img.shields.io/badge/Technical%20Report-Arxiv-red
-   :target: https://arxiv.org/abs/2509.24650
-   :alt: Technical Report
+   A realistic voice synthesis toolkit that brings authentic, expressive voices to your applications — powered by continuous-space diffusion autoregressive modeling.
 
-.. image:: https://img.shields.io/badge/Live%20PlayGround-Demo-orange
-   :target: https://huggingface.co/spaces/OpenBMB/VoxCPM-Demo
-   :alt: Live Playground
+   .. container:: voxcpm-badges
 
+      .. image:: https://img.shields.io/badge/Project%20Page-GitHub-blue
+         :target: https://github.com/OpenBMB/VoxCPM/
+         :alt: Project Page
 
+      .. image:: https://img.shields.io/badge/Technical%20Report-Arxiv-red
+         :target: https://arxiv.org/abs/2509.24650
+         :alt: Technical Report
 
-VoxCPM is a realistic voice synthesis toolkit that brings authentic, expressive voices to your applications!
+      .. image:: https://img.shields.io/badge/Live%20PlayGround-Demo-orange
+         :target: https://huggingface.co/spaces/OpenBMB/VoxCPM-Demo
+         :alt: Live Playground
+
+   .. container:: voxcpm-cta-row
+
+      .. button-ref:: quickstart
+         :ref-type: doc
+         :color: primary
+         :class: sd-rounded-pill
+
+         Get Started
+
+      .. button-link:: https://github.com/OpenBMB/VoxCPM/
+         :color: secondary
+         :outline:
+         :class: sd-rounded-pill
+
+         View on GitHub
 
 ----
 
 🌟 Key Features
-******************
+****************
 
-* **🎯 Context-Aware, Expressive Speech Generation** - VoxCPM comprehends text to infer and generate appropriate prosody, delivering speech with remarkable expressiveness and natural flow. It spontaneously adapts speaking style based on content, producing highly fitting vocal expression trained on a massive 1.8 million-hour bilingual corpus.
-* **🎭 True-to-Life Voice Cloning** - With only a short reference audio clip, VoxCPM performs accurate zero-shot voice cloning, capturing not only the speaker’s timbre but also fine-grained characteristics such as accent, emotional tone, rhythm, and pacing to create a faithful and natural replica.
-* **⚡ High-Efficiency Synthesis** - VoxCPM supports streaming synthesis with a Real-Time Factor (RTF) as low as 0.17 (based on VoxCPM-0.5B) on a consumer-grade NVIDIA RTX 4090 GPU, making it possible for real-time applications.
+* 🌍 **30-Language Multilingual** - Input text directly in any of the 30 supported languages in most cases, with no explicit language tag required.
+* 🎨 **Voice Design** - Create a brand-new voice from a natural-language description alone, with no reference audio required.
+* 🎛️ **Controllable Cloning** - Clone a voice from a short reference clip, then steer emotion, pace, and style while preserving the original timbre.
+* 🎙️ **Ultimate Cloning** - For maximum fidelity, provide both the reference audio and its transcript so the model can continue seamlessly from the prompt and preserve more vocal detail.
+* 🔊 **48kHz High-Quality Audio** - Accepts 16kHz reference audio and outputs 48kHz audio through AudioVAE V2's asymmetric encode/decode design, with built-in super-resolution and no external upsampler required.
+* 🧠 **Context-Aware Synthesis** - Automatically infers appropriate prosody and expressiveness from the text itself for more natural, content-matched delivery.
+* ⚡ **Real-Time Streaming** - Reaches an RTF as low as **0.13** on NVIDIA RTX 4090 with `NanoVLLM-VoxCPM <https://github.com/a710128/nanovllm-voxcpm>`_ for high-throughput serving.
+* 📦 **Fully Open-Source & Commercial-Ready** - Weights and code are released under the `Apache License 2.0 <https://www.apache.org/licenses/LICENSE-2.0>`_, allowing commercial use.
 
 ----
 
 .. _model-versions:
 
-📚 Model Versions
-*******************
+Versions
+********
 
-.. card-carousel:: 2
+VoxCPM 2 is the recommended release for new projects. Earlier releases remain available for lighter deployments, compatibility, and historical reference.
 
-   .. card:: VoxCPM 2
-      :class-card: sd-text-muted sd-rounded-2
+.. grid:: 1 1 2 2
+   :gutter: 4
+
+   .. grid-item-card:: VoxCPM 2
+      :class-card: voxcpm-model-card voxcpm-model-featured
       :class-title: sd-fs-4
-      
-      Under Development 🚧
-      
+
+      * Current version
+      * 30-Language Multilingual
+      * Voice Design & Style Control
+      * Native 48kHz Audio
+
       +++
 
-      .. button-ref:: model-versions
-         :ref-type: ref
-         :color: muted
-         :outline:
-         
-         Comming Soon
+      .. button-ref:: models/voxcpm2
+         :ref-type: doc
+         :color: primary
 
-   .. card:: VoxCPM 1.5
-      :class-card: sd-rounded-2
+         Try Now →
+
+   .. grid-item-card:: Earlier Releases
+      :class-card: voxcpm-model-card
       :class-title: sd-fs-4
-      
-      * Faster Inference
-      * Higher Quality (44.1kHz)
-      
+
+      * VoxCPM 1.5 for lighter Chinese/English deployment
+      * VoxCPM 1.0 for baseline and historical reference
+      * Compatibility and migration guidance for 1.x workflows
+
       +++
 
-      .. button-ref:: models/voxcpm1.5
+      .. button-ref:: models/version_history
          :ref-type: doc
          :color: primary
          :outline:
-         
-         Try Now →
 
-   .. card:: VoxCPM 1.0
-      :class-card: sd-rounded-2
-      :class-title: sd-fs-4
-
-      * Realistic Voice Synthesis
-      * Zero-shot Voice Cloning
-      * Streaming Output Support
-
-      +++
-
-      .. button-ref:: models/voxcpm1
-         :ref-type: doc
-         :color: primary
-         :outline:
-         
-         Try Now →
+         View Earlier Releases →
 
 ----
 
+Community Projects
+******************
 
-🤗 Community Projects
-***********************
+We're excited to see the VoxCPM community growing. A few representative ecosystem projects:
 
-We're excited to see the VoxCPM community growing! Here are some amazing projects and features built by our community:
+- `NanoVLLM-VoxCPM <https://github.com/a710128/nanovllm-voxcpm>`_ for high-throughput GPU serving
+- `VoxCPM.cpp <https://github.com/bluryar/VoxCPM.cpp>`_ for ggml / GGUF based CPU, CUDA, and Vulkan inference
+- `VoxCPMANE <https://github.com/0seba/VoxCPMANE>`_ for Apple Neural Engine deployment
+- `ComfyUI-VoxCPM <https://github.com/wildminder/ComfyUI-VoxCPM>`_ for node-based workflows and LoRA training
+- `MLX-Audio <https://github.com/Blaizzy/mlx-audio>`_ for Apple Silicon MLX-based audio inference, API serving, and web UI
+- `TTS WebUI Extension <https://github.com/rsxdalv/tts_webui_extension.vox_cpm>`_ for browser-based usage
 
+See the sidebar ``Ecosystem`` section for full setup guides and more community integrations.
 
-.. list-table::
-   :widths: 25 75
-   :header-rows: 1
+.. tip::
 
-   * - Project
-     - Description
-   * - `ComfyUI-VoxCPM <https://github.com/wildminder/ComfyUI-VoxCPM>`_
-     - A VoxCPM extension for ComfyUI.
-   * - `ComfyUI-VoxCPMTTS <https://github.com/1038lab/ComfyUI-VoxCPMTTS>`_
-     - A VoxCPM extension for ComfyUI.
-   * - `WebUI-VoxCPM <https://github.com/rsxdalv/tts_webui_extension.vox_cpm>`_
-     - A template extension for TTS WebUI.
-   * - `Streaming API Support (by AbrahamSanders) <https://github.com/OpenBMB/VoxCPM/pull/26>`_
-     - The pull request that adds streaming API support to VoxCPM.
-   * - `VoxCPM-NanoVLLM <https://github.com/a710128/nanovllm-voxcpm>`_
-     - NanoVLLM integration for VoxCPM for faster, high-throughput inference on GPU.
-   * - `VoxCPM-ONNX <https://github.com/bluryar/VoxCPM-ONNX>`_
-     - ONNX export for VoxCPM supports faster CPU inference.
-   * - `VoxCPMANE <https://github.com/0seba/VoxCPMANE>`_
-     - VoxCPM TTS with Apple Neural Engine backend server.
+   **Have you built something cool with VoxCPM?** We'd love to feature it here! Please open an issue or pull request to add your project.
 
-**📢 WANTED:** Have you built something cool with VoxCPM? We'd love to feature it here! Please open an issue or pull request to add your project.
+.. note::
 
-**‼ NOTE:** The projects are not officially maintained by OpenBMB.
+   The community projects listed above are not officially maintained by OpenBMB.
 
 ----
 
-⚠️ Risks and limitations
-***************************
+Risks and Limitations
+*********************
 
 - **General Model Behavior:** While VoxCPM has been trained on a large-scale dataset, it may still produce outputs that are unexpected, biased, or contain artifacts.
 - **Potential for Misuse of Voice Cloning:** VoxCPM's powerful zero-shot voice cloning capability can generate highly realistic synthetic speech. This technology could be misused for creating convincing deepfakes for purposes of impersonation, fraud, or spreading disinformation. Users of this model must not use it to create content that infringes upon the rights of individuals. It is strictly forbidden to use VoxCPM for any illegal or unethical purposes. We strongly recommend that any publicly shared content generated with this model be clearly marked as AI-generated.
-- **Current Technical Limitations:** Although generally stable, the model may occasionally exhibit instability, especially with very long or expressive inputs. Furthermore, the current version offers limited direct control over specific speech attributes like emotion or speaking style.
-- **Bilingual Model:** VoxCPM is trained primarily on Chinese and English data. Performance on other languages is not guaranteed and may result in unpredictable or low-quality audio.
+- **Current Technical Limitations:** Although generally stable, the model may occasionally exhibit instability, especially with very long or expressive inputs. VoxCPM 2 introduces Voice Design and Style Control for more direct attribute control, though results may vary.
+- **Language Coverage:** VoxCPM 1.x is trained primarily on Chinese and English data. VoxCPM 2 extends support to 30 languages, though performance may vary across languages depending on training data availability.
 - **Usage Restrictions:** This model is released for research and development purposes. Commercial use is allowed, but we do not recommend its use in production or commercial applications without rigorous testing and safety evaluations. Please use VoxCPM responsibly.
 
+----
 
-📄 License
-*******************
+.. rst-class:: voxcpm-footer-section
+
+License
+*******
 
 VoxCPM is released under the `Apache License 2.0 <https://www.apache.org/licenses/LICENSE-2.0>`_.
 
-🙏 Acknowledgments
-*******************
+.. rst-class:: voxcpm-footer-section
+
+Acknowledgments
+***************
 
 We extend our sincere gratitude to the following works and resources for their inspiration and contributions:
 
@@ -160,34 +163,40 @@ We extend our sincere gratitude to the following works and resources for their i
 - `CosyVoice <https://github.com/FunAudioLLM/CosyVoice>`_ for the implementation of Flow Matching-based LocDiT
 - `DAC <https://github.com/descriptinc/descript-audio-codec>`_ for providing the Audio VAE backbone
 
+.. rst-class:: voxcpm-footer-section
 
-🏠 Institutions
-*****************
+Institutions
+************
 
 This project is developed by the following institutions:
 
-.. image:: _static/modelbest_logo.png
-   :target: https://modelbest.cn/
-   :alt: ModelBest Logo
-   :width: 56px
+.. container:: voxcpm-institutions
 
-.. image:: _static/thuhcsi_logo.png
-   :target: https://github.com/thuhcsi
-   :alt: THUHCSI Logo
-   :width: 56px
+   .. image:: _static/modelbest_logo.png
+      :target: https://modelbest.cn/
+      :alt: ModelBest Logo
+      :width: 56px
 
-⭐ Star History
-**********************
- 
+   .. image:: _static/thuhcsi_logo.png
+      :target: https://github.com/thuhcsi
+      :alt: THUHCSI Logo
+      :width: 56px
+
+.. rst-class:: voxcpm-footer-section
+
+Star History
+************
+
 .. image:: https://api.star-history.com/svg?repos=OpenBMB/VoxCPM&type=Date
    :target: https://star-history.com/#OpenBMB/VoxCPM&Date
    :alt: Star History Chart
 
+.. rst-class:: voxcpm-footer-section
 
-✒️ Citation
-*****************
+Citation
+********
 
-If you find our model helpful, please consider citing our projects 📝 and staring us ⭐️！
+If you find our model helpful, please consider citing our work and starring the repository.
 
 .. code-block:: bibtex
 
@@ -198,38 +207,61 @@ If you find our model helpful, please consider citing our projects 📝 and star
       year         = {2025},
    }
 
-What's Next?
-********************
-
-* Have a look at the :doc:`./quickstart` for a quick start.
-
 
 .. toctree::
+   :maxdepth: 2
+   :caption: Getting Started
    :hidden:
-   
-   self
+
    quickstart
-   chefsguide
-   models
+   installation
+
+.. toctree::
+   :maxdepth: 2
+   :caption: User Guide
+   :hidden:
+
+   usage_guide
+   cookbook
+   faq
 
 .. toctree::
    :maxdepth: 2
    :caption: Models
    :hidden:
 
-   models/voxcpm1
-   models/voxcpm1.5
+   models/architecture
+   models/version_history
 
 .. toctree::
    :maxdepth: 2
-   :caption: Fine Tuning
+   :caption: Fine-tuning
    :hidden:
 
    finetuning/finetune
+   finetuning/walkthrough
+   finetuning/faq
 
 .. toctree::
    :maxdepth: 2
-   :caption: Deployment
+   :caption: Reference
    :hidden:
 
-   deployment/nanovllm
+   reference/api
+   reference/changelog
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Ecosystem
+   :hidden:
+
+   deployment/nanovllm_voxcpm
+   deployment/voxcpm_cpp
+   deployment/onnx
+   deployment/ane
+   deployment/mlx_audio
+   deployment/rknn
+   deployment/voxcpm_rs
+   integrations/comfyui_voxcpm
+   integrations/comfyui_voxcpmtts
+   integrations/tts_webui

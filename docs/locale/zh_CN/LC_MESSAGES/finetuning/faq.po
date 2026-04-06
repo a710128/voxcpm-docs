@@ -1,0 +1,233 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2025, OpenBMB
+# This file is distributed under the same license as the VoxCPM package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version:  VoxCPM\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-06 15:37+0800\n"
+"PO-Revision-Date: 2026-04-06 20:00+0800\n"
+"Last-Translator: VoxCPM Docs zh-CN <>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../finetuning/faq.rst:2 640f515162574b1a9c98187569141306
+msgid "Fine-Tuning FAQ"
+msgstr "微调常见问题"
+
+#: ../../finetuning/faq.rst:6 1480039684f04e7bab8e83a946dea6d5
+msgid "General"
+msgstr "通用问题"
+
+#: ../../finetuning/faq.rst:8 68274fd5be6243299c20e3931d7cbcd3
+msgid "**Can I fine-tune for a new language?**"
+msgstr "**可以为新语言做微调吗？**"
+
+#: ../../finetuning/faq.rst:10 b6cc21ffb2634911bf8eeb2d3ee064e3
+msgid ""
+"Yes. For languages not yet supported by VoxCPM, we recommend full fine-"
+"tuning with 500+ hours of target-language data, mixed with some "
+"Chinese/English data to reduce forgetting. Use conservative learning rates "
+"(``1e-5``). For the full workflow, see :doc:`./finetune`."
+msgstr ""
+"可以。对 VoxCPM 尚未覆盖的语言，建议使用目标语言 500+ "
+"小时数据做全量微调，并混入部分中英数据以减轻遗忘。学习率宜保守（``1e-5``）。完整流程见 :doc:`./finetune`。"
+
+#: ../../finetuning/faq.rst:14 8c642b7875f244cf94269a296884fe2c
+msgid "Training Issues"
+msgstr "训练问题"
+
+#: ../../finetuning/faq.rst:16 b69d1c7a683e47e692ff83c93707482b
+msgid "**Out of memory (OOM):**"
+msgstr "**显存不足（OOM）：**"
+
+#: ../../finetuning/faq.rst:18 466fa88ba67e49baa407f1abe2622f6f
+msgid "Reduce ``batch_size`` or ``max_batch_tokens`` to filter out long samples."
+msgstr "降低 ``batch_size`` 或 ``max_batch_tokens``，以过滤掉过长样本。"
+
+#: ../../finetuning/faq.rst:19 9f1303be80324494b5e2639802a20a6b
+msgid ""
+"Increase ``grad_accum_steps`` to maintain effective batch size with less "
+"per-step memory."
+msgstr "增大 ``grad_accum_steps``，在降低单步显存的同时保持等效 batch。"
+
+#: ../../finetuning/faq.rst:20 4cd6e54402e84f079ed05a15adccc152
+msgid ""
+"Switch to LoRA fine-tuning — it uses roughly half the VRAM of full fine-"
+"tuning."
+msgstr "改用 LoRA 微调 — 显存占用约为全量微调的一半。"
+
+#: ../../finetuning/faq.rst:21 beb233677d65499b8034418840092f80
+msgid ""
+"For multi-GPU (DDP), expect ~10 GB additional VRAM per card from gradient "
+"buckets and NCCL buffers."
+msgstr "多卡 DDP 时，梯度桶与 NCCL 缓冲通常每张卡额外需要约 10 GB 显存。"
+
+#: ../../finetuning/faq.rst:23 e962d230939e4741b3392e0bc7f15fed
+msgid "**Training loss not converging:**"
+msgstr "**训练损失不收敛：**"
+
+#: ../../finetuning/faq.rst:25 85d3f2669c2e4e26a3de9d48beda1dfc
+msgid "Decrease ``learning_rate``."
+msgstr "降低 ``learning_rate``。"
+
+#: ../../finetuning/faq.rst:26 d751696ac840437290fe837c71dddb03
+msgid "Increase ``warmup_steps``."
+msgstr "增大 ``warmup_steps``。"
+
+#: ../../finetuning/faq.rst:27 ea34e88bddb5465db72bf06d42327b0c
+msgid ""
+"Check data quality — noisy audio or mismatched transcripts are common "
+"culprits."
+msgstr "检查数据质量 — 噪声音频或转写不匹配是常见原因。"
+
+#: ../../finetuning/faq.rst:29 242eef87a77b45e3a883e571193e6456
+msgid ""
+"**Resume training shows wrong step count:** (`#187 "
+"<https://github.com/OpenBMB/VoxCPM/issues/187>`_)"
+msgstr "**恢复训练后步数显示异常：** （`#187 <https://github.com/OpenBMB/VoxCPM/issues/187>`_）"
+
+#: ../../finetuning/faq.rst:32 1f4ddd73935940c4917fc02ee5a4c5e7
+msgid ""
+"This is a known bug in multi-GPU training. Ensure you are using the latest "
+"version of the training scripts."
+msgstr "这是多卡训练的已知问题。请确保使用最新版训练脚本。"
+
+#: ../../finetuning/faq.rst:36 d695b207a9174d1e99f1544e33f59948
+msgid "Output Quality Issues"
+msgstr "输出质量问题"
+
+#: ../../finetuning/faq.rst:38 03940131830e4193a40882011d7e0b01
+msgid ""
+"**Model ignores input text after fine-tuning (overfitting):** (`#169 "
+"<https://github.com/OpenBMB/VoxCPM/issues/169>`_)"
+msgstr ""
+"**微调后模型忽略输入文本（过拟合）：** （`#169 "
+"<https://github.com/OpenBMB/VoxCPM/issues/169>`_）"
+
+#: ../../finetuning/faq.rst:41 8abeb0dd44d245f4a87dbc9f806cd045
+msgid ""
+"The model has overfit to reproducing training audio without text "
+"conditioning. This is the most common fine-tuning failure mode and can "
+"emerge surprisingly early (within a few hundred steps for small datasets)."
+msgstr "模型过拟合为在无文本条件下复现训练音频。这是最常见的微调失败形态，且可能很早出现（小数据集几百步内即可发生）。"
+
+#: ../../finetuning/faq.rst:43 eddbd9bf6a64482486534e771fff937c
+msgid "Keep ``training_cfg_rate=0.1`` (do NOT set it to 0)."
+msgstr "保持 ``training_cfg_rate=0.1`` （不要设为 0）。"
+
+#: ../../finetuning/faq.rst:44 657415a5a72d4f1e866e99ea3c2af193
+msgid "Keep ``weight_decay=0.01``."
+msgstr "保持 ``weight_decay=0.01``。"
+
+#: ../../finetuning/faq.rst:45 5353c72f172f4b63ac678d9bc40c83a4
+msgid "Reduce learning rate to ``1e-5`` (full FT) or ``1e-4`` (LoRA)."
+msgstr "将学习率降至 ``1e-5`` （全量微调）或 ``1e-4`` （LoRA）。"
+
+#: ../../finetuning/faq.rst:46 118765609b4b458e978b7078f1533276
+msgid ""
+"Monitor checkpoints at each ``save_interval``. For most single-speaker "
+"tasks, 1–3 epochs is sufficient — training beyond that often hurts."
+msgstr "在每个 ``save_interval`` 关注 checkpoint。多数单说话人任务 1–3 个 epoch 足够 — 继续训练往往适得其反。"
+
+#: ../../finetuning/faq.rst:48 2440ff60da3b47ae941399e8a85386bc
+msgid ""
+"**Generation doesn't stop (runaway output):** (`#195 "
+"<https://github.com/OpenBMB/VoxCPM/issues/195>`_, `#124 "
+"<https://github.com/OpenBMB/VoxCPM/issues/124>`_)"
+msgstr ""
+"**生成停不下来（输出失控）：** （`#195 "
+"<https://github.com/OpenBMB/VoxCPM/issues/195>`_、`#124 "
+"<https://github.com/OpenBMB/VoxCPM/issues/124>`_）"
+
+#: ../../finetuning/faq.rst:51 8adb7595ebc34617b756b8703f0403ee
+msgid ""
+"Check your training data for clips with long trailing silence (>0.5 s) and "
+"trim them — this is the most common cause."
+msgstr "检查训练数据中是否存在尾静音过长（>0.5 s）的片段并裁掉 — 这是最常见原因。"
+
+#: ../../finetuning/faq.rst:52 6e16c72bca834fdaae6a7cd917f88b86
+msgid "Enable ``retry_badcase=True`` at inference time as a safety net."
+msgstr "推理时启用 ``retry_badcase=True`` 作为兜底。"
+
+#: ../../finetuning/faq.rst:53 526ec549999047bca487dd55c0319e42
+msgid ""
+"If fine-tuning a new language, the stop loss and diffusion loss may converge"
+" at different rates — try increasing the stop loss weight (``lambdas > "
+"loss/stop``)."
+msgstr "若在做新语言微调，停止损失与扩散损失收敛速度可能不一致 — 可尝试提高停止损失权重（``lambdas > loss/stop``）。"
+
+#: ../../finetuning/faq.rst:57 00277e2bd6964faeae68daadff8d18e3
+msgid "LoRA Issues"
+msgstr "LoRA 相关问题"
+
+#: ../../finetuning/faq.rst:59 759be0361fc2427ca58cc8f37feadf8a
+msgid "**Poor LoRA quality:**"
+msgstr "**LoRA 效果不好：**"
+
+#: ../../finetuning/faq.rst:61 9f9ffa3f6ad840e48fdbe71495d815c3
+msgid ""
+"Increase ``r`` (LoRA rank) — try 32 or 64 for harder tasks like style or "
+"language adaptation."
+msgstr "增大 ``r`` （LoRA rank）— 风格或语言适配等更难任务可试 32 或 64。"
+
+#: ../../finetuning/faq.rst:62 551220758aca4bf98304a3b1d10ba158
+msgid "Adjust ``alpha`` — try ``alpha = r`` or ``alpha = 2*r``."
+msgstr "调节 ``alpha`` — 可试 ``alpha = r`` 或 ``alpha = 2*r``。"
+
+#: ../../finetuning/faq.rst:63 c845b24252c64e81811475d0fa41dd0d
+msgid "Ensure ``enable_dit: true`` — this is essential for voice quality."
+msgstr "确保 ``enable_dit: true`` — 对音质至关重要。"
+
+#: ../../finetuning/faq.rst:64 b38c1ad5a6f64a42bf87746352da3959
+msgid "Increase training steps if the model has not converged yet."
+msgstr "若尚未收敛，可适当增加训练步数。"
+
+#: ../../finetuning/faq.rst:66 9b1da54bad23451189447bd0715bd0d7
+msgid "**LoRA not taking effect at inference:**"
+msgstr "**推理时 LoRA 未生效：**"
+
+#: ../../finetuning/faq.rst:68 70fb28fb077a493d84754ba8a74fcdba
+msgid ""
+"Ensure the inference LoRA config (``r``, ``alpha``, ``enable_lm``, "
+"``enable_dit``) matches the training config exactly."
+msgstr "确保推理侧 LoRA 配置（``r``、``alpha``、``enable_lm``、``enable_dit``）与训练时完全一致。"
+
+#: ../../finetuning/faq.rst:69 89426944c72145829a91e571ab6dd9a9
+msgid "Check the return value of ``load_lora`` — ``skipped_keys`` should be empty."
+msgstr "检查 ``load_lora`` 的返回值 — ``skipped_keys`` 应为空。"
+
+#: ../../finetuning/faq.rst:70 d7be562c6d394f9089c6876517eaf7d5
+msgid "Verify ``set_lora_enabled(True)`` is called if you previously disabled it."
+msgstr "若曾关闭 LoRA，请确认已调用 ``set_lora_enabled(True)``。"
+
+#: ../../finetuning/faq.rst:74 a982abeebb3b424e9d2e246dee391400
+msgid "Checkpoint Issues"
+msgstr "Checkpoint 相关问题"
+
+#: ../../finetuning/faq.rst:76 7ef279b9001646e0a3a81148e25da66a
+msgid "**Checkpoint loading errors:**"
+msgstr "**Checkpoint 加载错误：**"
+
+#: ../../finetuning/faq.rst:78 564d5d7d871c41708aa9c76d6d6df500
+msgid ""
+"**Full fine-tuning:** the checkpoint directory must contain "
+"``model.safetensors`` (or ``pytorch_model.bin``), ``config.json``, and "
+"``audiovae.pth``."
+msgstr ""
+"**全量微调：** 目录须包含 ``model.safetensors`` （或 ``pytorch_model.bin``）、``config.json`` 与 ``audiovae.pth``。"
+
+#: ../../finetuning/faq.rst:79 68102c3cdefc4a6a9af96affe91bbf62
+msgid ""
+"**LoRA:** the checkpoint directory must contain ``lora_weights.safetensors``"
+" (or ``lora_weights.ckpt``) and ``lora_config.json``."
+msgstr ""
+"**LoRA：** 目录须包含 ``lora_weights.safetensors`` （或 ``lora_weights.ckpt``）与 ``lora_config.json``。"
+

@@ -1,0 +1,195 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2025, OpenBMB
+# This file is distributed under the same license as the VoxCPM package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: VoxCPM \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-06 15:37+0800\n"
+"PO-Revision-Date: 2026-04-06 18:30+0800\n"
+"Last-Translator: GPT-5.4 <>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../deployment/onnx.rst:3 67e160d590c74147a25f9738b06c5877
+msgid "VoxCPM-ONNX"
+msgstr "VoxCPM-ONNX"
+
+#: ../../deployment/onnx.rst:5 3e735a0fb07b455289d3677ddbdf90bf
+msgid ""
+"VoxCPM-ONNX provides ONNX export and ONNX Runtime inference for VoxCPM, with"
+" an optional FastAPI REST server."
+msgstr "VoxCPM-ONNX 为 VoxCPM 提供 ONNX 导出与 ONNX Runtime 推理，并可选配 FastAPI REST 服务。"
+
+#: ../../deployment/onnx.rst:7 87817ad2c89d4113824baa2645529dad
+msgid "Repo: `bluryar/VoxCPM-ONNX <https://github.com/bluryar/VoxCPM-ONNX>`_"
+msgstr "仓库：`bluryar/VoxCPM-ONNX <https://github.com/bluryar/VoxCPM-ONNX>`_"
+
+#: ../../deployment/onnx.rst:10 5782a36bced84813bc376f5258a8031b
+msgid ""
+"This project is **archived** by the author. For active development, consider"
+" `VoxCPM.cpp <https://github.com/bluryar/VoxCPM.cpp>`_ instead. The code and"
+" documentation were largely AI-generated; use as a reference."
+msgstr ""
+"作者已将本项目 **归档**。若需要活跃维护的实现，可考虑改用 `VoxCPM.cpp "
+"<https://github.com/bluryar/VoxCPM.cpp>`_。代码与文档多为 AI 生成，仅作参考。"
+
+#: ../../deployment/onnx.rst:13 8a41b5c1a03f4a3f8df81e191dbaf1f4
+msgid ""
+"It provides ONNX export scripts, an ONNX Runtime inference pipeline, and a "
+"FastAPI server with an OpenAI-style TTS API."
+msgstr "提供 ONNX 导出脚本、ONNX Runtime 推理流水线，以及带 OpenAI 风格 TTS API 的 FastAPI 服务。"
+
+#: ../../deployment/onnx.rst:15 6aa15db27dba4e6e90b03539d1311483
+msgid "Supported VoxCPM Versions"
+msgstr "支持的 VoxCPM 版本"
+
+#: ../../deployment/onnx.rst:19 5048d697262d45cab3a8b5bc1c4aeee8
+msgid "VoxCPM 1.0 (0.5B)"
+msgstr "VoxCPM 1.0（0.5B）"
+
+#: ../../deployment/onnx.rst:20 620d520d88f24b31b4686b80dafa49ea
+msgid "✅ Supported (default ``openbmb/VoxCPM-0.5B``, 16 kHz)"
+msgstr "✅ 支持（默认 ``openbmb/VoxCPM-0.5B``，16 kHz）"
+
+#: ../../deployment/onnx.rst:21 af152c6031584e72a2c2e7270166a0af
+msgid "VoxCPM 1.5"
+msgstr "VoxCPM 1.5"
+
+#: ../../deployment/onnx.rst:22 4ec3fa37453e42a6a2c0037125e9bc9e
+msgid ""
+"❌ Not in this repo (see `DakeQQ's export script <https://github.com/DakeQQ"
+"/Text-to-Speech-TTS-ONNX/blob/main/VoxCPM/Export_VoxCPM_ONNX.py>`_)"
+msgstr ""
+"❌ 不在本仓库（见 `DakeQQ 的导出脚本 <https://github.com/DakeQQ/Text-to-Speech-TTS-"
+"ONNX/blob/main/VoxCPM/Export_VoxCPM_ONNX.py>`_）"
+
+#: ../../deployment/onnx.rst:23 e17ca77ad00945379a52ee795aba597b
+msgid "VoxCPM 2"
+msgstr "VoxCPM 2"
+
+#: ../../deployment/onnx.rst:24 b69b6c815a6f4748aff1ec5b7665abcd
+msgid "❌ Not supported"
+msgstr "❌ 不支持"
+
+#: ../../deployment/onnx.rst:27 f4f28434c7bb4bcd8cfaf3d0c2c8ffec
+msgid "Features"
+msgstr "主要特性"
+
+#: ../../deployment/onnx.rst:29 46f200520bc24d209bce662c920a4dc7
+msgid "ONNX export from PyTorch VoxCPM-0.5B weights"
+msgstr "从 PyTorch VoxCPM-0.5B 权重导出 ONNX"
+
+#: ../../deployment/onnx.rst:30 538019e4329d460685031ffcdd38d7c3
+msgid "CPU and GPU inference via ONNX Runtime"
+msgstr "通过 ONNX Runtime 在 CPU 与 GPU 上推理"
+
+#: ../../deployment/onnx.rst:31 2a3c2077daff4a73a7414ef5a3631139
+msgid "FastAPI server with ``/tts``, ``/ref_feat``, ``/health`` endpoints"
+msgstr "FastAPI 服务，提供 ``/tts``、``/ref_feat``、``/health`` 端点"
+
+#: ../../deployment/onnx.rst:32 958e4e5ece424655a95225e131f957aa
+msgid "SQLite-backed reference feature caching (via ``/ref_feat``)"
+msgstr "基于 SQLite 的 reference 特征缓存（通过 ``/ref_feat``）"
+
+#: ../../deployment/onnx.rst:33 d0e3f21952ef484a9ecdc313aea42b13
+msgid "Docker Compose support (CPU and GPU services)"
+msgstr "支持 Docker Compose（CPU 与 GPU 服务）"
+
+#: ../../deployment/onnx.rst:36 408131f3bc72436294f81593fd558a70
+msgid "Prerequisites"
+msgstr "准备工作"
+
+#: ../../deployment/onnx.rst:38 b07916bbf5cd41fba1d7bdfbcb5df8fb
+msgid "Python >= 3.10"
+msgstr "Python >= 3.10"
+
+#: ../../deployment/onnx.rst:39 a022f0752b1740a38add6e1ea7988351
+msgid "``openbmb/VoxCPM-0.5B`` checkpoint"
+msgstr "``openbmb/VoxCPM-0.5B`` checkpoint"
+
+#: ../../deployment/onnx.rst:40 d59a4dca5ee94c8d99af2cc57dfa441b
+msgid "(Optional) CUDA 11.8+ for GPU inference"
+msgstr "（可选）GPU 推理需 CUDA 11.8+"
+
+#: ../../deployment/onnx.rst:41 ca23ca10ffba4f71b3775d6eaf2e949a
+msgid "(Optional) Docker + NVIDIA Container Toolkit"
+msgstr "（可选）Docker + NVIDIA Container Toolkit"
+
+#: ../../deployment/onnx.rst:44 ac8ef279a2a847aaa5c9cf0a2e323ad8
+msgid "Installation"
+msgstr "安装"
+
+#: ../../deployment/onnx.rst:63 35cd49f1ea65432a9d91b6c2ebf6f492
+msgid "Basic usage (Server)"
+msgstr "基本用法（服务端）"
+
+#: ../../deployment/onnx.rst:65 80145b050a034fceae0e9fd02bfc05bf
+msgid "Start the FastAPI server:"
+msgstr "启动 FastAPI 服务："
+
+#: ../../deployment/onnx.rst:76 9f2fc1f13658435a8deef5ae55e61acc
+msgid "Key environment variables:"
+msgstr "主要环境变量："
+
+#: ../../deployment/onnx.rst:82 7561a0aecb104287b096a19290852009
+msgid "Variable"
+msgstr "变量"
+
+#: ../../deployment/onnx.rst:83 034a550a20944faabbcd2483aad847cc
+msgid "Description"
+msgstr "说明"
+
+#: ../../deployment/onnx.rst:84 9c8db2fc07aa452180c99f144a1569fc
+msgid "``VOX_MODELS_DIR``"
+msgstr "``VOX_MODELS_DIR``"
+
+#: ../../deployment/onnx.rst:85 02b6d5a9b12944659ff94270aa2d7078
+msgid "Path to exported ONNX model directory"
+msgstr "已导出 ONNX 模型目录的路径"
+
+#: ../../deployment/onnx.rst:86 e3e4a788931a435487cde848b7ae02a7
+msgid "``VOX_DEVICE``"
+msgstr "``VOX_DEVICE``"
+
+#: ../../deployment/onnx.rst:87 fee07dfa3dc547479b684f0cc4b5128e
+msgid "``cpu`` or ``cuda``"
+msgstr "``cpu`` 或 ``cuda``"
+
+#: ../../deployment/onnx.rst:88 31d8e27a8aa949c8b89d384bc1f46859
+msgid "``VOX_SQLITE_PATH``"
+msgstr "``VOX_SQLITE_PATH``"
+
+#: ../../deployment/onnx.rst:89 054c690dcebb47c7935c29144038a3cf
+msgid "Path to SQLite database for reference feature caching"
+msgstr "用于 reference 特征缓存的 SQLite 数据库路径"
+
+#: ../../deployment/onnx.rst:91 2d1055fb78e445b8945086293ef10ab5
+msgid "API examples:"
+msgstr "API 示例："
+
+#: ../../deployment/onnx.rst:109 6f606b24ac7a4276b5edd44ede6e4f48
+msgid "Limitations"
+msgstr "限制说明"
+
+#: ../../deployment/onnx.rst:111 7a6f894bf7cc4d35abd8e626af9ac061
+msgid ""
+"Targets **VoxCPM-0.5B** only; for VoxCPM 1.5 ONNX export, see DakeQQ's "
+"script linked above"
+msgstr "仅面向 **VoxCPM-0.5B**；VoxCPM 1.5 的 ONNX 导出见上文 DakeQQ 脚本链接"
+
+#: ../../deployment/onnx.rst:112 66f48cbaa6ca4b3a852ca4305a270d35
+msgid "Fixed inference timesteps in exported ONNX models (set at export time)"
+msgstr "导出 ONNX 中的推理步数固定（在导出时设定）"
+
+#: ../../deployment/onnx.rst:113 667102f6a8984d2fb4c5a00effd3c4d5
+msgid "Duplicate prefill/decode weights increase model size"
+msgstr "重复的 prefill/decode 权重会增大模型体积"
+
