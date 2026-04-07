@@ -97,11 +97,11 @@ Audio requirements
 ------------------
 
 - **Format:** WAV is recommended. Other formats supported by torchaudio also work.
-- **Sample rate:** The dataloader automatically resamples to the target model's rate, so you do not need to pre-resample. The native rates are:
+- **Sample rate:** The dataloader automatically resamples to the target model's rate, so you do not need to pre-resample. The ``sample_rate`` in your training config must match the AudioVAE **encoder** input rate:
 
   - VoxCPM 1.0: 16kHz
   - VoxCPM 1.5: 44.1kHz
-  - VoxCPM 2: 48kHz
+  - VoxCPM 2: 16kHz (the encoder operates at 16kHz; the decoder outputs 48kHz)
 
 - **Duration:** 3–30 seconds per clip is the practical sweet spot. Very short clips (< 1s) produce unstable results. Very long clips increase VRAM usage and may be filtered out by ``max_batch_tokens``.
 
@@ -164,7 +164,8 @@ Create a YAML config file. Here is an example for VoxCPM 2:
    train_manifest: /path/to/train.jsonl
    val_manifest: /path/to/val.jsonl   # optional, leave empty to skip validation
 
-   sample_rate: 48000
+   sample_rate: 16000        # AudioVAE encoder input rate (NOT the 48kHz output rate)
+   out_sample_rate: 48000    # AudioVAE decoder output rate; only used at inference, not during training
    batch_size: 16
    grad_accum_steps: 1
    num_workers: 2
@@ -196,7 +197,7 @@ Create a YAML config file. Here is an example for VoxCPM 2:
 
 .. tip::
 
-   For VoxCPM 1.5, change ``sample_rate`` to ``44100`` and ``pretrained_path`` to your VoxCPM 1.5 checkpoint. The training script auto-detects the model architecture from ``config.json``.
+   For VoxCPM 1.5, change ``sample_rate`` to ``44100`` and ``pretrained_path`` to your VoxCPM 1.5 checkpoint. The ``sample_rate`` must always match the AudioVAE encoder input rate in ``config.json`` — **not** the output rate. The training script auto-detects the model architecture from ``config.json``.
 
 **LoRA parameters explained**
 
@@ -368,7 +369,8 @@ Training
    train_manifest: /path/to/train.jsonl
    val_manifest: /path/to/val.jsonl
 
-   sample_rate: 48000
+   sample_rate: 16000        # AudioVAE encoder input rate (NOT the 48kHz output rate)
+   out_sample_rate: 48000    # AudioVAE decoder output rate; only used at inference, not during training
    batch_size: 16
    grad_accum_steps: 1
    num_workers: 2

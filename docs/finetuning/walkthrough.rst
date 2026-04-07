@@ -151,7 +151,8 @@ Save as ``conf/librispeech_full.yaml``:
    train_manifest:  examples/librispeech_train.jsonl
    val_manifest:    examples/librispeech_val.jsonl  # strongly recommended — enables early stopping
 
-   sample_rate:        48000   # VoxCPM 2 output rate; FLAC 16 kHz is resampled automatically
+   sample_rate:        16000   # AudioVAE encoder input rate (NOT the 48kHz output rate)
+   out_sample_rate:    48000   # AudioVAE decoder output rate; only used at inference, not during training
    batch_size:         2
    grad_accum_steps:   8       # effective bs = batch_size × grad_accum_steps = 16
    num_workers:        8
@@ -206,7 +207,8 @@ Save as ``conf/librispeech_lora.yaml``:
    train_manifest:  examples/librispeech_train.jsonl
    val_manifest:    examples/librispeech_val.jsonl
 
-   sample_rate:        48000
+   sample_rate:        16000   # AudioVAE encoder input rate (NOT the 48kHz output rate)
+   out_sample_rate:    48000   # AudioVAE decoder output rate; only used at inference, not during training
    batch_size:         2
    grad_accum_steps:   8       # effective bs = 16
    num_workers:        8
@@ -356,7 +358,7 @@ Loss does not decrease
 -----------------------
 
 - Verify that audio paths in the manifest are correct and all files are readable.
-- LibriSpeech FLAC files are 16 kHz; keep ``sample_rate: 48000`` — the dataloader resamples automatically for VoxCPM 2.
+- LibriSpeech FLAC files are 16 kHz; keep ``sample_rate: 16000`` — this matches the AudioVAE encoder input rate. The dataloader resamples automatically.
 - Check that transcripts are sentence-cased, not ALL-CAPS.
 
 Generated audio ignores input text
