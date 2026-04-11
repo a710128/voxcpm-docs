@@ -119,12 +119,51 @@ Mac / MPS support
 Yes. VoxCPM supports CPU and MPS (Metal Performance Shaders) on Apple Silicon Macs (`#14 <https://github.com/OpenBMB/VoxCPM/issues/14>`_, `#20 <https://github.com/OpenBMB/VoxCPM/issues/20>`_, `#41 <https://github.com/OpenBMB/VoxCPM/issues/41>`_).
 
 - **CPU:** Works out of the box, but inference is slow (`#67 <https://github.com/OpenBMB/VoxCPM/issues/67>`_).
-- **MPS:** Supported for accelerated inference. Load the model normally and it will automatically detect MPS if available.
+- **MPS:** ``device="auto"`` will try MPS automatically when CUDA is unavailable.
 
 .. note::
 
    The denoiser (ZipEnhancer) runs on CPU even when MPS is active. If you don't need prompt speech enhancement, set ``load_denoiser=False`` to save memory.
 
+.. important::
+
+   ``torch.backends.mps.is_available()`` only means the MPS backend exists. It
+   does not guarantee that every VoxCPM inference path will run successfully on
+   that backend. If you hit a runtime error on MPS, explicitly switch to CPU:
+
+   .. code-block:: python
+
+      model = VoxCPM.from_pretrained("openbmb/VoxCPM2", device="cpu", optimize=False)
+
+   .. code-block:: sh
+
+      voxcpm design --text "Hello" --device cpu --no-optimize --output out.wav
+
+
+WSL2 / ROCm community workaround
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Q: Can VoxCPM run on AMD ROCm under WSL2?**
+
+There is a community-reported path for WSL2 + ROCm, but it is not one of the
+project's primary tested environments. In the report from `#203 <https://github.com/OpenBMB/VoxCPM/issues/203>`_,
+the user needed two workarounds:
+
+1. Monkey-patch ``torchaudio.load_with_torchcodec`` / ``save_with_torchcodec``
+   back to the standard ``torchaudio`` I/O functions because ``torchcodec`` was
+   not working in that ROCm setup.
+2. Disable ``torch.compile`` by setting ``optimize=False``.
+
+If you are experimenting with ROCm or other non-CUDA platforms, start by
+disabling ``torch.compile`` first:
+
+.. code-block:: python
+
+   model = VoxCPM.from_pretrained("openbmb/VoxCPM2", optimize=False)
+
+If your environment still fails on the default device path, explicitly fall
+back to CPU and validate the rest of the pipeline before trying any additional
+acceleration settings.
 
 Python version compatibility
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

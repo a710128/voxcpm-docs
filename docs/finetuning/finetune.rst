@@ -68,7 +68,7 @@ Training data is a JSONL manifest file with one sample per line:
 .. code-block:: json
 
    {"audio": "path/to/audio1.wav", "text": "Transcript of audio 1."}
-   {"audio": "path/to/audio2.wav", "text": "Transcript of audio 2."}
+   {"audio": "path/to/audio2.wav", "text": "Transcript of audio 2.", "ref_audio": "path/to/audio1.wav"}
    {"audio": "path/to/audio3.wav", "text": "Optional fields.", "duration": 3.5, "dataset_id": 1}
 
 .. list-table::
@@ -84,6 +84,9 @@ Training data is a JSONL manifest file with one sample per line:
    * - ``text``
      - Yes
      - Transcript matching the audio content
+   * - ``ref_audio``
+     - No
+     - Path to a reference audio clip from the **same speaker**. When present, the training sequence is constructed as ``[103, ref_feats, 104, text, 101, audio_feats, 102]``, teaching the model to clone the speaker's voice from the reference. Loss is only computed on the target audio segment.
    * - ``duration``
      - No
      - Duration in seconds; speeds up length filtering
@@ -92,6 +95,10 @@ Training data is a JSONL manifest file with one sample per line:
      - Integer ID for multi-dataset mixing (default: 0)
 
 See ``examples/train_data_example.jsonl`` in the repository for a reference.
+
+.. tip::
+
+   **Mixing ref_audio and non-ref_audio samples** — We recommend that 30–50% of your training samples include ``ref_audio``, so the model retains both zero-shot and reference-based voice cloning abilities. A simple strategy: for a given speaker, use one recording as ``ref_audio`` for the next recording.
 
 Audio requirements
 ------------------

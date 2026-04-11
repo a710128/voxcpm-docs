@@ -59,6 +59,7 @@ Deployment:
 Integrations:
 
 - `docs/integrations/comfyui_voxcpm.rst`
+- `docs/integrations/comfyui_rh_voxcpm.rst`
 - `docs/integrations/comfyui_voxcpmtts.rst`
 - `docs/integrations/tts_webui.rst`
 
@@ -253,6 +254,11 @@ docs/
 
 - ComfyUI-VoxCPM 集成页。
 - 节点式工作流、推理与 LoRA 训练是重点。
+
+### `docs/integrations/comfyui_rh_voxcpm.rst`
+
+- RunningHub 的 ComfyUI 集成页。
+- 重点覆盖 VoxCPM 2、多说话人工作流、自动 ASR、ZipEnhancer 去噪与可选 LoRA 加载。
 
 ### `docs/integrations/comfyui_voxcpmtts.rst`
 

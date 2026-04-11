@@ -25,6 +25,44 @@ Requirements
 
    CUDA is not required for CPU inference or Apple Silicon MPS usage. See :doc:`./faq` for Mac / MPS notes.
 
+Runtime Device Selection
+************************
+
+VoxCPM supports automatic device selection and explicit device forcing in both
+the Python API and the CLI.
+
+Automatic selection
+
+- ``device=None`` or ``device="auto"`` uses automatic fallback
+- The fallback order is ``cuda -> mps -> cpu``
+- The CLI uses the same behavior through ``--device auto``
+
+Explicit selection
+
+- ``device="cpu"`` forces CPU inference
+- ``device="mps"`` forces Apple Silicon MPS
+- ``device="cuda"`` or ``device="cuda:N"`` forces CUDA
+- Explicit device requests do **not** auto-fallback; if the requested backend is
+  unavailable, VoxCPM raises an error so the failure is visible
+
+.. code-block:: python
+
+   from voxcpm import VoxCPM
+
+   model = VoxCPM.from_pretrained("openbmb/VoxCPM2", device="auto")
+   cpu_model = VoxCPM.from_pretrained("openbmb/VoxCPM2", device="cpu", optimize=False)
+
+.. code-block:: sh
+
+   voxcpm design --text "Hello" --device auto --output out.wav
+   voxcpm design --text "Hello" --device cpu --no-optimize --output out.wav
+
+.. note::
+
+   ``optimize=True`` enables ``torch.compile`` acceleration and is primarily
+   useful on CUDA. On CPU, MPS, ROCm, or other non-standard environments, you
+   may need ``optimize=False`` or CLI ``--no-optimize`` for compatibility.
+
 Install with pip (recommended)
 ******************************
 

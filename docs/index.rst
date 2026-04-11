@@ -107,6 +107,7 @@ We're excited to see the VoxCPM community growing. A few representative ecosyste
 - `VoxCPM.cpp <https://github.com/bluryar/VoxCPM.cpp>`_ for ggml / GGUF based CPU, CUDA, and Vulkan inference
 - `VoxCPMANE <https://github.com/0seba/VoxCPMANE>`_ for Apple Neural Engine deployment
 - `ComfyUI-VoxCPM <https://github.com/wildminder/ComfyUI-VoxCPM>`_ for node-based workflows and LoRA training
+- `ComfyUI_RH_VoxCPM <https://github.com/HM-RunningHub/ComfyUI_RH_VoxCPM>`_ for full-featured ComfyUI workflows with multi-speaker dialogue, Voice Design, LoRA hot-swapping, and automatic ASR
 - `MLX-Audio <https://github.com/Blaizzy/mlx-audio>`_ for Apple Silicon MLX-based audio inference, API serving, and web UI
 - `TTS WebUI Extension <https://github.com/rsxdalv/tts_webui_extension.vox_cpm>`_ for browser-based usage
 
@@ -252,5 +253,6 @@ If you find our model helpful, please consider citing our work and starring the 
    deployment/rknn
    deployment/voxcpm_rs
    integrations/comfyui_voxcpm
+   integrations/comfyui_rh_voxcpm
    integrations/comfyui_voxcpmtts
    integrations/tts_webui

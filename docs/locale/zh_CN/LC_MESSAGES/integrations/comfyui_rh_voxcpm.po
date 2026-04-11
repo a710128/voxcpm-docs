@@ -1,0 +1,409 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2025, OpenBMB
+# This file is distributed under the same license as the VoxCPM package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: VoxCPM \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-11 14:18+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../integrations/comfyui_rh_voxcpm.rst:3 499ebc22f5954c8ebf46c5768812495b
+msgid "ComfyUI_RH_VoxCPM"
+msgstr "ComfyUI_RH_VoxCPM"
+
+#: ../../integrations/comfyui_rh_voxcpm.rst:5 fd029fdcd5454c03b50be6dc606d7a21
+msgid ""
+"ComfyUI_RH_VoxCPM is a community-maintained ComfyUI integration for "
+"VoxCPM with native **VoxCPM 2** support, multi-speaker dialogue "
+"generation, optional LoRA loading, automatic ASR for cloning workflows, "
+"and reference-audio denoising."
+msgstr ""
+"ComfyUI_RH_VoxCPM 是一个由社区维护的 ComfyUI 集成项目，面向 VoxCPM，支持原生 **VoxCPM 2**、"
+"多人对话生成、可选 LoRA 加载、克隆流程中的自动 ASR，以及参考音频去噪。"
+
+#: ../../integrations/comfyui_rh_voxcpm.rst:9 1fc5f51beb0e4eea90ec773553a1bf83
+msgid ""
+"Repo: `HM-RunningHub/ComfyUI_RH_VoxCPM <https://github.com/HM-"
+"RunningHub/ComfyUI_RH_VoxCPM>`_"
+msgstr ""
+"仓库：`HM-RunningHub/ComfyUI_RH_VoxCPM <https://github.com/HM-RunningHub/ComfyUI_RH_VoxCPM>`_"
+
+#: ../../integrations/comfyui_rh_voxcpm.rst:10 17d86ebaf5314ee5aa27ffb94e52771c
+msgid "Try online: `RunningHub <https://www.runninghub.ai/?inviteCode=rh-v1367>`_"
+msgstr "在线体验：`RunningHub <https://www.runninghub.ai/?inviteCode=rh-v1367>`_"
+
+#: ../../integrations/comfyui_rh_voxcpm.rst:14 a53b76d5967c4a98a05e4abf736dc5b8
+msgid ""
+"This project is maintained by the community, not by OpenBMB. For the "
+"other ComfyUI integrations in the ecosystem, see :doc:`comfyui_voxcpm` "
+"and :doc:`comfyui_voxcpmtts`."
+msgstr ""
+"该项目由社区维护，并非 OpenBMB 官方维护。若想查看生态中的其他 ComfyUI 集成，请参阅 :doc:`comfyui_voxcpm` "
+"和 :doc:`comfyui_voxcpmtts`。"
+
+#: ../../integrations/comfyui_rh_voxcpm.rst:18 0c66b41ba0d04af686274dc0934cfa72
+msgid "Supported VoxCPM Versions"
+msgstr "支持的 VoxCPM 版本"
+
+#: ../../integrations/comfyui_rh_voxcpm.rst:22 9ed6615b3e87467cbf4a015ba81596b0
+msgid "VoxCPM 2"
+msgstr "VoxCPM 2"
+
+#: ../../integrations/comfyui_rh_voxcpm.rst:23 db6ae29455d74931a3e782b3d695e820
+msgid ""
+"✅ Recommended. Full feature set including Ultimate Cloning and multi-"
+"speaker workflows."
+msgstr "✅ 推荐。具备完整功能集，包括 Ultimate Cloning 和多人工作流。"
+
+#: ../../integrations/comfyui_rh_voxcpm.rst:24 15b5d19b9f184e68b70db0eaf791c609
+msgid "VoxCPM 1.5"
+msgstr "VoxCPM 1.5"
+
+#: ../../integrations/comfyui_rh_voxcpm.rst:25 71156339cab44a5a8510e316bb3172b2
+msgid "✅ Supported through the shared loader workflow."
+msgstr "✅ 通过共享的加载节点工作流提供支持。"
+
+#: ../../integrations/comfyui_rh_voxcpm.rst:26 f8ed57286fb7487da2469f53e2cc3d8f
+msgid "VoxCPM-0.5B"
+msgstr "VoxCPM-0.5B"
+
+#: ../../integrations/comfyui_rh_voxcpm.rst:27 aabac72836c74e6682516ecf89777d06
+msgid "✅ Supported as a lighter-weight option."
+msgstr "✅ 作为更轻量的选项提供支持。"
+
+#: ../../integrations/comfyui_rh_voxcpm.rst:30 4d8d9c6b48b84a3b98fcc68ef63aaffd
+msgid "Overview"
+msgstr "概览"
+
+#: ../../integrations/comfyui_rh_voxcpm.rst:32 597362fce924454d9c7fbde14d3ee549
+msgid "The integration exposes three main nodes:"
+msgstr "该集成提供三个主要节点："
+
+#: ../../integrations/comfyui_rh_voxcpm.rst:34 6a8f1d04e0ee44ef93061459b59188d4
+msgid ""
+"**RunningHub VoxCPM Load Model** — load a local VoxCPM model directory "
+"from ``ComfyUI/models/voxcpm/`` with optional LoRA weights"
+msgstr ""
+"**RunningHub VoxCPM Load Model**：从 ``ComfyUI/models/voxcpm/`` 加载本地 VoxCPM 模型目录，"
+"并可选加载 LoRA 权重"
+
+#: ../../integrations/comfyui_rh_voxcpm.rst:36 ae4b7c17313441acae6d2991943cf305
+msgid ""
+"**RunningHub VoxCPM Generate Speech** — a single generation node covering"
+" Voice Design, Controllable Cloning, and Ultimate Cloning"
+msgstr ""
+"**RunningHub VoxCPM Generate Speech**：一个统一的生成节点，覆盖 Voice Design、"
+"Controllable Cloning 和 Ultimate Cloning"
+
+#: ../../integrations/comfyui_rh_voxcpm.rst:38 1574b676422c4ad9bea4de9b9f5d3f4a
+msgid ""
+"**RunningHub VoxCPM Multi-Speaker** — generate tagged multi-speaker "
+"dialogue for up to five speakers with per-speaker voice control"
+msgstr ""
+"**RunningHub VoxCPM Multi-Speaker**：生成带标签的多人对话，最多支持五个说话人，并可为每个说话人单独控制音色"
+
+#: ../../integrations/comfyui_rh_voxcpm.rst:41 692338190c324aaaa2f0d95fef839dcc
+msgid ""
+"Compared with other ComfyUI ecosystem options, this project is currently "
+"the most feature-complete visual workflow for VoxCPM 2 in the docs set: "
+"it combines native V2 support, multi-speaker generation, optional LoRA "
+"loading, auto-ASR, and ZipEnhancer-based denoising in one package."
+msgstr ""
+"相较于文档中列出的其他 ComfyUI 生态方案，这个项目目前是对 VoxCPM 2 支持最完整的可视化工作流之一："
+"它把原生 V2 支持、多人生成、可选 LoRA 加载、自动 ASR 与基于 ZipEnhancer 的去噪整合在同一个包中。"
+
+#: ../../integrations/comfyui_rh_voxcpm.rst:47 9995250b3d9242c2bb7c1ac75fc58f17
+msgid "Features"
+msgstr "特性"
+
+#: ../../integrations/comfyui_rh_voxcpm.rst:49 609aeeb64a614562851e23b09ed45953
+msgid "**Voice Design** from a text-only control instruction"
+msgstr "通过纯文本控制指令实现 **Voice Design**"
+
+#: ../../integrations/comfyui_rh_voxcpm.rst:50 f78a710fec8b4d1a916b4c3f6d1e9ec3
+msgid "**Controllable Cloning** from reference audio with optional style guidance"
+msgstr "通过参考音频进行 **Controllable Cloning**，并可选加入风格控制"
+
+#: ../../integrations/comfyui_rh_voxcpm.rst:51 8ab2ea881bbe4715aa1be5a1fb75f495
+msgid ""
+"**Ultimate Cloning** for prompt continuation / maximum fidelity (**VoxCPM"
+" 2 only**)"
+msgstr "**Ultimate Cloning**：用于 prompt 延续 / 极致还原（**仅限 VoxCPM 2**）"
+
+#: ../../integrations/comfyui_rh_voxcpm.rst:52 455fd430007a4ace93b99ba801776601
+msgid "**LoRA loading** from ``ComfyUI/models/voxcpm/loras/``"
+msgstr "从 ``ComfyUI/models/voxcpm/loras/`` 加载 **LoRA**"
+
+#: ../../integrations/comfyui_rh_voxcpm.rst:53 39a1bc6ffa294d97bc7ff0c13fdbc3d6
+msgid ""
+"**Automatic ASR** via FunASR SenseVoiceSmall when "
+"``reference_audio_text`` is empty in Ultimate Cloning"
+msgstr ""
+"当 Ultimate Cloning 模式下 ``reference_audio_text`` 为空时，通过 FunASR SenseVoiceSmall "
+"执行 **自动 ASR**"
+
+#: ../../integrations/comfyui_rh_voxcpm.rst:54 fa31af91786d40ed9c102f774a3e2524
+msgid "**Reference denoising** via ZipEnhancer before cloning"
+msgstr "在克隆前通过 ZipEnhancer 对参考音频进行 **去噪**"
+
+#: ../../integrations/comfyui_rh_voxcpm.rst:55 dd9c615b6038429e8e167196073aeca5
+msgid ""
+"**Multi-speaker dialogue** from tagged scripts such as ``[spk1]... "
+"[spk2]...``"
+msgstr "从 ``[spk1]... [spk2]...`` 这类带标签脚本生成 **多人对话**"
+
+#: ../../integrations/comfyui_rh_voxcpm.rst:56 1651fa837ef14656a63b80e57ac3557f
+msgid ""
+"**Example workflows** included in the repository for both single-speaker "
+"and multi-speaker generation"
+msgstr "仓库内自带单人生成和多人生成的 **示例工作流**"
+
+#: ../../integrations/comfyui_rh_voxcpm.rst:59 75c7e23f5cf0409599bf504bdc285634
+msgid "Prerequisites"
+msgstr "前置要求"
+
+#: ../../integrations/comfyui_rh_voxcpm.rst:61 99f4b6e55bfe41f1a29a47c0539c05d6
+msgid ""
+"`ComfyUI <https://github.com/comfyanonymous/ComfyUI>`_ installed and "
+"running"
+msgstr "`ComfyUI <https://github.com/comfyanonymous/ComfyUI>`_ 已安装并运行"
+
+#: ../../integrations/comfyui_rh_voxcpm.rst:62 4e8071ca3b34449b80603a36c4d3853b
+msgid "VoxCPM model files placed under ``ComfyUI/models/voxcpm/``"
+msgstr "VoxCPM 模型文件已放置到 ``ComfyUI/models/voxcpm/`` 下"
+
+#: ../../integrations/comfyui_rh_voxcpm.rst:63 5c871e4f69ba4e9f83f1953df94a7df3
+msgid ""
+"SenseVoiceSmall available under "
+"``ComfyUI/models/SenseVoice/SenseVoiceSmall/`` if you want automatic "
+"transcription"
+msgstr ""
+"如果你希望使用自动转写，需要将 SenseVoiceSmall 放在 "
+"``ComfyUI/models/SenseVoice/SenseVoiceSmall/`` 下"
+
+#: ../../integrations/comfyui_rh_voxcpm.rst:64 125b4f59b6ce407dbb3cc841ba730f17
+msgid ""
+"ZipEnhancer available under "
+"``ComfyUI/models/voxcpm/speech_zipenhancer_ans_multiloss_16k_base/`` if "
+"you want reference denoising"
+msgstr ""
+"如果你希望对参考音频去噪，需要将 ZipEnhancer 放在 "
+"``ComfyUI/models/voxcpm/speech_zipenhancer_ans_multiloss_16k_base/`` 下"
+
+#: ../../integrations/comfyui_rh_voxcpm.rst:67 0c30400063bd49abba85b1acce634965
+msgid "Installation"
+msgstr "安装"
+
+#: ../../integrations/comfyui_rh_voxcpm.rst:69 e84371a69ade444cb889a29d8aa7c171
+msgid "Via ComfyUI Manager:"
+msgstr "通过 ComfyUI Manager："
+
+#: ../../integrations/comfyui_rh_voxcpm.rst:71 0ec2c23e9aad425f856c3663d540a101
+msgid "Search for ``ComfyUI_RH_VoxCPM`` and install it"
+msgstr "搜索 ``ComfyUI_RH_VoxCPM`` 并安装"
+
+#: ../../integrations/comfyui_rh_voxcpm.rst:73 484b53a7246a45c29033849530e65396
+msgid "Manual installation:"
+msgstr "手动安装："
+
+#: ../../integrations/comfyui_rh_voxcpm.rst:83 81650aa60cb1434c84ccb6f2cd4031da
+msgid "Model layout"
+msgstr "模型目录结构"
+
+#: ../../integrations/comfyui_rh_voxcpm.rst:85 971c5b99d1f844a9baf18e96d677fb67
+msgid "The README documents the following layout:"
+msgstr "README 中推荐的目录结构如下："
+
+#: ../../integrations/comfyui_rh_voxcpm.rst:98 b39839bd52cf4a30a886bac2123977d1
+msgid "SenseVoiceSmall should be placed under:"
+msgstr "SenseVoiceSmall 应放置在："
+
+#: ../../integrations/comfyui_rh_voxcpm.rst:105
+#: b5998130f8484213a65cb95f94aa6f1a
+msgid "Basic usage"
+msgstr "基本用法"
+
+#: ../../integrations/comfyui_rh_voxcpm.rst:108
+#: dbd4984b59384cd19771e9a8656ef125
+msgid "Single-speaker generation"
+msgstr "单说话人生成"
+
+#: ../../integrations/comfyui_rh_voxcpm.rst:110
+#: 691291f78af145818e4e5f650f4a0e0b
+msgid "Add **RunningHub VoxCPM Load Model** and choose your model directory."
+msgstr "添加 **RunningHub VoxCPM Load Model** 节点，并选择你的模型目录。"
+
+#: ../../integrations/comfyui_rh_voxcpm.rst:111
+#: 2d9d0197f6d94382a8fb4111fbf67ff3
+msgid ""
+"Optionally enable ``optimize`` in the loader node. The repository "
+"defaults it to ``False``, which is a reasonable starting point for "
+"compatibility."
+msgstr ""
+"可以在加载节点中按需启用 ``optimize``。该仓库默认将其设为 ``False``，这对兼容性来说是一个合理的起点。"
+
+#: ../../integrations/comfyui_rh_voxcpm.rst:113
+#: b9dcc7008e804f81ad31d17b8959ca78
+msgid "Connect the output to **RunningHub VoxCPM Generate Speech**."
+msgstr "将输出连接到 **RunningHub VoxCPM Generate Speech**。"
+
+#: ../../integrations/comfyui_rh_voxcpm.rst:114
+#: 0856eb1e89dd49768d6d285559f92528
+msgid "Use one of the following modes:"
+msgstr "选择以下任一模式："
+
+#: ../../integrations/comfyui_rh_voxcpm.rst:116
+#: a10502d599614c8c840be296d3345b75
+msgid ""
+"**Voice Design**: set ``control_instruction`` and leave "
+"``reference_audio`` empty"
+msgstr "**Voice Design**：设置 ``control_instruction``，并将 ``reference_audio`` 留空"
+
+#: ../../integrations/comfyui_rh_voxcpm.rst:117
+#: b4b5e0c91cde433dbdc7047210b64bc8
+msgid ""
+"**Controllable Cloning**: provide ``reference_audio`` and keep "
+"``ultimate_clone`` off"
+msgstr "**Controllable Cloning**：提供 ``reference_audio``，并保持 ``ultimate_clone`` 关闭"
+
+#: ../../integrations/comfyui_rh_voxcpm.rst:118
+#: 5e14e4da296e48acab644b031818dc35
+msgid ""
+"**Ultimate Cloning**: provide ``reference_audio`` and turn "
+"``ultimate_clone`` on"
+msgstr "**Ultimate Cloning**：提供 ``reference_audio``，并打开 ``ultimate_clone``"
+
+#: ../../integrations/comfyui_rh_voxcpm.rst:120
+#: 0e4c250313e647d099b8e89faeefe2ce
+msgid "Connect the resulting ``AUDIO`` output to a preview or save node."
+msgstr "将最终的 ``AUDIO`` 输出连接到预览或保存节点。"
+
+#: ../../integrations/comfyui_rh_voxcpm.rst:123
+#: a76c71ac026e4759a57c54f61aae7d2d
+msgid "Auto ASR and denoising"
+msgstr "自动 ASR 与去噪"
+
+#: ../../integrations/comfyui_rh_voxcpm.rst:125
+#: fec79ab0335d4ac3b897c9ac605a83ac
+msgid ""
+"In Ultimate Cloning mode, if ``reference_audio_text`` is empty, the node "
+"can auto-transcribe the reference through SenseVoiceSmall."
+msgstr "在 Ultimate Cloning 模式下，如果 ``reference_audio_text`` 为空，节点会通过 SenseVoiceSmall 自动转写参考音频。"
+
+#: ../../integrations/comfyui_rh_voxcpm.rst:127
+#: 44bef5432a454947afb259eed107414d
+msgid ""
+"If ``denoise_reference`` is enabled, the node uses ZipEnhancer before "
+"generation."
+msgstr "如果启用 ``denoise_reference``，节点会在生成前先使用 ZipEnhancer。"
+
+#: ../../integrations/comfyui_rh_voxcpm.rst:131
+#: 900e7aca5daf42e4a4a4d069e7ec9106
+msgid "Multi-speaker workflow"
+msgstr "多人工作流"
+
+#: ../../integrations/comfyui_rh_voxcpm.rst:133
+#: f9a889599a724eae8b7bd4eaed5b2ac0
+msgid ""
+"The **RunningHub VoxCPM Multi-Speaker** node accepts tagged scripts such "
+"as:"
+msgstr "**RunningHub VoxCPM Multi-Speaker** 节点接受如下带标签脚本："
+
+#: ../../integrations/comfyui_rh_voxcpm.rst:139
+#: 11f01437b8ae46d09246ae6d7d6992f1
+msgid "You can provide up to five speakers with separate:"
+msgstr "你最多可以为五个说话人分别提供："
+
+#: ../../integrations/comfyui_rh_voxcpm.rst:141
+#: 6a8771bfd7e541beba495224a1a4759d
+msgid "reference audio inputs (``audio_1`` to ``audio_5``)"
+msgstr "参考音频输入（``audio_1`` 到 ``audio_5``）"
+
+#: ../../integrations/comfyui_rh_voxcpm.rst:142
+#: 21a1e42043be43e38c426226428027ad
+msgid "per-speaker control instructions (``control_1`` to ``control_5``)"
+msgstr "每个说话人的控制指令（``control_1`` 到 ``control_5``）"
+
+#: ../../integrations/comfyui_rh_voxcpm.rst:144
+#: 882a10e6bcbe498d8ba718226c399a36
+msgid ""
+"This is useful for dialogue demos, podcast-style content, or character-"
+"based audio generation inside ComfyUI."
+msgstr "这很适合在 ComfyUI 中制作对话演示、播客风格内容，或角色化的语音生成。"
+
+#: ../../integrations/comfyui_rh_voxcpm.rst:148
+#: a1b7828ee14444a0ac40df64e2bd1437
+msgid "Example workflows"
+msgstr "示例工作流"
+
+#: ../../integrations/comfyui_rh_voxcpm.rst:150
+#: 8d0ca2e54da14f26b4a74c9737d6a4e0
+msgid "The repository currently ships at least two workflow examples:"
+msgstr "该仓库当前至少附带两个工作流示例："
+
+#: ../../integrations/comfyui_rh_voxcpm.rst:152
+#: d90e822c87e1482e9567c9575d78acbc
+msgid "a basic VoxCPM 2 workflow for single-speaker generation"
+msgstr "一个用于单说话人生成的 VoxCPM 2 基础工作流"
+
+#: ../../integrations/comfyui_rh_voxcpm.rst:153
+#: ac0a7220cb4541f69312dbecd9a20f3d
+msgid "a VoxCPM 2 multi-speaker workflow for tagged dialogue generation"
+msgstr "一个用于带标签对话生成的 VoxCPM 2 多说话人工作流"
+
+#: ../../integrations/comfyui_rh_voxcpm.rst:155
+#: 341b476f05fb4e46a9c022e62ff5c79a
+msgid "These example JSON files can be imported directly into ComfyUI."
+msgstr "这些示例 JSON 文件都可以直接导入到 ComfyUI 中。"
+
+#: ../../integrations/comfyui_rh_voxcpm.rst:158
+#: 4a7333cf5f6f484c854a31e932a23824
+msgid "When to choose this integration"
+msgstr "何时选择这个集成"
+
+#: ../../integrations/comfyui_rh_voxcpm.rst:160
+#: efb16a0901eb40d0949917795f9847d5
+msgid "Choose **ComfyUI_RH_VoxCPM** when you want:"
+msgstr "当你需要以下能力时，可以选择 **ComfyUI_RH_VoxCPM**："
+
+#: ../../integrations/comfyui_rh_voxcpm.rst:162
+#: e43439fbcd9f476988951710f5cd9223
+msgid "visual VoxCPM 2 workflows inside ComfyUI"
+msgstr "在 ComfyUI 中使用可视化的 VoxCPM 2 工作流"
+
+#: ../../integrations/comfyui_rh_voxcpm.rst:163
+#: 5bf08805468741cfb6cc0815f24054cf
+msgid "multi-speaker dialogue generation"
+msgstr "多人对话生成"
+
+#: ../../integrations/comfyui_rh_voxcpm.rst:164
+#: 88d9492567834b2785df6ce6ed332136
+msgid "built-in auto-ASR for cloning"
+msgstr "内置自动 ASR 的克隆流程"
+
+#: ../../integrations/comfyui_rh_voxcpm.rst:165
+#: 6114c4b003e54c40a29fcec6694231f0
+msgid "optional LoRA loading without leaving the ComfyUI workflow"
+msgstr "无需离开 ComfyUI 工作流即可可选加载 LoRA"
+
+#: ../../integrations/comfyui_rh_voxcpm.rst:167
+#: a46c8a6cb9764de2a2f3a42ba0d7340c
+msgid ""
+"If you specifically want in-node LoRA **training**, see "
+":doc:`comfyui_voxcpm`. If you prefer a lighter VoxCPM 1.5-focused setup "
+"with auto-transcription, see :doc:`comfyui_voxcpmtts`."
+msgstr ""
+"如果你特别需要在节点内进行 LoRA **训练**，请参阅 :doc:`comfyui_voxcpm`。"
+"如果你更倾向于一个更轻量、聚焦 VoxCPM 1.5 且带自动转写的方案，请参阅 :doc:`comfyui_voxcpmtts`。"
+

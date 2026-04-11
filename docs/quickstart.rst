@@ -41,6 +41,13 @@ This example does not enable the optional denoiser — it is only needed when yo
 
 If this script runs and produces ``demo.wav``, your installation is working.
 
+.. tip::
+
+   Runtime device selection is automatic by default. ``VoxCPM.from_pretrained(..., device="auto")``
+   prefers ``cuda -> mps -> cpu``. You can also force a device explicitly with
+   ``device="cpu"``, ``device="mps"``, ``device="cuda"``, or ``device="cuda:0"``.
+   If you hit platform-specific ``torch.compile`` issues, try ``optimize=False``.
+
 .. note::
 
    For new projects, start with :doc:`./models/voxcpm2`, which is the current version. Earlier releases remain available from :doc:`./models/version_history` when you need an older checkpoint.
@@ -63,6 +70,10 @@ VoxCPM also provides a command-line interface. The CLI defaults to ``openbmb/Vox
         --reference-audio path/to/voice.wav \
         --output out.wav \
         --denoise
+
+    # Force CPU or MPS explicitly when needed
+    voxcpm design --text "Hello from VoxCPM!" --device cpu --output out.wav
+    voxcpm design --text "Hello from VoxCPM!" --device mps --no-optimize --output out.wav
 
     # Help
     voxcpm --help

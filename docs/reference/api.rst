@@ -4,7 +4,7 @@ API Reference
 Python API
 **********
 
-.. py:class:: VoxCPM(voxcpm_model_path, zipenhancer_model_path="iic/speech_zipenhancer_ans_multiloss_16k_base", enable_denoiser=True, optimize=True, lora_config=None, lora_weights_path=None)
+.. py:class:: VoxCPM(voxcpm_model_path, zipenhancer_model_path="iic/speech_zipenhancer_ans_multiloss_16k_base", enable_denoiser=True, optimize=True, device=None, lora_config=None, lora_weights_path=None)
 
    Initialize VoxCPM from a local model directory.
 
@@ -13,7 +13,8 @@ Python API
    :param str voxcpm_model_path: Local path to the model directory containing weights, configs, and tokenizer files.
    :param str|None zipenhancer_model_path: ModelScope denoiser model id or local path. Set to ``None`` to skip the denoiser entirely.
    :param bool enable_denoiser: Whether to initialize the ZipEnhancer denoiser pipeline.
-   :param bool optimize: Enable ``torch.compile`` acceleration. Disable for debugging or unsupported platforms.
+   :param bool optimize: Enable ``torch.compile`` acceleration. Disable for debugging or unsupported platforms. This optimization is primarily useful on CUDA.
+   :param str|None device: Runtime device. Use ``None`` or ``"auto"`` for automatic fallback (``cuda -> mps -> cpu``), or an explicit value such as ``"cpu"``, ``"mps"``, ``"cuda"``, or ``"cuda:0"``. Explicit requests raise an error instead of silently falling back.
    :param LoRAConfig|None lora_config: LoRA configuration. If ``lora_weights_path`` is provided without this, a default config (``enable_lm=True``, ``enable_dit=True``) is created automatically.
    :param str|None lora_weights_path: Path to pre-trained LoRA weights (``.pth`` file or directory containing ``lora_weights.ckpt``).
 
@@ -22,10 +23,11 @@ Python API
       model = VoxCPM(
           voxcpm_model_path="/path/to/VoxCPM2",
           enable_denoiser=False,
+          device="auto",
       )
 
 
-.. py:classmethod:: VoxCPM.from_pretrained(hf_model_id="openbmb/VoxCPM2", load_denoiser=True, zipenhancer_model_id="iic/speech_zipenhancer_ans_multiloss_16k_base", cache_dir=None, local_files_only=False, optimize=True, lora_config=None, lora_weights_path=None, **kwargs)
+.. py:classmethod:: VoxCPM.from_pretrained(hf_model_id="openbmb/VoxCPM2", load_denoiser=True, zipenhancer_model_id="iic/speech_zipenhancer_ans_multiloss_16k_base", cache_dir=None, local_files_only=False, optimize=True, device=None, lora_config=None, lora_weights_path=None, **kwargs)
 
    Instantiate ``VoxCPM`` from a Hugging Face Hub snapshot. Downloads model weights automatically on first use.
 
@@ -34,7 +36,8 @@ Python API
    :param str zipenhancer_model_id: Denoiser model id or local path. Ignored when ``load_denoiser=False``.
    :param str|None cache_dir: Custom cache directory for the snapshot download.
    :param bool local_files_only: If ``True``, only use local files and do not attempt to download.
-   :param bool optimize: Enable ``torch.compile`` acceleration.
+   :param bool optimize: Enable ``torch.compile`` acceleration. This is primarily a CUDA optimization.
+   :param str|None device: Runtime device. ``None`` / ``"auto"`` uses automatic fallback. Explicit choices such as ``"cpu"``, ``"mps"``, ``"cuda"``, and ``"cuda:0"`` are validated and do not auto-fallback.
    :param LoRAConfig|None lora_config: LoRA configuration for fine-tuned models.
    :param str|None lora_weights_path: Path to LoRA weights. If provided, LoRA is loaded after initialization.
    :returns: Initialized VoxCPM instance.
@@ -43,7 +46,11 @@ Python API
 
    .. code-block:: python
 
-      model = VoxCPM.from_pretrained("openbmb/VoxCPM2", load_denoiser=False)
+      model = VoxCPM.from_pretrained(
+          "openbmb/VoxCPM2",
+          load_denoiser=False,
+          device="auto",
+      )
 
 
 .. py:method:: VoxCPM.generate(text, prompt_wav_path=None, prompt_text=None, reference_wav_path=None, cfg_value=2.0, inference_timesteps=10, min_len=2, max_len=4096, normalize=False, denoise=False, retry_badcase=True, retry_badcase_max_times=3, retry_badcase_ratio_threshold=6.0)
@@ -257,6 +264,13 @@ Arguments
 
    Hugging Face repo id. Default: ``openbmb/VoxCPM2``.
 
+.. option:: --device <DEVICE>
+
+   Runtime device selection. Supported values are ``auto``, ``cpu``, ``mps``,
+   ``cuda``, and indexed CUDA devices such as ``cuda:0``. ``auto`` prefers
+   ``cuda -> mps -> cpu``. Explicit values raise an error instead of silently
+   falling back.
+
 .. option:: --cache-dir <PATH>
 
    Cache directory for Hub downloads.
@@ -271,7 +285,8 @@ Arguments
 
 .. option:: --no-optimize
 
-   Disable ``torch.compile`` acceleration.
+   Disable ``torch.compile`` acceleration. This is commonly useful for
+   debugging, unsupported platforms, and non-CUDA environments.
 
 .. option:: --zipenhancer-path <PATH>
 

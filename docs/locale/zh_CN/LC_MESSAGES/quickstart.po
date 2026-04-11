@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VoxCPM \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-04-06 15:37+0800\n"
+"POT-Creation-Date: 2026-04-11 14:18+0800\n"
 "PO-Revision-Date: 2026-04-06 21:20+0800\n"
 "Last-Translator: GPT-5.4 <>\n"
 "Language: zh_CN\n"
@@ -18,115 +18,133 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.18.0\n"
 
-#: ../../quickstart.rst:2 de43b6699dec4383a9d081298cf9847c
+#: ../../quickstart.rst:2 e7c0c77d3ae24f3cb632645d5b8c3913
 msgid "Quick Start"
 msgstr "快速开始"
 
-#: ../../quickstart.rst:4 410ccb91b6ed441faf89300dd2b201ba
+#: ../../quickstart.rst:4 064ed5be324b4624877a60749a44c846
 msgid ""
-"This page gets you from zero to a working VoxCPM setup as fast as possible. "
-"Follow it top to bottom and you will have generated audio through three "
-"different paths: the Python API, the CLI, and the web demo."
-msgstr "本页会尽可能快速地带你从零完成可运行的 VoxCPM 安装。按顺序往下操作后，你就可以通过三种方式生成语音：Python API、CLI 和网页演示。"
+"This page gets you from zero to a working VoxCPM setup as fast as "
+"possible. Follow it top to bottom and you will have generated audio "
+"through three different paths: the Python API, the CLI, and the web demo."
+msgstr ""
+"本页会尽可能快速地带你从零完成可运行的 VoxCPM 安装。按顺序往下操作后，你就可以通过三种方式生成语音：Python API、CLI "
+"和网页演示。"
 
-#: ../../quickstart.rst:7 a365ccc5311343e28686467d61c324d3
+#: ../../quickstart.rst:7 93bb3efc4cbc45ed90ba79efca313c4a
 msgid "Install"
 msgstr "安装"
 
-#: ../../quickstart.rst:13 b2b652a2939549019076cd5f57f832ce
+#: ../../quickstart.rst:13 1f6f02c8a99d44888464471c02d3e3f1
 msgid ""
-"That's it. For other installation methods (pip, source checkout, etc.), see "
-":doc:`./installation`."
+"That's it. For other installation methods (pip, source checkout, etc.), "
+"see :doc:`./installation`."
 msgstr "到这里就完成了。若你想了解其他安装方式（如 pip、从源码安装等），请参阅 :doc:`./installation`。"
 
-#: ../../quickstart.rst:16 ef872a5eedf9436da2f68a5971987492
+#: ../../quickstart.rst:16 3f6bdcde15e4452c9d04e04c29c1c8ee
 msgid "Step 1: Python API"
 msgstr "第 1 步：使用 Python API"
 
-#: ../../quickstart.rst:18 c6a7e9a042744220b53643d9dfbb2dbf
+#: ../../quickstart.rst:18 78d7f8df7ab24ed382314b9ab0eb5944
 msgid "Start with the current recommended release, ``VoxCPM 2``:"
 msgstr "从当前推荐版本 ``VoxCPM 2`` 开始："
 
-#: ../../quickstart.rst:38 f69b636166eb4c10b921f770d3d93447
+#: ../../quickstart.rst:38 809bac7341c444bf81f88e9441da313f
 msgid ""
 "The first run downloads model weights automatically. If you have trouble "
 "accessing Hugging Face, see the mirror setup in :doc:`./installation`."
 msgstr "首次运行会自动下载模型权重。如果你访问 Hugging Face 有困难，请查看 :doc:`./installation` 中的镜像配置。"
 
-#: ../../quickstart.rst:40 d1335457f5fb4e4fb28cae7e2287ad2f
+#: ../../quickstart.rst:40 2215621deaf04eb6a694b89133c72088
 msgid ""
-"This example does not enable the optional denoiser — it is only needed when "
-"you want to enhance prompt or reference audio for voice cloning. See "
-":doc:`./usage_guide` for details."
+"This example does not enable the optional denoiser — it is only needed "
+"when you want to enhance prompt or reference audio for voice cloning. See"
+" :doc:`./usage_guide` for details."
 msgstr ""
 "这个示例没有启用可选降噪器。只有当你想在声音克隆时增强 prompt 或 reference 音频时才需要它。详情见 "
 ":doc:`./usage_guide`。"
 
-#: ../../quickstart.rst:42 6a15b6d511014834aafa76aaa038fa41
-msgid "If this script runs and produces ``demo.wav``, your installation is working."
+#: ../../quickstart.rst:42 0a70f48b77954a49a6b7dc7d57a29967
+msgid ""
+"If this script runs and produces ``demo.wav``, your installation is "
+"working."
 msgstr "如果这段脚本可以正常运行并生成 ``demo.wav``，说明你的安装已可正常工作。"
 
-#: ../../quickstart.rst:46 9f7f5aaea70147efb750fde7921de527
+#: ../../quickstart.rst:46 33a6082d45b44732885bf1ea9b569c3c
 msgid ""
-"For new projects, start with :doc:`./models/voxcpm2`, which is the current "
-"version. Earlier releases remain available from "
+"Runtime device selection is automatic by default. "
+"``VoxCPM.from_pretrained(..., device=\"auto\")`` prefers ``cuda -> mps ->"
+" cpu``. You can also force a device explicitly with ``device=\"cpu\"``, "
+"``device=\"mps\"``, ``device=\"cuda\"``, or ``device=\"cuda:0\"``. If you"
+" hit platform-specific ``torch.compile`` issues, try ``optimize=False``."
+msgstr ""
+"运行时设备选择默认是自动的。"
+"``VoxCPM.from_pretrained(..., device=\"auto\")`` 会按 ``cuda -> mps -> cpu`` "
+"的顺序优先选择设备。你也可以显式指定 ``device=\"cpu\"``、``device=\"mps\"``、``device=\"cuda\"`` "
+"或 ``device=\"cuda:0\"``。如果你遇到平台相关的 ``torch.compile`` 问题，可以尝试 ``optimize=False``。"
+
+#: ../../quickstart.rst:53 903df20e24064e7e89d899aaad56b660
+msgid ""
+"For new projects, start with :doc:`./models/voxcpm2`, which is the "
+"current version. Earlier releases remain available from "
 ":doc:`./models/version_history` when you need an older checkpoint."
 msgstr ""
 "对于新项目，建议从当前版本 :doc:`./models/voxcpm2` 开始。如果你需要较旧的 checkpoint，也可以在 "
 ":doc:`./models/version_history` 中找到早期版本。"
 
-#: ../../quickstart.rst:49 c785b3db3c3e4ce195421c7b9e6ee84d
+#: ../../quickstart.rst:56 78795fe4e731457a941fe0bbcb67afac
 msgid "Step 2: CLI"
 msgstr "第 2 步：使用命令行"
 
-#: ../../quickstart.rst:51 7e793387ba754caca126ae7728684021
+#: ../../quickstart.rst:58 7a4d84efca2f4034a507a6d9bc577448
 msgid ""
 "VoxCPM also provides a command-line interface. The CLI defaults to "
 "``openbmb/VoxCPM2``, so you can use the recommended subcommands directly "
 "unless you want to override the checkpoint with ``--hf-model-id``:"
 msgstr ""
-"VoxCPM 也提供命令行接口。CLI 默认使用 ``openbmb/VoxCPM2``，因此除非你想通过 ``--hf-model-id`` 覆盖 "
-"checkpoint，否则可以直接使用推荐子命令："
+"VoxCPM 也提供命令行接口。CLI 默认使用 ``openbmb/VoxCPM2``，因此除非你想通过 ``--hf-model-id`` "
+"覆盖 checkpoint，否则可以直接使用推荐子命令："
 
-#: ../../quickstart.rst:71 7aa051ca868840deb77f03859cc17d44
+#: ../../quickstart.rst:82 73f645af7ff54b118490160a5c2bb628
 msgid "Step 3: Web Demo"
 msgstr "第 3 步：使用网页演示"
 
-#: ../../quickstart.rst:73 95834788c0de45b89ea50428d676df68
+#: ../../quickstart.rst:84 8ff1b86ae6a1417da1b094adbf378cc2
 msgid ""
-"The web demo requires a source checkout. If you installed via ``pip install "
-"voxcpm`` in the step above, you still need to clone the repository:"
+"The web demo requires a source checkout. If you installed via ``pip "
+"install voxcpm`` in the step above, you still need to clone the "
+"repository:"
 msgstr "网页演示需要克隆源码仓库。如果你在上一步通过 ``pip install voxcpm`` 完成安装，仍然需要克隆仓库："
 
-#: ../../quickstart.rst:82 c595bedd75e34806b1ab3957eb9678c5
+#: ../../quickstart.rst:93 e3c2b4ebf6144ac894420a4efc81c2f5
 msgid ""
-"The web demo also downloads an additional ASR model (SenseVoice-Small) on "
-"first use for prompt audio transcription."
+"The web demo also downloads an additional ASR model (SenseVoice-Small) on"
+" first use for prompt audio transcription."
 msgstr "Web Demo 在首次使用时还会额外下载一个 ASR 模型（SenseVoice-Small），用于 prompt 音频转写。"
 
-#: ../../quickstart.rst:85 73244143b01945b0b46045731b4af374
+#: ../../quickstart.rst:96 f0f0bdc2d7ee4723a45bee4a66d7e15b
 msgid "What's Next?"
-msgstr "What's Next?"
+msgstr "接下来做什么？"
 
-#: ../../quickstart.rst:87 1dd62bde074f4469987238e961f8be9f
+#: ../../quickstart.rst:98 c044a47820db4876bca402e2a7aea3a8
 msgid ""
-"Continue with :doc:`./usage_guide` for prompt strategy, voice cloning tips, "
-"and quality tuning."
+"Continue with :doc:`./usage_guide` for prompt strategy, voice cloning "
+"tips, and quality tuning."
 msgstr "继续阅读 :doc:`./usage_guide`，了解 prompt 策略、声音克隆技巧和质量调优。"
 
-#: ../../quickstart.rst:88 52b81d3ce66d4689a99ce4abe500e2d0
+#: ../../quickstart.rst:99 1d629bc2803a4cdab5e514480f1b8749
 msgid ""
 "Check the pages under ``Models`` in the sidebar for version-specific "
 "features and migration notes."
 msgstr "查看侧边栏 ``Models`` 下的页面，了解各版本特性与迁移说明。"
 
-#: ../../quickstart.rst:89 383d3cef05f04ea9bafb31be8326e4c1
+#: ../../quickstart.rst:100 216b434091a44d10a8099f390a36e7c6
 msgid ""
-"Fine-tune the model with :doc:`./finetuning/finetune` to adapt it to your "
-"use case."
+"Fine-tune the model with :doc:`./finetuning/finetune` to adapt it to your"
+" use case."
 msgstr "通过 :doc:`./finetuning/finetune` 微调模型，使其适配你的实际场景。"
 
-#: ../../quickstart.rst:90 d4855e47032e421fbe44bf0cb137a567
+#: ../../quickstart.rst:101 c1ff174232f6426cb503944b67dcffce
 msgid ""
 "Deploy the model with :doc:`./deployment/nanovllm_voxcpm` for high-"
 "throughput serving."
