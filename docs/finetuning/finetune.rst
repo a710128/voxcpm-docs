@@ -86,7 +86,7 @@ Training data is a JSONL manifest file with one sample per line:
      - Transcript matching the audio content
    * - ``ref_audio``
      - No
-     - Path to a reference audio clip from the **same speaker**. When present, the training sequence is constructed as ``[103, ref_feats, 104, text, 101, audio_feats, 102]``, teaching the model to clone the speaker's voice from the reference. Loss is only computed on the target audio segment.
+     - Path to a reference audio clip from the **same speaker**. It is used as speaker-conditioning context for voice cloning, so it does not need to be an unseen sample. In practice, ``ref_audio`` is typically another clip randomly sampled from the same speaker / timbre as the target audio. When present, the training sequence is constructed as ``[103, ref_feats, 104, text, 101, audio_feats, 102]``, teaching the model to clone the speaker's voice from the reference. Loss is only computed on the target audio segment.
    * - ``duration``
      - No
      - Duration in seconds; speeds up length filtering
@@ -98,7 +98,7 @@ See ``examples/train_data_example.jsonl`` in the repository for a reference.
 
 .. tip::
 
-   **Mixing ref_audio and non-ref_audio samples** — We recommend that 30–50% of your training samples include ``ref_audio``, so the model retains both zero-shot and reference-based voice cloning abilities. A simple strategy: for a given speaker, use one recording as ``ref_audio`` for the next recording.
+   **Mixing ref_audio and non-ref_audio samples** — We recommend that 30–50% of your training samples include ``ref_audio``, so the model retains both zero-shot and reference-based voice cloning abilities. A simple strategy is to randomly choose another clean recording from the same speaker as ``ref_audio`` for each target sample.
 
 Audio requirements
 ------------------
