@@ -1,0 +1,142 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2025, OpenBMB
+# This file is distributed under the same license as the VoxCPM package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: VoxCPM \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-18 10:49+0800\n"
+"PO-Revision-Date: 2026-04-18 10:55+0800\n"
+"Last-Translator: GPT-5.4 <>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../deployment/vllm_omni.rst:3 6a27b58aeb35462ea0b30d953ee67631
+msgid "vLLM-Omni"
+msgstr "vLLM-Omni"
+
+#: ../../deployment/vllm_omni.rst:5 2b55287088034a53ac762fffdba08d8c
+msgid ""
+"vLLM-Omni is the official omni-modal serving stack from the vLLM project "
+"with native support for VoxCPM2."
+msgstr "vLLM-Omni 是 vLLM 项目的官方全模态服务栈，原生支持 VoxCPM2。"
+
+#: ../../deployment/vllm_omni.rst:8 b4cc3b0d4d8a44c491ad691862c8d79f
+msgid ""
+"Repo: `vllm-project/vllm-omni <https://github.com/vllm-project/vllm-"
+"omni>`_"
+msgstr "仓库：`vllm-project/vllm-omni <https://github.com/vllm-project/vllm-omni>`_"
+
+#: ../../deployment/vllm_omni.rst:9 adda7b7d11434ce7ae34661e94be1af4
+msgid ""
+"VoxCPM2 example: `online_serving/voxcpm2 <https://github.com/vllm-project"
+"/vllm-omni/tree/main/examples/online_serving/voxcpm2>`_"
+msgstr ""
+"VoxCPM2 示例：`online_serving/voxcpm2 <https://github.com/vllm-project/vllm-"
+"omni/tree/main/examples/online_serving/voxcpm2>`_"
+
+#: ../../deployment/vllm_omni.rst:10 543ba3aabe7649209ab5d54d1871659b
+msgid ""
+"Installation guide: `vLLM-Omni docs <https://vllm-"
+"omni.readthedocs.io/en/latest/getting_started/installation/>`_"
+msgstr ""
+"安装文档：`vLLM-Omni docs <https://vllm-omni.readthedocs.io/en/latest/getting_started/installation/>`_"
+
+#: ../../deployment/vllm_omni.rst:12 e03cc840c81c474191a550a89b4002c6
+msgid ""
+"This is the recommended path for production deployments that need "
+"concurrent requests, continuous batching, or multi-tenant GPU serving."
+msgstr "如果你的生产部署需要并发请求、连续批处理或多租户 GPU 服务，这是当前推荐的方案。"
+
+#: ../../deployment/vllm_omni.rst:16 2d7b0c58ca4b4a8e8e1f3052cecfb020
+msgid "Features"
+msgstr "特性"
+
+#: ../../deployment/vllm_omni.rst:18 b43754cb7a9a4fc281744ec9f60f8e3b
+msgid "Native VoxCPM2 serving on the upstream vLLM scheduler"
+msgstr "基于上游 vLLM 调度器的原生 VoxCPM2 服务"
+
+#: ../../deployment/vllm_omni.rst:19 780b0bbc41aa4435a122d2de31586151
+msgid "Continuous batching for concurrent inference workloads"
+msgstr "面向并发推理负载的连续批处理"
+
+#: ../../deployment/vllm_omni.rst:20 a2add03d16e14168a56afe729d56dedd
+msgid "PagedAttention KV cache management"
+msgstr "PagedAttention KV 缓存管理"
+
+#: ../../deployment/vllm_omni.rst:21 0031abaa49284feaaef2a285bf414395
+msgid "OpenAI-compatible ``/v1/audio/speech`` endpoint"
+msgstr "OpenAI 兼容的 ``/v1/audio/speech`` 接口"
+
+#: ../../deployment/vllm_omni.rst:22 eb2871d14fa34204991860d6c2f2a4ca
+msgid "Streaming chunk delivery and multi-GPU deployment support"
+msgstr "支持流式分块输出和多 GPU 部署"
+
+#: ../../deployment/vllm_omni.rst:25 1b6141df0e9c4b66b6a5542b65a70bde
+msgid "Prerequisites"
+msgstr "前置条件"
+
+#: ../../deployment/vllm_omni.rst:27 af86985988fa4a06adabe26007c06e3d
+msgid "Linux + GPU environment supported by vLLM-Omni"
+msgstr "vLLM-Omni 支持的 Linux + GPU 环境"
+
+#: ../../deployment/vllm_omni.rst:28 e0c04e922bde401bbd3f4dbddc78c6c7
+msgid "Python environment with ``uv`` available"
+msgstr "已安装 ``uv`` 的 Python 环境"
+
+#: ../../deployment/vllm_omni.rst:29 5905f7adcaa64110a8a5387b15b5acc5
+msgid "Access to the ``openbmb/VoxCPM2`` model weights"
+msgstr "能够访问 ``openbmb/VoxCPM2`` 模型权重"
+
+#: ../../deployment/vllm_omni.rst:32 419ff3eb8b7e4435a4bc52699d0f01e1
+msgid "Installation"
+msgstr "安装"
+
+#: ../../deployment/vllm_omni.rst:34 2b339042ecab484b9c496b53033d3191
+msgid ""
+"Install from source. The upstream project is evolving quickly, so prefer "
+"the latest main branch unless you have a pinned deployment environment:"
+msgstr "建议从源码安装。上游项目迭代较快，除非你的部署环境已经固定版本，否则优先使用最新的 main 分支："
+
+#: ../../deployment/vllm_omni.rst:44 31b2d5f65a8a4c6f9bb37e384a755ed0
+msgid ""
+"See the upstream installation guide for other platforms such as ROCm, "
+"XPU, MUSA, NPU, and Docker-based setups."
+msgstr "其他平台（如 ROCm、XPU、MUSA、NPU）以及基于 Docker 的安装方式，请参考上游安装文档。"
+
+#: ../../deployment/vllm_omni.rst:48 5c6406fc7b9f4fac8c474bb80d86fda5
+msgid "Serving VoxCPM2"
+msgstr "部署 VoxCPM2 服务"
+
+#: ../../deployment/vllm_omni.rst:50 19469dfb108b448ba6401be62dc587d1
+msgid "Start an OpenAI-compatible TTS server:"
+msgstr "启动一个 OpenAI 兼容的 TTS 服务："
+
+#: ../../deployment/vllm_omni.rst:56 13e1c3bb05a54a219d9fdd9946ad4137
+msgid "Generate speech from any OpenAI-compatible client:"
+msgstr "你可以从任意 OpenAI 兼容客户端发起语音生成请求："
+
+#: ../../deployment/vllm_omni.rst:66 4f37a70b72a34d37a7ae7ae47910fa07
+msgid "Notes"
+msgstr "说明"
+
+#: ../../deployment/vllm_omni.rst:70 799c1cf5bd2d4f1683b0e3f0df2f85ef
+msgid ""
+"If your workload requires high concurrency, this serving architecture is "
+"a better fit than running multiple independent "
+"``torch.compile``-optimized VoxCPM processes on the same GPU."
+msgstr "如果你的负载需要高并发，这种服务架构通常比在同一张 GPU 上运行多个彼此独立、经过 ``torch.compile`` 优化的 VoxCPM 进程更合适。"
+
+#: ../../deployment/vllm_omni.rst:76 5dc1aec3cc1c4cf89af47a96e3641d92
+msgid ""
+"For a lighter Python-native serving stack with sync and async APIs, see "
+":doc:`NanoVLLM-VoxCPM <nanovllm_voxcpm>`."
+msgstr "如果你更需要一个较轻量、原生 Python 的同步 / 异步 API 服务栈，可以参考 :doc:`NanoVLLM-VoxCPM <nanovllm_voxcpm>`。"
+

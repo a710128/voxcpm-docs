@@ -49,6 +49,7 @@
 Deployment:
 
 - `docs/deployment/nanovllm_voxcpm.rst`
+- `docs/deployment/vllm_omni.rst`
 - `docs/deployment/voxcpm_cpp.rst`
 - `docs/deployment/onnx.rst`
 - `docs/deployment/ane.rst`
@@ -116,6 +117,7 @@ docs/
     changelog.rst
   deployment/
     nanovllm_voxcpm.rst
+    vllm_omni.rst
     voxcpm_cpp.rst
     onnx.rst
     ane.rst
@@ -219,6 +221,11 @@ docs/
 
 - NanoVLLM-VoxCPM 高吞吐 GPU 部署页。
 - 覆盖服务模式、流式能力与 FastAPI demo 方向。
+
+### `docs/deployment/vllm_omni.rst`
+
+- vLLM-Omni 官方服务方案说明页。
+- 面向 VoxCPM2 的并发、连续批处理、OpenAI 兼容 API 与生产部署场景。
 
 ### `docs/deployment/voxcpm_cpp.rst`
 

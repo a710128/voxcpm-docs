@@ -52,7 +52,7 @@ VoxCPM documentation
 * 🎙️ **Ultimate Cloning** - For maximum fidelity, provide both the reference audio and its transcript so the model can continue seamlessly from the prompt and preserve more vocal detail.
 * 🔊 **48kHz High-Quality Audio** - Accepts 16kHz reference audio and outputs 48kHz audio through AudioVAE V2's asymmetric encode/decode design, with built-in super-resolution and no external upsampler required.
 * 🧠 **Context-Aware Synthesis** - Automatically infers appropriate prosody and expressiveness from the text itself for more natural, content-matched delivery.
-* ⚡ **Real-Time Streaming** - Reaches an RTF as low as **0.13** on NVIDIA RTX 4090 with `NanoVLLM-VoxCPM <https://github.com/a710128/nanovllm-voxcpm>`_ for high-throughput serving.
+* ⚡ **Real-Time Streaming** - Reaches an RTF as low as **0.13** on NVIDIA RTX 4090 with `NanoVLLM-VoxCPM <https://github.com/a710128/nanovllm-voxcpm>`_ or `vLLM-Omni <https://github.com/vllm-project/vllm-omni>`_ for high-throughput, concurrent serving.
 * 📦 **Fully Open-Source & Commercial-Ready** - Weights and code are released under the `Apache License 2.0 <https://www.apache.org/licenses/LICENSE-2.0>`_, allowing commercial use.
 
 ----
@@ -104,6 +104,7 @@ Community Projects
 We're excited to see the VoxCPM community growing. A few representative ecosystem projects:
 
 - `NanoVLLM-VoxCPM <https://github.com/a710128/nanovllm-voxcpm>`_ for high-throughput GPU serving
+- `vLLM-Omni <https://github.com/vllm-project/vllm-omni>`_ for official VoxCPM2 serving on the upstream vLLM stack with continuous batching and an OpenAI-compatible API
 - `VoxCPM.cpp <https://github.com/bluryar/VoxCPM.cpp>`_ for ggml / GGUF based CPU, CUDA, and Vulkan inference
 - `VoxCPMANE <https://github.com/0seba/VoxCPMANE>`_ for Apple Neural Engine deployment
 - `ComfyUI-VoxCPM <https://github.com/wildminder/ComfyUI-VoxCPM>`_ for node-based workflows and LoRA training
@@ -246,6 +247,7 @@ If you find our model helpful, please consider citing our work and starring the 
    :hidden:
 
    deployment/nanovllm_voxcpm
+   deployment/vllm_omni
    deployment/voxcpm_cpp
    deployment/onnx
    deployment/ane
